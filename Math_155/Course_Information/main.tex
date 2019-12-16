@@ -1,0 +1,303 @@
+ \documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amsbsy,amsfonts,graphics,epsfig,float,url}
+%\usepackage[dvips]{graphicx,epsfig}\usepackage{amsmath,amsbsy,amsfonts,float}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textheight235truemm\textwidth165truemm
+\voffset-2.4cm\hoffset-1.2cm
+\vfuzz=10000truept\hfuzz=10000truept
+\pretolerance=2000 \tolerance=2000 
+%\renewcommand{\baselinestretch}{1.4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{geqncount}
+\newenvironment{groupeqn}%
+    {\refstepcounter{equation}%
+     \setcounter{geqncount}{\value{equation}}%
+     \setcounter{equation}{0}%
+  \renewcommand{\theequation}{\arabic{geqncount}.\alph{equation}}}%
+    {\setcounter{equation}{\value{geqncount}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\pagestyle{empty}
+
+
+\noindent \textbf{\textsf{Math 155.  Calculus for Biological Scientists}}
+
+\noindent  Fall 2018
+
+\vspace{2mm}
+
+\noindent 
+\textbf{Website} https://csumath155.wordpress.com
+
+\noindent Please review the course website for details on the schedule, extra resources, alternate exam request forms, written homework, webwork link, etc. See Canvas for grades and occasional announcements.
+
+\vspace{5mm}
+
+
+\hrule
+
+\vspace{3mm}
+
+
+
+\noindent Class Meeting Time and Place: \\
+MTWF 3-3:50 PM
+
+
+\hspace{1cm} 	
+
+
+\vspace{2 mm}
+
+\textbf{Instructor}\\
+Colin Roberts\\
+robertsp@rams.colostate.edu\\
+
+\textbf{Course Coordinator} \\
+Dr. Cameron Byerley \\
+cameron.byerley@colostate.edu
+
+   \hspace{1cm} Office: Weber 17B \\
+   
+
+
+ 
+\textbf{Office Hours are in the Calculus Center or by appointment.} 
+ The Calculus Center is in the Great Hall in the TILT building on the Oval. The TILT building is the old library and still says ``Library" on the building front.\\
+\hspace{10mm} The office hours of all Math 155 instructors are \textbf{open} to all students in all sections.    You can come to the Calculus Center to work and get help when you get stuck.  See the course website or Calculus Center website for the Calculus Center schedule.  \\
+
+
+\vspace{2 mm}
+ 
+
+ 
+  \vspace{2mm}
+ 
+\hrule
+
+\vspace{3mm}
+
+\textbf{Course Summary} \\
+
+\noindent Living organisms grow, reproduce, and move around. They \textit{change}. With calculus, we will study the nature of this change and quantify it.  Biological examples motivate mathematical concepts, which in turn lead us to ask new questions about biology. Math 155 is a math course, but one that is also a science course. \\
+\\
+We will investigate the \textit {Fundamental Theorem of Calculus} in biological contexts. It says: \textit{If we know how fast something is growing and how much we started with we can figure out how much we have. If we know how much of something we have at every moment in time we can figure out how fast it is changing.}\\
+
+
+\noindent \textbf{Prerequisites:}  Conceptual understanding of material covered in courses in algebra (such as Math 117/118), logarithmic and exponential functions (such as Math 124), and trigonometry (such as Math 125). Many people find that they need to spend a substantial amount of additional time reviewing prerequisite content to do the homework successfully. 
+
+\vspace{1mm}
+
+\noindent \textbf{Course Materials:}\
+Students are encouraged to read textbook for additional examples. There are approximately five homework sets from the book. If you do not own the book you will need to borrow it from the Calculus Center or a friend to complete those homework sets.\\
+
+\vspace{1 mm}
+
+\noindent $\bullet$ \textit{Needed for Homework Problems} Frederick R. Adler. \textit{Modeling the Dynamics of Life: Calculus and Probability for Life Scientists} 2nd Ed. Brooks Cole, 2005.  \url{ISBN} \url{0-534-40486-3}.
+
+\vspace{1mm}
+
+ \textit{or}
+
+\vspace{1mm}
+\noindent Frederick R. Adler. \textit{Modeling the Dynamics of Life: Calculus and Probability for Life Scientists} 3nd Ed. Brooks Cole, 2013.  \url{ISBN} \url{0-8400-6418-7}.
+
+\vspace{1mm}
+
+Reduced pricing or book rental (and ebook access during shipping time) is available for this text through the publisher's website:  \url{http://www.cengagebrain.com/micro/math155} \\
+
+\textit{Less expensive e-text} The course textbook is available through the CSU BookstoreÕs Inclusive Access Program in partnership with Unizin Engage.  You have immediate access to the online e-text by clicking on the ÒUnizin EngageÓ link within the course menu in Canvas. Please note, there is a cost for the e-text. The bookstore will charge your student account for the cost of the e-text after the Add/Drop date. \textbf{ You must Òopt-outÓ of the Unizin Engage e-text before the Add/Drop date to avoid bookstore charges.} Please look for emails from the bookstore about Ôopting outÕ as well as charges to your student account. Once you choose to Òopt-out,Ó you will no longer be allowed to access the e-text in Canvas.
+
+\vspace{10mm}
+
+\noindent  \textit{Free Online Book} Thompson, Patrick. \textit{Calculus: Newton meets Technology.} Free online book available at http://patthompson.net/ThompsonCalc/. Occasionally, we will take homework problems or use animations from this book. It has good dynamic visualizations that are not possible in a print textbook.\vspace{10mm}
+
+\noindent $\bullet$ \textit{Required} A graphing calculator such as the TI-83 or TI-84 is highly recommended.  There will be some quiz problems that require graphing complicated functions. You will not be allowed to use a TI-89, a TI-Nspire CAS, or any calculator that does symbolic manipulation on the exams or quizzes. It is prohibited to use your cell phone as your calculator on exams or quizzes. The instructor or exam proctor has the right to check your calculator during the exam and any programs you have put on it to be sure they are permissible. If you do not want to purchase a calculator, you can check graphing calculators out from the Calculus Center while you are inside the Calculus Center, use Desmos, a free online graphing calculator for homework, and borrow a handheld graphing calculator from a friend for tests. \\
+
+\noindent \textit{Required:} An iclicker. Here is a link to FAQ about iclicker use at CSU.\\
+ http://ttc.colostate.edu/iclicker-student-faq/ \\
+I will use iclickers to take attendance for attendance points.
+
+\vspace{2mm}
+
+\noindent $\bullet$ \textit{Optional:} G. Mueller, R. I. Brent.  \textit{Just-in-Time Algebra and Trigonometry for Calculus}, 3rd Ed.  Pearson, 2005.
+
+\vspace{2mm}
+
+
+
+\noindent \textbf{Schedule:} We will cover most of Chapters 1-4 of the Adler book and some in class discussion problems from Thompson's book.   A tentative schedule is available at the course website.  You are expected to read each section of the book that is covered.
+
+\vspace{2mm}
+
+\noindent The \textbf{Course Goals} are
+
+To learn how to build and read mathematical models of biological phenomena.
+
+To gain a working knowledge of the key tools of calculus--\textit{derivatives}, which quantify \textit{rates of change} of functions, and \textit{integrals}, which represent how much a quantity has accumulated given its rate of change.
+
+To understand key concepts of science such as \textit{equilibrium}, \textit{stability}, and \textit{differential equations}, both in terms of mathematical descriptions and biology.
+
+\vspace{1cm}
+
+\noindent \textbf{Grading:}
+
+\vspace{2 mm}
+
+\vspace{1mm} 
+
+The total number of points possible in the course is 620. 
+
+Pretest: 10 points
+
+How is Math Used Project: 20 points total
+
+10 Written Homeworks (drop one):  45 points total
+
+WebWorK Online Homework (scaled):  95 points total 
+
+Class Participation: 10 points total
+
+11 Quizzes, 10 points each (drop two) : 90 points total
+
+Midterm examination 1 : September 27th, 5:00 to 6:50 pm 100 points 
+
+Midterm examination 2 : November 1st, 5:00 pm to 6:50 pm: 100 points
+
+Final Exam:  Wednesday, 11:50am-1:50pm : 150 points
+
+Extra Credit: Up to 15 points, at the discretion of your instructor.
+
+\vspace{1cm} 
+
+\noindent Grades will be assigned with the following system(No plus or minus grades): \\
+A: 90 \% of points\\
+B: 80-89 \% of points\\
+C:  70-79 \% of points\\
+D: 60-69  \% of points\\
+F: Below 60 \% of points. \\
+\vspace{4mm}
+
+\textbf{Note on Canvas grades} Grades entered in Canvas are approximate and may not take into account dropped quizzes, the dropped homework and extra credit. Grades will be calculated by formula in syllabus and may differ slightly than Canvas grades. 
+
+
+\vspace{4mm}
+
+\textbf{Exams:} There will be two common exams and a final.    \textit{Note} that the common midterm exams are held on Thursday evenings and you are REQUIRED to be there.  The rooms will be announced on Math Department Website; the dates and times are noted above. Bring student ID.
+
+Cellphones must be turned off during the exam and must remain in a bag during the entire exam. A ringing cellphone or use of an unauthorized electronic device (in any form: clock, calculator, camera, notepad, toy, ...) during the exam may lead to disqualification (0 points) from the exam. Exam scores cannot be contested after the next exam is taken.
+
+\textit{Exam conflicts/Alternate arrangements:} The only excused absences from exams are official university-approved absences. If a CSU event conflicts with an exam or the final, or if you are ill, you must submit the \textit{alternate exam time request form} that you can find on
+the course website, together with supporting documentation (e.g. a letter from the athletics department) to your section teacher. This request, including documentation, must be submitted at least 8 days
+before the exam (or, in the case of sudden illness, as soon as reasonably possible).
+If you need alternate exam arrangements through Resources for Disabled Students, submit the RDS
+qualification letter at least 8 days
+before the first exam to your section teacher. Alternate exam requests are processed once per exam;
+failure to submit requests, including documentation, in time can mean that no alternative arrangements
+will be possible!
+If you have questions concerning alternate exams, please contact the course coordinator, Dr. Byerley.
+
+\vspace{3mm}
+
+\textbf{Quizzes:}  A quiz will be given in class most weeks on Fridays as indicated on the calendar (or by your instructor in case there are changes). If you miss a quiz, you will receive a zero (no make-ups). However, your lowest two quiz grades will be dropped, which includes any zeros. This includes missed quizzes due to illness or emergencies. There will be no quizzes on the weeks of Midterms, or the week before the final. Make-up quizzes will be given for University approved absences or prolonged documented illness lasting more than 2 weeks. 
+
+\vspace{3mm}
+
+
+
+
+\textbf{Written Homework:}  (45 points) Homework problems to be handed in (HW) will be posted on the course webpage under the ``Homework" link.  For some of the homeworks, you may need to download and print a .pdf file.    
+ Some problems will be designated as practice problems, and some problems will be assignments to be handed in. Assigned HW will be collected, and selected problems will be graded. See the course calendar for the HW Schedule. One written HW assignment will be dropped. If you fail to hand in a HW assignment, you will receive a zero. No late HW will be accepted, so start early!  
+   
+   Each of the 10 written homework assignments will be worth the same number of points, and your Written Homework score will be determined by your percentage correct on the assignments after dropping the lowest score.  A complete solution to a written homework problem must include not only the final answer but also the (legible!) work needed to obtain the solution.   
+   
+\textbf{Homework that is turned in should NOT look like scrapwork.  It must  show all of your \textit{relevant} work clearly and legibly.}
+
+\textbf{Extra Credit} 
+You have three chances to go to the Calculus Center to earn extra credit. Three points per visit.  After Exam 1 and Exam 2 solve all the problems you missed neatly on a separate piece of paper and bring it to the tutors. They will ask  you questions about what you learned from your mistakes then sign a paper saying you came. After the Pretest you can earn extra credit by picking up your scantron form and seeing what you missed with a tutor. 
+\vspace{4mm}
+
+\textbf{WebWorK Online Homework:}  (95 points) We will be using the system WebWorK (there is no relation to the University's RamCT, and you can\textbf{not} access it through RamWEB) for part of the homework assignments.  To do these problems, you have to log in via the course homepage.   Your user name is set to your university eName. This is typically your university email name, \textit{e.g.} the address \url{myname@rams.colostate.edu} has eName \url{myname}. Your initial password is set to your  CSU ID number (this is the 9-digit number on your university ID card, starting with 8). Please as a first step change your password. As the login is not encrypted, do not choose the same password as used for any important login (such as banking or email).  
+
+ WebWork homework is due at 11:59 pm (midnight)  on the days indicated on the course calendar on website; a WebWorK homework will be due most Tuesdays and Thursdays.   
+ 
+ We initialize the data base for WebWorK with the students registered on August 23rd, 2018. If you registered for the course late, you might not yet have been added to WebWorK. In this case, talk ASAP to your section instructor to be added. You must provide your CSU eName and your CSU-ID, otherwise we will not be able to transfer grades correctly. Also talk to your section instructor in case you cannot log into WebWorK or have forgotten your password. 
+
+Your WebWorK score out of 95 points will be determined by the your percentage correct on the WebWorK assignments.    
+
+
+\vspace{8mm}
+
+\noindent \textbf{Academic Integrity:} {\small   The University Policy on Academic Integrity (see CSU General Catalog) is enforced in this course. Misrepresenting someone else's work as your own (plagiarism) and possessing unauthorized
+reference information in any form that could be helpful while taking an exam
+are examples of cheating.  Submitting work from a Solutions Manual or an
+on-line homework web site as your own are examples of plagiarism. Students
+judged to have engaged in cheating may be assigned a reduced or failing
+grade for the assignment or the course and may be referred to the Office of
+Conflict Resolution \& Student Conduct Services for additional disciplinary
+action.}
+
+\vspace{1cm}
+
+
+\noindent \textsf{\large{\textbf{Expectations, Help, and Support}}}
+
+\vspace{3mm}
+
+\noindent \textbf{Work Load:}  Students generally consider Math 155  to be a challenging course.  To pass Math 155, you will also have to understand and be able to use many ideas from prerequisite classes. We wish that everyone remembered what they have learned before, but if this is not the case, make use of Calculus Center tutoring and workshops to catch up. As a rough estimate of your time commitment, in addition to the 4 classes a week you are likely to need 8-12 hours a week just for review, homework and learning. Plan this time into your semester schedule now. You will not learn everything you need just by attending lecture. Reading the book, using online resources suggested, and using tutoring center is also expected as part of the course. 
+
+MATH 155 is a course in which you need to work continuously.  You should not attempt to learn the material
+just in the week before each exam.
+
+\vspace{3mm}
+
+In addition, you are \textbf{expected} to attend and \textit{participate in} (not doing sudoku puzzles, \textit{etc}.) class regularly.  We assume that you are aware of all announcements made in class and that you have read and understood the information in this course information sheet and on the course website.  All audible signals of \textit{cell phones}  must be turned off at the start of class. 
+
+\vspace{1cm}
+
+\textbf{Calculus Center Workshops} There will be a Calculus Center workshop from 5:00 to 6:00 pm in Weber 17 most Wednesdays. For schedule and topics see the Math 155 website.
+\vspace{1cm}
+
+
+\noindent \textbf{Free Tutoring:} \\
+\textbf{Calculus Center} 
+The Calculus Center is a great place to meet students from your class and get help. It is open during weekdays in the Russel George Great Hall in TILT building. The schedule for which hours have a Math 155 tutor are available on the Calculus Center Website: http://www.math.colostate.edu/calculuscenter/
+\\
+\textbf{TILT} Free tutoring is available for this course through the Arts and Sciences Tutoring Program. The program is located in the Russell George Great Hall in The Institute for Learning and Teaching (TILT), and runs 5 p.m. to 10 p.m., Sunday-Thursday evenings during the academic year. No appointment is necessary, and all students are welcome. More information and the tutoring schedule is available through a link on the ``Study Resources'' tab on the course website. %A tutor for calculus topics is there any time, but a tutor specifically for Math 155 will be there at times to be posted on the course website.  Is this still true?
+
+\vspace{3mm}
+
+
+\noindent \textbf{Formal Syllabus} 
+The formal syllabus for this course (including gtPathways-specific information) can be found here:  www.math.colostate.edu/syllabi/MATH155Syllabus.pdf.
+
+\vspace{3mm}
+
+\noindent \textbf{Disabilities} Colorado State University is committed to providing reasonable accommodations for all persons with disabilities. Students with disabilities must first contact Resources for Disabled Students before requesting accommodations for this class. RDS has website: http://www.rds.colostate.edu  Students who need accommodations in this class must contact instructor in a timely manner (at least one week before examinations) to discuss needed accommodations. 
+
+\noindent \textbf{Other Difficulties}
+Students who do not have a documented disability, but are having difficulties in class due to other reasons such as being a single parent, having a family member with a serious illness, having a disabled child, having a physical accident (such as concussion), etc. should also contact Dr. Byerley for assistance and problem solving. There are a variety of services on campus such as very inexpensive childcare, counseling, services for veterans, services for athletes, etc. and Dr. Byerley would be happy to help you research support options. PLEASE WEAR HELMETS! THE MOST COMMON CAUSE OF INCOMPLETES IN FALL 2017 WAS CRASHING BIKES ON THE WAY TO CAMPUS WITHOUT WEARING A HELMET!
+\vspace{3mm}
+
+
+\textbf{Data Collection and Analysis} \\
+As part of ongoing efforts to evaluate the course and Calculus Center student data will be statistically analyzed for internal and external research. No individual student data or names will be revealed. We will link students' grades in the course with the number of times they visited the Calculus Center using student ID's to see if there is a relationship. If you do not want your data included in this analysis or want more information about how the data is protected and used please email cameron.byerley@colostate.edu and she will remove your data from the spreadsheet. 
+
+\centerline{Best wishes for a productive, successful time in \textbf{Math 155}!}
+
+
+\end{document}
+
+
+
+
+
+\noindent \textbf{TILT Study Group:}  A TILT Study Group may be provided for all students who want to improve their understanding of the material taught in this course. Study group sessions are led by a student who has already mastered the course material and has been trained to facilitate group sessions where students can meet to compare class notes, review and discuss important concepts, develop strategies for studying, and prepare for exams. Attendance at Study Group sessions is free and voluntary. Students may attend as many times as they choose. Study group sessions begin the second week of class and continue throughout the semester.  For more information and the schedule, visit 
+
+ \url{http://tilt.colostate.edu/learning/tutoring.cfm}
+
+\vspace{3mm}
+
+
+
