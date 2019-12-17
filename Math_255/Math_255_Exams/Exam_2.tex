@@ -1,0 +1,390 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{enumerate}
+\usepackage{xfrac}
+
+\newcommand{\DD}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+\usepackage{pdfcolparallel}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+
+
+
+
+\begin{center}
+   \textsc{\large MATH 255, Exam 2}\\
+\end{center}
+\vspace{1cm}
+
+\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\textbf{Instructions} \; No textbook, homework, calculators, phones, or smart watches may be used for this exam. A two-sided 8.5x11" note sheet is acceptable.  The exam is designed to take 50 minutes and must be submitted at the end of the class period. All of your solutions should be easily identifiable and supporting work must be shown. You may use any part of this packet as scratch paper, but please clearly label what work you want to be considered for grading. Ambiguous or illegible answers will not be counted as correct.
+
+\emph{Only the highest scoring \underline{five} problems will be counted towards your total score. You cannot get over 100 points.}
+
+\vspace{1cm}
+
+\textbf{Problem 1} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 2} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 3} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 4} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 5} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 6} \; \underline{\hspace{1cm}}/20
+
+\vspace{.5cm}
+
+\textbf{Total} \;\hspace{1.1cm} \underline{\hspace{1.25cm}}/100
+
+\vspace*{4cm}
+
+
+\begin{center}\large{There are extra pages between each problem for scratch work.\\
+
+Please circle your answers!}\end{center}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 1}
+
+\vspace{.25cm}
+
+\textbf{(i)} \underline{True or false:} Any polynomial
+\[
+a_0 + a_1z+a_2z^2+\cdots +a_nz^n
+\]
+with real coefficients $a_i$ has $n$ complex roots (where some roots may be repeated).
+\vspace*{1cm}
+
+\textbf{(ii)} Evaluate the following given $z_1=1+2i$ and $z_2= -3-i$. Simplify your result to cartesian form $a+bi$.
+\begin{enumerate}[(a)]
+    \item $z_1-z_2$,
+    \vspace*{2cm}
+    \item $z_1z_2$,
+    \vspace*{3cm}
+    \item $z_1^*$.
+\end{enumerate}
+\vspace*{4cm}
+
+\textbf{(iii)} Convert the following from cartesian to polar coordinates or polar to cartesian. Feel free to use degrees or radians in your answer.
+\begin{enumerate}[(a)]
+    \item $z = 3e^{i \frac{\pi}{2}}$,
+    \vspace*{3cm}
+    \item $w = 1+i$.
+\end{enumerate}
+    
+    \newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 2}
+
+\vspace{.25cm}
+
+Let $\gamma(t)$ describe the position of a particle in $\R^3$ at a time $t$ and be given by
+\[
+\gamma(t) = \begin{bmatrix} \sin(t) \\ \cos(t) \\ t^2 \end{bmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute the tangent (velocity) vector $\gamma'(t)$.  
+    \vspace*{3.5cm}
+    \item Compute the derivative of the tangent vector (acceleration) $\gamma''(t)$.
+    \vspace*{3.5cm}
+    \item At time $t=1$ is $\|\gamma'(1)\|$ greater than, less than, or equal to $\|\gamma''(1)\|?$
+    \vspace*{4cm}
+    \item Let $f(x,y,z)$ be a scalar field given by
+    \[
+    f(x,y,z) = x+2y+3z.
+    \]
+    \underline{Set up but do not compute} the integral
+    \[
+    \int_\gamma f(\gamma)d\gamma,
+    \]
+    over the interval $t_0=2$ to $t_1=3$.
+\end{enumerate}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 3}
+
+\vspace{.25cm}
+
+\textbf{(i)} \underline{True or false:} The gradient $\nabla f(x,y,z)$ of a scalar function $f(x,y,z)$ \emph{always} points in the direction of greatest increase.
+\vspace*{1cm}
+
+\textbf{(ii)} Consider the scalar field 
+\[
+f(x,y) = -x^2+y.
+\]
+Draw and label the level curves $f(x,y)=c$ for the values $c_0=0$, $c_1=1$, and $c_2=2$ in the plane below.
+
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+    \draw[thin,gray!80] (-5,-3) grid (5,5);
+    \draw[<->] (-5,0)--(5,0) node[right]{$x$};
+    \draw[<->] (0,-3)--(0,5) node[above]{$y$};
+    \end{tikzpicture}
+    \end{center}
+    
+\textbf{(iii)} The following are level curves for a function $g(x,y)$.  Draw and label an approximation of the gradient in the plane below at the points 
+\[
+p_1=(-1,1) \quad p_2 = (1,-1) \quad p_3 = (1,0) \quad p_4 = (1,1).
+\]
+    \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+    \draw[thin,gray!80] (-3,-3) grid (3,3);
+    \draw[<->] (-3,0)--(3,0) node[right]{};
+    \draw[<->] (0,-3)--(0,3) node[above]{};
+    \draw[scale=1,domain=-3:3,smooth,variable=\x,blue,thick] plot ({-\x},{\x});
+    \draw[scale=1,domain=-1.5:3,smooth,variable=\y,blue,thick]  plot ({-\y+1.5},{\y});
+    \draw[scale=1,domain=-.5:3,smooth,variable=\y,blue,thick]  plot ({-\y+2.5},{\y});
+    \draw[scale=1,domain=.25:3,smooth,variable=\y,blue,thick]  plot ({-\y+3.25},{\y});
+    \draw[scale=1,domain=.75:3,smooth,variable=\y,blue,thick]  plot ({-\y+3.75},{\y});
+    \draw[scale=1,domain=-3:1,smooth,variable=\y,blue,thick]  plot ({-\y-2},{\y});
+    \draw[scale=1,domain=-2:-3,smooth,variable=\y,blue,thick]  plot ({-\y-5},{\y});
+    \draw[.] (3,-3) node[right]{$g(x,y)=0$};
+    \draw[.] (3,-1.5) node[right]{$g(x,y)=1$};
+    \draw[.] (3,-.5) node[right]{$g(x,y)=2$};
+    \draw[.] (3,.25) node[right]{$g(x,y)=3$};
+    \draw[.] (3,.75) node[right]{$g(x,y)=4$};
+    \draw[.] (-3,-2) node[left]{$g(x,y)=-2$};
+    \draw[.] (-3,1) node[left]{$g(x,y)=-1$};
+    \end{tikzpicture}
+    \end{center}
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 4} 
+
+\vspace{.25cm}
+
+Define the vector field 
+\[
+\mathbf{v}(x,y) = \frac{1}{2}(-y,x,0).
+\]
+
+\begin{enumerate}[(a)]
+    \item Draw and clearly label the vector field at the points 
+    \begin{Parallel}{0.45\textwidth}{0.45\textwidth}
+\ParallelLText{
+    \begin{itemize}
+    \item $p_1=(0,1,0)$,
+    \item $p_2=(0,-1,0)$,
+    \item $p_3=(1,0,0)$,
+    \item $p_4=(-1,0,0)$,
+    \end{itemize}
+}
+\ParallelRText{
+    \begin{itemize}
+    \item $p_5=(1,1,0)$,
+    \item $p_6=(1,-1,0)$,
+    \item $p_7=(-1,1,0)$,
+    \item $p_8=(-1,-1,0)$.
+    \end{itemize}
+    }
+\ParallelPar
+\end{Parallel}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.75]
+    \draw[thin,gray!80] (-2,-2) grid (2,2);
+    \draw[<->] (-2,0)--(2,0) node[right]{$x$};
+    \draw[<->] (0,-2)--(0,2) node[above]{$y$};
+    \end{tikzpicture}
+    \end{center}
+    
+    \item \underline{True or false:} This vector field has nonzero divergence at the origin $(0,0,0)$. Explain your answer using your graph above or by computing the divergence.
+    \vspace*{4cm}
+    \item \underline{True or false:} This vector field has nonzero curl at the origin $(0,0,0)$. Explain your answer using the graph above or by computing the curl.
+\end{enumerate}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 5}
+
+\vspace{.25cm}
+
+\textbf{(i)} Consider the surface given by the graph of the function
+\[
+f(x,y) = x^2-y^2.
+\]
+Find the equation for the tangent plane that best approximates this surface at the point $(x,y)=(3,4)$.
+\vspace*{7cm}
+
+\textbf{(ii)} Consider the scalar function
+\[
+g(x,y)=\cos(x)\sin(y).
+\]
+Show that the point $(x,y)=(0,\pi/2)$ is a local maximizer of $g(x,y)$.
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 6} 
+
+\vspace{.25cm}
+
+\textbf{(i)} \underline{True or false:} If a vector field $\mathbf{v}(x,y,z)$ satisfies 
+\[
+\nabla \cdot \mathbf{v}(x,y,z) = 0
+\]
+then there \emph{always} exists a potential function $f(x,y,z)$ so that
+\[
+\nabla f(x,y,z) = \mathbf{v}(x,y,z).
+\]
+\vspace*{1cm}
+
+
+\textbf{(ii)} Consider the scalar function
+\[
+f(x,y) = \frac{1}{2}x+\cos(y).
+\]
+Integrate this function over the region $0\leq x \leq 1$ and $0\leq y \leq \pi$. \emph{Do explicitly compute this integral.}
+\vspace*{8cm}
+
+\textbf{(iii)} Given a scalar function 
+\[
+g(x,y,z) = \sin(x)\sin(y)\sin(z),
+\]
+compute the \emph{Laplacian} of $g$ which is given by divergence of the gradient of $g$, 
+\[
+\nabla \cdot (\nabla g(x,y,z)).
+\]
+\vspace*{5cm}
+
+
+
+
+
+
+
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}  

@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 2}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Relevant Sections:} 18.1, 18.3, 17.2, 17.2, 17.3.\\
+
+\noindent\textbf{Problem 1.} Which of the following are linear transformations? For those that are not, which properties of \emph{linearity} (the properties (i), (ii), and (iii) in our notes) fail? Show your work.
+\begin{enumerate}[(a)]
+    \item $T_a \colon \R \to \R$ given by $T_a(x)=\frac{1}{x}$.
+    \item $T_b \colon \R^3 \to \R^2$ given by
+    \[
+    T_b \left( \begin{bmatrix} x\\ y\\ z \end{bmatrix}\right)
+    = \begin{bmatrix} x\\ y \end{bmatrix}.
+    \]
+    \item $T_c \colon \R \to \R^3$ given by
+    \[
+    T_c(t)=\begin{bmatrix} t\\ t^2\\ t^3 \end{bmatrix}.
+    \]
+    \item $T_d \colon \R^2 \to \R^3$ given by
+    \[
+    T_d\left( \begin{bmatrix} x\\ y \end{bmatrix}\right)
+    = \begin{bmatrix} x+y\\ x+y\\ x+y \end{bmatrix}.
+    \]
+\end{enumerate}
+
+\noindent\textbf{Problem 2.} Write down the matrix for the following linear transformation $T\colon \R^3 \to \R^3$:
+\[
+T\left( \begin{bmatrix} x\\ y\\ z \end{bmatrix}\right)
+= \begin{bmatrix} x+y+z\\ 2x\\ 3y + z \end{bmatrix}.
+\]
+
+
+\noindent\textbf{Problem 3.} Compute the following:
+\begin{enumerate}[(a)]
+    \item 
+    \[
+    \mathbf{A}=\begin{bmatrix} 1& 1& 1 \end{bmatrix}
+    \begin{bmatrix} 2\\ 1\\ 3 \end{bmatrix}.
+    \]
+    \item 
+    \[
+    \mathbf{B}=\begin{bmatrix} 5& 0& 0\\ 2& 2& 2\end{bmatrix}
+    \begin{bmatrix} 3\\ 2\\ 1 \end{bmatrix}
+    \]
+    \item
+    \[
+    \mathbf{C}=\begin{bmatrix} 1& 2& 3& 4\\ 5& 6& 7& 8\\ 9& 10& 11& 12\end{bmatrix}
+    \begin{bmatrix} 3& 2\\ 2& 3\\ 3& 2\\ 2& 3\end{bmatrix}
+    \]
+    \item Take
+    \[
+    \mathbf{M}=\begin{bmatrix} 10& 15\\ 20& 10 \end{bmatrix}
+    \]
+    and
+    \[
+    \mathbf{N}=\begin{bmatrix} 1 & 2\\ 2& 1\end{bmatrix}.
+    \]
+    Find $3\mathbf{MN}-3\mathbf{NM}$.
+\end{enumerate}
+
+\noindent\textbf{Problem 4.} Compute the following determinants:
+\begin{enumerate}[(a)]
+    \item
+    \[
+    \det(\mathbf{A})=\left| \begin{array}{cc}
+    -3& 6\\
+    -3& 6
+    \end{array}\right|
+    \]
+    \item 
+    \[
+    \det(\mathbf{B})=\left| \begin{array}{ccc}
+    1& 2& 3\\
+    4& 5& 6\\
+    7& 8& 9
+    \end{array}\right|
+    \]
+    \item    
+    \[
+    \det(\mathbf{C})=\left| \begin{array}{ccc}
+    \lambda& 2& 0\\
+    0& \lambda -1& 5\\
+    0& 0& \lambda
+    \end{array}\right|
+    \]
+\end{enumerate}
+
+\noindent\textbf{Problem 5.} A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
+\[
+\mathbf{T}= \begin{bmatrix}
+1& 2& 0\\
+2& 1& 2\\
+0& 2& 1
+\end{bmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
+    \[
+    T\left(\begin{bmatrix} 1\\ 0\\ 0\end{bmatrix}\right), \quad
+    T\left(\begin{bmatrix} 0\\ 1\\ 0\end{bmatrix}\right), \quad 
+    T\left(\begin{bmatrix} 0\\ 0\\ 1\end{bmatrix}\right).
+    \]
+    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: the determinant of this matrix $\mathbf{T}$ provides us this information.})
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}  

@@ -1,0 +1,264 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 9: \emph{Solutions}}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 1.} Write the following as a differential equation:
+
+\emph{The rate of change of an animal population grows proportionally to the current population times the difference of the current population from the maximum population.}
+
+This equation you will write models the population dynamics of many biological systems that breed and compete for food.
+\begin{solution}
+Let the animal population at the time $t$ be given by the function $N(t)$.  Then let the maximum population be $M$.  Based on the statement we know that we should have
+\[
+N'(t) \propto N(t)(M-N(t)),
+\]
+where the symbol $\propto$ means ``proportional to."  Since we don't know this proportion, we just choose a parameter $k$ to represent this proportion.  Then our equation reads
+\[
+N'(t) = k N(t) (M-N(t)).
+\]
+\end{solution}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 2.} Show that 
+\[
+f(t)=te^{t}+e^t
+\]
+solves the differential equation
+\[
+f'(t)=f(t)+e^t.
+\]
+\begin{solution}
+We simply take the derivative of the given $f$, 
+\begin{align*}
+    f'(t)&= \frac{d}{dt} (te^t + e^t )\\
+    &= e^t + te^t + e^t \\
+    &= f(t) +e^t.
+\end{align*}
+So this $f(t)$ is indeed a solution.
+\end{solution}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 3.} The change in position $x(t)$ of a particle follows the ODE
+\[
+x'(t)=tx
+\]
+and satisfies the initial condition $x(0)=1$.  Find the exact solution to this ODE.
+\begin{solution}
+We can separate this equation since we have
+\[
+x'(t)=\frac{dx}{dt}
+\]
+and a right hand side that is a function of $t$ times a function of $x$. So we get
+\begin{align*}
+    \frac{dx}{dt} &= tx\\
+    \iff dx &= txdt\\
+    \iff \frac{dx}{x}&=tdt.
+\end{align*}
+Now we can integrate both sides
+\begin{align*}
+    \int \frac{1}{x}dx &= \int tdt\\
+    \iff \ln(x)&=\frac{t^2}{2} + C.
+\end{align*}
+Then we can solve for $x(t)$
+\begin{align*}
+    x(t)&= e^{\frac{t^2}{2}+C}\\
+    &= e^Ce^{\frac{t^2}{2}}\\
+    &= Ae^{\frac{t^2}{2}}.
+\end{align*}
+Now, we know that
+\[
+x(0)=1
+\]
+and from our general solution
+\[
+x(0) = Ae^{\frac{0^2}{2}}=A
+\]
+which means that
+\[
+A=1.
+\]
+So the particular solution is
+\[
+x(t)=e^{\frac{t^2}{2}}.
+\]
+\end{solution}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 4.} Consider the simple predator-prey ($x$ is predator, $y$ is prey) interaction model given by
+\begin{align*}
+    x'(t) &= Ax+ B y\\
+    y'(t) &= -C x + Dy
+\end{align*}
+where $A,B,C,$ and $D$ are all positive constants.
+\begin{enumerate}[(a)]
+    \item Write in words what the equation for $x'$ is describing.
+    \item Write in words what the equation for $y'$ is describing.
+    \item Note that this equation is linear.  So write the pair of coupled equations as a single vector-matrix equation
+    \[
+    \mathbf{v}'(t) = M\mathbf{v}(t).
+    \]
+\end{enumerate}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item The equation for $x'$ tells us that the population of predators grows as there are more predators.  This is due to breeding.  Also, we can see that the population grows if there are more prey present (the $By$ term) which makes intuitive sense.  The more available food, the more breeding we can expect.
+    \item The $y'$ equation is telling us that the number of prey decrease (since the $-C$ is negative) based on the number of predators.  Since predators consume prey, this makes sense.  However, more prey allows for more breeding, so we see prey being generated by the $Dy$ term.
+    \item We let 
+    \[
+    \mathbf{v}(t) = \begin{bmatrix} x(t) \\ y(t) \end{bmatrix}
+    \]
+    and this means that 
+    \[
+    \mathbf{v}'(t) = \begin{bmatrix} x'(t) \\ y'(t) \end{bmatrix}.
+    \]
+    Then, recall that a $2\times2$-matrix times a 2-dimensional vector (or $2\times 1$-matrix) gives us back a 2-dimensional vector.  So we want
+    \[
+    M= \begin{bmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{bmatrix}.
+    \]
+    Specifically, we want
+    \[
+    \begin{bmatrix} x'(t) \\ y'(t) \end{bmatrix} = \begin{bmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{bmatrix}\begin{bmatrix} x(t) \\ y(t) \end{bmatrix}.
+    \]
+    If we multiply the matrices on the right hand side, we get
+    \[
+    \begin{bmatrix} M_{11} x + M_{12} y\\ M_{21} x + M_{22}y \end{bmatrix}.
+    \]
+    Given our system of ODE, we want
+    \[
+    \begin{bmatrix} Ax + BY \\ -Cx + Dy \end{bmatrix} = \begin{bmatrix} M_{11} x + M_{12} y\\ M_{21} x + M_{22}y \end{bmatrix}
+    \]
+    which gives us
+    \begin{align*}
+        M_{11} &= A & M_{12} &= B\\
+        M_{21} &= -C & M_{21} &= D.
+    \end{align*}
+    So our matrix $M$ is
+    \[
+    \begin{bmatrix} A & B \\ -C & D \end{bmatrix}
+    \]
+    and the whole equation reads
+    \[
+    \begin{bmatrix} x' \\ y\ \end{bmatrix} = \begin{bmatrix} A & B \\ -C & D \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}.
+    \]
+\end{enumerate}
+\end{solution}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 5.} Consider the following second order linear differential equation
+\[
+f''(t)-\mu f'(t) + f(t) = kt
+\]
+which models a forced oscillation in a damping material.  For example, imagine moving your hand back and forth underwater.  Write this equation as a set of coupled first order equations by doing the following:
+\begin{itemize}
+    \item Define a new function $g=f'(t)$.  This gives you one of the two coupled equations.
+    \item Use the given ODE, $g$, and its derivatives to write the second first order equation.
+    \item Both of these equations together are now a system of coupled first order equations (which are much easier to solve).
+\end{itemize}
+
+\begin{solution}
+Here we will follow the bulleted list.
+\begin{itemize}
+    \item Let's define $g(t)=f'(t)$.  This is a first order equation.
+    \item Note that we have $g'(t)=f''(t)$.  This allows us to substitute into our original ODE
+    \[
+    f''(t)-\mu f'(t)+f(t)=kt
+    \]
+    by using $g(t)$ and its derivatives. So we get
+    \[
+    g'(t)-\mu g(t) + f(t) = kt.
+    \]
+    \item So our system of equations is
+    \begin{align}
+        f'(t)&=g(t)\\
+        g'(t)&= \mu g(t) - f(t) + kt.
+    \end{align}
+\end{itemize}
+\end{solution}
+
+
+
+
+\end{document}  

@@ -1,0 +1,73 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            % Provides \checkmark
+\usepackage[firstpage]{draft watermark}             % Allows the watermark stuff
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\DD}{\displaystyle}
+\usepackage{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\SetWatermarkText{
+\begin{minipage}[c][8cm]{8cm}
+\begin{center}
+ 
+\end{center}
+\end{minipage}
+}
+\SetWatermarkScale{1.5}
+\SetWatermarkColor[gray]{0.75}
+
+
+
+\begin{center}
+   \textsc{\large MATH 255, Project Rubric}
+\end{center}
+\vspace{.5cm}
+
+The final project for Math 255 should satisfy the following guidelines:
+\begin{itemize}
+    \item Work in groups of 3-5 people (unless otherwise specified).
+    \item Must be typed.  Use double spacing.  Should be 5-7 pages ($n+2$ pages where $n$ is your group size).
+    \item Cite your sources in MLA/APA or some other common format.  Just be consistent.
+    \item Reference where you use your sources throughout the paper.
+    \item Topic must be tangentially related to the material we have covered in Math 155 or Math 255.
+\end{itemize}
+
+The paper should be written in a scientific format.  You should have the following:
+\begin{itemize}
+    \item An abstract,
+    \item an introduction,
+    \item a main body (can be a few sections),
+    \item a conclusion.
+\end{itemize}
+
+Here is an example that follows this format: \url{https://arxiv.org/pdf/1612.03540.pdf}
+\hspace*{1cm}
+
+Below is a rubric for the project. It should give you a rough idea on what is expected of you. \emph{These points are subject to change up to my discretion.}
+
+\textbf{Difficulty of topic (5pts):} Topics that are more difficult to conceptualize are worth a bit more.  You should consult me if you want to know what I think the difficulty of your potential topic is.
+
+\textbf{Meets requirements (15 pts):} The requirements above should be followed as best as possible.  Again, if you are worried you may be missing something, just ask.
+
+\textbf{Grammar \& Spelling (20pts):} The paper should be written using proper grammar and spelling.  When working with a group, this can be more of a challenge compared to working by yourself.  Be careful.
+
+\textbf{Organization: (20 pts):} Present the paper as if you were telling a story.  A story should not jump erratically from topic to topic but it should flow nicely and logically.   Make the goals of your analysis clear.
+
+\textbf{Background: (20 pts):} Why is this topic important?  Why is it interesting to you? Where did the problem come from?  Are there more modern approaches or research in this topic?  This should be an introduction to the story I'm wanting you to tell.
+
+\textbf{Demonstrated knowledge (20 pts):} You should write in a way that shows me you have used what we have learned over the semester.  Don't leave gaps of logic throughout the paper.  If something is difficult to explain, then try to say as much as you can.
+\end{document}  

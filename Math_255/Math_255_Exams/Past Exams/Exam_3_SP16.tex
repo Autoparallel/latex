@@ -1,0 +1,301 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            % Provides \checkmark
+\usepackage[firstpage]{draft watermark}             % Allows the watermark stuff
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\DD}{\displaystyle}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\SetWatermarkText{
+\begin{minipage}[c][8cm]{8cm}
+\begin{center}
+Relax; you've got this!
+\end{center}
+\end{minipage}
+}
+\SetWatermarkScale{3}
+\SetWatermarkColor[gray]{0.85}
+
+
+
+\begin{center}
+   \textsc{\large MATH 255, Final Exam}\\
+\end{center}
+\vspace{1cm}
+
+\textbf{Name} \; \underline{\hspace{5cm}}
+
+\vspace{1cm}
+
+\textbf{Instructions} \; No notes, textbook, homework, or calculators may be used for this exam. The exam is designed to take two hours and must be submitted at the end of the exam period. All of your solutions should be easily identifiable and supporting work must be shown. You may use any part of this packet as scratch paper, but please clearly label what work you want to be considered for grading. Ambiguous or illegible answers will not be counted as correct.
+
+%\vspace{1cm}
+%
+%\textbf{Problem 1} \; \underline{\hspace{.75cm}}/18
+%
+%\vspace{.25cm}
+%
+%\textbf{Problem 2} \; \underline{\hspace{.75cm}}/18
+%
+%\vspace{.25cm}
+%
+%\textbf{Problem 3} \; \underline{\hspace{.75cm}}/18
+%
+%\vspace{.25cm}
+%
+%\textbf{Problem 4} \; \underline{\hspace{.75cm}}/18
+%
+%\vspace{.25cm}
+%
+%\textbf{Problem 5} \; \underline{\hspace{.75cm}}/18
+%
+%\vspace{.25cm}
+%
+%\textbf{Problem 6} \; \underline{\hspace{.75cm}}/18
+%
+%\vspace{.25cm}
+%
+%\textbf{Problem 7} \; \underline{\hspace{.75cm}}/17
+%
+%\vspace{.25cm}
+%
+%\textbf{Bonus} \;\hspace{.9cm} \underline{\hspace{.75cm}}/10
+%
+%\vspace{.25cm}
+%
+%\textbf{Total} \;\hspace{1.1cm} \underline{\hspace{.75cm}}/100
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 1}
+
+\vspace{.25cm}
+
+\textbf{(i)} Is the following statement True or False? Justify your answer.
+\begin{center}
+The function $\DD y=\frac{1}{4}x^2+\frac{2}{x^2}$ is a solution to the differential equation $\DD y' = \frac{x^2-2y}{x}$.
+\end{center}
+
+\vspace{5cm}
+
+\textbf{(ii)} If $y(0) = \frac{1}{2}$, find the specific solution to the differential equation
+\begin{align*}
+\frac{dy}{dt} = -4y^2t^3.
+\end{align*}
+
+
+
+\vspace{11cm}
+
+\textbf{(iii)} Verify that the solution you found in (ii) is correct.
+
+
+
+
+
+\newpage
+
+\textbf{Problem 2}
+
+\vspace{.25cm}
+
+\textbf{(i)} Consider the differential equation
+\begin{align*}
+y'' = ay' + by
+\end{align*}
+where $a$ and $b$ are constants.
+\begin{itemize}
+\item[(a)] What sort of differential equation is this? Use as many relevant adjectives as possible.
+\item[(b)] Suppose $y(t) = c_1e^{(2+i)t}$ is one family of solutions. What is another solution?
+\end{itemize}
+
+
+\vspace{6cm}
+
+
+\textbf{(ii)} Consider the differential equation $y'' = -y$.
+\begin{itemize}
+\item[(a)] What sort of motion/system does this equation describe? You may draw a picture if you'd like.
+\item[(b)] Find the general solution in terms of sine and cosine.
+\item[(c)] If $y(0)=-1$ and $y'(0) = 0$, find $y'\left(\frac{\pi}{6}\right)$.
+\end{itemize}
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 3}
+
+\vspace{.25cm}
+
+\textbf{(i)} Consider the differential equation
+\begin{align*}
+y' = 2y+12e^{2t}.
+\end{align*}
+\begin{itemize}
+\item[(a)] What is the integrating factor $F(t)$?
+\item[(b)] What is the general solution?
+\item[(c)] If $y(0) = 39$, what is the specific solution?
+\end{itemize}
+
+
+\vspace{10cm}
+
+\textbf{(ii)} Let $C$ be the curve given by  $y=\ln(x)$ from $x=1$ to $x=e$. Compute
+\begin{align*}
+\int_C \left[e^{2y} \; dx + 2xe^{2y} \; dy\right].
+\end{align*}
+
+
+
+
+\newpage
+
+\textbf{Problem 4}
+
+\vspace{.25cm}
+
+\textbf{(i)} Consider the following inhomogeneous system of linear equations:
+\begin{align*}
+3x+2y &= 17 \\
+-2x+2y &= 12.
+\end{align*}
+\begin{itemize}
+\item[(a)] Write the system as a matrix equation.
+\item[(b)] Solve the equation you wrote \emph{using matrix algebra}.
+\end{itemize}
+
+\vspace{9cm}
+
+\textbf{(ii)} Find the minimum and and maximum of $f(x,y) = 2x-4y$ subject to the constraint $g(x,y) = x^2+y^2 = 5$. Clearly identify which point is the minimum and which is the maximum.
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 5}
+
+\vspace{.25cm}
+
+\textbf{(i)} You are a zookeeper tasked with counting the number of butterflies in the popular $\text{Butterfly Bowl Exhibit}^{\text{TM}}$. Because the butterflies move so quickly, counting them by hand is difficult; however, through clever observation you are able to deduce that the density of butterflies per meter cubed within the exhibit follows the formula
+\begin{align*}
+\beta(x,y,z) = 2^ze^{\sin(x)}(1+y)^2.
+\end{align*}
+Assuming that the exhibit can be modeled as the upper half of the sphere $x^2+y^2+z^2 = 9$ (that is, the part of the sphere above the $xy$-plane), set up \emph{\textbf{but do not evaluate}} the integral which gives the total number of butterflies in the exhibit.
+
+
+
+
+
+\vspace{6cm}
+
+
+\textbf{(ii)} Consider the following differential equation:
+\begin{align*}
+y'' = -4y' - 4y - e^{-t}.
+\end{align*}
+\begin{itemize}
+\item[(a)] What is $y_h(t)$, the general homogeneous solution?
+\item[(b)] What is $y_p(t)$, the particular inhomogeneous solution?
+\item[(c)] If $y(0) = 0$ and $y(1) = 1$, what is the full specific solution?
+\end{itemize}
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 6}
+
+\vspace{.25cm}
+
+\textbf{(i)} Consider the partial differential equation
+\begin{align*}
+f_{xx} = \frac{1}{v^2}f_{tt}
+\end{align*}
+where $v$ is some non-zero constant. Verify that $f(x,t) = a\sin(bx)\cos(vbt)$ is a solution for $a$ and $b$ constants.
+
+
+\vspace{10cm}
+
+
+\textbf{(ii)} Calculate the following matrix product:
+\begin{align*}
+\left[\begin{array}{rlrl} 1 & -3 & 7 & -4 \end{array}\right] \left[\begin{array}{r}
+4 \\ -12 \\ 1 \\ -1
+\end{array}\right]
+\end{align*}
+(You may also consider this as the dot product between the two vectors.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Bonus} 
+
+\vspace{.25cm}
+
+Compute $\DD \int_1^2 \int_{-1}^y \int_0^{2y} (2xyz+2) \; dz \; dx \; dy$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}  

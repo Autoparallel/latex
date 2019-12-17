@@ -1,0 +1,94 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            % Provides \checkmark
+\usepackage[firstpage]{draft watermark}             % Allows the watermark stuff
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\DD}{\displaystyle}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\SetWatermarkText{
+\begin{minipage}[c][8cm]{8cm}
+\begin{center}
+ 
+\end{center}
+\end{minipage}
+}
+\SetWatermarkScale{1.5}
+\SetWatermarkColor[gray]{0.75}
+
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 1}\\
+   Due February 1st
+\end{center}
+\vspace{.5cm}
+
+\textbf{New Reading:} Read sections 16.5, 16.6, 17.1, 17.2, 17.3
+
+\textbf{Relevant Sections:} 16.1, 16.2, 16.3, 16.5, 16.6, 16.10.\\
+
+\textbf{Problem 1.} The \emph{triangle inequality} states that for vectors $\textbf{a}$ and $\textbf{b}$, we have $|\textbf{a}|+|\textbf{b}|\geq |\textbf{a}+\textbf{b}|$. Find an example of a pair $\textbf{a},\textbf{b}$ where strict inequality holds. Find an example of a pair $\textbf{c},\textbf{d}$ where equality holds. Draw a picture for both cases.
+
+\noindent\textbf{Problem 2.} Let $\textbf{a}=(1,3)$, and $\textbf{b}=(5,2)$ be vectors with initial point at the origin and terminal points of $A$ and $B$ respectively. Find a vector that bisects the line segment $AB$ and compute its unit vector.
+
+\noindent\textbf{Problem 3.} Suppose three masses $m_1 = 2$, $m_2 = 3$, $m_3 = 10$ have respective position vectors $\textbf{p}_1 = (1,0,4)$, $\textbf{p}_2 = (0,3,2)$, and $\textbf{p}_3 = (2,2,0)$. What position vector $\textbf{p}_4$ should be assigned to a fourth mass $m_4 = 2$ so that the center of mass of the whole system is at the origin?
+
+\noindent\textbf{Problem 4.} Which two of the following vectors have the smallest difference in angle?
+\begin{align*}
+\textbf{a} = (1,2,3),\; \textbf{b} = (\pi,\pi,1),\; \textbf{c} = (-1,-\pi,3),\; \textbf{d} = (1,-\pi,3).
+\end{align*}
+
+\noindent\textbf{Problem 5.} Let $\textbf{a} = (-3,7,2)$ and $\textbf{b} = (-1,-1,-5)$. Compute $\textbf{a}\times\textbf{b}$ and show that it is orthogonal to both $\textbf{a}$ and $\textbf{b}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}  

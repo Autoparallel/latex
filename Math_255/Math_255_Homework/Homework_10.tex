@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 10}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 1.} Imagine a stream of water on the surface of a river that carries a particle along. The stream velocity is given by
+\[
+\mathbf{v}(x,y)=\begin{bmatrix} v_1 \\ v_2 \end{bmatrix},
+\]
+with $v_1$ and $v_2$ constant. We want to find the trajectory of the particle that begins at the point $(x_0,y_0)$ at time $t=0$.
+\begin{enumerate}[(a)]
+    \item Let $\mathbf{x}(t)$ give the position of the particle at time $t$. Write the differential equation that satisfies the following statement:
+    
+    \emph{At each time $t$, the particle's velocity is equal to the velocity of the stream at that point.}
+    
+    \item Find the particular solution $\mathbf{x}(t)$ that satisfies our initial condition $\mathbf{x}(0)=(x_0,y_0)$.
+    
+    \item Now let $(v_1,v_2)=(5,2)$ and $(x_0,y_0)=(1,2)$.  What is the particular solution? 
+\end{enumerate}
+The advantage to solving problems in this way (i.e., solving as we do in (b) and then using this to solve (c)) is that we have solved a problem that can be changed to suit another future problem.  Leaving parameters in problems is highly advantageous.
+
+\begin{center}\underline{Problems 2-4 are all related.}
+\end{center}
+
+\noindent\textbf{Problem 2.} Consider the nonlinear second order ODE 
+\[
+x''- (1-x^2)x'+x = 0.
+\]
+This is known as the \emph{Van der Pol oscillator}. It models a certain type of mass/spring system. In this case, I have set a parameter $\mu=1$ for simplicity.
+\begin{enumerate}[(a)]
+    \item Why is this equation nonlinear?
+    \item Letting $y=x'$, rewrite this equation as a system of two first order ODE. That is, one equation for $x'$ and the other for $y'$. \emph{Note that $x'$ is a velocity.}
+    \item Plot the vector field given by this system. \emph{Note that this vector field lives in \underline{phase space}. That is, one axis is position and the other is velocity.}
+    \item Using the vector field plot and the ODE itself, predict how this system evolves over time. 
+\end{enumerate}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 3.} Now that we have rewritten the second order equation as system of first order ODE, we now want to solve this problem.  To solve this, we need to linearize.
+\begin{enumerate}[(a)]
+    \item Taking your planar system from Problem 2, linearize the system about the point $(0,0)$. 
+    \item Taking same nonlinear system, linearize instead about the point $(1,1)$.  
+    \item What are differences in the matrices you got for (a) and (b)? 
+\end{enumerate}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 4.} Let's concentrate on solving the linear problem about each of the above points. Your linearizations around $(0,0)$ and $(1,1)$ takes the form
+    \[
+    \mathbf{v}'=M\mathbf{v},
+    \]
+    where $M$ is a $2\times2$-matrix and 
+    \[
+    \mathbf{v}= \begin{bmatrix} x \\ y \end{bmatrix}.
+    \]
+\begin{enumerate}[(a)]
+    \item Find the eigenvalues of the matrix found by linearizing around $(0,0)$.
+    \item Find the eigenvalues of the matrix found by linearizing around $(1,1)$.
+    \item What is the general solution for the linear system about $(0,0)$?
+    \item What is the general solution for the linear system about $(1,1)$?
+    \item How do these different linearizations behave? Are they the same? If not, what is different?
+\end{enumerate}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 5.} One other common type of ordinary differential equation are the \emph{exact} equations.  They are very much related to potential fields that we have previously discussed. This form shows up more often in thermodynamics just due to the nature of the problems.
+
+Let our differential equation be
+\[
+x' = \frac{-x-1}{t+1}.
+\]
+\begin{enumerate}[(a)]
+\item Rewrite this equation in the form
+\[
+P(x,t)dx + Q(x,t)dt = 0.
+\]
+\item Show this equation is exact by showing
+\[
+\frac{\partial P}{\partial t} -  \frac{\partial Q}{\partial x} = 0.
+\]
+\item Since this equation is exact, we can integrate $P(x,t)$ with respect to $x$ determine the solution function up to some additional function of just $t$, $f(t)$.
+
+\item Repeat this, but integrate $Q(x,t)$ with respect to $t$ to determine the solution function up to up some additional function of just $x$, $g(x)$.
+\item This you should now have determined an $F(x,t)$ that is correct up to some constant.  Set this $F(x,t)$ (with the constant) equal to $0$ and solve for $x$ to find $x(t)$.  This is your solution.
+\end{enumerate}
+
+
+
+
+\end{document}  

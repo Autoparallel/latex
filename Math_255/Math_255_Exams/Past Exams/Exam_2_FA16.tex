@@ -1,0 +1,225 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            % Provides \checkmark
+\usepackage[firstpage]{draft watermark}             % Allows the watermark stuff
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\DD}{\displaystyle}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\SetWatermarkText{
+\begin{minipage}[c][8cm]{8cm}
+\begin{center}
+ 
+\end{center}
+\end{minipage}
+}
+\SetWatermarkScale{1.5}
+\SetWatermarkColor[gray]{0.75}
+
+
+
+\begin{center}
+   \textsc{\large MATH 255, Exam 2}\\
+\end{center}
+\vspace{1cm}
+
+\textbf{Name} \; \underline{\hspace{5cm}}
+
+\vspace{1cm}
+
+\textbf{Instructions} \; No notes, textbook, homework, or calculators may be used for this exam. The exam is designed to take 50 minutes and must be submitted at the end of the class period. All of your solutions should be easily identifiable and supporting work must be shown. You may use any part of this packet as scratch paper, but please clearly label what work you want to be considered for grading. Ambiguous or illegible answers will not be counted as correct.
+
+\vspace{1cm}
+
+\textbf{Problem 1} \; \underline{\hspace{.75cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 2} \; \underline{\hspace{.75cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 3} \; \underline{\hspace{.75cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 4} \; \underline{\hspace{.75cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 5} \; \underline{\hspace{.75cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Bonus} \;\hspace{.9cm} \underline{\hspace{.75cm}}/10
+
+\vspace{.25cm}
+
+\textbf{Total} \;\hspace{1.1cm} \underline{\hspace{.75cm}}/100
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 1}
+
+\vspace{.25cm}
+
+\textbf{(i)} Is the following statement True or False? Justify your answer.
+\begin{center}
+If $f(x,y)$ is a scalar field with defined partial derivatives of all orders, 
+
+then $\nabla \cdot \nabla f(x,y) = 0$ for all $(x,y)$.
+\end{center}
+
+\vspace{5cm}
+
+\textbf{(ii)} Let $f(x,y) = x^3 + 6xy^2 - 2y^3 - 12x$. Find all of the stationary points for $f$ and classify each as a local minimum, local maximum, or saddle point.
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 2}
+
+\vspace{.25cm}
+
+\textbf{(i)} Is the following statement True or False? Justify your answer.
+\begin{center}
+If $A$ is a $2\times 2$ matrix with eigenvalues $\lambda_1 = 2$ and $\lambda_2 = 3$,
+
+then $A$ is invertible.
+\end{center}
+
+\vspace{5cm}
+
+
+\textbf{(ii)} Suppose $A$ is a $2\times 2$ matrix with eigenvalues $\lambda_1 = 3$ and $\lambda_2 = 2$, and with corresponding eigenvectors $\textbf{x}_1 = \left[\begin{array}{c} -1 \\ 1\end{array}\right]$ and $\textbf{x}_2 = \left[\begin{array}{c} -2 \\ 3 \end{array}\right]$. Find $A^3$.
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 3}
+
+\vspace{.25cm}
+
+\textbf{(i)} Let $z_1 = -\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$ and $z_2 = \sqrt{3} + i$. Compute the following:
+\begin{itemize}
+\item[(a)] $z_1^{51}$ in Cartesian form.
+\item[(b)] $z_1 z_2$ in polar form.
+\item[(c)] $z_2^{-1}$ in Cartesian form.
+\end{itemize}
+
+
+\vspace{7cm}
+
+\textbf{(ii)} Compute $\DD \int_C \left[x^2 \; dx + \frac{e^y}{x} \; dy\right]$ on the curve $y = 2\ln(x)$ from $x=1$ to $x = e$.
+
+
+
+
+\newpage
+
+\textbf{Problem 4}
+
+\vspace{.25cm}
+
+\textbf{(i)} Consider the vector field $\textbf{F}(x,y) = |y|\textbf{i} + |x|\textbf{j}$. Draw an approximation for this vector field in $\mathbb{R}^2$.
+
+
+\vspace{8cm}
+
+\textbf{(ii)} Find the minimum and and maximum of $f(x,y) = 2x-4y$ subject to the constraint $g(x,y) = x^2+y^2 = 5$. Clearly identify which point is the minimum and which is the maximum.
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 5}
+
+\vspace{.25cm}
+
+%\begin{wrapfigure}{r}{0.3\textwidth} 
+%    \centering
+%    \includegraphics[scale=.5]{region2.png}
+%\end{wrapfigure}
+
+
+(a) You are a zookeeper tasked with counting the number of butterflies in the popular $\text{Butterfly Bowl Exhibit}^{\text{TM}}$. Because the butterflies move so quickly, counting them by hand is difficult; however, through clever observation you are able to deduce that the density of butterflies per meter cubed within the exhibit follows the formula
+\begin{align*}
+\beta(x,y,z) = 2^ze^{\sin(x)}(1+y)^2.
+\end{align*}
+Assuming that the exhibit can be modeled as the upper half of the sphere $x^2+y^2+z^2 = 9$ (that is, the part of the sphere above the $xy$-plane), set up \emph{\textbf{but do not evaluate}} the integral which gives the total number of butterflies in the exhibit.
+
+\vspace{8cm}
+
+
+(b) Let $B$ be the region between the curves $y=x^2$ and $y=x^3$. Evaluate the following integral.
+\begin{align*}
+\int_B 2x-3y \; dA
+\end{align*}
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Bonus} 
+
+\vspace{.25cm}
+
+\text{Let $f(x,y,z)$ be a scalar field with defined partial derivatives of all orders. Show that the} \text{curl of the gradient of $f$ is $\textbf{0}$ everywhere. In other words, show that $\nabla \times \nabla f(x,y,z) = \textbf{0}$.}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}  

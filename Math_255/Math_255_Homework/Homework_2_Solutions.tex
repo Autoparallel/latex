@@ -1,0 +1,467 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 2: \emph{Solutions}}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Relevant Sections:} 18.1, 18.3, 17.2, 17.2, 17.3.\\
+
+\noindent\textbf{Problem 1.} Which of the following are linear transformations? For those that are not, which properties of \emph{linearity} (the properties (i), (ii), and (iii) in our notes) fail? Show your work.
+\begin{enumerate}[(a)]
+    \item $T_a \colon \R \to \R$ given by $T_a(x)=\frac{1}{x}$.
+    \item $T_b \colon \R^3 \to \R^2$ given by
+    \[
+    T_b \left( \begin{bmatrix} x\\ y\\ z \end{bmatrix}\right)
+    = \begin{bmatrix} x\\ y \end{bmatrix}.
+    \]
+    \item $T_c \colon \R \to \R^3$ given by
+    \[
+    T_c(t)=\begin{bmatrix} t\\ t^2\\ t^3 \end{bmatrix}.
+    \]
+    \item $T_d \colon \R^2 \to \R^3$ given by
+    \[
+    T_d\left( \begin{bmatrix} x\\ y \end{bmatrix}\right)
+    = \begin{bmatrix} x+y\\ x+y\\ x+y \end{bmatrix}.
+    \]
+\end{enumerate}
+
+\begin{solution}
+The three checks we make to see if $T$ is linear are
+\begin{enumerate}[(i)]
+    \item $T(\mathbf{v}+\mathbf{w})=T(\mathbf{v})+T(\mathbf{w})$;
+    \item $T(\lambda \mathbf{v})=\lambda T(\mathbf{v})$;
+    \item $T(\mathbf{0})=\mathbf{0}$.
+\end{enumerate}
+Logically, (i) or (ii) imply (iii).  However, (iii) is a nice quick check for linearity.
+\begin{enumerate}[(a)]
+    \item This function is nonlinear.  To see this, let us compare the Left Hand Side (LHS) with the Right Hand Side (RHS).
+    
+    \begin{enumerate}[(i)]
+    \item     \noindent\underline{LHS:}
+    \[
+    T_a(x+y)=\frac{1}{x+y}.
+    \]
+    
+    \noindent\underline{RHS:}
+    \[
+    T_a(x)+T_a(y)=\frac{1}{x}+\frac{1}{y}.
+    \]
+    
+    Clearly we have LHS$\neq$RHS.  Just take $x=y=1$.
+    
+    \item     \noindent\underline{LHS:}
+    \[
+    T_a(\lambda x)=\frac{1}{\lambda x}.
+    \]
+    
+    \noindent\underline{RHS:}
+    \[
+    \lambda T_a(x)=\frac{\lambda}{x}.
+    \]
+    So LHS$\neq$RHS.
+    
+    \item We cannot even consider $1/0$ as this is not well-defined.  Clearly (iii) does not hold.
+    \end{enumerate}
+    
+    \item This function is linear. 
+
+    \begin{enumerate}[(i)]
+    \item     \noindent\underline{LHS:}
+    \[
+    T_b(\mathbf{v}+\mathbf{w})=T_b\left( \begin{bmatrix} x_1\\y_1\\z_1\end{bmatrix} + \begin{bmatrix} x_2\\y_2\\z_2\end{bmatrix}\right)=T_b\left( \begin{bmatrix} x_1+x_2\\y_1+y_2\\z_1+z_2\end{bmatrix}\right)=\begin{bmatrix} x_1+x_2\\y_1+y_2\end{bmatrix}.
+    \]
+    
+    \noindent\underline{RHS:}
+    \[
+    T_b(\mathbf{v})+T_b(\mathbf{w})=T_b\left( \begin{bmatrix} x_1\\y_1\\z_1\end{bmatrix}\right) + T_b\left(\begin{bmatrix} x_2\\y_2\\z_2\end{bmatrix}\right)=\begin{bmatrix} x_1\\y_1\end{bmatrix}+\begin{bmatrix} x_2\\y_2\end{bmatrix}=\begin{bmatrix} x_1+x_2\\y_1+y_2\end{bmatrix}.
+    \]
+    
+    So the LHS$=$RHS.
+    
+    \item     \noindent\underline{LHS:}
+    \[
+    T_b(\lambda \mathbf{v})=T_b\left( \lambda \begin{bmatrix} x\\y\\z\end{bmatrix}\right)=T_b\left( \begin{bmatrix} \lambda x\\ \lambda y \\ \lambda z \end{bmatrix}\right)=\begin{bmatrix} \lambda x\\ \lambda y \end{bmatrix}.
+    \]
+    
+    \noindent\underline{RHS:}
+    \[
+    \lambda T_b(\mathbf{v})=\lambda T_b\left( \begin{bmatrix} x\\y\\z\end{bmatrix}\right) = \lambda \begin{bmatrix} x\\y\end{bmatrix}=\begin{bmatrix} \lambda x \\ \lambda y\end{bmatrix}.
+    \]
+    So LHS$=$RHS.
+    
+    \item We have
+    \[
+    T_b(\mathbf{0})=T_b\left( \begin{bmatrix} 0\\0\\0\end{bmatrix}\right)=\begin{bmatrix} 0\\ 0\end{bmatrix}.
+    \]
+    Notice that these are the $\mathbf{0}$ in different dimensional vector spaces (i.e., $\R^3$ and $\R^2$).  This is allowed.  Just understand that changing the dimension does not change the idea of what we consider to be the origin. Maybe we should denote the input $\mathbf{0}_3$ and the output $\mathbf{0}_2$.  However, it is really unimportant to us at this moment.
+    \end{enumerate}
+    
+    \item This function is nonlinear.
+    \begin{enumerate}[(i)]
+        \item \noindent\underline{LHS:} 
+        \[
+        T_c(t_1+t_2)=\begin{bmatrix} t_1+t_2 \\ (t_1+t_2)^2 \\ (t_1+t_2)^3 \end{bmatrix}.
+        \]
+        
+        \noindent\underline{RHS:}
+        \[
+        T_c(t_1)+T_c(t_2)=\begin{bmatrix} t_1\\ t_1^2 \\ t_1^3 \end{bmatrix} + \begin{bmatrix} t_2\\ t_2^2 \\ t_2^3 \end{bmatrix} = \begin{bmatrix} t_1+t_2 \\ t_1^2+t_2^2 \\ t_1^3+t_2^3 \end{bmatrix}.
+        \]
+        So LHS$\neq$RHS. Just take $t_1=t_2=1$ to see this.
+        
+        \item \noindent\underline{LHS:}
+        \[
+        T_c(\lambda t)=\begin{bmatrix} \lambda t \\ (\lambda t)^2 \\ (\lambda t)^3 \end{bmatrix}.
+        \]
+        
+        \noindent\underline{RHS:}
+        \[
+        \lambda T_c=\lambda \begin{bmatrix} t \\ t^2 \\ t^3 \end{bmatrix} = \begin{bmatrix} \lambda t \\ \lambda t^2 \\ \lambda t^3 \end{bmatrix}.
+        \]
+        So LHS$\neq$RHS.
+        
+        \item Take
+        \[
+        T_c(0)=\begin{bmatrix} 0\\0\\0\end{bmatrix}.
+        \]
+        In this case (iii) holds while (i) and (ii) do not.
+    \end{enumerate}
+    
+    \item This function is linear.
+    
+    \begin{enumerate}[(i)]
+        \item \noindent\underline{LHS:}
+        \[
+        T_d(\mathbf{v}+\mathbf{w})=T_d\left( \begin{bmatrix} x_1\\y_1 \end{bmatrix} + \begin{bmatrix} x_2\\y_2 \end{bmatrix} \right) =T_d\left( \begin{bmatrix} x_1+x_2\\y_1+y_2 \end{bmatrix}\right) = \begin{bmatrix} x_1+x_2+y_1+y_2\\x_1+x_2+y_1+y_2\\ x_1+x_2+y_1+y_2 \end{bmatrix}.
+        \]
+        
+        \noindent\underline{RHS:}
+        \[
+        T_d(\mathbf{v})+T_d(\mathbf{w})=T_d\left( \begin{bmatrix} x_1 \\ y_1 \end{bmatrix}\right) T_d \left( \begin{bmatrix} x_2 \\ y_2 \end{bmatrix}\right)=\begin{bmatrix} x_1+y_1\\x_1+y_1\\x_1+y_1\end{bmatrix} +\begin{bmatrix} x_2+y_2\\x_2+y_2\\x_2+y_2\end{bmatrix}=\begin{bmatrix} x_1+x_2+y_1+y_2\\x_1+x_2+y_1+y_2\\ x_1+x_2+y_1+y_2\end{bmatrix}.
+        \]
+        So the LHS$=$RHS.
+        
+        \item \noindent\underline{LHS:}
+        \[
+        T_d(\lambda \mathbf{v})=T_d\left( \lambda \begin{bmatrix} x\\ y\end{bmatrix} \right) =T_d\left( \begin{bmatrix}\lambda x\\ \lambda y\end{bmatrix} \right)= \begin{bmatrix} \lambda x + \lambda y\\ \lambda x + \lambda y \\ \lambda x + \lambda y\end{bmatrix}.
+        \]
+        
+        \noindent\underline{RHS:}
+        \[
+        \lambda T_d(\mathbf{v}=\lambda T_d\left( \begin{bmatrix} x\\ y\end{bmatrix}\right) = \lambda \begin{bmatrix} x+y\\x+y\\x+y\end{bmatrix}=\begin{bmatrix} \lambda x + \lambda y\\ \lambda x + \lambda y \\ \lambda x + \lambda y\end{bmatrix}.
+        \]
+        So the LHS$=$RHS.
+        
+        \item Take
+        \[
+        T_d(\mathbf{0})=T_d\left( \begin{bmatrix} 0\\0\end{bmatrix}\right) = \begin{bmatrix} 0\\0\\0\end{bmatrix}.
+        \]
+        So (iii) also holds.
+    \end{enumerate}
+\end{enumerate}
+\end{solution}
+
+\noindent\textbf{Problem 2.} Write down the matrix for the following linear transformation $T\colon \R^3 \to \R^3$:
+\[
+T\left( \begin{bmatrix} x\\ y\\ z \end{bmatrix}\right)
+= \begin{bmatrix} x+y+z\\ 2x\\ 3y + z \end{bmatrix}.
+\]
+
+\begin{solution}
+A linear transformation and left multiplication of a vector by a matrix are analogous.  What I'm saying here is to find a matrix
+\[
+T=\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{bmatrix}
+\]
+so that
+\[
+\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{bmatrix} \begin{bmatrix} x\\y\\z \end{bmatrix} = \begin{bmatrix} x+y+z\\2x\\3y+z\end{bmatrix}.
+\]
+We do the matrix multiplication on the left hand side and I'll rewrite the right hand side slightly to get
+\[
+\begin{bmatrix} a_{11}x+a_{12}y+a_{13}z\\a_{21}x+a_{22}y+a_{23}z\\a_{31}x+a_{32}y+a_{33}z\end{bmatrix} = \begin{bmatrix} 1x+1y+1z\\2x+0y+0z\\0x+3y+1z\end{bmatrix}.
+\]
+Notice this gives us the system of equations that allow us to solve for the $a_{ij}$. Namely,
+\begin{align*}
+    a_{11}x+a_{12}y+a_{13}z&=1x+1y+1z\\
+    a_{21}x+a_{22}y+a_{23}z&=2x+0y+0z\\
+    a_{31}x+a_{32}y+a_{33}z&=0x+3y+1z.
+\end{align*}
+The coefficients infront of the $x$, $y$, and $z$ must match on each line which leads us to
+\[
+T=\begin{bmatrix} 1 & 1 & 1\\ 2 & 0 & 0\\ 0 & 3 & 1\end{bmatrix}.
+\]
+You can double check this by performing the matrix multiplication again.
+\end{solution}
+
+
+\noindent\textbf{Problem 3.} Compute the following:
+\begin{enumerate}[(a)]
+    \item 
+    \[
+    \mathbf{A}=\begin{bmatrix} 1& 1& 1 \end{bmatrix}
+    \begin{bmatrix} 2\\ 1\\ 3 \end{bmatrix}.
+    \]
+    \item 
+    \[
+    \mathbf{B}=\begin{bmatrix} 5& 0& 0\\ 2& 2& 2\end{bmatrix}
+    \begin{bmatrix} 3\\ 2\\ 1 \end{bmatrix}
+    \]
+    \item
+    \[
+    \mathbf{C}=\begin{bmatrix} 1& 2& 3& 4\\ 5& 6& 7& 8\\ 9& 10& 11& 12\end{bmatrix}
+    \begin{bmatrix} 3& 2\\ 2& 3\\ 3& 2\\ 2& 3\end{bmatrix}
+    \]
+    \item Take
+    \[
+    \mathbf{M}=\begin{bmatrix} 10& 15\\ 20& 10 \end{bmatrix}
+    \]
+    and
+    \[
+    \mathbf{N}=\begin{bmatrix} 1 & 2\\ 2& 1\end{bmatrix}.
+    \]
+    Find $3\mathbf{MN}-3\mathbf{NM}$.
+\end{enumerate}
+
+\begin{solution}
+We just multiply these out. 
+\begin{enumerate}[(a)]
+    \item We have a $1\times 3$ on a $3\times 1$. So we expect a $1\times 1$ output.
+    \[
+    \mathbf{A}=\begin{bmatrix} 1\cdot 2 + 1 \cdot 1 + 1 \cdot 3 \end{bmatrix} =\begin{bmatrix} 6 \end{bmatrix}.
+    \]
+    
+    \item We have a $2\times 3$ on a $3 \times 1$. So we expect a $2\times 1$ output.
+    \[
+    \mathbf{B}=\begin{bmatrix} 5\cdot 3 +0 \cdot 2 +0\cdot 1\\ 2 \cdot 3 + 2\cdot 2 + 2 \cdot 1 \end{bmatrix}= \begin{bmatrix} 15 \\ 12 \end{bmatrix}.
+    \]
+    
+    \item We have a $3\times 4$ on a $4 \times 2$. So we expect a $3\times 2$ output.
+    \[
+    \mathbf{C}&= \begin{bmatrix} 1\cdot 3 + 2\cdot 2 + 3\cdot 3 + 4 \cdot 2 & 1\cdot 2 + 2\cdot 3 + 3\cdot 2 + 4 \cdot 3\\
+    5\cdot 2 + 6\cdot 2 + 7\cdot 3 + 8\cdot 2 & 5\cdot 2 + 6\cdot 3 + 7\cdot 2 + 8\cdot 3\\
+    9\cdot 3 + 10\cdot 2 + 11\cdot 3 +12\cdot 2 & 9\cdot 2 + 10\cdot 3 + 11\cdot 2 + 12\cdot 3\end{bmatrix}= \begin{bmatrix} 24 & 26\\ 64 & 66 \\ 104 & 106\end{bmatrix}.
+    \]
+    
+    \item First, note that in general for two matrices $A$ and $B$ that $AB\neq BA$.  So we cannot a priori assume $3\mathbf{MN}-3\mathbf{NM}=0$. Second, we can rewrite
+    \[
+    3\mathbf{MN}-3\mathbf{NM}=3(\mathbf{MN}-\mathbf{NM}).
+    \]
+    (\emph{Aside: The quantity $\mathbf{MN}-\mathbf{NM}$ is sometimes written $[\mathbf{M},\mathbf{N}]$ and is called the commutator.  This relationship is necessary to understand in quantum mechanics!})
+    
+    We compute
+    \[
+    \mathbf{MN}=\begin{bmatrix} 10 & 15 \\ 20 & 10\end{bmatrix} \begin{bmatrix} 1 & 2\\ 2&1\end{bmatrix} =
+    \begin{bmatrix} 10\cdot 1+15\cdot 2 & 10\cdot 2 + 15\cdot 1\\ 20\cdot 1 + 10\cdot 2 & 20\cdot 2 + 10\cdot 1\end{bmatrix} =\begin{bmatrix} 40 & 35\\ 40 & 50\end{bmatrix}
+    \]
+    and
+    \[
+    \mathbf{NM}=\begin{bmatrix} 1 & 2\\ 2 & 1\end{bmatrix} \begin{bmatrix} 10 & 15\\ 20 & 10\end{bmatrix} = \begin{bmatrix} 1\cdot 10 + 2\cdot 20 & 1 \cdot 15 + 2\cdot 10\\ 2\cdot 10 + 1\cdot 20 & 2\cdot 15 + 1\cdot 10\end{bmatrix} =\begin{bmatrix}50 & 35\\ 40 & 40 \end{bmatrix}.
+    \]
+    Then we have
+    \[
+    3(\mathbf{MN}-\mathbf{NM})=3\cdot \left( \begin{bmatrix} 40 & 35 \\ 40 & 50 \end{bmatrix} - \begin{bmatrix} 50 & 35 \\ 40 & 40 \end{bmatrix}\right) = 3\cdot \begin{bmatrix} -10 & 0\\ 0 & 30 \end{bmatrix} = \begin{bmatrix} -30 & 0 \\ 0 & 30 \end{bmatrix}.
+    \]
+\end{enumerate}
+\end{solution}
+
+\noindent\textbf{Problem 4.} Compute the following determinants:
+\begin{enumerate}[(a)]
+    \item
+    \[
+    \det(\mathbf{A})=\left| \begin{array}{cc}
+    -3& 6\\
+    -3& 6
+    \end{array}\right|
+    \]
+    \item 
+    \[
+    \det(\mathbf{B})=\left| \begin{array}{ccc}
+    1& 2& 3\\
+    4& 5& 6\\
+    7& 8& 9
+    \end{array}\right|
+    \]
+    \item    
+    \[
+    \det(\mathbf{C})=\left| \begin{array}{ccc}
+    \lambda& 2& 0\\
+    0& \lambda -1& 5\\
+    0& 0& \lambda
+    \end{array}\right|
+    \]
+\end{enumerate}
+
+\begin{solution}
+We just compute.
+\begin{enumerate}[(a)]
+    \item 
+    \[
+    \det(\mathbf{A})=(-3\cdot 6)-(6\cdot (-3))=0.
+    \]
+    
+    \item Expanding across the top row, we have
+    \begin{align*}
+    \det(\mathbf{B})&=1\cdot \left|\begin{array}{cc}
+        5 & 6 \\
+        8 & 9
+    \end{array}\right| -2 \left|\begin{array}{cc}
+        4 & 6 \\
+        7 & 9
+    \end{array}\right| +3\left| \begin{array}{cc}
+        4 & 5 \\
+        7 & 8
+    \end{array}\right|\\
+    &= (5\cdot 9 - 6\cdot 8)-2(4\cdot 9 - 6\cdot 7)+3(4\cdot 8-5\cdot 7)\\
+    &= -3-2(-6)+3(-3)=0.
+    \end{align*}
+    
+    \item Expanding across the left column, we have
+    \begin{align*}
+    \det(\mathbf{C})&=\lambda \cdot \left|\begin{array}{cc}
+        \lambda -1 & 5 \\
+        0 & \lambda
+    \end{array}\right| -0 \left|\begin{array}{cc}
+        2 & 0 \\
+        0 & \lambda
+    \end{array}\right| +0\left| \begin{array}{cc}
+        2 & 0 \\
+        \lambda -1 & 5
+    \end{array}\right|\\
+    &= \lambda ((\lambda-1)\cdot \lambda - 5\cdot 0)=\lambda^2(\lambda-1).
+    \end{align*}
+\end{enumerate}
+\end{solution}
+
+\noindent\textbf{Problem 5.} A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
+\[
+\mathbf{T}= \begin{bmatrix}
+1& 2& 0\\
+2& 1& 2\\
+0& 2& 1
+\end{bmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
+    \[
+    T\left(\begin{bmatrix} 1\\ 0\\ 0\end{bmatrix}\right), \quad
+    T\left(\begin{bmatrix} 0\\ 1\\ 0\end{bmatrix}\right), \quad 
+    T\left(\begin{bmatrix} 0\\ 0\\ 1\end{bmatrix}\right).
+    \]
+    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: the determinant of this matrix $\mathbf{T}$ provides us this information.})
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item The moral of the story here is that we can understand a linear transformation entirely by how it transforms the standard basis vectors
+    \[
+    \begin{bmatrix} 1 \\ 0 \\ 0\end{bmatrix} \qquad \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \qquad \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}.
+    \]
+    Recall that a linear transformation $T$ is given by left multiplying by the matrix $\mathbf{T}$ above. So
+    \begin{align*}
+        \begin{bmatrix} 1 & 2 & 0\\ 2 & 1 & 2 \\ 0 & 2 & 1\end{bmatrix} \begin{bmatrix} 1 \\ 0\\ 0\end{bmatrix}&= \begin{bmatrix} 1\cdot 1 + 2 \cdot 0 + 0\cdot 0\\ 2\cdot 1 + 1 \cdot 0 + 2\cdot 0 \\ 0 \cdot 1 + 2 \cdot 0 + 1 \cdot 0\end{bmatrix} = \begin{bmatrix} 1 \\ 2 \\ 0\end{bmatrix}\\
+        \begin{bmatrix} 1 & 2 & 0\\ 2 & 1 & 2 \\ 0 & 2 & 1\end{bmatrix} \begin{bmatrix} 0 \\ 1\\ 0\end{bmatrix}&= \begin{bmatrix} 1\cdot 0 + 2 \cdot 1 + 0\cdot 0\\ 2\cdot 0 + 1 \cdot 1 + 2\cdot 0 \\ 0 \cdot 0 + 2 \cdot 1 + 1 \cdot 0\end{bmatrix} = \begin{bmatrix} 2 \\ 1 \\ 2\end{bmatrix}\\
+        \begin{bmatrix} 1 & 2 & 0\\ 2 & 1 & 2 \\ 0 & 2 & 1\end{bmatrix} \begin{bmatrix} 0 \\ 0\\ 1\end{bmatrix}&= \begin{bmatrix} 1\cdot 0 + 2 \cdot 0 + 0\cdot 1\\ 2\cdot 0 + 1 \cdot 0 + 2\cdot 1 \\ 0 \cdot 0 + 2 \cdot 0 + 1 \cdot 1\end{bmatrix} = \begin{bmatrix} 0 \\ 2 \\ 1\end{bmatrix}.
+    \end{align*}
+    Notice that, for example, 
+    \[
+    T\left( \begin{bmatrix} 1\\ 0 \\ 0 \end{bmatrix}\right)=\begin{bmatrix} 1 \\ 2 \\ 0\end{bmatrix}
+    \]
+    is the first column of the matrix $\mathbf{T}$.  We see an analogous result for the second and third basis vectors.  This may help you understand matrix multiplication and linear transformations just a bit more.
+    
+    \item We have that
+    \[
+    \det(\mathbf{T})=-7.
+    \]
+    I did not show work here.  The negative is relatively unimportant for this example since we're just trying to understand how volume is transformed by $T$.  So it turns out in this case, a cube of $1[m^3]$ would be transformed into a parallelopiped with a volume of $7[m^3]$. The minus sign has to do with an ``orientation." Let us not worry about this right now. The idea of how volume is transformed when we apply a transformation will be of utmost importance when we begin integration in 3-dimensional space.
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+
+
+\end{document}  

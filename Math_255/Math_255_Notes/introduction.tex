@@ -1,0 +1,129 @@
+
+    \textcolor{blue}{Add how to read this book.} 
+    
+    \textcolor{blue}{add references to 3blue1brown and such}
+    
+    \textcolor{blue}{Add problem sections?}
+    
+    \section{Introduction}
+    
+    This class should almost be named ``the mathematics of electromagnetism."  Which is very fitting for a more advanced course centered around math for biological sciences. At a very fundamental level, biological processes within our body are all guided by chemical reactions.  Every chemical reaction is really a large amount of electrical interaction between atoms and molecules. Information in the body's nervous system is transmitted by electrical impulses.
+    
+    In order to have a full understanding of the body, one would hope to know what happens on the molecular scale. The theory behind all these types of interactions is mathematical.  Taking the time to learn all of nuanced details of the mathematics, however, is not an easy task. Instead our way of gaining mathematical maturity will be investigating a variety of relevant topics on a more superficial level.
+    
+    Take this course as a first dive into many new areas of math.  There will \emph{immediately} be a wealth of new terms and methods presented to you.  Learning what these are takes effort.  Even keeping terminology correct or what type of object (scalar, vector, matrix, function, etc.) something is can be confusing! 
+    
+    
+    \section{Overview}
+    The three main topics of our course are:
+    \begin{itemize}
+        \item[Part 1:] Linear Algebra
+        \item[Part 2:] Multivariable Calculus
+        \item[Part 3:] Differential Equations
+    \end{itemize}
+    
+    
+    \subsection{Linear Algebra}
+    Linear algebra \index{linear algebra} is concerned with vectors and how we can transform them.  The concept of linearity is surprisingly important.  Many equations we wish to understand will behave in a linear way which allows us to solve them nicely.  Nonlinear problems are not so nice.  
+    
+    Calculus is best understood after seeing some linear algebra.  Much of what we do in calculus in linearization, after all. Take, for example,  derivatives and integrals. 
+    \begin{remark}
+    Take a moment and see if you can find other areas this shows up.
+    \end{remark}
+    
+    
+    \subsection{Multivariable Calculus}
+    Once we have a solid understanding of vectors, we can look at more general (i.e., nonlinear) functions action on them.  A natural question is then to ask about how these functions vary as we vary the input.  This is exactly what we've done previously in calculus, except the functions can eat many numbers at once as opposed to just one.  Not much changes, but things do get tougher here.
+    
+    
+    \subsection{Differential Equations}
+    Sometimes we are only able to understand how quantities of a system change with each other.  A natural first example may be how a ball falls under the force of gravity as time passes. For a more advanced example, imagine a metal rod with one end being heated by a torch and the other submerged underwater.  Can we describe the temperature of the whole rod?  The answer is yes, and it requires us to explore differential equations.
+    
+    There is a \emph{huge} amount to be learned within this field.  Right now, there is very active research in the mathematics itself and likely more research in applications.  Many topics in chemistry and biology are best understood using differential equations.
+
+    
+    \section{Review}
+    This course will require the following:
+    \begin{enumerate}[1.]
+        \item Comfort with algebra.
+        \item Comfort with functions.
+        \item Visualization of functions.
+        \item Knowledge about derivatives.
+        \item Knowledge about integrals.
+        \item Some physical intuition.
+    \end{enumerate}
+    
+    \subsection{Algebra}
+    You should be comfortable manipulating and simplifying algebraic expressions. Be sure you can properly deal with the following:
+    \begin{enumerate}[(a)]
+        \item $\displaystyle{\sqrt{x^2+x^2y^2}=x\sqrt{1+y^2}}$
+        \item $\displaystyle{\frac{x^2+y^2}{x}=x+\frac{y^2}{x}}$
+        \item $\displaystyle{ax^2+bx+c=0}$
+        \item $e^x=y$, so $x=\ln(y)$
+    \end{enumerate}
+    Any algebra from the past that was confusing should be cleared up immediately.  Do not let these mistakes plague you.
+    
+    
+    \subsection{Functions}
+    You should know the input/output relationship a function has (one output for each input).  Make sure you know what each of the following means:
+    \begin{enumerate}[(a)]
+        \item $f(x)=y;~f^{-1}(y)=x$
+        \item $f(g(x))$
+        \item $f(x+y)$
+    \end{enumerate}
+    
+    
+    \subsection{Visualizing Functions}
+    Visualization is a great tool to use.  Each of us should be able to visualize functions of one variable right now.  That is that we can plot $y=f(x)$ for some function $f$.  Visualization for higher dimensions will be an indispensible tool.
+    
+    
+    \subsection{Derivatives}
+    Recall that a \underline{derivative} is the instantaneous rate of change of a function. We defined the derivative $f'$ of $f$ at the point $x$ to be
+    \[
+    f'(x)\coloneqq\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}.
+    \]
+    Try to go over all the derivative rules! 
+    \begin{itemize}
+        \item Sum rule: $\displaystyle{\frac{d}{dx}(f+g)=\frac{df}{dx}+\frac{dg}{dx}}$.
+        \item Constant multiple rule: $\displaystyle{\frac{d}{dx}(cf)}=c\frac{df}{dx}$.
+        \item Product rule: $\displaystyle{\frac{d}{dx}(fg)=\frac{df}{dx}g+f\frac{dg}{dx}}$.
+        \item Chain rule: $\displaystyle{\frac{d}{dx}(f\circ g)=\frac{df}{dg}\frac{dg}{dx}}.$
+    \end{itemize}
+    There's more out there than these, but they will come from those above four.  This notation may be slightly different than what you have seen before. Make sure that you understand what I have written here.
+    
+    
+    \subsection{Integrals}
+    Remember that an \underline{integral} is used to add up very small changes.  There are both \underline{definite} \underline{integrals} and \underline{indefinite integrals}. The former returns a number that tells one the \emph{net} area under a function.  Indefinite integrals, on the other hand, return a function that is the anti-derivative. 
+    
+    Think about all the derivative rules we know:
+    \begin{itemize}
+        \item Sum rule: $\displaystyle{\int f + g dx=\int f dx + \int g dx}$.
+        \item Constant multiple rule: $\displaystyle{\int cf dx = c \int f dx}$.
+    \end{itemize}
+    
+    You should also know how to use the \underline{fundamental theorem of calculus} as well as \underline{integration} \underline{by substitution.}
+    
+    \subsection{Physical Intuition}
+    Nothing beyond elementary physics courses will be necessary.  Really, none of it is \emph{necessary}. However having some intuition is handy. Our motivating problems will be from the real world.  
+    
+    \subsection{Mathematical Symbols You Will See}
+
+Here is a list of symbols you will find in our class (if more come, I will update this list):
+
+\begin{enumerate}[1.]
+\item $\R$, The set of \emph{real numbers}.
+\item $\in$, ``Is a member of." (i.e. $\sqrt{2}\in \R$ can be read as, ``The square root of 2 is a member of the real numbers."
+\item $\neq$, \underline{Not} equal to.
+\item $\approx$, ``Approximately equal to."
+\item $\coloneqq$, We are defining something, i.e., $\frac{df}{dx}\coloneqq \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$.
+\item $\implies$, "Implies."
+\item $\iff$, "If and only if."
+\item $\therefore~$, "Therefore."
+\item $\infty$, Infinity.  \emph{Note: Infinity is \underline{not} a number!}
+\item $\Delta$, A change. (i.e. $\Delta x$ represents a change in the variable $x$).
+\item $\mathbf{v}$, a boldfaced character will represent a vector.
+\item $(x_1,x_2,\dots,x_n)$, a vector with $n$ components.
+\item $\begin{bmatrix} x_1\\ x_2\\ \vdots \\ x_n\end{bmatrix}$, a vector with $n$ components.
+\end{enumerate}
+    
+

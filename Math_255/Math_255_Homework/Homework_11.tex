@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 11}\\
+\end{center}
+\vspace{.5cm}
+
+\begin{center}
+\underline{Problem 1 and 2 are related.}
+\end{center}
+\noindent\textbf{Problem 1.} Consider the following linear system 
+\begin{align*}
+    x'(t) &= x-y \\
+    y'(t) &= -x-y.
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Rewrite this as a matrix equation
+    \[
+    \mathbf{v}' = M\mathbf{v}.
+    \]
+    Here the vector $\mathbf{v}$ denotes the $xy$-position of a particle at time $t$.
+    \item Plot the vector field $\mathbf{v}'$.
+    \item Describe what happens if your initial data is
+    \begin{enumerate}[i.]
+        \item $(x_0,y_0)=(0,0)$,
+        \item $(x_0,y_0)=(1,1)$,
+        \item $(x_0,y_0)=(-1,-1)$.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\noindent\textbf{*Problem 2.} With the same linear system as in 1, do the following.
+\begin{enumerate}[(a)]
+    \item Compute the eigenvalues of the matrix $M$.
+    \item Compute the eigenvectors of the matrix $M$.
+    \item Write the general solution for this system.
+    \item Find the particular solution corresponding to the initial data $(x_0,y_0)=(1,1)$.
+\end{enumerate}
+\emph{Feel free to use Wolfram Alpha to do parts of this.  However, you should be able to find eigenvalues on your own!}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 3.} Solving the one dimensional Laplace equation is much like an ODE.  However, the data given looks a bit different.  So consider the following set up.
+
+Consider the Laplace equation
+\[
+\Delta u(x) = \frac{d^2u}{dx^2} = 0
+\]
+on the interval $\Omega = (0,1)$ with boundary conditions $u(0)=0$ and $u(1)=1$.  
+\begin{enumerate}[(a)]
+    \item This equation is separable. To find $u$, take two antiderivatives of
+    \[
+    \frac{d^2u}{dx^2}=0.
+    \]
+    \item To verify you did this correctly, take two derivatives of your function to see that you get $0$.
+    \item Your function should have two undetermined constants.  Solve for these constants using the boundary conditions provided.
+\end{enumerate}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 4.} The methods for solving many PDEs are beyond the scope of this class, but we can still see what solutions behave like and a bit of how to find these. What we'll do below are a few steps of the method of \emph{separation of variables} (not to be confused with separable ODE!) 
+
+Consider the heat equation in one dimension on the region $\Omega = (0,1)$
+\[
+\frac{\partial u}{\partial t}(x,t) - \frac{\partial^2 u}{\partial x^2}(x,t) = 0
+\]
+with boundary conditions $u(0,t)=0$ and $u(1,t)=0$, and initial condition $u(x,0)=\sin(\pi x)$.
+\begin{enumerate}[(a)]
+    \item Show that $f(x)=\sin(\pi x)$ is a solution to
+    \[
+    f''(x)=-\pi^2 f(x)
+    \]
+    with $f(0)=0$ and $f(1)=0$.
+    \item Show that $g(t) = e^{-\pi^2 t}$ is a solution to 
+    \[
+    g'(t) = -\pi^2 g(t)
+    \]
+    with $g(0)=1$.
+    \item Show that $u(x,t)=f(x)g(t)$ solves the heat equation with these boundary and initial conditions.
+\end{enumerate}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 5.} With our solution from 4, we can analyze the behavior of the system.  The physical phenomenon that Problem 4 modelled was a thin rod (the segment $(0,1)$) that had an initial temperature distribution $\sin(\pi x)$, i.e. it was warmer in the middle and coldest on the ends.  The boundary conditions $u(0)=0$ and $u(1)=0$ can be thought of as attaching a thermocouple at each end that holds the end temperature at $0$ degrees.  
+\begin{enumerate}[(a)]
+    \item Plot the function on CalcPlot3D by plotting
+    \[
+    z=e^{-\pi^2 y} \sin(\pi x)= u(x,y),
+    \]
+    where we just let the $t$ variable be denoted by $y$ to plot this function.
+    \item Can you explain what happens as time $t$ moves forward based on your intuition, plot, or by the equation we found in 4?
+\end{enumerate}
+
+
+
+\end{document}  

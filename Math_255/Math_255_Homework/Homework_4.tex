@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 4}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Relevant Sections:} 8.1, 8.2, 8.3, 8.4, 8.5, 8.6 \\
+
+\noindent\textbf{Problem 1.} Evaluate the following expressions and simplify to the form $z=a+bi$.
+\begin{enumerate}[(a)]
+    \item Let $z_1=6+7i$ and $z_2=-3+3i$.  Find $z_1+z_2$ and $z_1-z_2$.
+    \item Let $z_1=5+5i$ and $z_2=-1+2i$.  Find $z_1\cdot z_2$ and $z_1/z_2$.
+    \item Take the complex number $z=i+1$ and multiply by $i$ until you return to your starting point.  This should take four iterations.
+\end{enumerate}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 2.} Plot the following points in the complex plane $\C$.  Then for each point $z=a+bi$ rewrite in polar form $z=re^{i\theta}$. For each point given in polar form $z=r^{i\theta}$ rewrite it in cartesian form as $z=a+bi$ by using Euler's formula.
+\begin{enumerate}[(a)]
+    \item From your work on Problem 1 (c) plot and write in polar form the following:
+    \begin{itemize}
+        \item $z_1=i+1$.
+        \item $z_2=i(i+1)$.
+        \item $z_3=i^2(i+1)$.
+        \item $z_4=i^3(i+1)$.
+        \item $z_5=i^4(i+1)$.
+    \end{itemize}
+    \item $z_6=4-5i$.
+    \item $z_7=3e^{i(\pi/2)}$.
+    \item $z_8=2e^{i(5\pi/4)}$.
+    \item $z_9=4e^{i(0)}$.
+\end{enumerate}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 3.} Complex functions (i.e., functions $f\colon \C \to \C$) are tricky to visualize.  The issue is that both the input and output are 2-dimensional which means you need some way to visualize 4-dimensional space.  For the following, I want you to visit \url{www.complexgrapher.com} and plot the following functions. Please print these out and attach them to your homework. 
+\begin{enumerate}[(a)]
+    \item $f\colon \C \to \C$ given by $f(z)=z$.
+    \item $g\colon \C \to \C$ given by $g(z)=z^2$.
+    \item $h\colon \C \to \C$ given by $h(z)=z^3$.
+    \item $p\colon \C \to \C$ given by $p(z)=\sin z$.
+    \item $q\colon \C \to \C$ given by $q(z)=\frac{1}{z^2+1}$.
+\end{enumerate}
+How does this plotting work?  Pick a point $z=a+ib$ on the plane as your input, and if you look at that point, the brightness of each pixel tells you the magnitude $r$ of each complex number and the hue tells you the argument (or angle, or phase) $\theta$ of the complex number. Try adjusting the \emph{magnitude modulus}.  Adjusting this will give you more of an idea as to what is happening.  For example, with the magnitude modulus set to $m$, you are seeing the remainder of the magnitude $r$ when you divide by $m$.  That is to say, for example, $1+m$ and $1$ will be shown with the same brightness.
+\vspace{.5cm}
+
+\noindent\textbf{Problem 4.} The point of developing complex numbers is to give us the ability to factor any polynomial.  That is, a function of the form
+\[
+f(z)=a_0 + a_1 z + a_2 z^2 + \cdots + a_n z^n.
+\]
+By giving us the ability to find $\sqrt{-1}$, we can actually factor any polynomial.  Restated, the \emph{fundamental theorem of algebra} says that any polynomial of degree $n$ (the highest power of $z$ in your polynomial) with complex coefficients ($a_i \in \C$) has $n$ complex roots (zeros).  
+For the following, find the roots of the polynomials using WolframAlpha when necessary.
+\begin{enumerate}[(a)]
+    \item $z^2+2$.
+    \item $z^3+z^2+z+1$.
+    \item $z^4+z^3+z^2+z+1$.
+    \item $z^n-1$. These are commonly called the \emph{roots of unity}.
+\end{enumerate}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 5.} We ran into an issue previously with finding eigenvalues for the following matrix:
+\[
+A=\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}.
+\]
+Now we have the tools to solve this.  Show that the eigenvalues are $\pm i$ and that the corresponding eigenvectors are 
+\[
+\mathbf{v}_1 = \begin{bmatrix} i \\ 1 \end{bmatrix} \qquad \mathbf{v}_2 = \begin{bmatrix} -i \\ 1 \end{bmatrix}.
+\]
+Recall that this matrix was one that rotates vectors in the plane by $\pi/2=90^\circ$.  The remarkable fact is that the eigenvalues being $\pm i$ capture this same phenomenon.  If you look at what happens in Problem 1 and 2 you can see that multiplication of a complex number by $i$ acts like rotation of a vector in the plane.
+
+
+
+
+
+\end{document}  

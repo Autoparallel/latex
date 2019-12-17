@@ -1,0 +1,263 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 8: \emph{Solutions}}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 1.} As of now, our ``best" interpretation of quantum theory says that we can only predict the probability of measurements and nothing more.  
+
+Let's say that we know 
+\[
+\psi(x,y,z) = \sqrt{\frac{1}{\pi^3}}\sin (x) \sin (y) \sin(z)
+\]
+which is the ground state wavefunction for a particle trapped inside of a cube with side lengths $2\pi$. 
+\begin{enumerate}[(a)]
+    \item Show that
+    \[
+    \int_0^{2\pi} \int_0^{2\pi} \int_0^{2\pi} \psi^2(x,y,z)dxdydz =1
+    \]
+    using the fact that
+    \[
+    \int \sin^2(u)du = \frac{1}{2}(u-\sin(u)\cos(u)).
+    \]
+    This means there is a $100\%$ chance of finding the particle in the box.
+    \item Using some tool like Wolfram Alpha, compute the probability that the particle is in a region in the center of the box, that is
+    \[
+    \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \psi^2(x,y,z)dxdydz.
+    \]
+\end{enumerate}
+\begin{solution}
+We want to evaluate
+\[
+\int_0^{2\pi} \int_0^{2\pi} \int_0^{2\pi} \left(\sqrt{\frac{1}{\pi^3}} \sin(x)\sin(y)\sin(z)\right)^2dxdydz.
+\]
+So we do this using the fact given
+\begin{align*}
+    &\int_0^{2\pi}\int_0^{2\pi}\int_0^{2\pi} \left(\sqrt{\frac{1}{\pi^3}} \sin(x)\sin(y)\sin(z)\right)^2dxdydz\\ &= \frac{1}{\pi^3} \int_0^{2\pi}\int_0^{2\pi}\int_0^{2\pi} \sin^2(x)\sin^2(y)\sin^2(z)dxdydz\\
+    &= \frac{1}{\pi^3} \int_0^{2\pi}\int_0^{2\pi} \left[\frac{1}{2}(x-\sin(x)\cos(x))\right]_0^2\pi \sin^2(y)\sin^2(z)dydz\\
+    &= \frac{1}{\pi^3}\int_0^{2\pi} \int_0^{2\pi} \pi \sin^2(y)\sin^2(z)dydz\\
+    &= \frac{1}{\pi^2} \int_0^{2\pi} \left[ \frac{1}{2}(y - \sin(y)\cos(y))\right]_0^{2\pi} \sin^2(z)dz\\
+    &= \frac{1}{\pi} \int_0^{2\pi} \sin^2(z)dz\\
+    &= \frac{1}{\pi} \left[\frac{1}{2}(z-\sin(z)\cos(z))\right]_0^{2\pi}\\
+    &=1.
+\end{align*}
+\end{solution}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 2.} Roughly speaking, when a vector field $\mathbf{E}(x,y,z)$ has no curl, there exists a function called the \emph{potential field} so that
+\[
+\nabla V(x,y,z) = \mathbf{E}(x,y,z).
+\]
+\emph{This specifically shows up in electromagnetism.  Here, think of $\mathbf{E}$ as the electric field and $V$ as the voltage.}
+\begin{enumerate}[(a)]
+    \item Let
+    \[
+    \mathbf{E}(x,y,z) = \begin{bmatrix} yz +1\\ xz +1\\ xy+1 \end{bmatrix}
+    \]
+    Show that 
+    \[
+    \nabla \times \mathbf{E} = \mathbf{0}.
+    \]
+    \item Since $\nabla \times \mathbf{E}=\mathbf{0}$, we can construct the potential function $V(x,y,z)$ by integration.  Do this and notice that $V(x,y,z)$ is determined up to a constant.
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item We compute this using the usual formula for the curl
+    \[
+    \nabla \times \mathbf{E} = \begin{bmatrix} \frac{\partial E_3}{\partial y} - \frac{\partial E_2}{\partial z} \\ \frac{\partial E_1}{\partial z} - \frac{\partial E_3}{\partial x} \\ \frac{\partial E_2}{\partial x} - \frac{\partial E_1}{\partial y} \end{bmatrix}.
+    \]
+    I will not compute all of these here, but you will find that
+    \[
+    \nabla \times \mathbf{E}=\mathbf{0}.
+    \]
+    In fact, in choosing this $\mathbf{E}$, I wrote down the potential function $V$ first and made $\mathbf{E}=\nabla V$.
+    \item Now, let's find what the potential $V$ is.  
+    \begin{itemize}
+        \item We integrate the first component of $\mathbf{E}$ with respect to $x$ since if this was the gradient of some function $V$, then 
+        \[
+        E_1 = \frac{\partial V}{\partial x}.
+        \]
+        So we get
+        \begin{align*}
+            \int yz+1 dx &= xyz+x + f(y,z).
+        \end{align*}
+        \item Similarly for $y$, we integrate $E_2$ with respect to $y$
+        \[
+        \int xz+1 dy = xyz + y + g(x,z).
+        \]
+        \item Finally, we integrate $E_3$ with respect to $z$
+        \[
+        \int xy+1 dz = xyz + z + h(x,y).
+        \]
+    \end{itemize}
+    Now we force equality between these three equations
+    \begin{align*}
+    xyz+x+f(y,z)&=xyz+y+g(x,z)=xyz+z+h(x,y)\\
+    \iff x+f(y,z)&=y+g(x,z)=z+h(x,y).
+    \end{align*}
+    This means that we have $f(y,z)=h(x,y)=y$, $g(x,z)=h(x,y)=x$, and $g(x,z)=f(y,z)=z$.  However, there could be a constant in each that we cannot determine.  So we have
+    \[
+    V(x,y,z)=xyz+x+y+z+C.
+    \]
+    We can check that this is correct by checking
+    \[
+    \nabla V(x,y,z)=\mathbf{E}(x,y,z),
+    \]
+    which is true.
+\end{enumerate}
+
+\end{solution}
+
+
+\noindent\textbf{Problem 3.} When working in different coordinate systems, we have to pay attention to how the volume (or area) elements change.  In the cartesian coordinates, the volume element is an infinitesimal cube with volume $dV=dxdydz$.  In other coordinate systems, the volume element looks different.  
+
+The cartesian area element is $dA=dxdy$ but the polar area element is $dA=rdrd\phi$. How do we find this? We recall the coordinate transformation is
+    \begin{align*}
+        x(r,\phi)&=r\cos \phi\\
+        y(r,\phi)&=r\sin \phi
+    \end{align*}
+    and compute the Jacobian of this transformation by
+    \[
+    J(r,\phi)=\begin{bmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \phi} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \phi}\end{bmatrix}.
+    \]
+    The determinant of this Jacobian then helps us find the volume element in the new coordinates.
+\begin{enumerate}[(a)]
+    \item Compute $J(r,\phi)$.
+    \item Compute $\det(J(r,\phi))$ and show that you get 
+    \[
+    \det(J(r,\phi))=r
+    \]
+    which means that the polar volume element is
+    \[
+    |\det(J(r,\phi))|drd\phi = rdrd\phi.
+    \]
+\end{enumerate}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We compute each partial noting that we have $x$ and $y$ are both functions of $r$ and $\phi$.
+    \begin{align*}
+        \frac{\partial x}{\partial r}&= \cos \phi,\\
+        \frac{\partial x}{\partial \phi} &= -r\sin\phi,\\
+        \frac{\partial y}{\partial r}&= \sin \phi,\\
+        \frac{\partial y}{\partial \phi} &= r\cos \phi.
+    \end{align*}
+    So we have
+    \[
+    J(r,\phi) = \begin{bmatrix} \cos \phi & -r\sin \phi \\ \sin \phi & r\cos \phi \end{bmatrix}.
+    \]
+    \item We compute the determinant
+    \[
+    \det(J(r,\phi))= r \cos^2\phi + r\sin^2 \phi = r.
+    \]
+    So the volume element is indeed
+    \[
+    rdrd\phi.
+    \]
+\end{enumerate}
+\end{solution}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 4.} We can compute the volume contained inside of a sphere of radius $R$ by taking
+\[
+\int_0^{2\pi} \int_0^\pi \int_0^R r^2 \sin \theta dr d\theta d\phi = \frac{4}{3}\pi R^3.
+\]
+Compute this.
+
+\begin{solution}
+We integrate in the given order and find
+\begin{align*}
+    \int_0^{2\pi} \int_0^\pi \int_0^R r^2\sin \theta dr d\theta d\phi &= \int_0^{2\pi} \int_0^\pi \left[ \frac{r^3}{3}\right]_0^R \sin \theta d\theta d\phi\\
+    &= \frac{R^3}{3} \int_0^{2\pi} \int_0^\pi \sin \theta d\theta d \phi\\
+    &= \frac{R^3}{3} \int_0^{2\pi} \left[ -\cos \theta \right]_0^\pi d\phi\\
+    &=\frac{2R^3}{3} \int_0^{2\pi} d\phi\\
+    &=\frac{2R^3}{3} \left[ \phi\right]_0^{2\pi}\\
+    &= \frac{4\pi R^3}{3}.
+\end{align*}
+\end{solution}
+
+
+
+
+\end{document}  

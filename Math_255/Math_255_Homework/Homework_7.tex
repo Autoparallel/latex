@@ -1,0 +1,187 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 7}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 1.} Let's examine the idea of level curves and surfaces a bit more.  For all of the functions, will consider levels $c_0 = \frac{1}{2}$, $c_1=1$, $c_2=2$, and $c_3=3$.  
+\begin{enumerate}[(a)]
+    \item Given the function
+    \[
+    f(x)=\frac{1}{\|x\|}=\frac{1}{\sqrt{x^2}},
+    \]
+    plot this.  Then find the \emph{level points} corresponding to $c_0,c_1,c_2,$ and $c_3$.
+    \item Given the function
+    \[
+    g(x,y) = \frac{1}{\|(x,y)\|}=\frac{1}{\sqrt{x^2+y^2}},
+    \]
+    plot this.  Then find the \emph{level curves} corresponding to $c_0,c_1,c_2,$ and $c_3$.
+    \item Given the function,
+    \[
+    h(x,y,z) = \frac{1}{\|(x,y,z)\|}=\frac{1}{\sqrt{x^2+y^2+z^2}},
+    \]
+    find the \emph{level surfaces} corresponding to $c_0,c_1,c_2,$ and $c_3$. 
+    \emph{Note, I didn't ask you to plot $h$ itself since there is not a nice way to do so.}
+\end{enumerate}
+What's the point? Most functions we care about deal with $\R^3$.  However, we don't have ways to visualize these functions without the use of level surfaces.  So, working to understand the analogs of level surfaces is key.
+\vspace*{.5cm}
+
+
+\noindent\textbf{Problem 2.} Let
+\[
+f(x,y) = x^2+y^2-x^2y^2.
+\]
+\begin{enumerate}[(a)]
+    \item Compute the equation for the tangent plane at the point $p=(1,2)$.
+    \item Compute the gradient of $f$ and find the stationary point(s).
+    \item Classify these point(s) as local maxima, local minima, or saddle points.
+\end{enumerate}
+\vspace*{.5cm}
+
+
+\noindent\textbf{Problem 3.} Let
+\[
+\mathbf{v}(x,y,z)= ( x-y,y+x,z)
+\]
+be a vector field in $\R^3$.  
+\begin{enumerate}[(a)]
+    \item Find the Jacobian of this vector field. \emph{Note this quantity is a matrix!}
+    \item Compute the determinant of the jacobian at the point $(0,0,0)$.  
+    \item Write the component functions of $\mathbf{v}$ as follows:
+    \begin{align*}
+        v_1 (x,y,z) &= x-y,\\
+        v_2(x,y,z) &= y+x,\\
+        v_3(x,y,z) &= z.
+    \end{align*}
+    Compute the \emph{divergence} of $\mathbf{v}$
+    \[
+    \nabla \cdot \mathbf{v} \coloneqq \frac{\partial}{\partial x} v_1 + \frac{\partial}{\partial y} v_2 + \frac{\partial}{\partial z} v_3.
+    \]
+    \emph{Note this quantity is a scalar!}
+    \item Compute the \emph{curl} of $\mathbf{v}$
+    \[
+    \nabla \times \mathbf{v} = \begin{bmatrix} \frac{\partial v_3}{\partial y} - \frac{\partial v_2}{\partial z} \\ \frac{\partial v_1}{\partial z} - \frac{\partial v_3}{\partial x} \\ \frac{\partial v_2}{\partial x} - \frac{\partial v_1}{\partial y} \end{bmatrix}
+    \]
+    \emph{Note this quantity is a vector!}
+\end{enumerate}
+\vspace*{.5cm}
+
+
+
+\noindent\textbf{*Problem 4.} Here we will use Lagrange multipliers to solve a constrained optimization problem.  In our case, we want to find where a function $f(x,y)$ is maximal and minimal when subject to a constraint function $g(x,y)$.  This type of problem is very common.  In fact, this is how we can show that the shape of a red blood cell is optimal for diffusion of oxygen for a given volume! The technique there is just a little bit more advanced.
+
+For us, let's consider the function we want to optimize
+\[
+f(x,y,z)=xyz
+\]
+with the constraint 
+\[
+g(x,y,z)=x+y+z=1
+\]
+and $x,y,z\geq 0$. 
+
+\emph{This is asking for what rectanglular prism with edges constructed from a given length of wire has the most volume. There will be a few options that you will have to check for which maximizes $f$.}
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 5.} Now that we are handling functions of more variables, we need to integrate them.  Let's consider the functions
+\[
+T(x,y) = 1+ x+y
+\]
+which describes the temperature of a point in the $xy$-plane and
+\[
+C_p(x,y) = x^2+y^2.
+\]
+which tells us the \emph{heat capacity} of a point in the $xy$-plane. We can find the energy contained in a rectangular region $x_0\leq x \leq x_1$ and $y_0\leq y \leq y_1$ by
+\[
+E = \int_{y_0}^{y_1} \int_{x_0}^{x_1} T(x,y)C_p(x,y)dxdy.
+\]
+Find the energy in the square region $0 \leq x \leq 2$ and $0\leq y \leq 2$ for our given functions.
+
+
+
+
+
+
+\end{document}  

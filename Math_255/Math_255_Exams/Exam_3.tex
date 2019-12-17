@@ -1,0 +1,349 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{enumerate}
+\usepackage{xfrac}
+
+\newcommand{\DD}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+\usepackage{pdfcolparallel}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+
+
+
+
+\begin{center}
+   \textsc{\large MATH 255, Exam 3}\\
+\end{center}
+\vspace{1cm}
+
+\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\textbf{Instructions} \; No textbook, homework, calculators, phones, or smart watches may be used for this exam. A two-sided 8.5x11" note sheet is acceptable.  The exam is designed to take 50 minutes and must be submitted at the end of the class period. All of your solutions should be easily identifiable and supporting work must be shown. You may use any part of this packet as scratch paper, but please clearly label what work you want to be considered for grading. Ambiguous or illegible answers will not be counted as correct.
+
+\emph{Only the highest scoring \underline{five} problems will be counted towards your total score. You cannot get over 100 points.}
+
+\vspace{1cm}
+
+\textbf{Problem 1} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 2} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 3} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 4} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 5} \; \underline{\hspace{1cm}}/20
+
+\vspace{.25cm}
+
+\textbf{Problem 6} \; \underline{\hspace{1cm}}/20
+
+\vspace{.5cm}
+
+\textbf{Total} \;\hspace{1.1cm} \underline{\hspace{1.25cm}}/100
+
+\vspace*{4cm}
+
+
+\begin{center}\large{There are extra pages between each problem for scratch work.\\
+
+Please circle your answers!}\end{center}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 1}
+
+\vspace{.25cm}
+
+Consider the system of equations 
+\begin{align*}
+x'(t) &= x\\
+y'(t) &= y.
+\end{align*}
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item Draw and clearly label the vector field for the above system at the points 
+    \begin{center}
+    \begin{Parallel}{0.45\textwidth}{0.45\textwidth}
+\ParallelLText{
+    \begin{itemize}
+    \item $p_1=(0,1,0)$,
+    \item $p_2=(0,-1,0)$,
+    \item $p_3=(1,0,0)$,
+    \item $p_4=(-1,0,0)$,
+    \end{itemize}
+}
+\ParallelRText{
+    \begin{itemize}
+    \item $p_5=(1,1,0)$,
+    \item $p_6=(1,-1,0)$,
+    \item $p_7=(-1,1,0)$,
+    \item $p_8=(-1,-1,0)$.
+    \end{itemize}
+    }
+\ParallelPar
+\end{Parallel}
+    \end{center}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.75]
+    \draw[thin,gray!80] (-2,-2) grid (2,2);
+    \draw[<->] (-2,0)--(2,0) node[right]{$x$};
+    \draw[<->] (0,-2)--(0,2) node[above]{$y$};
+    \end{tikzpicture}
+    \end{center}
+    
+    \item If our initial data is $(x(0),y(0))=(0,0)$, how does the system evolve over time? (i.e., does the system spiral inward/outward, rotate, grow to infinity, etc.)
+    \vspace*{4cm}
+    \item If our initial data is $(x(0),y(0))=(1,1)$, how does the system evolve over time? (i.e., does the system spiral inward/outward, rotate, grow to infinity, etc.)
+\end{enumerate}
+
+    
+    \newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 2}
+
+\vspace{.25cm}
+
+Consider the following ODE,
+\[
+x'(t) = x(t)\cdot t-x(t)\cdot t^2.
+\]
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item Find the general solution to this differential equation.
+    \vspace*{7cm}
+    \item Verify that your general solution satisfies the ODE.
+    \vspace*{5cm}
+    \item Find the particular solution to this differential equation with the initial data $x(0)=1.$
+\end{enumerate}
+
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 3}
+
+\vspace{.25cm}
+
+Consider the following ODE,
+\[
+x'(t) = (x(t)\cdot t)^2.
+\]
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item Explain this ODE in words. That is, describe the rate of change the function $x(t)$ change based on the function itself and the time $t$.
+    \vspace*{5cm}
+    \item What is the order of this equation?
+    \vspace*{2cm}
+    \item Is this ODE linear? Why or why not?
+    \vspace*{5cm}
+    \item Is this ODE separable? Why or why not?
+\end{enumerate}
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 4} 
+
+\vspace{.25cm}
+
+Consider the following differential equation
+\[
+x''(t) = x'(t)\cdot t+x(t) \cdot t^2.
+\]
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item Is this ODE linear? Why or why not?
+    \vspace*{3cm}
+    \item Define a new function $y(t)=x'(t)$. Using this new function, write the ODE as a system of two first-order equations.
+    \vspace*{5cm}
+    \item Write this system as a matrix/vector equation
+    \[
+    \mathbf{v}'=M(t)\mathbf{v}.
+    \]
+    \emph{Note that the matrix $M(t)$ will depend on $t$}.
+\end{enumerate}
+
+
+
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 5} 
+
+\vspace{.25cm}
+
+Consider the nonlinear system of equations
+\begin{align*}
+    x'(t) &= x(t)-x(t)y(t)+y(t)\\
+    y'(t) &= (x(t)^2-x)-(y(t)^2-y).
+\end{align*}
+
+\begin{enumerate}[(a)]
+    \item Find the matrix of the linearization about the point $(x,y)=(0,0)$.
+    \vspace*{6cm}
+    \item Show that $\lambda_1=1+i$ and $\lambda_2=1-i$ are eigenvalues of the matrix you found in (a).
+    \vspace*{6cm}
+    \item Based on the eigenvalues, describe the behavior of the system (i.e., does the system spiral inward/outward, rotate, grow to infinity, etc.).
+\end{enumerate}
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\textbf{Problem 6}
+
+\vspace{.25cm}
+
+Consider the 2-dimensional heat equation for a function $u(x,y,t)$ given by
+\[
+\frac{\partial u}{\partial t} - \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right) = 0;
+\]
+\begin{itemize}
+    \item on the region $0\leq x \leq \pi$ and $0\leq y \leq \pi$;
+    \item with initial conditions $u(x,y,0)=\sin(x)\sin(y)$; 
+    \item with boundary conditions 
+    \[
+    u(0,0,t)=u(0,\pi,t)=u(\pi,0,t)=u(\pi,\pi,t)=0.
+    \]
+\end{itemize}
+We want to show that the function $u(x,y,t)=e^{-2t}\sin(x)\sin(y)$ solves this problem.
+\vspace{.5cm}
+\begin{enumerate}[(a)]
+    \item Show that the given $u(x,y,t)$ solves the PDE.
+    \vspace*{5cm}
+    \item Show that the given $u(x,y,t)$ solves the initial conditions.
+    \vspace*{5cm}
+    \item Show that the given $u(x,y,t)$ solves the boundary conditions.
+\end{enumerate}
+
+
+
+
+
+
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}  

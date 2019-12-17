@@ -1,0 +1,44 @@
+\documentclass[12pt,letterpaper,twoside,openany]{book}
+\usepackage[top=2cm, bottom=2cm, lmargin=4cm,rmargin=2cm,marginparwidth=6cm,marginparsep=2em]{geometry} 
+\reversemarginpar
+\usepackage{import}
+\usepackage{chapter-section-design}
+\usepackage{preamble}
+
+ 
+\usepackage{makeidx}
+\makeindex
+ 
+\begin{document}
+ 
+\frontmatter
+\input{title.tex}
+
+\input{preface.tex}
+ 
+\clearpage
+\thispagestyle{empty}
+ 
+\tableofcontents
+ 
+\mainmatter
+% \chapter{Introduction}
+% \input{introduction.tex}
+
+\chapter{Tutorials}
+\input{tutorials.tex}
+
+\part{Linear Algebra}
+\input{linear_algebra.tex}
+
+\part{Vector Calculus}
+\input{vector_calculus.tex}
+
+\part{Differential Equations}
+\input{differential_equations.tex}
+ 
+
+\printindex 
+
+ 
+\end{document}

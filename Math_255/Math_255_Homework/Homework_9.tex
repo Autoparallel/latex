@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{center}
+   \textsc{\large MATH 255, Homework 9}\\
+\end{center}
+\vspace{.5cm}
+
+\noindent\textbf{Problem 1.} Write the following as a differential equation:
+
+\emph{The rate of change of an animal population grows proportionally to the current population times the difference of the current population from the maximum population.}
+
+This equation you will write models the population dynamics of many biological systems that breed and compete for food.
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 2.} Show that 
+\[
+f(t)=te^{t}+e^t
+\]
+solves the differential equation
+\[
+f'(t)=f(t)+e^t.
+\]
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 3.} The change in position $x(t)$ of a particle follows the ODE
+\[
+x'(t)=tx
+\]
+and satisfies the initial condition $x(0)=1$.  Find the exact solution to this ODE.
+\vspace*{.5cm}
+
+\noindent\textbf{Problem 4.} Consider the simple predator-prey ($x$ is predator, $y$ is prey) interaction model given by
+\begin{align*}
+    x'(t) &= Ax+ B y\\
+    y'(t) &= -C x + Dy
+\end{align*}
+where $A,B,C,$ and $D$ are all positive constants.
+\begin{enumerate}[(a)]
+    \item Write in words what the equation for $x'$ is describing.
+    \item Write in words what the equation for $y'$ is describing.
+    \item Note that this equation is linear.  So write the pair of coupled equations as a single vector-matrix equation
+    \[
+    \mathbf{v}'(t) = M\mathbf{v}(t).
+    \]
+\end{enumerate}
+
+\noindent\textbf{Problem 5.} Consider the following second order linear differential equation
+\[
+f''(t)-\mu f'(t) + f(t) = kt
+\]
+which models a forced oscillation in a damping material.  For example, imagine moving your hand back and forth underwater.  Write this equation as a set of coupled first order equations by doing the following:
+\begin{itemize}
+    \item Define a new function $g=f'(t)$.  This gives you one of the two coupled equations.
+    \item Use the given ODE, $g$, and its derivatives to write the second first order equation.
+    \item Both of these equations together are now a system of coupled first order equations (which are much easier to solve).
+\end{itemize}
+
+
+
+
+\end{document}  

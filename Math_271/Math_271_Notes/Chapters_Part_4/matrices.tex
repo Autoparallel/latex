@@ -822,7 +822,7 @@ vector guide/.style={dashed,red,thick}]
 Of course, I picked an easy example for the illustration.  But what is the volume? Here we again know we can compute this the usual way and we get that the volume is $1\cdot 1 \cdot 2 = 2.$ If we instead created a more complicated paralleliped like: 
 \begin{figure}[H]
   \centering
-  \includesvg[width=.4\textwidth]{Figures_Part_4/Parallelepiped.svg}
+  \includegraphics[width=.4\textwidth]{Figures_Part_4/Parallelepiped.png}
   \label{fig:paralellepiped}
 \end{figure}
 we must perform the same type of process as we did in Example \ref{ex:area_parallelogram}. The determinant is designed to do this process for us.
@@ -1029,7 +1029,8 @@ From the previous example we saw that the determinant need not always be positiv
         and we can see geometrically what this transformation does to a vector.  In a sense, this transformation removes a whole dimension from $\R^3$. It takes any $z$-component and removes it, hence we see that the transformation really takes the shadow of the input vector on the $xy$-plane.
         \begin{figure}[H]
             \centering
-            \includesvg[width=.7\textwidth]{Figures_Part_4/linear_transform_kernel.svg}
+            \resizebox{.75\textwidth}{!}{\input{Figures_Part_4/linear_transform_kernel.pdf_tex}}
+            %\includegraphics[width=.7\textwidth]{Figures_Part_4/linear_transform_kernel.pdf_tex}
         \end{figure}
         That is, we visually see that
         \[
@@ -1799,7 +1800,7 @@ From the previous example we saw that the determinant need not always be positiv
             \subsection{Hermitian Matrices}
             Some types matrices have extra properties that make them worth studying on their own.  Specifically, when studying the physical world, we may want eigenvalues for a matrix to be real.  This isn't always, the case, but in quantum mechanics, for example, we will want energy eigenvalues to be real numbers.
             
-            So begs the question as to what we need in order for a matrix to be guaranteed have real eigenvalues.  For now, we consider matrices with complex entries.  That is, take the matrix $[A]$ such that $a_{ij}\in \C$. Since real numbers are merely a subset of the complex numbers, everything done here works for the real case as well.  Given a matrix $[A]$, we define the \boldgreen{transpose of $[A]$}\item{matrix!transpose} to be the matrix $[A]^T$ whose entries are $a_{ji}$. That is, we swap rows with columns.  For example, we have
+            So begs the question as to what we need in order for a matrix to be guaranteed have real eigenvalues.  For now, we consider matrices with complex entries.  That is, take the matrix $[A]$ such that $a_{ij}\in \C$. Since real numbers are merely a subset of the complex numbers, everything done here works for the real case as well.  Given a matrix $[A]$, we define the  of $[A]$ \boldgreen{transpose} \index{matrix!transpose} to be the matrix $[A]^T$ whose entries are $a_{ji}$. That is, we swap rows with columns.  For example, we have
             \[
             [A] = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \qquad \implies \qquad [A]^T = \begin{pmatrix} a_{11} & a_{21} & a_{31} \\ a_{12} & a_{22} & a_{32} \\ a_{13} & a_{23} & a_{33} \end{pmatrix} 
             \]
@@ -2025,7 +2026,7 @@ From the previous example we saw that the determinant need not always be positiv
             \[
             \Ref_{0},\quad \Ref_{\pi/2}, \quad \Ref_{\pi/4}, \quad \Ref_{3\pi/4}.
             \]
-            Hence, there are eight elements in the symmetry group of the square! This group is known as the \boldgreen{dihedral group of order 8} $\matrhm{D}_8$. Note that the dihedral group of order $2n$ is the symmetry group of a regular $n$-gon in the plane (e.g., the dihedral group of order 6 is the symmetry group of an equilateral triangle).
+            Hence, there are eight elements in the symmetry group of the square! This group is known as the \boldgreen{dihedral group of order 8} $\mathrm{D}_8$. Note that the dihedral group of order $2n$ is the symmetry group of a regular $n$-gon in the plane (e.g., the dihedral group of order 6 is the symmetry group of an equilateral triangle).
             
             \begin{exercise}
             Using the multiplication rules for the $\Orth(2)$ matrices, can you deduce that we can create any element in $\mathrm{D}_8$ from multiplying two specific elements in different ways. For example, we can create the $\Rot_\pi$ matrix by taking $\Rot_{\pi/2}\Rot_{\pi/2}$. We call these two elements you find here the  \boldgreen{generators} of a group.
