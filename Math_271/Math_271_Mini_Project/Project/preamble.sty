@@ -74,7 +74,7 @@
 % \newtheorem{definition}{Definition}[section]
 % \newtheorem{example}{Example}[section]
 \newtheorem{remark}{Remark}[]
-\newtheorem{solution}{Solution}
+%\newtheorem{solution}{Solution}
 %\newtheorem{problem}{Problem}
 \newtheorem{question}{Question}
 \newtheorem{answer}{Answer}
@@ -90,13 +90,13 @@
 
 \usepackage{geometry}
 \geometry{
-  top=1in,            
-  inner=1in,
-  outer=1in,
-  bottom=1in,
-  headheight=10ex,       
-  headsep=7ex,          
-  footskip=10ex
+	top=1in,            
+	inner=1in,
+	outer=1in,
+	bottom=1in,
+	headheight=10ex,       
+	headsep=7ex,          
+	footskip=10ex
 }
 
 
@@ -121,9 +121,18 @@
 
 \newtcbtheorem[]{problem}{Problem}
 {enhanced,breakable,arc=0mm,outer arc=0mm,
-boxrule=0.1pt,toprule=0.2pt,bottomrule=0.1pt,left=0.2cm,right=0.2cm,
-titlerule=0.1pt,toptitle=0.1cm,bottomtitle=0.1cm,top=0.1cm,
-colframe=white!25!black,colback=white,coltitle=black,
-title style={white!100},
-fonttitle=\bfseries,fontupper=\normalsize,before
-skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}
+	boxrule=0.3pt,toprule=0.3pt,bottomrule=0.3pt,left=0.2cm,right=0.2cm,
+	titlerule=0.3pt,toptitle=0.1cm,bottomtitle=0.1cm,top=0.1cm,
+	colframe=white!25!black,colback=white,coltitle=black,
+	title style={white!100},
+	fonttitle=\bfseries,fontupper=\normalsize,before
+	skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}
+
+\newtcbtheorem[]{solution}{Solution}
+{enhanced,breakable,arc=0mm,outer arc=0mm,
+	boxrule=0.3pt,toprule=0.3pt,bottomrule=0.3pt,left=0.2cm,right=0.2cm,
+	titlerule=0.3pt,toptitle=0.1cm,bottomtitle=0.1cm,top=0.1cm,
+	colframe=white!25!black,colback=white,coltitle=black,
+	title style={white!100},
+	fonttitle=\bfseries,fontupper=\normalsize,before
+	skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}
