@@ -1,6 +1,48 @@
 \section{Introduction}
 The Calder\'on problem for requires reconstructing the conformal structure of a manifold $\Omega$ given the Dirchlet-to-Neumann map on the boundary.  It has been demonstrated in dimensions up to two in various ways. The method in which we emply is the Boundary Control (BC) method \cite{belishev_complex}.  
 
+\section{Outline}
+
+\subsection{Belishev's Complex Idea}
+The following facts are in use:
+\begin{enumerate}[(i)]
+	\item $(\Omega,g)$ has the complex structure of a Riemann surface; this structure determines
+the class of metrics conformally equivalent to $g$;
+
+	\item the algebra $\mathcal{A}(\Omega)$ of functions continuous in $\Omega$ and holomorphic in $\mathrm{int}(\Omega)$ is
+nontrivial; functions $w\in \mathcal{A}(\Omega)$ (as local homeomorphisms $\Omega''\to \C$) determine the
+complex structure;
+
+	\item  algebra $\mathcal{A}(\Omega)$ is generic: its (topologized) spectrum is homeomorphic to the
+manifold, $\mathrm{sp}\mathcal{A}(\Omega) \asymp \Omega$, whereas the algebra itself is identical to its Gelfand transform,
+$\hat{\mathcal{A}}(\Omega) \equiv \mathcal{A}(\Omega)$;
+
+	\item  the algebra of traces $\algebra(\Gamma) \coloneqq \{w\vert_{\Gamma} ~\vert~ w \in \algebra(\Omega)\}$ is isometrically isomorphic
+to $\algebra(\Omega)$ (through the map $\trace \colon w'' \to w\vert_\Gamma$); the isometry yields $\spectrum \algebra(\Gamma) \asymp \spectrum \algebra(\Omega)$,
+$\hat{\algebra}(\Gamma) \equiv \hat{\algebra}(\Omega)$ that leads to $\spectrum \algebra(\Gamma) \asymp \Omega$ and $\hat{\algebra}(\Gamma) \equiv \algebra(\Omega)$;
+
+	\item the algebra $\alg(\Gamma)$ is determined by the DN-map $\Lambda_g$.
+\end{enumerate}
+
+
+To solve the Calderon problem we use these facts in reverse order:
+\begin{enumerate}[(a)]
+	\item from the operator $\Lambda_g$, one recovers the trace algebra $\algebra(\Gamma)$;
+	\item Finding its spectrum and Gelfand transform, we get $\Omega \asymp \spectrum \algebra(\Gamma)$ and $\algebra(\Omega)\equiv \hat{\algebra}(\Gamma)$;
+	\item Using functions of the algebra $\algebra(\Omega)$ we endow $\Omega$ with the complex structure;
+	\item introducing a metric $g$ on $\Omega$ conformal to the complex structure we get the manifold $(\Omega,g)$ whose DN-map coincides with $\Lambda_g$ by construction.
+\end{enumerate}
+This procedure (a)-(d) gives a canonical representative of the class of conformally equivalent manifolds which has the given DN-map. The assertion of Theorem 1 is a simple corollary of determinacy of this procedure.
+
+\subsection{Rephrasing with the Geometric Algebra}
+
+\section{Harmonic Functions and Fields}
+
+Let $(\Omega,g)$ be a oriented 2-dimensional compact Riemannian manifold with boundary $\Gamma$. Then the set of \boldblue{Harmonic functions} on $\Omega$ is
+  \[
+  \harmonic_g \Omega \coloneqq \{u~\vert~\Delta_g=0 ~\textrm{in}~\interior \Omega\}
+  \]
+
 \section{Notes}
 The key seems to be that for a complex function $\Psi=u(z)+iv(z)$ that $\frac{\partial}{\partial z} \Psi =0$ implies that both $u(z)$ and $v(z)$ are harmonic functions. This is true for even grade multivectors $f$ as well. So, if we take $f=f_0+f_2$ then $\deriv f =0$ (i.e., $f$ is \boldblue{monogenic}) means that $f_0$ and $f_2$ are harmonic.  Hence, by knowing $f$ is monogenic and knowing either $f_0$ or $f_2$, we know $f$ all together.  So the goal is then to recover the algebra of monogenic functions on $\Omega$ via this connection.
 
