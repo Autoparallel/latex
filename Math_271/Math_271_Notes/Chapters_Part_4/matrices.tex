@@ -1934,7 +1934,7 @@ From the previous example we saw that the determinant need not always be positiv
             \]
             rotates the the unit circle by an angle $\theta$ in the counterclockwise direction.  Similarly, we can define a reflection matrix
             \[
-            \Ref_\theta = \begin{pmatrix} \cos (2\theta) & \sin(2\theta) \\ \sin (2\theta) & -\cos(2\theta)\end{pmatrix},
+            \REF_\theta = \begin{pmatrix} \cos (2\theta) & \sin(2\theta) \\ \sin (2\theta) & -\cos(2\theta)\end{pmatrix},
             \]
             which reflects the circle about a line $L$ passing through the origin that makes an angle $\theta$ with the $x$-axis.
             
@@ -1951,9 +1951,9 @@ From the previous example we saw that the determinant need not always be positiv
             
             \noindent In fact, we can actually show the following are also true.
             \begin{align*}
-                \Ref_\theta \Ref_\varphi &= \Rot_{2(\theta-\varphi)}\\
-                \Rot_\theta \Ref_\varphi &= \Ref_{\varphi + \theta/2}\\
-                \Ref_\varphi \Rot_\theta &= \Ref_{\varphi - \theta/2}.
+                \REF_\theta \REF_\varphi &= \Rot_{2(\theta-\varphi)}\\
+                \Rot_\theta \REF_\varphi &= \REF_{\varphi + \theta/2}\\
+                \REF_\varphi \Rot_\theta &= \REF_{\varphi - \theta/2}.
             \end{align*}
             What we notice here is that a product of reflections is a rotation, a product of rotations is a rotation, and a product of a rotation with a reflection gives a reflection.  We can also, given any rotation or reflection, undo the process to get back to where we started.  That is also to say that the identity matrix $[I]$ is a trivial reflection or rotation.  
             
@@ -1975,7 +1975,7 @@ From the previous example we saw that the determinant need not always be positiv
                 Consider the set $G$ of rotation and reflection matrices described above.  Then this set $G$ is a group with group operation given by matrix multiplication (hence we do not write the asterisk in this case). In particular, this group is the \boldgreen{orthogonal group} $\Orth(2)$.  
                 \tcblower
                 \begin{proof}
-                By the rules for multiplication described above, we have that if we take two matrices $[g],[h]\in \Orth(2)$ then $[g][h]\in \Orth(2)$ since it is also a reflection or rotation matrix.  Then, we have that the identity element is given by the identity matrix $[I]\in \Orth(2)$ and we have already shown that the identity matrix fixes matrices and vectors.  Lastly, using the multiplication rules above, if given a $[g]\in \Orth(2)$, we can construct a $[g]^{-1} \in \Orth(2)$. Indeed, let $[g]=\Rot_\theta$, then $[g]^{-1}=\Rot_{-\theta}$.  Similarly, if $[g]=\Ref_\theta$, then $[g]^{-1}=\Ref_{-\theta}$ as well.  Thus, $\Orth(2)$ is a group.
+                By the rules for multiplication described above, we have that if we take two matrices $[g],[h]\in \Orth(2)$ then $[g][h]\in \Orth(2)$ since it is also a reflection or rotation matrix.  Then, we have that the identity element is given by the identity matrix $[I]\in \Orth(2)$ and we have already shown that the identity matrix fixes matrices and vectors.  Lastly, using the multiplication rules above, if given a $[g]\in \Orth(2)$, we can construct a $[g]^{-1} \in \Orth(2)$. Indeed, let $[g]=\Rot_\theta$, then $[g]^{-1}=\Rot_{-\theta}$.  Similarly, if $[g]=\REF_\theta$, then $[g]^{-1}=\REF_{-\theta}$ as well.  Thus, $\Orth(2)$ is a group.
                 \end{proof}
             \end{prop}
             
@@ -2024,7 +2024,7 @@ From the previous example we saw that the determinant need not always be positiv
             \]
             We also have the reflections about the horizontal and vertical bisecting lines as well as the diagonal bisecting lines.  These would be given by the reflection matrices
             \[
-            \Ref_{0},\quad \Ref_{\pi/2}, \quad \Ref_{\pi/4}, \quad \Ref_{3\pi/4}.
+            \REF_{0},\quad \REF_{\pi/2}, \quad \REF_{\pi/4}, \quad \REF_{3\pi/4}.
             \]
             Hence, there are eight elements in the symmetry group of the square! This group is known as the \boldgreen{dihedral group of order 8} $\mathrm{D}_8$. Note that the dihedral group of order $2n$ is the symmetry group of a regular $n$-gon in the plane (e.g., the dihedral group of order 6 is the symmetry group of an equilateral triangle).
             
