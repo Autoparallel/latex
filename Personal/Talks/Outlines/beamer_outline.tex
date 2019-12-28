@@ -1,0 +1,94 @@
+
+\documentclass[usenames,dvipsnames]{beamer}
+\mode<presentation>{\usetheme{Warsaw}}
+\usepackage{textpos} %package for text positioning
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Normal Math Packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+\usepackage{mathrsfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Created Commands
+\theoremstyle{definition}
+\newtheorem*{remark}{Remark}
+\newtheorem*{question}{Question}
+%\newtheorem*{definition}{Definition}
+%\newtheorem*{definitions}{Definitions}
+
+\theoremstyle{theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{axiom}{Axiom}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\opO}{\mathcal{O}}
+\newcommand{\states}{\mathcal{S}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Stuff to make things look good
+% Color modification
+\setbeamercolor{structure}{fg=green!30!black}% to modify  immediately all palettes
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{title in head/foot}{fg=yellow}
+
+%Size Modification
+\setbeamerfont{frametitle}{size=\small}
+
+% position the logo
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{1cm}(\textwidth,-1.1cm)
+\includegraphics[height=.9cm,width=.9cm,keepaspectratio]{csu.png}
+\end{textblock*}}
+
+% Text Positioning
+\usepackage[absolute,overlay]{textpos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Font
+%\fontfamily{cmr}\selectfont
+\usefonttheme{serif}
+
+%Colors and stuf
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+
+%% preamble
+\title{Introduction to Riemannian Geometry}
+\author{Colin Roberts}
+
+\begin{document}
+
+%%Title Frame
+{
+\setbeamertemplate{headline}{}
+\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
+\begin{frame}
+\titlepage
+\end{frame}
+}
+
+
+\AtBeginSection[]
+{
+	\begin{frame}{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

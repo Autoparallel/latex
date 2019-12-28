@@ -37,13 +37,107 @@ This procedure (a)-(d) gives a canonical representative of the class of conforma
 \subsection{Rephrasing with the Geometric Algebra}
 
 \section{Harmonic Functions and Fields}
+Consider the boundary value problem
+\begin{align}
+	\Delta_g u &= 0 \quad \textrm{in $\interior \Omega$}\\
+	u&=f \quad \textrm{on $\Gamma$}.
+\end{align}
+We refer to solutions of the above problem as \boldblue{potentials} and we put $\potentials \coloneqq \{u^f~\vert~f\in C^\infty(\Gamma)\}$ (\textcolor{red}{there is a use of smoothness here}).
 
 Let $(\Omega,g)$ be a oriented 2-dimensional compact Riemannian manifold with boundary $\Gamma$. Then the set of \boldblue{Harmonic functions} on $\Omega$ is
   \[
   \harmonic_g \Omega \coloneqq \{u~\vert~\Delta_g=0 ~\textrm{in}~\interior \Omega\}
   \]
+  Note that $\potentials = \harmonic_g \Omega \cap C^\infty (\Omega)$. \textcolor{red}{Is this fact obvious?}
+    
+  \subsection{Clifford Fields}
+  Denote by $v\in \evenfields$ an even (spinor?) field in the clifford bundle on $\Omega$.  Given that $\Omega$ is 2-dimensional, we can write $v=v_0+v_2$ where $v_0=\projzero{v}$ and $v_2=\projtwo{v}$ and we note that $\projone{v}=0$. \textcolor{red}{Think of the even clifford fields as even dimensional forms endowed with the interior and exterior multiplication in \cite{dirac-spectral}}
+    
+  \textcolor{red}{there is the definition of rotation operator here. Maybe this isn't too hard to define, but I'm not seeing the use of it yet.}
+  
+  Let $\harmonicfields\coloneqq \{v \in \evenfields ~\vert~ dv=\delta v = 0 ~\textrm{in $\interior \Omega$}\}$ denote the space of \boldblue{harmonic even fields}.  \textcolor{red}{Harmonic fields are smooth in $\interior \Omega$; the set $\harmonicfields^\infty \coloneqq \harmonicfields \cap \vec{C}^\infty(\Omega)$ is dense in $\harmonicfields$}. The space $\harmonicfields$ contains a subspace of \boldblue{potential fields} $\potentialfields \coloneqq \{d u \in \harmonicfields ~\vert~ u \in \harmonic_g\Omega \cap H^1(\Omega)\}$.  \textcolor{red}{Okay, but $d u$ is not an even field.  What is meant here then? Maybe $u$ should be an honest vector (1-form) field. Maybe it's really just a form that's exact.} Note that every $h\in \harmonicfields$ is locally potential.
+  
+  We let $\trace$ denote the boundary value for fields in $\Omega$.  The important fact is that a harmonic field is determined by its trace (that is the Cauchy integral formula in effect here): $h\in \harmonicfields$ and $\trace h =0$ implies $h=0$ in $\interior \Omega$ (this is the maximum modulus principle proven by Cauchy integral formula).  Indeed, fixing an $x_0\in \Gamma$, in $U_{x_0}$ we have $h=d u$ that leads to $\Delta_g u =0$ and $\trace du = 0$, yielding $v=\textrm{const.}$ and $h=0$ in $U_{x_0}$ due to the uniqueness of the solution to the Cauchy problem for the second order elliptic equation. We can then cover the manifold in neighborhoods and use the same uniqueness theorem to obtain $h=0$ everywhere. 
+  
+  \textcolor{red}{This may be worthy of a picture and intuition via directed integration and generalization of Cauchy}
+  
+  Let $\difference \coloneqq \harmonicfields \ominus \potentialfields$. We have
+  \[
+  \dim \difference = \dim \harmonicfields / \potentialfields = \beta_1 (\Omega)=1-\chi(\Omega)
+  \]
+  which (\textcolor{red}{I believe}) follows from the Hodge decomposition. The fields $b\in \difference$ are tangent on $\Gamma$ since for any $f\in C^{\infty}(\Gamma)$ we have
+  \[
+  0=\int_\Omega d\Omega \langle \nabla u^f,b\rangle = \int_\Gamma d\gamma f \left\langle b,\frac{\partial}{\partial \nu}\right\rangle,
+  \]
+  which yields $\left\langle b,\frac{\partial}{\partial \nu}\right\rangle=0$ or equivalently, $\trace b = \kappa \frac{\partial}{\partial \gamma}$ with smooth $\kappa = \left\langle b,\frac{\partial}{\partial \gamma}\right\rangle$.
+  
+  \textcolor{red}{It would be worth writing the above in terms of differential forms. Specifically as inner products of forms and such. Note that we have $\alpha \wedge \star \beta = \langle \alpha, \beta \rangle \omega$ where $\omega$ is the volume form.}  
+  
+  \begin{prop}{$\difference$ fields are tangent on $\Gamma$}{difference_tangent}  
+  We have that for any $b\in \difference$ that $b=\kappa d \gamma$ on $\Gamma$.
+  \tcblower
+  \begin{proof}	
+  By definition of $\difference$ we have that any $b\in \difference$ is $L^2$ orthogonal to any element in $\potentialfields$. Hence, we have
+   \[
+  0=(du^f,b)_\Omega=\int_\Omega \langle du^f,b\rangle \omega
+   \]
+   and
+   \[
+   (du^f,b)_\Omega = (u^f,\delta b)_\Omega =0,
+   \]
+  where $\omega$ is the Riemannian volume form on $\Omega$ and for any $f\in C^\infty (\Gamma)$.   Note that
+  \[
+  \langle du^f,b\rangle \omega = du^f \wedge \star b,
+  \]
+  and
+  \[
+  d(u^f \wedge \star b) = du^f \wedge \star b + (-1)^k u^f \wedge d\star b.
+  \]
+  Hence by Stokes' theorem
+  \begin{align*}
+  	\int_\Omega d(u^f \wedge \star b) &= \int_\Omega du^f \wedge \star b + (-1)^k \int_\Omega u^f \wedge d \star b\\
+  	\int_{\partial \Omega} u^f \wedge \star b &=\underbrace{\int_\Omega du^f \wedge \star b}_{=0} + (-1)^k \underbrace{\int_\Omega u^f \wedge d \star b}_{=0}\\
+  	\int_\Gamma f \star b &= 0,
+  \end{align*}
+  for any $f$. Hence, it must be that $\star b = (-1)^k\kappa d\nu$ and hence $b=\kappa d\gamma$.
+  \end{proof}
+  \end{prop}
 
-\section{Notes}
+Let $\dot{C}^\infty(\Gamma)\coloneqq \{f\in C^\infty (\Gamma) ~\vert~ (1,f)_\Gamma=\int_\Gamma f(\gamma)d\gamma=0\}$ be the subset of smooth functions with zero mean value. For $f\in\zeromean$, we denote by $Jf$ the primitive function with zero mean value, i.e., $Jf\in \zeromean$, $\frac{d}{d\gamma}Jf=f$. \textcolor{red}{This is an issue in higher dimensions since the boundary is not 1-dimensional and hence the primitive is not determined up to a constant, it is determined up to some closed form.}
+
+Note that $\ker \Lambda_g = \{\textrm{const.}\}$, $\im \Lambda_g \subset \zeromean$. Also, by standard elliptic theory the operator $\Lambda_g J \colon L_2(\Gamma) \mapsto L_2(\Gamma)$, $\dom \Lambda_g J = \zeromean$ is continuous.
+
+\textcolor{red}{There is a Lemma 1 that I don't quite get the purpose of or how to prove on my own let alone the proof given.}
+
+\section{Algebras}
+
+We let $\algebra$ denote a Commutative Banach Algebra (CBA). Let $\algebra'$ be the space of continuous linear functionals on $\algebra$.  We call a functional $\delta\in \algebra'$ \boldblue{multiplicative} if $\delta(ab)=\delta(a)\delta(b)$  (that is, an algebra homomorphism into $\C$?). We denote the set of multiplicative functionals by $\multifuncts$.
+
+ A subspace $I\neq \algebra$ is an \boldblue{ideal} if $ja\in I$ for any $j\in I$, $a\in I$.  An ideal is \boldblue{maximal} if for any ideal $\overline{I}\subset \algebra$ with $I\subset \overline{I}$ means $I=\overline{I}$. We let $\maxideals$ denote the set of maximal ideals of an algebra $\algebra$. \textcolor{red}{there are other facts about ideals given.}
+
+There is a canonical bijection between the sets $\multifuncts$ and $\maxideals$. If we have $\delta \in \multifuncts$, then we can create $I_\delta\coloneqq \ker \delta \in \maxideals$. Then the projection $\delta_I\colon \algebra \to \algebra/I=\C$ is an element of $\multifuncts$.  
+
+The \boldblue{Gelfand transform} maps an element $a\in \algebra$ into a function $\hat{a}$ on $\multifuncts$ by the rule $\hat{a}(\delta)\coloneqq \delta(a)$. The \boldblue{Gelfand topology} is defined as the weakest topology on $\multifuncts$ in which all $\hat{a}$ are continuous. The set $\multifuncts$ with this topology is compact and called the \boldblue{spectrum} (or the maximal ideal space) of the algebra $\algebra$ and we denote by $\spectrum \algebra$.
+
+\textcolor{red}{There are more definitions given}
+
+\subsection{Algebra $\algebra (\Omega)$}
+
+Functions $v_0,v_2^* \in \harmonic_g \Omega$ are said to be \boldblue{conjugate} if they satisfy the CREs. That is, if we let $v=v_0+v_2$ be an even clifford field, if $v$ is monogenic in that
+\[
+(\delta + d)v = 0,
+\]
+then it must be that $v_0$ and $v_2$ satisfy
+\[
+dv_0 = -\delta v_2.
+\]
+\textcolor{blue}{See notes below.} Moreover, monogenic even clifford fields have harmonic components. We define the algebra $\algebra(\Omega)=\{v\in \evenfields ~\vert~ (\delta+d)v=0\}$ to be the set of monogenic even clifford fields which decompose into harmonic conjugates.  \textcolor{blue}{It is clear this is an algebra. Indeed, see my notes later.}
+
+\textcolor{red}{Some facts from complex analysis are stated which I believe can be done using the generalized Cauchy integral formula.}
+
+\newpage
+\section*{Notes}
+\textcolor{red}{Does the fact that a spinor can be written as an exponential of a bivector do anything?}
 The key seems to be that for a complex function $\Psi=u(z)+iv(z)$ that $\frac{\partial}{\partial z} \Psi =0$ implies that both $u(z)$ and $v(z)$ are harmonic functions. This is true for even grade multivectors $f$ as well. So, if we take $f=f_0+f_2$ then $\deriv f =0$ (i.e., $f$ is \boldblue{monogenic}) means that $f_0$ and $f_2$ are harmonic.  Hence, by knowing $f$ is monogenic and knowing either $f_0$ or $f_2$, we know $f$ all together.  So the goal is then to recover the algebra of monogenic functions on $\Omega$ via this connection.
 
 In section 6.3 of Geometric Algebra for Physicists, the eigenvalue equation arises. This might connect nicely to the spectral theory somehow.
@@ -98,7 +192,7 @@ Thus, if $f$ is an even monogenic field, its components are harmonic.
 
 
 %% Stuff to pull from
-\section{Set Up}
+\section*{Set Up}
 Let $(M,g)$ be an $n$-dimensional smooth Riemannian manifold.  Then we can consider an induced Clifford bundle $C\ell(TM,g)$ on $M$ with the quadratic form $Q(v)=g(v,v)$.  This is a natural choice, but not necessarily the ``correct" one.  Specifically, we define $C\ell(T_pM,g_p)$ to be the Clifford algebra on the tangent space $T_pM$ and let
 \[
 C\ell(TM,g) \coloneqq \dot{\bigcup}_{p\in M} C\ell (T_pM,g_p)
@@ -166,7 +260,7 @@ Then the \boldblue{Dirichlet to Neumann operator} for forms gives
 
 It seems like the idea is we know $f_0$ solves the Dirchlet problem and we can relate $f_2$ to $f_0$ by the CREs. Then $f_2$ is related to the Neumann data in the problem.
 
-\section{Cauchy Riemann Equations}
+\section*{Cauchy Riemann Equations}
 
 Letting $\nabla$ represent the \boldblue{Dirac operator} or \boldblue{geometric derivative} (which depends on the metric, as we'll see) we have
 \[
@@ -220,7 +314,7 @@ df_0= \delta f_2
 \]
 and $df_2 =0$ states that the current flux plane field is closed. (what does this mean physically? Does it make sense? Does it mean that all ``currents" form loops?) 
 
-\section{Dirichlet to Neumann Operator}
+\section*{Dirichlet to Neumann Operator}
 
 The \boldblue{Dirichlet to Neumann operator} for differential forms is defined by
 \[
@@ -324,7 +418,7 @@ Q(v)\coloneqq \sum_{i=1}^{2^n} \sum_{j=1}^{2^n} A_{ij}\alpha_i \alpha_j.
 
 
 
-\section{Questions and Thoughts}
+\section*{Questions and Thoughts}
 
 \begin{itemize}
     \item Do some searching for ``clifford algebras, eit, voltage to current, dirichlet to neumann, ..."
@@ -350,7 +444,7 @@ Can we relate the Hilbert transform to the D to N map?
 Can we recover the algebra of ``holomorphic" functions from the above information?
 \end{question}
 
-\section{Random Things}
+\section*{Random Things}
 
 
 \begin{itemize}
@@ -392,17 +486,5 @@ D^2f = (e_i \otimes e_j) \nabla_{e_i} \nabla_{e_j} f
 is the hessian.
 
 
-\newpage
-\begin{thebibliography}{1}
-    
-\bibitem{geo_alg} Doran, C. \& Lasenby A. (2003). \emph{Geometric Algebra for Physicists}. Cambridge University Press.
 
-\bibitem{clay_d-to-n_map} The Complete Dirichlet-to-Neumann Map.
-
-\bibitem{belishev_quaternion} \emph{On Algebraic and uniqueness properties of 3d harmonic quaternion fields}
-
-\bibitem{belishev_complex} \emph{The Calderon Problem for Two-Dimensional Manifolds by the BC-Method}
-	
-	
-\end{thebibliography}
 

@@ -1,0 +1,242 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=.75in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[part]
+\newtheorem{lemma}{Lemma}[part]
+\newtheorem{corollary}{Corollary}[part]
+\newtheorem{axiom}{Axiom}[part]
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[part]
+\newtheorem{definitions}{Definitions}[part]
+\newtheorem{example}{Example}[part]
+\newtheorem{remark}{Remark}[part]
+\newtheorem{solution}{Solution}[part]
+\newtheorem{problem}{Problem}[part]
+\newtheorem{answer}{Answer}[part]
+\newtheorem{question}{Question}[part]
+\newtheorem{exercise}{Exercise}[part]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beginning of document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Mathematical Physics Lab: Lagrangian Formalism}
+\author{Colin Roberts}
+
+
+\begin{document}
+\maketitle
+
+\part{Lagrangians in Classical Mechanics}
+
+\textcolor{blue}{
+\begin{itemize}
+    \item Add definition for configuration space (use Arnold chapter).
+    
+\end{itemize}
+
+}
+
+\section*{Introduction}
+Classical mechanics of $n$ objects is written down as a set of single differential equations
+\[
+\Dot{\mathbf{p}}\coloneqq \sum_{i=1}^n \frac{d\mathbf{p}_i}{dt}e_i=\mathbf{F}_i(\mathbf{x}_i,t),
+\]
+\textcolor{blue}{Consider writing $\dot{p}$ as a 1 form}
+where $\mathbf{p}_i(t)$ is the \emph{momentum} of the $i^\textrm{th}$ particle, $\mathbf{x}_i$ is the position of the $i^\textrm{th}$ particle, and $\mathbf{F}_i(\mathbf{x}_i,t)$ is the \emph{force} applied to the $i^\textrm{th}$ particle at the time $t$ and a given position $\mathbf{x}_i$.  
+
+\begin{remark}
+For now, assume that $\mathbf{x}_i \in \R^3$ for subtle reasons we will soon get to. 
+\end{remark}
+
+Recall that 
+\[
+\mathbf{p}=m\mathbf{v},
+\]
+where $m$ is the \emph{mass}, $\mathbf{v}=\frac{d\mathbf{x}}{dt}$ is the \emph{velocity}, and $\mathbf{x}$ is the \emph{position}. When mass is constant (which is the case for many systems) and we consider only a single object, we can write:
+\[
+m\Ddot{\mathbf{x}}=\mathbf{F}(\mathbf{x},t).
+\]
+In other words, we have the usual
+\[
+F=ma
+\]
+that we have all seen from an introductory physics course.
+
+In many systems, we have a more structure.  One that we can impose is that the force applied is \emph{conservative}.  
+
+\begin{definition}
+Recall the \textbf{work} $\int_\gamma \mathbf{F}\cdot d\mathbf{l}$, where $\gamma$ is a path in a region $\Omega \subset \R^3$. Intuitively, this is the force that is working in the direction the object is moving.  It represents a change in the \emph{kinetic energy} of the object.
+\end{definition}
+
+\begin{definition}
+A force $\mathbf{F}(\mathbf{x},t)$ is \textbf{conservative} if the work is path independent.
+\end{definition}
+
+\begin{theorem}[Existence of a Scalar Potential Field]
+If $\mathbf{F}$ is conservative, then $\exists V(\mathbf{x})$ satisfying 
+\[
+\nabla V(\mathbf{x})=\mathbf{F}(\mathbf{x}).
+\]
+In other words, in $\R^3$, we have the following statements equivalent to the above:
+\begin{itemize}
+    \item $\mathbf{F}$ is not dependent on time.  That is, $F(\mathbf{x},t)=F(\mathbf{x}).$
+    \item $\mathbf{F}$ is \emph{curl free}. That is to say, 
+    \[
+    \nabla \times \mathbf{F}(\mathbf{x})=0.
+    \]
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+Clearly if $\mathbf{F}=\nabla V(\mathbf{x})$ then we have that $\mathbf{F}$ is not time dependent and that $\nabla \times \mathbf{F}=\nabla \times (\nabla V)=0$.   
+
+Now, we have that stokes theorem implies that for a closed curve $C$ and a surface $S$ bounded by the curve $C$ that
+\[
+\oint_C \mathbf{F}\cdot d\mathbf{l} = \int_S \nabla \times \mathbf{F}\cdot d\mathbf{S}=0.
+\]
+This means that $\nabla \times \mathbf{F}\equiv 0$ on the region $\Omega$. This can be extended to a global function by patching together regions.
+
+We then define:
+\[
+V(\mathbf{x})=\int_0^\mathbf{x} \mathbf{F}\cdot d\mathbf{l},
+\]
+which does not depend on a path taken.  Instead, $V$ only takes the distance between points into consideration.
+\end{proof}
+
+\begin{remark}
+The fact that a curl free force corresponds to a scalar potential field relies on the fact that $\R^3$ is simply connected.  This can all be made even more formal using de Rham cohomology and exterior differentiation as opposed to a vector formulation. I'm not going into this for this talk.
+\end{remark}
+
+\begin{example}
+Ignoring masses and constants (choose units where they disapear) we can write that the Newtonian gravitational force field on a mass located at the origin is 
+\[
+\mathbf{F}(\mathbf{x})=\frac{1}{\|\mathbf{x}\|^2}.
+\]
+Make the change of coordinates to spherical coordinates so that
+\[
+\mathbf{F}(\mathbf{x})=\mathbf{F}(r, \theta, \phi)=\frac{1}{r^2}.
+\]
+Then, in these coordinates, 
+\[
+\nabla \times \mathbf{F}=0,
+\]
+and clearly $\mathbf{F}$ is independent of time as well as the angular variables.  So we define
+\begin{align*}
+V(r)&=\int_0^r \frac{1}{r^2}dr\\
+&= \frac{-1}{r}.
+\end{align*}
+\end{example}
+
+\begin{problem}
+Recall $\nabla$ in spherical coordinates and verify $\nabla \times \mathbf{F}=0$.
+\end{problem}
+
+\section{The Lagrangian Framework}
+The motivation for the Lagrangian framework is to extend classical mechanics to more general spaces.  For example, this formulation allows one to look at classical mechanics in $\R^n$, or (curved) spacetime, or for one to work with fields instead of particles.  Classical mechanics itself does not generalize as nicely to quantum mechanics compared to the Lagrangian formulation.
+
+In calculus, you can optimize functions over their domain by investigating their derivatives.  The main analogous result we will care about is the following.
+
+\begin{theorem}[First Derivative Test for Extrema]
+Let $f\colon \Omega \subset \R^n \to \R$ be sufficiently smooth. Then if $f$ attains an extreme value at $x_0$, $\nabla f(x_0)=0.$
+\end{theorem}
+
+Let us build a new framework.  
+
+\begin{definition}[Lagrangian of a System]
+The \textbf{Lagrangian} of a system of $n$ objects is
+\[
+\mathcal{L}(\mathbf{x}_1,\dots,\mathbf{x}_n,\mathbf{p}_1,\dots,\mathbf{p}_n,t)\coloneqq T(\mathbf{p}_1,\dots,\mathbf{p}_n)-V(\mathbf{x}_1,\dots,\mathbf{x}_n)
+\]
+where $T$ is the kinetic energy and $V$ is the potential (energy). We can also swap $\mathbf{p}$ for $\Dot{\mathbf{x}}$
+\end{definition}
+
+\begin{definition}[Action (functional) of a Particle]
+The \textbf{action} of a particle following a path $\gamma \colon (t_0,t_f) \colon \R^n$ is
+\[
+s[\mathbf{\gamma}]\coloneqq \int_{t_0}^{t_f} \mathcal{L}(\mathbf{\gamma},\mathbf{\Dot{\gamma}},t)dt
+\]
+\end{definition}
+
+\begin{remark}
+You can think of action as the amount of energy cost an object encounters when traversing a path. 
+\end{remark}
+
+\begin{axiom}[Least Action Principle]
+The trajectory of an object minimizes the action.
+\end{axiom}
+
+The following theorem is an analogous result to the necessary conditions for optimization in Calc 1.
+
+\begin{theorem}[Euler-Lagrange Equations]
+Choosing generalized coordinates for a object $\mathbf{q}(t)$ (position) and $\mathbf{\Dot{q}}(t)$ (velocity), an object trajectory minimizing the action must satisfy the Euler-Lagrange equation
+\[
+\frac{\partial\mathcal{L}}{\partial \mathbf{q}}-\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \Dot{\mathbf{q}}}=0.
+\]
+\end{theorem}
+
+The next bit of these notes will be concerned with building up the proof to this statement.
+
+\textcolor{blue}{Give enough info to prove this.}
+
+
+\section{Applications}
+\textcolor{blue}{Noether's theorem, an example with electromagnetic fields.}
+
+\section{Problems}
+\textcolor{blue}{Lagrangian for $2$ masses and $3$ springs. Some moderately complicated system that would suck to do using force diagrams.}
+
+\end{document}

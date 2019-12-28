@@ -1,0 +1,124 @@
+\ProvidesPackage{preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+l\usepackage{titling} 
+\usepackage{blindtext} %stuff for title pages
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles}
+\RequirePackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{pgf,tikz}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[percent]{overpic}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty} %removes "Figure" from a caption on figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\quat}{\mathbb{H}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\linmap}{\rightarrowtail}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\tspace}{T_q^pV}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\dmap}{\overset{d}{\longrightarrow}}
+\newcommand{\clifford}{C\ell(V,Q)}
+\newcommand{\algiso}{\overset{\textrm{alg}}{\cong}}
+\newcommand{\opens}{\mathcal{O}}
+\newcommand{\atlas}{\mathcal{A}}
+\newcommand{\position}{\boldsymbol{\gamma}}
+\newcommand{\velocity}{\boldsymbol{\dot{\gamma}}}
+\newcommand{\id}{\mathrm{Id}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+\newtheorem{proposition}{Proposition}[section]
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+%\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+
+% Decorated
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{colback=white!2,arc=0pt,outer arc=0pt,colframe=blue!60!,fonttitle=\bfseries,breakable,enhanced}{th} % Theorem
+
+\newtcbtheorem[number within=section]{prop}{Proposition}%
+{colback=white!2,arc=0pt,outer arc=0pt,colframe=teal!70!blue!70,fonttitle=\bfseries,breakable,enhanced}{prop} % Proposition
+
+\newtcbtheorem[number within=section]{df}{Definition}%
+{colback=white!2,arc=0pt,outer arc=0pt,,colframe=red!60,fonttitle=\bfseries,breakable,enhanced}{def} % Definition
+
+\newtcbtheorem[number within=section]{ex}{Example}%
+{colback=white!2,arc=0pt,outer arc=0pt,,colframe=orange!70!,fonttitle=\bfseries,breakable,enhanced}{ex} %ex
+
+\newtcbtheorem[number within=section]{rmk}{Remark}%
+{colback=white!2,arc=0pt,outer arc=0pt,,colframe=purple!70!,fonttitle=\bfseries,breakable,enhanced}{rmk} % remark
+
+\newtcbtheorem[number within=section]{fig}{Figure}%
+{colback=white!2,arc=0pt,outer arc=0pt,,colframe=black!70!,fonttitle=\bfseries,breakable,enhanced}{fig} % fig box
+
+\newtcbtheorem[number within=section]{question}{Question}%
+{colback=white!2,arc=0pt,outer arc=0pt,,colframe=brown!70!,fonttitle=\bfseries,breakable,enhanced}{question} % question
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Indexing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{makeidx}

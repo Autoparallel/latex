@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+%\usepackage{fourier}
+
+\providecommand{\keywords}[1]
+{
+    \hspace*{28pt}\small	
+  \textbf{\textit{Keywords--}} #1
+}
+
+\title{Tensor Structures on Manifolds}
+\renewcommand{\maketitlehookb}{\centering Tensors: Algebra-Computation-Applications (TACA) 2019}
+\author{Colin Roberts}
+\date{June 2019}
+
+
+\begin{document}
+
+% Title Page
+\begin{titlingpage}
+    \maketitle
+    \vfill
+    \begin{abstract}
+        Tensors are useful objects for understanding transformations of vector spaces, comparisons of vectors, and more. Smooth manifolds naturally provide a parameterized family of vector spaces which can be glued together using the underlying manifold structure. Specifically, the topology of the manifold induces a topology on the collection of vector spaces which allows us to create vector bundles over manifolds. We seek to combine the notion of tensors with vector bundles to build richer tools which we refer to as tensor fields. Formally, tensor fields can be realized as sections of tensor products of bundles or equivalently by tensor products of sections of bundles. Defining tensor fields is a fruitful endeavor as it proves useful in characterizing geometrical properties of a manifold. It also provides a framework for analysis on manifolds which allows for defining partial differential equations and dynamical systems on manifolds.
+    \end{abstract}
+    %\vspace*{10pt}
+    \keywords{manifold, smooth map, vector bundle, section, tensor field}
+\end{titlingpage}
+
+\input{TACA_2019/taca_2019.tex}
+
+
+
+
+
+
+
+
+
+\end{document}

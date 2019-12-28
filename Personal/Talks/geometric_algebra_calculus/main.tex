@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{environments}
+%\usepackage{fourier}
+
+%hspace before small will move the keywords around
+\providecommand{\keywords}[1]
+{
+    \hspace*{0pt}\small	
+  \textbf{\textit{Keywords--}} #1
+}
+
+\title{Geometric Algebra and Spinors}
+\renewcommand{\maketitlehookb}{\centering Solving Problems in Applied Mathematics\\
+Colorado State University}
+\author{Colin Roberts}
+\date{October 21$^\textrm{st}$ 2019}
+
+
+\begin{document}
+
+% Title Page
+\begin{titlingpage}
+    \maketitle
+    \vfill
+    \begin{abstract}
+        The vector algebra of $\R^3$ given to us by Helmholtz is rather faulty.  We teach our students this language and we are able to perform computations, but is this really the right way? Clifford (not the Big Red Dog) would argue otherwise.  Rather, one can build a structure that contains not only the vector algebra in $\R^3$, but the exterior algebra in arbitrary dimension as well. Denote this new algebra as the geometric algebra $\nspacealg$. The goal of geometric algebra is to provide an algebraic (and smooth) structure that completely encodes the geometry of an underlying (quadratic) vector space but can extend to structures such as a Riemannian manifold. 
+        
+        In this talk, I will introduce the geometric algebras of 2-space $\twospacealg$ and of 3-space $\spacealg$.  We can see the usefulness in this perspective with examples from classical physics. For example, the central potential in the classical realm provoke the use of the real $\Spin(3,0)$ group to convert a nonlinear problem for a vector trajectory into a linear problem on a trajectory for a spinor. Hence, $\Spin(3,0)$ forms the bridge to the immensely important group $\Spin(p,q)$ seen throughout physics in the study of gravitation and quantum mechanics. 
+    \end{abstract}
+    %\vspace*{10pt}
+    \keywords{geometric product, inner product, exterior product, grade, multivectors, pseudoscalar, rotor, spinor}
+\end{titlingpage}
+
+\input{geometric_algebra_calculus/geometric_algebra_calculus.tex}
+
+
+
+
+
+
+
+
+
+\end{document}

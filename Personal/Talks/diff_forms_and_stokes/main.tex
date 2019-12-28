@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+%\usepackage{fourier}
+
+%hspace before small will move the keywords around
+\providecommand{\keywords}[1]
+{
+    \hspace*{0pt}\small	
+  \textbf{\textit{Keywords--}} #1
+}
+
+\title{Differential forms and Stokes' Theorem in $\R^3$}
+\renewcommand{\maketitlehookb}{\centering Greenslopes Graduate Student Seminar\\
+Colorado State University}
+\author{Colin Roberts}
+\date{September 5$^\textrm{th}$ 2019}
+
+
+\begin{document}
+
+% Title Page
+\begin{titlingpage}
+    \maketitle
+    \vfill
+    \begin{abstract}
+       When learning multivariate calculus, we work with vectors and products of vectors to represent physical quantities.  Of course, calculus then drives to see how these quantities can change from point to point.  The main issue is that $\R^3$ is especially nice and, due to this, it does not generalize without quite a bit more work. The goal is then to build a proper, and generalizable, notion of differential and integral calculus in $\R^3$.  Our key tool will be differential forms.  Think of forms as coordinate free measuring sticks that can be placed in not only $\R^3$ but also any $n$-dimensional manifold.  Forms have a rich algebraic structure and they can be differentiated and integrated. After defining forms somewhat heuristically, we will investigate the wedge product and exterior derivative. The exterior derivative will give us a cochain map on the de Rham cochain complex and we briefly mention the de Rham cohomology. Then, we can realize the different forms of the Fundamental Theorem of Calculus (divergence and Stokes' theorem) under the guise of a more modern Stokes' theorem formulated by \'Ellie Cartan.
+    \end{abstract}
+    %\vspace*{10pt}
+    \keywords{vectors, dual vectors, differential $k$-form, wedge product, exterior derivative, de Rham cohomology, Stokes' theorem}
+\end{titlingpage}
+
+\input{diff_forms_and_stokes/diff_forms_and_stokes.tex}
+
+
+
+
+
+
+
+
+
+\end{document}

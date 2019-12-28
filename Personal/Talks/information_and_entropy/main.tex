@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+%\usepackage{fourier}
+
+%hspace before small will move the keywords around
+\providecommand{\keywords}[1]
+{
+    \hspace*{0pt}\small	
+  \textbf{\textit{Keywords--}} #1
+}
+
+\title{Information and Entropy}
+\renewcommand{\maketitlehookb}{\centering Mathematical Physics Lab\\
+Colorado State University}
+\author{Colin Roberts}
+\date{September 2019}
+
+
+\begin{document}
+
+% Title Page
+\begin{titlingpage}
+    \maketitle
+    \vfill
+    \begin{abstract}
+        What does one mean when using the word information? Given some type of system, how much information does it contain? How about entropy? Does this physical quantity relate to a mathematical quantity of information? In this talk, we seek to answer the above questions in a (hopefully) intuitive manner. The measure of information in a system can be properly represented by a family of logarithmic functions which we arrive at using heuristic and logical arguments. Following, we explore the role of information in thermodynamical systems and its direct relationship to entropy.
+        
+        I will base much of the mathematics off of Claude Elwood Shannon's wonderful paper titled "A Mathematical Theory of Communication." If the topic at hand interests you, please consider exploring this piece. The physics covered can be found in many different thermodynamics or statistical mechanics textbooks.
+        
+        
+    \end{abstract}
+    %\vspace*{10pt}
+    \keywords{measurable, idk, entropy probably}
+\end{titlingpage}
+
+\input{information_and_entropy/information_and_entropy.tex}
+
+
+
+
+
+
+
+
+
+\end{document}
