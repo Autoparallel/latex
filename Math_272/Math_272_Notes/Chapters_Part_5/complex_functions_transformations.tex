@@ -1,0 +1,79 @@
+\section{Introduction}
+
+When we ended the prequel with linear algebra, we found the complex number system to be highly useful in many ways.  We'll want to keep this in mind as we progress into further topics in the field of linear algebra.  Instead of dealing with transformations of finite dimensional vector spaces like $\R^n$ and $\C^n$, we will care about the spaces of functions on these spaces. So we find ourselves studying a bit of a nested structure.
+
+Spaces of functions are of great importance.  In studying these spaces, we find ways to solve problems we will approach in the future (e.g., partial differential equations).  These spaces are, in some sense, infinite dimensional which means we can no longer draw pictures that accurately describe what is occuring.  Luckily enough, the intuition gained from the finite dimensional case will work just fine.  
+
+We begin with complex functions as they are immensely fundamental in the study of the physical world and our mathematical development.  Once we have covered this area, we can adjust our view to the relevant spaces of functions that arise in areas such as quantum mechanics and partial differential equations in general.  As we did in the finite dimensional case, we can consider how these linear spaces transform under linear operators.  Finally, we make a nudge towards the spectral theory (eigenvalues and eigenvectors) via Fourier theory.
+
+\section{Complex Functions}
+
+In the prequel, we studied in depth single variable real valued functions $f\colon \R \to \R$. That is, functions with a single real variable as an input that outputs a single real number. Analogously, a \boldgreen{complex function} \index{complex function} is a function,  $f\colon \C \to \C$, with a complex number given as input and a complex number output as well.  The interesting quality to note is that we specified a complex number $z\in \C$ by putting
+\[
+z=x+iy,
+\]
+which means that single complex number is defined by two real numbers.  Recall as well that we could write a complex number in polar form
+\[
+z=re^{i\theta},
+\]
+which again requires the specification of two real numbers.  All of this is to say that we are allowed to (when it is helpful) think of complex functions as functions that input two real numbers $x,y\in \R$ and outputs two real numbers. Hence we would write $f\colon \R^2\to \R^2$.  The additional structure with complex numbers (in how we multiply them) forces us to think of $f\colon \C \to \C$ in a slightly different manner than their real valued counterparts which is why we cannot always make this identification!
+
+\subsection{Cartesian and Polar Representations}
+
+Consider a complex function $f\colon \C \to \C$.  Then, as always, we define this function by providing an output for each input and specify this by
+\[
+f(z)=w,
+\]
+where both $w\in \C$ and $z\in \C$ are complex numbers.  Hence, we can further decompose this function by writing
+\[
+f(z)=u(z)+iv(z),
+\]
+where $u(z)$ and $v(z)$ are real valued functions $u,v\colon \C \to \R$.  This decomposition is rather helpful in providing us a way to visualize the complex function $f$.  In this case, we are seeing what happens to the real $u(z)$ and imaginary part $v(z)$ of the output as we vary the complex input.
+
+Of course, we can also write
+\[
+f(z)=r(z)e^{i\theta(z)},
+\]
+where again $r,\theta \colon \C \to \R$.  In this perspective, we are seeing what happens to the argument $\theta(z)$ and modulus $r(z)$ as we vary the complex input.  Which way of decomposing $f$ we choose is typically decided on the situation at hand.  It has more to do with the symmetry of the function than anything else! In this polar representation of the function, we refer to $\theta(z)$ as a \boldgreen{phase}.  
+
+\textcolor{red}{Examples of functions and some visualizations (vec fields and what not)}
+
+\section{Wavefunctions}
+
+A major focus in this course is understanding the mathematics behind quantum mechanics.  For a chemist, this knowledge is rather important since modern theory is mostly quantum in nature.  What isn't quantum is likely thermodynamical or electrodynamical in nature and we will get to these topics a bit later on. 
+
+Wavefunctions are solutions to Schr\"odinger's equation.  In the broadest generality, wavefunctions are complex valued functions defined on some region $\Omega$ in space $\R^3$. That is, a function of the form $\Psi\colon \Omega \to \C$. However, we can also look at models in lower dimensions since we have yet to properly discuss multivariate functions.  
+
+For now, consider a complex function $\Psi\colon [a,b] \to \C$ that has a single real variable as an input.  Thus, we define this function by $\Psi(x)=z$, where $z\in \C$.  Of course, we get the Cartesian decomposition
+\[
+\Psi(x)=u(x)+iv(x),
+\]
+or the polar decomposition
+\[
+\Psi(x)=r(x)e^{i\theta(x)}.
+\]
+
+The great thing in this case is that we can differentiate and integrate wavefunctions in a way that's no different than single variable real functions!  Fundamentally, this is due to the fact that our understanding of the derivative has only been defined for a single real value input. We will deepen our understanding later.  So, for a wavefunction we have that
+\[
+\Psi'(x)=u'(x)+iv'(x),
+\]
+and in the polar case we have
+\[
+\Psi'(x)=r'(x)e^{i\theta(x)}+r(x)e^{i\theta(x)}\theta'(x),
+\]
+which follows from the chain rule.
+
+\begin{exercise}
+	Verify the polar derivative above is correct.
+\end{exercise}
+
+Integration follows the fundamental theorem of calculus and hence we have
+\[
+\int_a^b \Psi'(x)dx = \Psi(b)-\Psi(a).
+\]
+So, for example, in the cartesian representation we have
+\[
+\int_a^b \Psi'(x)dx = \int_a^b u'(x)dx+i\int_a^b v'(x)dx = [u(b)-u(a)]+i[v(b)-v(a)].
+\]
+
+\textcolor{red}{Examples of integration of squares of wavefunctions and why we saw $|\psi|^2$}
