@@ -38,11 +38,11 @@ where again $r,\theta \colon \C \to \R$.  In this perspective, we are seeing wha
 
 \textcolor{red}{Examples of functions and some visualizations (vec fields and what not)}
 
-\section{Wavefunctions}
+\subsection{Complex Valued Functions}
 
 A major focus in this course is understanding the mathematics behind quantum mechanics.  For a chemist, this knowledge is rather important since modern theory is mostly quantum in nature.  What isn't quantum is likely thermodynamical or electrodynamical in nature and we will get to these topics a bit later on. 
 
-Wavefunctions are solutions to Schr\"odinger's equation.  In the broadest generality, wavefunctions are complex valued functions defined on some region $\Omega$ in space $\R^3$. That is, a function of the form $\Psi\colon \Omega \to \C$. However, we can also look at models in lower dimensions since we have yet to properly discuss multivariate functions.  
+Recall that wavefunctions are solutions to Schr\"odinger's equation.  In the broadest generality, wavefunctions are functions that are complex valued and whose domain of definition is on some region $\Omega$ in space $\R^3$.  More generally, we can allow for $\Omega$ to a be a region in other spaces as well. To restate this, we are considering a function of the form $\Psi\colon \Omega \to \C$ where we will specify what the domain $\Omega$ is. Previously, we looked at models in lower dimensions (e.g., the free particle in the 1-dimensional box) since we have yet to properly discuss multivariate functions.  
 
 For now, consider a complex function $\Psi\colon [a,b] \to \C$ that has a single real variable as an input.  Thus, we define this function by $\Psi(x)=z$, where $z\in \C$.  Of course, we get the Cartesian decomposition
 \[
@@ -76,4 +76,127 @@ So, for example, in the cartesian representation we have
 \int_a^b \Psi'(x)dx = \int_a^b u'(x)dx+i\int_a^b v'(x)dx = [u(b)-u(a)]+i[v(b)-v(a)].
 \]
 
-\textcolor{red}{Examples of integration of squares of wavefunctions and why we saw $|\psi|^2$}
+\begin{remark}
+	Complex functions (i.e., functions with complex valued inputs) have different behavior with integration and differentiation which we will not discuss at all.  The closest we will get to this structure is calculus in $\R^2$.
+\end{remark}
+
+\begin{ex}{Wavefunctions in the Box}{wavefunctions_in_1dbox}
+	Let $\Omega=[0,L]$ and recall that the normalized states of the particle in the 1-dimensional box were given by
+	\[
+		\psi_n(x)=\sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right).
+	\]
+	Recall as well that we could write a wavefunction as a superposition of states by
+	\[
+		\Psi(x)=\sum_{n=0}^\infty a_n \psi_n(x).
+	\]
+	Though these states are real valued, there is no physics that requires this.  Similarly, the coefficients $a_n$ are also not constrained to be real valued constants either.  In the broadest generality, $\Psi$ can be a complex valued function and the coefficients $a_n$ can be complex as well.
+
+	Fundamentally, this is due to the physical understanding of the solutions to Schr\"odinger's equation. When we are looking for physically meaningful interpretations of a wavefunction, we must evaluate an integral. We can think of this act of integration as performing a measurement.  For example, let $[a,b]$ be a subinterval of $[0,L]$, then we can compute the probability of the particle with wavefunction $\Psi(x)$ to be in the region $[a,b]$ by 
+	\[
+		P_{[a,b]}(\Psi) = \int_a^b \|\Psi(x)\|^2dx,
+	\]
+	where we have the pointwise modulus of the complex valued function
+	\[
+		\|\Psi(x)\|^2 = \Psi^*(x)\Psi(x),
+	\]
+	where $~^*$ indicates the complex conjugate.  Say we take the cartesian representation for $\Psi(x)$ by $\Psi(x)=u(x)+iv(x)$, then
+	\[
+		\|\Psi(x)\|^2 = u^2(x)+v^2(x).
+	\]
+	
+	Let $\Psi(x)=\frac{1}{\sqrt{2}}\psi_1(x)+\frac{1}{\sqrt{2}}\psi_2(x)$ be a superposition state.  We can compute the probability that the particle is in the first half of the region $[0,L]$ by computing
+	\begin{align*}
+		P_{[0,L/2]}(\Psi)&=\int_{0}^{L/2}  \|\Psi(x)\|^2 dx \\
+			&=\int_{0}^{L/2} \frac{1}{2}\psi_1^2(x)+ \psi_1(x)\psi_2(x)+\frac{1}{2}\psi_2^2(x)dx\\
+			&=\int_{0}^{L/2}\frac{1}{2} \left(\sqrt{\frac{2}{L}}\sin\left(\frac{\pi x}{L}\right)\right)^2 + \sqrt{\frac{2}{L}}\sin\left(\frac{\pi x}{L}\right)\sin\left(\frac{2\pi x}{L}\right)+ \frac{1}{2}\left(\sqrt{\frac{2}{L}}\sin\left(\frac{2\pi x}{L}\right)\right)^2dx\\
+			&=\frac{1}{2}+\frac{4}{3\pi}\\
+			&\approx .924.
+	\end{align*}
+	Through this calculation we have found that the probability that the particle is the first half of box is about $92.5\%$.  Since the particle must be in the box, it follows that the probability of the particle being in $[L/2,L]$ must be $1-\frac{1}{2}-\frac{4}{3\pi}$ or roughly $7.5\%$.  This is quite different than we would expect classically!
+
+	We can plot the functions used above to see why this is the case.
+	\begin{figure}[H]
+	\centering
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/psi_1.png}
+			\caption{Normalized state $\psi_1(x)$.}
+		\end{subfigure}
+		~
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/psi_2.png}
+			\caption{Normalized state $\psi_2(x)$.}
+		\end{subfigure}
+		\\
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/Psi.png}
+			\caption{The wavefunction $\Psi(x)$.}
+		\end{subfigure}
+		~
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/prob_Psi.png}
+			\caption{The probability function $\|\Psi(x)\|^2$.}
+		\end{subfigure}
+	\end{figure}
+	The plots above of course show us that the integration makes sense.  We can see in (d) that the function that describes the probability is heavily weighted towards the first half of the interval $[0,L]$. One may then wonder if this is always true? That is, if I were to check back later in time, is the probability still distributed in the same way? The answer is no.  Later, we will introduce the time dependent version of the Schr\"odinger equation where we will see that these wavefunctions also evolve over time.  To some extent, we can see a bit of this behavior now.
+	
+	If we instead change our wavefunction by introducing a phase difference for each of the components.  What will happen in this case? If you have seen the double slit experiment, you may guess that introducing a phase difference can change the result (as phase difference causes interference). Instead of the $\Psi(x)$ above, take 
+	\[
+		\tilde{\Psi}(x) = \frac{e^{i\theta}}{\sqrt{2}} \psi_1(x) + \frac{e^{i\phi}}{\sqrt{2}} \psi_2(x).
+	\]
+	In this case, all we have done is made the wavefunction complex.  If, however, we consider the probability distribution given by this new wave function, we find
+	\[
+		\|\tilde{\Psi}(x)\|^2 = \tilde{\Psi}^*(x)\tilde{\Psi}(x) = \frac{1}{2}\psi_1^2(x)+\frac{e^{i(\theta-\phi)}}{2}\psi_1(x)\psi_2(x)+\frac{e^{i(\phi-\theta)}}{2}\psi_1(x)\psi_2(x)+\frac{1}{2}\psi_2^2(x).
+	\]
+	This is now slightly different! However, we can note that
+	\[
+		\frac{e^{i(\theta-\phi)}+e^{i(\phi-\theta)}}{2} = \cos(\theta-\phi),
+	\]
+	and hence we have
+	\[
+		\|\tilde{\Psi}(x)\|^2 = \tilde{\Psi}^*(x)\tilde{\Psi}(x) = \frac{1}{2}\psi_1^2(x)+\cos(\theta-\phi)\psi_1(x)\psi_2(x)+\frac{1}{2}\psi_2^2(x).
+	\]
+	So the phase difference $\delta=|\theta-\phi|$ between the two states causes the wavefunction to change. In the first example with $\Psi(x)$, the phase difference $\delta=0$ and we observed the probability function $\|\Psi(x)\|^2$.  However, let us see what happens as we change the phase.
+	\begin{figure}[H]
+	\centering
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/prob_Psi_pi4.png}
+			\caption{Phase difference $\delta=0$.}
+		\end{subfigure}
+		~
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/prob_Psi_pi2.png}
+			\caption{Phase difference $\delta=\frac{\pi}{3}$.}
+		\end{subfigure}
+		\\
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/prob_Psi_3pi4.png}
+			\caption{Phase difference $\delta=\frac{2\pi}{3}$.}
+		\end{subfigure}
+		~
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/prob_Psi_pi.png}
+			\caption{Phase difference $\delta=\pi$.}
+		\end{subfigure}
+	\end{figure}
+	 Interestingly enough, it seems that the phase difference ``moves" the particle around in the box. Of course, the particle itself is not moving, but the function that represents the likelihood of its position changes as the phase changes.  The largest difference in phase is $\pi$, and when we see this, we find that the distribution given by $\|\tilde{\Psi}(x)\|^2$ is the mirror image of the original $\|\Psi(x)\|^2$.  
+
+	There are two important remarks to note here.
+	\begin{enumerate}[1.]
+		\item We can change the global phase of the system without changing the probability of measurement.  That is, $e^{i\theta}\Psi(x)$ has no discernable difference from $\Psi(x)$ (you can verify this from the work above).
+		\item This difference in phase seems to drive some form of motion for a particle.  It is with this insight that we will later revisit the time dependent version of the Schr\"odinger equation and see how the time component relates to phase.
+	\end{enumerate}
+\end{ex}
+
+\begin{remark}
+	In a sense, the integral defined above $P_{[a,b]}(\Psi)$ is a real valued function with a function as an input.  Though we have not noted this until now, it becomes important in the future.
+\end{remark}
+
+All of this is to say that we must be able to work with complex valued functions.  They show up in physics and help us describe what we observe through nature.  It's important to remember that all measurements we make in a lab must be real valued, and so our mathematical models for these measurements must take that into account as well.
