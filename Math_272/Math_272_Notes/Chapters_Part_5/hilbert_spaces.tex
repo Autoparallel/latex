@@ -1,4 +1,71 @@
 \section{Introduction}
-Hilbert spaces blah blah
+Recall the importance of the dot product in space.  Given two vectors $\vecu,\vecv \in \R^3$, we defined the dot product by
+\[
+\vecu \cdot \vecv = u_1v_1 + u_2v_2 + u_3v_3,
+\]
+and we also referred to this as an inner product.  The dot product allowed us to project a vector onto its components by, for example,
+\[
+\vecu \cdot \xhat = u_1.  
+\]
+This was extremely useful for us.  On top of that, the dot product provided us a means of computing the length of a vector by putting
+\[
+\|\vecu\|=\sqrt{\vecu\cdot\vecu}.
+\]
+Underlying much of the theory of space was this structure. 
 
-we could have introduced the hermitian inner product on vectors and chosen that to be our only inner product since it is strictly more general than the real one. For functions we will do this. 
+Later, we introduced the Hermitian inner product on complex vectors.  As it turns out, this inner product is strictly more general than the dot product.  If we had two vectors $\veca,\vecb\in \C^n$ (i.e., vectors with $n$ complex number entries) then we defined the inner product by
+\[
+\langle \veca,\vecb \rangle = \sum_{j=1}^n a_jb_j^*.
+\]
+Note that if $\veca$ and $\vecb$ only have real entries, then the complex conjugate $b_j^*=b_j$ and we are left with the typical dot product for $\R^n$.  It suffices to say, that we need only care about this Hermitian inner product. In the same vein, we receive all the wonderful benefits of the dot product.  For example, we can project a vector by taking
+\[
+\xhat_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \\\vdots \\ 0 \end{pmatrix}
+\]
+and computing
+\[
+\langle \veca,\vecx_1\rangle = a_1.
+\]
+Likewise, the length of a complex vector is given by
+\[
+\|\veca\|=\sqrt{\langle \veca,\veca\rangle}.
+\]
+Nothing is lost from this more general approach, and this more general approach extends far beyond finite dimensional complex vectors!
+
+\subsection{Infinite Dimensions}
+
+The dimension of a vector is the number of entries needed to fully describe the vector.  From the examples before, we can say that the vectors $\vecu,\vecv\in \R^3$ are 3-dimensional real vectors and the vectors $\veca,\vecb \in \C^n$ are $n$-dimensional complex vectors.  There is no restriction on the size of $n$, and $n$ can in fact be infinite!
+
+This section of the text is primarily concerned with extending our linear algebra techniques to the infinite dimensional case.  Though this may sound ominous, it simply builds upon what we already know.  In essence, we will combine our knowledge of functions, infinite series, integrals, and linear algebra to complete the theory for infinite dimensions.  Put simply, functions will play the role of vectors while series and integrals will play the role of inner products.  This viewpoint places us viewing mathematics from the top, where we can always reduce the general story to something more specific when need be. Ultimately, this allows one to understand one general structure instead of many individual ones.
+
+\section{Inner Products}
+
+Before we define general inner products, let us recall the definition of a vector space.  In the prequel, we had that a vector space $V$ over some field $\field$ (the numbers we choose as entries) is a set containing vectors that satisfy eight different properties.
+
+\begin{exercise}
+	Find the definition in the previous text and review it.
+\end{exercise}
+
+\begin{df}{Inner Product}{inner_prod_general}
+An \boldgreen{inner product} on a vector space $V$ over a field $\field$ is a bilinear (sometimes sesquilinear) function
+\[
+\innprod{\cdot}{\cdot} \colon V \times V \to \field,
+\]
+that satisfies
+\begin{enumerate}[i.]
+	\item (Nondegenerate) For a $\veca\in V$ we have that $\innprod{\veca}{\veca} =0$ if and only if $\veca=\zerovec$;
+	\item (Positive definite) For any nonzero $\veca \in V$ we have that $\innprod{\veca}{\veca} > 0$;
+	\item (Symmetric) For any $\veca,\vecb\in V$ we have that $\innprod{\veca}{\vecb} = \innprod{\vecb}{\veca}$.
+\end{enumerate}
+What we are denoting is a function $\innprod{\cdot}{\cdot}$ that has two vectors ($V\times V$) as inputs where see $\cdot$ and outputs some number in the designated field $\field$. When we say bilinear, we mean that the function is linear in each input. For example, we have for vectors $\veca,\vecb,\vecc\in V$ and a scalar $\alpha \in \field$ that
+\[
+\innprod{\alpha\veca + \vecb}{\vecc} = \alpha \innprod{\veca}{\vecc} + \innprod{\vecb}{\vecc},
+\]
+which shows the linearity in the first input.  The second input is linear as well.
+
+Similarly, if the field $\field=\C$, then the inner product need be sesquilinear in that we instead have the addition of a complex conjugate in the second position. That is, let $\alpha,\beta\in \C$ and we have
+\[
+\innprod{\alpha\veca + \vecb}{\beta\vecc} = \alpha \beta^*\innprod{\veca}{\vecc} + \beta^*\innprod{\vecb}{\vecc}.
+\]
+The first position is simply linear.
+\end{df}
+

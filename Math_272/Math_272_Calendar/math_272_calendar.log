@@ -1,0 +1,109 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  7 JAN 2020 11:17
+entering extended mode
+**./math_272_calendar.tex
+(math_272_calendar.tex
+LaTeX2e <2019-10-01> patch level 3
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/termcal\termcal.st
+y"
+Package: termcal 1997/01/11 1.8 Latex2e package to print a Term calendar
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
+y"
+Package: longtable 2019/02/06 v4.12 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count88
+\LTcapwidth=\dimen103
+\LT@head=\box27
+\LT@firsthead=\box28
+\LT@foot=\box29
+\LT@lastfoot=\box30
+\LT@cols=\count89
+\LT@rows=\count90
+\c@LT@tables=\count91
+\c@LT@chunks=\count92
+\LT@p@ftn=\toks14
+) ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\calboxdepth=\skip47
+\calwidth=\skip48
+\ca@boxwidth=\skip49
+\c@ca@dpw=\count93
+\c@ca@numwks=\count94
+\c@ca@wknum=\count95
+\ca@doaweek=\toks15
+\ca@doweeks=\toks16
+\ca@colhead=\toks17
+\c@classnum=\count96
+\weeklytext=\toks18
+\c@textdaycount=\count97
+\c@date=\count98
+\c@month=\count99
+\c@year=\count100
+) (math_272_calendar.aux)
+\openout1 = `math_272_calendar.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+
+Overfull \hbox (7.88904pt too wide) in paragraph at lines 109--109
+[]\OT1/cmr/m/n/10 Parameterizations.  
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 109
+ []
+
+[1
+
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+(math_272_calendar.aux) ) 
+Here is how much of TeX's memory you used:
+ 711 strings out of 492483
+ 8428 string characters out of 3121588
+ 106514 words of memory out of 3000000
+ 5128 multiletter control sequences out of 15000+200000
+ 4858 words of font info for 18 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 25i,13n,23p,158b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Colin/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Colin/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on math_272_calendar.pdf (2 pages, 65086 bytes).
+PDF statistics:
+ 25 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
