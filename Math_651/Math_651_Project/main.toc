@@ -1,0 +1,6 @@
+\babel@toc {UKenglish}{}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Geometry}{10}{0}{2}
+\beamer@sectionintoc {3}{Discretization}{14}{0}{3}
+\beamer@sectionintoc {4}{Applications}{25}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{32}{0}{5}

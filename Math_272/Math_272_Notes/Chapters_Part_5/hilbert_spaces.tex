@@ -54,7 +54,7 @@ that satisfies
 \begin{enumerate}[i.]
 	\item (Nondegenerate) For a $\veca\in V$ we have that $\innprod{\veca}{\veca} =0$ if and only if $\veca=\zerovec$;
 	\item (Positive definite) For any nonzero $\veca \in V$ we have that $\innprod{\veca}{\veca} > 0$;
-	\item (Symmetric) For any $\veca,\vecb\in V$ we have that $\innprod{\veca}{\vecb} = \innprod{\vecb}{\veca}$.
+	\item (Symmetric) For any $\veca,\vecb\in V$ we have that $\innprod{\veca}{\vecb} = \innprod{\vecb}{\veca}$. If the vector space is complex, then we have conjugate symmetry $\innprod{\veca}{\vecb}=\innprod{\vecb}{\veca}^*$.
 \end{enumerate}
 What we are denoting is a function $\innprod{\cdot}{\cdot}$ that has two vectors ($V\times V$) as inputs where see $\cdot$ and outputs some number in the designated field $\field$. When we say bilinear, we mean that the function is linear in each input. For example, we have for vectors $\veca,\vecb,\vecc\in V$ and a scalar $\alpha \in \field$ that
 \[
@@ -69,3 +69,132 @@ Similarly, if the field $\field=\C$, then the inner product need be sesquilinear
 The first position is simply linear.
 \end{df}
 
+\begin{exercise}
+	Verify that the dot product for $\R^n$ and the Hermitian inner product for $\C^n$ are indeed inner products.
+\end{exercise}
+
+Since we have previously covered two different inner products for the finite dimensional vector spaces $\R^n$ and $\C^n$, we can use our intuition from these spaces with their inner product structure to define other important inner products.  We have in fact come across another example while studying the particle in the 1-dimensional box.  Recall that the problem we solved was the equation
+\[
+-\frac{\hbar^2}{2m} \frac{d^2 \Psi(x)}{dx^2} = E\Psi(x),
+\]
+on the region $[0,L]$, where $\Psi(x)$ is the wavefunction.  We also imposed the boundary conditions that $\Psi(0)=\Psi(L)=0$ since the particle cannot be found on the boundary of this domain.  
+
+We found that the solutions to this equation were the normalized states 
+\[
+\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right),
+\]
+with corresponding energies $E_n = \frac{n^2h^2}{8mL^2}$. Then, a wavefunction could be written as a linear combination of these states by
+\[
+\Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x),
+\]
+where $a_n \in \C$.  In order for the wavefunction $\Psi(x)$ to be normalized, we required that
+\[
+\sum_{n=1}^\infty \|a_n\|^2=1.
+\]
+Now, we can consider a set $V$ of all the possible wavefunctions for the above problem as well as the zero function (which is indeed a solution to the problem, but it is not physically meaningful).
+
+\begin{exercise}
+	Show that $V$ is a vector space. 
+\end{exercise}
+
+We can add an inner product to the vector space $V$ by defining the inner product on two wavefunctions $\Psi$ and $\Phi$ by
+\[
+\innprod{\Psi}{\Phi} \coloneqq \int_0^L \Psi(x) \Phi^*(x)dx.
+\]
+To see that this is an inner product, we need to show that the above function is sesquilinear and satisfies the three conditions for an inner product (nondegeneracy, positive definite, and symmetric).  Sesquilinearity follows from the linearity of the integral in that we have
+\begin{align*}
+	\innprod{\Psi}{\Phi+\alpha \Theta} &= \int_0^L \Psi(x)(\Phi(x)+\alpha \Theta(x))^*dx \\
+	&= \int_0^L \Psi(x) \Phi(x)\Phi^*(x)dx+\alpha^* \int_0^L \Psi(x) \Theta^*(x)dx\\
+	&= \innprod{\Psi}{\Phi}+\alpha^* \innprod{\Psi}{\Theta}.
+\end{align*}
+Showing the linearity in the first argument is analogous but there will not be a complex conjugate.  
+
+Next, we can see that the inner product is nondegenerate by noting that if we take the zero function 0, we have
+\[
+\innprod{0}{0} = \int_0^L 0 dx = 0,
+\]
+and if we have that
+\[
+0=\innprod{\Psi}{\Psi}  = \int_0^L \Psi(x)\Psi^*(x)dx = \int_0^L \|\Psi(x)\|^2dx,
+\]
+it must be that $\|\Psi(x)\|=0$ since this integral cannot be zero otherwise.  Hence, $\Psi(x)$ is the zero function and we have that the inner product is indeed nondegenerate.
+
+By the above work, if $\Psi(x)$ is not the zero function, then $\|\Psi(x)\|^2>0$ and thus we have
+\[
+\innprod{\Psi}{\Psi}>0.
+\]
+Hence, the inner product is positive definite.
+
+Lastly, we can see that the inner product is symmetric by taking the Cartesian representation for $\Psi(x)$ by $\Psi(x)=a(x)+ib(x)$ and for $\Phi(x)=c(x)+id(x)$ and noting
+\begin{align*}
+	\Psi(x)\Phi^*(x) &= (a(x)+ib(x))(c(x)-id(x))\\
+		&= (a(x)c(x)+b(x)d(x))+i(b(x)c(x)-a(x)d(x)),
+\end{align*}
+and
+\begin{align*}
+	\Phi(x)\Psi^*(x) &= (c(x)+id(x))(a(x)-ib(x))\\
+		&= (a(x)c(x)+b(x)d(x))+i(a(x)d(x)-b(x)c(x),
+\end{align*}
+which means that we have
+\[
+\innprod{\Psi}{\Phi}=\innprod{\Phi}{\Psi}^*.
+\]
+Thus we have shown that this is indeed an inner product.
+
+\section{Inner Product Spaces}
+
+Given a vector space $V$ with an inner product, we refer to the vector space as an \boldgreen{inner product space}.  In fact, all the vector spaces we have dealt with are inner product spaces! We tend to prefer working with these spaces as they allow us to nicely compare vectors (like we can with the dot product) and we can also compute lengths and distances.  Needless to say, inner product spaces are immensely important in the physical world.
+
+However, when the vector space is not finite dimensional (such as the space of solutions to the 1-dimensional box with the added zero function), we must be a bit more careful.  Without going into far too much detail, we must add one other attribute to these spaces to make them work as we need.  In this case, we must require that the inner product space is also \boldgreen{complete}.  A space is complete if and only if all Cauchy sequences in the space converge. We call a complete inner product space a \boldgreen{Hilbert space}.
+
+\begin{exercise}
+	We defined a Cauchy sequence in the prequel. Find the definition.
+\end{exercise}
+
+This extra requirement rules out some oddities and makes the infinite dimensional space much more like the finite dimensional spaces such as $\R^n$ and $\C^n$.  We showed in the prequel that in $\R$ a convergent sequence is also Cauchy. That is, the definitions are analogous. The same happens to be true in $\R^n$ and $\C^n$ (you can picture taking a sequence of vectors instead of a sequence of real numbers).  Thus, in a Hilbert space, Cauchy and convergent are again equal. Let us see why one should believe this.
+
+\begin{ex}{A Cauchy Sequence of Functions}{cauchy_functions}
+	Before, we studied power series that define functions.  We would write
+	\[
+		f(x) = \sum_{n=0}^\infty a_n x^n,
+	\]
+	where $x$ is in the domain of convergence for the series.  As we worked through what it meant for a series to converge, we found that we could view a series as a sequence of partial sums.  That is, for each value of $x$ we can create a sequence $\{A_n(x)\}_{n=0}^\infty$ by letting
+	\[
+		A_N(x) = \sum_{n=0}^N a_n x^n.
+	\]
+	We noted that as we increased $N$, the function $A_N(x)$ became closer and closer to the function $f(x)$.  This was entirely reasonable as if the contrary were true, at some point a large $N$ would provide us a worse approximation to $f(x)$.  
+
+	The completeness assumption for a Hilbert space will give us this ability.  It will allow one to properly approximate quantities such as infinite sums of functions in a way that makes intuitive sense.  
+\end{ex}
+
+No more detail is needed on the notion of completeness. We will completely avoid spaces that are not complete as they behave badly.  Take the completeness of any space as given unless it is mentioned otherwise. 
+
+\section{Symmetries and Adjoints}
+
+As previously discussed, symmetry is an important aspect of problem solving that is present in most physical systems.  The prior example is no exception.  We discussed the phase of a complex function and viewed this in an example from quantum mechanics.  There, we found that when a wavefunction is altered by adding a global phase, the probability of making a measurement is not changed.  This is in fact a specific example of something far more general.  But in this case for the particle in the 1-dimensional box, we can see that if alter two wave functions by the same phase and take the inner product
+\begin{align*}
+\innprod{e^{i\theta} \Psi}{e^{i\theta}\Phi} &= \int_0^L e^{i\theta} \Psi(x) (e^{i\theta}\Phi(x))^*dx \\
+	&= \int_0^L e^{i\theta}\Psi(x)e^{-i\theta}\Phi^*(x)dx\\
+	&= \int_0^L \Psi(x)\Phi^*(x)dx\\
+	&= \innprod{\Psi}{\Phi},
+\end{align*}
+then the inner product is not changed.  This is an example of a \boldgreen{unitary symmetry}.  
+
+This is not special for just the particle in the 1-dimensional box either. Take the space $\R^2$ with two vectors $\vecu$ and $\vecv$. Then consider a matrix $[A]$ that is in the group $\Orth(2)$ (which means that $[A]$ is a matrix that solely rotates and or reflects vectors).
+\begin{exercise}
+	Recall the definition of the matrix group $\Orth(2)$.
+\end{exercise}
+Now, we can actually realize any matrix in $\Orth(2)$ as a reflection matrix, or a product of two reflection matrices. For the sake of example, take a reflection matrix
+\[
+\REF_\theta = \begin{pmatrix} \cos (2\theta) & \sin(2\theta) \\ \sin(2\theta) & -\cos(2\theta) \end{pmatrix},
+\]
+which reflects a vector about the line passing through the origin with angle $\theta$ measured from the $x$-axis.  Then letting
+\[
+\vecu = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix} \qquad \textrm{and} \qquad \vecv = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix},
+\]
+ we have
+\[
+\REF_\theta \vecu = \begin{pmatrix} (\cos(2\theta)+\sin(2\theta))u_1 \\  (\sin(2\theta) - \cos(2\theta))u_2\end{pmatrix} \qquad \textrm{and} \qquad \REF_\theta \vecv = \begin{pmatrix} (\cos(2\theta)+\sin(2\theta))v_1 \\  (\sin(2\theta) - \cos(2\theta))v_2\end{pmatrix}.
+\]
+
+\textcolor{red}{Put a picture here}
