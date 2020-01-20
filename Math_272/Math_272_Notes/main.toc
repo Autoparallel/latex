@@ -7,17 +7,30 @@
 \contentsline {chapter}{\numberline {2}Hilbert Spaces}{8}{chapter.2}%
 \contentsline {section}{\numberline {1}Introduction}{8}{section.2.1}%
 \contentsline {subsection}{\numberline {1.1}Infinite Dimensions}{9}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2}Inner Products}{9}{section.2.2}%
-\contentsline {section}{\numberline {3}Inner Product Spaces}{12}{section.2.3}%
-\contentsline {section}{\numberline {4}Symmetries and Adjoints}{13}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Linear Operators}{14}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Fourier Theory}{15}{chapter.4}%
-\contentsline {part}{VI\hspace {1em}Calculus in Higher Dimensions}{16}{part.6}%
-\contentsline {chapter}{\numberline {5}Curves and Fields}{17}{chapter.5}%
-\contentsline {section}{\numberline {1}Overview of multivariate functions}{17}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Differential and Integration Operators}{18}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Coordinate Systems and Parameterization}{19}{chapter.7}%
-\contentsline {part}{VII\hspace {1em}Partial Differential Equations}{20}{part.7}%
-\contentsline {chapter}{\numberline {8}Modelling}{21}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Separation of Variables}{22}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Fourier Transforms and Harmonics}{23}{chapter.10}%
+\contentsline {section}{\numberline {2}Function Spaces}{9}{section.2.2}%
+\contentsline {section}{\numberline {3}Inner Products}{9}{section.2.3}%
+\contentsline {section}{\numberline {4}Inner Product Spaces}{12}{section.2.4}%
+\contentsline {section}{\numberline {5}Symmetries}{13}{section.2.5}%
+\contentsline {section}{\numberline {6}Bases}{14}{section.2.6}%
+\contentsline {subsection}{\numberline {6.1}Orthonormal Bases}{15}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {6.2}Expansion and Projection}{16}{subsection.2.6.2}%
+\contentsline {chapter}{\numberline {3}Linear Operators}{17}{chapter.3}%
+\contentsline {section}{\numberline {1}Matrices}{17}{section.3.1}%
+\contentsline {section}{\numberline {2}Linear Operators}{17}{section.3.2}%
+\contentsline {subsection}{\numberline {2.1}Adjoints}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {2.2}Hermitian Operators}{17}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3}Differential Operators}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.1}Spectra}{18}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}Fourier Theory}{19}{chapter.4}%
+\contentsline {section}{\numberline {1}Fourier Series}{19}{section.4.1}%
+\contentsline {section}{\numberline {2}Fourier Transforms}{19}{section.4.2}%
+\contentsline {section}{\numberline {3}Distributions}{20}{section.4.3}%
+\contentsline {part}{VI\hspace {1em}Calculus in Higher Dimensions}{21}{part.6}%
+\contentsline {chapter}{\numberline {5}Curves and Fields}{22}{chapter.5}%
+\contentsline {section}{\numberline {1}Overview of multivariate functions}{22}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Differential and Integration Operators}{23}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Coordinate Systems and Parameterization}{24}{chapter.7}%
+\contentsline {part}{VII\hspace {1em}Partial Differential Equations}{25}{part.7}%
+\contentsline {chapter}{\numberline {8}Modelling}{26}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Separation of Variables}{27}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Fourier Transforms and Harmonics}{28}{chapter.10}%

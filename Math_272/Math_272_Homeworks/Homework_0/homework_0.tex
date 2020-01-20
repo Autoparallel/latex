@@ -8,60 +8,61 @@
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 271, Homework 0}\\
-   \textsc{Due August 30$^\textrm{th}$}
-\end{center}
-
-\begin{center}
-    \textbf{Tell me a little bit about yourself!}
-\end{center}
-
-\begin{question}
-    Where did you grow up? Why did you choose Colorado State University?
-\end{question}
-
-\begin{question}
-    What is something interesting about yourself.  What is a favorite hobby of yours?
-\end{question}
-
-\begin{question}
-    Why are you interested in chemistry? Do you have plans after you earn your degree?
-\end{question}
-
-\begin{question}
-    Honest answers appreciated here.  Do you enjoy mathematics? Do you think it's hard? What do you hope to gain from this course?
-\end{question}
-
-
-\begin{center}
-    \textbf{Now for some mathematics.}
+   \textsc{\large MATH 272, Homework 0}\\
+   \textsc{Due January 24$^\textrm{th}$}
 \end{center}
 
 \begin{problem}
-    Compute the following:
-\begin{enumerate}[(a)]
-    \item $\displaystyle{\frac{d}{dx}(2x^7-3x^4+7)}$;
-    \item $\displaystyle{\frac{d}{dt}\left(e^{at}\sin(bt)\right)}$;
-    \item $\displaystyle{\frac{d}{ds}\left(\tan\left( e^{s^2}\right)\right)}$.
-\end{enumerate}
+	Write down the definition for a vector space.  
 \end{problem}
 
 \begin{problem}
-    Compute the following:
-\begin{enumerate}[(a)]
-    \item $\displaystyle{\int 2x^7-3x^4+7dx}$;
-    \item $\displaystyle{\int_{-1}^1 \cos(t) dt}$;
-    \item $\displaystyle{\int_0^1 e^{2y}dy}$;
-\end{enumerate}
+	For the following vectors in $\C^3$, compute each pairwise Hermitian inner product $\innprod{\cdot}{\cdot}$.  
+	\[
+		\vecu = \begin{pmatrix} i \\ 1 \\ 0 \end{pmatrix}, \qquad \vecv = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}, \qquad \vecw = \begin{pmatrix} i \\ 2i \\ 2 \end{pmatrix}.
+	\]
 \end{problem}
 
 \begin{problem}
-    Find the point(s) of intersection of the parabola $f(x)=2x^2+2x+2$ and the line $g(x)=4x+4$. Draw a picture and identify what's happening. (You can plot this on Desmos and print that out if you'd like, but do the algebra to find the solution by hand.)
+	Write down what it means to have an orthonormal basis for the vector space $\R^n$ and the vector space $\C^n$.
 \end{problem}
 
 \begin{problem}
-    Now take the same parabola $f(x)=2x^2+2x+2$ and the line $h(x)=4x-4$. Draw a picture to show that these parabolas do not intersect. We can find ``complex intersections" by doing the same algebra as the previous problem. Find these complex interesctions. (\emph{Hint: set up an equation whose roots would give you the intersections of these two curves.)}
+	(Pointwise) We often extend operations that we perform with numbers to functions without spending too much time on how this is done. For example, you know perfectly well what it means to evaluate
+	\[
+		5+7
+	\]
+	but what does it mean to evaluate
+	\[
+		f(x)=\cos(x)+\sin(x)?
+	\]
+	I'd argue that you know what this means as well.  In the above, we simply evaluate the added functions \emph{pointwise} by computing the value of each individual function at the point $x$ and then adding the resulting numbers afterwards. For example,
+	\[
+		f(3\pi/4)=\cos(3\pi/4) + \sin(3\pi/4)= -\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=0.
+	\]
+	For the following, explain how the operation is to be performed on functions for some arbitrary functions $g(x)$ and $h(x)$.
+	\begin{enumerate}[(a)]
+		\item $g^*(x)$;
+		\item $g(x)h(x)$;
+		\item $(g(x))^{-1}(h^*(x))^2$.
+	\end{enumerate}
 \end{problem}
 
+\begin{problem}
+	Consider the complex valued function $f(x) = \cos(x)+i\sin(x)$.  
+	\begin{enumerate}[(a)]
+		\item Plot this function in the complex plane for the input values $[0,2\pi]$. Clearly label the function values for $x=0,\pi/2,\pi,3\pi/2,2\pi$.
+		\item Write this function in polar form. That is, find fuctions $r(x)$ and $\theta(x)$ so that $f(x)=r(x)e^{i\theta(x)}$. \emph{Hint: There are a few ways to do this, but can you use the geometry from (a) to help you here?}
+		\item Evaluate the integral
+		\[
+			\int_0^{2\pi}f(x)dx.
+		\]
+		\item Evaluate the integral
+		\[
+			\int_0^{2\pi} \|f(x)\|^2dx
+		\]
+		where $\|\cdot\|^2$ is the modulus of a complex number. You will need to realize what the modulus of a complex function is. \emph{Hint: think pointwise.}
+	\end{enumerate}
+\end{problem}
 
 \end{document}

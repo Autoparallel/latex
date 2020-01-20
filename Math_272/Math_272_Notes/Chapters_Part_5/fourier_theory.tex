@@ -1,0 +1,30 @@
+\section{Fourier Series}
+the inner product for fourier series is different because it arises from group theory. Specifically, the inner product is a matter of a representation of a group.  So we have something like 
+\[
+\innprod{f}{g} = \frac{1}{|G|} \int_G f(x)g(x)dx
+\]
+So for this on $[0,L]$, we get
+\[
+\innprod{f}{g} = \frac{1}{L} \int_0^L f(x)g(x)dx.
+\]
+The orthonormal basis elements are the functions
+\[
+1, \qquad \sqrt{2}\cos\left(\frac{2n \pi x }{L}\right), \qquad \sqrt{2}\sin\left(\frac{2n \pi x}{L} \right).
+\]
+\textcolor{red}{Example in Desmos}
+
+\section{Fourier Transforms}
+We can find the spectrum of the Laplace operator on $\R$ by
+\[
+\frac{d^2f}{dx^2} = kf
+\]
+Then the characteristic polynomial is
+\[
+\lambda^2=k
+\]
+thus $\lambda = \pm \sqrt{k}$. Without going into extra detail, we know that $k\leq 0$ (this can be shown via integration by parts).  Thus, we have that the an eigenfunction for the Laplace operator can be written as
+\[
+f(x)=Ce^{\pm i\omega x}
+\]
+where $C$ is a constant.  Hence
+\section{Distributions}

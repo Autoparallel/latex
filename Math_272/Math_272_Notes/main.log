@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  17 JAN 2020 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  19 JAN 2020 16:21
 entering extended mode
 **./main.tex
 (main.tex
@@ -1956,7 +1956,7 @@ Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
  (Frontmatter/title.tex
-<Frontmatter/ram_logo.jpg, id=134, 578.16pt x 578.16pt>
+<Frontmatter/ram_logo.jpg, id=186, 578.16pt x 578.16pt>
 File: Frontmatter/ram_logo.jpg Graphic file (type jpg)
 <use Frontmatter/ram_logo.jpg>
 Package pdftex.def Info: Frontmatter/ram_logo.jpg  used on input line 64.
@@ -2062,7 +2062,7 @@ Underfull \hbox (badness 2980) in paragraph at lines 94--95
  of the so-lu-tions to
  []
 
-<Figures_Part_5/psi_1.png, id=199, 1204.5pt x 803.0pt>
+<Figures_Part_5/psi_1.png, id=264, 1204.5pt x 803.0pt>
 File: Figures_Part_5/psi_1.png Graphic file (type png)
 <use Figures_Part_5/psi_1.png>
 Package pdftex.def Info: Figures_Part_5/psi_1.png  used on input line 122.
@@ -2079,40 +2079,40 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.63599pt on input line 123.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 123.
-<Figures_Part_5/psi_2.png, id=201, 1204.5pt x 803.0pt>
+<Figures_Part_5/psi_2.png, id=266, 1204.5pt x 803.0pt>
 File: Figures_Part_5/psi_2.png Graphic file (type png)
 <use Figures_Part_5/psi_2.png>
 Package pdftex.def Info: Figures_Part_5/psi_2.png  used on input line 128.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/Psi.png, id=202, 1204.5pt x 803.0pt>
+<Figures_Part_5/Psi.png, id=267, 1204.5pt x 803.0pt>
 File: Figures_Part_5/Psi.png Graphic file (type png)
 <use Figures_Part_5/Psi.png>
 Package pdftex.def Info: Figures_Part_5/Psi.png  used on input line 134.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi.png, id=203, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi.png, id=268, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi.png  used on input line 140.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi4.png, id=204, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi4.png, id=269, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi4.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi4.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_pi4.png  used on input line 16
 7.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi2.png, id=205, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi2.png, id=270, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi2.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi2.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_pi2.png  used on input line 17
 3.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_3pi4.png, id=206, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_3pi4.png, id=271, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_3pi4.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_3pi4.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_3pi4.png  used on input line 1
 79.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi.png, id=207, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi.png, id=272, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_pi.png  used on input line 185
@@ -2134,15 +2134,15 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
 
 [8
 
-] [9] [10] [11] [12]) [13]
+] [9] [10] [11] [12] [13] [14] [15]) [16]
 Chapter 3.
-(Chapters_Part_5/linear_operators.tex) [14
+(Chapters_Part_5/linear_operators.tex [17
 
-]
+]) [18]
 Chapter 4.
-(Chapters_Part_5/fourier_theory.tex) [15
+(Chapters_Part_5/fourier_theory.tex [19
 
-] [16
+]) [20] [21
 
 ]
 Chapter 5.
@@ -2151,31 +2151,31 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 8.
-) [17
+) [22
 
 ]
 Chapter 6.
-(Chapters_Part_6/differential_operators.tex) [18
+(Chapters_Part_6/differential_operators.tex) [23
 
 ]
 Chapter 7.
-(Chapters_Part_6/coordinate_systems_paramaterization.tex) [19
+(Chapters_Part_6/coordinate_systems_paramaterization.tex) [24
 
-] [20
+] [25
 
 ]
 Chapter 8.
-(Chapters_Part_7/modelling.tex) [21
+(Chapters_Part_7/modelling.tex) [26
 
 ]
 Chapter 9.
-(Chapters_Part_7/separation_of_variables.tex) [22
+(Chapters_Part_7/separation_of_variables.tex) [27
 
 ]
 Chapter 10.
 (Chapters_Part_7/fourier_transforms_harmonics.tex)
 No file main.ind.
-[23
+[28
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
@@ -2184,16 +2184,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7224CB61C5FF3F704325DB35CE27A887;1554.
+(rerunfilecheck)             Checksum: 8124FD19D33B272D31398DA570ED30B2;2373.
  ) 
 Here is how much of TeX's memory you used:
- 51104 strings out of 492483
- 1160077 string characters out of 3121588
- 1367710 words of memory out of 3000000
- 54458 multiletter control sequences out of 15000+200000
+ 51148 strings out of 492483
+ 1160674 string characters out of 3121588
+ 1367990 words of memory out of 3000000
+ 54481 multiletter control sequences out of 15000+200000
  698769 words of font info for 192 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,20n,123p,831b,1277s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 77i,20n,123p,850b,1277s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
 ecsx1200.pk>{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
 ase/8r.enc} <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/e
@@ -2210,9 +2210,9 @@ s/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/Colin/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Users/Colin/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/Colin
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (27 pages, 417198 bytes).
+Output written on main.pdf (32 pages, 448696 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 386 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 490 words of extra memory for PDF output out of 10000 (max. 10000000)
 

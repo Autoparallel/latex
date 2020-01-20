@@ -2,5 +2,5 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
 \beamer@sectionintoc {2}{Motivation}{8}{0}{2}
 \beamer@sectionintoc {3}{Preliminaries}{17}{0}{3}
-\beamer@sectionintoc {4}{Applications}{29}{0}{4}
-\beamer@sectionintoc {5}{Conclusions}{30}{0}{5}
+\beamer@sectionintoc {4}{Applications}{34}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{35}{0}{5}

@@ -37,6 +37,10 @@ The dimension of a vector is the number of entries needed to fully describe the 
 
 This section of the text is primarily concerned with extending our linear algebra techniques to the infinite dimensional case.  Though this may sound ominous, it simply builds upon what we already know.  In essence, we will combine our knowledge of functions, infinite series, integrals, and linear algebra to complete the theory for infinite dimensions.  Put simply, functions will play the role of vectors while series and integrals will play the role of inner products.  This viewpoint places us viewing mathematics from the top, where we can always reduce the general story to something more specific when need be. Ultimately, this allows one to understand one general structure instead of many individual ones.
 
+\section{Function Spaces}
+
+\textcolor{red}{add here}
+
 \section{Inner Products}
 
 Before we define general inner products, let us recall the definition of a vector space.  In the prequel, we had that a vector space $V$ over some field $\field$ (the numbers we choose as entries) is a set containing vectors that satisfy eight different properties.
@@ -169,7 +173,7 @@ This extra requirement rules out some oddities and makes the infinite dimensiona
 
 No more detail is needed on the notion of completeness. We will completely avoid spaces that are not complete as they behave badly.  Take the completeness of any space as given unless it is mentioned otherwise. 
 
-\section{Symmetries and Adjoints}
+\section{Symmetries}
 
 As previously discussed, symmetry is an important aspect of problem solving that is present in most physical systems.  The prior example is no exception.  We discussed the phase of a complex function and viewed this in an example from quantum mechanics.  There, we found that when a wavefunction is altered by adding a global phase, the probability of making a measurement is not changed.  This is in fact a specific example of something far more general.  But in this case for the particle in the 1-dimensional box, we can see that if alter two wave functions by the same phase and take the inner product
 \begin{align*}
@@ -178,9 +182,12 @@ As previously discussed, symmetry is an important aspect of problem solving that
 	&= \int_0^L \Psi(x)\Phi^*(x)dx\\
 	&= \innprod{\Psi}{\Phi},
 \end{align*}
-then the inner product is not changed.  This is an example of a \boldgreen{unitary symmetry}.  
+then the inner product is not changed.  This is an example of a \boldgreen{unitary operator}. A unitary operator preserves the inner product between two vectors. That is, if we have vectors $\Psi$ and $\Phi$ from an Hilbert product space $H$, then $U$ is a unitary operator if $U\colon H \to H$ is onto and
+\[
+\innprod{U\Psi}{U \Phi} = \innprod{\Psi}{\Phi}.
+\]
 
-This is not special for just the particle in the 1-dimensional box either. Take the space $\R^2$ with two vectors $\vecu$ and $\vecv$. Then consider a matrix $[A]$ that is in the group $\Orth(2)$ (which means that $[A]$ is a matrix that solely rotates and or reflects vectors).
+This is of course not special for just the particle in the 1-dimensional box either. Take the space $\R^2$ with two vectors $\vecu$ and $\vecv$. Then consider a matrix $[A]$ that is in the group $\Orth(2)$ (which means that $[A]$ is a matrix that solely rotates and or reflects vectors).
 \begin{exercise}
 	Recall the definition of the matrix group $\Orth(2)$.
 \end{exercise}
@@ -194,7 +201,97 @@ which reflects a vector about the line passing through the origin with angle $\t
 \]
  we have
 \[
-\REF_\theta \vecu = \begin{pmatrix} (\cos(2\theta)+\sin(2\theta))u_1 \\  (\sin(2\theta) - \cos(2\theta))u_2\end{pmatrix} \qquad \textrm{and} \qquad \REF_\theta \vecv = \begin{pmatrix} (\cos(2\theta)+\sin(2\theta))v_1 \\  (\sin(2\theta) - \cos(2\theta))v_2\end{pmatrix}.
+\REF_\theta \vecu = \begin{pmatrix} \cos(2\theta)u_1+\sin(2\theta)u_2 \\  \sin(2\theta)u_1-\cos(2\theta)u_2 \end{pmatrix} \qquad \textrm{and} \qquad \REF_\theta \vecv = \begin{pmatrix} \cos(2\theta)v_1+\sin(2\theta)v_2 \\  \sin(2\theta)v_1-\cos(2\theta)v_2 \end{pmatrix}.
 \]
-
 \textcolor{red}{Put a picture here}
+Then we can compute the inner product of the reflected vectors 
+\begin{align*}
+\innprod{\REF_\theta \vecu}{\REF_\theta \vecv}&= (\cos(2\theta)u_1+\sin(2\theta)u_2)(\cos(2\theta)v_1+\sin(2\theta)v_2 )\\
+&\qquad + (\sin(2\theta)u_1-\cos(2\theta)u_2)(\sin(2\theta)v_1-\cos(2\theta)v_2)\\
+&~\vdots\\
+&= u_1v_1 + u_2v_2.
+\end{align*}
+\begin{exercise}
+	Show the remaining steps in the above computation.
+\end{exercise}
+Since this is true for any reflection matrix, it will be true for any product of reflection matrices and hence the group of $\Orth(2)$ matrices are unitary transformations on the inner product space $\R^2$ (where the inner product is the standard dot product).
+
+Every Hilbert space will have a group of unitary symmetries that preserve the inner product. Hence, we tend to have different names for these groups to reflect what the underlying Hilbert product space is. In the particle in a box case, the underlying symmetry is the (slightly inaptly named) unitary group $U(1)$ whereas the case for $\R^2$ it is the orthogonal group $\Orth(2)$.
+
+\section{Bases}
+
+In the case of finite dimensions, we found that we could construct a minimal set of vectors in a space $V$ such that any vector in $V$ can be written as a linear combination of those vectors.  We called such a set a basis.  Take for example, the space $\R^3$, where we had the standard orthonormal basis given by $\xhat$, $\yhat$, and $\zhat$.  We put
+\[
+\xhat = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \qquad \yhat = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \qquad \zhat = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix},
+\]
+so that any vector
+\[
+\vecv = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}
+\]
+could be written as
+\[
+\vecv = v_1 \xhat + v_2 \yhat + v_3 \zhat.
+\]
+The latter notation proves to be convenient in the infinite dimensional case.
+
+We have already discovered one way in which we can form a basis for certain infinite dimensional spaces. This came in the form of power series. The major difference is that we have infinite sums to build functions instead of just finite sums to build vectors that live in spaces like $\R^n$ and $\C^n$. 
+
+Let us continue on with the power series example.  For the sake of simplicity, we can consider the space of analytic functions on the region $[0,L]$ (recall that analytic meant the function has a power series).  Then, by definition, every function $f(x)$ in this space can be written as an infinite sum
+\[
+f(x)=\sum_{n=0}^\infty a_n x^n,
+\]
+so long as for every $x\in [0,L]$ we have that the above series converges. Thus we have really investigated infinite dimensional spaces and their bases a bit.  In this case, our basis is the set of all powers of $x$. That is to say, we use $\{x^0,x^1,x^2,x^3,\dots\}$ as our basis vectors and the coefficients are the $a_n$.  
+
+In general, the definition of a basis that we have is already correct so long as we understand what it means in general to take a sum. In the previous example with power series, a sum could potentially be infinite.  In some cases (e.g., the Fourier transform) we will see that we may need to take an integral to be our method of summation.  
+
+\subsection{Orthonormal Bases}
+
+Once again, the finite dimensional case led us to discovering the usefulness of an inner product as a method for determining bases that are more useful.  Above, we mentioned the standard orthonormal basis for $\R^3$ which gives us the most natural decomposition of a vector.  Each of the vectors in this basis is of length one and is mutually orthogonal to one another.  Intuitively, this lets you describe a point in space by how much you must walk back or forth, left or right, and up or down to reach your desired location. The orthonormal basis gave us a way to naturally decompose a vector into separate components through the dot product. That is, we could find the $x$, $y$, or $z$-component of a vector and none of these components depend on the others. If you were to take a basis
+\[
+\vecu = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \qquad \vecv = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}, \qquad \vecw = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix},
+\]
+then if you were to break a vector up into these components, you would find that there is some overlap between what each component describes.
+
+\begin{exercise}
+	Show the vectors $\vecu$, $\vecv$, and $\vecw$ above form a basis.  Then, to see that there is some overlap, you can find the components of a vector (of your choice) in the directions $\uhat$, $\vhat$, and $\what$. \emph{Hint: to see the overlap, determine the length of the vector you chose, and compare it to the length computed from components un the $\uhat$,$\vhat$, and $\what$.}
+\end{exercise}
+
+When a basis is not orthogonal, then to find independent components of a vector, you must somehow subtract off the overlap. This process is a bit tedious, so instead of giving an example, we can just assert the fact that orthogonal bases are indeed helpful. 
+
+\begin{remark}
+	Orthogonal bases in finite dimensions also appear when we find eigenvalues and eigenvectors for Hermitian matrices. Specifically, the set of eigenvectors corresponding to different eigenvalues for a Hermitian matrix are always orthogonal!
+\end{remark}
+
+One may wish that the Hilbert spaces would have some sense of a natural decomposition into different orthogonal components.  It turns out that in the realm of spaces we care about we can do this, and that some Hilbert spaces have particularly nice bases to work with. In the prequel, we studied series solutions to differential equations as a means of solving a large class of equations. During that time, we solved Legendre's equation and found the solutions were particularly nice.
+
+Recall the equation we wished to solve was
+\[
+(1-x^2)f''(x)-2xf'(x)+m(m+1)f(x)=0
+\]
+with our domain $\Omega=[-1,1]$ and $m$ a non-negative integer ($m=0,1,2,\dots$). Ignoring the details, we found that there were solutions for each $m$ (which in some sense are like the eigenvalues for the 1-dimensional box).  The normalized solutions were known as the Legendre polynomials and the first few were
+\begin{align*}
+	f_0(x)&=\sqrt{\frac{1}{2}} & f_1(x)&=\sqrt{\frac{3}{2}} x\\
+	f_2(x)&= \sqrt{\frac{5}{8}} (1-3x^2) & f_3(x)&=\sqrt{\frac{63}{8}}\left(x-\frac{5x^3}{3}\right).
+\end{align*}
+One may be wondering what we mean by normalized here. The solutions to the Legendre equation live in a Hilbert space whose inner product is given by
+\[
+\innprod{\Psi}{\Phi} = \int_{-1}^1 \Psi(x)\Phi(x)dx,
+\]
+in which these functions are normalized. That is, we have  
+\[
+\|f_i\|= \sqrt{\innprod{f_i}{f_i}} = 1,
+\]
+for every $i$. Note we do not need a complex conjugate in this inner product since these functions are all real valued. Moreover, it turns out that this set of polynomials is orthonormal since we also have
+\[
+\innprod{f_i}{f_j} = 0
+\]
+if $i\neq j$. Finally, the Legendre polynomials form a basis for the solution to the Legendre equation.  Specifically, we can write any other solution as a series of Legendre polynomials by
+\[
+f(x)= \sum_{n=1}^\infty a_n f_n(x),
+\]
+so long as the series converges for all values of $x$ in the domain $\Omega$.  
+
+In the realm of quantum mechanics, the orthonormal basis of eigenfunctions are extremely important. Previously, we even donated these functions with the term \boldgreen{states}.  Though we never defined this term in the prequel, we now have a rough working definition.  When observing a quantum system, it is only possible to observe a particle in an eigenstate of the operator that is mathematical representation for the observation you are wishing to make.  We will define operators, eigenfunctions, and observables later.
+
+\subsection{Expansion and Projection}
+

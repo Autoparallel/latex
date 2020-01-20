@@ -7,17 +7,30 @@
 \BOOKMARK [0][-]{chapter.2}{Hilbert Spaces}{part.5}% 7
 \BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.1.1}{Infinite Dimensions}{section.2.1}% 9
-\BOOKMARK [1][-]{section.2.2}{Inner Products}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Inner Product Spaces}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.4}{Symmetries and Adjoints}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Linear Operators}{part.5}% 13
-\BOOKMARK [0][-]{chapter.4}{Fourier Theory}{part.5}% 14
-\BOOKMARK [-1][-]{part.6}{VI Calculus in Higher Dimensions}{}% 15
-\BOOKMARK [0][-]{chapter.5}{Curves and Fields}{part.6}% 16
-\BOOKMARK [1][-]{section.5.1}{Overview of multivariate functions}{chapter.5}% 17
-\BOOKMARK [0][-]{chapter.6}{Differential and Integration Operators}{part.6}% 18
-\BOOKMARK [0][-]{chapter.7}{Coordinate Systems and Parameterization}{part.6}% 19
-\BOOKMARK [-1][-]{part.7}{VII Partial Differential Equations}{}% 20
-\BOOKMARK [0][-]{chapter.8}{Modelling}{part.7}% 21
-\BOOKMARK [0][-]{chapter.9}{Separation of Variables}{part.7}% 22
-\BOOKMARK [0][-]{chapter.10}{Fourier Transforms and Harmonics}{part.7}% 23
+\BOOKMARK [1][-]{section.2.2}{Function Spaces}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Inner Products}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Inner Product Spaces}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{Symmetries}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.6}{Bases}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.6.1}{Orthonormal Bases}{section.2.6}% 15
+\BOOKMARK [2][-]{subsection.2.6.2}{Expansion and Projection}{section.2.6}% 16
+\BOOKMARK [0][-]{chapter.3}{Linear Operators}{part.5}% 17
+\BOOKMARK [1][-]{section.3.1}{Matrices}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{Linear Operators}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{Adjoints}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.2}{Hermitian Operators}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{Differential Operators}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.1}{Spectra}{section.3.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Fourier Theory}{part.5}% 24
+\BOOKMARK [1][-]{section.4.1}{Fourier Series}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Fourier Transforms}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{Distributions}{chapter.4}% 27
+\BOOKMARK [-1][-]{part.6}{VI Calculus in Higher Dimensions}{}% 28
+\BOOKMARK [0][-]{chapter.5}{Curves and Fields}{part.6}% 29
+\BOOKMARK [1][-]{section.5.1}{Overview of multivariate functions}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.6}{Differential and Integration Operators}{part.6}% 31
+\BOOKMARK [0][-]{chapter.7}{Coordinate Systems and Parameterization}{part.6}% 32
+\BOOKMARK [-1][-]{part.7}{VII Partial Differential Equations}{}% 33
+\BOOKMARK [0][-]{chapter.8}{Modelling}{part.7}% 34
+\BOOKMARK [0][-]{chapter.9}{Separation of Variables}{part.7}% 35
+\BOOKMARK [0][-]{chapter.10}{Fourier Transforms and Harmonics}{part.7}% 36

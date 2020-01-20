@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  17 JAN 2020 09:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  19 JAN 2020 21:33
 entering extended mode
 **./main.tex
 (main.tex
@@ -3025,22 +3025,109 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
 
 ] [17
 
-]
+] (sphere.pdf_tex
+<sphere.pdf, id=184, page=1, 284.71252pt x 285.28038pt>
+File: sphere.pdf Graphic file (type pdf)
+<use sphere.pdf, page 1>
+Package pdftex.def Info: sphere.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
+) [18
+
+ <./sphere.pdf>] (sphere_charts.pdf_tex
+<sphere_charts.pdf, id=201, page=1, 284.71252pt x 285.28038pt>
+File: sphere_charts.pdf Graphic file (type pdf)
+<use sphere_charts.pdf, page 1>
+Package pdftex.def Info: sphere_charts.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
+<sphere_charts.pdf, id=202, page=2, 284.71252pt x 285.28038pt>
+File: sphere_charts.pdf Graphic file (type pdf)
+<use sphere_charts.pdf, page 2>
+Package pdftex.def Info: sphere_charts.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
+) [19
+
+ <./sphere_charts.pdf> <./sphere_charts.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_charts.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] (sphere_charts_maps.pdf_tex
+<sphere_charts_maps.pdf, id=221, page=1, 765.41641pt x 545.24957pt>
+File: sphere_charts_maps.pdf Graphic file (type pdf)
+<use sphere_charts_maps.pdf, page 1>
+Package pdftex.def Info: sphere_charts_maps.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 284.19536pt x 202.44637pt.
+<sphere_charts_maps.pdf, id=222, page=2, 765.41641pt x 545.24957pt>
+File: sphere_charts_maps.pdf Graphic file (type pdf)
+<use sphere_charts_maps.pdf, page 2>
+Package pdftex.def Info: sphere_charts_maps.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 284.19536pt x 202.44637pt.
+<sphere_charts_maps.pdf, id=223, page=3, 765.41641pt x 545.24957pt>
+File: sphere_charts_maps.pdf Graphic file (type pdf)
+<use sphere_charts_maps.pdf, page 3>
+Package pdftex.def Info: sphere_charts_maps.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 284.19536pt x 202.44637pt.
+) [20
+
+ <./sphere_charts_maps.pdf> <./sphere_charts_maps.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+> <./sphere_charts_maps.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>] (sphere_curve.pdf_tex
+<sphere_curve.pdf, id=242, page=1, 285.07619pt x 302.15588pt>
+File: sphere_curve.pdf Graphic file (type pdf)
+<use sphere_curve.pdf, page 1>
+Package pdftex.def Info: sphere_curve.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
+<sphere_curve.pdf, id=243, page=2, 285.07619pt x 302.15588pt>
+File: sphere_curve.pdf Graphic file (type pdf)
+<use sphere_curve.pdf, page 2>
+Package pdftex.def Info: sphere_curve.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
+) [21
+
+ <./sphere_curve.pdf> <./sphere_curve.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_curve.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>] (sphere_curve_tangent.pdf_tex
+<sphere_curve_tangent.pdf, id=261, page=1, 285.07619pt x 302.15588pt>
+File: sphere_curve_tangent.pdf Graphic file (type pdf)
+<use sphere_curve_tangent.pdf, page 1>
+Package pdftex.def Info: sphere_curve_tangent.pdf , page1 used on input line 56
+.
+(pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
+<sphere_curve_tangent.pdf, id=262, page=2, 285.07619pt x 302.15588pt>
+File: sphere_curve_tangent.pdf Graphic file (type pdf)
+<use sphere_curve_tangent.pdf, page 2>
+Package pdftex.def Info: sphere_curve_tangent.pdf , page2 used on input line 58
+.
+(pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
+<sphere_curve_tangent.pdf, id=263, page=3, 285.07619pt x 302.15588pt>
+File: sphere_curve_tangent.pdf Graphic file (type pdf)
+<use sphere_curve_tangent.pdf, page 3>
+Package pdftex.def Info: sphere_curve_tangent.pdf , page3 used on input line 62
+.
+(pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
+) [22
+
+ <./sphere_curve_tangent.pdf> <./sphere_curve_tangent.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_curve_tangent.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+> <./sphere_curve_tangent.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_curve_tangent.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>]
 LaTeX Font Info:    Font shape `T1/pbk/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/pbk/b/it' tried instead on input line 181.
+(Font)              Font shape `T1/pbk/b/it' tried instead on input line 226.
 LaTeX Font Info:    Font shape `T1/pbk/b/it' in size <10.95> not available
-(Font)              Font shape `T1/pbk/db/it' tried instead on input line 181.
- [18
-
-] [19
-
-] [20
-
-] [21
-
-] [22
-
-] [23
+(Font)              Font shape `T1/pbk/db/it' tried instead on input line 226.
+ [23
 
 ] [24
 
@@ -3050,12 +3137,22 @@ LaTeX Font Info:    Font shape `T1/pbk/b/it' in size <10.95> not available
 
 ] [27
 
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+] [32
+
 ]
-<Figures/coordinate_charts_manifold.png, id=251, 1927.2pt x 1541.76pt>
+<Figures/coordinate_charts_manifold.png, id=346, 1927.2pt x 1541.76pt>
 File: Figures/coordinate_charts_manifold.png Graphic file (type png)
 <use Figures/coordinate_charts_manifold.png>
 Package pdftex.def Info: Figures/coordinate_charts_manifold.png  used on input 
-line 228.
+line 275.
 (pdftex.def)             Requested size: 227.35715pt x 181.87434pt.
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/cmr/m/n/14.4'.
@@ -3067,41 +3164,41 @@ Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/cmr/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 17.64008pt on input line 228.
+(Font)              scaled to size 17.64008pt on input line 275.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 12.25006pt on input line 228.
+(Font)              scaled to size 12.25006pt on input line 275.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 8.57504pt on input line 228.
+(Font)              scaled to size 8.57504pt on input line 275.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 17.64008pt on input line 228.
+(Font)              scaled to size 17.64008pt on input line 275.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 12.25006pt on input line 228.
+(Font)              scaled to size 12.25006pt on input line 275.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 8.57504pt on input line 228.
+(Font)              scaled to size 8.57504pt on input line 275.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 228.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 275.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 228.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 275.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <14.4> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 228.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 228.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <7> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 228.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/cmr/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 21.16809pt on input line 228.
+(Font)              scaled to size 21.16809pt on input line 275.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 21.16809pt on input line 228.
+(Font)              scaled to size 21.16809pt on input line 275.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <17.28> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 228.
- [28
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
+ [33
 
- <./Figures/coordinate_charts_manifold.png>] [29
+ <./Figures/coordinate_charts_manifold.png>] [34
 
-] [30
+] [35
 
 ]
 \tf@nav=\write9
@@ -3113,45 +3210,44 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <17.28> not available
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
- (main.aux
-
-Package pdfbase Warning: Rerun to get internal references right!
-
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
+ (main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2B20EB6AF343DB693EDB4A6D2BE7D5F7;233.
  ) 
 Here is how much of TeX's memory you used:
- 58857 strings out of 492483
- 1333279 string characters out of 3121588
- 1583490 words of memory out of 3000000
- 61996 multiletter control sequences out of 15000+200000
- 587187 words of font info for 155 fonts, out of 3000000 for 9000
+ 58954 strings out of 492483
+ 1335977 string characters out of 3121588
+ 1584490 words of memory out of 3000000
+ 62063 multiletter control sequences out of 15000+200000
+ 588722 words of font info for 159 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,11n,119p,773b,674s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 76i,15n,119p,773b,674s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi
 868\cmbrmi10.pk>{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
-ps/gfsneohellenic/neohellenicmath.enc}{C:/Users/Colin/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Colin/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/gfsneohellenic/GFSNeohellenic-Italic.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Colin/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/urw/bookman/ubkd8a.pfb><C:/Users/Colin/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/bookman/ubkdi8a.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb><C:/U
-sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/bookman/ubkli8a.pf
-b>
-Output written on main.pdf (30 pages, 256810 bytes).
+ps/gfsneohellenic/neohellenicmath.enc} <C:\Users\Colin\AppData\Local\MiKTeX\2.9
+\fonts/pk/ljfour/public/cmbright/dpi660\cmbrmi10.pk>{C:/Users/Colin/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Colin/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/gfsneohellenic/GFSNeohellenic-Italic.p
+fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
+/bookman/ubkd8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/urw/bookman/ubkdi8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/urw/bookman/ubkl8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/urw/bookman/ubkli8a.pfb>
+Output written on main.pdf (35 pages, 301706 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 66 named destinations out of 1000 (max. 500000)
- 23789 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 436 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 23844 words of extra memory for PDF output out of 24883 (max. 10000000)
 
