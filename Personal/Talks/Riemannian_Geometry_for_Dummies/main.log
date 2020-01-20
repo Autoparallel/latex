@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  19 JAN 2020 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  19 JAN 2020 22:13
 entering extended mode
 **./main.tex
 (main.tex
@@ -3124,9 +3124,9 @@ pdfTeX warning: pdflatex.exe (file ./sphere_curve_tangent.pdf): PDF inclusion:
 multiple pdfs with page group included in a single page
 >]
 LaTeX Font Info:    Font shape `T1/pbk/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/pbk/b/it' tried instead on input line 226.
+(Font)              Font shape `T1/pbk/b/it' tried instead on input line 221.
 LaTeX Font Info:    Font shape `T1/pbk/b/it' in size <10.95> not available
-(Font)              Font shape `T1/pbk/db/it' tried instead on input line 226.
+(Font)              Font shape `T1/pbk/db/it' tried instead on input line 221.
  [23
 
 ] [24
@@ -3152,7 +3152,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/it' in size <10.95> not available
 File: Figures/coordinate_charts_manifold.png Graphic file (type png)
 <use Figures/coordinate_charts_manifold.png>
 Package pdftex.def Info: Figures/coordinate_charts_manifold.png  used on input 
-line 275.
+line 270.
 (pdftex.def)             Requested size: 227.35715pt x 181.87434pt.
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/cmr/m/n/14.4'.
@@ -3164,36 +3164,36 @@ Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/cmr/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 17.64008pt on input line 275.
+(Font)              scaled to size 17.64008pt on input line 270.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 12.25006pt on input line 275.
+(Font)              scaled to size 12.25006pt on input line 270.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 8.57504pt on input line 275.
+(Font)              scaled to size 8.57504pt on input line 270.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 17.64008pt on input line 275.
+(Font)              scaled to size 17.64008pt on input line 270.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 12.25006pt on input line 275.
+(Font)              scaled to size 12.25006pt on input line 270.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 8.57504pt on input line 275.
+(Font)              scaled to size 8.57504pt on input line 270.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 275.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 270.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 275.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 270.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <14.4> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 270.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 270.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <7> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 270.
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/cmr/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OML/neohellenic/m/it' will be
-(Font)              scaled to size 21.16809pt on input line 275.
+(Font)              scaled to size 21.16809pt on input line 270.
 LaTeX Font Info:    Font shape `OT1/neohellenic/m/n' will be
-(Font)              scaled to size 21.16809pt on input line 275.
+(Font)              scaled to size 21.16809pt on input line 270.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <17.28> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 275.
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 270.
  [33
 
  <./Figures/coordinate_charts_manifold.png>] [34
@@ -3210,11 +3210,11 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <17.28> not available
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 288.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 288.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2B20EB6AF343DB693EDB4A6D2BE7D5F7;233.
  ) 
@@ -3245,7 +3245,7 @@ ls/msbm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
 e1/urw/bookman/ubkdi8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/urw/bookman/ubkl8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/urw/bookman/ubkli8a.pfb>
-Output written on main.pdf (35 pages, 301706 bytes).
+Output written on main.pdf (35 pages, 301209 bytes).
 PDF statistics:
  436 PDF objects out of 1000 (max. 8388607)
  76 named destinations out of 1000 (max. 500000)
