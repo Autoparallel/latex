@@ -293,5 +293,49 @@ so long as the series converges for all values of $x$ in the domain $\Omega$.
 
 In the realm of quantum mechanics, the orthonormal basis of eigenfunctions are extremely important. Previously, we even donated these functions with the term \boldgreen{states}.  Though we never defined this term in the prequel, we now have a rough working definition.  When observing a quantum system, it is only possible to observe a particle in an eigenstate of the operator that is mathematical representation for the observation you are wishing to make.  We will define operators, eigenfunctions, and observables later.
 
-\subsection{Expansion and Projection}
+Another example of a basis arises from the solutions to the free particle in the 1-dimensional box.  If we let the Hilbert space be any solution to the boundary value problem along with the zero solution which we ruled out as not being physically meaningful (it is a solution, just not physically), then we found the orthonormal basis was given by all the states
+\[
+\psi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right).
+\]
+Hence, any solution to that problem can be written as
+\[
+\Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x),
+\]
+so long as this sum converges for $x$ values in the domain $[0,L]$.
+
+\subsection{Series and Integrals as Linear Combinations}
+
+The two main points of a basis is really to give us a way to extract interesting components of a vector and to be able to uniquely write any vector as a linear combination of the fewest possible elements of a vector space.  As discussed above, we can make our lives easiest by choosing nicer bases such as bases that are orthonormal.  Let us assume that we will do this.
+
+For certain Hilbert spaces $H$, we can write any vector in the space as a sum or series.  First, take for example, $\R^n$. Let us choose the orthonormal basis
+\[
+\xhat_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \qquad \xhat_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix},\quad \dots, \quad \xhat_n = \begin{pmatrix} 0 \\ 0 \\ 0 \\ \vdots 0 \end{pmatrix}.
+\]
+Then we can write any vector in the space $\R^n$ as a finite sum of the basis elements above by
+\[
+\vecv = \sum_{i=1}^n v_i \xhat_i = v_1 \xhat_1 + v_2 \xhat_2 + \cdots + v_n \xhat_n = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \\ \vdots \\ v_n \end{pmatrix}.
+\]
+As always, the $\xhat_i$ form the basis for $\R^n$ and the $v_i$ are the coefficients for the vector $\vecv$.
+
+When $H$ is infinite dimensional, we can no longer easily manipulate vectors as column vectors (it just doesn't always make sense)! So, we our hand is forced and we must write our vectors as some form of an infinite sum.  Of course, this is just an infinite version of a linear combination! For now, let us assume $H$ is sufficiently nice\footnote{Sufficiently nice here means \boldgreen{separable}. Do not worry about this definition!} so that we can write any vector $\Psi\in H$ by
+\[
+\Psi = \sum_{i=1}^\infty a_n \psi_n
+\]
+where the collection of all $\psi_n$ is a basis for $H$ and the $a_n$ are the coefficients for $\Psi$.  Not much has changed here, but the sum has now become infinite so we must handle convergence with care! One may also find that the infinite sum may not converge to the intended function at \emph{every} point in the domain (but this is a non-issue). We will see this when we cover the Fourier series.
+
+Finally, for the Hilbert spaces that are not quite as nice, we may in fact need to use integration as our form of linear combination.  We will see this in the case of the Fourier transform where we must put
+\[
+f(x)=\int_{-\infty}^\infty \hat{f}(\omega) \chi_x(\omega)d\omega.
+\]
+Here, the basis elements are the $\chi_x(\omega)$ which for the Fourier transform have the form
+\[
+\chi_x(\omega) = e^{i\omega x}.
+\]
+The coefficients are then given by the function $\hat{f}(\omega)$ where, for example, $\omega \in \R$. This is analogous the the above cases, its just that the list of coefficients is not finite, or indexed by integers, but rather it is indexed by the whole (larger) set of real numbers $\R$.  
+
+\begin{remark}
+	There is much going on here. Much if it is coming down to the sizes of infinities and underlying spaces we are working with.  The point is to see that we are solely generalizing the notion of writing a vector in a basis. Some spaces just have a very large amount of basis elements!	
+\end{remark}
+
+\subsection{Projection}
 
