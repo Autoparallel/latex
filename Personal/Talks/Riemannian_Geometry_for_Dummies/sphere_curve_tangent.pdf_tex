@@ -54,12 +54,12 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{sphere_curve_tangent.pdf}}%
-    \put(0.75224805,0.58054784){\color[rgb]{0.91764706,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma$\end{tabular}}}}%
+    \put(0.81449405,0.52773293){\color[rgb]{0.91764706,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{sphere_curve_tangent.pdf}}%
-    \put(0.78430172,0.74852854){\color[rgb]{0,0,0.76862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\left.\frac{d\gamma}{dt}\right\vert_{t=0}$\end{tabular}}}}%
-    \put(0.58253736,0.83596439){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\\\end{tabular}}}}%
-    \put(0.73103651,0.99706375){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_pM$\end{tabular}}}}%
+    \put(0.79918803,0.68370965){\color[rgb]{0,0,0.76862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\left.\frac{d\gamma}{dt}\right\vert_{t=0}$\end{tabular}}}}%
+    \put(0.56839052,0.81144317){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\\\end{tabular}}}}%
+    \put(0.73103651,0.99706373){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_pM$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{sphere_curve_tangent.pdf}}%
-    \put(0.02625626,0.82781825){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0.02625626,0.82781823){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

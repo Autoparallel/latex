@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'sphere_curve.pdf' (pdf, eps, ps)
+%% Accompanies image file 'tangent_bundle.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{283.64882582bp}%
+    \setlength{\unitlength}{801.96034349bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,17 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.06126663)%
+  \begin{picture}(1,0.60180347)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{sphere_curve.pdf}}%
-    \put(0.81553449,0.52840708){\color[rgb]{0.91764706,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma$\end{tabular}}}}%
-    \put(0.40574806,0.79453742){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma(0)=p$\\\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{sphere_curve.pdf}}%
-    \put(0.02628975,0.82887568){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
-    \put(0.2440627,0.70817708){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{4.05807619\unitlength}\raggedright \end{minipage}}}%
+    \put(0.09625346,0.35430697){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{tangent_bundle.pdf}}%
+    \put(0.38406201,0.31386247){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\rightarrow\displaystyle{\bigcupdot_{p\in M}T_pM\rightarrow}$\end{tabular}}}}%
+    \put(0.15340729,0.54594095){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_pM$\end{tabular}}}}%
+    \put(0.25695705,0.5781395){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_qM$\end{tabular}}}}%
+    \put(0.01006207,0.56845345){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_rM$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{tangent_bundle.pdf}}%
+    \put(0.77691459,0.59796522){\color[rgb]{0,0.52941176,0.16078431}\transparent{0.63137257}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$TM$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{tangent_bundle.pdf}}%
   \end{picture}%
 \endgroup%

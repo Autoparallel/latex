@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'sphere_curve.pdf' (pdf, eps, ps)
+%% Accompanies image file 'tangent_spaces.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{283.64882582bp}%
+    \setlength{\unitlength}{385.52885281bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.06126663)%
+  \begin{picture}(1,1.03358771)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{sphere_curve.pdf}}%
-    \put(0.81553449,0.52840708){\color[rgb]{0.91764706,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma$\end{tabular}}}}%
-    \put(0.40574806,0.79453742){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma(0)=p$\\\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{sphere_curve.pdf}}%
-    \put(0.02628975,0.82887568){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
-    \put(0.2440627,0.70817708){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{4.05807619\unitlength}\raggedright \end{minipage}}}%
+    \put(0.42612355,0.52114863){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{tangent_spaces.pdf}}%
+    \put(0.6662262,0.8305771){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0.00660366,0.53529615){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
+    \put(0.61370104,0.12440416){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.89418417,0.24318757){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_pM$\end{tabular}}}}%
+    \put(0.38701442,0.99561298){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_qM$\end{tabular}}}}%
+    \put(-0.02359973,0.91418495){\color[rgb]{0,0.53333333,0.16862745}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_rM$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
