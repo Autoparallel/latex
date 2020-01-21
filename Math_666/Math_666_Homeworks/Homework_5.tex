@@ -1,0 +1,70 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 5 -- due 10/4/2019}
+\noindent \emph{I worked with Brittany, Brenden and Shannon.}
+\setcounter{problem}{18}
+
+\begin{problem}
+Let $F=\finitef_2$, $m=\begin{pmatrix} 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 1\\ 1 & 1 & 0 & 0\\ 0 & 0 & 0 & 1 \end{pmatrix}\in \finitef_2^{4\times 4}$ and $G=\langle m\rangle$. Then $|m|=7$ (you do not need to show this). Let $V=\finitef_2^4$ be the $FG$-module obtained by the matrix action (called the \emph{natural module}) and $W=\langle (0,0,0,1)\rangle \leq V$ be a 1-dimensional $FG$-submodule. You do not need to show any of the statements so far.) Using the method from the proof of \textsf{Maschke's} theorem, construct an $FG$-submodule $S$ such that $V=W\oplus S$.
+\end{problem}
+\begin{solution}
+Consider the projection map for representation $\rho$
+\[
+\tilde{\pi} = \frac{1}{|G|} \sum_{g\in G} \rho(g) = \frac{1}{7}\sum_{i=1}^7 m^i.
+\]
+Then we can compute the kernel of this map using \textsf{GAP}.  Here's the code:
+\begin{verbatim}
+%gap
+#Problem 1
+m:=Z(2)*[[0,1,0,1],[0,0,1,1],[1,1,0,0],[0,0,0,1]];
+G:=Group(m);
+pii:=[[0,1,0,1],[0,0,1,1],[1,1,0,0],[0,0,0,0]];
+piitilde:=Sum([1..7], i->(1/7)*m^i);
+#Display(piitilde);
+Display(NullspaceMat(piitilde));
+\end{verbatim}
+The kernel we find for $\pi$ is
+\[
+S= \ker \tilde{\pi} = \langle (1,0,0,0),(0,1,0,0),(0,0,1,0)\rangle,
+\]
+which is the complement to $W$ and so $V=W\oplus S$.
+\end{solution}
+
+
+\newpage
+\begin{problem}~
+\begin{enumerate}[(a)]
+    \item Let $G$ and $H$ be finite abelian groups of the same order. Show that
+    \[
+    \C G \cong \C H
+    \]
+    as algebras.
+    \item Let $G=C_4$ and $H=C_2\times C_2$. Give an explicit isomorphism between $\C G$ and $\C H$. (\textbf{Hint:} In both cases find the decomposition of the algebra as a sum of ideals, each isomorphic to a matrix ring.)
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}
+    \item We have by Wedderburn's theorem that
+\[
+\C G \cong \bigoplus_{i=1}^{|G|} K^{n_i \times n_i} \qquad \textrm{and} \qquad \C H \cong \bigoplus_{i=1}^{|H|} K^{m_i \times m_i}
+\]
+where $n_i$ and $m_i$ are the dimensions of the irreducible representations of $G$ and $H$ respectively.  Since $|G|=|H|=r$, and both $G$ and $H$ are abelian, we know that the irreducible representations of $G$ and $H$ are all 1-dimensional and thus we have
+\[
+\C G \cong \bigoplus_{i=1}^{r} K \cong \C H.
+\]
+\item 
+\end{enumerate}
+
+\end{solution}
+
+\end{document}

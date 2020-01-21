@@ -1,0 +1,310 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 1 -- due 9/6/2019}
+
+\emph{I worked on these problems a lot with Brenden, Brittany, and Shannon. They were of great help!}
+
+% G_1 = {{-16,-3,30,36,0},{0,0,2,0,-1},{2,2,3,-5,0},{-5,0,-8,11,-1},{3,5,2,-8,1}}
+% G_2 = {{-3,24,-80,0,32},{-1,1,-6,2,2},{-1,-3,2,3,-1},{-2,9,-33,2,13},{-2,-6,2,6,-1}} 
+\begin{problem}
+Let
+\[
+G= \left\langle \begin{pmatrix}
+-16 & -3 & -30 & 36 & 0\\
+0 & 0 & 2 & 0 & -1\\
+2 & 2 & 3 & -5 & 0\\
+-5 & 0 & -8 & 11 & -1\\
+3 & 5 & 2 & -8 & 1
+\end{pmatrix}, \begin{pmatrix}
+-3 & 24 & -80 & 0 & 32\\
+-1 & 1 & -6  & 2 & 2\\
+-1 & -3 & 2 & 3 & -1\\
+-2 & 9 & -33 & 2 & 13\\
+-2 & -6 & 2 & 6 & -1
+\end{pmatrix}\right\rangle 
+\]
+be a matrix group, denote the natural representation of $G$ by $\nu$.
+\begin{enumerate}[(a)]
+    \item Show that the linear subspace $U=\langle (1,3,0,-3,0),(0,0,1,0,-1)\rangle \leq \Q^5$ is invariant under the action of $G$. \textbf{Hint:} If we write a list of vectors in \textsf{GAP} (so they are rows of a matrix), we can test with \textsf{SolutionMat(vectors,a)} whether the row vector \textsf{a} is in the span of the rows.
+    \item Extend the given basis of $U$ to a basis of $\Q^5$ (by adding three suitable further vectors).
+    \item Determine a new representation $\varphi$ of $G$ which is equivalent to the natural representation $\nu$ and in which every matrixd image has the form
+    \[
+    \begin{pmatrix}
+    x & x & 0 & 0 & 0\\
+    x & x & 0 & 0 & 0\\
+    x & x & x & x & x\\
+    x & x & x & x & x\\
+    x & x & x & x & x
+    \end{pmatrix}.
+    \]
+    \item Determine a 2-dimensional and a 3-dimensional representation of $G$.
+    \item Is the 2-dimensional representation obtained in (d) reducible? (\textbf{Hint:} Check for common eigenvectors.)
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Denote by $u_1$ and $u_2$ the vectors
+    \begin{align*}
+    u_1 &= (1,3,0,-3,0)\\
+    u_2 &= (0,0,1,0,-1).
+    \end{align*}
+    To see that $U$ is $G$-invariant, we show that the image of $u_1$ and $u_2$ under $G$ remains in $U$.  So we take
+    \[
+    u_1G_1 = (1,3,0,-3,0) \begin{pmatrix}
+-16 & -3 & -30 & 36 & 0\\
+0 & 0 & 2 & 0 & -1\\
+2 & 2 & 3 & -5 & 0\\
+-5 & 0 & -8 & 11 & -1\\
+3 & 5 & 2 & -8 & 1
+\end{pmatrix} = (-1,-3,0,3,0) = v_1,
+    \]
+    \[
+    u_2G_1 = (0,0,1,0,-1)  \begin{pmatrix}
+-16 & -3 & -30 & 36 & 0\\
+0 & 0 & 2 & 0 & -1\\
+2 & 2 & 3 & -5 & 0\\
+-5 & 0 & -8 & 11 & -1\\
+3 & 5 & 2 & -8 & 1
+\end{pmatrix} = (-1,-3,1,3,-1) = v_2,
+    \]
+    \[
+    u_1 G_2 = (1,3,0,-3,0) \begin{pmatrix}
+-3 & 24 & -80 & 0 & 32\\
+-1 & 1 & -6  & 2 & 2\\
+-1 & -3 & 2 & 3 & -1\\
+-2 & 9 & -33 & 2 & 13\\
+-2 & -6 & 2 & 6 & -1
+\end{pmatrix} = (0,0,1,0,-1)=v_3,
+    \]
+    and
+    \[
+    u_2 G_2 = (0,0,1,0,-1) \begin{pmatrix}
+-3 & 24 & -80 & 0 & 32\\
+-1 & 1 & -6  & 2 & 2\\
+-1 & -3 & 2 & 3 & -1\\
+-2 & 9 & -33 & 2 & 13\\
+-2 & -6 & 2 & 6 & -1
+\end{pmatrix} = (1,3,0,-3,0) = v_4.
+    \]
+    Now, notice that $v_3=u_2$ and $v_4=u_1$ which means that $v_3,v_4\in U$.  So we now must show that $v_1$ and $v_2$ are also in $U$. Thus we must see if there are solutions to the equations
+    \begin{align*}
+        \alpha_1 u_1 + \alpha_2 u_2 &= v_1\\
+        \beta_1 u_1 + \beta_2 u_2 &= v_2.
+    \end{align*}
+    Note that $\alpha_1=-1$, $\alpha_2=0$, $\beta_1=-1$, and $\beta_2=1$
+    
+    \item We'll add the standard basis vectors
+    \begin{align*}
+        e_2 &= (0,1,0,0,0)\\
+        e_4 &= (0,0,0,1,0)\\
+        e_5 &= (0,0,0,0,1)
+    \end{align*}
+    to create a basis $\beta = \{u_1,u_2,e_2,e_4,e_5\}$ which we can realize is a basis by checking
+    \[
+    \det \begin{pmatrix}
+    u_1\\
+    u_2\\
+    e_2\\
+    e_4\\
+    e_5
+    \end{pmatrix} = \det B.
+    \]
+    Note that 
+    \[
+    \det B = -1 \neq 0,
+    \]
+    and thus $\beta$ is linearly independent and spans $\Q^5$.  
+    
+    \item Now, using this new basis we can map the elements of $G$ in their current representation into a new representation by creating the matrices
+    \[
+    BG_iB^{-1} = H_i.
+    \]
+    for each $G_i$.  We then have
+    \begin{align*}
+        H_1 &= \left(\begin{array}{cc|ccc}
+        -1 & 0 & 0 & 0 & 0\\
+        -1 & 1 & 0 & 0 & 0\\
+        \hline
+        0 & 2 & 0 & 0 & 1\\
+        -5 & -8 & 15 & -4 & -9\\
+        3 & 2 & -4 & 1 & 3
+        \end{array}\right)\\
+        H_2 &= \left(\begin{array}{cc|ccc}
+        0 & 1 & 0 & 0 & 0\\
+        1 & 1 & 0 & 0 & 0\\
+        \hline
+        -1 & -6 & 4 & -1 & -4\\
+        -2 & -33 & 15 & -4 & -20\\
+        -2 & 2 & 0 & 1 & 1
+        \end{array}\right)
+    \end{align*}
+    
+    \item The 2-dimensional representation of $G$ can be written as
+    \[
+    \left\langle \begin{pmatrix} -1 & 0\\ -1 & 1 \end{pmatrix}, \begin{pmatrix} 0 & 1\\ 1 & 1 \end{pmatrix} \right\rangle.
+    \]
+    Similarly, the 3-dimensional representation is
+    \[
+    \left\langle \begin{pmatrix} 0 & 0 & 1 \\ 15 & -4 & -9\\ -4 & 1 & 3\end{pmatrix}, \begin{pmatrix} -4 & -1 & -4 \\ 15 & -4 & -20 \\ 0 & 1 & 1\end{pmatrix}\right\rangle.
+    \]
+    \item We can find eigenvectors of the two $2\times2$-dimensional matrices written in (d) which we can let be
+    \[
+    M_1 = \begin{pmatrix} -1 & 0 \\ -1 & 1 \end{pmatrix} \qquad \textrm{and} \qquad M_2 = \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}.
+    \]
+    Note that $M_1$ has an eigenvector $(1,0)$ and $M_2$ has no eigenvector over $\Q$ since the characteristic polynomial doesn't factor over $\Q$. So it is not reducible.
+\end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Let $G$ be a finite permutation group acting on the points $\{1,\dots,n\}$. Let $F$ be a field and $F^n$ the $n$-dimensional (row) vector space over $F$ and $\{v_1,\dots,v_n\}$ the standard basis of $F^n$. 
+\begin{enumerate}[(a)]
+    \item Show that the map $g\mapsto (v_i\mapsto v_{g(i)})$ defines a matrix representation of $G$ over $F$ of degree $n$.
+    \item Show that the vector $v_1+v_2+\cdots+v_n$ spans a $G$-invariant subspace $S$ of $F$. Determine the action of $G$ on $S$.
+    \item Let $\phi \colon F^n \to F$ be the linear map that maps $\sum_{i=1}^n a_i v_i$ to $\sum_{i=1}^n a_i$. Show that $\ker \phi$ is a $G$-invariant subspace $T$ of $F^n$ and determine a basis for $T$. 
+    \item Determine the intersection and span of $S$ and $T$ (depending on whether the characteristic of $F$ divides $n$ or not).
+    \item For $F=\Q$ and $G=S_3=\langle (1,2,3),(1,2)\rangle$, determine matrix images of the generators of $G$ for the action of $G$ on the (in this case 2-dimensional) subspace $T$.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We think of the given map $g\mapsto (v_i\mapsto v_{g(i)}$ as $\varphi \colon G \to \GL_n(F)$ and show that it is a homomorphism. Thus we need to show that
+    \[
+    \phi(gh)=\phi(g)\phi(h),
+    \]
+    where the group operation on the right is composition. We have
+    \begin{align*}
+        \phi(gh)&= (v_i\mapsto v_{gh(i)})
+    \end{align*}
+    and
+    \begin{align*}
+        \phi(g)\phi(h)&= (v_i \mapsto v_{g(i)})\circ (v_i \mapsto v_{h(i)})\\
+        &= (v_i \mapsto v_{g(h(i))})\\
+        &= (v_i \mapsto v_{gh(i)})\\
+        &= \phi(gh).
+    \end{align*}
+    \item To see that $v_1+ v_2 + \cdots v_n$ is $G$-invariant, we consider an element $g$ and take
+    \[
+    \phi(g)(v_1+v_2 + \cdots v_n)=v_{g(1)}+v_{g(2)}+\cdots + v_{g(n)}=v_1+v_2 +\cdots + v_n
+    \]
+    since $g$ is a permutation. The action of $G$ on $S$ is trivial.
+    \item Let $v=\sum_{i=1}^n a_i v_i$ be in $\ker\phi=T$.  Then we want to show that
+    \[
+    \varphi(g)(v) \in \ker\phi.
+    \]
+    So we take
+    \begin{align*}
+    \phi(\varphi(g)(v)) &= \phi\left( \sum_{i=1}^n a_{g(i)} v_{g(i)}\right)\\
+    &= \sum_{i=1}^n a_{g(i)}\\
+    &=0
+    \end{align*}
+    since $v$ was in $\ker\phi$ and $g$ was a permutation. A basis $\beta$ for $T$ is then
+    \[
+    \beta = \{ (-1,1,0,\dots,0), (-1,0,1,0,\dots,0), \dots, (-1,0,0,\dots,1)\}.
+    \]
+    \item 
+    
+    \item The matrix images are
+    \[
+    \varphi((1,2,3))= \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1\\ 1 & 0 & 0 \end{pmatrix}
+    \]
+    and
+    \[
+    \varphi((1,2))= \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \]
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+In the group algebra $\Q S_3$, calculate the product $(2\cdot ()+1\cdot(1,2,3))\cdot(-1\cdot(1,2)+1\cdot(1,3))$.
+\end{problem}
+\begin{solution}
+We can do this by hand to get
+\begin{align*}
+    (2\cdot ()+ 1\cdot (1,2,3))\cdot (-1\cdot (1,2)+1\cdot (1,3))&=-2\cdot ()(1,2)+2\cdot ()(1,3)-1\cdot (1,2,3)(1,2)+1\cdot (1,2,3)(1,3)\\
+    &= -2\cdot (1,2) + 2 \cdot (1,3) - 1\cdot (2,3) + 1 \cdot (1,2)\\
+    &= -1\cdot (1,2)+2\cdot (1,3)-1\cdot (2,3).
+\end{align*}
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $F$ be a field, $G$ be a finite group and $N\triangleleft G$. Let $I$ be the (2-sided) ideal of the group algebra $FG$ generated by $\{n-1~\vert~ n\in N, ~ n\neq1\}$. Show (for example by defining a suitable algebra homomorphism) that the factor algebra $FG/I$ is isomorphic to the group algebra $F(G/N)$ of the factor group $G/N$.  
+\end{problem}
+\begin{solution}
+First, define a group homomorphism $\pi \colon G \to G/N$ by $\pi(g)=gN$. Note this is a homomorphism since for $g,h\in G$ we have $\pi(gh)=(gh)N=(gN)(hN)=\pi(g)\pi(h)$.  Now, extend this linearly to an algebra homomorphism $\pi_* \colon FG \to F(G/N)$ such that for $\lambda,\mu \in F$ we have $\pi_*(\lambda g + \mu h)= \lambda \pi(g)+\mu \pi(h)$.  Now, consider an element $a=\sum_{G} a_g g \in FG$ such that $a\in \ker \pi_*$ and note
+\[
+\pi_* \left(\sum_{G} a_g g\right) = \sum_G a_g \pi(g) = \sum_G a_g gN.
+\]
+Now, since $a\in \ker \pi_*$ we have
+\begin{align*}
+    0=\pi_*(a) &= \sum_G a_g gN\\
+    &= \sum_{gn\in gN} \sum_{n\in N} a_{gn}gn.
+\end{align*}
+This implies that
+\[
+0 = \sum_{n\in N}a_{gn}.
+\]
+Now we can take
+\begin{align*}
+a &= \sum_{gn\in gN}\sum_{n\in N} a_{gn}gn - \sum_{n\in N}a_{gn}\\
+&= \sum_{gn \in gN}\sum_{n\in N} a_{gn}g(n-1).
+\end{align*}
+Note that we have $I$ is generated by $\{n-1 ~\vert~ n\in N, ~ n\neq 1\}$ and hence we have that $\ker \pi_*\subseteq I$. To see that $I\subseteq \ker \pi_*$ take a representative $r\in I$ and then note
+\begin{align*}
+    \pi_* (r) &= \pi_*(n-1) \qquad \textrm{for some $n \in N$}\\
+    &= \pi(n)-\pi(1)\\
+    &= nN-1N\\
+    &=N-N\\
+    &=0N.
+\end{align*}
+Hence we also have that $I\subseteq \ker \pi_*$ and by the previous work we also have $I=\ker \pi_*$.  Note that this gives the isomorphism 
+\[
+F(G/N)=\im \pi_* \cong FG/\ker \pi_* = FG/I.
+\]
+\end{solution}
+
+\newpage
+\begin{problem}~
+\begin{enumerate}[(a)]
+    \item Let $K$ be a field and $A,B \in K^{n\times n}$ be matrices which are diagonalizable (i.e. there exists $P\in \GL_n(K)$ such that $P^{-1}MP$ is diagonal). Show, that if $AB=BA$, then there exists a $Q\in \GL_n(K)$ such that $Q^{-1}AQ$ and $Q^{-1}BQ$ are \textbf{both} diagonal.
+    \item Let $\varphi$ be a representation of a finite abelian group $G$ over an algebraically closed field $K$ in characteristic 0 (e.g. $K=\C$). Show that all irreducible constituents of $\varphi$ are 1-dimensional.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}
+    \item Let $E_\lambda(A)$ be the eigenspace of the eigenvalue $\lambda$ for the matrix $A$. Let $v\in E_\lambda(A)$ then we have that
+\begin{align*}
+    ABv&=BAv\\
+    \iff ABv&= B\lambda v\\
+    \iff A(Bv)=\lambda_i Bv.
+\end{align*}
+Hence it is that $Bv\in E_\lambda(A)$ and so $A$ and $B$ share the same invariant eigenspaces.  Now, if all eigenvalues are unique, we are done as $E_\lambda(A)$ is 1-dimensional and hence $Bv=\mu v$ for some scalar $\mu$.  Otherwise, we have that $\dim(E_\lambda(A))\geq 2$.  Now, note that $E_{\mu}(B)=E_\lambda(A)$ and let $v_1,\dots,v_k$ be the eigenvectors of $A$ that span $E_\lambda(A)$. Then for any $i$, we have
+\[
+ABv_i =\mu \lambda (\alpha_1 v_1 + \cdots + \alpha_k v_k),
+\]
+and
+\[
+BAv_i = \lambda Bv_i,
+\]
+in general. But we must somehow show that $Bv_i = \mu v_i$ which shows that $A$ and $B$ have not only the same eigenspaces, but matching eigenvectors. I'm not exactly sure how you could do this!
+\item For this part, I feel like (a) is essentially equivalent to this. It's just a matter of phrasing the problem correctly which I haven't quite figured out either.
+\end{enumerate}
+
+
+
+
+\end{solution}
+
+\end{document}

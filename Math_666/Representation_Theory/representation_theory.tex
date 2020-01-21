@@ -1,0 +1,335 @@
+\section{Introduction}
+Throughout Math 666 we have covered topics in the representation theory of finite groups.  Of course, we should also want to understand the representation theory for infinite groups as well.  Many infinite groups underly physical law, and physicists have utilized representation theory to build new physical theory.  Take for example, elementary particle physics which deals with gauge groups and their representations. These gauge groups are infinite topological groups and typically carry the structure of a smooth manifold.  It seems as though the combinatorial aspect of representation theory is transformed into measure theory when we are considering topological groups.  
+
+What I want to do here is expand upon some of what we saw for finite groups in the infinite/topological case.  In the realm of infinite groups, the closest to finite are the compact groups. Of these compact Lie groups are the classical groups that arise as groups that leave some (pseudo)-inner product invariant.  We specifically want to concentrate on the compact groups and investigate the Peter-Weyl theorem. We saw that Wedderburn's theorem allowed us to decompose the group algebra into a direct sum of the irreducible representations, and the Peter-Weyl theorem seeks to show a similar result for compact groups.
+
+We can also investigate the case of compact non-abelian groups or locally compact abelian groups.  Here, I'll say a bit more about the locally compact groups and the associated Fourier representation as this turns out to be an interesting result as far as harmonic analysis and analysis of PDEs goes. The case of non-compact non-abelian groups is far more difficult and is current research level mathematics.
+
+\section{Preliminaries}
+In order to avoid any issues, we will always be taking vector spaces and the associated representations to be over the field $\C$. We consider manifolds to be over the reals and refer to dimension as the real dimension.  
+
+A \boldblue{topological group} is a group $G$ with a topology such that the group operation and inversion are continuous maps and a \boldblue{Lie group} is a topological group where the operation and inversion are smooth. Given a Lie group $G$, we define the associated \boldblue{Lie algebra}, $\liealg$, to be the tangent space to $G$ at the identity. That is, $T_eG\cong \liealg$. We then have the \boldblue{exponential map} $\exp \colon \liealg \to G$ defined by $\exp(X)=\gamma(1)$ where $\gamma$ is a curve satisfying $\gamma'(0)=X$. 
+
+We say that a group is \boldblue{compact} if it is compact as a topological space. A group is \boldblue{locally compact} if each point in $G$ is contained in a compact neighborhood. 
+
+Let $H$ be a Hilbert space with inner product $\langle \cdot,\cdot \rangle$. Then the unitary group $U(H)$ on $H$ is the set of linear transformations that leave the inner product invariant. That is, for $x,y\in H$ and some $u\in U(H)$, we have
+\[
+\langle ux,uy \rangle = \langle x,y\rangle.
+\]
+A \boldblue{unitary representation} $\pi$ of a group $G$ is a map
+\[
+\pi \colon G \to U(H),
+\]
+where $H$ is some Hilbert space and $U(H)$ is the set of unitary operators on $H$. A \boldblue{Haar measure} $\mu$ is a measure which is nonnegative, regular, and invariant. Specifically, for any Borel set $E$, we have
+\begin{enumerate}[i.]
+    \item (Nonnegative) $\mu(E)\geq 0$.
+    \item (Regular) $\mu(E)=\inf_{K\supset E}\mu(K)=\sup_{K\subset E}\mu(K)$ for $K$ a compact Borel set.
+    \item (Invariant) $\mu(x+E)=\mu(E)$.
+\end{enumerate}
+We denote by $L^2(G)$ the space of square integrable $\C$-valued functions on $G$ and refer to this space as the \boldblue{group algebra}.
+
+
+
+\section{Compact Lie Groups}
+As previously stated, compact groups are closely related to finite groups since (to a topologist) compact essentially means finite.  So, this proves to be a good first step in seeing a generalization of what we have learned in class.  A nice property of compact groups is that they come equipped with a unique and normalized nondegenerate Haar measure.
+
+\begin{thm}{Haar Integral}{haar_integral}
+    Let $G$ be a compact topological group and let $C(G,\C)$ be the set of continuous real valued function on $G$.  Then there exists a unique bi-invariant normalized functional $I\colon C(G,\C)\to \C$ given by
+    \[
+    I(f) = \int_G f(g)d_Hg,
+    \]
+    where $d\mu$ is a Haar measure. The functional also satisfies
+    \begin{enumerate}[i.]
+        \item $\int_G 1 d\mu=1$ (Normalization);
+        \item $\int_G f(g)d_H g \geq 0$ if $f\geq 0$ (Nondegeneracy).
+    \end{enumerate}
+\end{thm}
+
+We will find ourselves returning back to the circle group 
+\[
+S^1=\{ (x,y)\in \R^2 ~\vert~ x^2+y^2=1\}
+\]
+repeatedly as it is a fundamental compact abelian Lie group. The reason why is that we should really think of $S^1$ as being isomorphic to the complex unitary group
+\[
+U(1) = \{z=e^{i\theta}~\vert~\theta \in \R\}.
+\]
+To think forward a bit, we know that irreducible representations of abelian groups are 1-dimensional and so it is not a stretch to see the one dimensional abelian group $U(1)$ arising.
+
+\begin{ex}{Haar Integral on $S^1$}{haar_int}
+Let $G=S^1 $, then we have
+\[
+\int_G f(g)d_Hg = \int_{-\pi}^\pi f\left( e^{i\theta}\right)\frac{d\theta}{2\pi}.
+\]
+\end{ex}
+
+Now, it would be nice to work almost solely with the unitary groups as we can use their structure to assist us.  For the abelian or compact cases, we will be able to do this. Specifically, we can realize that compact groups must have unitary representations.
+
+\begin{thm}{Complex Representations of Compact Groups are Unitary}{complex_reps_compact}
+    Let $G$ be a compact topological group. Then the complex representations of $G$ are unitary. 
+    \tcblower
+    \begin{proof}
+    Let $G$ be represented in the vector space $V$ with $H\colon V\times V \to \C$ the Hermitian inner product on $V$. Then for $u,v\in V$ we can take
+    \[
+    \tilde{H}(u,v)=\int_G H(gu,gv)dg,
+    \]
+    with $dg$ the Lebesgue measure on $G$. Note this is well defined since $H$ is a continuous function. Then note that we have 
+    \[
+    \tilde{H}(hu,hv)=\int_G H(hgu,hgv)dg=\int_G H(gu,gv)dg=\tilde{H}(u,v),
+    \]
+    since $gh$ is just another element of $G$.  Thus we have that $\tilde{H}(u,v)$ is $G$-invariant.
+    \end{proof}
+\end{thm}
+
+Now that we know that compact groups have unitary representations, we want to see what else we can say. As alluded to before, we are going to recover the irreducible representations of compact abelian groups.
+
+\begin{thm}{Schur's Lemma}{schur}
+    Let $V$ and $W$ be irreducible representations of a group $G$. Then if $\phi$ is a morphism from $V$ to $W$
+    \begin{enumerate}[(a)]
+        \item $\phi$ is either an isomorphism or the trivial map.
+        \item If $V=W$ is a complex representation, then $\phi=\lambda I$ for some $\lambda \in \C$.
+    \end{enumerate}
+    \tcblower
+    \begin{proof}
+    \begin{enumerate}[(a)]
+        \item Let $v \in \ker(\phi)$ and note that $g\phi(v)=0$.  However, $\phi$ is a morphism and hence we have
+        \[
+        0=g\phi(v)=\phi(gv),
+        \]
+        and hence $\ker(\phi)$ provides a subrepresentation of $V$. But, $V$ is irreducible and hence $\ker(\phi)=\{0\}$ or $\ker(\phi)=V$.  
+        
+        If $\ker(\phi)=V$ then $\phi$ is the trivial map.  Otherwise, $\ker(\phi)=0$ and we have that $\im(\phi)<W$. But, $W$ is irreducible and hence $\im(\phi)=W$ and hence $V\cong W$.
+        
+        \item Let $V=W$, then let $\lambda$ be an eigenvalue for $\phi$ so that $\phi(w)=\lambda w$.  Then we can consider the morphism $\phi-\lambda I$ which has nontrivial kernel. By (a) we thus have $\phi-\lambda I=0$ and hence $\phi=\lambda I$.
+    \end{enumerate}
+    \end{proof}
+\end{thm}
+
+What follows is exactly what we desired: compact abelian groups have irreducible representations that are one dimensional.  This is the analog of what we saw in class.
+
+\begin{thm}{Irreducible Representations of Compact Abelian Groups}{irred_compact_abelian}
+    If $G$ is compact and abelian, the complex irreducible representations are 1-dimensional.
+    \tcblower
+    \begin{proof}
+    Let $V$ be an irreducible representation of the compact abelian group $G$. Then, since $G$ is abelian we have
+    \[
+    \rho_g(\rho_h(v))=\rho_{gh}(v)=\rho_{hg}(v)=\rho_h(\rho_g(v)),
+    \]
+    and hence we have $\rho_g$ is a morphism. By Schur's lemma, $\rho_g=\lambda I$, and hence any subspace of $V$ is also a subrepresentation since every subspace is $G$ invariant.  But since $\rho_g$ acts as by scalar multiplication and $V$ is irreducible it must be that $V$ is 1-dimensional 
+    \end{proof}
+\end{thm}
+
+What about groups that aren't abelian? In that case, we can't decompose the group into 1-dimensional representations, but we still can decompose the group.  This arises as the famous \boldblue{Peter-Weyl theorem}.  
+
+\begin{thm}{Peter-Weyl}{peter_weyl}
+    Let $L^2(G)$ be the group algebra of $G$.  Then we have that
+    \[
+    L^2(G)=\widehat{\bigoplus_{\pi \in \Sigma}} E_\pi^{\oplus \dim E_\pi},
+    \]
+    where $\Sigma$ is the set of isomorphism classes of irreducible unitary representations of $G$, and $\widehat{\bigoplus}$ is the closure of the direct sum of the spaces $E_\pi$ of the representations $\pi$. 
+\end{thm}
+
+This result is analogous to how we decomposed groups using Wedderburn's theorem. However, here we had to build up some measure theory and realize that compact groups admit unitary representations.  The proof will be left out.
+
+We can define a \boldblue{matrix coefficient} of a group $G$ to be complex valued functions $\varphi$ on $G$ given by 
+\[
+\varphi = L \circ \pi
+\]
+where $\pi\colon G \to \GL(V)$ is a representation and $L$ is a linear functional on the space $\mathrm{End}(V)$ (e.g., the trace).
+
+\begin{ex}{The Group $S^1$}{s^1_reps}
+    If we take $G=S^1$ which is a compact 1-dimensional abelian Lie group, then the irreducible representations are 1-dimensional. Letting $S^1\cong U(1)$, we have that the representations $\pi_n$ must be homomorphisms and so
+    \[
+    \pi_n(e^{i\theta})=e^{in\theta}.
+    \]
+    That is, given a function in $L^2(S^1)$, we can decompose this function via the Peter-Weyl theorem into the orthonormal basis given by the $\pi_n$. This is exactly the Fourier representation (series) for periodic functions!
+\end{ex}
+
+If instead, we consider a more involved example, we may see a tie to the vibrational states of molecules we discussed. Even in the previous example, we can restate the result as the following: any vibrational state of the circle is captured by a linear combination of the basis functions above.  Hence, if we consider a group such as the special unitary group $SU(2)$, then we find that the matrix coefficients are the hyperspherical harmonics! In some sense, this is like the continuous version of the vibrational states for molecules (seeing as we captured those by finite groups).  Here, this will tell us how a continuous membrane can vibrate as opposed to just the ``stick and ball" model of a molecule.
+
+Now we can move onto the character theory in this case.  This will require us to build up some terminology to understand the connection of the full group to the tori living inside the group. Let $V$ be a vector space over $\R$ of dimension $n$, then we define a \boldblue{lattice} to be the set $L=\Z v_1+\cdots + \Z v_r$, where $v_1,\dots,v_r$ are linearly independent vectors in $V$ and $r$ is the rank of $L$.  The lattice is \boldblue{full} if $r=n$. Then we can assign weights to the lattice by creating the \boldblue{weight lattice} $L^*=\{f\in V^* ~\vert~ f(L)\subset \Z\}$. 
+
+Then we can define a \boldblue{$k$-torus}, $\T^k$, by considering the quotient manifold $\R^n/L$, where $L$ is a full lattice. Note that $\T^k \cong \underbrace{S^1\times \cdots \times S^1}_{k~\textrm{factors}}$. 
+
+\begin{prop}{Torus from the Lie Algebra}{torus_lie_alg}
+    Let $G=\T^n$ be a torus, then we have that $\ker(\exp)$ is a full lattice. Moreover $\liealg/\ker(\exp)\cong \T^n$.
+    \tcblower
+    \begin{proof}
+        Let $X_1,\dots,X_n$ be linearly independent tangent vectors in $\liealg$ which we find from considering tangent vectors along each factor of $S^1$ in $\T^n$. Then for each tangent vector $X_i$ we have that $\ker(\exp(tX))\cong \Z$ and hence $\ker(\exp)$ is a full lattice. By the first isomorphism theorem, we have that $\liealg/\ker(\exp)=\T^n$.
+    \end{proof}
+\end{prop}
+
+Now, let $G$ be a connected matrix Lie group for the remainder of this section. We say that at torus $\T^k$ is a \boldblue{maximal torus} if $\T^k\subset G$ all other tori in $G$ have dimension less than or equal to $k$.  
+
+\begin{prop}{Maximal Tori Action}{max_tori_act}
+    Let $T$ be a maximal torus of $G$ and $\mathfrak{t}$ its Lie algebra. Then $T$ acts on $\liealg$ by matrix conjugation. Moreover, $G$ splits into the direct sum of irreducible 1-dimensional and 2-dimensional $T$-spaces. Let $d=\dim(G)$ and $r=\dim(T)$, then there are $r$ 1-dimensional $T$-spaces $V_0$ which $T$ acts on trivially. The 2-dimensional $T$-spaces $V_j$ are acted on by $T$ as
+    \[
+    \begin{pmatrix}
+        \cos 2\pi i \vartheta_j & -\sin2\pi i \vartheta_j\\
+        \sin 2\pi i \vartheta_j & \cos 2\pi i \vartheta_j
+    \end{pmatrix},
+    \]
+    where the $\vartheta_j$ are functions $\mathfrak{t}\to \R$.
+\end{prop}
+We refer to nonzero $\pm\vartheta_j$ as \boldblue{roots} (which come from the difference of two angles due to the matrix conjugation).  There are $\frac{d-r}{2}$ of the $V_j$. We define the set $U_j = \ker\vartheta_j$
+
+\begin{ex}{Roots for $\SU(2)$}{roots_su2}
+    The group $\SU(2)$ has a root $\vartheta_1=2\alpha$. Thus $U_1$ contains elements of $T$ such that $\alpha=\frac{n}{2}$ for all $n\in \Z$.  We can realize these as half rotations since the conjugation action of half rotations provides the full rotation.  Then we have
+    \[
+    U_1 = \left\{ \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} e^{\pi i n} & 0 \\ 0 & e^{\pi i n}\end{pmatrix}\right\}.
+    \]
+    We can see how this is providing some way of seeing the factoring of $\SU(2)$ into its maximal tori.  
+\end{ex}
+
+The roots serve to break $L(U_J)$ into different hyperplanes where $\vartheta_j=0$.  We refer to the collection of these hyperplanes as the \boldblue{Stiefel diagram}. Furthermore, these hyperplanes then divide the maximal torus $T$ into open regeions called \boldblue{Weyl Chambers}. We then fix a Weyl chamber and call it the \boldblue{Fundamental Weyl Chamber} (FWC).  The roots taking positive values in the FWC are \boldblue{positive roots}.
+
+Now, we can define the \boldblue{Weyl group} $W=\frac{N_G(T)}{C_G(T)}$, where $N_G(T)$ is the normalizer of $T$ in $G$, and $C_G(T)$ is the centralizer of $T$ in $G$.  Note that we have $C_G(T)\cong T$ (proof omitted) which means $W=N_G(T)/T$.  
+
+\begin{prop}{Weyl Group acts Finitely on Weights}
+    The Weyl group is finite and $W$ acts on the weights of $T$. Moreover, the Weyl group is generated by reflections over hyperplanes.
+\end{prop}
+
+This Weyl group can then help us in integrating class functions (e.g., characters) in the following way.
+
+\begin{thm}{Weyl Integration Formula}{weyl_integration}
+    Let $T$ be the maximal torus of $G$, $W$ the Weyl group and $\delta = \prod_{j=1}^m (e^{\pi i \vartheta_j(t)}-e^{-\pi i \vartheta(t)})$ taken over the $m$ positive roots of $G$.  Then for all class functions $f$ on $G$, we have
+    \[
+    \int_G f(g) = \frac{1}{|W|}\int_T f(t) \delta \overline{\delta}dg.
+    \]
+\end{thm}
+
+Essentially, we can understand classes by their behavior on the maximal torus.  This is handy since the maximal torus is a compact abelian group! 
+
+Let $\omega$ be a weight of $G$, then $\Orb_W(\omega)$ is the orbit of $\omega$ by $W$. The \boldblue{elementary symmetric sum} $S(\omega)$ is 
+\[
+S(\omega)=\sum_{\eta \in \Orb_W(\omega)}e^{2\pi i \eta}.
+\]
+Then we can get a partial ordering of the weights on the weight lattice by letting $\omega_1 \leq \omega_2$ if $\omega_1$ is contained in the convex hull of the $W$-orbit of $\omega_2$. Dual to the fundamental Weyl chamber is the \boldblue{fundamental dual Weyl chamber} which is the image of the fundamental Weyl chamber under the map $\iota \colon \liealg \to \liealg^*$ (defined via a Reisz representation of an $\mathrm{Ad}_G$-invariant inner product on $\liealg$).    
+\begin{prop}{Characters and Weights}{char_weight}
+    Let $\chi$ be a character of an irreducible representation. Then we can write $\chi$ restricted to a maximal torus $T$ as 
+    \[
+    \chi\vert_T = S(\omega) + \textrm{lower terms}
+    \]
+    where $\omega$ is the largest weight in the fundamental dual Weyl chamber. That is, this highest weight is unique.
+\end{prop}
+
+We can end this with an example to see what all this means.
+
+\begin{ex}{The group $U(2)$}{u2_reps}
+    The group $G=U(2)$ has roots $\pm (\alpha-\beta)$ with a weight lattice $L^* = \{p\alpha + q\beta ~\vert~ p,q\in \Z\}$. The Weyl group has two elements which are the identity and the reflection. Let the trivial representation be $V_0$ which has weight 0, and let $V_1$ be the $\C^2$ representation given by $v\mapsto g\cdot v=gv$ (the typical matrix representation).  Then, we can take the character restricted to the maximal torus to be $\chi_{V_1}=e^{2\pi i \alpha}+e^{2\pi i \beta}$ and highest weights $\alpha$ and $\beta$.  
+    
+    If we then consider $V_1\otimes V_1$ to get the character $\chi_{V_1\otimes V_1}=e^{2\pi i (2\alpha)}+2e^{2\pi i (\alpha+\beta)}+e^{2\pi i (2\beta)}$. We an decompose $V_1\otimes V_1$ into the symmetric and antisymmetric part which we can denote by $V_1^S$ and $V_1^A$ respectively.  Letting $V_1$ have the basis $\{e_1,e_2\}$, then we get a basis for $V_1^A$ as $e_1 \otimes e_2 - e_2 \otimes e_1$. We write $g\in U(2)$ as
+    \[
+    g=\begin{pmatrix} a & b \\ c & d \end{pmatrix}
+    \]
+    and hence 
+    \[
+    g\cdot (e_1 \otimes e_2 -e_2 \otimes e_1= \det(g)(e_1\otimes e_2 -e_2\otimes e_1).
+    \]
+    Thus we have that $V_1^A$ is the determinant representation with character $\chi_{V_1^A}=e^{2\pi i (\alpha+\beta)}$.  The highest weight is then $\alpha+\beta$.  This implies that $\chi_{V_1^S}=e^{2\pi i (2\alpha)}+e^{2\pi i (\alpha+\beta)}+e^{2\pi i(2\beta)}$. 
+    
+    We can show that $\chi_{V_1^S}$ is irreducible using the Weyl integration formula in that
+    \[
+    \int_{U(2)}\chi_{V_1^S}\overline{\chi_{V_1^S}}dg=1.
+    \]
+    It also follows that all the symmetric tensor powers of $V_1$ are irreducible with weights $k\alpha$ and $k\beta$ for degree of the tensor power. If we tensor the antisymmetric representation $V_1^A$ with itself $k$ many times, we also receive an irreducible representation with highest weight $k\alpha+k\beta$. Since this determinant representation is also 1-dimensional, we can tensor it with any of the $k$th symmetric tensor products of $V_1$ to get another irreducible representation.
+\end{ex}
+
+The theory behind the Weyl chambers and weights is rather confusing. I wouldn't say I've grasped it very well, but it seems to be very much like the character tables we discuessed in class (just an infinite version of them).  I'd like to understand this better at some point, but for now, we'll move onto something slightly different!
+
+
+
+
+
+\section{Locally Compact Abelian Groups}
+\begin{remark}{LCA from Here}{lca}
+    From here on out I will be solely discussing the Locally Compact Abelian (LCA) group case.
+\end{remark}
+
+Using the Peter-Weyl theorem, we can realize that for the case of abelian groups, we can decompose the group into 1-dimensional unitary representations. That is for $G$ compact and abelian, we have a decomposition
+\[
+L^2(G)=\widehat{\bigoplus_{\pi \in \Sigma}} U(1).
+\] 
+Utilizing this, we may expect that locally compact abelian groups have a nice decomposition. As it turns out, they do, and it is a very physical one as well.  The main difference is exactly how we construct this decomposition when we don't have compactness. 
+
+Given a LCA group $G$, a \boldblue{character} is a continuous group homomorphism from $G$ to the 1-dimensional unitary group $U(1)$. The \boldblue{dual group} is the set of all characters on $G$ which we denote by $\hat{G}$. Since we have that $|\chi(x)|=1$, we can put that $\chi^{-1}=\overline{\chi}$.  Then we can topologize $\hat{G}$ by providing it with the \boldblue{compact-open topology}. That is, given $G$ and the space of $\C$-valued continuous functions on $G$, $C(G) $, we have for a compact set $K\subset G$ and an open set $O\in \C$ that the compact open topology is generated by the set of functions $K \to O$ as $K$ and $O$ vary over their respective spaces. Then, as a subset of $C(G)$ we provide $\hat{G}$ the compact-open topology.
+
+\begin{thm}{$\hat{G}$ is a Topological Group}{ghat}
+    Under the compact-open topology, the dual group $\hat{G}$ of a LCA group $G$ is a topological group.
+    \tcblower
+    \begin{proof} 
+    (Outline) It suffices to show that $\alpha \colon \hat{G}\times \hat{G} \to \hat{G}$, where $\alpha(\chi_1,\chi_2)=-\chi_1+\chi_2$, is continuous. Note the characters are continuous maps themselves and build sequences $\chi_{1,j} \to \chi_1$ and $\chi_{2,j}\to \chi_2$ to show that $\alpha$ is indeed continuous.
+    \end{proof}
+\end{thm}
+
+With this in hand, we can consider for any LCA group $G$, that every function $f\in L^2(G)$ defines a new function, its \boldblue{Fourier transform}, as $\hat{f}\colon \hat{G}\to \C$ where
+\[
+\hat{f}(\chi)=\int_G f(x)\overline{\chi(x)}d\mu,
+\]
+where $\mu$ is the Haar measure on $G$.  Now for finite groups, we can realize the Fourier transform at a representation $\rho$ as
+\[
+\hat{f}(\rho)=\sum_{g\in G}f(g)\rho(g),
+\]
+where $\rho$ is some representation. But here in the LCA group case, we know that we can decompose abelian groups into 1-dimensional representations, hence we see the characters arise instead of more general representations.
+
+\begin{ex}{Fourier Transform on $\R$}{fourier_on_R}
+    Let $G=\R$ which is a LCA group.  Then note that we have that every character assumes the form $\chi_k(x)=e^{2\pi i kx}$ for any $k\in \R$. Hence, we have that the Fourier transform for some $f\in L^2(\R)$ is given by
+    \[
+    \hat{f}(\chi_k)=\int_\R f(g)\overline{\chi(g)}d\mu,
+    \]
+    which we typically just write as
+    \[
+    \hat{f}(k)=\int_{-\infty}^\infty f(x)e^{-2\pi i kx}dx.
+    \]
+    In some sense, we're seeing that $L^2(\R)$ is self-dual via the Fourier transform.
+\end{ex}
+
+However, the story is a bit different when we consider a compact abelian group! We discusse this more in the previous section and can see the Fourier transform now.
+
+\begin{ex}{Fourier Transform on $S^1$}{fourier_on_s1}
+    If we let $G=S^1\cong U(1)$ then $G$ is a LCA group (and moreover compact).  Then, we found that the group can be decomposed into 1-dimensional unitary representations given by $\pi_n(e^{i\theta})=e^{in\theta}$. Hence we also have that $\chi_n(g)=g^n$ which takes $g=e^{i\theta}\mapsto e^{in\theta}$. Thus the Fourier transform for some $f\in L^2(S^1)$ is given by
+    \[
+    \hat{f}(\chi_n)=\int_{S^1} f(g)\overline{\chi(g)}d\mu,
+    \]
+    which we typically write as
+    \[
+    C_n = \int_{-\pi}^\pi f(\theta) e^{-in\theta} d\theta,
+    \]
+    which is the $n$th term in the Fourier series for the function $f$! So here we're also seeing that the circle $S^1$ is in some way dual to $\Z$. This is showing us that periodic functions can be factored into a countable basis via Peter-Weyl. Fascinating.
+\end{ex}
+
+We must also pull a bit of knowledge from the realm of Commutative Banach Algebras (CBA). Here, if we are given a CBA $\mathcal{A}$ (e.g., $C(G)$), we can define the \boldblue{structure space} as the set of all non-zero continuous algebra homomorphisms $m\colon \mathcal{A}\to \C$. We denote the structure space for a CBA by $\Delta_\mathcal{A}$. 
+
+Now, we can consider a map $\psi\colon \hat{G}\to \Delta_{L^1(G)}$ where $\psi(\chi)(f)=\hat{f}(\chi).$ Then we can show that this map is a homeomorphism.
+
+\begin{thm}{$\hat{G}$ and $\Delta_{L^1(G)}$ are Homeomorphic}{homeomorphic}
+We have that the $\psi$ defined above is a homeomorphism between $\hat{G}\to \Delta_{L^1(G)}$.
+\end{thm}
+
+What we're building towards is understanding a group $G$ by its double dual $\hat{\hat{G}}$. So, we define the \boldblue{Pontrygin map} $\delta \colon G \to \hat{\hat{G}}$ by $\delta_x(\chi)=\chi(x)$ which gives us that $\delta$ is a multiplicative linear functional
+\[
+\delta_{xy}(\chi)=\chi(xy)=\chi(x)\chi(y)=\delta_x(\chi)\delta_y(\chi).
+\]
+This map gives us exactly what we need to continue.
+
+\begin{thm}{Pontrygin Duality}{pont_dual}
+    The Pontrygin map $\delta$ is an isomorphism.
+\end{thm}
+
+Again, I omit the proof here as it is rather technical and requires more theory from CBA.  But, nonetheless it leads to an extremely important theorem for those who study differential equations. Roughly speaking, this gives us the ability to Fourier transform to create an easier problem, and then invert this transformed solution to get the solution to the original problem. This is fundamental.  For example, solving the wave equation is made trivial via this fact.  
+
+\begin{thm}{Plancharel's Theorem}{plancharel}
+    For a locally compact abelian group $G$, $\L^2(G)\cong L^2(\hat{G})$.
+\end{thm}
+
+Though this theorem at this state only holds for LCA groups, many of the groups we wish to solve PDEs on satisfy this (e.g., $\R^n$, $\mathbb{T}^n$, or $\R^m\times \T^l$).  But, if we wish to solve PDEs on more general geometries with an underlying group structure (or symmetry group) then the problem becomes more difficult! Hence why this is still an area of very active research.
+
+
+\newpage
+\begin{thebibliography}{1}
+    
+\bibitem{lca_gp} Su (2016). \emph{The Fourier Transform for Locally Compact Abelian Groups}. 
+
+\bibitem{class_gp} Yu (2011). \emph{Representation Theory of Classical Compact Lie Groups}.
+	
+\end{thebibliography}
+

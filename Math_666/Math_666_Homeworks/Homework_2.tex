@@ -1,0 +1,262 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 2 -- due 9/13/2019}
+
+\emph{I worked on these problems a lot with Brenden, Brittany, and Shannon. They were of great help!}
+
+\setcounter{problem}{5}
+\begin{problem}
+Let $A$ be the group algebra $\Q S_3$ and let
+\begin{align*}
+    e_1 &= \frac{1}{6}\left( 1+ (2,3)+(1,2)+(1,2,3)+(1,3,2)+(1,3)\right)\\
+    e_2 &= \frac{1}{6} \left( 1-(2,3)-(1,2)+(1,2,3)+(1,3,2)-(1,3)\right)\\
+    e_3 &= \frac{1}{3} \left( 2 - (1,2,3)-(1,3,2)\right).
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Show that $1=e_1+e_2+e_3$ and $e_i^2=e_i$, $e_i e_j=0$ for $1\leq i,j\leq 3,$ $i\neq j$. \\
+    \noindent \textbf{Hint:} In \textsf{GAP}, you can calculate in the group algebra in the following way:\\
+    
+    \noindent \textsf{gap> A:= GroupRing(Rationals, SymmetricGroup(3));}\\
+    \noindent \textsf{gap> b:= BasisVectors(Basis(A));}\\
+    \noindent \textsf{[ (1)*(), (1)*(2,3), (1)*(1,2), (1)*(1,2,3), (1)*(1,3,2), (1)*(1,3)];}\\
+    \noindent \textsf{gap> e1:=1/6*(b[1]+b[3]+b[6]+b[2]+b[4]+b[5]);}\\
+    
+    \item Verify (by explicit calculation. Note that a basis is sufficient) that for all $i$ and for all $a\in A$ we have that $ae_i=e_ia$. Your solution to parts (a) and (b) can be simply a transcript of \textsf{GAP} calculations.
+    \item We set $A_i=Ae_i = \{a\cdot e_i ~\vert~ a\in A\}$. Show that $A_i$ is an $A$-module by right multiplication with elements of $A$ and that $A_A = A_1 \oplus A_2 \oplus A_3$ is a decomposition of $A_A$ as a direct sum of $A$ modules. (We will see later in the course that there always is such a decomposition, and that there is exactly one summand for each irreducible representation. The $e_i$ are called central, orthogonal idempotents.)
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item \textsf{GAP}
+    \item \textsf{GAP}
+    Note that I got help from Shannon, Brittany, and Brenden on part (a) and (b) as I have never really used \textsf{GAP}. Here is a printout from gap for both (a) and (b):
+\begin{verbatim}
+#Problem 1
+%gap
+A:=GroupRing(Rationals,SymmetricGroup(3));;
+b:=BasisVectors(Basis(A));
+
+{"stdout":"[ (1)*(), (1)*(2,3), (1)*(1,2), (1)*(1,2,3), (1)*(1,3,2), (1)*(1,3) ]"}
+{"done":true}
+
+#Part a
+%gap
+e1:=1/6*(b[1]+b[2]+b[3]+b[4]+b[5]+b[6]);
+e2:=1/6*(b[1]-b[2]-b[3]+b[4]+b[5]-b[6]);
+e3:=1/3*(2*b[1]-b[4]-b[5]);
+e1+e2+e3;
+(e1)*(e1)=e1;
+(e2)*(e2)=e2;
+(e3)*(e3)=e3;
+(e1)*(e2);
+(e1)*(e3);
+(e2)*(e3);
+
+{"stdout":"(1/6)*()+(1/6)*(2,3)+(1/6)*(1,2)+(1/6)*(1,2,3)+(1/6)*(1,3,2)+(1/6)*(1,3)
+\n(1/6)*()+(-1/6)*(2,3)+(-1/6)*(1,2)+(1/6)*(1,2,3)+(1/6)*(1,3,2)+(-1/6)*(1,3)
+\n(2/3)*()+(-1/3)*(1,2,3)+(-1/3)*(1,3,2)\n(1)*()
+\ntrue\ntrue\ntrue\n<zero> of ...\n<zero> of ...\n<zero> of ..."}
+
+{"done":true}
+
+#Part b
+%gap
+B:=Group((1,2,3),(2,3));;
+BA:=Elements(B);;
+a:=b[3];;
+aa:=b[4];;
+a*e1=e1*a;
+aa*e1=e1*aa;
+a*e2=e2*a;
+aa*e2=e2*aa;
+a*e3=e3*a;
+aa*e3=e3*aa;
+
+{"stdout":"true\ntrue\ntrue\ntrue\ntrue\ntrue"}{"done":true}
+    
+\end{verbatim}
+    \item To show that $A_A = A_1 \oplus A_2 \oplus A_3$ we must show that $A_A= A_1 + A_2 + A_3$ and $A_1\cap A_2 \cap A_3=\{0\}$. Note that we have for any $a\in A_A$ that
+    \[
+    1\cdot a = e_1\cdot a + e_2 \cdot a + e_3 \cdot a = a_1 + a_2 + a_3
+    \]
+    where $a_1 \in A_1$, $a_2 \in A_2$ and $a_3 \in A_3$ which means that an arbitrary $a\in A_A$ can be written as a sum of elements from $A_1$, $A_2$, and $A_3$.  To show the intersection is trivial, suppose for a contradiction there exists a nonzero element $a_i\in A_i$ and $a_i\in A_j$ for $i\neq j$. Then we have $a_i = a\cdot e_i$ and $a_i = a'\cdot e_j$ for some $a, a'\in A$. However, if we take $a=e_i$
+    \[
+    a_i = a\cdot e_i = e_i \cdot e_i = e_i^2 = e_i
+    \]
+    but on the other hand we must have that
+    \[
+    a' e_j = e_i.
+    \]
+    This above equation has no solution unless $a_i=0$ to begin with. Thus we have $A_i\cap A_j$ for $i\neq j$ and thus $A_A = A_1 \oplus A_2 \oplus A_3$.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Consider the group algebra $\Q S_3$. We have seen in class that $S_3$ has three inequivalent irreducible representations, in dimensions 1,1, and 2.
+\begin{enumerate}[(a)]
+    \item For each (type of) irreducible reprsentation, find (e.g. give generators) a submodule $M <_{\Q S_3} \Q S_3$ of the regular module, such that the quotient is isomorphic to the respective module.
+    \item Show that there are two (different) submodules $M_1,M_2 <_{\Q S_3}$ of the regular module, whose quotient is isomorphic to the 2-dimensional representation.
+    \item Construct (e.g. by intersecting the submodules you have found) a composition series for the regular module and conclude that $S_3$ has exactly three irreducible representations.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Let us write
+    \[
+    \{(),(1,2),(1,3),(2,3),(1,2,3),(1,3,2)\}
+    \]
+    as the basis for $\Q S_3$. We wish to find a module $M$ so that the quotient
+    \[
+    \Q S_3 / M \cong V,
+    \]
+    where $V$ is the module for the irreducible representations. Consider first the trivial representation $\varphi_1(g)=(1)$. This means that we have the case that $V_1=\langle (1)\rangle$ which can be realized as $\Q$. Then the map for the representation can be written as a $1\times 6$-matrix
+    \[
+    \varphi_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{pmatrix}.
+    \]
+    We can compute a basis $\beta_1$ for $\ker \varphi_1$ which is
+    \begin{align*}
+        (-1,1,0,0,0,0)\\
+        (-1,0,1,0,0,0)\\
+        (-1,0,0,1,0,0)\\
+        (-1,0,0,0,1,0)\\
+        (-1,0,0,0,0,0).
+    \end{align*}
+    Then if we take $M_1= \ker \varphi_1$ we necessarily have that $V_1\cong \Q S_3/M_1$ by the first isomorphism theorem.
+    
+    Similarly, for the second representation $\varphi_2$ that maps $g\in S_3$ to $\langle (1),(-1)\rangle$ based on whether the element is an odd or even transposition respectively.   We then have $V_2=\Q$ again, and we put
+    \[
+    \varphi_2 = \begin{pmatrix} 1 & -1 & -1 & -1 & 1 & 1 \end{pmatrix}
+    \]
+    and note that we get a basis $\beta_2$ for $\ker \varphi_2$ as
+    \begin{align*}
+        (1,1,0,0,0,0)\\
+        (1,0,1,0,0,0)\\
+        (1,0,0,1,0,0)\\
+        (1,0,0,0,1,0)\\
+        (1,0,0,0,0,1).
+    \end{align*}
+    Hence, we have that $V_2\cong\Q S_3 / M_2$.
+    
+    Lastly, take $\varphi_3$ which represents $g\in S_3$ as combinations of the generators $\left\langle \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ -1 & -1 \end{pmatrix}\right\rangle$.  In this case $V_3=\Q^2$ and we can write
+    \[
+    \varphi_3 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ -1 & 1 \\ 1 & 0 \\ 0 & -1 \\ -1 & -1 \end{pmatrix}.
+    \]
+    Then we have that $M_3=\ker \varphi_3$ and we have a basis for $\ker \varphi_3$ given by
+    \begin{align*}
+        (1,1,1,0,0,0)\\
+        (-1,0,0,1,0,0)\\
+        (0,1,0,0,1,0)\\
+        (1,1,0,0,0,1).
+    \end{align*}
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $i=\sqrt{-1}$ and $G=\left\langle \begin{pmatrix} 0 & 1\\ -1 & 0\end{pmatrix}, \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}\right\rangle$ be the quaternion group of order 8. (You can create it in \textsf{GAP} as\\
+
+\noindent \textsf{Group([[[0, 1], [-1, 0]], [[E(4), 0], [0, -E(4)]]])}\\
+
+\noindent for example and ask for its \textsf{Elements}.)
+\begin{enumerate}[(a)]
+    \item Construct an irreducible representation of $G$ over the real numbers, acting on a 4-dimensional vector space $V\cong \R^4$. (\textbf{Hint:} Use an $\R$-basis of $\C$ to get an $\R$-basis of $\C^2$. To show that no 2-dimensional submodule exists, consider images of a nonzero vector $(a,b,c,d)$ in this subspace under different elements of $G$, and show that they will yield a basis of at least a 3-dimensional subspace.)
+    \item Determine the endomorphism ring $\End_{\R G}(V)$. (\textbf{Hint:} The elements of $\End_{\R G}(V)$ are $4\times 4$ matrices that commute with the generators of $G$. Use this to deduce conditions on their entries. Then show that every matrix fulfilling these conditions commutes with $G$.)
+    \item By Schur's lemma $\End_{\R G}(V)$ must be a division ring. Can you identify it?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Note that we can write a complex number $z=a+bi$ as a $2\times 2$-matrix
+    \[
+    \rho(v) = \begin{pmatrix} a & -b \\ b & a \end{pmatrix}.
+    \]
+    Thus, we can create a 4-dimensional representation $\nu$ for $G$ by putting
+    \[
+    \nu(g_1) = \begin{pmatrix} 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1 \\ -1 & 0 & 0 & 0\\ 0 & -1 & 0 & 0 \end{pmatrix} \qquad \textrm{and} \qquad \nu(g_2) = \begin{pmatrix} 0 & -1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & -1 & 0 \end{pmatrix}
+    \]
+    where
+    \[
+    g_1 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \qquad \textrm{and} \qquad g_2 = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}
+    \]
+    are the generators of $G$.
+    \item Now we must consider the $4\times 4$ matrices that commute with $\nu(g_1)$ and $\nu(g_2)$ as written above. With this assumption, let $M$ be a matrix in $\End_{\R G}$ with coefficients $M_{ij}$ and we have the equations
+    \[
+    A=M\nu(g_1) = \nu(g_1)M \qquad \textrm{and} \qquad B=M\nu(g_2)=\nu(g_2)M.
+    \]
+    In component form, this gives
+    \begin{align*}
+    A_{ij}=\sum_{k=1}^4 M_{ik}\nu(g_1)_{kj} &= \sum_{k=1}^4 \nu(g_1)_{ik} M_{kj}\\
+    B_{ij}=\sum_{k=1}^4 M_{ik}\nu(g_2)_{kj} &= \sum_{k=1}^4 \nu(g_2)_{ik} M_{kj}.
+    \end{align*}
+    If we write out these conditions explicitly, we will get that the matrices that commute with both generators assume the form
+    \[
+    M=\begin{pmatrix} a & b & c & d \\ -b & a & d & -c \\ -c & -d & a & b \\ -d & c & -b & a \end{pmatrix}.
+    \]
+    \item We have that $\End_{\R G}(V)$ is isomorphic to the quaternions themselves! We can realize this by decomposing the matrix in the previous part into
+    \[
+    M= a \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\end{pmatrix} + b\begin{pmatrix} 0 & 1 & 0 & 0\\ -1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1\\ 0 & 0 & -1 & 0\end{pmatrix} + c \begin{pmatrix} 0 & 0 & -1 & 0\\ 0 & 0 & 0 & -1 \\ -1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0 \end{pmatrix} +d\begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0\\ 0 & -1 & 0 & 0\\ -1 & 0 & 0 & 0\end{pmatrix}.
+    \]
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $M\in \GL_{n}(\C)$. We consider $M$ as the image of a generator in a representation of the infinite cyclic group. Let $V=\C^n$ be the module associated to this representation. Show that $V$ is a cyclic module (i.e. it is generated as a module by a single vector) if and only if the characteristic polynomial of $M$ equals the minimal polynomial of $M$.
+\end{problem}
+\begin{solution}
+First, assume that $V$ is a cyclic module. Hence, $\exists v\in V$ such that, along with $M$, we can generate a basis $\beta$ for $V$ by
+\[
+\beta = \{v, Mv, M^2v, \dots, M^{n-1}v\}.
+\]
+Then, given the minimal polynomial $Q(x)$ for $M$ we know that for any $u\in V$ that
+\[
+Q(M)v=0
+\]
+by definition.  Put
+\[
+Q(M) = \alpha_0 I + \alpha_1 M + \alpha_2 M^2 + \cdots + \alpha_{d}M^d.
+\]
+Suppose for a contradiction that the minimal polynomial $P(x)$ is not equal to the characteristic polynomial $P(x)$ which means that $d<n$.  However,
+\begin{align*}
+    0=Q(M)v &= (\alpha_0 I + \alpha_1 M + \cdots \alpha_d M^d)v\\
+    &= \alpha_0 v + \alpha_1 Mv + \cdots + \alpha_d M^d v.
+\end{align*}
+Note that the set of vectors $\{v, Mv,\dots, M^dv\}$ is necessarily linearly independent by our earlier assumption that $V$ is a cyclic module.  Thus, it must be that $\alpha_i = 0$ $\forall i=1,\dots,d$. Since $\C$ is algebraically closed, it must be that there exists at least one eigenvalue of $M$ which ensures the minimal polynomial must be of degree at least one.  However, we have shown the minimal polynomial $Q(x)$ must be the zero polynomial, and so our supposition that the minimal polynomial does not equal the characteristic polynomial must be incorrect. Hence, we must have $P(x)=Q(x)$.
+
+For the other implication, assume that the characteristic polynomial $P(x)$ is equal to the minimal polynomial $Q(x)$.  If this is the case, then it must be that $M$ has $n$ distinct eigenvalues $\lambda_1,\dots,\lambda_n$ which we can associate to $n$ linearly independent eigenvectors $v_1,\dots,v_n$.  We can now take $v=v_1+\cdots v_n$ and show it is a cyclic vector by showing the set of $n$ vectors $\beta=\{v,Mv,\dots, M^{n-1}v\}$ is linearly independent.  Note that we have
+\begin{align*}
+v&= v_1 + \cdots + v_2\\
+Mv&= \lambda_1 v_1 + \cdots + \lambda_n v_n\\
+&\vdots \\
+M^{n-1}v&= \lambda_1^{n-1} v_1 + \cdots + \lambda_n^{n-1} v_n
+\end{align*}
+which we can arrange as following in the matrix
+\[
+A = \begin{pmatrix} 1 & 1 &\cdots & 1 \\ \lambda_1 & \lambda_2 & \cdots & \lambda_n\\
+\lambda_1^2 & \lambda_2^2 & \cdots & \lambda_n^2\\
+\vdots & \vdots & \ddots & \vdots \\
+\lambda_1^{n-1} & \lambda_2^{n-1} & \cdots & \lambda_n^{n-1}\end{pmatrix}.
+\]
+Then note that we have
+\begin{align*}
+\det(A) &= (\lambda_1-\lambda_2)(\lambda_1-\lambda_3)\cdots(\lambda_1-\lambda_n)(\lambda_2-\lambda3)(\lambda_2-\lambda-4)\cdots (\lambda_{n-1}-\lambda_n)\\
+&= \prod_{1\leq i < j \leq n} (\lambda_i - \lambda_j),
+\end{align*}
+as $A$ is a Vandermonde matrix.  Note that $\det(A)$ cannot be zero unless we have that $\lambda_i=\lambda_j$ for some $i\neq j$ which is not the case by our assumption.  Hence, the set $\beta$ constructed earlier contains $n$ linearly independent vectors and is thus a basis for $\C^n$.  Thus $V$ is a cyclic module.
+
+
+
+\end{solution}
+
+\end{document}

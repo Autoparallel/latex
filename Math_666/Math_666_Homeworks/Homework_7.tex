@@ -1,0 +1,144 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 7 -- due 10/24/2019}
+\noindent \emph{I worked with Brittany, Shannon, and Brenden.}
+\setcounter{problem}{28}
+
+\begin{problem}
+Let $V$ be a $\C G$-module with corresponding character $\chi$. According to problem 14, we can decompose $V\otimes V = W_S \oplus W_A$. Let $\chi_S$ (respectively $\chi_A$) be the characters that belong to $W_S$ (respectively $W_A$). Show that
+\[
+\chi_S(g) = \frac{1}{2} \left( \chi(g)^2+\chi(g^2)\right) \qquad \textrm{and} \qquad \chi_A(g)=\frac{1}{2}\left( \chi(g)^2-\chi(g^2)\right).
+\]
+\end{problem}
+\begin{solution}
+Since we are over $\C$, we can diagonalize each matrix in the rerpesentation and so we can say $\varphi(g)$ is diagonal. This gives us the eigenbasis $\{v_1,\dots,v_n\}$ for $V$ with corresponding eigenvalues $\{\lambda_1,\dots,\lambda_n\}$. Then a basis for $W_S$ is given by $\{v_i \otimes v_j + v_j \otimes v_i\}_{i\leq j}$ and similarly a basis for $W_A$ is given by $\{v_i \otimes v_j - v_j \otimes v_i\}_{i<j}$. Then
+\begin{align*}
+    \frac{1}{2}\left( \chi(g)^2+\chi(g^2)\right)&= \frac{1}{2} \left( \left( \sum_{i} \lambda_i \right)^2 + \sum_{j} \lambda_j^2 \right)\\
+    &= \frac{1}{2} \cdot 2 \sum_{i\leq j} \lambda_i \lambda j\\
+    &= \sum_{i\leq j}\lambda_i \lambda_j\\
+    &= \chi_S(g).
+\end{align*}
+We also have,
+\begin{align*}
+    \frac{1}{2}\left( \chi(g)^2-\chi(g^2)\right)&= \frac{1}{2} \left( \left( \sum_{i} \lambda_i \right)^2 - \sum_{j} \lambda_j^2 \right)\\
+    &= \frac{1}{2} \cdot 2 \sum_{i<j} \lambda_i \lambda j\\
+    &= \sum_{i< j}\lambda_i \lambda_j\\
+    &= \chi_S(g).
+\end{align*}
+\end{solution}
+
+
+\newpage
+\begin{problem} 
+Show that the row sums in a character table are nonnegative integers.
+\end{problem}
+\begin{solution}
+If we consider $\chi$ to be the permutation character for the conjugation action and $\psi$ another irreducible character we have
+\[
+\langle \psi, \chi \rangle = \sum_{\textrm{representatives}} \frac{1}{|C_G(g)|} \psi(g) \cdot \overline{\chi(g)},
+\]
+where the sum is over representatives of conjugacy classes.  Since $\chi$ is the permutation character, we have that $\chi(g)=|C_G(g)|$ since the trace of the representation of $g$ is the number of elements fixed by $g$. Hence, we have
+\[
+\langle \psi,\chi\rangle = \sum_{\textrm{representatives}} \psi(g)
+\]
+which is the row sum of $\psi$.  Then note that for any characters we have
+\[
+\langle \chi_1, \chi_2\rangle = \dim(\hom(V,W)),
+\]
+and so the row sums must be positive.
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $G$ be a finite group.
+\begin{enumerate}[(a)]
+    \item Let $\chi$ be a character of $G$ associated to the representation $\delta$ and $g\in G$ with $|g|=2$. Show that $\chi(g)\in \Z$ and that $\chi(g)\equiv\chi(1) (\textrm{mod}2)$.
+    \item Show that simple groups cannot have irreducible $\C$-representations of degree 2. (Hint: Assume that $\delta$ is irreducible of degree 2 and $|g|=2$, conclude that $g^\delta\in Z(G^\delta)$.)
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item By Problem 33 we know that $\chi(g)$ is a sum of second roots of unity which are $1$ and $-1$ and so $\chi(g)\in \Z$.  Again, by Problem 33 we have $\chi(g^2)\equiv \chi(g)^2 ~(\textrm{mod}~p)$ and we have that $g^2=1$ and thus $\chi(g)\equiv \chi(1) ~(\textrm{mod}~p)$. 
+    \item For a contradiction, let $\delta$ be an irreducible representation of degree 2 with an element $g$ such that $|g|=2$. The fact that this representation is not of degree 1 means that $G$ must not be abelian and so we can consider $G/G'$. By supposition $G$ is simple, and so $G'$ is trivial or $G'=G$ and since we have that $G$ is abelian, $G'=G$ is the only option.  Thus we have that the number of characters is equal to $[G:G']=1$ and so $g^\delta = -I_{2\times 2}$ since $g$ has order two and thus $g^{\delta}\in Z(G^\delta)$. This contradicts $G$ being simple as $\langle g\rangle$ generates a nontrivial subgroup of $G$.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+The character table of the symmetric group $S_5$ is given as
+\[
+    \begin{tabular}{c|ccccccc}
+        ~ & 1a & 2a & 3a & 5a & 2b & 4a & 6a \\
+        \hline
+        $\chi_1$ & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
+        $\chi_2$ & 1 & 1 & 1 & 1 & -1 & -1 & -1\\
+        $\chi_3$ & 6 & -2 & . & 1 & . & . & .\\
+        $\chi_4$ & 4 & . & 1 & -1 & 2 &. & 1\\
+        $\chi_5$ & 4 & . & 1 & -1 & -2 & . & 1\\
+        $\chi_6$ & 5 & 1 & -1 & . & 1 & -1 & 1\\
+        $\chi_7$ & 5 & 1 & -1 & . & -1 & 1 & -1
+    \end{tabular}
+\]
+where dot (.) indicates a zero entry and the class names give the element orders, the letters are assigned to distinguish classes with the same element order.
+\begin{enumerate}[(a)]
+    \item Determine representatives for the conjugacy classes (for example from element orders and centralizer orders - the latter are obtainable via the 2nd orthogonality relation).
+    \item Write the permutation character $\chi_\pi$ for the natural permutation representation of $S_5$ as a sum of irreducible characters. \textbf{Hint:} The \GAP commands
+    \begin{verbatim}
+        c:= CharacterTable("S5"); mat:=List(Irr(c), i->List(i,j->j);
+    \end{verbatim}
+    can be used to obtain a matrix with the character values so you do not need to solve linear equations by hand.
+    \item Let $\tau$ be the tensor product of $\chi_5$ with $\chi_6$. Write $\tau$ as a sum of irreducible characters.
+    \item Let $\phi$ be the permutation representation of $S_5$ on the cosets of $A_4$ (of degree 10). Write the corresponding permutation character as a sum of irreducible characters. \textbf{Hint:} The coset $A_4h$ remains fixed under $g$ if $hgh^{-1}\in A_4$. As the \GAP  command \begin{verbatim}
+        RightTransversal
+    \end{verbatim}
+    can be used to obtain a set of representatives for the cosets, the following command thus determines representatives of those cosets, which remain fixed under the group element $g$.
+    \begin{verbatim}
+        Filtered(RightTransversal(s5,a4),h->h*g/h in a4);
+    \end{verbatim}
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We can break up $S_5$ into the cycles of different type. There is the trivial cycle given by $()$ corresponding to $1a$, a three cycle $(123)$ corresponding to $3a$, a four cycle $(1234)$ corresponding to $4a$, a five cycle $(12345)$ corresponding to $5a$, and a six cycle corresponding to, for example, $(12)(1234)$. Then, there are two types of two cycles, we have $2a$ can be given by $(12)(34)$ which is an even signed permutation, and $2b$ given by $(12)$ which is an odd signed permutation which agrees with the character table.
+    
+    \item Then we use the above representatives and take the trace of their permutation matrix to find that we get $\chi_\pi(())=5$, $\chi_\pi((12)(34))=1$, $\chi_\pi((123))=2$, $\chi((12345)=0$, $\chi_\pi((12)(34))=3$, $\chi_\pi((1234))=1$, and $\chi_\pi((12)(1234))=0$, which we can know by knowing how many elements are fixed by the permutation. Then we can get these results for $\chi_\pi$ by noting $\chi_\pi = \chi_1 + \chi_4$.
+    
+    \item We have $\tau(g)=\chi_5(g)\cdot \chi_6(g)$ and so in this table we would have 
+    \[
+    \begin{tabular}{c|cccccccc}
+        ~ & 1a & 2a & 3a & 5a & 2b & 4a & 6a  \\
+        \hline
+        $\tau$ & 20 & 0 & -1 & 0 & -2 & 0  & 1 
+    \end{tabular}.
+    \]
+    We can solve this as a linear system to get $\tau = \chi_3 + \chi_5 + \chi_6 + \chi_7$.
+\end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Let $G$ be a finite group and $\chi$ a character of $G$. Let $g\in G$ and $p$ be a prime. Show: If $\chi$ is rational (i.e. has only rational values), then $\chi(g^p)\equiv \chi(g)^p (\textrm{mod}~p)$. \textbf{Hint:} Show that $\chi(g^p)-\chi(g)^p=p\cdot a$ for an algebraic integer $a$.
+\end{problem}
+\begin{solution}
+    Suppose that $|g|=d$ then $\chi(g)$ is the sum of $d$th roots of unity.  Suppose that $\chi(g)=\lambda_1 + \cdots + \lambda_n$ then
+    \begin{align*}
+        \chi(g^p)-\chi(g)^p &= \sum_{i} \lambda_i^p - \left( \sum_{i} \lambda_i\right)^p\\
+        &= \sum_{i} \lambda_i^p - \sum_{\sum k_t = p} \frac{p!}{k_1!\cdot k_m!} \prod_{1\leq t \leq m} \lambda_t^{k_t}\\
+        &\equiv 0 \textrm{~ mod}~ p.
+    \end{align*}
+\end{solution}
+
+
+
+\end{document}

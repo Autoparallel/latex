@@ -1,0 +1,206 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 3 -- due 9/20/2019}
+\noindent \emph{I worked with Brittany and Brenden.  Brenden also helped me a lot with the GAP code.}
+\setcounter{problem}{9}
+\begin{problem}
+Let $G$ be a finite group and $K$ a field. What is the relation between the 1-dimensional $K$-representations of $G$, and those of $G/G'$. Describe these representations for the case of $G/G'$ cyclic.
+\end{problem}
+\begin{solution}
+We let $G'=\{[g,h]~\vert~ g,h\in G\}$.  Let $\rho \colon G \to K$ and $\rho'\colon G/G' \to K$ be 1-dimensional representations. We also have the projection map $\pi \colon G \to G/G'$ so that $\im \pi = G/G'$ and $\ker \pi = G'$ by letting $\pi(g)=g+G'$. 
+
+Note that if we have $\ker \rho = G'$, then we have $\rho'=\rho \circ \pi$.  If $G/G'$ is cyclic, then the image of $\rho'$ is cyclic and hence the image of $\rho'$ must be the roots of unity in $K$.
+\end{solution}
+
+\newpage
+\begin{problem}
+(\textsf{GAP}) 
+\begin{enumerate}
+    \item Let $G=A_5$ and $F=\mathbb{F}_9=GF(9)$. Determine with the MeatAxe (but without using \textsf{MTX.CollectedFactors} command) the irreducible $FG$-modules of dimension 3 up to isomorphism. 
+    \item Also determine (you may use the \textsf{MTX.CollectedFactors} command here) the irreducible $F_4G$ modules of dimension 3 up to isomorphism. Compare with the result of (a).
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item Here is \textsf{GAP} code.
+    \begin{verbatim}
+    G := AlternatingGroup(5);;
+F := GF(9);;
+A := PermutationGModule(G,F);;
+a1 := MTX.Generators(A)[1];;
+a2 := MTX.Generators(A)[2];;
+omega := a1-a2;;
+#omega := a1*a2-a2;;
+nr := NullspaceMat(omega);;
+y := nr[1];
+Rank([y, y*a1, y*a1^2, y*a1^3, y*a1^4]);
+
+nc := NullspaceMat(TransposedMat(omega));;
+x := nc[1];;
+Rank([x, x*a1, x*a1^2, x*a1^3, x*a1^4]);
+
+#according to my findings, we have irreducible representations of dimensions 1 and 4, none of dimensions w3.
+\end{verbatim}
+
+\item And for (b),
+\begin{verbatim}
+MTX.CollectedFactors(A);
+\end{verbatim}
+which agrees with (a).
+\end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Let $G=A_4$ and $K=\finitef_2$. Let $\varphi$ be the 3-dimensinonal representation of $A_4$ on $\finitef_2^4/S$ from problem 3. Calculate matrices for generators of $A_4$ under $\varphi \otimes \varphi$, and determine the irreducible constituents of this representation.
+\end{problem}
+\begin{solution}
+Here is some \textsf{GAP} code.
+\begin{verbatim}
+A := PermutationGModule(AlternatingGroup(4),GF(2));;
+bas := MTX.BasesSubmodules(A)[2];;
+A2 := MTX.InducedActionFactorModule(A,bas);; 
+MTX.Dimension(A2);
+a1 := MTX.Generators(A2)[1];;
+a2 := MTX.Generators(A2)[2];;
+#Now the tensor product and its generators
+AA := TensorProductGModule(A2,A2);
+aa1 := MTX.Generators(AA)[1];; Display(aa1);
+aa2 := MTX.Generators(AA)[2];; Display(aa2);
+#note that aa1 is the kronecker product of a1 with itself, and similarly for aa2.
+#Use the meataxe to find the irreducible constituents of AA
+Display(MTX.CollectedFactors(AA));
+\end{verbatim}
+\end{solution}
+
+\setcounter{problem}{13}
+\newpage
+\begin{problem}
+Let $G$ be a finite group and $K$ a field with $\Char K\neq 2$. Consider a $KG$ module $V$ with basis $\boldv_1,\dots,\boldv_n$ and let $W=V\otimes V$. We define a linear map $\alpha \colon W \to W$ by prescribing images of the basis vectors as $\alpha \boldv_i\otimes \boldv_j\mapsto \boldv_j\otimes \boldv_i$ and set $W_S = \{w\in W ~\vert~ w^\alpha = w\}$ and $W_A=\{w\in W~\vert~ w^\alpha = - w\}$. (These are called the \emph{symmetric}, respectively \emph{antisymmetric} tensors.) Show:
+\begin{enumerate}[(a)]
+    \item $W=W_S \oplus_K W_A$ (direct sum of vector spaces.)
+    \item Both $W_S$ and $W_A$ are $KG$-submodules of $W$. (Thus $W=W_S \oplus_{KG} W_A$ as well.)
+    \item $\dim(W_S)=\frac{1}{2}n(n+1)$ and $\dim(W_A)=\frac{1}{2}n(n-1)$.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item First, we can show that these are indeed subspaces of $W$. Let $\omega, \eta \in W_A$ and $\lambda,\mu \in K$ and consider
+    \begin{align*}
+        (\lambda \omega + \mu \eta)^\alpha &= \lambda \omega^\alpha + \mu \eta^\alpha\\
+        &= -\lambda \omega - \mu \eta\\
+        &= -(\lambda \omega + \mu \eta),
+    \end{align*}
+    meaning that $W_A$ is a subspace.  Then take $g,h \in W_S$ and $\lambda,\mu \in K$ and consider
+    \begin{align*}
+        (\lambda g+ \mu h)^\alpha &= \lambda g^\alpha + \mu h^\alpha \\
+        &= \lambda g + \mu g,
+    \end{align*}
+    hence $W_S$ is a subspace.
+    
+    Next, we can show that $W_S\cap W_A=\{0\}$. To see this, note that if we have $w\in W_S\cap W_A$ then $w^\alpha = w = -w$.  Since $w=-w$ it must be that $w=0$ and hence $W_S\cap W_A=\{0\}$.  
+    
+    Lastly, we can prove (c) which will allow us to show the result for (a).  To see how many linearly independent elements we have in $W_S$ and $W_A$, it suffices to show the list of equations needed to satisfy for elements in $W_S$ and $W_A$.  Note that $W$ is $n^2$-dimensional and elements in $W_A$ must satisfy
+    \[
+    g_{ij}\boldv_i \otimes \boldv_j = g_{ji}\boldv_j\otimes \boldv_i.
+    \]
+    In other words, the coefficients $g_{ij}$ must satisfy
+    \[
+    g_{ij}=g_{ji}.
+    \]
+    This is $n^2-n=n(n-1)$ equations (since the $n$ diagonal elements are arbitrary) which, since we are setting coefficients equal to each other, give us that $\frac{1}{2}n(n-1)$ elements are fixed by these equations.  We then have that the dimension of $W_S$ is given by the dimension of $W$ minus how many elements are fixed, $n^2-\frac{1}{2}n(n-1)=\frac{1}{2}n(n+1)$. Hence $\dim(W_S)=\frac{1}{2}n(n+1)$.
+    
+    The argument for $\dim(W_A)$ is similar.  In this case we have the equations
+    \[
+    \omega_{ij} \boldv_i \otimes \boldv_j = -\omega_{ji} \boldv_j \otimes \boldv_i.
+    \]
+    This gives us $n^2-n$ equations for the off diagonal elements by noting
+    \[
+    \omega_{ij}=-\omega_{ji} \qquad i\neq j
+    \]
+    but also $n$ equations for the diagonal elements since they must be identically zero.  That is,
+    \[
+    \omega_{ii}=0.
+    \]
+    In total, we have $\frac{1}{2}n(n-1)+n=\frac{1}{2}n(n+1)$ independent equations. Then the dimension of $W_A$ is found to be
+    \[
+    \dim(W_A)=n^2-\frac{1}{2}n(n+1)=\frac{1}{2}n(n-1).
+    \]
+    To prove (a), note that we have $W_S\cap W_A=\{0\}$ and \[
+    \dim(W_S)+\dim(W_A)=\frac{1}{2}n(n+1)+\frac{1}{2}n(n-1)=n^2=\dim(W)
+    \]
+    and so $W_S\oplus_K W_A=W$.
+    \item To see that $W_S$ and $W_A$ are $KG$-submodules, take a $g\in KG$ and a $w\in W$.  Now, write $w=w_{ij}\boldv_i\otimes \boldv_j$ (with Einstein summation assumed)
+    \begin{align*}
+        (wg)^\alpha &= (w_{ij}(\boldv_ig)\otimes (\boldv_j g))^\alpha\\
+        &= w_{ij}(\boldv_j g)\otimes (\boldv_i g)\\
+        &= w_{ji}(\boldv_ig)\otimes (\boldv_j g)\\
+        &= w_{ji}\boldv_i \otimes \boldv_j.
+    \end{align*}
+    Now if $w\in W_S$, then $w_{ij}=w_{ji}$ and thus $(wg)^\alpha=wg$. Similarly, if $w\in W_A$, then $w_{ij}=-w_{ji}$ and hence $(wg)^\alpha = -wg$. So these are both indeed $KG$-submodules.
+    \item See part (a) for a proof.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $K$ be a field and $G=\SL_2(K)$ and $V=K[x,y]$ the bivariate polynomial ring over $K$ in indeterminates $x$ and $y$. 
+\begin{enumerate}[(a)]
+    \item For $g=\begin{pmatrix} a & b\\ c& d\end{pmatrix}\in G$, we define $x.g\coloneqq ax+by$ and $y.g\coloneqq cx+dy$. Show that this makes $V$ a $KG$-module. 
+    \item For positive $m$, let $V_m\leq V$ be the subspace of homogeneous polynomials of degree $m-1$ (i.e., all monomials have degree $m-1$). Show that $V_m\leq_{KG}V$ and determine $\dim_K V_m$.
+    \item Show that for prime $p$ and $K=\finitef_p$, we have that
+    \[
+    G=\left\langle \begin{pmatrix} 1 & 1 \\ 0 & 1\end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}\right\rangle.
+    \]
+\end{enumerate}
+\end{problem}
+\begin{enumerate}[(a)]
+    \item We take the action of $G$ on $V$ and extend linearly to get an action of $KG$ on $V$.  We then have for $u,v\in V$ and $A,B\in KG$ that
+    \[
+    v \mathbb{I} = 1,
+    \]
+    and
+    \[
+    v(AB)=(vA)B,
+    \]
+    since $G$ was a group action. Since we extend linearly, we have
+    \[
+    (u+v)A=uA+vA
+    \]
+    and we define the $+$ in $KG$ so that
+    \[
+    v(A+B)=vA+vB.
+    \]
+    \item Without loss of generality, consider a monomial $x^iy^j$ such that $i+j=m-1$.  It suffices to see how $g$ acts on this element and if it produces another set of monomials of degree $m-1$.  So take
+    \[
+    (x^iy^j)g=(ax+by)^i(cx+dy)^j.
+    \]
+    Now, we can write
+    \begin{align*}
+        (ax+by)^i =\sum_{k=0}^i \binom{n}{k} x^{i-k}y^k
+    \end{align*}
+    which is a sum of monomials of degree $i$. Similarly, we have that $(cx+dy)^j$ will be a sum of monomials of degree $j$.  Hence, when we multiply
+    \[
+    (ax+by)^i(cx+dy)^j
+    \]
+    we will have a sum of monomials of degree $m-1$ which means it is homogeneous of degree $m-1$.  
+    
+    Now, we can determine the degree by noting that the basis monomials are of the form $x^iy^j$ with $i+j=m-1$.  So, we have $m$ choices for the power of $x$, and the power of $y$ is determined from that. Thus, we have $m$ basis elements and $\dim_K(V_m)=m$.
+    
+    dimension is $m$, we can show for a monomial $x^i y^j$ where $i+j=m-1$ since linear. Use binomial thing and you'll have it.
+    \item It's trivial that $G\leq \SL_2(K\finitef_p)$ seeing as the determinant of the generators are both one and the determinant of the product of matrices is the product of determinants. So the elements of $G$ must form a subgroup of $\SL_2(\finitef_p)$.
+    
+    To see that $G = \SL_2(\finitef_p)$, it suffices to show that the order of the two groups are the same.  One could enumerate this for any (reasonable) $p$ on \textsf{GAP}.
+\end{enumerate}
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 9 -- due 11/8/2019}
+%\noindent \emph{I worked with Brittany, and Brenden.}
+\setcounter{problem}{36}
+
+\begin{problem}
+Let $N=A_6$ and $F=C_2$. Determine the isomorphism types of groups $G$ that have a normal subgroup $A_6$ with a factor group $C_2$.
+\begin{enumerate}[1.]
+    \item Construct (using \verb"WreathProduct") the wreath product $w\coloneqq A_6 \wr C_2$.
+    \item Let \verb"u:= List(ConjugacyClassesSubgroups(w),Representative)" be a list of subgroups of $w$ (up to conjugacy).
+    \item Select (using \verb"Filtered") those subgroups from $U$ that have order 720 and a derived subgroup of index 2.
+    \item You will end up with 5 subgroups. Calculate the number of conjugacy classes (for example using \verb"NrConjugacyClass") for each. This shows that only a few of them could be isomorphic. Use \verb"IsomorphismGroups" amongst those candidates to obtain a list of representatives up to isomorphism.
+\end{enumerate}
+You will end up with 4 nonisomorphic groups. Which of them is $S_6$? Conclude that $\Aut(A_6)$ has order at least 1440 and that there exists an outer automorphism (i.e., an automorphism not induced by conjugaction) for $S_6$. What does this automorphism do? (Note: 6 is the only degree in which $S_n$ has an outer automorphism. This is the source of many ``sporadic" phenomena.)
+\end{problem}
+\begin{solution}
+\begin{verbatim}
+%gap
+N:=AlternatingGroup(6);
+C_2:=Group([(1,2)]);
+w:=WreathProduct(N,C_2);
+
+    Alt( [ 1 .. 6 ] )
+    Group([ (1,2) ])
+    Group([ (1,2,3,4,5), (4,5,6), (7,8,9,10,11), (10,11,12), (1,7)(2,8)(3,9)(4,10)
+    (5,11)(6,12) ])
+
+%gap
+u:=List(ConjugacyClassesSubgroups(w),Representative);
+u1:=Filtered(u,x->Order(x)=720);
+u2:=Filtered(u1,x->Index(x,DerivedSubgroup(x))=2);
+
+%gap
+List(u2,x->NrConjugacyClasses(x));
+
+    [ 14, 8, 11, 14, 11 ]
+
+%gap
+g:=SymmetricGroup(6);
+
+    Sym( [ 1 .. 6 ] )
+
+%gap
+IsomorphismGroups(u2[2],g);
+
+    fail
+\end{verbatim}
+\end{solution}
+
+
+% \newpage
+% \begin{problem} 
+% For a prime $p$, we denote by $C_p$ the cyclic group of order $p$. 
+% \begin{enumerate}[(a)]
+%     \item Show that the iterated wreath product
+%     \[
+%     \underbrace{(\cdots((C_p \wr C_p)\wr C_p)\wr \cdots ) \wr C_p)}_{m-\textrm{fold product}}
+%     \]
+%     (i.e., for $m=1$, we get $C_p$, for $m=2$, $C_p \wr C_p$) can be represented by permutations on $p^m$ points and show that its order is $p^{1+p+p^2+\cdots + p^{m-1}}$.
+%     \item For a natural number $n$ let $k=\log_p(n)$. Consider $n$ written as a sum of $p$-powers
+%     \[
+%     n= \sum_{i=0}^k a_i p^i.
+%     \]
+%     Show that the power of $p$ that divides $n!$ is exactly
+%     \[
+%     ~_p \left(\sum_{i=1}^k a_i \cdot \left( \sum_{j=0}^{i-1}p^j\right)\right).
+%     \]
+%     \item For natural $n$, describe the structure of the $p$-Sylow subgroups of $S_n$. \textbf{Hint:} Consider first the case that $n$ is a pure power of $p$.
+% \end{enumerate}
+% \end{problem}
+% \begin{solution}
+% \end{solution}
+
+% \newpage
+% \begin{problem}
+% Let $q$ be an odd prime power and $r$ an odd prime not dividing $q$. Let $d$ be minimal such that $r$ divides $q^d-1$ and let $t=r^e$ be the $r$-part of $q^d-1$.
+% \begin{enumerate}[(a)]
+%     \item Show that $\GL_d(q)$ has a cyclic subgroup of order $q^d-1$. (Such a subgroup is called a \emph{Singer Cycle}. (\textbf{Hint:} Consider a degree $d$ extension of $\finitef_q$ and select a generator of the cyclic multiplicative group.)
+%     \item Show that an $r$-Sylow subgroup of $\GL_d(q)$ must have order $t$, and be cyclic.
+%     \item Let $m=\lfloor \frac{n}{d}\rfloor$. Determine the order of a wreath product $W=T\wr S$ where $T$ is an $r$-Sylow subgroup of $\GL_d(q)$ and $S$ an $r$-Sylow subgroup of $S_m$. (Note that $W$ can be represented as a subgroup of $\GL_n(q)$.)
+%     \item Show that $W$ is an $r$-Sylow subgroup of $\GL_n(q)$.
+% \end{enumerate}
+% \end{problem}
+% \begin{solution}
+% \end{solution}
+
+
+\end{document}

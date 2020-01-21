@@ -1,0 +1,156 @@
+\documentclass[leqno]{article}
+\author{Colin Roberts}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+  \begin{huge}
+    MATH 666: Advanced Algebra I
+  \end{huge}
+\end{center}
+
+\section*{Homework assignment 8 -- due 11/1/2019}
+\noindent \emph{I worked with Brittany, and Brenden.}
+\setcounter{problem}{33}
+
+\begin{problem}
+For a finite group $G$, we define the \emph{Frobenius-Schur Indicator} of a character $\chi$ as:
+\[
+\ind(\chi)=\frac{1}{|G|}\sum_{g\in G} \chi\left(g^2\right).
+\]
+\begin{enumerate}[(a)]
+    \item Show that for $\chi\in \Irr(G)$ we have $\ind(\chi)\in \{-1,0,1\}$. (Hint: Use Problem 29.)
+    \item Suppose that $G$ possesses exactly $t$ involutions (i.e., elements of order $2$). Show that
+    \[
+    t=\sum_{\chi \in \Irr(G)} \ind(\chi)\chi(1)-1.
+    \]
+    \item For a class function $\theta$ we define $\theta^{(n)}$ by $\theta^{(n)}(g)\coloneqq \theta(g^n)$. Show that $\ind(\chi)=\left(\chi^{(2)},1_G\right)$ (where $1_G$ is the trivial character). Conclude that $\ind(\chi)\neq 0$ if and only if $\chi$ is real-valued. (One can show further that $\ind(\chi)=1$ indicates the cases that $\chi$ is obtained from a representation with matrices in $\R$.)
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item By problem 29, we have $\chi(g^2)=\chi_S(g)-\chi_A(g)$ and hence
+    \begin{align*}
+        \ind(\chi) &= \frac{1}{|G|}\sum_{g\in G} \chi_S(g)-\chi_A(g)\\
+        &= \langle \chi_S,1\rangle -\langle \chi_A,I\rangle\\
+        &= \langle \chi \times \chi-\chi_A,I\rangle -\langle \chi_A,I\rangle\\
+        &= \langle \chi \times \chi,1\rangle - 2 \langle \chi_A,I\rangle\\
+        &= \langle \chi,\overline{\chi}\rangle -2\langle \chi_A,I\rangle.
+    \end{align*}
+    Note that we must have $\langle \chi,\overline{\chi}\rangle$ is either 1 or 0 since both $\chi$ and $\overline{\chi}$ are irreducible.  Then if this quantity is equal to 1, the I is not a constituent of $\chi_A$ and so $\ind(\chi)$ is either -1 or 1. Else, the quantity $\langle \chi, \overline{\chi}\rangle$ is 0 and I can't be a constituent of $\chi_A$ andis this a constituent of $\chi$ and so $\ind(\chi)=0$.
+    \item If we define a function $f\colon G \to \Z$ by $f(g)=\textrm{the number of elements that square to $g$}$, then we have for any $\chi \in \Irr(G)$
+    \[
+    \langle f,\chi\rangle = \frac{1}{G} \sum_{g\in G} \chi(g)\overline{f(g)} = \frac{1}{|G|} \sum_{g\in G} \sum_{h^2 =g} \chi(h^2) = \frac{1}{|G|}\sum_{h\in G}\chi(h^2)=\ind(\chi).
+    \]
+    Then we note that we have $t=f(1)-1$ since we must remove 1 from being an involution. This gives us that
+    \[
+    t=f(1)-1=\sum_{\chi \in \Irr(G)}\ind(\chi)\chi(1)-1.
+    \]
+    \item We have
+    \[
+    \langle \chi^{(2)},I\rangle = \frac{1}{|G|} \sum_{g\in G} \chi(g^2)=\ind(\chi).
+    \]
+    The rest follows from (a).
+\end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem} 
+Let $G$ be a finite group. Show:
+\begin{enumerate}[(a)]
+    \item If $g\in G$ and $x\in G$, then there is a $y\in G$ such that $g$ is conjugate to $[x,y]=x^{-1}y^{-1}xy$ if and only if
+    \[
+    \sum_{\chi\in \Irr(G)} \frac{|\chi(x)|^2 \overline{\chi(g)}}{\chi(1)}\neq 0.
+    \]
+    \textbf{Hint:} Assume that $g\in C_g$, $x\in C_x$, and $x^{-1}\in C_{x^{-1}}$ (conjugacy classes) and show that $g\sim [x,y]=x^{-1}x^y$ if and only if $\mathcal{C}_x \cdot \mathcal{C}_{x^{-1}}$ has a nonzero coefficient for $\mathcal{C}_G$. Then use central characters.
+    \item $g$ is a commutator (i.e., there exists $a,b\in G$ such that $g=[a,b]$ if and only if
+    \[
+    \sum_{\chi\in \Irr(G)} \frac{\chi(g)}{\chi(1)}\neq 0.
+    \]
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Take $g,x \in G$ and we have
+    \[
+    \mathcal{C}_x \cdot \mathcal{C}_{x^{-1}} = \left( \sum_{a \in C_{a \in C_x}} a\right)\cdot \left( \sum_{b\in C_{x^{-1}}}b\right),
+    \]
+    which has a nonzero coefficient on $C_g$ if and only if there is an $a\in C_x$ and $b\in C_{x^{-1}}$ such that $ab\in C_g$. Then we have that $g=[x,y]$ if and only if the structure constants $\alpha_{x,x^{-1}}^g \neq 0$ which are
+    \[
+    \alpha_{x,x^{-1}}^g = \frac{|C_x||C_{x^{-1}}|}{|G|}\sum_{\chi\in \Irr(G)} \frac{\chi(x)\chi(x^{-1})\overline{\chi(g^{-1})}}{\chi(1)}.
+    \]
+    Then we have $\chi(x)\chi(x^{-1})=\chi(x)\overline{\chi(x)}=|\chi(x)|^2$ which is nonzero. Then we also have that $\frac{|C_x||C_{x^{-1}}|}{|G|}$ is nonzero as well and hence the sum above is nonzero.
+    \item By (a) we have
+    \[
+    \sum_{x\in G} \alpha_{x,x^{-1}}^g \frac{|G|}{|C_x||C_{x^{-1}}|}=|G|\sum_{\chi \in \Irr(G)}\frac{\chi(g)}{\chi(1)}.
+    \]
+    This sum is positive when the structure constants are greater than zero which occurs when $g$ is a commutator.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+For a finite group $G$ we define $G'=\langle [a,b]=a^{-1}b^{-1}ab~\vert~a,b\in G\rangle \lhd G$ (the \emph{derived subgroup}). Let $G = \langle (1,2,5)(3,6,11)(4,7,9)(8,10,12),(1,8,4,3)(5,12)(6,10)(9,11)\rangle$ be a certain group of order 96. Then (e.g. using \GAP) we obtain the character table of $G$ as given below.
+\begin{enumerate}[(a)]
+    \item Determine in this table the classes which constitute $G'$.
+    \item Show, using the criterion of problem 35(b), that there is an element in $G'$ that is not a commutator (but only a product of commutators).
+    \item If $G$ is a simple group then clearly $G=G'$. The conjecture of Ore - recently being proven by Liebeck, O'Brien, Shalev, and Tiep - states that for a simple group $G$ all elements are proper commutators. Verify this conjecture for $A_6$, using a character table (obtained from \GAP, or whatever source you deem appropriate).
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item The table is
+    \[
+    \begin{tabular}{c|cccccccccccc}
+        2 & 5 & 1 & 4 & 4 & 5 & 1 & 1 & 4 & 4 & 5 & 1 & 5  \\
+        3 & 1 & 1 & . & . & . & 1 & 1 & . & . & . & 1 & 1\\
+        \hline
+        ~ & 1a & 3a & 4a & 4b & 2a & 3b & 6a & 4c & 4d & 2b & 6b & 2c \\
+        \hline
+        $\chi_1$ & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
+        $\chi_2$ & 1 & $\alpha$ & 1 & 1 & 1 & $\overline{\alpha}$ & $\alpha$ & 1 & 1 & 1 & $\overline{\alpha}$ & 1\\
+        $\chi_3$ & 1 & $\overline{\alpha}$ & 1 & 1 & 1 & $\alpha$ & $\overline{\alpha}$ & 1 & 1 & 1 & $\alpha$ & 1\\
+        $\chi_4$ & 2 & -1 & . & . & -2 & -1 & 1 & . & . & 2 & 1 & -2\\
+        $\chi_5$ & 2 & $-\overline{\alpha}$ & . & . & -2 & $-\alpha$ & $\overline{\alpha}$ & . & . & 2 & $\alpha$ & -2\\
+        $\chi_6$ & 2 & $-\alpha$ & . & . & -2 & $-\overline{\alpha}$ & $\alpha$ & . & . & 2 & $\overline{\alpha}$ & -2\\
+        $\chi_7$ & 3 & . & -1 & -1 & 3 & . & . & -1 & -1 & 3 & . & 3\\
+        $\chi_8$ & 3 & . & $\beta$ & $\overline{\beta}$ & -1 & . & . & 1 & 1 & -1 & . & 3\\
+        $\chi_9$ & 3 & . & $\overline{\beta}$ & $\beta$ & -1 & . & . & 1 & 1 & -1 & . & 3\\
+        $\chi_{10}$ & 3 & . & 1 & 1 & -1 & . & . & $\overline{beta}$ & $\beta$ & -1 & . & 3\\
+        $\chi_{11}$ & 3 & . & 1 & 1 & -1 & . & . & $\beta$ & $\overline{\beta}$ & -1 & . & 3\\
+        $\chi_{12}$ & 6 & . & . & . & 2 & . & . & . & . & -2 & . & -6
+    \end{tabular}
+    \]
+    with $\alpha = e^{\frac{4\pi i}{3}}$ and $\beta = -1 + 2i$. 
+    
+    We have that $\displaystyle{G'=\bigcap_{\substack{{\chi \in \Irr(G)}\\{\chi(1)=1}}} \ker(\chi)}$. Here in the table we have $G'=1a\cup 4a\cup 4b \cup 2a \cup 4c \cup 4d \cup 2b \cup 2c$.
+    \item We can compute $\sum_{\chi \in \Irr(G)}\frac{\chi(g)}{\chi(1)}$.  The only time this sum is zero is with $2a$.
+    \item The character table for $A_6$ is
+    \[
+    \begin{tabular}{c|ccccccc}
+        ~  & $1a$ & $2a$ & $3a$ & $3b$ & $4a$ & $5a$ & $5b$\\
+        \hline
+        $\chi_1$ & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        $\chi_2$ & 5 & 1 & 2 & -1 & -1 & . & .\\
+        $\chi_3$ & 5 & 1 & -1 & 2 & -1 & 0 & 0\\
+        $\chi_4$ & 8 & 0 & -1 & -1 & 0 & A & *A\\
+        $\chi_5$ & 8 & 0 & -1 & -1 & 0 & *A & A\\
+        $\chi_6$ & 9 & 1 & 0 & 0 & 1 & -1 & -1 \\
+        $\chi_7$ & 10 & -2 & 1 & 1 & 0 & 0 & 0
+    \end{tabular}
+    \]
+    Then we can can compute this for each class to get
+    \[
+    \begin{tabular}{c|ccccccc}
+        $1a$ & $2a$ & $3a$ & $3b$ & $4a$ & $5a$ & $5b$  \\
+        \hline
+        7 & $\frac{59}{45}$ & $\frac{21}{20}$ & $\frac{21}{20}$ & $\frac{32}{35}$ & $\frac{73}{72}$ & $\frac{73}{72}$
+    \end{tabular}
+    \]
+\end{enumerate}
+\end{solution}
+
+
+\end{document}

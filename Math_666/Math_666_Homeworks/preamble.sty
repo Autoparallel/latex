@@ -1,0 +1,100 @@
+\ProvidesPackage{preamble}
+
+% Page styling
+\usepackage{geometry}
+\geometry{
+  top=1in,            
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=10ex,       
+  headsep=7ex,          
+  footskip=10ex
+}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{etoolbox}
+\makeatletter
+%\patchcmd{\f@nch@head}{\rlap}{\color{red}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{gray}\hrule}{}{}
+%\patchcmd{\f@nch@foot}{\rlap}{\color{green}\rlap}{}{}
+%\patchcmd{\footrule}{\hrule}{\color{green}\hrule}{}{}
+\makeatother
+\rhead{\textcolor{gray}{Colin Roberts}}
+\lhead{\textcolor{gray}{Math 666}}
+\lfoot{\textcolor{gray}{Fall 2019}}
+\rfoot{\textcolor{gray}{Colorado State University}}
+\cfoot{\textcolor{gray}{\thepage}}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{amssymb}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{graphicx}
+\usetikzlibrary{quotes,arrows.meta}
+\usepackage{eucal}
+\usepackage{pdfpages}
+\def\GAP{{\sf GAP}}
+
+\newcommand\matbas[3]{{\vphantom{\left.#2\right]}}_{{#1}}\left[#2\right]_{{#3}}}
+\newcommand{\nullity}{\mathrm{Nullity}}
+\def\Bb{{\EuScript B}}
+\def\Cb{{\EuScript C}}
+\def\P{{\EuScript P}}
+\def\Span{{\rm Span}}
+\newcommand{\Irr}{\mathrm{Irr}}
+\newcommand{\ind}{\mathrm{ind}}
+
+\theoremstyle{plain}
+\theorembodyfont{\normalfont}
+\newtheorem{problem}{Problem}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+%\theoremsymbol{\ensuremath{\square}}
+\newtheorem{solution}{Solution}
+%\theoremseparator{. ---}
+%\theoremsymbol{\mbox{\texttt{;o)}}}
+%\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\RE}{\textrm{Re}}
+\newcommand{\IM}{\textrm{Im}}
+\newcommand{\finitef}{\mathbb{F}}
+\newcommand{\Char}{\mathrm{Char}}
+\newcommand{\boldv}{\mathbf{v}}
+\newcommand{\SL}{\mathrm{SL}}
+
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\GL}{\mathrm{GL}}
+
+% Matlab code
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
