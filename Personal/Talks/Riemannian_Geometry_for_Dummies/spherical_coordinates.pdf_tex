@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{770.51046537bp}%
+    \setlength{\unitlength}{772.63523853bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,16 +50,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.53945705)%
+  \begin{picture}(1,0.57091459)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
+    \put(0.0003625,0.44171619){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{spherical_coordinates.pdf}}%
-    \put(0.00030828,0.44948802){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
-    \put(0.51584702,0.24184005){\color[rgb]{1,0.86666667,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\varphi$\end{tabular}}}}%
+    \put(1.01063238,0.14791911){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
+    \put(0.6732514,0.3965231){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{spherical_coordinates.pdf}}%
-    \put(0.95558951,0.04382325){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
-    \put(0.61386022,0.2916069){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.47375526,0.50188275){\color[rgb]{1,0.60784314,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\varphi(\theta,\phi)=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{spherical_coordinates.pdf}}%
-    \put(0.51673975,0.3581006){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\varphi(\theta,\phi)=(\sin\theta\cos\phi,\sin\theta,\sin\phi,\cos\theta)$\end{tabular}}}}%
+    \put(0.26717969,0.57252782){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
+    \put(0.41698114,0.15916136){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.479398,0.31715861){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{spherical_coordinates.pdf}}%
+    \put(0.31244593,0.38309844){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.38395897,0.20609231){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
+    \put(0.6358597,0.27805896){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi$\end{tabular}}}}%
+    \put(0.91332885,0.11397709){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2\pi$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{spherical_coordinates.pdf}}%
+    \put(0.41379139,0.46443403){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{spherical_coordinates.pdf}}%
   \end{picture}%
 \endgroup%

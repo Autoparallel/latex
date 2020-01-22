@@ -2,10 +2,10 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
 \beamer@sectionintoc {2}{Motivation}{8}{0}{2}
 \beamer@sectionintoc {3}{Preliminaries}{17}{0}{3}
-\beamer@subsectionintoc {3}{1}{Smooth Manifolds}{18}{0}{3}
-\beamer@subsectionintoc {3}{2}{Vector Fields}{26}{0}{3}
-\beamer@subsectionintoc {3}{3}{Example}{33}{0}{3}
-\beamer@sectionintoc {4}{Riemannian Geometry}{36}{0}{4}
-\beamer@subsectionintoc {4}{1}{Riemannian Metric}{41}{0}{4}
-\beamer@sectionintoc {5}{Applications}{44}{0}{5}
-\beamer@sectionintoc {6}{Conclusions}{45}{0}{6}
+\beamer@subsectionintoc {3}{1}{Smooth Manifolds}{19}{0}{3}
+\beamer@subsectionintoc {3}{2}{Vector Fields}{28}{0}{3}
+\beamer@subsectionintoc {3}{3}{Example}{35}{0}{3}
+\beamer@sectionintoc {4}{Riemannian Geometry}{39}{0}{4}
+\beamer@subsectionintoc {4}{1}{Riemannian Metric}{44}{0}{4}
+\beamer@sectionintoc {5}{Applications}{47}{0}{5}
+\beamer@sectionintoc {6}{Conclusions}{48}{0}{6}
