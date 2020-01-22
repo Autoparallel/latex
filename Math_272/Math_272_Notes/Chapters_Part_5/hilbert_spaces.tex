@@ -39,7 +39,25 @@ This section of the text is primarily concerned with extending our linear algebr
 
 \section{Function Spaces}
 
-\textcolor{red}{add here}
+Rather than leave this section as an abstract approach to more advanced linear algebra, we shall take the viewpoint of working with some specific ideas in mind.  The canonical infinite dimensional vector spaces are formed as spaces of functions.  That is, for example, the set of all solutions to a homogeneous linear ODE of the form
+\[
+x''(t)+f(t)x'(t)+g(t)x(t)=0.
+\]
+In the prequel, we proved that any linear combination of solutions to the above equation is also a solution which, along with the fact that $x(t)=0$ is a solution, proves that this set of functions forms a vector space.  
+
+We will not concern ourselves with names for these spaces of functions or their formal definitions.  But, let's list a few more other than the one I mentioned above. Let $\Omega=[0,L]$, then we can consider a few different sets of functions $f\colon \Omega \to \R$ that are vector spaces.
+\begin{itemize}
+	\item The set of continuous functions.
+	\item The set of differentiable functions (whose derivatives are also continuous).
+	\item The set of analytic (functions with convergent Taylor series) functions.
+	\item The set of functions whose square is integrable. That is, all functions $f$ so that
+	\[
+		\int_0^L \|f(x)\|^2 dx <\infty.
+	\]
+	\item The set of solutions to the Schr\"odinger equation for a free particle in a 1-dimensional box.
+	\item The set of solutions to the Legendre equation for any nonnegative integer choice of $m$.
+\end{itemize}
+We will revisit the same spaces again and again as these are prototypes for other problems you will encounter. If you grasp the content for the above examples, seeing it with new examples will not be too challenging.
 
 \section{Inner Products}
 
@@ -339,3 +357,100 @@ The coefficients are then given by the function $\hat{f}(\omega)$ where, for exa
 
 \subsection{Projection}
 
+When we are handed a vector $\vecv\in \R^3$ we can recover the components of $\vecv$ by projecting onto our orthonormal basis.  As I've said before, we do this by
+\[
+\vecv \cdot \xhat = v_1.
+\]
+Nothing changes when we work with an infinite orthonormal basis.  Say we have the basis $\psi_n$ for some Hilbert space,  then for a vector $\Psi$, we can recover the component $a_n$ by
+\[
+\innprod{\Psi}{\psi_n}=a_n.
+\]
+This is a surprisingly helpful fact.
+
+Sometimes, we want to see what the fundamental components of a function are in order to approximate a function.  We did this with power series, but this is not always the best choice.  We also have developed machines that work via extracting, for example, frequency components of functions (see Fourier transform spectroscopy).  If one is able to find that a complicated function is well approximated by the sum of a few far less complicated functions, this will simplify the analysis we do when we work with the function. Let us work with an example.
+
+\begin{ex}{Triangle Wave}{triangle_wave}
+	Let's consider the function $f\colon [0,L]\to \R$ given by
+	\[
+		f(x)=\begin{cases} x & 0\leq x\leq L/2\\ L-x & L/2<x\leq L\end{cases}
+	\]
+	We wish to find a suitable orthonormal basis of functions with domain $[0,L]$.  In this case, let us define the inner product by
+	\[
+	\innprod{g}{h} = \frac{1}{L}\int_0^L g(x)h(x)dx,
+	\]
+	which is a scaled version of the Hermitian inner product (with omitted conjugate since the functions are real).  We will revisit this inner product when we arrive at Fourier series.  
+
+	Now, since this is a scaled version of the Hermitian inner product and since $f(x)$ satisfies the zero boundary conditions requirement, we can conjecture that a suitable orthogonal basis is given by
+	\[
+		\sin\left( \frac{n\pi x}{L}\right)
+	\]
+	where $n=1,2,3,\dots$. We know that these elements are orthogonal in that
+	\[
+		\innprod{\sin\left( \frac{n\pi x}{L}\right)}{\sin\left( \frac{m\pi x}{L}\right)}=0
+	\]
+	when $n\neq m$.  However, we must normalize these vectors as well since our inner product is not the same.  We take
+	\begin{align*}
+		1&=\innprod{c\sin\left( \frac{n\pi x}{L}\right)}{c\sin\left( \frac{n\pi x}{L}\right)}\\
+		&= \frac{1}{L} \int_0^L c^2 \sin^2\left(\frac{n\pi x}{L}\right)dx\\
+		&= \frac{c^2}{2}.
+	\end{align*}
+	We can then solve for the normalization constant $c$ to find that we get $c=\sqrt{2}$.  Hence we have that our orthonormal basis for this inner product is
+	\[
+		\psi_n(x)= \sqrt{2} \sin \left(\frac{n \pi x}{L}\right),
+	\]
+	for $n=1,2,3,\dots$. Now, we have our $f(x)$, and we want to extract the components of $f(x)$.  To do this, we use the inner product and project by
+	\begin{align*}
+		a_n&=\innprod{f}{\psi_n}\\
+			&= \frac{1}{L} \int_0^L f(x) \sqrt{2} \sin\left(\frac{n\pi x}{L}\right)dx\\
+			&= \sqrt{2}\left(\frac{L\sin\left(\frac{\pi n}{2}\right)-\frac{1}{2}\pi Ln\cos\left(\frac{\pi n}{2}\right)}{\pi^{2}n^{2}}
++\frac{L\left(2\sin\left(\frac{\pi n}{2}\right)+\pi n\cos\left(\frac{\pi n}{2}\right)\right)}{2\pi^{2}n^{2}}\right).
+	\end{align*}
+	You should verify the integral above.
+
+	What this means is that we can now put
+	\[
+		f(x) = \sum_{n=1}^\infty \sqrt{2}\left(\frac{L\sin\left(\frac{\pi n}{2}\right)-\frac{1}{2}\pi Ln\cos\left(\frac{\pi n}{2}\right)}{\pi^{2}n^{2}}
++\frac{L\left(2\sin\left(\frac{\pi n}{2}\right)+\pi n\cos\left(\frac{\pi n}{2}\right)\right)}{2\pi^{2}n^{2}}\right) \sqrt{2}\sin\left(\frac{n\pi x}{L}\right).
+	\]
+	The question now is whether this is believable at all. Because, let's face it, this seems pretty odd. So, let's examine what these functions look like.
+
+	There is no nice way of evaluating the above infinite sum, but we can take finite sum approximations from this. For example, we can choose some positive integer $N$ and take
+	\[
+		f(x)\approx \sum_{n=1}^N a_n \psi_n(x).
+	\]
+	Let us plot various degrees of approximations with the original function $f(x)$.
+
+	\begin{figure}[H]
+	\centering
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/triangle_n=1.png}
+			\caption{Approximation of $f(x)$ with $n=1$ basis elements..}
+		\end{subfigure}
+		~
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/triangle_n=5.png}
+			\caption{Approximation of $f(x)$ with $n=5$ basis elements.}
+		\end{subfigure}
+		\\
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/triangle_n=20.png}
+			\caption{Approximation of $f(x)$ with $n=20$ basis elements.}
+		\end{subfigure}
+		~
+		\begin{subfigure}[h]{0.49\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{Figures_Part_5/triangle_n=50.png}
+			\caption{Phase difference $\delta=\pi$.}
+		\end{subfigure}
+	\caption{Approximation of $f(x)$ with $n=50$ basis elements.}
+	\end{figure}
+
+	The above example is of dire importance in the realm of experimentation.  If we were not able to approximate functions using a methodology like this, all computation would be far more difficult and possible infeasible. One can see from the above example that an approximation with 20 or more terms is fantastic.  What we have done here is also important for modelling differential equations. For example, in some equations, one can take the first 20 basis functions and see how the coefficients $a_n$ change over time as opposed to explicitly solving the differential equation. This is the essence of finite element approaches.
+\end{ex}
+
+
+	
+	

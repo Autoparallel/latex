@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  21 JAN 2020 10:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  22 JAN 2020 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1635,7 +1635,11 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 
 
 Writing index file main.idx
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `ex:L' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -1875,83 +1879,100 @@ LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <12> not available
  [2
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 48.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 74.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <12> not available
-(Font)              Font shape `T1/futs/b/sc' tried instead on input line 48.
+(Font)              Font shape `T1/futs/b/sc' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 48.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <10> not available
-(Font)              Font shape `T1/futs/b/it' tried instead on input line 48.
+(Font)              Font shape `T1/futs/b/it' tried instead on input line 74.
  [3]
-Underfull \hbox (badness 2980) in paragraph at lines 94--95
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+<Figures_Part_5/complex_function_visual.png, id=166, 1124.2pt x 843.15pt>
+File: Figures_Part_5/complex_function_visual.png Graphic file (type png)
+<use Figures_Part_5/complex_function_visual.png>
+Package pdftex.def Info: Figures_Part_5/complex_function_visual.png  used on in
+put line 119.
+(pdftex.def)             Requested size: 426.50691pt x 319.87285pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+[6]
+Underfull \vbox (badness 3724) has occurred while \output is active []
+
+ [7 <./Figures_Part_5/complex_function_visual.png (PNG copy)>]
+Underfull \hbox (badness 2980) in paragraph at lines 178--179
 []\T1/futs/m/n/12 Fundamentally, this is due to the phys-i-cal un-der-stand-ing
  of the so-lu-tions to
  []
 
-<Figures_Part_5/psi_1.png, id=161, 1204.5pt x 803.0pt>
+<Figures_Part_5/psi_1.png, id=184, 1204.5pt x 803.0pt>
 File: Figures_Part_5/psi_1.png Graphic file (type png)
 <use Figures_Part_5/psi_1.png>
-Package pdftex.def Info: Figures_Part_5/psi_1.png  used on input line 122.
+Package pdftex.def Info: Figures_Part_5/psi_1.png  used on input line 206.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 123.
+(Font)              scaled to size 10.07397pt on input line 207.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 123.
+(Font)              scaled to size 7.63599pt on input line 207.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 123.
+(Font)              scaled to size 5.51999pt on input line 207.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 123.
+(Font)              scaled to size 10.07397pt on input line 207.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 123.
+(Font)              scaled to size 7.63599pt on input line 207.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 123.
-<Figures_Part_5/psi_2.png, id=163, 1204.5pt x 803.0pt>
+(Font)              scaled to size 5.51999pt on input line 207.
+<Figures_Part_5/psi_2.png, id=186, 1204.5pt x 803.0pt>
 File: Figures_Part_5/psi_2.png Graphic file (type png)
 <use Figures_Part_5/psi_2.png>
-Package pdftex.def Info: Figures_Part_5/psi_2.png  used on input line 128.
+Package pdftex.def Info: Figures_Part_5/psi_2.png  used on input line 212.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/Psi.png, id=164, 1204.5pt x 803.0pt>
+<Figures_Part_5/Psi.png, id=187, 1204.5pt x 803.0pt>
 File: Figures_Part_5/Psi.png Graphic file (type png)
 <use Figures_Part_5/Psi.png>
-Package pdftex.def Info: Figures_Part_5/Psi.png  used on input line 134.
+Package pdftex.def Info: Figures_Part_5/Psi.png  used on input line 218.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi.png, id=165, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi.png, id=188, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi.png>
-Package pdftex.def Info: Figures_Part_5/prob_Psi.png  used on input line 140.
+Package pdftex.def Info: Figures_Part_5/prob_Psi.png  used on input line 224.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi4.png, id=166, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi4.png, id=189, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi4.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi4.png>
-Package pdftex.def Info: Figures_Part_5/prob_Psi_pi4.png  used on input line 16
-7.
+Package pdftex.def Info: Figures_Part_5/prob_Psi_pi4.png  used on input line 25
+1.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi2.png, id=167, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi2.png, id=190, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi2.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi2.png>
-Package pdftex.def Info: Figures_Part_5/prob_Psi_pi2.png  used on input line 17
-3.
+Package pdftex.def Info: Figures_Part_5/prob_Psi_pi2.png  used on input line 25
+7.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_3pi4.png, id=168, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_3pi4.png, id=191, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_3pi4.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_3pi4.png>
-Package pdftex.def Info: Figures_Part_5/prob_Psi_3pi4.png  used on input line 1
-79.
+Package pdftex.def Info: Figures_Part_5/prob_Psi_3pi4.png  used on input line 2
+63.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi.png, id=169, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi.png, id=192, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi.png>
-Package pdftex.def Info: Figures_Part_5/prob_Psi_pi.png  used on input line 185
+Package pdftex.def Info: Figures_Part_5/prob_Psi_pi.png  used on input line 269
 .
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-[4] [5] [6 <./Figures_Part_5/psi_1.png> <./Figures_Part_5/psi_2.png> <./Figures
-_Part_5/Psi.png> <./Figures_Part_5/prob_Psi.png>]) [7 <./Figures_Part_5/prob_Ps
-i_pi4.png> <./Figures_Part_5/prob_Psi_pi2.png> <./Figures_Part_5/prob_Psi_3pi4.
-png> <./Figures_Part_5/prob_Psi_pi.png>]
+[8] [9] [10 <./Figures_Part_5/psi_1.png> <./Figures_Part_5/psi_2.png> <./Figure
+s_Part_5/Psi.png> <./Figures_Part_5/prob_Psi.png>]) [11 <./Figures_Part_5/prob_
+Psi_pi4.png> <./Figures_Part_5/prob_Psi_pi2.png> <./Figures_Part_5/prob_Psi_3pi
+4.png> <./Figures_Part_5/prob_Psi_pi.png>]
 Chapter 2.
 (./Chapters_Part_5/hilbert_spaces.tex
 
@@ -1962,26 +1983,62 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 2.
 
-[8
+[12
 
-] [9] [10] [11] [12] [13] [14] [15]
-Overfull \hbox (9.56741pt too wide) in paragraph at lines 296--297
+]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 50.
+
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+) [13]
+[14] [15] [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+[18] [19] [20]
+Overfull \hbox (9.56741pt too wide) in paragraph at lines 314--315
 []\T1/futs/m/n/12 Another ex-am-ple of a ba-sis arises from the so-lu-tions to 
 the free par-ti-cle in the 1-dimensional
  []
 
-[16]
+[21]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 320.
+(Font)              scaled to size 9.19998pt on input line 338.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 320.
+(Font)              scaled to size 6.99199pt on input line 338.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 320.
+(Font)              scaled to size 9.19998pt on input line 338.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 320.
-)
+(Font)              scaled to size 6.99199pt on input line 338.
+ [22]
+<Figures_Part_5/triangle_n=1.png, id=290, 1204.5pt x 803.0pt>
+File: Figures_Part_5/triangle_n=1.png Graphic file (type png)
+<use Figures_Part_5/triangle_n=1.png>
+Package pdftex.def Info: Figures_Part_5/triangle_n=1.png  used on input line 42
+7.
+(pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
+<Figures_Part_5/triangle_n=5.png, id=291, 1204.5pt x 803.0pt>
+File: Figures_Part_5/triangle_n=5.png Graphic file (type png)
+<use Figures_Part_5/triangle_n=5.png>
+Package pdftex.def Info: Figures_Part_5/triangle_n=5.png  used on input line 43
+3.
+(pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
+<Figures_Part_5/triangle_n=20.png, id=292, 1204.5pt x 803.0pt>
+File: Figures_Part_5/triangle_n=20.png Graphic file (type png)
+<use Figures_Part_5/triangle_n=20.png>
+Package pdftex.def Info: Figures_Part_5/triangle_n=20.png  used on input line 4
+39.
+(pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
+<Figures_Part_5/triangle_n=50.png, id=293, 1204.5pt x 803.0pt>
+File: Figures_Part_5/triangle_n=50.png Graphic file (type png)
+<use Figures_Part_5/triangle_n=50.png>
+Package pdftex.def Info: Figures_Part_5/triangle_n=50.png  used on input line 4
+45.
+(pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
+ [23] [24 <./Figures_Part_5/triangle_n=1.png> <./Figures_Part_5/triangle_n=5.pn
+g> <./Figures_Part_5/triangle_n=20.png> <./Figures_Part_5/triangle_n=50.png>])
 No file main.ind.
-[17] [18]
+[25]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (./main.aux)
@@ -1989,15 +2046,19 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7C7FD7CCF3562E5D9BC58B9E42692173;1147.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 49923 strings out of 492609
- 1128196 string characters out of 6129048
- 1342701 words of memory out of 5000000
- 52937 multiletter control sequences out of 15000+600000
- 715024 words of font info for 214 fonts, out of 8000000 for 9000
+ 50543 strings out of 492609
+ 1144670 string characters out of 6129048
+ 1365852 words of memory out of 5000000
+ 53535 multiletter control sequences out of 15000+600000
+ 715488 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,20n,121p,848b,1280s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,20n,121p,848b,2666s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -2016,10 +2077,10 @@ mf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/cm-super/sfsx1200.pfb>
-Output written on main.pdf (20 pages, 399578 bytes).
+Output written on main.pdf (27 pages, 608363 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 338 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 363 words of extra memory for PDF output out of 10000 (max. 10000000)
 

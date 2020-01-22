@@ -36,8 +36,92 @@ f(z)=r(z)e^{i\theta(z)},
 \]
 where again $r,\theta \colon \C \to \R$.  In this perspective, we are seeing what happens to the argument $\theta(z)$ and modulus $r(z)$ as we vary the complex input.  Which way of decomposing $f$ we choose is typically decided on the situation at hand.  It has more to do with the symmetry of the function than anything else! In this polar representation of the function, we refer to $\theta(z)$ as a \boldgreen{phase}.  
 
-\textcolor{red}{Examples of functions and some visualizations (vec fields and what not)}
+\begin{ex}{A Line in $\C$}
+	Let's consider the complex function $f\colon \R \to \C$ given by the Cartesian representation 
+	\[
+	f(x) = x+ix.
+	\]
+	How should we think of this function? For one, we can see how the output changes as the input changes by testing a few values
+	\begin{align*}
+		f(0)&=0 & f(1)&=1+i\\
+		f(-1)&=-1-i & f(2)&=2+2i.
+	\end{align*}
+	We can also visualize this function in the following way. For every input, we will just place the complex output into the complex plane. Unlike plotting real functions, we will have to pay a bit more attention to what the input value is.
+	\[
+	    \begin{tikzpicture}[baseline]
+	    \begin{axis}[
+	    axis y line=center,
+	    axis x line=middle,
+	    %axis equal,
+	    grid=both,
+	    xmax=5,xmin=-5,
+	    ymin=-5,ymax=5,
+	    xlabel=$x$,ylabel=$y$,
+	    xtick={-10,...,10},
+	    ytick={-10,...,10},
+	    width=\textwidth,
+	    anchor=center,
+	    ]
+	    \addplot [mark=none, blue, thick]{x} ;
+	    \addplot [mark=none] coordinates {(1,1)} node[pin=0:{$f(1)$}]{};
+	    \addplot [mark=none] coordinates {(2,2)} node[pin=0:{$f(2)$}]{};
+	    \addplot [mark=none] coordinates {(-1,-1)} node[pin=180:{$f(-1)$}]{};
+	    \addplot [mark=none] coordinates {(0,0)} node[pin=135:{$f(0)$}]{};
+	    \end{axis}
+	    \end{tikzpicture}
+	    \]
+	   We often refer to this type of function as a curve or, in the complex case specifically, a contour.  We will revisit curves later on in this text.
+\end{ex}
 
+When we try to plot a complex function $f\colon \C \to \C$, we run into a bit of an issue.  When we plot real functions $g\colon \R\to \R$, we can draw this in a 2-dimensional plane. However, if we were to draw a complex function using the same idea, it would be in a 4-dimensional space. This cannot work.  But that doesn't mean we are out of options!
+
+Remember, we can think of a point $z$ in the complex plane as a 2-dimensional vector. So, for example, if we take $z_1=1+i$ and $z_2 = 1-2i$, we can plot this like
+\[
+        \begin{tikzpicture}
+        \draw[thin,gray!40] (-3,-3) grid (3,3);
+        \draw[<->] (-3,0)--(3,0) node[right]{$\RE$};
+        \draw[<->] (0,-3)--(0,3) node[above]{$\IM$};
+        \draw[line width=2pt,blue,-stealth](0,0)--(1,1) node[anchor=east] at (1,1){};
+        \draw[line width=2pt,red,-stealth](0,0)--(1,-2) node[anchor=east] at (1,-2){};
+        \foreach \Point/\PointLabel in {(1,1)/z_1, (1,-2)/z_2}
+        \draw[fill=black] \Point circle (0.05) node[above right] {$\PointLabel$};
+        \end{tikzpicture}
+\]
+Using this idea, let us see how we can plot a complex function in a different way.
+
+\begin{ex}{Plotting a Complex Function}
+	Let's consider a complex function $f\colon \C \to \C$ given by the function
+	\[
+		f(z) = -\IM(z)+i\RE(z).
+	\]
+	Again, we should compute a few values for this function first
+	\begin{align*}
+		f(0)&= 0 & f(1)&=i & f(i)&= -1\\
+		f(-1)&= -i & f(1+i)&= -1+i & f(-1 -i) &= 1 - i.
+	\end{align*}
+	We can plot these values as vectors emanating from the input point $z$. That is, we can place the arrow given by the output $f(z)$ at the point $z$.  
+	\[
+	        \begin{tikzpicture}[scale=2]
+	        \draw[thin,gray!40] (-3,-3) grid (3,3);
+	        \draw[<->] (-3,0)--(3,0) node[right]{$\RE$};
+	        \draw[<->] (0,-3)--(0,3) node[above]{$\IM$};
+	        \draw[line width=2pt,blue,-](0,0)--(0,0) node[anchor=east] at (0,0){f(0)};
+	        \draw[line width=2pt,blue,-stealth](1,0)--(1,1) node[anchor=east] at (1,1){f(1)};
+	        \draw[line width=2pt,blue,-stealth](-1,0)--(-1,-1) node[anchor=east] at (-1,-1){f(-1)};
+	        \draw[line width=2pt,blue,-stealth](0,1)--(-1,1) node[anchor=east] at (-1,1){f(i)};
+	        \draw[line width=2pt,blue,-stealth](1,1)--(0,2) node[anchor=east] at (0,2){f(1+i)};
+	        \draw[line width=2pt,blue,-stealth](-1,-1)--(0,-2) node[anchor=east] at (0,-2){f(-1-i)};
+	        \end{tikzpicture}
+	  \]
+	  We can then do this for many more input points to get a picture like the following.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{Figures_Part_5/complex_function_visual.png}
+			\caption{A plot of various different outputs for their corresponding inputs.}
+		\end{figure}
+		What we see here is typically referred to as a vector field. Again, we will get to this notion later on in the text.
+\end{ex}
+		
 \subsection{Complex Valued Functions}
 
 A major focus in this course is understanding the mathematics behind quantum mechanics.  For a chemist, this knowledge is rather important since modern theory is mostly quantum in nature.  What isn't quantum is likely thermodynamical or electrodynamical in nature and we will get to these topics a bit later on. 
