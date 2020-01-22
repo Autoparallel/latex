@@ -16,7 +16,41 @@
 	Write down the definition for a vector space.  
 \end{problem}
 \begin{solution}
-	
+	     A \boldblue{vector space} $V$ over a field $\mathbb{F}$ is a set of elements we call \boldblue{vectors} that satisfy the following properties. Take vectors $\vecu,\vecv,\vecw \in V$ and scalars $\alpha, \beta \in \mathbb{F}$. Then, we require that $\alpha\vecv + \beta\vecu \in V$ and 
+	            \begin{enumerate}[(i)]
+	                \item (Commutivity of vector addition)
+	                \[
+	                \vecu+\vecv=\vecv+\vecu
+	                \]
+	                \item (Associativity of vector addition)
+	                \[
+	                \vecu+(\vecv+\vecw)=(\vecu+\vecv)+\vecw;
+	                \]
+	                \item (Neutral element) There exists $\zerovec$ such that
+	                \[
+	                \zerovec+\vecv=\vecv;
+	                \]
+	                \item (Inverse element) For each $\vecv$ there exists $-\vecv$ such that
+	                \[
+	                \vecv+(-\vecv)=\zerovec;
+	                \]                
+	                \item (Assosciativity of scalar multiplication) We have
+	                \[
+	                \alpha(\beta \vecv)=(\alpha \beta)\vecv;
+	                \]
+	                \item (Distribution over vector addition) we have
+	                \[
+	                \alpha(\vecu+\vecv)=\alpha \vecu + \alpha \vecv;
+	                \]
+	                \item (Distribution over field addition) we have
+	                \[
+	                (\alpha+\beta)\vecv = \alpha \vecv + \beta \vecv;
+	                \]
+	                \item (Unit element) There exists $1\in \mathbb{F}$ such that
+	                \[
+	                1\vecv = \vecv.
+	                \]
+	            \end{enumerate}
 \end{solution}	
 
 \newpage
@@ -26,11 +60,24 @@
 		\vecu = \begin{pmatrix} i \\ 1 \\ 0 \end{pmatrix}, \qquad \vecv = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}, \qquad \vecw = \begin{pmatrix} i \\ 2i \\ 2 \end{pmatrix}.
 	\]
 \end{problem}
+\begin{solution}
+	Recall that the Hermitian inner product for vectors in $\C^n$ is given by
+	\[
+	\innprod{\vecu}{\vecv} = \sum_{j=1}^\infty u_1 v_1^*.
+	\]
+	So in this case, we must compute
+	\[
+	\innprod{\vecu}{\vecv}, \qquad \innprod{\vecu}{\vecw}, \qquad \innprod{\vecv}{\vecw}.
+	\]
+\end{solution}
 
+\newpage
 \begin{problem}
 	Write down what it means to have an orthonormal basis for the vector space $\R^n$ and the vector space $\C^n$.
 \end{problem}
 
+
+\newpage
 \begin{problem}
 	(Pointwise) We often extend operations that we perform with numbers to functions without spending too much time on how this is done. For example, you know perfectly well what it means to evaluate
 	\[
@@ -52,6 +99,8 @@
 	\end{enumerate}
 \end{problem}
 
+
+\newpage
 \begin{problem}
 	Consider the complex valued function $f(x) = \cos(x)+i\sin(x)$.  
 	\begin{enumerate}[(a)]

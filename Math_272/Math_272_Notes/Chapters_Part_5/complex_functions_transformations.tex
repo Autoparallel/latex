@@ -36,42 +36,7 @@ f(z)=r(z)e^{i\theta(z)},
 \]
 where again $r,\theta \colon \C \to \R$.  In this perspective, we are seeing what happens to the argument $\theta(z)$ and modulus $r(z)$ as we vary the complex input.  Which way of decomposing $f$ we choose is typically decided on the situation at hand.  It has more to do with the symmetry of the function than anything else! In this polar representation of the function, we refer to $\theta(z)$ as a \boldgreen{phase}.  
 
-\begin{ex}{A Line in $\C$}
-	Let's consider the complex function $f\colon \R \to \C$ given by the Cartesian representation 
-	\[
-	f(x) = x+ix.
-	\]
-	How should we think of this function? For one, we can see how the output changes as the input changes by testing a few values
-	\begin{align*}
-		f(0)&=0 & f(1)&=1+i\\
-		f(-1)&=-1-i & f(2)&=2+2i.
-	\end{align*}
-	We can also visualize this function in the following way. For every input, we will just place the complex output into the complex plane. Unlike plotting real functions, we will have to pay a bit more attention to what the input value is.
-	\[
-	    \begin{tikzpicture}[baseline]
-	    \begin{axis}[
-	    axis y line=center,
-	    axis x line=middle,
-	    %axis equal,
-	    grid=both,
-	    xmax=5,xmin=-5,
-	    ymin=-5,ymax=5,
-	    xlabel=$x$,ylabel=$y$,
-	    xtick={-10,...,10},
-	    ytick={-10,...,10},
-	    width=\textwidth,
-	    anchor=center,
-	    ]
-	    \addplot [mark=none, blue, thick]{x} ;
-	    \addplot [mark=none] coordinates {(1,1)} node[pin=0:{$f(1)$}]{};
-	    \addplot [mark=none] coordinates {(2,2)} node[pin=0:{$f(2)$}]{};
-	    \addplot [mark=none] coordinates {(-1,-1)} node[pin=180:{$f(-1)$}]{};
-	    \addplot [mark=none] coordinates {(0,0)} node[pin=135:{$f(0)$}]{};
-	    \end{axis}
-	    \end{tikzpicture}
-	    \]
-	   We often refer to this type of function as a curve or, in the complex case specifically, a contour.  We will revisit curves later on in this text.
-\end{ex}
+
 
 When we try to plot a complex function $f\colon \C \to \C$, we run into a bit of an issue.  When we plot real functions $g\colon \R\to \R$, we can draw this in a 2-dimensional plane. However, if we were to draw a complex function using the same idea, it would be in a 4-dimensional space. This cannot work.  But that doesn't mean we are out of options!
 
@@ -92,9 +57,9 @@ Using this idea, let us see how we can plot a complex function in a different wa
 \begin{ex}{Plotting a Complex Function}
 	Let's consider a complex function $f\colon \C \to \C$ given by the function
 	\[
-		f(z) = -\IM(z)+i\RE(z).
+		f(z) = iz= -\IM(z)+i\RE(z).
 	\]
-	Again, we should compute a few values for this function first
+	Recall that multiplication by $i$ rotates a complex number by an angle of $\pi/2$ in the counterclockwise direction. Thinking this way will help us understand what this function is doing.  For some more concrete results, we should compute a few values for this function
 	\begin{align*}
 		f(0)&= 0 & f(1)&=i & f(i)&= -1\\
 		f(-1)&= -i & f(1+i)&= -1+i & f(-1 -i) &= 1 - i.
@@ -119,7 +84,7 @@ Using this idea, let us see how we can plot a complex function in a different wa
 			\includegraphics[width=\textwidth]{Figures_Part_5/complex_function_visual.png}
 			\caption{A plot of various different outputs for their corresponding inputs.}
 		\end{figure}
-		What we see here is typically referred to as a vector field. Again, we will get to this notion later on in the text.
+		What we see here is typically referred to as a vector field. We will get to this notion later on in the text.
 \end{ex}
 		
 \subsection{Complex Valued Functions}
@@ -163,6 +128,43 @@ So, for example, in the cartesian representation we have
 \begin{remark}
 	Complex functions (i.e., functions with complex valued inputs) have different behavior with integration and differentiation which we will not discuss at all.  The closest we will get to this structure is calculus in $\R^2$.
 \end{remark}
+
+\begin{ex}{A Line in $\C$}{line_in_C}
+	Let's consider the complex function $f\colon \R \to \C$ given by the Cartesian representation 
+	\[
+	f(x) = x+ix.
+	\]
+	How should we think of this function? For one, we can see how the output changes as the input changes by testing a few values
+	\begin{align*}
+		f(0)&=0 & f(1)&=1+i\\
+		f(-1)&=-1-i & f(2)&=2+2i.
+	\end{align*}
+	We can also visualize this function in the following way. For every input, we will just place the complex output into the complex plane. Unlike plotting real functions, we will have to pay a bit more attention to what the input value is.
+	\[
+	    \begin{tikzpicture}[baseline]
+	    \begin{axis}[
+	    axis y line=center,
+	    axis x line=middle,
+	    %axis equal,
+	    grid=both,
+	    xmax=5,xmin=-5,
+	    ymin=-5,ymax=5,
+	    xlabel=$x$,ylabel=$y$,
+	    xtick={-10,...,10},
+	    ytick={-10,...,10},
+	    width=\textwidth,
+	    anchor=center,
+	    ]
+	    \addplot [mark=none, blue, thick]{x} ;
+	    \addplot [mark=none] coordinates {(1,1)} node[pin=0:{$f(1)$}]{};
+	    \addplot [mark=none] coordinates {(2,2)} node[pin=0:{$f(2)$}]{};
+	    \addplot [mark=none] coordinates {(-1,-1)} node[pin=180:{$f(-1)$}]{};
+	    \addplot [mark=none] coordinates {(0,0)} node[pin=135:{$f(0)$}]{};
+	    \end{axis}
+	    \end{tikzpicture}
+	    \]
+	   We often refer to this type of function as a curve or, in the complex case specifically, a contour.  Again, we will revisit curves later on in this text.
+\end{ex}
 
 \begin{ex}{Wavefunctions in the Box}{wavefunctions_in_1dbox}
 	Let $\Omega=[0,L]$ and recall that the normalized states of the particle in the 1-dimensional box were given by
