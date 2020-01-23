@@ -7,5 +7,5 @@
 \beamer@subsectionintoc {3}{3}{Example}{35}{0}{3}
 \beamer@sectionintoc {4}{Riemannian Geometry}{39}{0}{4}
 \beamer@subsectionintoc {4}{1}{Riemannian Metric}{44}{0}{4}
-\beamer@sectionintoc {5}{Applications}{47}{0}{5}
-\beamer@sectionintoc {6}{Conclusions}{48}{0}{6}
+\beamer@sectionintoc {5}{Applications}{48}{0}{5}
+\beamer@sectionintoc {6}{Conclusions}{49}{0}{6}

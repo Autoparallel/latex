@@ -88,18 +88,20 @@
 \headcommand {\beamer@framepages {45}{45}}
 \headcommand {\slideentry {4}{1}{3}{46/46}{Riemannian Metric}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\beamer@sectionpages {39}{46}}
-\headcommand {\beamer@subsectionpages {44}{46}}
-\headcommand {\sectionentry {5}{Applications}{47}{Applications}{0}}
-\headcommand {\slideentry {5}{0}{1}{47/47}{}{0}}
+\headcommand {\slideentry {4}{1}{4}{47/47}{Riemannian Metric}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\beamer@sectionpages {47}{47}}
-\headcommand {\beamer@subsectionpages {47}{47}}
-\headcommand {\sectionentry {6}{Conclusions}{48}{Conclusions}{0}}
-\headcommand {\slideentry {6}{0}{1}{48/48}{}{0}}
+\headcommand {\beamer@sectionpages {39}{47}}
+\headcommand {\beamer@subsectionpages {44}{47}}
+\headcommand {\sectionentry {5}{Applications}{48}{Applications}{0}}
+\headcommand {\slideentry {5}{0}{1}{48/48}{}{0}}
 \headcommand {\beamer@framepages {48}{48}}
-\headcommand {\beamer@partpages {1}{48}}
-\headcommand {\beamer@subsectionpages {48}{48}}
 \headcommand {\beamer@sectionpages {48}{48}}
-\headcommand {\beamer@documentpages {48}}
-\headcommand {\gdef \inserttotalframenumber {36}}
+\headcommand {\beamer@subsectionpages {48}{48}}
+\headcommand {\sectionentry {6}{Conclusions}{49}{Conclusions}{0}}
+\headcommand {\slideentry {6}{0}{1}{49/49}{}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\beamer@partpages {1}{49}}
+\headcommand {\beamer@subsectionpages {49}{49}}
+\headcommand {\beamer@sectionpages {49}{49}}
+\headcommand {\beamer@documentpages {49}}
+\headcommand {\gdef \inserttotalframenumber {37}}

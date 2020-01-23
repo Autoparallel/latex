@@ -18,23 +18,25 @@ Though the language of forms is rather unnecessary in $\R^3$, it gives us the op
 Where appropriate, I will be general.  Otherwise, I will stick to the specific case of $\R^3$ and possible $\R^2$.
 
 There are apparent problems with the vector algebra and calculus that we hardly ever mention.  
-\begin{question}
+\begin{ques}{}{ques1}
     How do you really define the curl of two vectors in $\R^3$?
-\end{question}
+    \tcblower
+    \begin{answer*}
+    Naively, we can take $\times \colon \R^3 \times \R^3 \to \R^3$ and define the map as per usual.  That is, given $\mathbf{v}=(v_1,v_2,v_3)$ and $\mathbf{w}=(w_1,w_2,w_3)$,
+    \[
+    \mathbf{v}\times \mathbf{w} = (v_2w_3-v_3w_2,v_3w_1-v_1w_3,v_1w_2-v_2w_1).
+    \]
+    But, this can't be quite right.  Say if we consider angular momentum 
+    \[
+    \mathbf{L}=\mathbf{r}\times \mathbf{p},
+    \]
+    then $\mathbf{r}$ and $\mathbf{p}$ don't even belong to the same space since they have completely different units! And the output $\mathbf{L}$ doesn't share the same dimensions as either $\mathbf{r}$ or $\mathbf{p}$. What's the deal?
+    
+    So we could play off the fact by saying we really have $\times \colon V \times W \to Z$ where $V\cong W \cong Z \cong \R^3$ as vector spaces but we understand that the underlying spaces have dimensions of their own and that the binary operation of $\times$ outputs to a new space with the correct dimensions. 
+    \end{answer*}
+\end{ques}
 
-\begin{answer}
-Naively, we can take $\times \colon \R^3 \times \R^3 \to \R^3$ and define the map as per usual.  That is, given $\mathbf{v}=(v_1,v_2,v_3)$ and $\mathbf{w}=(w_1,w_2,w_3)$,
-\[
-\mathbf{v}\times \mathbf{w} = (v_2w_3-v_3w_2,v_3w_1-v_1w_3,v_1w_2-v_2w_1).
-\]
-But, this can't be quite right.  Say if we consider angular momentum 
-\[
-\mathbf{L}=\mathbf{r}\times \mathbf{p},
-\]
-then $\mathbf{r}$ and $\mathbf{p}$ don't even belong to the same space since they have completely different units! And the output $\mathbf{L}$ doesn't share the same dimensions as either $\mathbf{r}$ or $\mathbf{p}$. What's the deal?
 
-So we could play off the fact by saying we really have $\times \colon V \times W \to Z$ where $V\cong W \cong Z \cong \R^3$ as vector spaces but we understand that the underlying spaces have dimensions of their own and that the binary operation of $\times$ outputs to a new space with the correct dimensions. 
-\end{answer}
 
 It turns out that differential forms and the \emph{exterior} algebra capture this all quite nicely without having to make note  of this extra structure so explicitly.  Also, vector curl does not even exist in any dimension other than three, thus if we wish to talk about vorticity in higher dimensions, we need something else.
 
@@ -86,7 +88,7 @@ Consider a region in $n$-space, $\region \subseteq \R^n$. Let $p\in \region$, th
         \caption{Figure 1: Tangent vectors in different tangent spaces.}
         \end{figure}
         
-\begin{remark}
+\begin{remark}{}{rem1}
 One of the fundamental issues in differential geometry is comparing vectors in different tangent spaces.  One needs a \emph{connection} to do this properly.  In $\R^n$, this connection is trivial.  There, we can simply drag any vector to the origin without extra thinking.
 \end{remark}
 
@@ -199,7 +201,7 @@ Then the basis 1-forms produce the following:
         \end{align*}
         \end{ex}
         
-        \begin{remark}
+        \begin{remark}{}{rem2}
         1-forms have given us a way of measuring lengths of tangent vectors.  Also, they allows us to apply functions to the different components of vectors.  However, we want to be able to investigate areas and volumes as well. 
         \end{remark}
         
@@ -244,7 +246,7 @@ Note that this also implies that
 \covectfield \wedge \covectfield = 0.
 \]
 
-\begin{remark}
+\begin{remark}{}{rem3}
 The wedge product is really a product in quotient of the tensor product of two vector spaces.  We have
 \[
 V \wedge V \coloneqq \bigslant{V\otimes V}{\langle v\otimes v \rangle}.
@@ -284,19 +286,21 @@ Letting the base point be $p$ points and thinking of $dx$ as $e_{1_p}$ and $dy$ 
 We can think of the two form $\covectfield \wedge \covectfieldnew$ as an oriented plane element that has area $|AD-BC|$.
 \end{ex}
 
-\begin{question}~
+\begin{ques}{}{ques2}
 \begin{itemize}
     \item Do we recognize $AD-BC$?
     \item If $dx$ and $dy$ both have units meters, then what should the units of $dx\wedge dy$ be?
 \end{itemize}
-\end{question}
-
-\begin{answer}~
+\tcblower
+\begin{answer*}~
 \begin{itemize}
     \item AD-BC is exactly the determinant of a $2\times 2$ matrix. Recall that if we build the matrix with vectors as columns, then the determinant gives the area of the parallelogram constructed from those vectors.
     \item $dx\wedge dy$ should have units of square meters since it is a product.  We also desired this 2-form to measure area, so it should output the correct units.
 \end{itemize}
-\end{answer}
+\end{answer*}
+\end{ques}
+
+
 
 \subsection{k-Forms}
 
@@ -411,7 +415,7 @@ Finally, for 3-forms and $\cinfinity$ functions,
     \flat_3 (h) &= hdx\wedge dy\wedge dz.
 \end{align*}
 
-\begin{remark}
+\begin{remark}{}{rem5}
 We actually need some structure we did not mention to define these musical isomorphisms. What we need is an inner product structure on each tangent space $\tangentspace$.  In geometry, we call this a \emph{Riemannian metric}.  In $\R^3$, we have the Euclidean inner product that we implicitly use here.
 \end{remark}
 
@@ -426,7 +430,7 @@ d \flat(\mathbf{F}).
 
 
 
-\begin{remark}
+\begin{remark}{}{rem6}
 The exterior derivative $d$ is also a cochain map on the \emph{de Rham cochain complex} 
 \begin{center}
 \begin{tikzcd}
@@ -439,7 +443,7 @@ H^k_{dR}(M) = \bigslant{\ker d_k}{\textrm{im} d_{k-1}}.
 \]
 \end{remark}
 
-\begin{remark}
+\begin{remark}{}{rem7}
 With a bit more work, one can also define a coordinate free Laplacian $\Delta$.  First, one needs to define the codifferential $\delta$ and we have the \emph{Laplace-Beltrami operator}
 \[
 \Delta_{\textrm{LB}}\coloneqq d\delta + \delta d.
@@ -456,7 +460,7 @@ We are all familiar with the Fundamental Theorem of Calculus which states that f
 \]
 It turns out that this statement generalizes nicely to the landscape of vector calculus.  There, it is viewed under different names.  The goal is to realize these are all part of the same general theorem.
 
-\begin{remark}
+\begin{remark}{}{rem8}
 ``... namely de Rham cohomology, which (roughly speaking) measures precisely the extent to which the fundamental theorem of calculus fails in higher dimensions and on general manifolds." - Terence Tao on \emph{differential forms and integration}.
 \end{remark}
 
