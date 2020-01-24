@@ -59,7 +59,7 @@ We will not concern ourselves with names for these spaces of functions or their 
 \end{itemize}
 We will revisit the same spaces again and again as these are prototypes for other problems you will encounter. If you grasp the content for the above examples, seeing it with new examples will not be too challenging.
 
-\section{Inner Products}
+\section{Inner Products and Norms}
 
 Before we define general inner products, let us recall the definition of a vector space.  In the prequel, we had that a vector space $V$ over some field $\field$ (the numbers we choose as entries) is a set containing vectors that satisfy eight different properties.
 
@@ -163,7 +163,29 @@ which means that we have
 \]
 Thus we have shown that this is indeed an inner product.
 
-\section{Inner Product Spaces}
+\subsection{Norms}
+
+We have used the notation $\|\cdot\|$ throughout the prequel and in this text as well. At a first glance, it seems as if it is notationally similar to the absolute value of a real number $|x|$. The reason why we differentiate the notation slightly is that $\|\cdot\|$ means something a bit more general than the absolute value. We call $\|\cdot\|$ a \boldgreen{norm}. For example, the modulus of a complex number $z$ is a norm where we define
+\[
+\|z\|=\sqrt{zz^*}.
+\]
+We can also compute the norm of a complex (or real) vector $\vecu$ in $\C^m$ (resp. $\R^m$) by computing 
+\[
+\|\vecv\| = \sqrt{\innprod{\vecu}{\vecu}}.
+\]
+In fact, the modulus of a complex number is the special case of $m=1$.  But what is the norm?
+
+The norm of a vector is traditionally referred to as the length of the vector when this vector is something we can picture. For example, the norm of a vector $\vecv \in \R^3$ is given by
+\[
+\|\vecv = \sqrt{\vecv \cdot \vecv}.
+\]
+Notice how we are always using an inner product to define a norm! This is a key fact about inner products -- they always induce a norm (or length). 
+
+\begin{remark}
+	From here on out we shall use the notation $\innprod{\cdot}{\cdot}$ to refer to the inner product and $\|\cdot\|$ to refer to the induced norm from that inner product.  The choice of inner product should be noted or clear from the choice of vector space.
+\end{remark}
+
+	\section{Inner Product Spaces}
 
 Given a vector space $V$ with an inner product, we refer to the vector space as an \boldgreen{inner product space}.  In fact, all the vector spaces we have dealt with are inner product spaces! We tend to prefer working with these spaces as they allow us to nicely compare vectors (like we can with the dot product) and we can also compute lengths and distances.  Needless to say, inner product spaces are immensely important in the physical world.
 

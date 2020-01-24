@@ -28,6 +28,7 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{marvosym,wasysym} %fucking smileys
 \usepackage{float, morefloats}
+\usepackage{subcaption}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -65,7 +66,7 @@
 \newcommand{\Rot}{[\mathrm{Rot}]}
 \newcommand{\Orth}{\mathrm{O}}
 \newcommand{\SO}{\mathrm{SO}}
-
+\newcommand{\innprod}[2]{\left\langle #1, #2 \right\rangle}
 
 
 
@@ -89,3 +90,7 @@
 \newtheorem{answer}{Answer}
 % \newtheorem{exercise}{Exercise}[section]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{nice_blue}{RGB}{59,140,245} 
+
+\newcommand\boldblue[1]{\textcolor{nice_blue}{\emph{\textbf{#1}}}}
