@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  24 JAN 2020 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  24 JAN 2020 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -949,15 +949,40 @@ Package morefloats Info: Maximum number of possible floats asked for: 36
 (morefloats)             LaTeX might run out of memory before this
 (morefloats)             (in which case it will notify you).
 )
-\c@theorem=\count156
-\c@lemma=\count157
-\c@corollary=\count158
-\c@axiom=\count159
-\c@remark=\count160
-\c@solution=\count161
-\c@problem=\count162
-\c@question=\count163
-\c@answer=\count164
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen270
+\captionmargin@=\dimen271
+\captionwidth=\dimen272
+\caption@tempdima=\dimen273
+\caption@indent=\dimen274
+\caption@parindent=\dimen275
+\caption@hangindent=\dimen276
+)
+\c@caption@flags=\count156
+\c@ContinuedFloat=\count157
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count158
+\c@subtable=\count159
+)
+\c@theorem=\count160
+\c@lemma=\count161
+\c@corollary=\count162
+\c@axiom=\count163
+\c@remark=\count164
+\c@solution=\count165
+\c@problem=\count166
+\c@question=\count167
+\c@answer=\count168
 )
 (./homework_1.aux)
 \openout1 = `homework_1.aux'.
@@ -979,16 +1004,16 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count165
-\scratchdimen=\dimen270
+\scratchcounter=\count169
+\scratchdimen=\dimen277
 \scratchbox=\box89
-\nofMPsegments=\count166
-\nofMParguments=\count167
+\nofMPsegments=\count170
+\nofMParguments=\count171
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count168
-\MPscratchDim=\dimen271
-\MPnumerator=\count169
-\makeMPintoPDFobject=\count170
+\MPscratchCnt=\count172
+\MPscratchDim=\dimen278
+\MPnumerator=\count173
+\makeMPintoPDFobject=\count174
 \everyMPtoPDFconversion=\toks54
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1022,7 +1047,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count171
+\c@section@level=\count175
 )
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
@@ -1067,6 +1092,8 @@ LaTeX Info: Redefining \nameref on input line 8.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 12.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1120,10 +1147,10 @@ Package rerunfilecheck Info: File `homework_1.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
  ) 
 Here is how much of TeX's memory you used:
- 31734 strings out of 492609
- 774815 string characters out of 6129048
- 970899 words of memory out of 5000000
- 35057 multiletter control sequences out of 15000+600000
+ 32843 strings out of 492609
+ 794981 string characters out of 6129048
+ 992442 words of memory out of 5000000
+ 36157 multiletter control sequences out of 15000+600000
  14436 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,7n,98p,731b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1140,7 +1167,7 @@ al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
 /texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework_1.pdf (2 pages, 129528 bytes).
+Output written on homework_1.pdf (2 pages, 130118 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
