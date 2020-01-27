@@ -16,3 +16,12 @@
 \contentsline {subsection}{\numberline {6.1}Orthonormal Bases}{20}{subsection.2.6.1}% 
 \contentsline {subsection}{\numberline {6.2}Series and Integrals as Linear Combinations}{22}{subsection.2.6.2}% 
 \contentsline {subsection}{\numberline {6.3}Projection}{23}{subsection.2.6.3}% 
+\contentsline {chapter}{\numberline {3}Linear Operators}{26}{chapter.3}% 
+\contentsline {section}{\numberline {1}Matrices}{26}{section.3.1}% 
+\contentsline {subsubsection}{Adjoints}{26}{subsubsection*.7}% 
+\contentsline {section}{\numberline {2}Linear Operators}{27}{section.3.2}% 
+\contentsline {subsection}{\numberline {2.1}Adjoints}{28}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Hermitian Operators}{30}{subsection.3.2.2}% 
+\contentsline {section}{\numberline {3}Differential Operators}{30}{section.3.3}% 
+\contentsline {section}{\numberline {4}integral operators}{30}{section.3.4}% 
+\contentsline {subsection}{\numberline {4.1}Spectra}{30}{subsection.3.4.1}% 
