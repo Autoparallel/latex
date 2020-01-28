@@ -1,17 +1,171 @@
 \section{Matrices}
-Review stuff briefly. Talk about Hermitian matrices and their eigenvectors and we can prove why the eigenvectors are orthogonal later when we do adjoints. 
-
-\section{Linear Operators}
-Introduce operators on hilbert spaces.
-
-\subsection{Adjoints}
-mention the unitary stuff from before as a starting point
-Let $H$ be a Hilbert space. Then if we have a function $U\colon H \to H$ such that for $\Psi,\Phi \in H$
+In the spirit of making analogies with the finite dimensional case, we will briefly revisit the idea of a linear transformations and matrices.  We previously studied linear transformations from one vector space to another. Most often we considered transformations of the form
 \[
-\langle
+T \colon \R^3 \to \R^3
+\]
+which transformed space. We wrote
+\[
+T(\vecv)=\vecw.
+\]
+Recall that a linear transformation is one that satisfies
+\[
+T(\vecu+\alpha \vecv) = T(\vecu)+\alpha T(\vecv)
+\]
+for any two vectors $\vecu,\vecv \in \R^3$ and scalar $\alpha \in \R$. Since this transformation is linear, we found that we could represent this transformation as a matrix $[A]$ of nine numbers and multiply the vector by this matrix. So we wrote
+\[
+[A]\vecv = \vecw.
 \]
 
-What is actually happening here is due to the adjoint operation we briefly discussed in the prequel. Recall that if we were given a matrix $[A]$ with entries $a_{ij}$, we can define the adjoint matrix $[A]^\dagger$ by taking the entries to be $a_{ji}^*$. In other words, we take the transpose of the matrix $[A]$ and take the complex conjugate of each entry to form $[A]^\dagger$.  Another way we could have defined the adjoint has to do with the inner product structure.  Specifically, let
+Part of the reason we introduced the notion of linear transformations and not just matrices is that we will now need to ditch the notion of a matrix (unless you wish to write an infinite matrix, which, in some cases, you can do). Linear transformations are far more general and we can study their structure in a similar way that we did with matrices. 
+
+\subsubsection{Adjoints}
+
+When we were given a matrix $[A]$ (whether real or complex) we could compute its adjoint by 
+\[
+[A]^\dagger=\left([A]^T\right)^*.
+\]
+That is, we can take the complex conjugate transpose of the matrix $[A]$. If $[A]$ is purely real, then this amounts to just taking the transpose. The notion of the adjoint was an important one in studying the eigenvalue problem.  For example, we stated that if a matrix is Hermitian (or self adjoint) then
+\[
+[A]^\dagger = [A].
+\]
+In this case, we know that all the eigenvalues of $[A]$ are real, and that the eigenvectors corresponding to different eigenvectors are orthogonal.  Recall, the eigenvalue problem
+\[
+[A]\evec = \lambda \evec.
+\]
+What the above says is that if $[A]$ is Hermitian, then $\lambda$ must be real.  In other words, one may say that the \boldgreen{spectrum} of a Hermitian matrix is always real.  The notion of a spectrum is of core importance in the study of quantum mechanics. Physicist Paul Dirac had developed a theory of quantum mechanics after Werner Heisenberg and Erwin Schr\"odinger where one computes the spectrum of the hamiltonian operator to find solutions.
+
+\section{Linear Operators}
+
+Just as we generalized the notion of vectors from the finite dimensional spaces into the infinite dimensional case, we will repeat with linear transformations.  The definitions of a vector space and linear transformation were properly general enough, but we will provide a new name for the linear transformations. Let $H$ be a Hilbert space. Then we have that a \boldgreen{linear operator} is a linear transformation $L \colon H \to H$.  Some may relax this definition a bit to allow for the input and output spaces to be different but we should not be concerned by this in any way.
+
+What is an example of a linear operator? Let us first choose a Hilbert space. We can, for example, choose the Hilbert space $\mathcal{H}$ of analytic functions on a region $[0,L]$. Then consider the linear operator $x\colon \mathcal{H} \to \mathcal{H}$ which multiplies a given function by the variable $x$. Is this indeed linear?  Let us check by taking two function $f,g\in \mathcal{H}$ and a constant $\alpha \in \R$ and note
+\[
+x(f(x)+\alpha g(x)) = xf(x)+\alpha xg(x),
+\]  
+which is indeed linear.  One should also check that, for example, $xf(x)$ is still an analytic function on $[0,L]$. Note that
+\[
+f(x) = \sum_{n=0}^\infty a_n x^n
+\]
+which converges on $[0,L]$. Then 
+\[
+xf(x) = \sum_{n=0}^\infty a_n x^{n+1}
+\]
+also converges on $[0,L]$.
+
+\begin{exercise}
+	Can you argue why this must be true? \emph{Hint: use the ratio test.}
+\end{exercise}
+
+Another example of a linear operator is taking the differential of a function. That is, the derivative $\frac{d}{dx}$ is an operator $\frac{d}{dx} \colon \mathcal{H} \to \mathcal{H}$.  Keeping $\mathcal{H}$ as the analytic functions on $[0,L]$ then we can see that the derivative is linear by
+\[
+	\frac{d}{dx} (f(x)+\alpha g(x)) = \frac{df}{dx} +\alpha \frac{dg}{dx}.
+\]
+Previously one refers to these rules of the derivative as the sum rule and constant multiple rule. However, we should now just refer to this quality as the \boldgreen{linearity} of the derivative operator.  
+
+These operators show up in the study of (ordinary) differential equations as we have seen before. Take for example the Hamiltonian operator
+\[
+H = \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} + V(x).
+\]
+This is a linear operator as well.  In fact, this operator $H$ is even Hermitian which means its spectrum is real valued! This is a key component of the quantum theory as we only have the ability to measure real numbers.  We in fact require all observable operators to be Hermitian.  More on this in a bit.
+
+\subsection{Adjoints}
+
+Though we had defined adjoints of matrices through an operation, we need to instead provide a more general definition.  Let $\hilbert$ be a Hilbert space and $L$ a linear operator.  Then we define the \boldgreen{adjoint} $L^\dagger$ to be the unique operator satisfying
+\[
+\innprod{L\Psi}{\Phi} = \innprod{\Psi}{L^\dagger \Phi}.
+\]
+Let us see why this makes sense for the matrix case with an explicit example.
+
+\begin{ex}{Matrix Adjoint}{matrix_adjoint}
+	Let 
+	\[
+		[A] = \begin{pmatrix} 1 & 0\\ 1 & 1 \end{pmatrix}, \qquad \vecu = \begin{pmatrix} u_1 \\ u_2  \end{pmatrix}, \qquad \vecv = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}.
+	\]
+	Then let us take the inner (dot) product
+	\[
+	\innprod{[A]\vecu}{\vecv}.
+	\]
+	First, we compute
+	\[
+	[A]\vecu = \begin{pmatrix} u_1 \\ u_1+u_2 \end{pmatrix},
+	\]
+	and then
+	\begin{align*}
+		\innprod{[A]\vecu}{\vecv} = \begin{pmatrix} u_1 \\ u_1+u_2 \end{pmatrix} \cdot \begin{pmatrix}  v_1 \\ v_2 \end{pmatrix} = u_1v_1 + (u_1+u_2)v_2.
+	\end{align*}
+	Now let us solve for $[A]^\dagger$.  We require
+	\[
+	\innprod{\vecu}{[A]^\dagger \vecv} = u_1v_1 + (u_1+u_2)v_2.
+	\]
+	Let us put
+	\[
+	[A]^\dagger = \begin{pmatrix} a & b \\ c & d \end{pmatrix},
+	\]
+	then 
+	\[
+	[A]^\dagger \vecv = \begin{pmatrix} av_1+bv_2 \\ cv_1 + dv_2 \end{pmatrix}
+	\]
+	Then we also require that
+	\[
+	u_1v_1+(u_1+u_2)v_2 = \innprod{\vecu}{[A]^\dagger \vecv} = u_1(av_1+bv_2)+u_2(cv_1+dv_2).
+	\]
+	Thus we can solve for $a,b,c,$ and $d$ to find that $a=b=d=1$ and $c=0$.  That is,
+	\[
+	[A]^\dagger = [A]^T,
+	\]
+	is just the transpose of $[A]$.
+\end{ex}
+
+\begin{exercise}
+	Can you prove that $[A]^\dagger=\left([A]^*\right)^T$ when $[A]$ is an arbitrary complex $2\times 2$ matrix? \emph{Hint: use the same steps as above but start with an arbitrary matrix and use the Hermitian inner product.}
+\end{exercise}
+
+In the case for functions and function spaces, the adjoint may not be as easy to compute but it is still well defined.  For many of the cases we care about, we will not need to compute the adjoint since it will be equal to the original operator (i.e., it is Hermitian).  
+
+We previously covered the idea of phase for complex valued functions and specifically looked at how phase can effect the inner product for solutions to the particle in the 1-dimensional box.  We can see this in a different light by taking
+\[
+\Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)
+\]
+and letting $U$ be an operator defined by
+\[
+U = e^{i \theta},
+\]
+which changes the phase of a wavefunction.  
+
+\begin{ex}{Phase Operator}{phase_operator}
+	Taking the notions from above, we can take two wave function $\Psi(x)$ and $\Phi(x)$ and compute
+	\[
+	\innprod{U\Psi}{\Phi} = \int_0^L e^{i\theta} \Psi(x) \Phi^*(x)dx.
+	\]
+	In this case, we can find the adjoint $U^\dagger$ to $U$ by requiring
+	\[
+	\int_0^L e^{i\theta}\Psi(x)\Phi^*(x)dx = \innprod{\Psi}{U^\dagger \Phi} = \int_0^L \Psi(x) (U^\dagger \Phi(x))^*dx.
+	\]
+	This leads us to the equation
+	\[
+	\int_0^L e^{i\theta} \Psi(x) \Phi^*(x)dx = \int_0^L \Psi(x) (U^\dagger)^* \Phi^*(x).
+	\]
+	Thus, it must be that 
+	\[
+	(U^\dagger)^* = e^{i\theta}.
+	\]
+	Then, taking the complex conjugate of both sides we have
+	\[
+	U^\dagger = e^{-i\theta},
+	\]
+	which means that $\dagger$ is acting as the complex conjugate itself in this example.
+Note that $\dagger$ is \underline{not} always just the complex conjugate! 
+\end{ex}
+
+In the example, we took $U=e^{i\theta}$ and found $U^\dagger = e^{-i\theta}$ and one can note that $U^\dagger U = U U^\dagger =1$. This is exactly the requirement we put on, for example, matrices in the group of spatial rotation matrices $\SO(3)$. In that case, we said that a matrix $[A]\in \SO(3)$ satisfies $[A]^T [A]=[A][A]^T = I$.  
+
+What we have seen above is an example of a \boldgreen{unitary operator}.  A unitary operator is an operator $U\colon \hilbert \to \hilbert$ that is onto (every possible output value is achieved) and satisfies $\innprod{U\Psi}{U\Phi}=\innprod{\Psi}{\Phi}$.  Unitary operators are the symmetry operators for a given Hilbert space as they do not affect the inner product measurement we perform on that space.  For example, when $U=e^{i\theta}$, we can see that
+\[
+\innprod{U\Psi}{U\Phi} = \int_0^L e^{i\theta}\Psi(x) \left(e^{i\theta} \Phi(x)\right)^*dx = \int_0^L \Psi(x)\Phi^*(x)dx = \innprod{\Psi}{\Phi}.
+\]
+In other words, the multiplication by the same phase on both functions does not change the inner product between them. If we let $\Phi(x)=\Psi(x)$, this means that the probability of observing a particle at some point $x\in [0,L]$ does not change if we rotate our measurement device.  
+
+In the case for $\SO(3)$ where we rotate vectors we do not see the inner product between vectors change either.  Matrices in $\SO(3)$ are also unitary matrices for the dot product on $\R^3$ and they can be realized as rotations of the whole space.  Clearly, rotating the whole space won't change the angle between two vectors!
 
 \subsection{Hermitian Operators}
 These are the self adjoint operators.
