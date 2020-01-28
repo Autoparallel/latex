@@ -1,11 +1,4 @@
-% \usepackage[english]{babel}
-% \usepackage{lipsum}
-% \usepackage{xcolor}
-% \usepackage{tikz}
-% \usepackage{mathtools,amsfonts,amssymb,amsthm}
-
-
-\ProvidesPackage{chapter-section-design}
+\ProvidesPackage{design}
 \usepackage[most]{tcolorbox}
 
 \definecolor{ocre}{RGB}{198,184,77} %csu gold
@@ -13,6 +6,7 @@
 \definecolor{csu_dark_green}{RGB}{30,77,43} % csu dark green top half of chapter header
 \definecolor{csu_light_green}{RGB}{40,103,57} % csu light green on bottom half of chap
 \definecolor{csu_gold}{RGB}{198,184,77} % csu gold chapter numbers
+\definecolor{lighter_csu_green}{RGB}{60,133,77}
 
 % csu gold: 198 184 77
 % csu dark green : 30 77 43
@@ -34,7 +28,7 @@
 %Title bar for numbered chapters
 %yshift here with light green moves that box
 \titleformat{\chapter}
-  {\normalfont\huge\filleft\textcolor{white}}
+  {\normalfont\huge\filleft\color{white}}
   {}
   {0pt}
   {\stepcounter{chapshift}%
@@ -150,7 +144,7 @@
 \renewcommand{\headrulewidth}{.5pt}
 \addtolength{\headheight}{2.5pt}
 \renewcommand{\footrulewidth}{.5pt}
-\fancyfoot[LE,RO]{\footnotesize\bfseries\itshape Calculus for Biological Sciences II}
+\fancyfoot[LE,RO]{\footnotesize\bfseries\itshape Applied Mathematics for Chemists I}
 \fancyfoot[C]{\footnotesize\bfseries ~}
 \fancyfoot[RE,LO]{\footnotesize\bfseries\itshape Colorado State University}
 

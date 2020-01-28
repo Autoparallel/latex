@@ -1034,14 +1034,14 @@ In this picture you can see that coordinates are given by a distance from the or
             \end{subfigure}
         \end{figure}
         Adding these results in the field
-        \begin{figure}[h]
+        \begin{figure}[H]
             \centering
             \includegraphics[width=.45\textwidth]{Figures/v_field_1.png}
             \caption{Caption}
-            \label{fig:my_label}
+            \label{fig:vec_field_1}
         \end{figure}
         \end{ex}
-        
+%        
         \begin{remark}
         If we do this all for vector fields, we can take curves and scalar fields as special cases.
         \begin{itemize}
@@ -2018,8 +2018,8 @@ In this picture you can see that coordinates are given by a distance from the or
         \end{prop}
         
         Then with a bit more work, one can show this follows.
-        
-        \begin{thm}{Potential $\iff$ Curl Free}{potential_curl_free}
+       
+       	\begin{thm}{Potential $\iff$ Curl Free}{potential_curl_free}
         Let $\mathbf{v}(x,y,z)$ be a vector field.  Then if 
         \[
         \nabla \times \mathbf{v} = \mathbf{0},
@@ -2027,7 +2027,7 @@ In this picture you can see that coordinates are given by a distance from the or
         then $\mathbf{v}(x,y,z) = \nabla f(x,y,z)$.  That is, a curl-free vector field $\mathbf{v}$ is really the gradient of some scalar function $f(x,y,z)$.  We call this scalar function $f$ the \textbf{potential} for $\mathbf{v}$.
         \end{thm}
         
-        This is what allows one to define the \emph{voltage} in electrostatics.  When charges are not moving, we have that the electric field $\mathbf{E}$ satisfies
+        This is what allows one to define the \emph{voltage} in electrostatics.  When charges are not moving, we ave that the electric field $\mathbf{E}$ satisfies
         \[
         \nabla \times \mathbf{E} = \mathbf{0}
         \]

@@ -1,0 +1,107 @@
+\contentsline {chapter}{\numberline {1}Tutorials}{1}{chapter.1}%
+\contentsline {section}{\numberline {1}Wolfram Alpha}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1}Solving Algebraic Expressions}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Error Checking}{2}{subsection.1.1.2}%
+\contentsline {section}{\numberline {2}Geogebra}{2}{section.1.2}%
+\contentsline {section}{\numberline {3}CalcPlot3D}{2}{section.1.3}%
+\contentsline {part}{I\hspace {1em}Linear Algebra}{3}{part.1}%
+\contentsline {chapter}{\numberline {2}Vectors}{4}{chapter.2}%
+\contentsline {section}{\numberline {1}Vectors and Scalars}{4}{section.2.1}%
+\contentsline {section}{\numberline {2}Vector Algebra}{5}{section.2.2}%
+\contentsline {section}{\numberline {3}Vector Components}{7}{section.2.3}%
+\contentsline {subsubsection}{Unit Coordinate Vectors}{8}{subsubsection*.2}%
+\contentsline {section}{\numberline {4}Vector Algebra with Components}{9}{section.2.4}%
+\contentsline {subsubsection}{Applications}{9}{subsubsection*.3}%
+\contentsline {section}{\numberline {5}Vector Spaces}{10}{section.2.5}%
+\contentsline {subsubsection}{Linear Combinations}{11}{subsubsection*.4}%
+\contentsline {subsubsection}{Basis}{11}{subsubsection*.5}%
+\contentsline {section}{\numberline {6}The Dot Product}{11}{section.2.6}%
+\contentsline {section}{\numberline {7}The Cross Product}{13}{section.2.7}%
+\contentsline {subsubsection}{Cross Product of Basis Vectors}{14}{subsubsection*.6}%
+\contentsline {chapter}{\numberline {3}Linear Transformations and Matrices}{17}{chapter.3}%
+\contentsline {section}{\numberline {1}Linear Transformations}{17}{section.3.1}%
+\contentsline {section}{\numberline {2}Matrices}{19}{section.3.2}%
+\contentsline {section}{\numberline {3}Matrix Algebra}{19}{section.3.3}%
+\contentsline {subsubsection}{Properties of Matrix Multiplication}{21}{subsubsection*.10}%
+\contentsline {section}{\numberline {4}The Determinant}{21}{section.3.4}%
+\contentsline {subsubsection}{Properties of determinants}{25}{subsubsection*.11}%
+\contentsline {section}{\numberline {5}Systems of Linear Equations}{27}{section.3.5}%
+\contentsline {subsubsection}{Homogeneous Equations}{27}{subsubsection*.12}%
+\contentsline {section}{\numberline {6}Solving Linear Systems of Equations}{28}{section.3.6}%
+\contentsline {section}{\numberline {7}The Inverse Matrix}{32}{section.3.7}%
+\contentsline {subsubsection}{Inverting a matrix}{33}{subsubsection*.13}%
+\contentsline {section}{\numberline {8}The Eigen-Problem}{34}{section.3.8}%
+\contentsline {part}{II\hspace {1em}Vector Calculus}{38}{part.2}%
+\contentsline {chapter}{\numberline {4}The Complex Numbers}{39}{chapter.4}%
+\contentsline {section}{\numberline {1}Introduction to Complex Numbers}{39}{section.4.1}%
+\contentsline {section}{\numberline {2}Complex Number Algebra}{40}{section.4.2}%
+\contentsline {section}{\numberline {3}Geometry of complex numbers}{42}{section.4.3}%
+\contentsline {section}{\numberline {4}Polar coordinates}{43}{section.4.4}%
+\contentsline {subsubsection}{Taylor Series*}{45}{subsubsection*.14}%
+\contentsline {subsubsection}{Euler's Formula}{45}{subsubsection*.15}%
+\contentsline {subsubsection}{Polar Coordinates in $\math@bb {C}$}{45}{subsubsection*.16}%
+\contentsline {subsubsection}{Coordinate systems}{46}{subsubsection*.17}%
+\contentsline {section}{\numberline {5}Euler's formula and polar coordinate transformations}{46}{section.4.5}%
+\contentsline {section}{\numberline {6}Multiplication of complex numbers}{48}{section.4.6}%
+\contentsline {subsubsection}{Multiplicative inverse in polar form}{48}{subsubsection*.19}%
+\contentsline {section}{\numberline {7}Complex functions}{48}{section.4.7}%
+\contentsline {section}{\numberline {8}Contours}{49}{section.4.8}%
+\contentsline {section}{\numberline {9}Derivatives of contours}{51}{section.4.9}%
+\contentsline {section}{\numberline {10}Integration of contours}{52}{section.4.10}%
+\contentsline {chapter}{\numberline {5}Multivariable Functions}{54}{chapter.5}%
+\contentsline {section}{\numberline {1}Overview of multivariate functions}{54}{section.5.1}%
+\contentsline {section}{\numberline {2}Curves in space}{55}{section.5.2}%
+\contentsline {subsubsection}{Line integrals}{57}{subsubsection*.23}%
+\contentsline {section}{\numberline {3}Scalar fields}{58}{section.5.3}%
+\contentsline {section}{\numberline {4}Level surfaces}{60}{section.5.4}%
+\contentsline {section}{\numberline {5}Vector Fields}{63}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Calculus with Multivariate Functions}{66}{chapter.6}%
+\contentsline {section}{\numberline {1}Differentiation of fields}{66}{section.6.1}%
+\contentsline {section}{\numberline {2}Functions of Fields}{67}{section.6.2}%
+\contentsline {section}{\numberline {3}Line integrals of scalar fields}{69}{section.6.3}%
+\contentsline {section}{\numberline {4}Line integrals of vector fields}{70}{section.6.4}%
+\contentsline {section}{\numberline {5}Derivatives}{70}{section.6.5}%
+\contentsline {subsubsection}{Derivatives of scalar fields}{71}{subsubsection*.38}%
+\contentsline {subsubsection}{Properties of partial derivatives and the gradient}{72}{subsubsection*.39}%
+\contentsline {section}{\numberline {6}Optimization}{74}{section.6.6}%
+\contentsline {subsubsection}{Lagrange Multipliers}{75}{subsubsection*.41}%
+\contentsline {section}{\numberline {7}Approximation and the Tangent Space}{77}{section.6.7}%
+\contentsline {subsubsection}{Equation for a Plane}{77}{subsubsection*.42}%
+\contentsline {chapter}{\numberline {7}Calculus with Vector Fields}{80}{chapter.7}%
+\contentsline {section}{\numberline {1}The Jacobian of a Vector Field}{80}{section.7.1}%
+\contentsline {section}{\numberline {2}Divergence and Curl}{82}{section.7.2}%
+\contentsline {subsubsection}{Sources, Sinks, and Divergence Fields}{82}{subsubsection*.45}%
+\contentsline {subsubsection}{Rotation Fields}{83}{subsubsection*.47}%
+\contentsline {subsubsection}{Constant Vector Fields}{85}{subsubsection*.49}%
+\contentsline {section}{\numberline {3}The Laplacian of a Scalar Field}{86}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Integration in Multiple Dimensions}{88}{chapter.8}%
+\contentsline {section}{\numberline {1}Integration of Scalar Fields}{88}{section.8.1}%
+\contentsline {subsubsection}{One Dimensional Case}{88}{subsubsection*.51}%
+\contentsline {subsubsection}{Two Dimensional Case}{89}{subsubsection*.52}%
+\contentsline {subsubsection}{Three Dimensional Case}{90}{subsubsection*.53}%
+\contentsline {section}{\numberline {2}Antiderivatives}{91}{section.8.2}%
+\contentsline {subsubsection}{Potential Functions}{91}{subsubsection*.54}%
+\contentsline {subsubsection}{Integrating the Gradient}{91}{subsubsection*.55}%
+\contentsline {subsubsection}{Requirements for Potentials}{92}{subsubsection*.56}%
+\contentsline {part}{III\hspace {1em}Differential Equations}{94}{part.3}%
+\contentsline {chapter}{\numberline {9}Introduction to Differential Equations}{95}{chapter.9}%
+\contentsline {section}{\numberline {1}Ordinary Differential Equations}{96}{section.9.1}%
+\contentsline {section}{\numberline {2}Solutions to an ODE}{97}{section.9.2}%
+\contentsline {section}{\numberline {3}Separable ODE}{100}{section.9.3}%
+\contentsline {section}{\numberline {4}Particular Solutions}{101}{section.9.4}%
+\contentsline {subsubsection}{Determinism}{103}{subsubsection*.59}%
+\contentsline {section}{\numberline {5}Projectile Motion}{103}{section.9.5}%
+\contentsline {section}{\numberline {6}Exact Equations}{105}{section.9.6}%
+\contentsline {chapter}{\numberline {10}Systems of ODE}{108}{chapter.10}%
+\contentsline {section}{\numberline {1}Qualitative Analysis}{109}{section.10.1}%
+\contentsline {section}{\numberline {2}Linearity}{117}{section.10.2}%
+\contentsline {section}{\numberline {3}Higher Order ODE}{117}{section.10.3}%
+\contentsline {section}{\numberline {4}Linear Systems}{118}{section.10.4}%
+\contentsline {section}{\numberline {5}Linearization}{120}{section.10.5}%
+\contentsline {section}{\numberline {6}General Solutions to Second Order Linear Equations}{124}{section.10.6}%
+\contentsline {chapter}{\numberline {11}Partial Differential Equations}{125}{chapter.11}%
+\contentsline {section}{\numberline {1}Examples of PDE}{126}{section.11.1}%
+\contentsline {section}{\numberline {2}The Problem Statement}{127}{section.11.2}%
+\contentsline {section}{\numberline {3}The Heat Equation}{127}{section.11.3}%
+\contentsline {section}{\numberline {4}The Laplace Equation}{129}{section.11.4}%
+\contentsline {section}{\numberline {5}The Wave Equation}{130}{section.11.5}%
