@@ -123,6 +123,12 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \begin{frame}{}
 	\vfill
+	We think of living on the manifold. We refer to this as \boldgreen{intrinsic}.
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
 	We generalize to spaces that have interesting topology and geometry.
 	\vfill
 \end{frame}
@@ -152,11 +158,11 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 	Example: Partial differential equations (PDEs) on spaces that are not flat.
 	\pause
 	\begin{itemize}
-		\item Fluid flow on Earth;
+		\item Fluid flow on Earth
 		\pause
-		\item Electrical Impedence Tomography (EIT);
+		\item Electrical Impedence Tomography (EIT)
 		\pause
-		\item General relativity.
+		\item General relativity
 	\end{itemize}
 	\vfill
 \end{frame}
@@ -166,20 +172,30 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 	Example: Optimization in interesting spaces.
 	\pause
 	\begin{itemize}
-		\item Matrix (symmetry) groups;
+		\item Matrix (symmetry) groups
 		\pause
-		\item Grassmannians, Flags;
+		\item Grassmannians, Flags
 		\pause
-		\item Curved spacetime.
+		\item Curved spacetime
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	Example: Rephrasing classical problems.
+	\pause
+	\begin{itemize}
+		\item EIT
+		\pause
+		\item Polymer growth
+		\pause
+		\item Electrodynamics
 	\end{itemize}
 	\vfill
 \end{frame}
 
 \section{Preliminaries}
-
-\begin{frame}{}
-	add more math text before/after pics so that people see some notation. More examples.
-\end{frame}
 
 
 \subsection{Smooth Manifolds}
@@ -188,19 +204,24 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \vfill
 \textbf{\underline{Our To-Do List:}}
 \begin{itemize}
-	\item Start with a topological space $M$;
+	\item Start with a topological space $M$
 	\pause
-	\item Look at open sets $U$ that cover $M$;
+	\item Look at open sets $U$ that cover $M$
 	\pause
-	\item Construct local coordinates $\varphi$;
+	\item Construct local coordinates $\varphi$
 	\pause
-	\item Show coordinate transition functions are smooth.
+	\item Show coordinate transition functions are smooth
 \end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{}
-	Define the sphere as the set of points in $\R^3$... then say we'll mostly use this as an example so keep it in mind
+	\vfill
+	Working example: 2-sphere
+	\[
+		S^2 \coloneqq \{(x,y,z) \in \R^3 ~\vert~ x^2+y^2+z^2=1\}.
+	\]
+	\vfill
 \end{frame}
 
 \begin{frame}{}
@@ -210,6 +231,22 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 	\def\svgwidth{0.75\columnwidth}
 	\input{sphere.pdf_tex}
 \end{figure}\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	Take open sets in $\R^m$
+	\[
+	\mathcal{O}_\alpha \qquad \mathcal{O}_\beta
+	\]
+	\pause
+	and maps
+	\[
+	\varphi_\alpha \colon \mathcal{O}_\alpha \to U_\alpha \subset M \qquad 	\varphi_\beta \colon \mathcal{O}_\beta \to U_\beta \subset M.
+	\]
+	\pause
+	These are our \boldgreen{local coordinates}.
+	\vfill
 \end{frame}
 
 \begin{frame}{}
@@ -223,6 +260,22 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \end{frame}
 
 \begin{frame}{}
+	\vfill
+	Our local coordinates must work together on overlaps
+	\[
+	U_\alpha \cap U_\beta.
+	\]
+	\pause
+	We check the \boldgreen{transition function} 
+	\[
+	\phi_{\alpha\beta} = \varphi_\alpha^{-1} \circ \varphi_\beta
+	\]
+	is smooth and invertible as a function on $\R^m$.
+	\vfill
+\end{frame}
+
+
+\begin{frame}{}
 \vfill
 \begin{figure}[H]
 	\centering
@@ -233,6 +286,45 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \end{frame}
 
 \subsection{Vector Fields}
+
+\begin{frame}{}
+	\vfill
+	Vector fields on $\R^m$ are functions $\vec{f}\colon \R^m \to \R^m$.
+	\begin{figure}
+	   \includegraphics[width=0.49\textwidth]{div_field.png}
+	   \hfill
+	   \includegraphics[width=0.49\textwidth]{rot_field.png}
+	\end{figure}
+	\pause
+	Intrinsic vector fields on manifolds carry geometric information.
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+\vfill
+\textbf{\underline{Our To-Do List:}}
+\begin{itemize}
+	\item Construct the \boldgreen{tangent space} $T_pM$
+	\pause
+	\item Glue together tangent spaces to form the \boldgreen{tangent bundle} $TM$
+	\pause
+	\item Properly define vector fields $X$ as \boldgreen{sections} of the tangent bundle
+\end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item Start with a curve $\gamma (-1,1) \to M$ with $\gamma(0)=p$
+		\pause
+		\item Find the velocity vector $\dot{\gamma}=\left.\frac{d\gamma}{dt}\right\vert_{t=0}$
+		\pause
+		\item This defines a tangent vector at $p$
+		\pause
+		\item All possible tangent vectors form the tangent space $T_pM$.
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{}
 \vfill
@@ -255,6 +347,17 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \end{frame}
 
 \begin{frame}{}
+	\vfill
+	We need to understand how tangent vectors on $M$ relate to vectors in our local coordinates $\varphi$.
+	\begin{itemize}
+		\item The differential $d\varphi$ is a map of tangent vectors
+		\pause
+		\item If $\varphi(x)=p$, then $d\varphi(x) \colon T_x\R^m \to T_pM$
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
 \vfill
 \begin{figure}[H]
 	\centering
@@ -262,6 +365,27 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 	\input{pushforward.pdf_tex}
 \end{figure}
 \vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item We need to understand how different tangent spaces relate
+		\pause
+		\item Properly gluing tangent spaces $T_pM$ to the manifold $M$ allows us to build a larger manifold $TM$.
+		\pause
+		\item This allows us to see how tangent vectors move around the whole manifold.
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	We briefly drop a dimension to the 1-sphere
+	\[
+	S^1 \coloneqq \{ (x,y)\in \R^2 ~\vert~ x^2+y^2 = 1\}.
+	\]
+	\vfill
 \end{frame}
 
 \begin{frame}{}
@@ -285,6 +409,21 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \end{frame}
 
 \begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item Points in $TM$ are $(p,v)$ with $p\in M$ and $v\in T_pM$
+		\pause
+		\item So, a function $X \colon M \to TM$ selects a tangent vector at every point
+		\pause
+		\item For example, $X_p = v \in T_pM$
+		\pause
+		\item We have the projection $\pi \colon TM \to M$ by $\pi(p,v)=p$
+		\pause
+		\item $X$ is a \boldgreen{section} if $\pi \circ X = \mathrm{Id_M}$ (vertical line test)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{}
 \vfill
 \begin{figure}[H]
 	\centering
@@ -292,6 +431,13 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 	\input{section.pdf_tex}
 \end{figure}
 \vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\centering
+	Back to the 2-sphere.
+	\vfill
 \end{frame}
 
 \begin{frame}{}
@@ -304,10 +450,12 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \vfill
 \end{frame}
 
-\subsection{Example}
+\subsection{Specific Coordinates}
 
 \begin{frame}{}
-	Example of charts and maps for sphere as well as a vector field.  Do spherical coordinates
+	\vfill
+	We should work with specific coordinates on $S^2$.
+	\vfill
 \end{frame}
 
 \begin{frame}{}
@@ -328,7 +476,17 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 	\input{spherical_coordinates_tangent_vectors.pdf_tex}
 \end{figure}
 \vfill
-h
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item We can take a vector field in $\R^m$ and push it forward onto $M$
+		\pause
+		\item We extend the differential $d\varphi(x) \colon T_xM \to T_pM$ to a map on bundles
+		\pause
+		\item This bundle map $\varphi_* \colon T\R^m \to TM$ is the \boldgreen{pushforward}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{}
@@ -362,18 +520,100 @@ h
 \subsection{Riemannian Metric}
 
 \begin{frame}{}
-\vfill
-$g_{ij}(x) = \varphi^*(x)e_i \cdot \varphi^*(x)e_k = (\partial_i \varphi)\cdot (\partial_j \varphi) = \sum_{k=1}^m \frac{\partial \varphi_k}{\partial x_i}\frac{\partial \varphi_k}{\partial x_j}$
-\vfill
+	\vfill
+	We use the differential and dot product to form a matrix at each point
+	\[
+	g_{ij}(x) = d\varphi(x)e_i \cdot d\varphi(x)e_j.
+	\]
+	\pause
+	This matrix is the \boldgreen{Riemannian metric}.
+	\vfill
 \end{frame}
 
 \begin{frame}{}
-	Riemannian metric tells you how your vectors in your coordinates really look on the manifold. Thus, we also know
+	\vfill
+	Riemannian metric provides an inner product for tangent vectors on $M$. Thus, we know
 	\begin{itemize}
-		\item How lengths are distorted.
-		\item How volume is distorted.
+		\item how lengths are distorted;
+		\item how volume is distorted.
 	\end{itemize}
-	But this allows us to integrate or differentiate (covariant der?) in our coordinates but think of it as happening on the manifold.
+	This allows us to integrate or differentiate in our coordinates but think of it as intrinsic to the manifold.
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item The Riemannian metric gives us a distance function $d(p,q)$ on $M$
+		\pause
+		\item Compute this by finding the length of the shortest curve 
+		\[
+		\gamma\colon [0,1]\to M \qquad \gamma(0)=p,~\gamma(1)=q
+		\]
+		\pause
+		We need to solve
+		\[
+		\inf_{\gamma} \ell(\gamma) \coloneqq \int_0^1 \sqrt{g(\dot{\gamma},\dot{\gamma})}dt
+		\]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item Reminder: in $\R^m$, the speed of a curve is $\sqrt{\dot{\gamma},\dot{\gamma}}$
+		\pause
+		\item $g(\dot{\gamma},\dot{\gamma})$ is the speed on $M$
+		\pause
+		\item We put $g(\dot{\gamma},\dot{\gamma})$ to mean $\sum_{i,j=1}^m g_{ij} \dot{\gamma}_i \dot{\gamma}_j$.
+	\end{itemize}
+	\vfill
+\end{frame} 
+
+\begin{frame}{}
+\vfill
+\begin{figure}[H]
+	\centering
+	\def\svgwidth{.75\columnwidth}
+	\input{curves.pdf_tex}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	Solving this optimization problem yields the \boldgreen{geodesic equation}
+	\[
+		\ddot{x}^l +\dot{x}^j\dot{x}^k \Gamma_{jk}^l = 0
+	\]
+	where $\Gamma_{jk}^l$ are the \boldgreen{Christoffel symbols} which are formed by derivatives of the metric.
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	This defines an intrinsic derivative $\nabla$ called the \boldgreen{Levi-Civita connection}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item Since we know how vectors are transformed, combining those describes transformed volumes.
+		\pause
+		\item The determinant gives us area information.
+		\pause
+		\item Then $\sqrt{|\det(g(x))|}$ gives us the volume on $M$
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	In spherical coordinates, $\sqrt{|\det(g)|} = \sin \varphi$ which gives us the integrand
+	\[
+		\sin\varphi d\varphi d\theta.
+	\]
+	\vfill
 \end{frame}
 
 \begin{frame}{}
@@ -381,62 +621,55 @@ $g_{ij}(x) = \varphi^*(x)e_i \cdot \varphi^*(x)e_k = (\partial_i \varphi)\cdot (
 \begin{figure}[H]
 	\hspace*{-2cm}
 	\def\svgwidth{1.2\columnwidth}
-	\input{area_alt.pdf_tex}
+	\input{area.pdf_tex}
 \end{figure}
 \end{frame}
 
-\begin{frame}{}
-	Can see how $d\phi$ doesn't change as $\theta$ changes in previous pic.
-\end{frame}
-
-\begin{frame}{}
-	can show how the area and lengths change on the sphere from the determinant (or alternating product) on all tangent vectors.
-\end{frame}
-
-\begin{frame}{}
-	Distance on the manifold computed using minimal length curves.
-	\[
-	S=\{\gamma \colon [0,1]\to M~\vert~ \gamma(0)=p, ~\gamma(1)=q\}
-	\]
-	\[
-	~d(p,q) = \inf_{\gamma\in S} \mathrm{length}(\gamma)\int_0^1 \sqrt{g(\dot{\gamma},\dot{\gamma})}dt
-	\]
-\end{frame}
-
-\begin{frame}{}
-connection covariant derivative interpretation, covariant derivative in spherical coordinates,second covariant matrix and covariant laplacian from hessian? Compatability with riemannian metric picture. Show a geodesic in the coordinates between cities or something?
-\end{frame}
-
-
-\begin{frame}{}
-	From minimization of length/energy. Both are good to mention.	Geodesic equation
-	\[
-	\nabla_{\dot{\gamma}} \dot{\gamma}=0
-	\]
-	equivalent to
-	\[
-	\ddot{x}^l + \dot{x}^j\dot{x}^k \Gamma_{jk}^l=0
-	\]
-	which is saying that the only "acceleration" of the curve comes from the geometry it lies on. When flat space, $\Gamma_{jk}^l=0$ and we have $\ddot{x}=0$.
-\end{frame}
-
-\begin{frame}{}
-	volume and integration
-\end{frame}
-
-
-
-\section{Applications}
- navier stokes on the Earth. Riemannian metric as a conductivity?
-
-
-
-
-
-
-
-
 \section{Conclusions}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item We constructed a smooth manifold $M$
+		\pause
+		\item We generalized vector fields $X$ to $M$
+		\pause
+		\item We created an inner product $g$ on $M$ to measure these fields
+		\pause
+		\item No measurement depends on the choice of coordinates
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item $g$ allows us to measure vectors and understand the geometry of $M$ in coordinates $\varphi$
+		\pause
+		\item Hence, we can define lengths and volumes
+		\pause
+		\item Thus, we can integrate
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	\begin{itemize}
+		\item $g$ induces a derivative $\nabla$
+		\pause
+		\item $g$ induces a Laplacian $\Delta$
+		\pause
+		\item $g$ provides an intrinsic length function on $M$
+	\end{itemize}
+	\vfill
+\end{frame}
+
+\begin{frame}{}
+	\vfill
+	This is just the beginning!
+	\vfill
+\end{frame}
 
 
 \end{document}

@@ -1,11 +1,10 @@
 \babel@toc {UKenglish}{}
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Motivation}{8}{0}{2}
-\beamer@sectionintoc {3}{Preliminaries}{18}{0}{3}
-\beamer@subsectionintoc {3}{1}{Smooth Manifolds}{20}{0}{3}
-\beamer@subsectionintoc {3}{2}{Vector Fields}{29}{0}{3}
-\beamer@subsectionintoc {3}{3}{Example}{37}{0}{3}
-\beamer@sectionintoc {4}{Riemannian Geometry}{42}{0}{4}
-\beamer@subsectionintoc {4}{1}{Riemannian Metric}{47}{0}{4}
-\beamer@sectionintoc {5}{Applications}{57}{0}{5}
-\beamer@sectionintoc {6}{Conclusions}{58}{0}{6}
+\beamer@sectionintoc {2}{Motivation}{9}{0}{2}
+\beamer@sectionintoc {3}{Preliminaries}{23}{0}{3}
+\beamer@subsectionintoc {3}{1}{Smooth Manifolds}{24}{0}{3}
+\beamer@subsectionintoc {3}{2}{Vector Fields}{38}{0}{3}
+\beamer@subsectionintoc {3}{3}{Specific Coordinates}{67}{0}{3}
+\beamer@sectionintoc {4}{Riemannian Geometry}{75}{0}{4}
+\beamer@subsectionintoc {4}{1}{Riemannian Metric}{80}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{98}{0}{5}

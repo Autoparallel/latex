@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'area.pdf' (pdf, eps, ps)
+%% Accompanies image file 'curves.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{850.39370079bp}%
+    \setlength{\unitlength}{929.84924797bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,11 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.66666667)%
+  \begin{picture}(1,0.99339588)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{area.pdf}}%
-    \put(0.49109212,0.38500397){\color[rgb]{0.13333333,0.5254902,0.09803922}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\sqrt{g}$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{area.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{curves.pdf}}%
+    \put(0.45629516,0.77719974){\color[rgb]{0.60392157,0.24705882,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_1$\end{tabular}}}}%
+    \put(0.19565383,0.6153071){\color[rgb]{0.29803922,0.61960784,0.80392157}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_2$\end{tabular}}}}%
+    \put(0.55585049,0.53683813){\color[rgb]{0.82352941,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma$\end{tabular}}}}%
+    \put(0.24543148,0.83250823){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.79863179,0.27515986){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  28 JAN 2020 20:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  29 JAN 2020 19:45
 entering extended mode
 **./main.tex
 (main.tex
@@ -3196,49 +3196,67 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 
 ] [25
 
+] [26
+
+] [27
+
+] [28
+
+] [29
+
 ] (sphere.pdf_tex
-<sphere.pdf, id=262, page=1, 284.71252pt x 285.28038pt>
+<sphere.pdf, id=289, page=1, 284.71252pt x 285.28038pt>
 File: sphere.pdf Graphic file (type pdf)
 <use sphere.pdf, page 1>
 Package pdftex.def Info: sphere.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
-) [26
+)
+[30
 
- <./sphere.pdf>]
-(sphere_charts.pdf_tex
-<sphere_charts.pdf, id=279, page=1, 284.71252pt x 285.28038pt>
+ <./sphere.pdf>] [31
+
+] [32
+
+] [33
+
+] (sphere_charts.pdf_tex
+<sphere_charts.pdf, id=328, page=1, 284.71252pt x 285.28038pt>
 File: sphere_charts.pdf Graphic file (type pdf)
 <use sphere_charts.pdf, page 1>
 Package pdftex.def Info: sphere_charts.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
-<sphere_charts.pdf, id=280, page=2, 284.71252pt x 285.28038pt>
+<sphere_charts.pdf, id=329, page=2, 284.71252pt x 285.28038pt>
 File: sphere_charts.pdf Graphic file (type pdf)
 <use sphere_charts.pdf, page 2>
 Package pdftex.def Info: sphere_charts.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
-) [27
+) [34
 
  <./sphere_charts.pdf> <./sphere_charts.pdf
 
 pdfTeX warning: pdflatex.exe (file ./sphere_charts.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->] (sphere_charts_maps.pdf_tex
-<sphere_charts_maps.pdf, id=299, page=1, 765.41641pt x 545.24957pt>
+>] [35
+
+] [36
+
+] (sphere_charts_maps.pdf_tex
+<sphere_charts_maps.pdf, id=359, page=1, 765.41641pt x 545.24957pt>
 File: sphere_charts_maps.pdf Graphic file (type pdf)
 <use sphere_charts_maps.pdf, page 1>
 Package pdftex.def Info: sphere_charts_maps.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 284.19536pt x 202.44637pt.
-<sphere_charts_maps.pdf, id=300, page=2, 765.41641pt x 545.24957pt>
+<sphere_charts_maps.pdf, id=360, page=2, 765.41641pt x 545.24957pt>
 File: sphere_charts_maps.pdf Graphic file (type pdf)
 <use sphere_charts_maps.pdf, page 2>
 Package pdftex.def Info: sphere_charts_maps.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 284.19536pt x 202.44637pt.
-<sphere_charts_maps.pdf, id=301, page=3, 765.41641pt x 545.24957pt>
+<sphere_charts_maps.pdf, id=361, page=3, 765.41641pt x 545.24957pt>
 File: sphere_charts_maps.pdf Graphic file (type pdf)
 <use sphere_charts_maps.pdf, page 3>
 Package pdftex.def Info: sphere_charts_maps.pdf , page3 used on input line 61.
 (pdftex.def)             Requested size: 284.19536pt x 202.44637pt.
-) [28
+) [37
 
  <./sphere_charts_maps.pdf> <./sphere_charts_maps.pdf
 
@@ -3248,45 +3266,84 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] [29
+>] [38
+
+]
+<div_field.png, id=386, 1124.2pt x 843.15pt>
+File: div_field.png Graphic file (type png)
+<use div_field.png>
+Package pdftex.def Info: div_field.png  used on input line 301.
+(pdftex.def)             Requested size: 139.25728pt x 104.44144pt.
+<rot_field.png, id=387, 1124.2pt x 843.15pt>
+File: rot_field.png Graphic file (type png)
+<use rot_field.png>
+Package pdftex.def Info: rot_field.png  used on input line 301.
+(pdftex.def)             Requested size: 139.25728pt x 104.44144pt.
+ [39
+
+ <./div_field.png (PNG copy)> <./rot_field.png (PNG copy)>]
+File: div_field.png Graphic file (type png)
+<use div_field.png>
+Package pdftex.def Info: div_field.png  used on input line 301.
+(pdftex.def)             Requested size: 139.25728pt x 104.44144pt.
+File: rot_field.png Graphic file (type png)
+<use rot_field.png>
+Package pdftex.def Info: rot_field.png  used on input line 301.
+(pdftex.def)             Requested size: 139.25728pt x 104.44144pt.
+ [40
+
+]
+[41
+
+] [42
+
+] [43
+
+] [44
+
+] [45
+
+] [46
+
+] [47
 
 ] (sphere_curve.pdf_tex
-<sphere_curve.pdf, id=327, page=1, 284.71252pt x 302.15588pt>
+<sphere_curve.pdf, id=445, page=1, 284.71252pt x 302.15588pt>
 File: sphere_curve.pdf Graphic file (type pdf)
 <use sphere_curve.pdf, page 1>
 Package pdftex.def Info: sphere_curve.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 213.14651pt x 226.21062pt.
-<sphere_curve.pdf, id=328, page=2, 284.71252pt x 302.15588pt>
+<sphere_curve.pdf, id=446, page=2, 284.71252pt x 302.15588pt>
 File: sphere_curve.pdf Graphic file (type pdf)
 <use sphere_curve.pdf, page 2>
 Package pdftex.def Info: sphere_curve.pdf , page2 used on input line 59.
 (pdftex.def)             Requested size: 213.14651pt x 226.21062pt.
-) [30
+) [48
 
  <./sphere_curve.pdf> <./sphere_curve.pdf
 
 pdfTeX warning: pdflatex.exe (file ./sphere_curve.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
 >] (sphere_curve_tangent.pdf_tex
-<sphere_curve_tangent.pdf, id=346, page=1, 285.07619pt x 302.15588pt>
+<sphere_curve_tangent.pdf, id=463, page=1, 285.07619pt x 302.15588pt>
 File: sphere_curve_tangent.pdf Graphic file (type pdf)
 <use sphere_curve_tangent.pdf, page 1>
 Package pdftex.def Info: sphere_curve_tangent.pdf , page1 used on input line 56
 .
 (pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
-<sphere_curve_tangent.pdf, id=347, page=2, 285.07619pt x 302.15588pt>
+<sphere_curve_tangent.pdf, id=464, page=2, 285.07619pt x 302.15588pt>
 File: sphere_curve_tangent.pdf Graphic file (type pdf)
 <use sphere_curve_tangent.pdf, page 2>
 Package pdftex.def Info: sphere_curve_tangent.pdf , page2 used on input line 58
 .
 (pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
-<sphere_curve_tangent.pdf, id=348, page=3, 285.07619pt x 302.15588pt>
+<sphere_curve_tangent.pdf, id=465, page=3, 285.07619pt x 302.15588pt>
 File: sphere_curve_tangent.pdf Graphic file (type pdf)
 <use sphere_curve_tangent.pdf, page 3>
 Package pdftex.def Info: sphere_curve_tangent.pdf , page3 used on input line 62
 .
 (pdftex.def)             Requested size: 213.14651pt x 225.92476pt.
-) [31
+) [49
 
  <./sphere_curve_tangent.pdf> <./sphere_curve_tangent.pdf
 
@@ -3296,43 +3353,47 @@ multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./sphere_curve_tangent.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
->] (pushforward.pdf_tex
-<pushforward.pdf, id=367, page=1, 738.76355pt x 438.37627pt>
+>] [50
+
+] [51
+
+] (pushforward.pdf_tex
+<pushforward.pdf, id=495, page=1, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 1>
 Package pdftex.def Info: pushforward.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-<pushforward.pdf, id=368, page=2, 738.76355pt x 438.37627pt>
+<pushforward.pdf, id=496, page=2, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 2>
 Package pdftex.def Info: pushforward.pdf , page2 used on input line 59.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-<pushforward.pdf, id=369, page=3, 738.76355pt x 438.37627pt>
+<pushforward.pdf, id=497, page=3, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 3>
 Package pdftex.def Info: pushforward.pdf , page3 used on input line 62.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-<pushforward.pdf, id=370, page=4, 738.76355pt x 438.37627pt>
+<pushforward.pdf, id=498, page=4, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 4>
 Package pdftex.def Info: pushforward.pdf , page4 used on input line 66.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-<pushforward.pdf, id=371, page=5, 738.76355pt x 438.37627pt>
+<pushforward.pdf, id=499, page=5, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 5>
 Package pdftex.def Info: pushforward.pdf , page5 used on input line 69.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-<pushforward.pdf, id=372, page=6, 738.76355pt x 438.37627pt>
+<pushforward.pdf, id=500, page=6, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 6>
 Package pdftex.def Info: pushforward.pdf , page6 used on input line 71.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-<pushforward.pdf, id=373, page=7, 738.76355pt x 438.37627pt>
+<pushforward.pdf, id=501, page=7, 738.76355pt x 438.37627pt>
 File: pushforward.pdf Graphic file (type pdf)
 <use pushforward.pdf, page 7>
 Package pdftex.def Info: pushforward.pdf , page7 used on input line 75.
 (pdftex.def)             Requested size: 284.19536pt x 168.63824pt.
-) [32
+) [52
 
  <./pushforward.pdf> <./pushforward.pdf
 
@@ -3358,31 +3419,40 @@ pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
->] (tangent_spaces.pdf_tex
-<tangent_spaces.pdf, id=390, page=1, 386.97458pt x 399.97217pt>
+>] [53
+
+] [54
+
+] [55
+
+] [56
+
+] (tangent_spaces.pdf_tex
+<tangent_spaces.pdf, id=543, page=1, 386.97458pt x 399.97217pt>
 File: tangent_spaces.pdf Graphic file (type pdf)
 <use tangent_spaces.pdf, page 1>
 Package pdftex.def Info: tangent_spaces.pdf , page1 used on input line 57.
 (pdftex.def)             Requested size: 213.14651pt x 220.30272pt.
-) [33
+) [57
 
- <./tangent_spaces.pdf>] (tangent_bundle.pdf_tex
-<tangent_bundle.pdf, id=399, page=1, 804.96768pt x 484.43236pt>
+ <./tangent_spaces.pdf>]
+(tangent_bundle.pdf_tex
+<tangent_bundle.pdf, id=552, page=1, 804.96768pt x 484.43236pt>
 File: tangent_bundle.pdf Graphic file (type pdf)
 <use tangent_bundle.pdf, page 1>
 Package pdftex.def Info: tangent_bundle.pdf , page1 used on input line 57.
 (pdftex.def)             Requested size: 284.19536pt x 171.03223pt.
-<tangent_bundle.pdf, id=400, page=2, 804.96768pt x 484.43236pt>
+<tangent_bundle.pdf, id=553, page=2, 804.96768pt x 484.43236pt>
 File: tangent_bundle.pdf Graphic file (type pdf)
 <use tangent_bundle.pdf, page 2>
 Package pdftex.def Info: tangent_bundle.pdf , page2 used on input line 62.
 (pdftex.def)             Requested size: 284.19536pt x 171.03223pt.
-<tangent_bundle.pdf, id=401, page=3, 804.96768pt x 484.43236pt>
+<tangent_bundle.pdf, id=554, page=3, 804.96768pt x 484.43236pt>
 File: tangent_bundle.pdf Graphic file (type pdf)
 <use tangent_bundle.pdf, page 3>
 Package pdftex.def Info: tangent_bundle.pdf , page3 used on input line 64.
 (pdftex.def)             Requested size: 284.19536pt x 171.03223pt.
-) [34
+) [58
 
  <./tangent_bundle.pdf> <./tangent_bundle.pdf
 
@@ -3392,23 +3462,33 @@ le pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./tangent_bundle.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] (section.pdf_tex
-<section.pdf, id=412, page=1, 865.5322pt x 484.4323pt>
+>] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] (section.pdf_tex
+<section.pdf, id=595, page=1, 865.5322pt x 484.4323pt>
 File: section.pdf Graphic file (type pdf)
 <use section.pdf, page 1>
 Package pdftex.def Info: section.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 284.19536pt x 159.06483pt.
-<section.pdf, id=413, page=2, 865.5322pt x 484.4323pt>
+<section.pdf, id=596, page=2, 865.5322pt x 484.4323pt>
 File: section.pdf Graphic file (type pdf)
 <use section.pdf, page 2>
 Package pdftex.def Info: section.pdf , page2 used on input line 59.
 (pdftex.def)             Requested size: 284.19536pt x 159.06483pt.
-<section.pdf, id=414, page=3, 865.5322pt x 484.4323pt>
+<section.pdf, id=597, page=3, 865.5322pt x 484.4323pt>
 File: section.pdf Graphic file (type pdf)
 <use section.pdf, page 3>
 Package pdftex.def Info: section.pdf , page3 used on input line 67.
 (pdftex.def)             Requested size: 284.19536pt x 159.06483pt.
-) [35
+) [64
 
  <./section.pdf> <./section.pdf
 
@@ -3418,58 +3498,60 @@ pdfTeX warning: pdflatex.exe (file ./section.pdf): PDF inclusion: multiple pdfs
 
 pdfTeX warning: pdflatex.exe (file ./section.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
->] (sphere_vector_field.pdf_tex
-<sphere_vector_field.pdf, id=432, page=1, 284.71252pt x 285.28038pt>
+>] [65
+
+] (sphere_vector_field.pdf_tex
+<sphere_vector_field.pdf, id=621, page=1, 284.71252pt x 285.28038pt>
 File: sphere_vector_field.pdf Graphic file (type pdf)
 <use sphere_vector_field.pdf, page 1>
 Package pdftex.def Info: sphere_vector_field.pdf , page1 used on input line 56.
 
 (pdftex.def)             Requested size: 213.14651pt x 213.57669pt.
-) [36
+) [66
 
- <./sphere_vector_field.pdf>] [37
-
-] [38
+ <./sphere_vector_field.pdf>] [67
 
 ]
-(spherical_coordinates.pdf_tex
-<spherical_coordinates.pdf, id=463, page=1, 775.53264pt x 442.7629pt>
+[68
+
+] (spherical_coordinates.pdf_tex
+<spherical_coordinates.pdf, id=652, page=1, 775.53264pt x 442.7629pt>
 File: spherical_coordinates.pdf Graphic file (type pdf)
 <use spherical_coordinates.pdf, page 1>
 Package pdftex.def Info: spherical_coordinates.pdf , page1 used on input line 5
 7.
 (pdftex.def)             Requested size: 284.19536pt x 162.2523pt.
-<spherical_coordinates.pdf, id=464, page=2, 775.53264pt x 442.7629pt>
+<spherical_coordinates.pdf, id=653, page=2, 775.53264pt x 442.7629pt>
 File: spherical_coordinates.pdf Graphic file (type pdf)
 <use spherical_coordinates.pdf, page 2>
 Package pdftex.def Info: spherical_coordinates.pdf , page2 used on input line 6
 0.
 (pdftex.def)             Requested size: 284.19536pt x 162.2523pt.
-<spherical_coordinates.pdf, id=465, page=3, 775.53264pt x 442.7629pt>
+<spherical_coordinates.pdf, id=654, page=3, 775.53264pt x 442.7629pt>
 File: spherical_coordinates.pdf Graphic file (type pdf)
 <use spherical_coordinates.pdf, page 3>
 Package pdftex.def Info: spherical_coordinates.pdf , page3 used on input line 6
 2.
 (pdftex.def)             Requested size: 284.19536pt x 162.2523pt.
-<spherical_coordinates.pdf, id=466, page=4, 775.53264pt x 442.7629pt>
+<spherical_coordinates.pdf, id=655, page=4, 775.53264pt x 442.7629pt>
 File: spherical_coordinates.pdf Graphic file (type pdf)
 <use spherical_coordinates.pdf, page 4>
 Package pdftex.def Info: spherical_coordinates.pdf , page4 used on input line 6
 6.
 (pdftex.def)             Requested size: 284.19536pt x 162.2523pt.
-<spherical_coordinates.pdf, id=467, page=5, 775.53264pt x 442.7629pt>
+<spherical_coordinates.pdf, id=656, page=5, 775.53264pt x 442.7629pt>
 File: spherical_coordinates.pdf Graphic file (type pdf)
 <use spherical_coordinates.pdf, page 5>
 Package pdftex.def Info: spherical_coordinates.pdf , page5 used on input line 7
 1.
 (pdftex.def)             Requested size: 284.19536pt x 162.2523pt.
-<spherical_coordinates.pdf, id=468, page=6, 775.53264pt x 442.7629pt>
+<spherical_coordinates.pdf, id=657, page=6, 775.53264pt x 442.7629pt>
 File: spherical_coordinates.pdf Graphic file (type pdf)
 <use spherical_coordinates.pdf, page 6>
 Package pdftex.def Info: spherical_coordinates.pdf , page6 used on input line 7
 3.
 (pdftex.def)             Requested size: 284.19536pt x 162.2523pt.
-) [39
+) [69
 
  <./spherical_coordinates.pdf> <./spherical_coordinates.pdf
 
@@ -3492,35 +3574,35 @@ pdfTeX warning: pdflatex.exe (file ./spherical_coordinates.pdf): PDF inclusion:
 pdfTeX warning: pdflatex.exe (file ./spherical_coordinates.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
 >] (spherical_coordinates_tangent_vectors.pdf_tex
-<spherical_coordinates_tangent_vectors.pdf, id=486, page=1, 769.0416pt x 458.04
+<spherical_coordinates_tangent_vectors.pdf, id=674, page=1, 769.0416pt x 458.04
 385pt>
 File: spherical_coordinates_tangent_vectors.pdf Graphic file (type pdf)
 <use spherical_coordinates_tangent_vectors.pdf, page 1>
 Package pdftex.def Info: spherical_coordinates_tangent_vectors.pdf , page1 used
  on input line 56.
 (pdftex.def)             Requested size: 284.19536pt x 169.2639pt.
-<spherical_coordinates_tangent_vectors.pdf, id=487, page=2, 769.0416pt x 458.04
+<spherical_coordinates_tangent_vectors.pdf, id=675, page=2, 769.0416pt x 458.04
 385pt>
 File: spherical_coordinates_tangent_vectors.pdf Graphic file (type pdf)
 <use spherical_coordinates_tangent_vectors.pdf, page 2>
 Package pdftex.def Info: spherical_coordinates_tangent_vectors.pdf , page2 used
  on input line 60.
 (pdftex.def)             Requested size: 284.19536pt x 169.2639pt.
-<spherical_coordinates_tangent_vectors.pdf, id=488, page=3, 769.0416pt x 458.04
+<spherical_coordinates_tangent_vectors.pdf, id=676, page=3, 769.0416pt x 458.04
 385pt>
 File: spherical_coordinates_tangent_vectors.pdf Graphic file (type pdf)
 <use spherical_coordinates_tangent_vectors.pdf, page 3>
 Package pdftex.def Info: spherical_coordinates_tangent_vectors.pdf , page3 used
  on input line 66.
 (pdftex.def)             Requested size: 284.19536pt x 169.2639pt.
-<spherical_coordinates_tangent_vectors.pdf, id=489, page=4, 769.0416pt x 458.04
+<spherical_coordinates_tangent_vectors.pdf, id=677, page=4, 769.0416pt x 458.04
 385pt>
 File: spherical_coordinates_tangent_vectors.pdf Graphic file (type pdf)
 <use spherical_coordinates_tangent_vectors.pdf, page 4>
 Package pdftex.def Info: spherical_coordinates_tangent_vectors.pdf , page4 used
  on input line 68.
 (pdftex.def)             Requested size: 284.19536pt x 169.2639pt.
-) [40
+) [70
 
  <./spherical_coordinates_tangent_vectors.pdf> <./spherical_coordinates_tangent
 _vectors.pdf
@@ -3535,89 +3617,128 @@ pdfTeX warning: pdflatex.exe (file ./spherical_coordinates_tangent_vectors.pdf)
 
 pdfTeX warning: pdflatex.exe (file ./spherical_coordinates_tangent_vectors.pdf)
 : PDF inclusion: multiple pdfs with page group included in a single page
->] (push_forward.pdf_tex
-<push_forward.pdf, id=506, page=1, 685.71631pt x 285.5297pt>
+>] [71
+
+] [72
+
+] [73
+
+] (push_forward.pdf_tex
+<push_forward.pdf, id=713, page=1, 685.71631pt x 285.5297pt>
 File: push_forward.pdf Graphic file (type pdf)
 <use push_forward.pdf, page 1>
 Package pdftex.def Info: push_forward.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 284.19536pt x 118.34012pt.
-<push_forward.pdf, id=507, page=2, 685.71631pt x 285.5297pt>
+<push_forward.pdf, id=714, page=2, 685.71631pt x 285.5297pt>
 File: push_forward.pdf Graphic file (type pdf)
 <use push_forward.pdf, page 2>
 Package pdftex.def Info: push_forward.pdf , page2 used on input line 60.
 (pdftex.def)             Requested size: 284.19536pt x 118.34012pt.
-) [41
+) [74
 
  <./push_forward.pdf> <./push_forward.pdf
 
 pdfTeX warning: pdflatex.exe (file ./push_forward.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->] [42
+>] [75
 
-] [43
+] [76
 
-] [44
+] [77
 
-] [45
+] [78
 
-] [46
+] [79
 
-] [47
+] [80
 
-] [48
+] [81
 
-] [49
+] [82
 
-] (area_alt.pdf_tex
-<area_alt.pdf, id=577, page=1, 933.33618pt x 927.17235pt>
-File: area_alt.pdf Graphic file (type pdf)
-<use area_alt.pdf, page 1>
-Package pdftex.def Info: area_alt.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 341.03355pt x 338.77585pt.
-<area_alt.pdf, id=578, page=2, 933.33618pt x 927.17235pt>
-File: area_alt.pdf Graphic file (type pdf)
-<use area_alt.pdf, page 2>
-Package pdftex.def Info: area_alt.pdf , page2 used on input line 58.
-(pdftex.def)             Requested size: 341.03355pt x 338.77585pt.
+] [83
+
+] [84
+
+] [85
+
+] [86
+
+] [87
+
+] [88
+
+]
+[89
+
+] (curves.pdf_tex
+<curves.pdf, id=825, page=1, 933.33618pt x 927.17235pt>
+File: curves.pdf Graphic file (type pdf)
+<use curves.pdf, page 1>
+Package pdftex.def Info: curves.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 213.14651pt x 211.73137pt.
+) [90
+
+ <./curves.pdf>] [91
+
+] [92
+
+] [93
+
+] [94
+
+] [95
+
+] [96
+
+]
+(area.pdf_tex
+<area.pdf, id=879, page=1, 853.58266pt x 569.05513pt>
+File: area.pdf Graphic file (type pdf)
+<use area.pdf, page 1>
+Package pdftex.def Info: area.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 341.03355pt x 227.35753pt.
+<area.pdf, id=880, page=2, 853.58266pt x 569.05513pt>
+File: area.pdf Graphic file (type pdf)
+<use area.pdf, page 2>
+Package pdftex.def Info: area.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 341.03355pt x 227.35753pt.
 )
-Overfull \hbox (4.79936pt too wide) in paragraph at lines 386--386
+Overfull \hbox (4.79936pt too wide) in paragraph at lines 626--626
  |   [] 
  []
 
+[97
 
-Overfull \vbox (102.0042pt too high) detected at line 386
- []
+ <./area.pdf> <./area.pdf
 
-[50
+pdfTeX warning: pdflatex.exe (file ./area.pdf): PDF inclusion: multiple pdfs wi
+th page group included in a single page
+>] [98
 
- <./area_alt.pdf> <./area_alt.pdf
+] [99
 
-pdfTeX warning: pdflatex.exe (file ./area_alt.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->] [51
+] [100
 
-] [52
+] [101
 
-] [53
+] [102
 
-] [54
+] [103
 
-] [55
+] [104
 
-] [56
+] [105
 
-] [57
+] [106
+
+] [107
+
+] [108
+
+] [109
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [58
-
-]
-Overfull \vbox (14.12914pt too high) has occurred while \output is active []
-
-
-[59]
 \tf@nav=\write9
 \openout9 = `main.nav'.
 
@@ -3627,52 +3748,66 @@ Overfull \vbox (14.12914pt too high) has occurred while \output is active []
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 442.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 442.
- (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 442.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 442.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B2C0920A0F584776B7BF4EF104B7A628;541.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 675.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 675.
+
+(main.aux
+
+Package pdfbase Warning: Rerun to get internal references right!
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 675.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 675.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 623D6B2B958A8CC5DE904399DBEF1724;554
+(rerunfilecheck)             After:  07EAD8F933B424C23D8A7B601A3784FD;506.
  ) 
 Here is how much of TeX's memory you used:
- 61361 strings out of 492483
- 1368846 string characters out of 3121588
- 1591512 words of memory out of 3000000
- 64393 multiletter control sequences out of 15000+200000
- 608335 words of font info for 104 fonts, out of 3000000 for 9000
+ 61540 strings out of 492483
+ 1370918 string characters out of 3121588
+ 1591513 words of memory out of 3000000
+ 64457 multiletter control sequences out of 15000+200000
+ 613428 words of font info for 111 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,17n,119p,773b,674s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
-c}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
-SymbolF.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
-nsymbol/MnSymbolA.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/mnsymbol/MnSymbolD.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Colin/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}<C:/Users/Colin/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Col
-in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb>
-<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Colin/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Co
-lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users
-/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Use
-rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:
-/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb
-><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri7.
-pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr
-i8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb>
-Output written on main.pdf (59 pages, 512620 bytes).
+pdfTeX warning (dest): name{Outline0.6} has been referenced but does not exis
+t, replaced by a fixed one
+
+{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSy
+mbolF.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mns
+ymbol/MnSymbolD.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
+/dvips/mnsymbol/MnSymbolC.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9
+/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:/Users/Colin/AppData/Local/Programs/
+MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{C:/Users/Colin/AppData/Local
+/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Colin/App
+Data/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Colin/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:/U
+sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymb
+ol8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Colin/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Colin
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Co
+lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/
+Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Us
+ers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C
+:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb
+><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb>
+Output written on main.pdf (109 pages, 705775 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 17880 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 1091 PDF objects out of 1200 (max. 8388607)
+ 229 named destinations out of 1000 (max. 500000)
+ 18407 words of extra memory for PDF output out of 20736 (max. 10000000)
 
