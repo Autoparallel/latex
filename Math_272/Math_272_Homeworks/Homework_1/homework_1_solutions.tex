@@ -52,7 +52,8 @@ You can, for example, use the plotter here: \url{https://www.desmos.com/calculat
 		\|e^{i\theta} \Psi\|^2=\innprod{e^{i\theta}\Psi}{e^{i\theta}\Psi} &= \int_0^L \left(e^{i\theta}\Psi(x)\right)\left(e^{i\theta}\Psi(x)\right)^*dx\\
 		&= \int_0^L e^{i\theta}e^{-i\theta} \Psi(x)\Psi^*(x)dx\\
 		&= \int_0^L \Psi(x)\Psi^*(x)dx\\
-		&= \innprod{\Psi}{\Psi}.
+		&= \innprod{\Psi}{\Psi}\\
+		&= \|\Psi\|^2.
 	\end{align*}
 \end{solution}
 
@@ -69,9 +70,9 @@ You can, for example, use the plotter here: \url{https://www.desmos.com/calculat
 	\begin{enumerate}[(a)]
 		\item We compute the norm by
 		\begin{align*}
-			\|f\| = \sqrt{\innprod{f}{f}} &= \int_0^L f^2(x)dx\\
-			&= \int_0^L 1 dx\\
-			&= L.
+			\|f\| = \sqrt{\innprod{f}{f}} &=\sqrt{ \int_0^L f^2(x)dx}\\
+			&=\sqrt{ \int_0^L 1 dx}\\
+			&= \sqrt{L}.
 		\end{align*}
 		\item We can normalize $f$ by letting $c$ be some constant and forcing
 		\[
@@ -90,20 +91,20 @@ You can, for example, use the plotter here: \url{https://www.desmos.com/calculat
 			\innprod{f}{g} &= \int_0^L f(x)g(x)dx\\
 			&=\int_0^L ax+bdx\\
 			&= \frac{aL^2}{2}+bL\\
-			&= L\left(\frac{aL}{2}+b\right).
+			&= \frac{1}{2}L\left(aL+2b\right).
 		\end{align*}
-		Hence, we can solve for $b$ by
+		Hence, we can solve for $a$ by
 		\[
-		0=\frac{aL}{2}+b \quad \implies \quad b= -\frac{aL}{2}.
+		0=aL+2b \quad \implies \quad a= -\frac{2b}{L}.
 		\]
-		Now, $g(x)=ax-\frac{aL}{2}$.  But, we require $g(x)$ to be normalized as well hence
+		Now, $g(x)=-\frac{2b}{L}x+b$.  But, we require $g(x)$ to be normalized as well hence
 		\begin{align*}
-			1=\innprod{g}{g} &= \int_0^L \left(ax-\frac{aL}{2}\right)^2dx\\
-			&= \frac{a^2L^3}{12}.
+			1=\innprod{g}{g} &= \int_0^L \left(-\frac{2b}{L}x+b\right)^2dx\\
+			&= \frac{b^2L}{3}.
 		\end{align*}
-		Solving for $a$, we find $a=\sqrt{\frac{12}{L^3}}$ and hence we have that
+		Solving for $b$, we find $b=\sqrt{\frac{3}{L}}$ and hence we have that
 		\[
-		g(x) = \sqrt{\frac{12}{L^3}} x - \frac{\sqrt{12}}{2\sqrt{L}}.
+		g(x) = -2\sqrt{\frac{3}{L^3}}x+\sqrt{\frac{3}{L}}..
 		\]
 	\end{enumerate}
 \end{solution}
@@ -191,7 +192,7 @@ You can, for example, use the plotter here: \url{https://www.desmos.com/calculat
 		\item We take
 		\begin{align*}
 			d(\vecu,\vecv)&= \sqrt{(\vecu-\vecv)\cdot(\vecu-\vecv)}\\
-				&= \sqrt{\vecu\cdot \vecu + \vecu\cdot (\vecv) + (-\vecv)\cdot \vecu +(-\vecv)\cdot (-\vecv)}\\
+				&= \sqrt{\vecu\cdot \vecu + \vecu\cdot (-\vecv) + (-\vecv)\cdot \vecu +(-\vecv)\cdot (-\vecv)}\\
 				&= \sqrt{\|\vecu\|^2 + \|\vecv\|^2 -2\vecu \cdot \vecv}.
 		\end{align*}
 		\item Let us compute each part of the distance formula,

@@ -33,7 +33,7 @@
 
 \newtcbtheorem[number within=section]{thm}{Theorem}
 {theorem style=change apart,enhanced,breakable,arc=0mm,outer arc=0mm,
-boxrule=0pt,toprule=1pt,bottomrule=0.1pt,left=0.2cm,right=0.2cm,
+boxrule=1pt,toprule=1pt,bottomrule=1pt,left=0.2cm,right=0.2cm,
 titlerule=0.5em,toptitle=0.1cm,bottomtitle=-0.1cm,top=0.2cm,
 colframe=white!25!black,colback=white,coltitle=white,
 title style={white!25!black},
@@ -42,7 +42,7 @@ skip=20pt plus 2pt,after skip=20pt plus 2pt}{thm}
 
 \newtcbtheorem[number within=section]{prop}{Proposition}
 {theorem style=change apart,enhanced,breakable,arc=0mm,outer arc=0mm,
-boxrule=0pt,toprule=1pt,bottomrule=0.1pt,left=0.2cm,right=0.2cm,
+boxrule=1pt,toprule=1pt,bottomrule=1pt,left=0.2cm,right=0.2cm,
 titlerule=0.5em,toptitle=0.1cm,bottomtitle=-0.1cm,top=0.2cm,
 colframe=white!25!black,colback=white,coltitle=white,
 title style={white!25!black},
@@ -51,7 +51,7 @@ skip=20pt plus 2pt,after skip=20pt plus 2pt}{prop}
 
 \newtcbtheorem[number within=section]{ex}{Example}
 {theorem style=change apart,enhanced,breakable,arc=0mm,outer arc=0mm,
-boxrule=0pt,toprule=2pt,bottomrule=0.1pt,left=0.2cm,right=0.2cm,
+boxrule=1pt,toprule=2pt,bottomrule=1pt,left=0.2cm,right=0.2cm,
 titlerule=2pt,toptitle=0.1cm,bottomtitle=0cm,top=0.1cm,
 colframe=white!25!black,colback=white,coltitle=black,
 title style={white!100},
@@ -60,8 +60,8 @@ skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}
 
 \newtcbtheorem[]{ques}{Question}
 {enhanced,breakable,arc=0mm,outer arc=0mm,
-boxrule=0.1pt,toprule=0.2pt,bottomrule=0.1pt,left=0.2cm,right=0.2cm,
-titlerule=0.1pt,toptitle=0.1cm,bottomtitle=0cm,top=0.1cm,
+boxrule=1pt,toprule=1pt,bottomrule=1pt,left=0.2cm,right=0.2cm,
+titlerule=0.5pt,toptitle=0.1cm,bottomtitle=0cm,top=0.1cm,
 colframe=white!25!black,colback=white,coltitle=black,
 title style={white!100},
 fonttitle=\bfseries,fontupper=\normalsize,before
@@ -69,7 +69,7 @@ skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}
 
 \newtcbtheorem[]{remark}{Remark}
 {enhanced,breakable,arc=0mm,outer arc=0mm,
-boxrule=0.1pt,toprule=0.2pt,bottomrule=0.1pt,left=0.2cm,right=0.2cm,
+boxrule=1pt,toprule=1pt,bottomrule=1pt,left=0.2cm,right=0.2cm,
 titlerule=0.1pt,toptitle=0.1cm,bottomtitle=0.1cm,top=0.1cm,
 colframe=white!25!black,colback=white,coltitle=black,
 title style={white!100},
@@ -83,3 +83,97 @@ skip=20pt plus 2pt,after skip=20pt plus 2pt}{def} % Definition
 \newtcbtheorem[number within=section]{rmk}{Remark}%
 {colback=white!100,arc=0pt,outer arc=0pt,,colframe=black!85,fonttitle=\bfseries,breakable,enhanced,before
 skip=20pt plus 2pt,after skip=20pt plus 2pt}{rmk} % remark
+
+\newtcbtheorem[number within=section]{fig}{Figure}%
+{colback=white!100,arc=0pt,outer arc=0pt,,colframe=black!85,fonttitle=\bfseries,breakable,enhanced,before
+skip=20pt plus 2pt,after skip=20pt plus 2pt}{fig} % fig box
+
+% \newtcbtheorem[number within=section]{question}{Question}%
+% {colback=white!100,arc=0pt,outer arc=0pt,,colframe=black!85,fonttitle=\bfseries,breakable,enhanced,before
+% skip=20pt plus 2pt,after skip=20pt plus 2pt}{question} % question
+
+
+
+
+% % question/answer environment
+% \usepackage{lmodern}
+% \usepackage[most]{tcolorbox}
+% \tcbset{
+%     thmbox/.style={
+%         enhanced,
+%         breakable,
+%         sharp corners=all,
+%         fonttitle=\bfseries\normalsize,
+%         fontupper=\normalsize,
+%          top=0mm,
+%          bottom=0mm,
+%          right=0mm,
+%         colback=white,
+%         colframe=white,
+%         colbacktitle=white,
+%         coltitle=black,
+%         attach boxed title to top left,
+%         before skip=20pt plus 2pt,after skip=20pt plus 2pt,
+%         boxed title style={empty, size=minimal, bottom=1.5mm},
+%         overlay unbroken ={
+%             \draw (title.south west)--(title.south east);
+%             \draw ([xshift=3.5mm]frame.north west)|-%
+%                   (frame.south east)--(frame.north east);},
+%         overlay first={
+%             \draw (title.south west)--(title.south east); 
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);
+%             \draw (frame.north east)--(frame.south east);},
+%         overlay middle={
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);
+%             \draw (frame.north east)--(frame.south east);},
+%         overlay last={
+%             \draw ([xshift=3.5mm]frame.north west)|-%
+%                   (frame.south east)--(frame.north east);},
+%         },
+%     S/.style={thmbox, 
+%         overlay unbroken ={
+%             \draw (title.south west)--(title.south east);
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+%         overlay first={
+%             \draw (title.south west)--(title.south east); 
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+%         overlay middle={
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+%         overlay last={
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+%         },
+%     L/.style={thmbox, 
+%         overlay unbroken ={
+%             \draw (title.south west)--(title.south east);
+%             \draw ([xshift=0mm]frame.north west)|-([xshift=0mm]frame.south west);},
+%         overlay first={
+%             \draw (title.south west)--(title.south east); 
+%             \draw ([xshift=0mm]frame.north west)--([xshift=0mm]frame.south west);},
+%         overlay middle={
+%             \draw ([xshift=0mm]frame.north west)--([xshift=0mm]frame.south west);},
+%         overlay last={
+%             \draw ([xshift=0mm]frame.north west)|-([xshift=10mm]frame.south west);},
+%         },
+%     LQ/.style={thmbox, 
+%         overlay unbroken ={
+%             \draw (title.south west)--(title.south east);
+%             \draw ([xshift=3.5mm]frame.north west)|-([xshift=15mm]frame.south west);
+%             \node[anchor=east] at (frame.south east) {$\square$};},
+%         overlay first={
+%             \draw (title.south west)--(title.south east); 
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+%         overlay middle={
+%             \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+%         overlay last={
+%             \draw ([xshift=3.5mm]frame.north west)|-([xshift=15mm]frame.south west);
+%             \node[anchor=east] at (frame.south east) {$\square$};},
+%     },  
+% }
+        
+        
+% \newtcbtheorem[]{tcbthmbox}{Theorem}{thmbox}{theo}
+% \newtcbtheorem[]{tcbSthmbox}{Theorem}{thmbox,S}{theo}
+% \newtcbtheorem[]{ques}{Question}{thmbox,L}{ques}
+
+% %lipsum tests
+% \usepackage{lipsum}

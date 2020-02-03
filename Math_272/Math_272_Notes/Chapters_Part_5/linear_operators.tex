@@ -18,6 +18,46 @@ for any two vectors $\vecu,\vecv \in \R^3$ and scalar $\alpha \in \R$. Since thi
 
 Part of the reason we introduced the notion of linear transformations and not just matrices is that we will now need to ditch the notion of a matrix (unless you wish to write an infinite matrix, which, in some cases, you can do). Linear transformations are far more general and we can study their structure in a similar way that we did with matrices. 
 
+\subsubsection{Linear Equations}
+Matrices give rise to linear equations.  For example, we may be given a vector $\vecb \in \R^3$ and a $3\times 3$-matrix $[A]$ and will be asked to solve the equation
+\begin{equation}
+\label{eq:linear_eq}
+[A]\vecx = \vecb,
+\end{equation}
+for the vector $\vecx$. This problem was solved by row reduction.  However, we also found that we could (in general) invert the matrix $[A]$ to produce $[A]^{-1}$.  This method was far more powerful since we could quickly solve the \ref{eq:linear_eq} with any given vector. Specifically, we have that
+\[
+\vecx = [A]^{-1}\vecb.
+\]
+In fact, the eigenvalue problem is extremely related to this idea as well.   Given the problem in \ref{eq:linear_eq}, we can isolate the matrix $[A]$ and decompose the action of the matrix into scaling on individual vectors. That is, we solve the eigen-equation
+\[
+[A]\evec = \lambda \evec.
+\]
+Scaling is an easy process to invert since we have
+\[
+[A]^{-1}\evec = \frac{1}{\lambda} \evec.
+\]
+
+\begin{exercise}
+	Can you prove the above statement?
+\end{exercise}
+
+The moral is, if we can find a full set of eigenvalues and eigenvectors, then we can diagonalize our matrix by
+\[
+[\Lambda]=[P]^{-1}[A][P].
+\]
+The diagonal matrix $[\Lambda]$ is very easy to invert and so we can find
+\[
+[A]^{-1} = [P]^{-1}[\Lambda]^{-1}[P].
+\]
+This may seem like a bit more work than just inverting the matrix $[A]$, but this method allows us to see how the method is really working.  To some extent, you are performing this process when you compute $[A]^{-1}$ without directly mentioning so.
+
+\begin{exercise}
+	Can you show the work between the above steps?
+\end{exercise}
+
+We will return to this idea of inversion as we investigate more general operators.  
+
+
 \subsubsection{Adjoints}
 
 When we were given a matrix $[A]$ (whether real or complex) we could compute its adjoint by 
@@ -170,15 +210,196 @@ In the case for $\SO(3)$ where we rotate vectors we do not see the inner product
 
 
 \subsection{Hermitian Operators}
-These are the self adjoint operators.\textcolor{red}{talk about solutions to problems which are written as linear combinations of solutions that may not have derivatives (like triangle wave solution to schrodinger}
+In finite dimensions, we came across the notion of matrices that were \boldgreen{self-adjoint} or \boldgreen{Hermitian} (both mean the same thing).  That is, a matrix $[A]$ is Hermitian if
+\[
+[A]^\dagger = [A].
+\]
+In other words, we have
+\[
+\innprod{[A]\vecu}{\vecv} = \innprod{\vecu}{[A]^\dagger \vecv}=\innprod{\vecu}{[A]\vecv}.
+\]
 
-\section{Differential Operators}
-Different differential operators in 1-dimension but mention the analogs in higher dimensions we shall see which is why this becomes more interesting. 
+These matrices had real eigenvalues and moreover each eigenvector corresponding to a different eigenvalue are orthogonal to one another. We never proved this fact, but with the updated notion of the adjoint, we can prove this rather easily.
 
-\section{integral operators}
+\begin{thm}{Hermitian Matrix Eigenvalues and Eigenvectors}{hermitian_matrix_eigen}
+Let $[A]$ be a Hermitian matrix with complex entries and $\innprod{\cdot}{\cdot}$ be the Hermitian inner product. Then $[A]$ has all real eigenvalues and if $\lambda_j$ and $\lambda_k$ are distinct eigenvalues, then the corresponding eigenvectors $\evec_j$ and $\evec_k$ are orthogonal.
+\tcblower
+\begin{proof}
+To prove the first part, let $\lambda$ and $\evec$ be an eigenvalue and eigenvector pair.  Then we have
+\begin{align*}
+	\innprod{[A]\evec}{\evec}=\innprod{\lambda\evec}{\evec}=\lambda\innprod{\evec}{\evec},
+\end{align*}
+but also
+\[
+\innprod{[A]\evec}{\evec} = \innprod{\evec}{[A]\evec}=\lambda^* \innprod{\evec}{\evec}.
+\]
+Hence it must be that $\lambda=\lambda^*$ and thus $\lambda$ must be real.
 
-can only understand certain quantities like the probability a particle is in a region which is integral and not pointwise (hw 0)
+To prove the second statement, we take two eigenvectors $\evec_j$ and $\evec_k$ corresponding to distinct eigenvalues $\lambda_j$ and $\lambda_k$ and note
+\[
+\innprod{[A]\evec_j}{\evec_k} = \lambda_j \innprod{\evec_j}{\evec_k},
+\]
+as well as
+\[
+\innprod{[A]\evec_j}{\evec_k}=\innprod{\evec_j}{[A]\evec_k}=\lambda_k^* \innprod{\evec_j}{\evec_k}.
+\]
+Then, note that we know $\lambda_k$ must be real by the first part and hence we must have
+\[
+\lambda_j=\lambda_k
+\]
+which contradicts our original supposition or that
+\[
+\innprod{\evec_j}{\evec_k}=0.
+\]
+Since we cannot have a contradiction, we then have that the eigenvectors are orthogonal.
+\end{proof}
+\end{thm}
 
-\subsection{Spectra}
+We don't want to solely review the finite dimensional examples, but move onto more general ones.  The reason why we review this is we have the same result for more general operators. Our intuition thus carries over from our knowledge about matrices. When dealing with a linear operator, we define Hermitian (or self-adjointness) in the exact same way we do for matrices.  Namely, if we have an inner product for functions $\innprod{\cdot}{\cdot}$ and a linear operator $L$, then
+\[
+\innprod{L\Psi}{\Phi} = \innprod{\Psi}{L\Phi},
+\]
+means that $L$ is Hermitian.  
 
-Things like spectrum of laplace operator and the 1-dimensional box again. Laplace operator on the circle $[0,L]$ is self adjoint and so it's spectrum is integers and it gives rise to the Fourier series.  Spectrum on Laplace operator for $\R$ should give rise to the Fourier transform.  
+\begin{thm}{Hermitian Operators Eigenvalues and Eigenfunctions}{hermitian_operators_eigen}
+	Let $L$ be a Hermitian linear operator and $\innprod{\cdot}{\cdot}$ be the inner product for the function space. Then $L$ has real eigenvalues and if $\lambda_j$ and $\lambda_k$ are distinct eigenvalues, then the corresponding eigenfunctions $\psi_j(x)$ and $\psi_k(x)$ are orthogonal.
+	\tcblower
+	\begin{proof}
+		The proof is analogous to the previous.
+	\end{proof}
+\end{thm} 
+
+Let us see this by reviewing one of our go-to examples. 
+
+\begin{ex}{Laplace Operator is Self Adjoint}{laplace_operator}
+	Consider the free particle in the 1-dimensional box $[0,L]$.  There, we solved the for the eigenfunctions of the Laplace operator $-\frac{d^2}{dx^2}$ by finding all $\Psi(x)$ such that
+	\[
+	-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi(x)=E\Psi(x).
+	\]
+	Dividing both sides by the constants on both sides yields
+	\[
+	-\frac{d^2}{dx^2}\Psi(x) = \omega^2 \Psi(x),
+	\]
+	where $\omega^2 = \frac{2mE}{\hbar^2}$. Hence, we are indeed finding eigenfunctions of the Laplace operator. Recall also that we require $\Psi(0)=\Psi(L)=0$, and thus we can see this operator is Hermitian by performing integration by parts twice. That is, we take
+	\begin{align*}
+	\innprod{-\frac{d^2}{dx^2} \Psi}{\Phi} &=\int_0^L\left( -\frac{d^2\Psi}{dx^2}\right)\Phi^*(x)dx\\
+	&= \int_0^L \left(\frac{d\Psi}{dx}\right) \left(\frac{d\Phi^*}{dx}\right)dx\\
+	&= \int_0^L \Psi(x)\left(-\frac{d^2 \Phi^*}{dx^2}\right)dx\\
+	&= \innprod{\Psi}{-\frac{d^2}{dx^2}\Phi}.
+	\end{align*}
+	Thus, we know that the eigenvalues $E$ must be real. Indeed, we found that the eigenvalues were 
+	\[
+	E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2},
+	\]
+	which correspond to the normalized eigenfunctions
+	\[
+	\psi_n(x)=\sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right).
+	\]
+	Note that for each $\psi_n$, we have a unique eigenvalue and thus we expect that the eigenfunctions $\psi_n$ are orthogonal. Again, we found this to be true since we can show
+	\[
+	\int_0^L \psi_n(x) \psi_m(x)dx = 0 
+	\]
+	when $n\neq m$.  
+	\end{ex}
+	
+\begin{exercise}
+	Fill in the missing steps in the integration by parts above.
+\end{exercise}
+
+Now, we can say something more meaningful about linear operators.  For one, we have seen that an equation with a linear operator can be a differential equation.  Also, couple that with our results about the eigenvalue problem and inversion for matrices, and we should be able to use this theory to solve said differential equations.  
+
+For example, one may wonder if this allows us to consider a more general equation. Take, for example, the \boldgreen{Poisson equation}
+\[
+-\frac{d^2}{dx^2} f(x) = g(x).
+\]
+In this problem, we are given a domain, say $[0,L]$, and boundary values, say $f(0)=f(L)=0$, and the function $g(x)$ and we are asked to solve for the function $f(x)$.  In this case, the domain $[0,L]$ represents an elastic rod attached at endpoints and $g(x)$ is an external force pushing down on the rod. Our solution $f(x)$ describes the configuration of the rod once the external force is allowed to act.  Let $L=-\frac{d^2}{dx^2}$ and we can put
+\[
+Lf=g,
+\]
+which exactly parallels the equation
+\[
+[A]\vecx = \vecb.
+\]
+So, if we have some way of inverting $L$, we could put
+\[
+f= L^{-1}g.
+\]
+Our means of doing this will come with first solving the eigenvalue problem as we did in the previous example. This gives us a new way to write our functions $f(x)$ and $g(x)$ and solve our differential equation using algebraic methods.
+
+\section{Differential and Integral Operators}
+Sometimes operators (like matrices) are not ``square." When a matrix was not square, we end up with a transformation like $[A]\colon \R^m \to \R^n$.  So, the output space looks different than the input space.  We avoided studying these types of operators for the most part, but we did consider the inner product which is indeed an example of this in a more general case.  
+
+Derivatives or more generally, \boldgreen{differential operators}, are examples of operators that, in general, do not act like square matrices.  At the very least, they act like matrices that have a non-trivial nullspace.  For example, if we take a constant function $c$, then
+\[
+\frac{d}{dx}c = 0.
+\]
+Thus, all constant functions are in the nullspace of the derivative operator.
+
+Now, our interest in studying differential operators is to provide us a new way of interpreting a differential equation. Namely, we will think of a differential equation as we have previously mentioned.  If $L$ is a linear operator, then we can write a linear differential equation as
+\[
+Lf = g,
+\]
+for some given function $g$ and either initial or boundary values for our input domain.  Let us see a few examples.  
+
+Before, we let $L=-\frac{d^2}{dx^2}$ which gives us Poisson's equation
+\[
+Lf = g \qquad \iff \qquad -\frac{d^2}{dx^2}f(x) = g(x).
+\]
+This is a second order linear inhomogeneous ODE. We could take another operator $D=-\frac{d}{dx}$ and put
+\[
+Df= g \qquad \iff \qquad \frac{d}{dx} f(x) = g(x),
+\]
+which is a first order linear equation. Specifically, this equation is even separable in the way we have written it.  
+
+Moreover, any second order linear equation could be written by taking 
+\[
+L = p(x) \frac{d^2}{dx^2} + q(x)\frac{d}{dx}+r(x)
+\]
+so that
+\[
+Lf = p(x)f''(x)+q(x)f'(x)+r(x)f(x).
+\]
+Aside from a few nonlinear ODEs that we solved, we primarily dealt with the linear equations. It's just that the linear theory is quite a bit easier than the nonlinear version!
+
+Later on in this course we visit new forms of differential operators as we increase the spatial dimension.  For example, in 3-dimensional space, we have a notion of rotation of a vector field. The example in \ref{ex:plot_complex_func} shows us a field that rotates.  To compute how much rotation the field has, we need the differential operator
+\[
+\nabla \times,
+\]
+known as the curl operator.  If a vector field has a source, we can see this using the divergence operator
+\[
+\nabla \cdot.
+\]
+Some of the notation should seem familiar as we will simply combine differential operators $\nabla$ with vector operators $\times$ and $\cdot$.  
+
+These new operators will give us new and important problems to consider.  For example, one can find the streamlines of a vector field by solving a higher dimensional ODE.  One could also study material properties by seeing how heat passes through a material over time, or how a material is deformed under a force.  Most every physical problem out there falls into this general category of partial differential equations.
+
+\subsection{Integral Operators}
+
+Now, let us consider one other type of non-square operator $J\colon \hilbert \to \R$.  This operator will be that of integration.  Specifically, we have already seen that derivatives act as operators, and one may be interested in if an integral operator can act as an inverse. It turns out that integral operators can in fact help us with that, but they also show up with their own interpretation.  
+
+For one example, we can take the norm of a function as an integral operator. Say that our function $f$ is defined on $[0,L]$, then this is because we have
+\[
+\|f\| = \sqrt{\innprod{f}{f}} = \int_0^L f(x)f^*(x)dx.
+\]
+Therefore, finding the length of a function is simply an operator. 
+
+We also saw for the particle in the 1-dimensional box that we could compute the probability of a particle being in a region $[a,b]$.  We found this by computing
+\[
+P_{[a,b]}(f)=\int_a^b f(x)f^*(x)dx.
+\]
+Note that here $P_{[a,b]}$ is an integral operator that inputs a function, and outputs a probability between $0$ and $1$.
+
+We will not spend extra time studying integral operators, but it is worth noting that operators encompass nearly all that we have studied throughout calculus.  This is why we express the importance of studying linear algebra! Though it, we can study much more general problems using similar ideas.
+
+\section{Spectra}
+
+All of this has culminated to investigation of the spectrum of an operator. We have found that the differential operators allow us to rephrase differential equations in a new light. We now seek to break down these differential operators so that we may hope to find new (and possibly easier) ways to approach differential equations.
+
+Earlier in this chapter, we compared the equations
+\[
+[A]\vecx = \vecb \qquad \textrm{and} \qquad Lf=g.
+\]
+For the matrix problem, we discussed the inversion process in finding the eigenvectors for $[A]$ and mentioned we could extend this notion to a linear operator $L$.  In general, we refer to the set of all eigenvalues of a matrix as the \boldgreen{spectrum}. For a linear operator $L$, we shall take the same definition though it is not completely general.
+
+The idea is as follows: Find the spectrum and eigenfunctions for a linear operator $L$, and use these to invert the operator in order to solve the equation $Lf=g$.
+
