@@ -1,0 +1,248 @@
+\documentclass[11pt]{article}
+\usepackage{enumerate,amsmath,amssymb,amsthm,color,wasysym,float}
+\usepackage{multicol}
+\usepackage{epsfig}
+\usepackage{graphicx}	
+\usepackage{fancyhdr}
+\usepackage{ifpdf}
+%\usepackage{pifont}
+%\usepackage{systeme}
+%\usepackage{xstring}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{thmnon}{Theorem}
+\newtheorem{algorithm}[theorem]{Algorithm}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{soln}{Solution}
+
+\ifpdf
+  \usepackage[pdftex]{hyperref}
+\else
+  \usepackage[hypertex]{hyperref}
+\fi
+
+\renewcommand{\theenumi}{\textbf{\Alph{enumi}}}
+
+\newcommand{\comment}{$\rhd$\ \ }
+\newcommand{\rarrow}{\rightarrow}
+\newcommand{\cond}{\mbox{cond}}
+
+% Pseudocode line numbering
+\newcounter{pseudocode}
+\newcommand{\firstline}{\setcounter{pseudocode}{0}\linenumber}
+\newcommand{\linenumber}{\refstepcounter{pseudocode}\thepseudocode}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+%%%%%%%%%%%%%
+\oddsidemargin -0.1in
+\evensidemargin -0.1in
+\textwidth 6.6in
+\headheight 0.4in
+\topmargin -0.6in
+\textheight 9.0in %\footheight 1.0in %%%%%%%%%%%% 
+
+\renewcommand{\baselinestretch}{1.2}
+
+\def\c{\textcircled}
+\def\det{\text{det}}
+\def\vecb{\mathbf{b}}
+\def\vecv{\mathbf{v}}
+\def\vecu{\mathbf{u}}
+\def\vecx{\mathbf{x}}
+\def\vec0{\mathbf{0}}
+
+\def\<{\langle}
+\def\>{\rangle}
+
+\def\dd#1{\displaystyle{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[LO,LE]{\bf{MATH 340, Summer 2018}}
+\fancyhead[CO,CE]{\bf{EXAM I}}
+\fancyhead[RO,RE]{\bf{Colorado State University}}
+
+%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%
+
+\begin{center}
+{\Large \bf {\sc EXAM I}} \\
+\textcolor{red}{July 3, 2018} \\
+\vspace{3mm}
+Name: \underline{\hspace{5cm}} \hspace{3mm}
+Instructor: \underline{\hspace{2cm}} \hspace{3mm}
+Time your class meets: \underline{\hspace{1cm}}
+\end{center}
+
+\noindent
+{\bf HONOR PLEDGE} \hspace{5mm} I have not given, received, or used any unauthorized assistance on this exam. Furthermore, I 
+agree that I will not share any information about the questions on this exam with any other student before graded exams are returned. 
+\noindent 
+\begin{center}
+Signature: \underline{\hspace{4cm}} Date: \underline{\hspace{3cm}} \hspace{5mm}
+\end{center}
+
+\begin{itemize}
+\item There are 6 problems, but only the highest scoring 5 problems will be counted.
+\item You have one hour and thirty minutes to complete this exam.
+\item No notes, books, or other references are allowed during this exam.  
+\item Calculators are not allowed during the exam.
+\item A one-sided note sheet of $8\frac{1}{2}'' \times 11''$ or smaller is allowed during the exam. 
+\item There are questions on the front of the page. You can use the back of each
+page if you need more space. If you do use any extra paper, make sure that your name is 
+on it and that you attach it to your exam.
+\item You must show all work to receive credit. Answers for which no work is shown
+will receive no credit unless specifically stated otherwise. 
+\end{itemize}
+
+\begin{table}[!ht] 
+\begin{center}
+\begin{tabular}{|c|c|c|}  \hline
+Question & Score & Maximum \\ \hline \hline
+1 &  & 20  \\ [2ex] \hline 
+2 &  & 20  \\ [2ex]\hline
+3 &  & 20  \\ [2ex]\hline
+4 &  & 20  \\ [2ex]\hline
+5 &  & 20  \\ [2ex]\hline
+6 &  & 20 \\ [2ex] \hline
+Total &  & 100 \\[2ex] \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%% Problem 1 %%%%%%%%%%%%%%%
+
+\newpage
+\paragraph{1.} Consider the differential equation:
+\[
+3y'+\frac{\cos t}{y}+\frac{3}{y}=0.
+\]
+  
+
+\begin{enumerate}[(a)]
+    \item Write the differential equation in normal form.
+    \item What is the order of this differential equation?  What type of differential equation is it?
+    \item Find the general solution to the differential equation.
+\end{enumerate}
+
+%%%%%%%%%%%%%%% Problem 2 %%%%%%%%%%%%%%%
+
+\newpage
+\paragraph{2.} Consider the differential equation:
+\[
+tx' = 4x + t^4
+\]
+
+\begin{enumerate}[(a)]
+    \item Classify this differential equation: state its order, whether or not it is linear and, if it is linear, whether or not it is homogeneous.
+    \item Find the general solution of this differential equation.
+    \item Find a solution satisfying the initial condition $x(1)=5$.
+    \item Is your solution to (c) unique? Explain rigorously.
+\end{enumerate}
+
+%%%%%%%%%%%%%%% Problem 3 %%%%%%%%%%%%%%%
+
+\newpage
+\paragraph{3.} A population $P(t)$ is found to change based on the following equation:
+\[
+P'=(P-1)(P-2)(P-3).
+\]
+
+\begin{enumerate}[(a)]
+    \item What are the equilibrium point(s)?
+    \item Which of the equilibrium point(s) are stable, which are unstable?'
+    \item Draw a phase plane with the equilibrium point(s) labeled.  Qualitatively draw possible solution curves (in the $P-t$-plane) for the following initial conditions:
+\[
+P(0)=0, \quad P(0)=\frac{3}{2}, \quad P(0)=\frac{5}{2}, \quad P(0)=4.
+\]
+    
+\end{enumerate}
+
+%%%%%%%%%%%%%%% Problem 4 %%%%%%%%%%%%%%%
+
+\newpage
+\paragraph{4.} Consider the first-order ODE:
+\[
+(x^2+y^2-x)dx - ydy = 0
+\]
+
+\begin{enumerate}[(a)]
+    \item Is this ODE exact? Use a calculation to justify your answer.
+    \item Multiply the ODE by $\mu(x,y)=\frac{1}{x^2+y^2}$. Is this modified ODE exact? Again, use a calculation to justify your answer.
+    \item Find the general solution of this differential equation.
+\end{enumerate}
+
+%%%%%%%%%%%%%%% Problem 5 %%%%%%%%%%%%%%%
+
+\newpage
+\paragraph{5.} You are given a circuit with a capacitor, inductor, and resistor in series.  This gives the differential equation
+\[
+\frac{d^2 I}{dt^2}+\frac{R}{L}\frac{dI}{dt}+\frac{1}{LC}I=F(t),
+\]
+where $I(t)$ is current, $F(t)$ is an external power signal, $C$ is capacitance, $L$ is inductance, and $R$ is resistance. (Note: $C,L,$ and $R$ are constant real numbers.)
+
+\begin{enumerate}[(a)]
+    \item Classify this differential equation: state its order, and whether or not it is linear.
+    \item Letting $C=\frac{1}{6}$, $L=1$ and $R=5$, what is the solution $I(t)$ to the homogenous equation (i.e., when $F(t)=0$).
+    \item Keeping the capacitance, inductance, and resistance from (a), an external power supply is attached and outputs $F(t)=\sin(t).$ What is the particular solution for this differential equation?
+    \item Write down the general solution obtained from doing parts (b) and (c). What can we expect to see when we measure the current after a \emph{very} long time is elapsed?
+    
+\end{enumerate}
+
+\newpage
+\noindent This page is left blank for Problem 5.
+
+%%%%%%%%%%%%%%% Problem 6 %%%%%%%%%%%%%%%
+
+\newpage
+\paragraph{6.} A charged particle with mass $m$ and charge $q$ experiences a force $qE(t)$ where $E(t)$ is the electric field at time $t$.  With no other forces acting, we have the following equation.:
+\[
+mx''- qE(t)=0
+\]
+If you have a switch that turns on a constant electric field at time $t=t_0$, you can write
+\[
+E(t)=H(t-t_0), 
+\]
+where $x$ is the position of the particle at time $t$ and $H$ is the Heaviside function. 
+
+\begin{enumerate}[(a)]
+    \item Given $mx''-qH(t-t_0)=0$ with the initial data: $x(t_0)=0$, $x'(t_0)=0$, find the Laplace transform of this differential equation.
+    \item Going from your result in (a), what is the solution $x(t)$ to the differential equation?
+    \item If you multiply your answer from (b) by $H(t-t_0)$, then this solution is valid for all times $t$.  What is the particle doing at $t<t_0$? What about for $t>t_0$?
+\end{enumerate}
+
+%%%%%%%%%%%%%%% Laplace Table %%%%%%%%%%%%%%%
+
+\newpage
+\thispagestyle{empty}
+\section*{Table of Laplace Transforms}
+\begin{center}
+\begin{tabular}{c c c} \hline\vspace{.2cm}
+$f(t)$ & $\displaystyle\mathcal{L}\{f\} = F(s)$ & Domain \\ \vspace{.2cm}
+$1$ & $\displaystyle\frac{1}{s}$ & $s > 0$ \\ \vspace{.2cm}
+$t^n$ & $\displaystyle \frac{n!}{s^{n+1}}$ & $s > 0$ \\ \vspace{.2cm}
+$\sin(at)$ & $\displaystyle \frac{a}{s^2 + a^2}$ & $s > 0$ \\ \vspace{.2cm}
+$\cos(at)$ & $\displaystyle \frac{s}{s^2 + a^2}$ & $s > 0$ \\ \vspace{.2cm}
+$\exp(at)$ & $\displaystyle \frac{1}{s - a}$ & $s > a$ \\ \vspace{.2cm}
+$\exp(at)\sin(bt)$ & $\displaystyle \frac{b}{(s-a)^2 + b^2}$ & $s > a$ \\ \vspace{.2cm}
+$\exp(at)\cos(bt)$ & $\displaystyle \frac{s-a}{(s-a)^2 + b^2}$ & $s > a$ \\ \vspace{.2cm}
+$t^n\exp(at)$ & $\displaystyle \frac{n!}{(s-a)^{n+1}}$ & $s > a$ \\ \vspace{.2cm}
+$\delta_p$ & $\exp(-sp)$ & \\ \vspace{.2cm}
+$H_c(t)$ & $\displaystyle \frac{\exp(-cs)}{s}$ & $s > 0$ \\ \vspace{.2cm}
+$f$ with period $T$ & $\displaystyle \frac{F_T(s)}{1 - \exp(-Ts)}$ & \\ \hline \vspace{.2cm}
+$\exp(at)f(t)$ & $F(s - a)$ & $s > a$ \\ \vspace{.2cm}
+$\mathrm{H}(t-c)f(t-c)$ & $\exp(-cs)F(s)$ & $c \ge 0$ \\ \vspace{.2cm}
+$tf(t)$ & $-F'(s)$ & \\ \vspace{.2cm}
+$t^nf(t)$ & $(-1)^nF^{(n)}(s)$ & \\ \vspace{.2cm}
+$f(t)$ & $\displaystyle \int_0^{\infty} f(t)e^{-st} \dd{t}$ & \\ \vspace{.2cm}
+$\alpha f(t) + \beta g(t)$ & $\alpha F(s) + \beta G(s)$ & \\ \vspace{.2cm}
+$f\ast g$ & $F(s)\cdot G(s)$ & \\ \hline \vspace{.2cm}
+$y'$ & $sY(s) - y(0)$ & \\ \vspace{.2cm}
+$y''$ & $s^2Y(s) - sy(0) - y'(0)$ & \\ \vspace{.2cm}
+$y^{(n)}$ & $s^nY(s) - s^{n-1}y(0) - s^{n-2}y'(0) - \cdots - sy^{n-2}(0) - y^{n-1}(0)$ & \\ \hline
+\end{tabular}
+\end{center}
+
+\end{document}

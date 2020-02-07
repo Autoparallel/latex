@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  7 FEB 2020 10:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  7 FEB 2020 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**homework_2.tex
-(./homework_2.tex
+**homework_3.tex
+(./homework_3.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -960,8 +960,8 @@ Package morefloats Info: Maximum number of possible floats asked for: 36
 )
 \c@answer=\count164
 
-(./homework_2.aux)
-\openout1 = `homework_2.aux'.
+(./homework_3.aux)
+\openout1 = `homework_3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -1029,9 +1029,9 @@ LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
 
-(./homework_2.out) (./homework_2.out)
+(./homework_3.out) (./homework_3.out)
 \@outlinefile=\write4
-\openout4 = `homework_2.out'.
+\openout4 = `homework_3.out'.
 
 
 *geometry* driver: auto-detecting
@@ -1087,52 +1087,65 @@ LaTeX Font Info:    Try loading font information for U+wasy on input line 12.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
+(./point_on_string.pdf_tex
+<point_on_string.pdf, id=31, page=1, 834.12839pt x 229.48808pt>
+File: point_on_string.pdf Graphic file (type pdf)
+<use point_on_string.pdf, page 1>
+Package pdftex.def Info: point_on_string.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 469.75502pt x 129.23729pt.
+<point_on_string.pdf, id=32, page=2, 834.12839pt x 229.48808pt>
+File: point_on_string.pdf Graphic file (type pdf)
+<use point_on_string.pdf, page 2>
+Package pdftex.def Info: point_on_string.pdf , page2 used on input line 56.
+(pdftex.def)             Requested size: 469.75502pt x 129.23729pt.
+<point_on_string.pdf, id=33, page=3, 834.12839pt x 229.48808pt>
+File: point_on_string.pdf Graphic file (type pdf)
+<use point_on_string.pdf, page 3>
+Package pdftex.def Info: point_on_string.pdf , page3 used on input line 58.
+(pdftex.def)             Requested size: 469.75502pt x 129.23729pt.
+) [1
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 52.
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./p
+oint_on_string.pdf> <./point_on_string.pdf
 
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./point_on_string.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+> <./point_on_string.pdf
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 52.
-
-[1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
- (./homework_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
-Package rerunfilecheck Info: File `homework_2.out' has not changed.
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./point_on_string.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+ (./homework_3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package rerunfilecheck Info: File `homework_3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 31728 strings out of 492609
- 774757 string characters out of 6129048
- 968785 words of memory out of 5000000
- 35054 multiletter control sequences out of 15000+600000
- 14267 words of font info for 54 fonts, out of 8000000 for 9000
+ 31727 strings out of 492609
+ 775007 string characters out of 6129048
+ 969787 words of memory out of 5000000
+ 35058 multiletter control sequences out of 15000+600000
+ 11244 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,7n,98p,731b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,9n,98p,731b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/lo
 cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework_2.pdf (2 pages, 131094 bytes).
+texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on homework_3.pdf (2 pages, 104154 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

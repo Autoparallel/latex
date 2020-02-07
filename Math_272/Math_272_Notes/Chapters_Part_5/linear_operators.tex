@@ -76,9 +76,9 @@ What the above says is that if $[A]$ is Hermitian, then $\lambda$ must be real. 
 
 \section{Linear Operators}
 
-Just as we generalized the notion of vectors from the finite dimensional spaces into the infinite dimensional case, we will repeat with linear transformations.  The definitions of a vector space and linear transformation were properly general enough, but we will provide a new name for the linear transformations. Let $H$ be a Hilbert space. Then we have that a \boldgreen{linear operator} is a linear transformation $L \colon H \to H$.  Some may relax this definition a bit to allow for the input and output spaces to be different but we should not be concerned by this in any way.
+Just as we generalized the notion of vectors from the finite dimensional spaces into the infinite dimensional case, we will repeat with linear transformations.  The definitions of a vector space and linear transformation were properly general enough, but we will provide a new name for the linear transformations. Let $H$ be a Hilbert space. Then we have that a \boldgreen{linear operator} is a linear transformation $\linop \colon \hilbert \to \hilbert$.  Some may relax this definition a bit to allow for the input and output spaces to be different but we should not be concerned by this in any way. 
 
-What is an example of a linear operator? Let us first choose a Hilbert space. We can, for example, choose the Hilbert space $\mathcal{H}$ of analytic functions on a region $[0,L]$. Then consider the linear operator $x\colon \mathcal{H} \to \mathcal{H}$ which multiplies a given function by the variable $x$. Is this indeed linear?  Let us check by taking two function $f,g\in \mathcal{H}$ and a constant $\alpha \in \R$ and note
+What is an example of a linear operator? Let us first choose a Hilbert space. We can, for example, choose the Hilbert space $\hilbert$ of analytic functions on a region $[0,L]$. Then consider the linear operator $x\colon \hilbert \to \hilbert$ which multiplies a given function by the variable $x$. Is this indeed linear?  Let us check by taking two function $f,g\in \hilbert$ and a constant $\alpha \in \R$ and note
 \[
 x(f(x)+\alpha g(x)) = xf(x)+\alpha xg(x),
 \]  
@@ -96,7 +96,7 @@ also converges on $[0,L]$.
 	Can you argue why this must be true? \emph{Hint: use the ratio test.}
 \end{exercise}
 
-Another example of a linear operator is taking the differential of a function. That is, the derivative $\frac{d}{dx}$ is an operator $\frac{d}{dx} \colon \mathcal{H} \to \mathcal{H}$.  Keeping $\mathcal{H}$ as the analytic functions on $[0,L]$ then we can see that the derivative is linear by
+Another example of a linear operator is taking the differential of a function. That is, the derivative $\linop=\frac{d}{dx}$ is an operator $\frac{d}{dx} \colon \hilbert \to \hilbert$.  Keeping $\hilbert$ as the analytic functions on $[0,L]$ then we can see that the derivative is linear by
 \[
 	\frac{d}{dx} (f(x)+\alpha g(x)) = \frac{df}{dx} +\alpha \frac{dg}{dx}.
 \]
@@ -104,15 +104,15 @@ Previously one refers to these rules of the derivative as the sum rule and const
 
 These operators show up in the study of (ordinary) differential equations as we have seen before. Take for example the Hamiltonian operator
 \[
-H = \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} + V(x).
+\hat{H} = \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} + V(x).
 \]
-This is a linear operator as well.  In fact, this operator $H$ is even Hermitian which means its spectrum is real valued! This is a key component of the quantum theory as we only have the ability to measure real numbers.  We in fact require all observable operators to be Hermitian.  More on this in a bit.
+This is a linear operator as well.  In fact, this operator $\hat{H}$ is even Hermitian which means its spectrum is real valued! This is a key component of the quantum theory as we only have the ability to measure real numbers.  We in fact require all observable operators to be Hermitian.  More on this in a bit.
 
 \subsection{Adjoints}
 
-Though we had defined adjoints of matrices through an operation, we need to instead provide a more general definition.  Let $\hilbert$ be a Hilbert space and $L$ a linear operator.  Then we define the \boldgreen{adjoint} $L^\dagger$ to be the unique operator satisfying
+Though we had defined adjoints of matrices through an operation, we need to instead provide a more general definition.  Let $\hilbert$ be a Hilbert space and $\linop$ a linear operator.  Then we define the \boldgreen{adjoint} $\linop^\dagger$ to be the unique operator satisfying
 \[
-\innprod{L\Psi}{\Phi} = \innprod{\Psi}{L^\dagger \Phi}.
+\innprod{\linop\Psi}{\Phi} = \innprod{\Psi}{\linop^\dagger \Phi}.
 \]
 Let us see why this makes sense for the matrix case with an explicit example.
 
@@ -166,42 +166,42 @@ We previously covered the idea of phase for complex valued functions and specifi
 \[
 \Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)
 \]
-and letting $U$ be an operator defined by
+and letting $\unitop$ be an operator defined by
 \[
-U = e^{i \theta},
+\unitop = e^{i \theta},
 \]
 which changes the phase of a wavefunction.  
 
 \begin{ex}{Phase Operator}{phase_operator}
 	Taking the notions from above, we can take two wave function $\Psi(x)$ and $\Phi(x)$ and compute
 	\[
-	\innprod{U\Psi}{\Phi} = \int_0^L e^{i\theta} \Psi(x) \Phi^*(x)dx.
+	\innprod{\unitop\Psi}{\Phi} = \int_0^L e^{i\theta} \Psi(x) \Phi^*(x)dx.
 	\]
-	In this case, we can find the adjoint $U^\dagger$ to $U$ by requiring
+	In this case, we can find the adjoint $\unitop^\dagger$ to $U$ by requiring
 	\[
-	\int_0^L e^{i\theta}\Psi(x)\Phi^*(x)dx = \innprod{\Psi}{U^\dagger \Phi} = \int_0^L \Psi(x) (U^\dagger \Phi(x))^*dx.
+	\int_0^L e^{i\theta}\Psi(x)\Phi^*(x)dx = \innprod{\Psi}{\unitop^\dagger \Phi} = \int_0^L \Psi(x) (\unitop^\dagger \Phi(x))^*dx.
 	\]
 	This leads us to the equation
 	\[
-	\int_0^L e^{i\theta} \Psi(x) \Phi^*(x)dx = \int_0^L \Psi(x) (U^\dagger)^* \Phi^*(x).
+	\int_0^L e^{i\theta} \Psi(x) \Phi^*(x)dx = \int_0^L \Psi(x) (\unitop^\dagger)^* \Phi^*(x).
 	\]
 	Thus, it must be that 
 	\[
-	(U^\dagger)^* = e^{i\theta}.
+	(\unitop^\dagger)^* = e^{i\theta}.
 	\]
 	Then, taking the complex conjugate of both sides we have
 	\[
-	U^\dagger = e^{-i\theta},
+	\unitop^\dagger = e^{-i\theta},
 	\]
 	which means that $\dagger$ is acting as the complex conjugate itself in this example.
 Note that $\dagger$ is \underline{not} always just the complex conjugate! 
 \end{ex}
 
-In the example, we took $U=e^{i\theta}$ and found $U^\dagger = e^{-i\theta}$ and one can note that $U^\dagger U = U U^\dagger =1$. This is exactly the requirement we put on, for example, matrices in the group of spatial rotation matrices $\SO(3)$. In that case, we said that a matrix $[A]\in \SO(3)$ satisfies $[A]^T [A]=[A][A]^T = I$.  
+In the example, we took $\unitop=e^{i\theta}$ and found $\unitop^\dagger = e^{-i\theta}$ and one can note that $\unitop^\dagger \unitop = \unitop \unitop^\dagger =1$. This is exactly the requirement we put on, for example, matrices in the group of spatial rotation matrices $\SO(3)$. In that case, we said that a matrix $[A]\in \SO(3)$ satisfies $[A]^T [A]=[A][A]^T = I$.  
 
-What we have seen above is an example of a \boldgreen{unitary operator}.  A unitary operator is an operator $U\colon \hilbert \to \hilbert$ that is onto (every possible output value is achieved) and satisfies $\innprod{U\Psi}{U\Phi}=\innprod{\Psi}{\Phi}$.  Unitary operators are the symmetry operators for a given Hilbert space as they do not affect the inner product measurement we perform on that space.  For example, when $U=e^{i\theta}$, we can see that
+What we have seen above is an example of a \boldgreen{unitary operator}.  A unitary operator is an operator $\unitop\colon \hilbert \to \hilbert$ that is onto (every possible output value is achieved) and satisfies $\innprod{\unitop\Psi}{\unitop\Phi}=\innprod{\Psi}{\Phi}$.  Unitary operators are the symmetry operators for a given Hilbert space as they do not affect the inner product measurement we perform on that space.  For example, when $\unitop=e^{i\theta}$, we can see that
 \[
-\innprod{U\Psi}{U\Phi} = \int_0^L e^{i\theta}\Psi(x) \left(e^{i\theta} \Phi(x)\right)^*dx = \int_0^L \Psi(x)\Phi^*(x)dx = \innprod{\Psi}{\Phi}.
+\innprod{\unitop\Psi}{\unitop\Phi} = \int_0^L e^{i\theta}\Psi(x) \left(e^{i\theta} \Phi(x)\right)^*dx = \int_0^L \Psi(x)\Phi^*(x)dx = \innprod{\Psi}{\Phi}.
 \]
 In other words, the multiplication by the same phase on both functions does not change the inner product between them. If we let $\Phi(x)=\Psi(x)$, this means that the probability of observing a particle at some point $x\in [0,L]$ does not change if we rotate our measurement device.  
 
@@ -401,5 +401,48 @@ Earlier in this chapter, we compared the equations
 \]
 For the matrix problem, we discussed the inversion process in finding the eigenvectors for $[A]$ and mentioned we could extend this notion to a linear operator $L$.  In general, we refer to the set of all eigenvalues of a matrix as the \boldgreen{spectrum}. For a linear operator $L$, we shall take the same definition though it is not completely general.
 
-The idea is as follows: Find the spectrum and eigenfunctions for a linear operator $L$, and use these to invert the operator in order to solve the equation $Lf=g$.
+The idea is as follows: Find the spectrum and eigenfunctions for a linear operator $L$, and use these to invert the operator in order to solve the equation $Lf=g$. We have worked through two problems where we have done this.  
 
+\begin{exercise}
+	Revisit the solution for the free particle in the 1-dimensional box.  The equation given was 
+	\[
+	-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi(x) = E \Psi(x).
+	\]
+	In this case, our linear operator is 
+	\[
+	\linop=-\frac{\hbar^2}{2m}\frac{d^2}{dx},
+	\]
+	and the spectrum are the possible $E$ values one can attain. 
+\end{exercise}
+
+\begin{ex}{Spectrum for the Derivative on $\R$}{spectrum_derivative_R}
+	In the prequel, we began studying ODEs with the equation
+	\[
+	\frac{d}{dx}f(x) = kf(x).
+	\]
+	Notice, that we can take
+	\[
+	\linop = \frac{d}{dx},
+	\]
+	and that $k$ is an eigenvalue with $f(x)$ the corresponding eigenfunction.  Of course, we did not state the problem this way. Let us also add in the constraint of an initial condition that $f(0)=1$.  Then, we can search for the spectrum of $\linop$.
+	
+	We can note that this equation is separable, and the particular solution is 
+	\[
+	f(x) = e^{kx}.
+	\]
+	Here, $k$ is not constrained in any way! Thus, $k$ can be any complex number.  So, the spectrum for the first derivative operator (given this initial data) is all of $\C$.  For any given $k\in \C$, the corresponding eigenfunction is then just $e^{kx}$.
+	
+	One may ask how this helps us solve the equation
+	\[
+	\linop f = g,
+	\]
+	for some given function $g$.  There, the answer lies in the Fourier transform, which we will soon analyze.  
+\end{ex}
+
+\begin{exercise}
+	Review how to solve the above separable equation.
+\end{exercise}
+
+\begin{remark}
+	The story of this methodology for solving differential equations is a long one.  There is a great history of this method beginning in the early 1800's with Joseph Fourier.  As of now, there is still active research in differential equations where these types of methods are generalized and applied to more problems.  We will seek to cover the linear theory with a few specific examples. Just know that many details are being glossed over for the sake of promoting understanding as opposed to rigor.
+\end{remark}

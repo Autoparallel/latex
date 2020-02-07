@@ -1,34 +1,124 @@
 \section{Fourier Series}
 
+With our newfound toolbox, we will investigate solving types of differential equations with an underlying periodic structure.  Specifically, we will consider now linear differential equations on the region $\Omega = [0,L]$ with periodic boundary conditions.  That is, we will be given some differential operator $\linop$, a function $g$, and we will be asked to solve for an $f$ such that
+\begin{equation}
+\label{eq:operator_diffeq}
+\linop f = g,
+\end{equation}
+with $f$ subject to the boundary conditions $f(0)=f(L)$.  We refer to these boundary conditions as \boldgreen{periodic boundary conditions}.  Another way to view this problem is as defining the function $f$ to be continuous on a circle domain.  This point of view shows its head in the solution for the hydrogen atom.
 
-the inner product for fourier series is different because it arises from group theory. Specifically, the inner product is a matter of a representation of a group.  So we have something like 
+For the sake of example, we will take the operator $\linop = -\frac{d^2}{dx^2}$ which is referred to as the 1-dimensional \boldgreen{Laplace operator} or \boldgreen{Laplacian}.  To follow the methodology outlined in the previous chapter, before we approach \ref{eq:operator_diffeq}, we must find the spectrum of $\linop$.  Hence, we must solve the eigenvalue equation
 \[
-\innprod{f}{g} = \frac{1}{|G|} \int_G f(x)g(x)dx
+\linop f = \omega^2 f,
 \]
-So for this on $[0,L]$, we get
-\[
-\innprod{f}{g} = \frac{1}{L} \int_0^L f(x)g(x)dx.
-\]
-The orthonormal basis elements are the functions
-\[
-1, \qquad \sqrt{2}\cos\left(\frac{2n \pi x }{L}\right), \qquad \sqrt{2}\sin\left(\frac{2n \pi x}{L} \right).
-\]
-\textcolor{red}{Example in Desmos}
+where $\omega^2$ is some constant that was chosen to simplify the later notation.  Thus, we arrive at the differential equation
+\begin{equation}
+\label{eq:harmonic_osc_operator}
+-\frac{d^2}{dx^2}f(x) = \omega^2 f(x) \qquad\textrm{with~} f(0)=f(L).
+\end{equation}
+We have in fact solved this equation before! This is the harmonic oscillator equation with angular frequency $\omega$.  However, there is a difference.  In the previous case, we had a distinct and predetermined value for $\omega$ that was given by the system we were investigating (e.g., the stiffness of a spring).  Now, we allow $\omega$ to be a parameter for the problem as well.  
 
-\section{Fourier Transforms}
-\textcolor{red}{can find fundamental solution for the laplace operator at some point for electricity magnetism}
+When we solved the matrix eigenvalue problem
+\[
+[A]\evec = \lambda \evec
+\]
+we wanted to take the determinant of $[A]-\lambda [I]$ to find what the eigenvalues were and then use this information to determine the eigenvectors.  Differential operators work a bit differently. Instead, we would find a general solution to the differential equation and continue on from there to refine our answer.
 
-We can find the spectrum of the Laplace operator on $\R$ by
+In our equation \ref{eq:harmonic_osc_operator}, we know the general solution is
 \[
-\frac{d^2f}{dx^2} = kf
+f(x) = C_1 \sin(\omega x)+C_2 \cos(\omega x).  
 \]
-Then the characteristic polynomial is
+
+\begin{exercise}
+	Determine the above general solution using either the characteristic polynomial (which in reality comes from a determinant) or by using a power series.
+\end{exercise}
+
+With our general solution in hand, we can determine what eigenvalues for $\omega$ are reasonable.  Specifically, we use our boundary conditions and we force
 \[
-\lambda^2=k
+f(0)=C_1 \sin(\omega \cdot 0) + C_2 \cos(\omega \cdot 0) = C_2
 \]
-thus $\lambda = \pm \sqrt{k}$. Without going into extra detail, we know that $k\leq 0$ (this can be shown via integration by parts).  Thus, we have that the an eigenfunction for the Laplace operator can be written as
+and
 \[
-f(x)=Ce^{\pm i\omega x}
+f(L) = C_1 \sin(\omega L) + C_2 \cos(\omega L).
 \]
-where $C$ is a constant.  Hence
-\section{Distributions}
+In order for the $\sin$ term above to disappear, we must have
+\[
+\omega L = n \pi,
+\]
+for any integer value $n$. But we also require that $\cos(\omega L)=1$ which means that we restrict further to
+\[
+\omega L = 2n\pi.  
+\]
+We can then solve for $\omega$ to find
+\[
+\boxed{\omega = \frac{2n\pi}{L}.}
+\]
+
+\begin{exercise}
+	Review the analysis above for determining $\omega$.
+\end{exercise}
+
+Then, what we have found is the spectrum is discrete, and there is an eigenvalue 
+\[
+\omega^2 = \frac{4 n^2 \pi^2}{L^2}
+\]
+for each value of $n$.  But, note that since $n$ is an integer, $n^2$ is always positive, and so we require $n\geq 0$ since we wish to remove the redundant results.  We can then list off the eigenfunctions
+\[
+\boxed{1,~\sin\left(\frac{2 \pi x}{L}\right),~ \cos\left(\frac{2 \pi x}{L}\right), ~\sin\left(\frac{4 \pi x}{L}\right),~ \cos\left(\frac{4 \pi x}{L}\right), ~ \dots.}
+\]
+
+\subsection{Solving Equations}
+
+The equation \ref{eq:operator_diffeq} before is linear, and hence any sum of solutions is also a solution.  Thus, we can write a solution $f(x)$ as a series by putting
+\[
+f(x) = \sum_{n=1}^\infty a_n \sin\left(\frac{2n\pi x}{L}\right) + \sum_{n=0}^\infty b_n \cos\left(\frac{2n\pi x}{L} \right).
+\]
+However, we can then consider if we can take any $g$ and write this as a series as well. 
+
+Let us define the following inner product
+\[
+\innprod{F}{G} = \frac{1}{L} \int_0^L F(x)G(x)dx,
+\]
+which we will refer to as the \boldgreen{Fourier inner product}.  Notice, this inner product is very similar to the inner products we have used for functions previously (we just divide by the length of the interval).
+
+Though we won't prove it here, the eigenfunctions found above serve as a basis for the solutions for the equation \ref{eq:operator_diffeq}.  To simplify future work, we will normalize our eigenfunctions. Thus, we must solve
+\[
+\innprod{c1}{c1} = 1, \quad \innprod{c_o \sin\left(\frac{2n \pi x}{L}\right)}{c_o \sin\left(\frac{2n \pi x}{L}\right)}=1, \quad \innprod{c_e \cos\left(\frac{2n \pi x}{L}\right)}{c_e \cos\left(\frac{2n \pi x}{L}\right)}=1
+\]
+Solving for the constants, we get
+\[
+c=1, \quad c_o = \sqrt{2}, \quad c_e = \sqrt{2}.
+\]
+
+%fourier series for a dangling wire (telphone wire) by letting g(x)=g be constant and have 0 boundary values.
+%the inner product for fourier series is different because it arises from group theory. Specifically, the inner product is a matter of a representation of a group.  So we have something like 
+%\[
+%\innprod{f}{g} = \frac{1}{|G|} \int_G f(x)g(x)dx
+%\]
+%So for this on $[0,L]$, we get
+%\[
+%\innprod{f}{g} = \frac{1}{L} \int_0^L f(x)g(x)dx.
+%\]
+%The orthonormal basis elements are the functions
+%\[
+%1, \qquad \sqrt{2}\cos\left(\frac{2n \pi x }{L}\right), \qquad \sqrt{2}\sin\left(\frac{2n \pi x}{L} \right).
+%\]
+%\textcolor{red}{Example in Desmos}
+%
+%\section{Fourier Transforms}
+%\textcolor{red}{can find fundamental solution for the laplace operator at some point for electricity magnetism}
+%
+%We can find the spectrum of the Laplace operator on $\R$ by
+%\[
+%\frac{d^2f}{dx^2} = kf
+%\]
+%Then the characteristic polynomial is
+%\[
+%\lambda^2=k
+%\]
+%thus $\lambda = \pm \sqrt{k}$. Without going into extra detail, we know that $k\leq 0$ (this can be shown via integration by parts).  Thus, we have that the an eigenfunction for the Laplace operator can be written as
+%\[
+%f(x)=Ce^{\pm i\omega x}
+%\]
+%where $C$ is a constant.  Hence
+%\section{Distributions}

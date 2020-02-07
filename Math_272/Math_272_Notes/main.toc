@@ -4,25 +4,28 @@
 \contentsline {section}{\numberline {2}Complex Functions}{2}{section.1.2}% 
 \contentsline {subsection}{\numberline {2.1}Cartesian and Polar Representations}{3}{subsection.1.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Complex Valued Functions}{6}{subsection.1.2.2}% 
-\contentsline {chapter}{\numberline {2}Hilbert Spaces}{12}{chapter.2}% 
-\contentsline {section}{\numberline {1}Introduction}{12}{section.2.1}% 
-\contentsline {subsection}{\numberline {1.1}Infinite Dimensions}{13}{subsection.2.1.1}% 
-\contentsline {section}{\numberline {2}Function Spaces}{13}{section.2.2}% 
-\contentsline {section}{\numberline {3}Inner Products and Norms}{14}{section.2.3}% 
-\contentsline {subsection}{\numberline {3.1}Norms}{16}{subsection.2.3.1}% 
-\contentsline {section}{\numberline {4}Inner Product Spaces}{17}{section.2.4}% 
-\contentsline {section}{\numberline {5}Symmetries}{18}{section.2.5}% 
-\contentsline {section}{\numberline {6}Bases}{19}{section.2.6}% 
-\contentsline {subsection}{\numberline {6.1}Orthonormal Bases}{20}{subsection.2.6.1}% 
-\contentsline {subsection}{\numberline {6.2}Series and Integrals as Linear Combinations}{22}{subsection.2.6.2}% 
-\contentsline {subsection}{\numberline {6.3}Projection}{23}{subsection.2.6.3}% 
-\contentsline {chapter}{\numberline {3}Linear Operators}{26}{chapter.3}% 
-\contentsline {section}{\numberline {1}Matrices}{26}{section.3.1}% 
-\contentsline {subsubsection}{Linear Equations}{26}{subsubsection*.7}% 
-\contentsline {subsubsection}{Adjoints}{27}{subsubsection*.8}% 
-\contentsline {section}{\numberline {2}Linear Operators}{28}{section.3.2}% 
-\contentsline {subsection}{\numberline {2.1}Adjoints}{29}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Hermitian Operators}{31}{subsection.3.2.2}% 
-\contentsline {section}{\numberline {3}Differential and Integral Operators}{34}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.1}Integral Operators}{35}{subsection.3.3.1}% 
-\contentsline {section}{\numberline {4}Spectra}{35}{section.3.4}% 
+\contentsline {chapter}{\numberline {2}Hilbert Spaces}{14}{chapter.2}% 
+\contentsline {section}{\numberline {1}Introduction}{14}{section.2.1}% 
+\contentsline {subsection}{\numberline {1.1}Infinite Dimensions}{15}{subsection.2.1.1}% 
+\contentsline {section}{\numberline {2}Function Spaces}{15}{section.2.2}% 
+\contentsline {section}{\numberline {3}Inner Products and Norms}{16}{section.2.3}% 
+\contentsline {subsection}{\numberline {3.1}Norms}{18}{subsection.2.3.1}% 
+\contentsline {section}{\numberline {4}Inner Product Spaces}{19}{section.2.4}% 
+\contentsline {section}{\numberline {5}Symmetries}{20}{section.2.5}% 
+\contentsline {section}{\numberline {6}Bases}{21}{section.2.6}% 
+\contentsline {subsection}{\numberline {6.1}Orthonormal Bases}{22}{subsection.2.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Series and Integrals as Linear Combinations}{24}{subsection.2.6.2}% 
+\contentsline {subsection}{\numberline {6.3}Projection}{25}{subsection.2.6.3}% 
+\contentsline {chapter}{\numberline {3}Linear Operators}{30}{chapter.3}% 
+\contentsline {section}{\numberline {1}Matrices}{30}{section.3.1}% 
+\contentsline {subsubsection}{Linear Equations}{31}{subsubsection*.7}% 
+\contentsline {subsubsection}{Adjoints}{31}{subsubsection*.8}% 
+\contentsline {section}{\numberline {2}Linear Operators}{32}{section.3.2}% 
+\contentsline {subsection}{\numberline {2.1}Adjoints}{33}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Hermitian Operators}{35}{subsection.3.2.2}% 
+\contentsline {section}{\numberline {3}Differential and Integral Operators}{38}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.1}Integral Operators}{39}{subsection.3.3.1}% 
+\contentsline {section}{\numberline {4}Spectra}{40}{section.3.4}% 
+\contentsline {chapter}{\numberline {4}Fourier Theory}{42}{chapter.4}% 
+\contentsline {section}{\numberline {1}Fourier Series}{42}{section.4.1}% 
+\contentsline {subsection}{\numberline {1.1}Solving Equations}{44}{subsection.4.1.1}% 
