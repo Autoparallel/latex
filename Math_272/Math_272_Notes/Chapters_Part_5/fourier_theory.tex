@@ -64,7 +64,7 @@ Then, what we have found is the spectrum is discrete, and there is an eigenvalue
 \]
 for each value of $n$.  But, note that since $n$ is an integer, $n^2$ is always positive, and so we require $n\geq 0$ since we wish to remove the redundant results.  We can then list off the eigenfunctions
 \[
-\boxed{1,~\sin\left(\frac{2 \pi x}{L}\right),~ \cos\left(\frac{2 \pi x}{L}\right), ~\sin\left(\frac{4 \pi x}{L}\right),~ \cos\left(\frac{4 \pi x}{L}\right), ~ \dots.}
+1,~\sin\left(\frac{2 \pi x}{L}\right),~ \cos\left(\frac{2 \pi x}{L}\right), ~\sin\left(\frac{4 \pi x}{L}\right),~ \cos\left(\frac{4 \pi x}{L}\right), ~ \dots.
 \]
 
 \subsection{Solving Equations}
@@ -77,7 +77,7 @@ However, we can then consider if we can take any $g$ and write this as a series 
 
 Let us define the following inner product
 \[
-\innprod{F}{G} = \frac{1}{L} \int_0^L F(x)G(x)dx,
+\innprod{F}{G} = \frac{1}{L} \int_0^L F(x)G*(x)dx,
 \]
 which we will refer to as the \boldgreen{Fourier inner product}.  Notice, this inner product is very similar to the inner products we have used for functions previously (we just divide by the length of the interval).
 
@@ -89,36 +89,374 @@ Solving for the constants, we get
 \[
 c=1, \quad c_o = \sqrt{2}, \quad c_e = \sqrt{2}.
 \]
+Thus, our orthonormal basis for this inner product is given by
+\[
+\boxed{1,~\sqrt{2}\sin\left(\frac{2 \pi x}{L}\right),~ \sqrt{2}\cos\left(\frac{2 \pi x}{L}\right), ~\sqrt{2}\sin\left(\frac{4 \pi x}{L}\right),~ \sqrt{2}\cos\left(\frac{4 \pi x}{L}\right), ~ \dots.}
+\]
+Thus, using this basis, we can decompose functions into their \boldgreen{Fourier series}.  That is, given a function $f$, we can compute coefficients $a_n$, and $b_n$ so that
+\[
+f(x) = a_0 +\sum_{n=1}^\infty a_n \sqrt{2}\cos\left(\frac{2 \pi x}{L}\right)+\sum_{n=1}^\infty b_n \sqrt{2}\sin\left(\frac{2 \pi x}{L}\right).
+\]
+Since we have constructed these functions to be an orthonormal basis, we can compute the coefficients by projection. For example, we can compute the constant term $a_0$ by
+\[
+a_0 = \innprod{f}{1},
+\]
+as well as the terms $a_n$ and $b_n$ by
+\[
+a_n = \innprod{f}{\sqrt{2}\cos\left(\frac{2 \pi x}{L}\right)} \quad \textrm{and} \quad b_n = \innprod{f}{\sqrt{2}\sin\left(\frac{2 \pi x}{L}\right)}.
+\]
 
-%fourier series for a dangling wire (telphone wire) by letting g(x)=g be constant and have 0 boundary values.
-%the inner product for fourier series is different because it arises from group theory. Specifically, the inner product is a matter of a representation of a group.  So we have something like 
-%\[
-%\innprod{f}{g} = \frac{1}{|G|} \int_G f(x)g(x)dx
-%\]
-%So for this on $[0,L]$, we get
-%\[
-%\innprod{f}{g} = \frac{1}{L} \int_0^L f(x)g(x)dx.
-%\]
-%The orthonormal basis elements are the functions
-%\[
-%1, \qquad \sqrt{2}\cos\left(\frac{2n \pi x }{L}\right), \qquad \sqrt{2}\sin\left(\frac{2n \pi x}{L} \right).
-%\]
-%\textcolor{red}{Example in Desmos}
-%
-%\section{Fourier Transforms}
-%\textcolor{red}{can find fundamental solution for the laplace operator at some point for electricity magnetism}
-%
-%We can find the spectrum of the Laplace operator on $\R$ by
-%\[
-%\frac{d^2f}{dx^2} = kf
-%\]
-%Then the characteristic polynomial is
-%\[
-%\lambda^2=k
-%\]
-%thus $\lambda = \pm \sqrt{k}$. Without going into extra detail, we know that $k\leq 0$ (this can be shown via integration by parts).  Thus, we have that the an eigenfunction for the Laplace operator can be written as
-%\[
-%f(x)=Ce^{\pm i\omega x}
-%\]
-%where $C$ is a constant.  Hence
-%\section{Distributions}
+\begin{ex}{Square Wave}{square_wave}
+	The classic example one computes for a Fourier series is for the square wave
+	\[
+	f(x) = \begin{cases} 0 & x<L/2 \\ 1 & x\geq L/2, \end{cases}
+	\]
+	for $x \in [0,L]$.  Now, this function is piecewise constant and we will use the fact that we can split up an integral by
+	\[
+	\int_0^L f(x)\psi_n(x)dx = \int_0^{L/2} f(x)\psi_n(x)dx + \int_{L/2}^L f(x)\psi_n(x)dx.
+	\]
+	Hence, we can compute the Fourier coefficients for this function $f$.  First, we compute the constant term
+	\begin{align*}
+		a_0 = \innprod{f}{1} &= \frac{1}{L}\int_0^L f(x)\cdot 1 dx \\
+		&= \frac{1}{L} \int_0^{L/2} f(x)dx + \frac{1}{L}\int_{L/2}^L f(x) dx\\
+		&= \frac{1}{L} \int_{L/2}^L 1 dx\\
+		&= \frac{1}{2}.
+	\end{align*}
+	This value for $a_0$ is the average value of the function $f$.  Next, we can compute the constants $a_n$ by
+	\begin{align*}
+			a_0 &= \innprod{f}{\sqrt{2}\cos\left(\frac{2n \pi x}L\right)}\\
+			 &= \frac{1}{L}\int_0^L f(x)\cdot 1 dx \\
+			&= \frac{1}{L} \int_0^{L/2} f(x) \sqrt{2}\cos\left(\frac{2n \pi x}{L}\right)dx + \frac{1}{L}\int_{L/2}^L f(x)\sqrt{2}\cos\left(\frac{2n \pi x}{L}\right) dx\\
+			&= \frac{1}{L} \int_{L/2}^L \sqrt{2}\cos\left(\frac{2n \pi x}{L}\right) dx\\
+			&= \frac{\sin(2\pi n)-\sin(\pi n)}{\sqrt{2} \pi n}\\
+			&= 0,
+		\end{align*}
+		since $n$ is an integer and $\sin(\pi n)=\sin(2\pi n)=0$ for every integer.  Next, we can compute the constants $b_n$ by
+		\begin{align*}
+					a_0 &= \innprod{f}{\sqrt{2}\sin\left(\frac{2n \pi x}L\right)}\\
+					 &= \frac{1}{L}\int_0^L f(x)\cdot 1 dx \\
+					&= \frac{1}{L} \int_0^{L/2} f(x) \sqrt{2}\sin\left(\frac{2n \pi x}{L}\right)dx + \frac{1}{L}\int_{L/2}^L f(x)\sqrt{2}\sin\left(\frac{2n \pi x}{L}\right) dx\\
+					&= \frac{1}{L} \int_{L/2}^L \sqrt{2}\sin\left(\frac{2n \pi x}{L}\right) dx\\
+					&= \frac{\cos(\pi n)-\cos(2\pi n)}{\sqrt{2} \pi n}.
+		\end{align*}
+		Thus, we have that
+		\[
+		f(x) = \frac{1}{2} + \sum_{n=1}^\infty \frac{\cos(\pi n)-\cos(2\pi n)}{\pi n} \sin\left(\frac{2 n \pi x}{L}\right).
+		\]
+		We can then use a finite sum to approximate our function by
+		\[
+		f(x) \approx \frac{1}{2} + \sum_{n=1}^N \frac{\cos(\pi n)-\cos(2\pi n)}{\pi n} \sin\left(\frac{2 n \pi x}{L}\right),
+		\]
+		for various values of $N$
+		\begin{figure}[H]
+			\centering
+			\begin{subfigure}[h]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{Figures_Part_5/N=0.png}
+				\caption{$N=0$ approximation.}
+			\end{subfigure}
+			~ 
+			\begin{subfigure}[h]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{Figures_Part_5/N=1.png}
+				\caption{$N=1$ approximation.}
+			\end{subfigure}
+			~
+			\begin{subfigure}[h]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{Figures_Part_5/N=3.png}
+				\caption{$N=3$ approximation.}
+			\end{subfigure}\\
+			
+			\begin{subfigure}[h]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{Figures_Part_5/N=10.png}
+				\caption{$N=10$ approximation.}
+			\end{subfigure}
+			~ 
+			\begin{subfigure}[h]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{Figures_Part_5/N=50.png}
+				\caption{$N=50$ approximation.}
+			\end{subfigure}
+			~
+			\begin{subfigure}[h]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{Figures_Part_5/N=100.png}
+				\caption{$N=100$ approximation.}
+			\end{subfigure}
+		\caption{True $f(x)$ in red. Approximations in purple.}
+		\end{figure}
+\end{ex}
+
+\section{Fourier Transform}
+
+Let us transition into a more general point of view of the Fourier series.  Specifically, we wish to utilize the Fourier transform.  The idea behind the Fourier transform is to convert a given function $f$ into a new one that we denote by $\hat{f}$ that contains the frequency information of $f$.  This new function will look different, but it will be (in some way) equivalent to our original function. However, we do gain some ability to solve differential equations with the transformed function. 
+
+First, we can rewrite the Fourier series by using complex functions.  Again, we consider functions defined on the interval $[0,L]$ and take the functions
+\[
+e^{\frac{i 2n \pi x}{L}} \qquad n=\dots, -2,-1,0,1,2,\dots,
+\]
+as our orthonormal basis functions.  Note that these are indeed normalized when we take the inner product
+\begin{align*}
+\innprod{e^{\frac{i 2n \pi x}{L}}}{e^{\frac{i 2n \pi x}{L}}} &= \frac{1}{L} \int_0^Le^{\frac{i 2n \pi x}{L}}e^{\frac{-i 2n \pi x}{L}}dx\\
+&= \frac{1}{L}\int_0^L 1 dx\\
+&= 1.
+\end{align*}
+In some way we can now see that the functions are a bit more natural to use.  Recall of course that Euler's formula gives us the connection from this representation to the one we previously discussed. That is,
+\[
+e^{\frac{i 2n \pi x}{L}} = \cos\left(\frac{2n \pi x}{L}\right) + i \sin\left(\frac{2 n \pi x}{L} \right).
+\]
+Thus, we can write functions by taking the following linear combination
+\[
+f(x) = \sum_{-\infty}^\infty c_n e^{\frac{i 2n \pi x}{L}},
+\]
+where the constants $c_n$ are allowed to be complex valued.  Then, the \boldgreen{Fourier transform} of the function $f$, denoted by $\hat{f}$, is given by
+\[
+\hat{f}(k) = c_k,
+\]
+is the coefficients of from the Fourier series.  Thus, what we find is that the Fourier transform describes ``how much" of the frequency $\frac{2 k \pi}{L}$ makes up the function $f$.
+
+\begin{ex}{Square Wave Fourier Transform}{square_wave_transform}
+	If we consider the square wave function given by
+	\[
+	f(x) = \begin{cases} 0 & x<L/2 \\ 1 & x\geq L/2, \end{cases},
+	\]
+	then we can compute the Fourier components with the complex basis functions
+	\[
+	e^{\frac{ i 2n \pi x}{L}}.
+	\]
+	Thus, we compute the coefficients in the same by
+	\begin{align*}
+		c_k &= \innprod{f}{e^{\frac{ i 2n \pi x}{L}}}\\
+		&= \frac{ie^{i \pi k}(-1-e^{i\pi k})}{2\pi k}\\
+		&= \frac{i(-1)^k (-1-(-1)^k)}{2\pi k}\\
+	\end{align*}
+	Hence, the Fourier transform of $f$ is given by
+	\[
+	\hat{f}(k) =  \frac{i(-1)^k (-1-(-1)^k)}{2\pi k}.
+	\]
+\end{ex}
+
+We'll arrive at the usefulness of the Fourier transform in a bit, but we will first want to consider a yet more general version of the Fourier transform. Instead of taking functions defined solely on the interval $[0,L]$, we can create a transform that works for functions defined on all of $\R$ or any subset.  The difference is this: we now take a basis of functions to be
+\[
+e^{i2\pi k x} \qquad k \in \R.
+\]
+That is, instead of taking a discrete set of basis functions, we will now need a continuous set of basis functions.  The reason for this, heuristically, is due to the fact that there can be a full continuum of frequencies for functions defined on $\R$.  The details are suitably more involved than we can get into for a course at this level!
+
+One may now see why we have built up this framework in the way that we did.  It was a bit of a drawn out process, but it allows us to compute the Fourier transform in a consistent way.  Given a function $f(x)$, we can define the Fourier transform by taking the Hermitian inner product for $\R$ and projecting our function onto the basis elements. For example, we have
+\[
+\hat{f}(k) = \innprod{f}{e^{i2\pi k x}} = \int_{-\infty}^\infty f(x)e^{-i2\pi kx}dx.
+\]
+And that's really all!  However, one must mention an immensely important function before we compute some examples.
+
+\subsection{Fourier Transform Operator}
+
+Often time, it will be useful to talk of the Fourier transform as an operator. For this, we will use the notation
+\[
+\fourier{f(x)}= \hat{f}(k).
+\]
+Later, we will introduce the inverse operation in that 
+\[
+\fourierinv{\hat{f}(k)}=f(x).
+\]
+These operators are fundamental in solving differential equations!
+
+One should also note that the Fourier transform is a unitary linear operator.  Specifically, if we have two functions $f$ and $g$ and a constant $\alpha\in \C$, then
+\[
+\fourier{f(x)+\alpha g(x)} = \hat{f}(k)+\alpha \hat{g}(k).
+\]
+Now, the operator is unitary since we also have that
+\[
+\innprod{f}{g} = \innprod{\hat{f}}{\hat{g}},
+\]
+where the integrals used to evaluate the inner products are taken over the variables $x$ and $k$ respectively.  
+
+The fact that the Fourier transform is a unitary operator is rather important. It means that the transformation does not disturb the measurements one could wish to make. In the same vein, it allows one to work with the transformed function $\hat{f}(k)$ without losing any information about the system. We'll find that working with $\hat{f}(k)$ is often an easier task.
+
+\section{The Dirac Delta Function}
+
+Studying the Fourier theory naturally brings about a very special (generalized) function known as the \boldgreen{Dirac delta function} which we denote by $\delta(x)$.  Quite simply, we define this function via an integral. Specifically, we have for any function $f(x)$ that
+\[
+\int_{-\infty}^\infty f(x)\delta(x) dx = f(0).
+\]
+Moreover, if the interval $[a,b]$ contains $0$, we have
+\[
+\int_a^b f(x)\delta(x) dx = f(0).
+\]
+We can change the input value for $\delta(x)$ by taking $\delta(x-x_0)$ and we have
+\[
+\int_{-\infty}^\infty f(x)\delta(x-x_0)dx = f(x_0).
+\]
+Put in more simple terms, $\delta$ is the function that, when integrated with another function $f$, evaluates that function at a given input value (so long as we integrate over that input value).  
+
+\begin{remark}
+	$\delta(x)$ is in fact \underline{not} a function at all. It is something more general known as a distribution. But this fact is not entirely relevant. We will continue to refer to $\delta(x)$ as a function despite this slight misnomer.
+\end{remark}
+
+Why should one even consider such a function? For one, it will show up quite readily for us when using the Fourier transform. But, moreover, it is a physically meaningful function in that describes a concentration of mass at a single point.  For example, when studying electromagnetism, one will talk of charged particles. Often, those charged particles are thought of as single points with a charge $q$.  To determine the total charge in a region, one would perform an integral like
+\[
+\int_{-\infty}^\infty q\delta(x)dx = q
+\]
+which shows the total charge $q$. The fact that we have $q\delta(x)$ tells us that all of the charge is concentrated at $x=0$.  
+
+One can define the delta function in another convenient manner.  Specifically, via the Fourier transform. One can also show that 
+\[
+\delta(x) = \int_{-\infty}^\infty 1 e^{-i2\pi kx}dx, 
+\]
+which means that the $\delta$ function is the Fourier transform of the constant function.  Moreover,
+\[
+c\delta(x) = \int_{-\infty}^\infty c e^{-i2\pi kx}dx.
+\]
+One should believe this on an intuitive level since the Fourier transform of a function returns the function's frequency components. A constant function has only a zero frequency component and hence the transform must reflect this.  
+
+\begin{remark}
+	Computing these integrals requires tools from complex analysis that we have not seen.  Thus, we will have to blackbox how these integrals are computed in exchange for their usefulness.
+\end{remark}
+
+\section{Computing Fourier Transforms}
+
+To see what we are working with, we should compute a few examples. Once again, the techniques to compute these integrals are beyond the scope of this text, but we can show a few results anyways. Our first goal is to see what is meant by frequency components of a function.
+
+If we start with functions with a constant period of oscillation, we can try to digest what the output of the Fourier transform is telling us. We will consider three functions, each with the same period, and compare their transforms.
+
+\begin{ex}{Fourier Transform of Cosine}{fourier_transform_cosine}
+	Let us consider the Fourier transform of the function $f(x)=\cos(x)$.  We can compute this transformation by
+	\begin{align*}
+	\fourier{f(x)} &= \int_{-\infty}^\infty \cos(x)e^{i2\pi kx}dx\\
+	&= \frac{\delta\left(k-\frac{1}{2\pi}\right)-\delta\left((k+\frac{1}{2\pi}\right)}{2}.
+	\end{align*}
+	Here, we can see that the recovered frequency components are where the input to the delta functions are zero. That is,
+	\[
+	-2\pi k -1 = 0~ \implies ~k= -\frac{1}{2\pi},
+	\]
+	and
+	\[
+	1-2\pi k = 0~ \implies ~k=\frac{1}{2\pi}.
+	\]
+	Recall that the period of $\cos(x)$ is $2\pi$ and hence the frequency $\nu = \frac{1}{2\pi}$. Here, we can see that there is both a $\pm \frac{1}{2 \pi}$.
+\end{ex}
+
+In the previous example, one can see how the Fourier transform breaks the function down into frequency components. However, we also know of another function whose frequency is $2\pi$. Namely, $\sin(x)$. Note that these functions are different in that $\cos(x)$ is an even function and $\sin(x)$ is an odd function, so we should expect their Fourier transforms to differ as well (or else this is not an invertible process).
+
+\begin{ex}{Fourier Transform of Sine}{fourier_transform_sine}
+	Similarly, we could consider the Fourier transform of the function $f(x)=\sin(x)$.  We'll take
+	\begin{align*}
+		\fourier{f(x)} &= \int_{-\infty}^\infty \sin(x) e^{i2\pi kx} dx\\
+		&= \frac{\delta\left(k-\frac{1}{2\pi}\right)-\delta\left(k+\frac{1}{2\pi}\right)}{2i}
+	\end{align*}
+	What we see is that the constants in front of the delta functions are different for $\sin(x)$. Specifically, we see the inclusion of the imaginary unit $i$. 
+\end{ex}
+
+The differences above display how the Fourier transform is capturing more information about a function than just the frequency information. In some sense, the Fourier transform can determine how even or odd a function is as well.  To finalize this section, let us consider the Fourier transform of another function with frequency $\frac{1}{2\pi}$.
+
+\begin{ex}{Fourier Transform of Complex Exponential}{fourier_transform_exponential}
+	Let $f(x)= e^{ix}$, and note that this function has a period of $2\pi$ and hence a frequency of $\frac{1}{2\pi}$.  We can also recall that by Euler's formula, we have
+	\[
+	e^{ix} = \cos(x)+i\sin(x),
+	\]
+	and thus we can compute the Fourier transform by
+	\begin{align*}
+		\fourier{e^{ix}} &= \fourier{\cos(x)+i\sin(x)}\\
+		&= \fourier{\cos(x)}+i\fourier{\sin(x)}\\
+		&= \delta\left(k-\frac{1}{2\pi}\right)
+	\end{align*}
+	Again, we find that the Fourier transform captures enough information about our functions to properly differentiate between them.  
+\end{ex}
+
+This section would not be complete without some reference of common Fourier transforms.  We'll place a few here, but there are many other references to compute more examples (see for example Wikipedia's page on \emph{Tables of Important Fourier Transforms}.
+
+\begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{2}
+        \begin{tabular}{c|c}
+            $f(x)$ & $\hat{f}(k)$\\
+            \hline
+         	$\delta(x)$ & $1$\\
+         	$1$ & $\delta(x)$\\
+         	$e^{iax}$ & $\delta\left(k-\frac{a}{2\pi}\right)$\\
+         	$\cos(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)+\delta\left(k+\frac{a}{2\pi}\right)}{2}$\\
+     		$\sin(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)-\delta\left(k+\frac{a}{2\pi}\right)}{2i}$
+        \end{tabular}
+        \label{tab:fourier_transform}
+    \end{table}
+    
+\section{The Inverse Fourier Transform}
+
+The most striking property of the Fourier transform is that it is invertible. Coupled with its linear and unitary nature, the Fourier transform has many nice properties that allow one to make great use of it.  Up until this point, we have only dealt with the forward direction of the Fourier transform. If we are given a function $f(x)$, we can convert this function into $\hat{f}(k)$ which we refer to as the transformed function in the \boldgreen{frequency domain}.  We put
+\[
+\fourier{f(x)}=\hat{f}(k).
+\]
+Now, the claim is that this process is invertible in that if we are given a function $\hat{f}(k)$ in the frequency domain, we can convert it back to a function $f(x)$.  That is, we want 
+\[
+\fourierinv{\hat{f}(k)} = f(x).
+\]
+Now, since the Fourier transform is a unitary operator, we need only find the adjoint to the Fourier transform.  Recall that, given a unitary operator $\unitop$ we can find $\unitop^{-1}$ by solving
+\[
+\unitop \unitop^{-1} = I,
+\]
+where $I$ is the identity. However, the defining property of a unitary operator is that we have
+\[
+\unitop^{-1} = \unitop^\dagger.
+\]
+That is, the inverse of a unitary operator is its adjoint! 
+
+Hence, it follows that the \boldgreen{inverse Fourier transform} of a function $\hat{f}(k)$ is given by
+\[
+f(x) = \int_{-\infty}^\infty \hat{f}(k) e^{i2\pi kx}dk.
+\]
+If one revisits example \ref{ex:phase_operator}, then we can see that the adjoint to multiplication by a phase is to multiply by the negative phase. That is, the adjoint to $e^{i\theta}$ is $e^{-i\theta}$.  That is the fact that lets us define the inverse Fourier transform above. 
+
+In \ref{tab:fourier_transform}, one can find the inverse Fourier transform of a given function by starting with a $\hat{f}(k)$ and seeing what the corresponding $f(x)$ is.  We'll not worry so much about inverting other functions for now.  
+
+\section{Solving Differential Equations}
+
+Perhaps the most unique feature of the Fourier transform is the transformation of derivatives of a function.  One could in fact argue that this was the true nature of the transformation from the beginning.  Consider a function $f(x)$, then we can differentiate $f(x)$ to get the function $f'(x)$. Now, what is the Fourier transform
+\[
+\fourier{f'(x)}?
+\]
+First, (though we have yet to mention this) let us note that any $f(x)$ must be a function that decays rapidly as $x\to \pm \infty$. Let's write this out. We have
+\begin{align*}
+	\fourier{f'(x)} &= \int_{-\infty}^\infty f'(x)e^{-i2\pi kx}dx\\
+	&= i2\pi k \int_{-\infty}^\infty f(x) e^{i2\pi kx}dx\\
+	&= i2\pi k \hat{f}(k).
+\end{align*}
+
+\begin{exercise}
+	Using integration by parts, show that the work above is correct. 
+\end{exercise}
+
+What we have found is that the Fourier transform turns derivatives into a multiplication operator! This can be summed up in the following way:
+\[
+\boxed{\fourier{\frac{d^n}{dx^n} f(x)} = (i2\pi kx)^n \hat{f}(k).}
+\]
+
+We also have the following as well
+\[
+\boxed{\fourier{x^n f(x)} = \left(\frac{i}{2\pi}\right)^n \frac{d^n}{dk^n} \hat{f}(k).}
+\]
+This means that the Fourier transform turns multiplication into differentiation.  
+
+What follows is an algebraic method for solving differential equations. Specifically, any linear differential equation can be quickly transformed into a new (possibly easier) differential equation. The outline can be summarized in the following steps.
+\begin{enumerate}[1.]
+	\item Take a Fourier transform of both sides of your differential equation.
+	\item Solve the new equation for $\hat{f}(k)$ in terms of the frequency variable $k$.
+	\item Use the inverse Fourier transform to convert $\hat{f}(k)$ back to $f(x)$.
+\end{enumerate}
+
+We'll first start with an example that uses the Fourier series as opposed to the Fourier transform.  Underlying the solution is the same principal, but it gives us a better means for understanding the methodology.
+
+\begin{ex}{Fourier Series Solution of a Second Order Equation}{fourier_transform_first_order}
+	Consider an elastic band suspended from atop two poles subject to the force of gravity. We can model this equation by
+	\[
+	f''(x) = -g,
+	\]
+	where $g$ is a positive constant and we force $f(0)=f(L)=0$. Note that since we require $f(0)=f(L)=0$, we cannot use the cosine functions as they do not satisfy these boundary conditions.
+	
+	Let us suppose that $f(x)$ is written as a Fourier series,
+	\begin{align*}
+		f(x) = \sum_{n=1}^\infty b_n \sqrt{2}\sin\left(\frac{n \pi x}{L}\right),
+	\end{align*}
+	where again we only use sine terms since the cosine terms do not satisfy the boundary conditions. Then, we must compute the Fourier series for the right hand side, so we take
+	\begin{align*}
+	b_n &= \innprod{-g}{\sqrt{2}\sin\left(\frac{n\pi x}{L}\right)}\\
+	&= \frac{\sqrt{2} g (\cos(\pi n)-1)}{\pi n}.
+	\end{align*}
+	
+\end{ex}
+	
+
