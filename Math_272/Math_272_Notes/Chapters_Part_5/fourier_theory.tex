@@ -440,22 +440,23 @@ What follows is an algebraic method for solving differential equations. Specific
 
 We'll first start with an example that uses the Fourier series as opposed to the Fourier transform.  Underlying the solution is the same principal, but it gives us a better means for understanding the methodology.
 
-\begin{ex}{Fourier Series Solution of a Second Order Equation}{fourier_transform_first_order}
+\begin{ex}{Fourier Series/Transform Solution of a Second Order Equation}{fourier_transform_first_order}
 	Consider an elastic band suspended from atop two poles subject to the force of gravity. We can model this equation by
 	\[
-	f''(x) = -g,
+	-k\frac{d^2}{dx^2}(x) = g(x),
 	\]
-	where $g$ is a positive constant and we force $f(0)=f(L)=0$. Note that since we require $f(0)=f(L)=0$, we cannot use the cosine functions as they do not satisfy these boundary conditions.
-	
+	with the boundary conditions $f(0)=f(L)=0$. Here, $k$ is an elastic constant that describes the stiffness of the elastic.  Then, we let 
+	\[
+	g(x) = \begin{cases} 0 & x<L/4 \\ 1 & L/4 \leq x < 3L/4 \\ 0 & 3L/4<x \end{cases},
+	\]
+	which has the following graph.
+	\textcolor{red}{add figure}
 	Let us suppose that $f(x)$ is written as a Fourier series,
 	\begin{align*}
-		f(x) = \sum_{n=1}^\infty b_n \sqrt{2}\sin\left(\frac{n \pi x}{L}\right),
+		f(x) = ...
 	\end{align*}
-	where again we only use sine terms since the cosine terms do not satisfy the boundary conditions. Then, we must compute the Fourier series for the right hand side, so we take
-	\begin{align*}
-	b_n &= \innprod{-g}{\sqrt{2}\sin\left(\frac{n\pi x}{L}\right)}\\
-	&= \frac{\sqrt{2} g (\cos(\pi n)-1)}{\pi n}.
-	\end{align*}
+	
+	Then do fourier transform with complex exponentials version to lead into fourier transform. 
 	
 \end{ex}
 	
