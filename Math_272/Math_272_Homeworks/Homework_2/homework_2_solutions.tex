@@ -71,14 +71,37 @@ For the following problems, we will be referring to the free particle in the 1-d
 	\end{enumerate}
 \end{solution}
 
+\newpage
 \begin{problem}
 	In fact, any real valued function $V(x)$ of the position operator $x$ is also Hermitian. Make a quick argument on why this must be true.
 \end{problem}
+\begin{solution}
+	If $V(x)$ is real valued, then $V^*(x)=V(x)$.  Hence, we have
+	\[
+	\innprod{V\Psi}{\Phi} = \int_0^L V(x)\Psi(x)\Phi^*(x)dx = \int_0^L \Psi(x)\left(V(x)\Phi(x)\right)^*dx = \innprod{\Psi}{V\Phi}.
+	\]
+\end{solution}
 
+\newpage
 \begin{problem}
 	Another related operator is the \emph{momentum operator} $\hat{p} = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is Hermitian.
 \end{problem}
+\begin{solution}
+We have
+\begin{align*}
+	\innprod{\hat{p} \Psi}{\Phi} &= \int_0^L \left(-i\hbar \frac{d \Psi}{dx}\right)\Phi^*(x)dx\\
+	&= \left.-i\hbar \Psi(x)\Phi^*(x)  \right\vert_0^L + \int_0^L i\hbar \Psi(x) \frac{d\Phi^*}{dx}dx & \textrm{by integration by parts}.
+\end{align*}
+Note now that the boundary conditions require both $\Psi(0)=\Psi(L)=0$ and $\Phi(0)=\Phi(L)=0$, since we are working over the space of solutions to the particle in the 1-dimensional box.  Hence, we have
+\begin{align*}
+	\innprod{\hat{p}\Psi}{\Phi} &= \int_0^L i\hbar \Psi(x) \frac{d\Phi^*}{dx}dx\\
+	&= \int_0^L \Psi(x)\left(-i\hbar \frac{d\Phi}{dx}\right)^* dx \\
+	&= \innprod{\Psi}{\hat{p}\Phi}.
+\end{align*}
+Thus, $\hat{p}$ is Hermitian.
+\end{solution}
 
+\newpage
 \begin{problem}
 	We can always take products, sums, and scalar multiples of operators to build new operators.  For example, in classical physics, we have the kinetic energy
 	\[
@@ -99,7 +122,27 @@ For the following problems, we will be referring to the free particle in the 1-d
 		\item Again, letting $\Psi(x)=\frac{1}{\sqrt{2}}\psi_1(x)+\frac{1}{\sqrt{2}}\psi_2(x)$, compute $\mathbb{E}[\hat{T}]$. The expected value $\mathbb{E}[\hat{T}]$ tells us what the observed energy will be on average. Yet, any time we measure a system we will find that energy must be one of the energy eigenvalues. Thus, for this wave function, this expected value should be the average between $E_1$ and $E_2$ which means that half the time we will measure the energy to be $E_1$ and half the time it will be $E_2$.
 	\end{enumerate}	
 \end{problem}
+\begin{solution}~
+	\begin{enumerate}[(a)]
+		\item We have $\hat{p}=-i\hbar \frac{d}{dx}$. Then, we construct $\hat{T}$ by
+		\begin{align*}
+		\hat{T}=\frac{\hat{p}^2}{2m} &= \frac{\left(-i\hbar \frac{d}{dx}\right)^2}{2m}\\
+		&= \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}.
+		\end{align*}
+		
+		\item We have
+		\begin{align*}
+		\innprod{\hat{T}\Psi}{\Phi} &= \innprod{\frac{\hat{p}^2}{2m}\Psi}{\Phi}\\
+		&= \innprod{\hat{p}^2 \Psi}{\frac{1}{2m}\Phi} &\textrm{since $\frac{1}{2m}$ is a real constant}\\
+		&= \innprod{\hat{p}\Psi}{\frac{\hat{p}}{2m} \Phi} & \textrm{since $\hat{p}$ is Hermitian}\\
+		&= \innprod{\Psi}{\frac{\hat{p}^2}{2m} \Phi}\\
+		&= \innprod{\Psi}{\hat{T}\Phi}.
+		\end{align*}
+		Thus, $\hat{T}$ is Hermitian.
+	\end{enumerate}
+\end{solution}
 
+\newpage
 \begin{problem}
 If we are given a potential (energy) $V(x)$ and the kinetic energy $T$, we can take their sum and form the total energy $T+V(x)$ which we call the \emph{Hamiltonian}.  Thus, in the quantum realm, we create the Hamiltonian operator $\hat{H}$ by
 \[
@@ -114,6 +157,51 @@ If we are given a potential (energy) $V(x)$ and the kinetic energy $T$, we can t
 	Show that with $V(x)=0$ in $[0,L]$ and the boundary conditions $\Psi(0)=\Psi(L)=0$ that the spectrum of the Hamiltonian operator is discrete.  \emph{Hint: We have done this exact problem in the notes from Math 271. Feel free to use that!}
 \end{enumerate}
 \end{problem}
+\begin{solution}
+	\begin{enumerate}[(a)]
+		\item We know that both $\hat{T}$ and $V(x)$ are Hermitian.  Thus, we take
+		\[
+		\innprod{(\hat{T}+V)\Psi}{\Phi} = \innprod{\hat{T}\Psi}{\Phi}+\innprod{V\Psi}{\Phi} = \innprod{\Psi}{\hat{T}\Phi}+\innprod{\Psi}{V\Phi} = \innprod{\Psi}{(\hat{T}+V)\Phi}
+		\]
+		\item Since $V(x)=0$ in $[0,L]$, we have that
+		\[
+		\hat{H} = \hat{T} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}.
+		\]
+		Hence, we are solving the equation
+		\[
+		-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\Psi(x) = E \Psi(x).
+		\]
+		Let $\omega^2 = \frac{2mE}{\hbar^2}$, and we have
+		\[
+		\Psi''(x) +\omega^2 \Psi(x) = 0,
+		\]
+		which is the harmonic oscillator equation.  Thus, our solution is
+		\[
+		\Psi(x) = C_1 e^{i\omega x}+C_2 e^{-i\omega x}.
+		\]
+		Now, if we apply the boundary conditions, we have
+		\[
+		0=\Psi(0)= C_1+C_2,
+		\]
+		thus $C_1=-C_2$. By Euler's formula, we can take
+		\[
+		C_1 e^{i\omega x}-C_1 e^{-i \omega x} = C \sin(\omega x).
+		\]
+		Now, our other boundary condition states
+		\[
+		0 = \Psi(L) = C\sin(\omega L),
+		\]
+		Thus we must have $\omega = \frac{n\pi}{L}$ for an integer $n$. Now, this means
+		\[
+		\frac{2mE}{\hbar^2}=\omega^2 = \frac{n^2\pi^2}{L^2},
+		\]
+		and we can solve for $E$ to get
+		\[
+		\boxed{E = \frac{n^2\pi^2\hbar^2}{2mL^2},}
+		\]		
+		which shows that the spectrum of $\hat{H}$ is discrete.
+	\end{enumerate}
+\end{solution}
 
 
 \end{document}

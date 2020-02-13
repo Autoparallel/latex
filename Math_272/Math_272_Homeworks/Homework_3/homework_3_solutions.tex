@@ -8,240 +8,247 @@
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 271, Homework 3, \emph{Solutions}}\\
-   \textsc{Due September 20$^\textrm{th}$}
+   \textsc{\large MATH 272, Homework 3, \emph{Solutions}}\\
+   \textsc{Due February 17$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
+
 \begin{problem}
-Consider the second order chemical reaction given by
-\[
-A+B \xrightarrow{k} \textrm{Products}.
-\]
+Compute the Fourier series for the following functions on the interval $[0,L]$. Then plot your result (for $N=1,50,100,500$) compared to the original function. What do you notice if you plot the Fourier series outside the range of $[0,L]$?
 \begin{enumerate}[(a)]
-    \item Write a \emph{system} of differential equations to describe the concentration of the reactants $A$ and $B$ (this means write one for each).
-    \item The concentrations of $A$ and $B$ can be related to each other in the following way: Let $A=A_0-x$ and $B=B_0-x$. Here, we think of $x$ as the amount of each chemical that has reacted, and note that it depends on time $t$. Use this change of variables to rewrite the differential equation for chemical $A$ in terms of $x$ and $t$.
-    \item Solve the differential equation in (b) with the initial condition $x(0)=0$.You will need to use \emph{partial fraction decomposition} to evaluate the integral.
+	\item $f(x)=\frac{1}{2}\cos\left(\frac{2\pi x}{L}\right)+\sin\left(\frac{-4\pi x}{L}\right)$.
+	\item $\sin\left(\frac{3\pi x}{L}\right)$.
+	\item $\delta(x-L/2)$.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
+	\begin{enumerate}[(a)]
+		\item Here, we can use orthogonality to greatly reduce the amount of work we must do.  Notice as well that our function is essentially written as a Fourier series.  We have
+		\begin{align*}
+		a_n &= \innprod{f}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
+				&= \innprod{\frac{1}{2}\cos\left(\frac{2\pi x}{L}\right)+\sin\left(\frac{-4\pi x}{L}\right)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
+				&= \underbrace{\innprod{\frac{1}{2}\cos\left(\frac{2\pi x}{L}\right)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}}_{\textrm{$=0$ unless n=1}} +\underbrace{\innprod{\sin\left(\frac{-4\pi x}{L}\right)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}}_{\textrm{$=0$ always}}.
+		\end{align*}
+		Hence, we have that the only nonzero $a_n$ term is $a_1$ and we have
+		\begin{align*}
+		a_1 &= \innprod{\frac{1}{2}\cos\left(\frac{2\pi x}{L}\right)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
+		& = \frac{1}{2\sqrt{2}} \innprod{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
+		& = \frac{1}{2\sqrt{2}}.
+		\end{align*}
+		An analogous argument shows that $f(x)$ is orthogonal to 1 which shows that $a_0=0$ as well. Similarly, another analogous argument shows that the only nonzero $b_n$ term is $b_2$ since $\sin(-x)=-\sin(x)$.  So we have that
+		\[
+		b_2 = \frac{1}{\sqrt{2}}.
+		\]
+		Hence, we have found all of our coefficients for the Fourier series.
+		
+		\item First, let's compute 
+		\begin{align*}
+			a_0 &= \innprod{\sin\left(\frac{3 \pi x}{L}\right)}{1}\\
+				&= \frac{1}{L} \int_0^L \sin\left(\frac{3\pi x}{L}\right)dx\\
+				&= \frac{2}{3\pi}.
+		\end{align*}
+		Next, we can compute
+		\begin{align*}
+					a_n &= \innprod{\sin\left(\frac{3\pi x}{L}\right)}{\sqrt{2}\cos\left(\frac{2 n \pi x}{L}\right)}\\
+						&= \frac{1}{L} \int_0^L \sin\left(\frac{3\pi x}{L}\right) \sqrt{2}\cos\left(\frac{2 n \pi x}{L}\right)dx\\
+						&=\frac{6 \sqrt{2}}{9\pi-4\pi n^{2}}.
+				\end{align*}
+		Finally, we compute
+		\begin{align*}
+			b_n &= \innprod{\sin\left(\frac{3\pi x}{L}\right)}{\sqrt{2}\sin\left(\frac{2 n \pi x}{L}\right)}\\
+			&= 0 & \textrm{by orthogonality.}
+		\end{align*}	
+		Thus, our Fourier series is given by
+		\[
+			\boxed{\sin\left(\frac{3\pi x}{L}\right) = \frac{2}{3\pi} + \sum_{n=1}^\infty \frac{12}{9\pi - 4\pi n^2} \cos\left(\frac{2n\pi x}{L}\right).}
+		\]
+		\end{enumerate}
+		\item First, we compute
+		\[
+		a_0 = \innprod{\delta(x-L/2)}{1} = \frac{1}{L} \int_0^L \delta(x-L/2) dx = \frac{1}{L}.
+		\]
+		Then, we have
+		\begin{align*}
+		a_n &= \innprod{\delta(x-L/2)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
+		& = \frac{1}{L} \int_0^L \delta(x-L/2) \sqrt{2}\cos\left(\frac{2n \pi x}{L}\right)dx\\
+		&= \sqrt{2}{L} \cos(n\pi)\\
+		&= (-1)^n \frac{\sqrt{2}}{L}.
+		\end{align*}
+		Finally, we compute
+		\begin{align*}
+			b_n &= \innprod{\delta(x-L/2)}{\sqrt{2}\sin\left(\frac{2n\pi x}{L}\right)}\\
+			&= \frac{1}{L} \int_0^L \delta(x-L/2)\sqrt{2}\sin\left(\frac{2n \pi x}{L}\right)dx\\
+			&= \frac{\sqrt{2}}{L} \sin(n\pi)\\
+			&= 0.
+		\end{align*}
+		Hence, our Fourier series is given by
+		\[
+		\boxed{\delta(x-L/2)) = \frac{1}{L} + \sum_{n=1}^\infty (-1)^n \frac{2}{L} \cos\left(\frac{2n\pi x}{L}\right).}
+		\]
+\end{solution}
+
+\newpage
+\begin{problem}
+Consider a function $f(x)$ that describes the height of a rubber string with rest length $L$. We can attach the ends of the string at $x=0$ and $x=L$ by requiring that $f(0)=f(L)=0$.  Then, one can subject the string to an external force $g(x)$ and find the profile of the string by solving
+\[
+-\frac{d^2}{dx^2} f(x) = g(x).
+\]
 \begin{enumerate}[(a)]
-    \item The system of equations we will get is
-    \begin{align*}
-        -\frac{dA}{dt}&=kAB\\
-        -\frac{dB}{dt}&=kAB.
-    \end{align*}
-    \item Now, let $A=A_0-x$ and $B=A_0-x$ and, since $A_0$ and $B_0$ are constant, we get the equation for $A$,
-    \begin{align*}
-        -\frac{dx}{dt}&=k(A_0-x)(B_0-x).
-    \end{align*}
-    It turns out $B$ has the same equation.
-    \item This is a separable equation, so we can find the solution by
-    \begin{align*}
-        -\frac{dx}{dt}&=k(A_0-x)(B_0-x)\\
-        \int \frac{dx}{(A_0-x)(B_0-x)}&=-k\int dt.
-    \end{align*}
-    Here, we can use the partial fraction decomposition to get
-    \[
-    \frac{1}{A_0-B_0}\log\left( \frac{x-A_0}{x-B_0}\right)=-kt+C.
-    \]
-    Then we can find
-    \[
-    \frac{x-A_0}{x-B_0}=e^{-kt+C}
-    \]
-    With $x(0)=0$ we have
-    \[
-    \frac{-A_0}{-B_0}=e^{-kt}e^C
-    \]
-    and so $e^C=\frac{A_0}{B_0}$. We can rewrite this in terms of $A$ and $B$ as
-    \[
-    \frac{A}{B}=\frac{A_0}{B_0}e^{-kt}.
-    \]
+	\item Let $g(x)=\delta(x-L/2)$ and let $f(x)$ be given by some Fourier series.  Using the equation above, solve for the coefficients of the Fourier series for $f(x)$.
+	\item Plot the Fourier series for $f(x)$ for $N=1,5,50$.
 \end{enumerate}
-\end{solution}
-
-\newpage
-\begin{problem}
-If $x_1(t)$ and $x_2(t)$ are solutions to the differential equation
-\[
-x'' + bx' +cx = 0
-\]
-is $x=x_1+x_2+k$ for a constant $k$ always a solution? Is the function $y=tx_1$ a solution? 
+This is an extremely important to solve. The fact that we can determine a solution $f(x)$ where the external force is the Dirac delta function means that we have the ability to determine a the deformation of a string from a point force.
 \end{problem}
-\begin{solution}
-$x$ and $y$ are \emph{not} solutions.  Let's see why.  We note that $x_1$ and $x_2$ are solutions and thus
-\[
-x_i''+bx_i'+cx_i=0\qquad \textrm{for $i=1,2$}.
-\]
-Now, we check if $x$ is a solution by plugging into the left hand side
-\begin{align*}
-    x''+bx'+cx&= (x_1+x_2+k)''+b(x_1+x_2+k)'+c(x_1+x_2+k)\\
-    &= \underbrace{x_1''+bx_1'+cx_1}_{=0}+ \underbrace{x_2''+bx_2'+cx_2}_{=0}+ck\\
-    &= ck \neq 0.
-\end{align*}
-So this $x$ is not a solution. 
-
-Similarly, we take $y=tx_1$ and plug it into the left hand side and find
-\begin{align*}
-    y''+by'+cy&=(tx_1)''+b(tx_1)'+c(tx_1)\\
-    &=tx_1''+2x_1'+ b(tx_1'+x_1)+c(tx_1)\\
-    &= t\underbrace{(x_1''+bx_1'+cx_1)}_{=0}+2x_1'+bx_1\\
-    &=2x_1'+bx_1,
-\end{align*}
-which is not in general a solution unless $x_1=0$.  
+\begin{solution}~
+	\begin{enumerate}[(a)]
+		\item	Here we let $f(x)$ be written as an arbitrary Fourier series by
+		\[
+			f(x) = a_0 + \sum_{n=1}^\infty a_n \sqrt{2} \cos\left(\frac{2n \pi x}{L}\right) + \sum_{n=1}^\infty b_n \sqrt{2}\sin\left(\frac{2n\pi x}{L}\right).
+		\]
+		Then we can put
+		\[
+		-\frac{d^2}{dx^2} f(x) = \frac{4n^2\pi^2}{L^2} \left(\sum_{n=1}^\infty a_n \sqrt{2} \cos\left(\frac{2n \pi x}{L}\right) + \sum_{n=1}^\infty b_n \sqrt{2}\sin\left(\frac{2n\pi x}{L}\right)\right).
+		\]
+		Setting the left hand side of the ODE equal to the right, we have
+		\begin{align*}
+			-\frac{d^2}{dx^2}f(x) &= g(x)\\
+			\frac{4n^2\pi^2}{L^2} \left(\sum_{n=1}^\infty a_n \sqrt{2} \cos\left(\frac{2n \pi x}{L}\right) + \sum_{n=1}^\infty b_n \sqrt{2}\sin\left(\frac{2n\pi x}{L}\right)\right) &= \frac{1}{L} + \sum_{n=1}^\infty (-1)^n \frac{2}{L} \cos\left(\frac{2n\pi x}{L}\right).
+		\end{align*}
+		Hence, we just need to determine the coefficients $a_0$, $a_n$, and $b_n$ for our function $f(x)$. It's clear to see that the $b_n$ terms for $f(x)$ must be zero. Solving for the $a_n$ terms, we find
+		\[
+		\frac{4n^2\pi^2}{L^2} a_n= (-1)^n \frac{2}{\sqrt{2}L},
+		\]
+		which yields
+		\[
+		a_n = (-1)^n \frac{L}{2\sqrt{2}n^2\pi^2}.
+		\]
+		At this point, we have that
+		\[
+		f(x) = a_0 + \sum_{n=1}^\infty (-1)^n \frac{L}{2n^2\pi^2}\cos\left(\frac{2n\pi x}{L}\right).
+		\]
+		We can determine $a_0$ by inforcing our boundary conditions. Namely, we take
+		\begin{align*}
+		0=f(0)&= a_0 + \sum_{n=1}^\infty (-1)^n \frac{L}{2n^2\pi^2}\\
+		&=a_0 -\frac{L}{24},
+		\end{align*}
+		where I used WolframAlpha to evaluate the infinite series above.  This means that $a_0 = \frac{L}{24}$. Thus, we arrive at
+		\[
+		\boxed{f(x) = \frac{L}{24} + \sum_{n=1}^\infty (-1)^n \frac{L}{2n^2\pi^2}\cos\left(\frac{2n\pi x}{L}\right).}
+		\]
+	\end{enumerate}
 \end{solution}
+
 
 \newpage
 \begin{problem}
-Consider the following initial value problem:
-\begin{align*}
-    x''+4x'+3x&=0
-\end{align*}
-with initial data $x(0)=1$, $x'(0)=0$.  
+Compute the following Fourier transforms (using a table or WolframAlpha if need be).  
 \begin{enumerate}[(a)]
-    \item Find the solution.
-    \item Sketch a plot of the solution.
-    \item Explain in words what is happening to the solution as time goes on. What happens as $t\to \infty$?
+	\item $\sin(3\pi x)$.
+	\item $e^{\frac{-x^2}{2}}$.
+	\item $\delta(x)$.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
-\begin{enumerate}[(a)]
-    \item We can solve this homogeneous second order linear equation with constant coefficients by finding roots to its characteristic polynomial. In this case, that amounts to
-    \begin{align*}
-        \lambda^2+4\lambda+3&=0\\
-        \iff (\lambda +3)(\lambda+1)&=0,
-    \end{align*}
-    so the roots are $\lambda_1=-1$ and $\lambda_2=-3$.  Thus our general solution is
-    \[
-    x(t)=C_1 e^{\lambda_1 t}+C_2e^{\lambda_2 t}=C_1 e^{-t}+C_2e^{-3t}.
-    \]
-    Then we use the initial conditions to find a particular solution. Namely,
-    \begin{align*}
-        1=x(0)&=C_1e^{-0}+C_2e^{-3\cdot 0}=C_1+C_2\\
-        0=x'(0)&=-C_1e^{-0}-3C_2e^{-3\cdot 0}=-C_1-3C_2.
-    \end{align*}
-    Using the second equation we get $C_1=-3C_2$. We can plug this into the first equation to get
-    \[
-    1=-3C_2+C_2=-2C_2
-    \]
-    meaning that $C_2=-\frac{1}{2}$. Thus $C_2=\frac{3}{2}$. Hence, our particular solution for this IVP is
-    \[
-    x(t)=\frac{3}{2} e^{-t}-\frac{1}{2}e^{-3t}.
-    \]
-    \item Here is a plot of the particular solution from time $t=0$ to time $t=10$.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.7\textwidth]{Homework_3/desmos-graph(19).png}
-    \end{figure}
-    \item The solution decays exponentially over time.  As $t\to \infty$ our solution approaches zero.
-\end{enumerate}
+	\begin{enumerate}[(a)]
+		\item To compute the Fourier transform, one could use a table. However, we can take
+		\[
+		\fourier{\sin(3\pi x)} = \int_{-\infty}^\infty \sin(3\pi x)e^{-i2\pi kx}dx.
+		\]
+		The techniques used to compute this integral by hand are found in complex analysis. Specifically, one uses the fact that $\sin(3\pi x)$ is an analytic function on $\C$ as well as the method of contour integration (seen here: \url{https://en.wikipedia.org/wiki/Contour_integration}). This is not a topic for our class (though we will learn how to integrate along curves).
+		
+		Anyways, computing this Fourier transform yields
+		\[
+		\boxed{\fourier{\sin(3\pi x)} = \frac{\delta\left(k-\frac{3}{2}\right)-\delta\left(k+\frac{3}{2}\right)}{2i}.}
+		\] 
+		Here, I used a table to compute this (as WolframAlpha claims the integral does not converge).
+		\item Again, we want to compute
+		\[
+		\fourier{e^{\frac{-x^2}{2}}} = \int_{-\infty}^\infty e^{\frac{-x^2}{2}}e^{-i2\pi kx}dx.
+		\]
+		I was able to compute this using WolframAlpha by entering
+		\begin{verbatim}
+			integrate[e^(-x^2/2)e^{-i2*pi*k*x},{x,-infty,infty}]
+		\end{verbatim}
+		This yields
+		\[
+		\boxed{\fourier{e^{\frac{-x^2}{2}}} = \sqrt{2\pi}e^{-2\pi^2k^2}.}
+		\]
+		One thing to note here is that the Fourier transform of a Gaussian is a Gaussian!
+		\item Since, in some sense, the Dirac delta is a Gaussian function (with a variance of zero), we expect to get another type of Gaussian out as well. Let's see what happens. We take
+		\begin{align*}
+			\boxed{\fourier{\delta(x)} = \int_{-\infty}^\infty \delta(x) e^{-i2\pi k x}dx = 1.}
+		\end{align*}
+		The constant 1 function is much like a Gaussian with an infinite variance! This is maybe a ``handwavy" way to look at this.
+		\end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-Write down a homogeneous second-order linear differential equation where the system displays a decaying oscillation.
-\end{problem}
-\begin{solution}
-Since our solution should oscillate and decay, we need some form of a ``spring" and some form of damping.  These terms show up respectively as $b$ and $c$ in the equation
+A common application for the Fourier transform is to solve differential equations whose domain is time $t\in [0,\infty)$. We can model how a point $x$ on a rubber string oscillates over time consider the differential equation
 \[
-x''+bx'+cx=0.
+u''(t)+v^2u(t)=0,
 \]
-Now, also note that (aside from one special case of two of the same real roots), our general solution has the form
+with initial conditions $u(0)=L$ and $u'(0)=0$. Here $u(t)$ is the displacement of the string at position $x$ with the initial conditions describing the string being pulled tight at time $t=0$.
+\begin{figure}[H]
+	\centering
+	\def\svgwidth{\columnwidth}
+	\input{point_on_string.pdf_tex}
+\end{figure}
+To solve this equation, we could use use methods we learned previously, or apply the Fourier transform to the whole equation by
 \[
-x(t)=C_1 e^{\lambda_1 t}+C_2e^{\lambda_2 t}
-\]
-where $\lambda_1$ and $\lambda_2$ are roots to the characteristic polynomial
-\[
-\lambda^2+b\lambda + c =0.
-\]
-Now, the roots for the characteristic polynomial are
-\[
-\lambda = \frac{-b \pm \sqrt{b^2-4c}}{2}.
-\]
-\begin{itemize}
-    \item To have oscillation, our roots must have an imaginary part and thus 
-    \[
-    b^2-4c<0.
-    \]
-    In other words, $b^2<4c.$
-    \item To have a decaying solution, the real part of the roots must be negative. The real part of the roots will be $\frac{-b}{2}$ and thus we need
-    \[
-    \frac{-b}{2}<0.
-    \]
-\end{itemize}
-Now, I'll choose $b=1$ and $c=1$ which satisfy both of these requirements. We then have
-\[
-x''+x'+x=0
-\]
-as our equation.
-
-Note, we can also find the solution as the roots are then
-\[
-\lambda = \frac{-1\pm \sqrt{1-4}}{2}=\frac{-1}{2}\pm \frac{\sqrt{3}}{2}.
-\]
-Plugging this into the form for the general solution and we get
-\[
-x(t)=e^{-\frac{1}{2}t}\left(C_1 \sin\left(\frac{\sqrt{3}}{2}\right) + \cos\left(\frac{\sqrt{3}}{2}\right)\right)
-\]
-\end{solution}
-
-\newpage
-\begin{problem}
-Consider the following differential equation:
-\[
-x''+2x'+x=3e^{-t}+2t.
+\fourier{u''(t)+v^2u(t)}=\fourier{0}.
 \]
 \begin{enumerate}[(a)]
-    \item Find the homogeneous solution $x_H(t)$.
-    \item Find the particular integral $x_P(t)$.
-    \item Find the specific solution corresponding to the initial data $x(0)=0$, $x'(0)=0$.
+	\item Compute the Fourier transform above.
+	\item One should then have a new equation
+	\[
+	-4\pi^2k^2\hat{u}(k)+v^2\hat{u}(k)=0.
+	\]
+	Solve this new equation for $k$.
+	\item One should have two values $k_1$ and $k_2$ from the work in (b).  This corresponds to the solution
+	\[
+	\hat{u}(k)=\delta(k-k_1) \qquad \textrm{and} \qquad \hat{u}(k)=\delta(k-k_2).
+	\]
+	Compute the inverse Fourier transform of the two delta functions. A linear combination of these correspond to your solution $u(t)$.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
-\begin{enumerate}[(a)]
-    \item The roots to characteristic polynomial satisfy
-    \[
-    \lambda^2 + 2\lambda + 1 = 0
-    \]
-    which can be found by factoring
-    \[
-    (\lambda+1)^2=0,
-    \]
-    which gives us that $\lambda=-1$ is the only root.  Thus, this is the special case where our general solution looks slightly different.  We'll have
-    \[
-    x_h(t)=C_1e^{-t}+C_2te^{-t}.
-    \]
-    \item The right hand side has a $e^{-t}$ term which is already present in our $x_h$. In fact, this means we have to take $kt^2e^{-t}$ as a guess for this part of $x_p$. Then, we also have a $2t$ term, so our $x_p$ should be
-    \[
-    x_p =kt^2e^{-t}+ a_0 + a_1 t.
-    \]
-    Now we have to find the undetermined coefficients by plugging in and solving
-    \begin{align*}
-        x_p''+2x_p'+x_p&=3e^{-t}+2t\\
-    2ke^{-t}-4kte^{-t}+kt^2e^{-t}+2(2kte^{-t}-kt^2e^{-t}+a_1)+kt^2e^{-t}a_1t+a_0&=3e^{-t}+2t
-    \end{align*}
-    which gives us that $k=\frac{3}{2}$, $a_1=2$, and $a_0=-4$. So 
-    \[
-    x_p(t)=\frac{3}{2}t^2e^{-t}+2t-4.
-    \]
-    \item Now, we take it that our solution is of the form
-    \[
-    x(t)=x_h+x_p= C_1e^{-t}+C_2te^{-t}+\frac{3}{2}t^2e^{-t}+2t-4.
-    \]
-    If we take
-    \[
-    0=x(0)=C_1-4
-    \]
-    then $C_1=4$, and
-    \[
-    0=x'(0)=-4+C_2+2
-    \]
-    so $C_2=2$. Thus, our specific solution is
-    \[
-    x(t)=(4+2t)e^{-t}+\frac{3}{2}t^2e^{-t}+2t-4.
-    \]
-    
-\end{enumerate}
+	\begin{enumerate}[(a)]
+		\item We have that the Fourier transformed equation is given by
+		\[
+		-4\pi^2k^2 \hat{u}(k)+v^2 \hat{u}(k) = 0,
+		\]
+		since the Fourier transform converts differentiation into multiplication.  
+		\item Indeed, we have this equation.  If we solve this equation for $k$, we have
+		\[
+		(-4\pi^2k^2+v^2)\hat{u}(k)=0,
+		\]
+		which yields
+		\[
+		k = \pm \frac{|v|}{2\pi}.
+		\]
+		\item Put $k_1 = -\frac{|v|}{2\pi}$ and $k_2=\frac{|v|}{2\pi}$.  Thus, we get
+		\[
+		\hat{u}(k) = \delta\left(k+\frac{|v|}{2\pi}\right) \qquad \textrm{and} \qquad \hat{u}(k) = \delta\left(k-\frac{|v|}{2\pi}\right).
+		\]
+		Then we have that
+		\[
+		\fourier{\delta\left(k+\frac{|v|}{2\pi}\right)} = e^{-ivt}
+		\]
+		and
+		\[
+		\fourier{\delta\left(k-\frac{|v|}{2\pi}\right)} = e^{ivt}.
+		\]
+		If we take a linear combination of these solutions we arrive at
+		\[
+		u(t) = C_1 e^{ivt}+C_2 e^{-ivt},
+		\]
+		which is the solution we have found for the harmonic oscillator equation before!
+	\end{enumerate}
 \end{solution}
+
+
+
 
 \end{document}
