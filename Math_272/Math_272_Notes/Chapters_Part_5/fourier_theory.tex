@@ -103,7 +103,7 @@ a_0 = \innprod{f}{1},
 \]
 as well as the terms $a_n$ and $b_n$ by
 \[
-a_n = \innprod{f}{\sqrt{2}\cos\left(\frac{2 \pi x}{L}\right)} \quad \textrm{and} \quad b_n = \innprod{f}{\sqrt{2}\sin\left(\frac{2 \pi x}{L}\right)}.
+a_n = \innprod{f}{\sqrt{2}\cos\left(\frac{2n \pi x}{L}\right)} \quad \textrm{and} \quad b_n = \innprod{f}{\sqrt{2}\sin\left(\frac{2 n\pi x}{L}\right)}.
 \]
 
 \begin{ex}{Square Wave}{square_wave}
@@ -367,10 +367,11 @@ This section would not be complete without some reference of common Fourier tran
             $f(x)$ & $\hat{f}(k)$\\
             \hline
          	$\delta(x)$ & $1$\\
-         	$1$ & $\delta(x)$\\
+         	$1$ & $\delta(k)$\\
          	$e^{iax}$ & $\delta\left(k-\frac{a}{2\pi}\right)$\\
          	$\cos(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)+\delta\left(k+\frac{a}{2\pi}\right)}{2}$\\
-     		$\sin(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)-\delta\left(k+\frac{a}{2\pi}\right)}{2i}$
+     		$\sin(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)-\delta\left(k+\frac{a}{2\pi}\right)}{2i}$\\
+     		$e^{-\alpha x^2}$ & $\sqrt{\frac{\pi}{\alpha}} e^{\frac{(\pi k)^2}{\alpha}}$
         \end{tabular}
         \label{tab:fourier_transform}
     \end{table}
@@ -422,7 +423,7 @@ First, (though we have yet to mention this) let us note that any $f(x)$ must be 
 
 What we have found is that the Fourier transform turns derivatives into a multiplication operator! This can be summed up in the following way:
 \[
-\boxed{\fourier{\frac{d^n}{dx^n} f(x)} = (i2\pi kx)^n \hat{f}(k).}
+\boxed{\fourier{\frac{d^n}{dx^n} f(x)} = (i2\pi k)^n \hat{f}(k).}
 \]
 
 We also have the following as well
@@ -440,24 +441,141 @@ What follows is an algebraic method for solving differential equations. Specific
 
 We'll first start with an example that uses the Fourier series as opposed to the Fourier transform.  Underlying the solution is the same principal, but it gives us a better means for understanding the methodology.
 
-\begin{ex}{Fourier Series/Transform Solution of a Second Order Equation}{fourier_transform_first_order}
-	Consider an elastic band suspended from atop two poles subject to the force of gravity. We can model this equation by
+\begin{ex}{Fourier Series Solution of a Second Order Equation}{fourier_series_second_order}
+	Consider an elastic band suspended from atop two poles subject to an external force. We can model this equation by
 	\[
-	-k\frac{d^2}{dx^2}(x) = g(x),
+	-\mu\frac{d^2}{dx^2}f(x) = g(x),
 	\]
-	with the boundary conditions $f(0)=f(L)=0$. Here, $k$ is an elastic constant that describes the stiffness of the elastic.  Then, we let 
+	with the boundary conditions $f(0)=f(L)=0$. Here, $\mu$ is an elastic constant that describes the stiffness of the elastic.  Then, we let 
 	\[
 	g(x) = \begin{cases} 0 & x<L/4 \\ 1 & L/4 \leq x < 3L/4 \\ 0 & 3L/4<x \end{cases},
 	\]
 	which has the following graph.
-	\textcolor{red}{add figure}
-	Let us suppose that $f(x)$ is written as a Fourier series,
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\textwidth]{Figures_Part_5/square_wave_force.png}
+		\caption{A plot of the external force $g(x)$.}
+	\end{figure}
+	We can also write $g(x)$ as a Fourier series by
+	\[
+	g(x) = \frac{1}{2}+\sum_{n=1}^{N}\frac{\sin\left(\frac{3\pi n}{2}\right)-\sin\left(\frac{\pi n}{2}\right)}{\pi n}\cos\left(\frac{2n\pi x}{L}\right).
+	\]
+	Let us also suppose that $f(x)$ is written as a Fourier series,
 	\begin{align*}
-		f(x) = ...
+		f(x) = a_0 + \sum_{n=1}^\infty a_n \sqrt{2} \cos\left(\frac{2n\pi x}{L}\right) + \sum_{n=1}^\infty b_n \sqrt{2} \sin\left(\frac{2n\pi x}{L}\right).
 	\end{align*}
+	Then, we can plug both Fourier series into the differential equation to get
+	\begin{align*}
+	\frac{4n^2\pi^2\mu}{L^2} \left(\sum_{n=1}^\infty a_n \sqrt{2} \cos\left(\frac{2n\pi x}{L}\right) + \sum_{n=1}^\infty b_n \sqrt{2} \sin\left(\frac{2n\pi x}{L}\right)\right) \\
+	= \frac{1}{2}+\sum_{n=1}^{N}\frac{\sin\left(\frac{3\pi n}{2}\right)-\sin\left(\frac{\pi n}{2}\right)}{\sqrt{2}\pi n}\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right).
+	\end{align*}
+	Our task now is to solve for the coefficients $a_n$ and $b_n$ and later determine the constant $a_0$ from boundary data. In the above, it's clear that $b_n=0$ and we also have
+	\[
+	a_n = \frac{L^2\left(\sin\left(\frac{3 n \pi}{2}\right)-\sin\left(\frac{n\pi}{2}\right)\right)}{4\sqrt{2}\pi^3 n^3\mu}.
+	\]
+	Thus we have the general solution
+	\[
+	f(x) = a_0 + \frac{1}{\mu}\sum_{n=1}^\infty \frac{L^2\left(\sin\left(\frac{3 n \pi}{2}\right)-\sin\left(\frac{n\pi}{2}\right)\right)}{4\pi^3 n^3} \cos\left(\frac{2n\pi x}{L}\right).
+	\]
+	Since we require that $f(0)=f(L)=0$ we take
+	\[
+	0 = f(0)=a_0 + \frac{1}{\mu}\sum_{n=1}^\infty \frac{L^2\left(\sin\left(\frac{3 n \pi}{2}\right)-\sin\left(\frac{n\pi}{2}\right)\right)}{4\pi^3 n^3}.
+	\]
+	Evaluating the above infinite series gives us
+	\[
+	0 = a_0 - \frac{1}{64\mu},
+	\]
+	and so $a_0=\frac{1}{64\mu}$.  Finally, we have our solution
+	\[
+	\boxed{f(x) = \frac{1}{64\mu}+ \frac{1}{\mu}\sum_{n=1}^\infty \frac{L^2\left(\sin\left(\frac{3 n \pi}{2}\right)-\sin\left(\frac{n\pi}{2}\right)\right)}{4\pi^3 n^3} \cos\left(\frac{2n\pi x}{L}\right).}
+	\]
 	
-	Then do fourier transform with complex exponentials version to lead into fourier transform. 
-	
+	Letting $\mu=\frac{1}{10}$, we can plot our solution.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\textwidth]{Figures_Part_5/square_wave_diffeq_solution.png}
+		\caption{An approximation to the solution $f(x)$ with $N=100$.}
+	\end{figure}
 \end{ex}
 	
+\begin{exercise}
+	Verify that the Fourier series for $g(x)$ above is correct.
+\end{exercise}
 
+
+\begin{ex}{Fourier Transform Solution of a Second Order Equation}{fourier_transform_second_order}
+	Let us consider the same problem as the previous example but with a slightly different approach. We wish to solve the boundary value problem
+	\[
+	-\mu \frac{d^2}{dx^2} f(x) = g(x)
+	\]
+	with $f(0)=f(L)=0$ and with 
+	\[
+	g(x) = \begin{cases} 0 & x<L/4 \\ 1 & L/4 \leq x < 3L/4 \\ 0 & 3L/4<x \end{cases}.
+	\]
+	Then, we can compute the Fourier transform of $g(x)$ by
+	\[
+	\hat{g}(k) = \frac{1}{L}\int_0^L g(x)e^{\frac{i2\pi k x}{L}}dx =\frac{e^{ik \pi}\sin\left(\frac{k\pi}{2}\right)}{k \pi}. 
+	\]
+	Similarly, we can compute the Fourier transform of the left hand side of our differential equation to get
+	\[
+	\fourier{-\mu \frac{d^2}{dx^2} f(x)} = \mu\frac{4\pi^2k^2}{L^2} \hat{f}(k).
+	\]
+	Hence, the Fourier transform of the whole differential equation reads
+	\[
+	\mu\frac{4\pi^2 k^2}{L^2} \hat{f}(k) = \frac{e^{ik \pi}\sin\left(\frac{k\pi}{2}\right)}{k \pi}.
+	\]
+	Here, we can solve for $\hat{f}(k)$ to get
+	\[
+	 \hat{f}(k)=\frac{1}{\mu} \frac{L^2 e^{ik \pi}\sin\left(\frac{k\pi}{2}\right)}{4\pi^3k^3}.
+	\]
+	Inverting the Fourier transform on $[0,L]$ amounts to writing $f(x)$ as the complex Fourier series
+	\[
+	\boxed{f(x) = \sum_{k=-\infty}^\infty \hat{f}(k) e^{\frac{i2k\pi x}{L}}.}
+	\]
+\end{ex}
+
+\begin{remark}
+	Though arguably less intuitive, the Fourier transform approach is a bit cleaner to work with.  If one were to plot approximations for our function $f(x)$, we would receive the same answer as in the prior example.
+\end{remark}
+
+In the previous examples, we were able to solve differential equations on the interval $[0,L]$ whose right hand sides were discontinuous functions.  Prior to this technique, we would have had no way of solving these problems. The further usefulness of the Fourier transform comes into play as we investigate differential equations defined on unbounded sets of $\R$.  For example, we can consider an equation defined on $\R$ with a discontinuous (technically, not even function) right hand side.
+
+\begin{ex}{Fourier Transform for a Second Order Equation on $\R$}{fourier_transform_on_R}
+	Consider the following equation
+	\[
+	-\frac{d^2}{dx^2}f(x) = \delta(x),
+	\]
+	defined on all of $\R$. We wish to find a general solution for this problem.  To solve this, we take a Fourier transform of both sides of the equation to get
+	\[
+	4\pi^2 k^2 \hat{f}(k) = 1.
+	\]
+	We can then solve for the function $\hat{f}(k)$ and get
+	\[
+	\hat{f}(k) = \frac{1}{4\pi^2 k^2}.
+	\]
+	Thus, we can then find
+	\[
+	f(x) = \fourierinv{\frac{1}{4\pi^2k^2}}.
+	\]
+	Computing this inverse Fourier transform yields
+	\[
+	\boxed{f(x) = -\frac{|x|}{2}.}
+	\]
+\end{ex}
+	
+	
+	The above example computes what we refer to as the \boldgreen{fundamental solution} for a differential operator. Specifically, this is when we have a differential operator $\linop$ and we solve
+	\[
+	\linop f(x) = \delta(x).
+	\]
+	In our case above, we found the fundamental solution for the 1-dimensional Laplace operator.  If one generalizes this to into 3-dimensions, we will have the equation
+	\[
+	\nabla \cdot (\nabla V(x,y,z)) = \delta(x,y,z),
+	\]
+	which garners the solution
+	\[
+	V(x,y,z) = \frac{1}{4\pi \sqrt{x^2+y^2+z^2}}.
+	\]
+	This is how one derives the form of the electrostatic potential mathematically!
+	
+	For now, we will move on to developing calculus in higher dimensions so that we can approach physical problems in space.

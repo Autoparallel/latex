@@ -6,9 +6,9 @@
 \pagenumbering{gobble}       % This kills the page numbering
 
 \begin{center}
-   \textsc{\large MATH 271, Exam 1}\\
+   \textsc{\large MATH 272, Exam 1}\\
    \textsc{Take Home Portion}\\
-   \textsc{Due September 25$^\textrm{th}$ at the start of class}
+   \textsc{Due February 19$^\textrm{th}$ at the start of class}
 \end{center}
 \vspace{1cm}
 
@@ -21,56 +21,45 @@
 
 \vspace{1cm}
 
-\begin{center}\textbf{Problem 1} \; \underline{\hspace{1cm}}/15 \qquad \qquad \textbf{Problem 2} \; \underline{\hspace{1cm}}/10\end{center}
+\begin{center}\textbf{Problem 1} \; \underline{\hspace{1cm}}/10 \qquad \qquad \textbf{Problem 2} \; \underline{\hspace{1cm}}/15\end{center}
 
 \vspace{1cm}
 
 \hrule
 
 \vspace*{1cm}
-\noindent\emph{Note, these problems span two pages.}
+\noindent\emph{Note, these problems span two pages.}\\
 
+In the heart of quantum mechanics lies probability theory.  Since we can only compute the likelihood of observing something, we have to start thinking in this framework. 
+
+\newpage
 \begin{problem}
-Consider the endothermic breakdown of a molecule $x$ given by
+Consider a free particle constrained to the infinite line $\R$.  Heisenberg's uncertainty principle states that one can never simultaneously know the position and momentum of a particle.  
+
+Suppose that we measure the \emph{exact} position of a particle at time $t=0$ to be at $x_0$. Then the wavefunction for this particle is given by
 \[
-x \xrightarrow{kt^2} \textrm{Products}
+\Psi(x) = \delta(x-x_0).  
 \]
-where we let $x(t)$ denote the concentration of reactants. Since the reaction is endothermic, if we also heat up the solution over time, we get a factor of $t^2$ as well since the reaction occurs more readily in higher temperatures. The concentration decreases over time based on differential equation
-\[
-x'=-kt^2(x-x_e).
-\]
-where $x_e$ is a constant that denotes the equilibrium concentration. 
+Thus, since we know the position exactly, we expect to know \emph{nothing} about the particle's momentum. 
 \begin{enumerate}[(a)]
-    \item Write an equivalent equation with the change of variables $\delta=x-x_e$.
-    \item Find the general solution to this new equation. 
-    \item What is the general solution in terms of the original variables $x$?
-    \item Given the initial amount of $x$ is $x(0)=1$, the equilibrium concentration is $x_e=1/2$, and $k=1$, find the particular solution for $x(t)$.
-    \item Does this reaction ever reach the equilibrium state?
+	\item
 \end{enumerate}
 \end{problem}
 
 \newpage
 \begin{problem}
-Consider the inhomogeneous linear differential equation
+Probability is described via probability distribution functions (PDFs) $p(x)$. Intuitively, the value of $p(x)$ at the point $x$ describes the weighting of that point $x$. We require that
+\begin{itemize}
+	\item $p(x)\geq 0$ for all $x\in \R$. (\emph{There is no negative probability.)}
+	\item $\displaystyle{\int_{-\infty}^\infty p(x)dx=1}$. (\emph{The total probability is 1.)}
+\end{itemize}
+We can then define the probability of measuring an outcome in the region $[a,b]$ by
 \[
-x''+\omega^2x=\cos(\omega t),
+\mathcal{P}_{[a,b]}[p(x)] = \int_a^b p(x)dx.
 \]
-where $x(t)$ is a function of $t$. This is an example of resonance.
 \begin{enumerate}[(a)]
-    \item Find the general homogeneous solution $x_h(t)$.
-    \item Show that your solution solves the homogeneous equation
-    \[
-    x_h''+\omega^2x_h=0.
-    \]
-    \item For the particular integral, $x_p(t)$, take the ansatz
-    \[
-    x_p(t)=C_1t\cos(\omega t) + C_2 t\sin(\omega t)
-    \]
-    and find the undetermined coefficients $C_1$ and $C_2$.
-    \item Show that $x=x_h+x_p$ solves the inhomogeneous equation
-    \[
-    x''+\omega^2 x = \cos(\omega t).
-    \]
+	\item Consider the Gaussian blah blah limit to delta funciton
+	\item
 \end{enumerate}
 \end{problem}
 

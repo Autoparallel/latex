@@ -1,37 +1,37 @@
-\contentsline {part}{V\hspace {1em}Further Topics in Linear Algebra}{1}{part.5}%
-\contentsline {chapter}{\numberline {1}Complex Functions and Transformations}{2}{chapter.1}%
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1.1}%
-\contentsline {section}{\numberline {2}Complex Functions}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {2.1}Cartesian and Polar Representations}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {2.2}Complex Valued Functions}{6}{subsection.1.2.2}%
-\contentsline {chapter}{\numberline {2}Hilbert Spaces}{14}{chapter.2}%
-\contentsline {section}{\numberline {1}Introduction}{14}{section.2.1}%
-\contentsline {subsection}{\numberline {1.1}Infinite Dimensions}{15}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2}Function Spaces}{15}{section.2.2}%
-\contentsline {section}{\numberline {3}Inner Products and Norms}{16}{section.2.3}%
-\contentsline {subsection}{\numberline {3.1}Norms}{18}{subsection.2.3.1}%
-\contentsline {section}{\numberline {4}Inner Product Spaces}{19}{section.2.4}%
-\contentsline {section}{\numberline {5}Symmetries}{20}{section.2.5}%
-\contentsline {section}{\numberline {6}Bases}{21}{section.2.6}%
-\contentsline {subsection}{\numberline {6.1}Orthonormal Bases}{22}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {6.2}Series and Integrals as Linear Combinations}{24}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {6.3}Projection}{25}{subsection.2.6.3}%
-\contentsline {chapter}{\numberline {3}Linear Operators}{30}{chapter.3}%
-\contentsline {section}{\numberline {1}Matrices}{30}{section.3.1}%
-\contentsline {subsubsection}{Linear Equations}{31}{subsubsection*.7}%
-\contentsline {subsubsection}{Adjoints}{31}{subsubsection*.8}%
-\contentsline {section}{\numberline {2}Linear Operators}{32}{section.3.2}%
-\contentsline {subsection}{\numberline {2.1}Adjoints}{33}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {2.2}Hermitian Operators}{35}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3}Differential and Integral Operators}{38}{section.3.3}%
-\contentsline {subsection}{\numberline {3.1}Integral Operators}{39}{subsection.3.3.1}%
-\contentsline {section}{\numberline {4}Spectra}{40}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Fourier Theory}{42}{chapter.4}%
-\contentsline {section}{\numberline {1}Fourier Series}{42}{section.4.1}%
-\contentsline {subsection}{\numberline {1.1}Solving Equations}{44}{subsection.4.1.1}%
-\contentsline {section}{\numberline {2}Fourier Transform}{46}{section.4.2}%
-\contentsline {subsection}{\numberline {2.1}Fourier Transform Operator}{48}{subsection.4.2.1}%
-\contentsline {section}{\numberline {3}The Dirac Delta Function}{49}{section.4.3}%
-\contentsline {section}{\numberline {4}Computing Fourier Transforms}{50}{section.4.4}%
-\contentsline {section}{\numberline {5}The Inverse Fourier Transform}{52}{section.4.5}%
-\contentsline {section}{\numberline {6}Solving Differential Equations}{53}{section.4.6}%
+\contentsline {part}{V\hspace {1em}Further Topics in Linear Algebra}{1}{part.5}% 
+\contentsline {chapter}{\numberline {1}Complex Functions and Transformations}{2}{chapter.1}% 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1.1}% 
+\contentsline {section}{\numberline {2}Complex Functions}{2}{section.1.2}% 
+\contentsline {subsection}{\numberline {2.1}Cartesian and Polar Representations}{3}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Complex Valued Functions}{6}{subsection.1.2.2}% 
+\contentsline {chapter}{\numberline {2}Hilbert Spaces}{14}{chapter.2}% 
+\contentsline {section}{\numberline {1}Introduction}{14}{section.2.1}% 
+\contentsline {subsection}{\numberline {1.1}Infinite Dimensions}{15}{subsection.2.1.1}% 
+\contentsline {section}{\numberline {2}Function Spaces}{15}{section.2.2}% 
+\contentsline {section}{\numberline {3}Inner Products and Norms}{16}{section.2.3}% 
+\contentsline {subsection}{\numberline {3.1}Norms}{18}{subsection.2.3.1}% 
+\contentsline {section}{\numberline {4}Inner Product Spaces}{19}{section.2.4}% 
+\contentsline {section}{\numberline {5}Symmetries}{20}{section.2.5}% 
+\contentsline {section}{\numberline {6}Bases}{21}{section.2.6}% 
+\contentsline {subsection}{\numberline {6.1}Orthonormal Bases}{22}{subsection.2.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Series and Integrals as Linear Combinations}{24}{subsection.2.6.2}% 
+\contentsline {subsection}{\numberline {6.3}Projection}{25}{subsection.2.6.3}% 
+\contentsline {chapter}{\numberline {3}Linear Operators}{30}{chapter.3}% 
+\contentsline {section}{\numberline {1}Matrices}{30}{section.3.1}% 
+\contentsline {subsubsection}{Linear Equations}{31}{subsubsection*.7}% 
+\contentsline {subsubsection}{Adjoints}{31}{subsubsection*.8}% 
+\contentsline {section}{\numberline {2}Linear Operators}{32}{section.3.2}% 
+\contentsline {subsection}{\numberline {2.1}Adjoints}{33}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Hermitian Operators}{35}{subsection.3.2.2}% 
+\contentsline {section}{\numberline {3}Differential and Integral Operators}{38}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.1}Integral Operators}{39}{subsection.3.3.1}% 
+\contentsline {section}{\numberline {4}Spectra}{40}{section.3.4}% 
+\contentsline {chapter}{\numberline {4}Fourier Theory}{42}{chapter.4}% 
+\contentsline {section}{\numberline {1}Fourier Series}{42}{section.4.1}% 
+\contentsline {subsection}{\numberline {1.1}Solving Equations}{44}{subsection.4.1.1}% 
+\contentsline {section}{\numberline {2}Fourier Transform}{46}{section.4.2}% 
+\contentsline {subsection}{\numberline {2.1}Fourier Transform Operator}{48}{subsection.4.2.1}% 
+\contentsline {section}{\numberline {3}The Dirac Delta Function}{49}{section.4.3}% 
+\contentsline {section}{\numberline {4}Computing Fourier Transforms}{50}{section.4.4}% 
+\contentsline {section}{\numberline {5}The Inverse Fourier Transform}{52}{section.4.5}% 
+\contentsline {section}{\numberline {6}Solving Differential Equations}{53}{section.4.6}% 

@@ -40,7 +40,7 @@ This is an extremely important to solve. The fact that we can determine a soluti
 Compute the following Fourier transforms (using a table or WolframAlpha if need be).  
 \begin{enumerate}[(a)]
 	\item $\sin(3\pi x)$.
-	\item $e^{-x^2}{2}$.
+	\item $e^{\frac{-x^2}{2}}$.
 	\item $\delta(x)$.
 \end{enumerate}
 \end{problem}
@@ -89,8 +89,12 @@ To solve this equation, we could use use methods we learned previously, or apply
 	\[
 	-4\pi^2k^2\hat{u}(k)+v^2\hat{u}(k)=0.
 	\]
-	Solve for $\hat{u}(k)$ in terms of $k$.
-	\item Use the inverse Fourier transform to compute $u(t)$ from $\hat{u}(k)$. This is the solution to the differential equation.
+	Solve this new equation for $k$.
+	\item One should have two values $k_1$ and $k_2$ from the work in (b).  This corresponds to the solution
+	\[
+	\hat{u}(k)=\delta(k-k_1) \qquad \textrm{and} \qquad \hat{u}(k)=\delta(k-k_2).
+	\]
+	Compute the inverse Fourier transform of the two delta functions. A linear combination of these correspond to your solution $u(t)$.
 \end{enumerate}
 \end{problem}
 
