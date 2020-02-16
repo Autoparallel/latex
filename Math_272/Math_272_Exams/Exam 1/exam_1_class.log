@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  12 FEB 2020 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  15 FEB 2020 19:15
 entering extended mode
 **./exam_1_class.tex
 (exam_1_class.tex
@@ -1768,18 +1768,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-[1{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
+[1{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX war
+ning (ext4): destination with the same identifier (name{page.}) has been alread
+y used, duplicate ignored
 <to be read again> 
                    \relax 
-l.85 \newpage
+l.82 \newpage
               [2]
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
@@ -1787,14 +1783,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.90 \newpage
-              [3]pdfTeX warning (ext4): destination with the same identifier (n
-ame{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.109 \newpage
-               [4]
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+l.100 \newpage
+               [3]
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
@@ -1802,14 +1793,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.114 \newpage
-               [5]pdfTeX warning (ext4): destination with the same identifier (
+l.105 \newpage
+               [4]pdfTeX warning (ext4): destination with the same identifier (
 name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.136 \newpage
-               [6]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+l.121 \newpage
+               [5]
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
@@ -1817,44 +1808,44 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.141 \newpage
-               [7]pdfTeX warning (ext4): destination with the same identifier (
+l.126 \newpage
+               [6]pdfTeX warning (ext4): destination with the same identifier (
 name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.150 \newpage
+               [7]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.155 \newpage
+               [8]pdfTeX warning (ext4): destination with the same identifier (
+name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.160 \newpage
+               [9]
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.165 \newpage
-               [8]
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.170 \newpage
-               [9]pdfTeX warning (ext4): destination with the same identifier (
-name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.190 \newpage
-               [10]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.195 \newpage
-               [11]pdfTeX warning (ext4): destination with the same identifier 
+               [10]pdfTeX warning (ext4): destination with the same identifier 
 (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.222 \newpage
-               [12]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+l.170 \newpage
+               [11]
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
@@ -1862,41 +1853,59 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.225 \end{document}
-                     [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+l.175 \newpage
+               [12]pdfTeX warning (ext4): destination with the same identifier 
+(name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 \newpage
+               [13]
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.182 \end{document}
+                     [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
  (exam_1_class.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
 Package rerunfilecheck Info: File `exam_1_class.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
  ) 
 Here is how much of TeX's memory you used:
  49505 strings out of 492483
- 1135979 string characters out of 3121588
- 1323213 words of memory out of 3000000
- 52917 multiletter control sequences out of 15000+200000
+ 1136044 string characters out of 3121588
+ 1314315 words of memory out of 3000000
+ 52925 multiletter control sequences out of 15000+200000
  543119 words of font info for 69 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 77i,20n,123p,958b,868s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 77i,13n,123p,958b,866s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Colin/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Co
-lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Co
+lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exam_1_class.pdf (13 pages, 147435 bytes).
+m/cmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
+rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on exam_1_class.pdf (14 pages, 156577 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

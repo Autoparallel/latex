@@ -5,7 +5,7 @@
 \pagenumbering{gobble} % This kills the page numbering
 
 \begin{center}
-   \textsc{\large MATH 271, Exam 1}\\
+   \textsc{\large MATH 272, Exam 1}\\
 \end{center}
 \vspace{1cm}
 
@@ -54,7 +54,23 @@
 
 Please circle your answers!}\end{center}
 
-
+\newpage
+\begin{center}\large{A table of Fourier transforms and their inverses.} \end{center}
+\begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{2}
+        \begin{tabular}{c|c}
+            $f(x)$ & $\hat{f}(k)$\\
+            \hline
+         	$\delta(x)$ & $1$\\
+         	$1$ & $\delta(k)$\\
+         	$e^{iax}$ & $\delta\left(k-\frac{a}{2\pi}\right)$\\
+         	$\cos(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)+\delta\left(k+\frac{a}{2\pi}\right)}{2}$\\
+     		$\sin(ax)$ & $\frac{\delta\left(k-\frac{a}{2\pi}\right)-\delta\left(k+\frac{a}{2\pi}\right)}{2i}$\\
+     		$e^{-\alpha x^2}$ & $\sqrt{\frac{\pi}{\alpha}} e^{\frac{(\pi k)^2}{\alpha}}$
+        \end{tabular}
+        \label{tab:fourier_transform}
+    \end{table}
 
 
 
@@ -69,16 +85,15 @@ Please circle your answers!}\end{center}
 \def\arraystretch{2}% increase vertical spacing
 \noindent\begin{tabularx}{\textwidth}{cXcc}
  & & T & F\\
-(\theabc) & For any polynomial $p(z)=a_0 + a_1 z + \cdots +a_{n-1}z^{n-1}+a_{n}z^n$ there exists $n$ complex roots (possibly repeated). & \answerbox & \answerbox\\
-(\theabc) & Euler's formula is $e^{i\theta}=\sin \theta + i \cos \theta$. & \answerbox & \answerbox\\
-(\theabc) & $t=2$ is a solution to the differential equation $2x'=tx$. & \answerbox & \answerbox\\
-(\theabc) & All first order linear equations are separable. & \answerbox & \answerbox\\
-(\theabc) & The concentrations $A$ and $B$ for the chemical reaction \[A+B \xrightarrow{k} \textrm{Products}\] is modelled by the equations $\frac{dA}{dt}=-kB$ and $\frac{dB}{dt}=-kA$. & \answerbox & \answerbox\\
-(\theabc) & If $x_1$ and $x_2$ are solutions to a homogeneous linear equation, then the superposition $x=x_1+x_2$ is a solution as well. & \answerbox & \answerbox\\
-(\theabc) & All second order linear equations oscillate. & \answerbox & \answerbox\\
-(\theabc) & A solution $x(t)$ to an inhomogeneous second order linear equation is written as the sum $x=x_h+x_p$ where $x_h$ solves the homogeneous equation and $x_p$ is the particular integral.  & \answerbox & \answerbox\\
-(\theabc) & There are infinitely many states for the quantum particle in a 1-dimensional box. & \answerbox & \answerbox\\
-(\theabc) & States for the quantum particle in the 1-dimensional box can have any energy value. & \answerbox & \answerbox\\
+(\theabc) & A Hermitian operator has a real spectrum. & \answerbox & \answerbox\\
+(\theabc) & A linear operator $\mathcal{L}$ satisfies
+\[
+\mathcal{L}(f+\alpha g) = \mathcal{L}f + \alpha \mathcal{L}g
+\]
+for any constant $\alpha$ and functions $f$ and $g$. & \answerbox & \answerbox\\
+(\theabc) & A constant function $f(x)=c$ is an eigenfunction of the derivative operator $\mathcal{L}=\frac{d}{dx}$ & \answerbox & \answerbox\\
+(\theabc) & The Dirac delta defined on $[0,L]$ cannot be written as a Fourier series. & \answerbox & \answerbox\\
+(\theabc) & Something with inner products & \answerbox & \answerbox\\
 \end{tabularx}
 \end{problem}
 
@@ -89,20 +104,17 @@ Please circle your answers!}\end{center}
 % Problem 2
 \newpage
 \begin{problem}
-Let $z_1=-1+i$, $z_2=2-i$ and $z_3=2e^{i \pi}$.  
-\begin{enumerate}[(a)]
-    \item Plot and clearly label $z_1$, $z_2$, $z_1+z_2$, and $z_1\cdot z_2$ on the following graph.
-    \begin{center}
-    \begin{tikzpicture}[scale=1]
-    \draw[thin,gray!80] (-4,-4) grid (4,4);
-    \draw[<->] (-4,0)--(4,0) node[right]{$\RE$};
-    \draw[<->] (0,-4)--(0,4) node[above]{$\IM$};
-    \end{tikzpicture}
-    \end{center}
-    \vspace*{1cm}
-    \item Compute $z_1^{-1}$ and $z_3^{-1}$.
-    \vspace*{8cm}
-    \item Write $z_3$ in Cartesian coordinates using Euler's Formula then plot and clearly label $z_3$ on the above graph.
+\begin{enumerate}[(a)] Consider the function $f\colon [-4,4] \to \C$ given by $f(x) = x+i|x|$.
+	\item (\textbf{3 pts.}) Plot this function in the complex plane below.
+		\[
+		        \begin{tikzpicture}[scale=1]
+		        \draw[thin,gray!40] (-5,-3) grid (5,5);
+		        \draw[<->] (-5,0)--(5,0) node[right]{$\RE$};
+		        \draw[<->] (0,-3)--(0,5) node[above]{$\IM$};
+		        \end{tikzpicture}
+		  \]
+	\item (\textbf{3 pts.}) Compute the norm of the function $\|f\|$ using the Hermitian inner product for the interval $[-4,4]$.
+	\item 
 \end{enumerate}
 \end{problem}
 
@@ -112,24 +124,26 @@ Let $z_1=-1+i$, $z_2=2-i$ and $z_3=2e^{i \pi}$.
 
 % Problem 3
 \newpage
-\begin{problem}
-The height above ground, $y(t)$, of a ball falling through air satisfies the differential equation
-\[
-y''=ky'-g,
-\]
-where $k$ and $g$ are positive constants.  
+\begin{problem} Consider the linear differential equation $-\frac{d^2}{dx^2}f(x)=\omega^2f(x)$ where $\omega$ is a constant.
 \begin{enumerate}[(a)]
-    \item What is the order of this equation? Explain.
-    \vspace*{3cm}
-    \item Is this equation linear? Explain.
-    \vspace*{3cm}
-    \item Is this equation homogeneous or inhomogeneous? Explain.
-    \vspace*{3cm}
-    \item If the ball is falling through a vacuum we can let $k=0$ so we are left with
-    \[
-    y''=-g.
-    \]
-    What is the general solution to this new equation?
+	\item	(\textbf{3 pts.}) Suppose that both $f_1(x)$ and $f_2(x)$ are solutions. Show that $\alpha_1f_1(x)+\alpha_2 f_2(x)$ is also a solution.
+	\item	(\textbf{3 pts.}) If we have that $f_n(x)$ is a solution for all \underline{integers} $n$, explain why 
+	\[
+	\Psi(x) = \sum_{n=-\infty}^\infty \alpha_n f_n(x),
+	\]
+	is also a solution.
+	\item	(\textbf{3 pts.}) If indeed $f_k(x)$ is a solution for all \underline{real numbers} $k$, explain why 
+	\[
+	\Phi(x) = \int_{-\infty}^\infty f_k(x) dk,
+	\]
+	is also a solution.
+	\item	(\textbf{3 pts.}) Show that the function 
+	\[
+	f_k(x) = e^{i2\pi kx},
+	\]
+	is a solution
+	
+	This isn't quite true. Well it is, but you find THE solution from the boundary conditions
 \end{enumerate}
 \end{problem}
 
@@ -140,26 +154,7 @@ where $k$ and $g$ are positive constants.
 % Problem 4
 \newpage
 \begin{problem}
-The spring/mass harmonic oscillator is given by the equation
-\[
-x''+ \frac{k}{m}x = 0.
-\]
-where $m$ is the mass of the oscillating object and $k$ is the spring constant.
-\begin{enumerate}[(a)]
-    \item Show that
-    \[
-    x(t)=A \cos\left(\sqrt{\frac{k}{m}}t\right).
-    \]
-    solves the initial problem with initial data $x(0)=A$ and $x'(0)=0$.
-    \vspace*{6cm}
-    \item Since this system has no damping, the total energy is \underline{conserved at all times}.  In particular, the total energy is given by
-    \[
-    E=\frac{1}{2}mx'(t)^2+\frac{1}{2}kx(t)^2 = \textrm{constant}.
-    \]
-    and is equal for all times $t\geq 0$. What is the total energy of the given particular solution $x(t)=A\cos\left(\sqrt{\frac{k}{m}}t\right)$?
-    \vspace*{5cm}
-    
-\end{enumerate}
+inner products, symmetry, hermitian
 \end{problem}
 
 \newpage
@@ -168,23 +163,8 @@ where $m$ is the mass of the oscillating object and $k$ is the spring constant.
 
 % Problem 5
 \newpage
-\begin{problem} For the following, explain in words how you could attempt to solve the following equations.  \emph{Hint: stating the type of differential equation is a good start!}
-\begin{enumerate}[(a)]
-    \item The equation
-    \[
-    x'+f(t)x=g(t).
-    \]
-    \vspace*{5.5cm}
-    \item The equation 
-    \[
-    x'=f(x)g(t).
-    \]
-    \vspace*{5.5cm}
-    \item The equation
-    \[
-    x''+bx'+cx=0.
-    \]
-\end{enumerate}
+\begin{problem} 
+ Fourier series
 \end{problem}
 
 \newpage
@@ -194,31 +174,8 @@ where $m$ is the mass of the oscillating object and $k$ is the spring constant.
 % Problem 6
 \newpage
 \begin{problem}
-Schr\"odinger's equation is given by
-\[
-\left(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\right)\Psi(x)=E\Psi(x),
-\]
-where $V(x)$ is the potential at a point $x$, $E$ is the total energy, and $\Psi$ is the wave function.
-\begin{enumerate}[(a)]
-    \item For the free particle in a 1-dimensional box $[0,L]$, what are the boundary conditions for the wavefunction $\Psi$?
-    \vspace*{3cm}
-    \item Again, for the free particle in a 1-dimensional box, what is the potential inside of the box $(0,L)$?
-    \vspace*{3cm}
-    \item If a wavefunction $\Psi$ is normalized, then
-    \[
-    \int_0^L \|\Psi(x)\|^2dx=1.
-    \]
-    True or false?
-    \vspace*{3cm}
-    \item If our wavefunction $\Psi$ is normalized, how do we interpret the quantity
-    \[
-    P([a,b])=\int_a^b \|\Psi(x)\|^2dx?
-    \]
-    \vspace*{3cm}
-
-\end{enumerate}
+Fourier transforms, something with different boundary conditions. If eqn solves for one boundary condition, does it solve for another?
 \end{problem}
-
 \newpage
 \emph{Intentionally left blank to be used as scratch paper.}\\
 
