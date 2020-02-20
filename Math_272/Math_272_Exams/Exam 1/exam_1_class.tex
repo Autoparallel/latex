@@ -115,8 +115,12 @@ for any constant $\alpha$ and functions $f$ and $g$. & \answerbox & \answerbox\\
 % Problem 2
 \newpage
 \begin{problem}
-\begin{enumerate}[(a)] Consider the function $f\colon [-\pi,\pi] \to \C$ given by $f(x) = x+i\sin(x)$.
-	\item (\textbf{5 pts.}) Plot this function in the complex plane below.
+\begin{enumerate}[(a)] Consider the complex valued functions defined on the domain $[-\pi,\pi]$,
+\[
+f(x) = x+i\sin(x) \qquad \textrm{and} \quad g(x) = a+bi
+\]
+where $a$ and $b$ are real constants.
+	\item (\textbf{5 pts.}) Plot the function $f$ in the complex plane below.
 		\[
 		        \begin{tikzpicture}[scale=1]
 		        \draw[thin,gray!40] (-4,-4) grid (4,4);
@@ -124,10 +128,10 @@ for any constant $\alpha$ and functions $f$ and $g$. & \answerbox & \answerbox\\
 		        \draw[<->] (0,-4)--(0,4) node[above]{$\IM$};
 		        \end{tikzpicture}
 		  \]
-	\item (\textbf{5 pts.}) Compute the norm of the function $\|f\|$ using the Hermitian inner product for the interval $[-4,4]$.
+	\item (\textbf{5 pts.}) Compute the norm of the function $\|g\|$ using the Hermitian inner product for the interval $[-\pi,\pi]$.
 	\vspace*{5cm}
 	
-	\item (\textbf{5 pts.}) Show that the function $g(x)= a+bi$ with $a$ and $b$ real constants is orthogonal to $f(x)$. \emph{Hint: Use the fact that $g(x)$ is constant and $f(x)$ is odd.}
+	\item (\textbf{5 pts.}) Show that $g(x)$ is orthogonal to $f(x)$. \emph{Hint: Use the fact that $g(x)$ is constant and $f(x)$ is odd.}
 \end{enumerate}
 \end{problem}
 
@@ -175,16 +179,13 @@ For the following, assume we are using the Hermitian inner product
 Also, assume any functions satisfy $f(0)=f(L)$.
 \begin{enumerate}[(a)]
 	\item (\textbf{4 pts.}) Let $\hat{a}$ be an operator and $\hat{a}^\dagger$ be the adjoint. Show that the operator $\hat{a}\hat{a}^\dagger$ is Hermitian.
-	\vspace*{3cm}
-	
-	\item (\textbf{4 pts.}) Let $\hat{a} = \frac{d}{dx}$. Show using integration by parts that the adjoint operator is $\hat{a}^\dagger  = -\frac{d}{dx}$.
 	\vspace*{4cm}
 	
-	\item (\textbf{2 pts.}) Is $\hat{a}$ Hermitian?
-	\vspace*{3cm}
+	\item (\textbf{3 pts.}) Let $\hat{a} = \frac{d}{dx}$. Show using integration by parts that the adjoint operator is $\hat{a}^\dagger  = -\frac{d}{dx}$.
+	\vspace*{5cm}
 	
-	\item (\textbf{4 pts.}) Explain why the spectrum of the operator $\Delta = - \frac{d^2}{dx^2}$ is real.
-	\vspace*{3cm}
+	\item (\textbf{4 pts.}) Is $\hat{a}$ Hermitian? Explain.
+	\vspace*{4cm}
 	
 	\item (\textbf{4 pts.}) Could there be a solution to the equation
 	\[
@@ -211,7 +212,7 @@ f(x) = a_0 + \sum_{n=1}^\infty a_n \sqrt{2} \cos\left(\frac{2n \pi x}{L}\right) 
 	\item (\textbf{4 pts.}) How do you compute the coefficients $a_n$ and $b_n$?
 	\vspace*{4cm}
 	
-	\item (\textbf{4 pts.}) Explain why the function $f(x) = \frac{1}{x-\frac{L}{2}}$ does not have a Fourier series representation. \emph{Hint: Can you compute the coefficients?}
+	\item (\textbf{4 pts.}) Explain why the function $f(x) = \frac{1}{\left|x-\frac{L}{2}\right|}$ does not have a Fourier series representation. \emph{Hint: Can you compute the coefficients?}
 	\vspace*{4cm}
 	
 	\item (\textbf{3 pts.}) If a function has a Fourier series, explain why that series representation must be unique. \emph{Hint: Could you possibly get two different answers for the coefficients?}
@@ -229,26 +230,28 @@ The Fourier transform of a function $f(x)$ is given by
 \[
 \fourier{f(x)}=\int_{-\infty}^\infty f(x) e^{-i2\pi kx}dx = \hat{f}(k).
 \]
+Also, note that 
+\[
+\fourier{\frac{d}{dx}f(x)} = (i2\pi k) \hat{f}(k),
+\]
+which is proven using integration by parts.
+
 \begin{enumerate}[(a)]
-	\item (\textbf{4 pts.}) Assuming $f(-\infty)=0=f(\infty)$, show using integration by parts that $\fourier{\frac{d}{dx}f(x)} = (i2\pi k) \hat{f}(k).$
-	\vspace*{4cm}
-	
-	\item (\textbf{4 pts.}) Argue why (a) implies that 
+	\item (\textbf{5 pts.}) Make a quick argument on why 
 	\[
 	\fourier{\frac{d^n}{dx^n}f(x)} = (i2\pi k)^n \hat{f}(k).
 	\]
+	given the statements above.
 	\vspace*{4cm}
 	
-	\item (\textbf{4 pts.}) Using the table, find the Fourier transform of 
+	\item (\textbf{5 pts.}) Using previous results, apply the Fourier transform to the following differential equation.
 	\[
-	g(x) = \sin(\omega x). 
+	\frac{d^2}{dx^2}f(x)  + f(x) = \sin(\omega x).
 	\]
-	\vspace*{4cm}
+	Then solve for $\hat{f}(k)$ in terms of $k$.
+	\vspace*{5cm}
 	
-	\item (\textbf{4 pts.}) Using previous results, apply the Fourier transform to the following differential equation.
-	\[
-	\frac{d^2}{dx^2}f(x) + 2 \frac{d}{dx}f(x) + f(x) = \sin(\omega x).
-	\]
+	\item (\textbf{5 pts.}) Describe how we could find the solution $f(x)$ from what we found in (b).
 \end{enumerate}
 \end{problem}
 \newpage
