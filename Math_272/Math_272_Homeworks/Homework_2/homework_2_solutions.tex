@@ -139,6 +139,34 @@ Thus, $\hat{p}$ is Hermitian.
 		&= \innprod{\Psi}{\hat{T}\Phi}.
 		\end{align*}
 		Thus, $\hat{T}$ is Hermitian.
+		
+		\item We can determine $E_1$ and $E_2$ from the eigenvalue equation
+		\[
+		\hat{T} \Psi(x) = E \Psi(x).
+		\]
+		Specifically, we have
+		\[
+		\hat{T} \psi_n(x) = E_n \psi_n(x).
+		\]
+		So we take 
+		\[
+		\frac{-\hbar^2}{2m}\frac{d^2}{dx^2} \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right) = \frac{\hbar^2}{2m} \frac{n^2\pi^2}{L^2} \sqrt{\frac{2}{L}} \sin \left(\frac{n \pi x}{L}\right),
+		\]
+		which yields
+		\[
+		E_n = \frac{\hbar^2 n^2 \pi^2}{2mL^2}.
+		\]
+		Thus, plugging in 1 and 2, we get
+		\[
+		\boxed{E_1 = \frac{\hbar^2 \pi^2}{2mL^2} \qquad E_2 = \frac{4\hbar^2 \pi^2}{2mL^2}.}
+		\]
+		
+		\item Now, most of the work has been done for us, and the rest here will be taken care of by orthogonality.  We take
+		\begin{align*}
+			\innprod{\Psi}{\hat{T}\Psi} &= \innprod{\frac{1}{\sqrt{2}} \psi_1 + \frac{1}{\sqrt{2}} \psi_2}{\frac{E_1}{\sqrt{2}}\psi_1 + \frac{E_2}{\sqrt{2}}\psi_2}\\
+			&= \frac{E_1}{2} \innprod{\psi_1}{\psi_1} + \frac{E_1}{2}\innprod{\psi_2}{\psi_1}+\frac{E_2}{2}\innprod{\psi_1}{\psi_2} + \frac{E_2}{2} \innprod{\psi_2}{\psi_2}\\
+			&= \frac{E_1+E_2}{2}.
+		\end{align*}
 	\end{enumerate}
 \end{solution}
 

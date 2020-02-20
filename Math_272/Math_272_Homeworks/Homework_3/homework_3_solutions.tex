@@ -38,7 +38,7 @@ Compute the Fourier series for the following functions on the interval $[0,L]$. 
 		\end{align*}
 		An analogous argument shows that $f(x)$ is orthogonal to 1 which shows that $a_0=0$ as well. Similarly, another analogous argument shows that the only nonzero $b_n$ term is $b_2$ since $\sin(-x)=-\sin(x)$.  So we have that
 		\[
-		b_2 = \frac{1}{\sqrt{2}}.
+		b_2 = \frac{-1}{\sqrt{2}}.
 		\]
 		Hence, we have found all of our coefficients for the Fourier series.
 		
@@ -63,29 +63,66 @@ Compute the Fourier series for the following functions on the interval $[0,L]$. 
 		\[
 			\boxed{\sin\left(\frac{3\pi x}{L}\right) = \frac{2}{3\pi} + \sum_{n=1}^\infty \frac{12}{9\pi - 4\pi n^2} \cos\left(\frac{2n\pi x}{L}\right).}
 		\]
+		
+	\begin{figure}[H]
+				\centering
+				\begin{subfigure}[h]{0.4\textwidth}
+					\includegraphics[width=\textwidth]{Figures/sin3pi-series2.png}
+					\caption{Approximating $\sin\left(\frac{3\pi x}{L}\right)$ in black.}
+				\end{subfigure}
+				~ 
+				\begin{subfigure}[h]{0.4\textwidth}
+					\includegraphics[width=\textwidth]{Figures/sin3pi-series1.png}
+					\caption{Approximating $\sin\left(\frac{3\pi x}{L}\right)$ in black.}
+				\end{subfigure}
+			\end{figure}
+		
+			\item First, we compute
+				\[
+				a_0 = \innprod{\delta(x-L/2)}{1} = \frac{1}{L} \int_0^L \delta(x-L/2) dx = \frac{1}{L}.
+				\]
+				Then, we have
+				\begin{align*}
+				a_n &= \innprod{\delta(x-L/2)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
+				& = \frac{1}{L} \int_0^L \delta(x-L/2) \sqrt{2}\cos\left(\frac{2n \pi x}{L}\right)dx\\
+				&= \sqrt{2}{L} \cos(n\pi)\\
+				&= (-1)^n \frac{\sqrt{2}}{L}.
+				\end{align*}
+				Finally, we compute
+				\begin{align*}
+					b_n &= \innprod{\delta(x-L/2)}{\sqrt{2}\sin\left(\frac{2n\pi x}{L}\right)}\\
+					&= \frac{1}{L} \int_0^L \delta(x-L/2)\sqrt{2}\sin\left(\frac{2n \pi x}{L}\right)dx\\
+					&= \frac{\sqrt{2}}{L} \sin(n\pi)\\
+					&= 0.
+				\end{align*}
+				Hence, our Fourier series is given by
+				\[
+				\boxed{\delta(x-L/2)) = \frac{1}{L} + \sum_{n=1}^\infty (-1)^n \frac{2}{L} \cos\left(\frac{2n\pi x}{L}\right).}
+				\]
+					\begin{figure}[H]
+								\centering
+								\begin{subfigure}[h]{0.4\textwidth}
+									\includegraphics[width=\textwidth]{Figures/delta_N=1.png}
+									\caption{$N=1$ approximation to $\delta(x-L/2)$.}
+								\end{subfigure}
+								~ 
+								\begin{subfigure}[h]{0.4\textwidth}
+									\includegraphics[width=\textwidth]{Figures/delta_N=50.png}
+									\caption{$N=50$ approximation to $\delta(x-L/2)$.}
+								\end{subfigure}\\
+								
+								\begin{subfigure}[h]{0.4\textwidth}
+									\includegraphics[width=\textwidth]{Figures/delta_N=100.png}
+									\caption{$N=100$ approximation to $\delta(x-L/2)$.}
+								\end{subfigure}			
+								~
+								\begin{subfigure}[h]{0.4\textwidth}
+									\includegraphics[width=\textwidth]{Figures/delta_N=500.png}
+									\caption{$N=500$ approximation to $\delta(x-L/2)$.}
+								\end{subfigure}													
+							\end{figure}
 		\end{enumerate}
-		\item First, we compute
-		\[
-		a_0 = \innprod{\delta(x-L/2)}{1} = \frac{1}{L} \int_0^L \delta(x-L/2) dx = \frac{1}{L}.
-		\]
-		Then, we have
-		\begin{align*}
-		a_n &= \innprod{\delta(x-L/2)}{\sqrt{2}\cos\left(\frac{2n\pi x}{L}\right)}\\
-		& = \frac{1}{L} \int_0^L \delta(x-L/2) \sqrt{2}\cos\left(\frac{2n \pi x}{L}\right)dx\\
-		&= \sqrt{2}{L} \cos(n\pi)\\
-		&= (-1)^n \frac{\sqrt{2}}{L}.
-		\end{align*}
-		Finally, we compute
-		\begin{align*}
-			b_n &= \innprod{\delta(x-L/2)}{\sqrt{2}\sin\left(\frac{2n\pi x}{L}\right)}\\
-			&= \frac{1}{L} \int_0^L \delta(x-L/2)\sqrt{2}\sin\left(\frac{2n \pi x}{L}\right)dx\\
-			&= \frac{\sqrt{2}}{L} \sin(n\pi)\\
-			&= 0.
-		\end{align*}
-		Hence, our Fourier series is given by
-		\[
-		\boxed{\delta(x-L/2)) = \frac{1}{L} + \sum_{n=1}^\infty (-1)^n \frac{2}{L} \cos\left(\frac{2n\pi x}{L}\right).}
-		\]
+	
 \end{solution}
 
 \newpage
@@ -136,6 +173,24 @@ This is an extremely important to solve. The fact that we can determine a soluti
 		\[
 		\boxed{f(x) = \frac{L}{24} + \sum_{n=1}^\infty (-1)^n \frac{L}{2n^2\pi^2}\cos\left(\frac{2n\pi x}{L}\right).}
 		\]
+		
+							\begin{figure}[H]
+										\centering
+										\begin{subfigure}[h]{0.3\textwidth}
+											\includegraphics[width=\textwidth]{Figures/fund_soln_N=1.png}
+											\caption{$N=1$ approximation to the differential equation..}
+										\end{subfigure}
+										~ 
+										\begin{subfigure}[h]{0.3\textwidth}
+											\includegraphics[width=\textwidth]{Figures/fund_soln_N=5.png}
+											\caption{$N=5$ approximation to the differential equation..}
+										\end{subfigure}
+										~
+										\begin{subfigure}[h]{0.3\textwidth}
+											\includegraphics[width=\textwidth]{Figures/fund_soln_N=50.png}
+											\caption{$N=50$ approximation to the differential equation..}
+										\end{subfigure}														
+									\end{figure}
 	\end{enumerate}
 \end{solution}
 

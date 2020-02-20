@@ -44,9 +44,9 @@ where $x \in \R$.
 \begin{enumerate}[(a)]
 	\item (\textbf{3 pts.}) One can generate $\psi_1(x)$ from $\psi_0(x)$ by using the \emph{raising operator}
 	\[
-	\hat{a} = \sqrt{\frac{m\omega }{2\hbar}}\left(x+\frac{i}{m\omega} \hat{p}\right).
+	\hat{a}^\dagger = \sqrt{\frac{m\omega }{2\hbar}}\left(x-\frac{i}{m\omega} \hat{p}\right).
 	\]  
-	Show that $\hat{a}\psi_0 = \psi_1$.
+	Show that $\hat{a}^\dagger\psi_0 = \psi_1$.
 	
 	\item (\textbf{2 pts.}) Operators, just like matrices, do not always commute! So, we often want to see how ``far from commuting" two operators are. To this end, let $\Psi(x)$ be an arbitrary function, then the \emph{commutator} $[x,\hat{p}]$ is defined by
 	\[
@@ -54,9 +54,9 @@ where $x \in \R$.
 	\]
 	Show that $[x,\hat{p}]=i\hbar$. \textit{Note that we also have $[\hat{p},x]=-[x,\hat{p}]$.}
 	
-	\item (\textbf{2 pts.}) We can define the \emph{lowering operator} $\hat{a}^\dagger$ as the adjoint of $\hat{a}$ which is given by
+	\item (\textbf{2 pts.}) We can define the \emph{lowering operator} $\hat{a}$ as the adjoint of $\hat{a}^\dagger$ which is given by
 	\[
-	\hat{a}^\dagger = \sqrt{\frac{m\omega }{2\hbar}}\left(x-\frac{i}{m\omega} \hat{p} \right).
+	\hat{a} = \sqrt{\frac{m\omega }{2\hbar}}\left(x+\frac{i}{m\omega} \hat{p} \right).
 	\]
 	This allows us to define the \emph{number operator} $\hat{N}=\hat{a}^\dagger \hat{a}$.  Compute $\hat{N}$. \textit{Hint: The commutator $[x,\hat{p}]$ appears in this equation.}
 	
@@ -104,7 +104,7 @@ where $t$ is some positive real number.
 	\[
 	\lim_{\Delta x \to 0} \frac{F(x+\Delta x)-F(x-\Delta x)}{2\Delta x} = F'(x) = f(x).
 	\]
-	With your answer in (b), take the limit as $t\to 0$ to show that you recover the answer you have in (a).
+	With your answer in (c), take the limit as $t\to 0$ to show that you recover the answer you have in (a).
 \end{enumerate}
 Visit this Desmos URL to have an interactive look at the function $S_t(x)$ for various values of $t$.  \url{https://www.desmos.com/calculator/eh5jmqeky1}
 \end{problem}

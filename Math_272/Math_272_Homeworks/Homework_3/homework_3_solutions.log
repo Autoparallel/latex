@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  13 FEB 2020 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  17 FEB 2020 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -949,16 +949,41 @@ Package morefloats Info: Maximum number of possible floats asked for: 36
 (morefloats)             LaTeX might run out of memory before this
 (morefloats)             (in which case it will notify you).
 )
-\c@theorem=\count156
-\c@lemma=\count157
-\c@corollary=\count158
-\c@axiom=\count159
-\c@remark=\count160
-\c@solution=\count161
-\c@problem=\count162
-\c@question=\count163
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen270
+\captionmargin@=\dimen271
+\captionwidth=\dimen272
+\caption@tempdima=\dimen273
+\caption@indent=\dimen274
+\caption@parindent=\dimen275
+\caption@hangindent=\dimen276
 )
-\c@answer=\count164
+\c@caption@flags=\count156
+\c@ContinuedFloat=\count157
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count158
+\c@subtable=\count159
+)
+\c@theorem=\count160
+\c@lemma=\count161
+\c@corollary=\count162
+\c@axiom=\count163
+\c@remark=\count164
+\c@solution=\count165
+\c@problem=\count166
+\c@question=\count167
+)
+\c@answer=\count168
 
 (./homework_3_solutions.aux)
 \openout1 = `homework_3_solutions.aux'.
@@ -980,16 +1005,16 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count165
-\scratchdimen=\dimen270
+\scratchcounter=\count169
+\scratchdimen=\dimen277
 \scratchbox=\box89
-\nofMPsegments=\count166
-\nofMParguments=\count167
+\nofMPsegments=\count170
+\nofMParguments=\count171
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count168
-\MPscratchDim=\dimen271
-\MPnumerator=\count169
-\makeMPintoPDFobject=\count170
+\MPscratchCnt=\count172
+\MPscratchDim=\dimen278
+\MPnumerator=\count173
+\makeMPintoPDFobject=\count174
 \everyMPtoPDFconversion=\toks54
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1023,7 +1048,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count171
+\c@section@level=\count175
 )
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
@@ -1068,6 +1093,8 @@ LaTeX Info: Redefining \nameref on input line 8.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 12.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1088,29 +1115,78 @@ LaTeX Font Info:    Try loading font information for U+wasy on input line 12.
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 ) [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-
-Overfull \hbox (13.1281pt too wide) detected at line 117
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<Figures/sin3pi-series2.png, id=52, 1204.5pt x 803.0pt>
+File: Figures/sin3pi-series2.png Graphic file (type png)
+<use Figures/sin3pi-series2.png>
+Package pdftex.def Info: Figures/sin3pi-series2.png  used on input line 70.
+(pdftex.def)             Requested size: 187.89914pt x 125.26015pt.
+<Figures/sin3pi-series1.png, id=54, 1204.5pt x 803.0pt>
+File: Figures/sin3pi-series1.png Graphic file (type png)
+<use Figures/sin3pi-series1.png>
+Package pdftex.def Info: Figures/sin3pi-series1.png  used on input line 75.
+(pdftex.def)             Requested size: 187.89914pt x 125.26015pt.
+ [2 <./Figures/sin3pi-series2.png> <./Figures/sin3pi-series1.png>]
+<Figures/delta_N=1.png, id=65, 1204.5pt x 803.0pt>
+File: Figures/delta_N=1.png Graphic file (type png)
+<use Figures/delta_N=1.png>
+Package pdftex.def Info: Figures/delta_N=1.png  used on input line 105.
+(pdftex.def)             Requested size: 187.89914pt x 125.26015pt.
+<Figures/delta_N=50.png, id=66, 1204.5pt x 803.0pt>
+File: Figures/delta_N=50.png Graphic file (type png)
+<use Figures/delta_N=50.png>
+Package pdftex.def Info: Figures/delta_N=50.png  used on input line 110.
+(pdftex.def)             Requested size: 187.89914pt x 125.26015pt.
+<Figures/delta_N=100.png, id=67, 1204.5pt x 803.0pt>
+File: Figures/delta_N=100.png Graphic file (type png)
+<use Figures/delta_N=100.png>
+Package pdftex.def Info: Figures/delta_N=100.png  used on input line 115.
+(pdftex.def)             Requested size: 187.89914pt x 125.26015pt.
+<Figures/delta_N=500.png, id=68, 1204.5pt x 803.0pt>
+File: Figures/delta_N=500.png Graphic file (type png)
+<use Figures/delta_N=500.png>
+Package pdftex.def Info: Figures/delta_N=500.png  used on input line 120.
+(pdftex.def)             Requested size: 187.89914pt x 125.26015pt.
+ [3] [4 <./Figures/delta_N=1.png> <./Figures/delta_N=50.png> <./Figures/delta_N
+=100.png> <./Figures/delta_N=500.png>]
+Overfull \hbox (13.1281pt too wide) detected at line 154
 []
  []
 
-[4] [5] [6] (./point_on_string.pdf_tex
-<point_on_string.pdf, id=93, page=1, 834.12839pt x 229.48808pt>
+[5]
+<Figures/fund_soln_N=1.png, id=92, 803.0pt x 803.0pt>
+File: Figures/fund_soln_N=1.png Graphic file (type png)
+<use Figures/fund_soln_N=1.png>
+Package pdftex.def Info: Figures/fund_soln_N=1.png  used on input line 180.
+(pdftex.def)             Requested size: 140.92793pt x 140.91919pt.
+<Figures/fund_soln_N=5.png, id=93, 803.0pt x 803.0pt>
+File: Figures/fund_soln_N=5.png Graphic file (type png)
+<use Figures/fund_soln_N=5.png>
+Package pdftex.def Info: Figures/fund_soln_N=5.png  used on input line 185.
+(pdftex.def)             Requested size: 140.92793pt x 140.91919pt.
+<Figures/fund_soln_N=50.png, id=94, 803.0pt x 803.0pt>
+File: Figures/fund_soln_N=50.png Graphic file (type png)
+<use Figures/fund_soln_N=50.png>
+Package pdftex.def Info: Figures/fund_soln_N=50.png  used on input line 190.
+(pdftex.def)             Requested size: 140.92793pt x 140.91919pt.
+ [6 <./Figures/fund_soln_N=1.png> <./Figures/fund_soln_N=5.png> <./Figures/fund
+_soln_N=50.png>] [7] (./point_on_string.pdf_tex
+<point_on_string.pdf, id=123, page=1, 834.12839pt x 229.48808pt>
 File: point_on_string.pdf Graphic file (type pdf)
 <use point_on_string.pdf, page 1>
 Package pdftex.def Info: point_on_string.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 469.75502pt x 129.23729pt.
-<point_on_string.pdf, id=94, page=2, 834.12839pt x 229.48808pt>
+<point_on_string.pdf, id=124, page=2, 834.12839pt x 229.48808pt>
 File: point_on_string.pdf Graphic file (type pdf)
 <use point_on_string.pdf, page 2>
 Package pdftex.def Info: point_on_string.pdf , page2 used on input line 56.
 (pdftex.def)             Requested size: 469.75502pt x 129.23729pt.
-<point_on_string.pdf, id=95, page=3, 834.12839pt x 229.48808pt>
+<point_on_string.pdf, id=125, page=3, 834.12839pt x 229.48808pt>
 File: point_on_string.pdf Graphic file (type pdf)
 <use point_on_string.pdf, page 3>
 Package pdftex.def Info: point_on_string.pdf , page3 used on input line 58.
 (pdftex.def)             Requested size: 469.75502pt x 129.23729pt.
-) [7 <./point_on_string.pdf> <./point_on_string.pdf
+) [8 <./point_on_string.pdf> <./point_on_string.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./point_on_string.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -1118,43 +1194,45 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./point_on_string.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+>] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
  (./homework_3_solutions.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 309.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
 Package rerunfilecheck Info: File `homework_3_solutions.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
  ) 
 Here is how much of TeX's memory you used:
- 31759 strings out of 492609
- 775405 string characters out of 6129048
- 972819 words of memory out of 5000000
- 35065 multiletter control sequences out of 15000+600000
- 12783 words of font info for 51 fonts, out of 8000000 for 9000
+ 32940 strings out of 492609
+ 797168 string characters out of 6129048
+ 994362 words of memory out of 5000000
+ 36220 multiletter control sequences out of 15000+600000
+ 14709 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,98p,741b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,98p,741b,708s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework_3_solutions.pdf (8 pages, 161476 bytes).
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on homework_3_solutions.pdf (9 pages, 425707 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 212 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
