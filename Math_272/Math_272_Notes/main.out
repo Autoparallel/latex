@@ -34,6 +34,19 @@
 \BOOKMARK [1][-]{section.4.5}{The Inverse Fourier Transform}{chapter.4}% 34
 \BOOKMARK [1][-]{section.4.6}{Solving Differential Equations}{chapter.4}% 35
 \BOOKMARK [-1][-]{part.6}{VI Calculus in Higher Dimensions}{}% 36
-\BOOKMARK [0][-]{chapter.5}{Curves and Fields}{part.6}% 37
+\BOOKMARK [0][-]{chapter.5}{Curves and Scalar Fields}{part.6}% 37
 \BOOKMARK [1][-]{section.5.1}{Overview of multivariate functions}{chapter.5}% 38
-\BOOKMARK [0][-]{chapter.6}{Differential and Integration Operators}{part.6}% 39
+\BOOKMARK [1][-]{section.5.2}{Curves in space}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Vector Fields}{part.6}% 40
+\BOOKMARK [1][-]{section.6.1}{Differentiation of fields}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{Functions of Fields}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.3}{Line integrals of scalar fields}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.4}{Line integrals of vector fields}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.5}{Derivatives}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.6}{Optimization}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.7}{Approximation and the Tangent Space}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.8}{The Jacobian of a Vector Field}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.9}{Divergence and Curl}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.10}{The Laplacian of a Scalar Field}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.11}{Integration of Scalar Fields}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.12}{Antiderivatives}{chapter.6}% 52

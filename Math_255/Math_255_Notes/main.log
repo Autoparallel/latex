@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  26 JAN 2020 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  22 FEB 2020 08:53
 entering extended mode
 **./main.tex
 (main.tex
@@ -1724,6 +1724,36 @@ LaTeX Warning: Label `ex:C' multiply defined.
 
 LaTeX Warning: Label `ex:L' multiply defined.
 
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1955,11 +1985,88 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
  [3
 
 
-])
+]
+Overfull \hbox (1.19994pt too wide) detected at line 90
+ []\T1/futs/m/n/12 100
+ []
+
+[4]
+Overfull \hbox (1.19994pt too wide) detected at line 91
+ []\T1/futs/m/n/12 101
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 93
+ []\T1/futs/m/n/12 103
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 94
+ []\T1/futs/m/n/12 105
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 96
+ []\T1/futs/m/n/12 109
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 97
+ []\T1/futs/m/n/12 117
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 98
+ []\T1/futs/m/n/12 117
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 99
+ []\T1/futs/m/n/12 118
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 100
+ []\T1/futs/m/n/12 120
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 101
+ []\T1/futs/m/n/12 124
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 103
+ []\T1/futs/m/n/12 126
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 104
+ []\T1/futs/m/n/12 127
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 105
+ []\T1/futs/m/n/12 127
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 106
+ []\T1/futs/m/n/12 129
+ []
+
+
+Overfull \hbox (1.19994pt too wide) detected at line 107
+ []\T1/futs/m/n/12 130
+ []
+
+)
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
- [4]
+ [5] [6
+
+]
 Chapter 1.
 (tutorials.tex
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
@@ -1969,7 +2076,6 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 [1
-
 
 ]) [2]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <24.88> not available
@@ -2312,12 +2418,12 @@ LaTeX Warning: Command \j invalid in math mode on input line 523.
 LaTeX Warning: Command \j invalid in math mode on input line 523.
 
 [14]
-<Figures/Angular_velocity.png, id=465, 1284.8pt x 970.62625pt>
+<Figures/Angular_velocity.png, id=579, 1284.8pt x 970.62625pt>
 File: Figures/Angular_velocity.png Graphic file (type png)
 <use Figures/Angular_velocity.png>
 Package pdftex.def Info: Figures/Angular_velocity.png  used on input line 560.
 (pdftex.def)             Requested size: 123.68541pt x 93.43973pt.
-<Figures/507px-Right_hand_rule_cross_product.png, id=467, 508.90125pt x 460.721
+<Figures/507px-Right_hand_rule_cross_product.png, id=581, 508.90125pt x 460.721
 25pt>
 File: Figures/507px-Right_hand_rule_cross_product.png Graphic file (type png)
 <use Figures/507px-Right_hand_rule_cross_product.png>
@@ -2333,7 +2439,7 @@ Underfull \vbox (badness 1817) has occurred while \output is active []
  [17
 
 ]
-<Figures/plane_rotation.png, id=493, 236.885pt x 208.78pt>
+<Figures/plane_rotation.png, id=606, 236.885pt x 208.78pt>
 File: Figures/plane_rotation.png Graphic file (type png)
 <use Figures/plane_rotation.png>
 Package pdftex.def Info: Figures/plane_rotation.png  used on input line 642.
@@ -2417,7 +2523,7 @@ Overfull \hbox (63.50935pt too wide) in paragraph at lines 256--257
  []
 
 [44] [45] [46]
-<Figures/triangle_theta.png, id=712, 459.7175pt x 315.1775pt>
+<Figures/triangle_theta.png, id=825, 459.7175pt x 315.1775pt>
 File: Figures/triangle_theta.png Graphic file (type png)
 <use Figures/triangle_theta.png>
 Package pdftex.def Info: Figures/triangle_theta.png  used on input line 366.
@@ -2438,7 +2544,7 @@ Missing character: There is no t in font nullfont!
 Underfull \vbox (badness 1490) has occurred while \output is active []
 
  [49]
-<Figures/circle_r2.png, id=733, 803.0pt x 803.0pt>
+<Figures/circle_r2.png, id=847, 803.0pt x 803.0pt>
 File: Figures/circle_r2.png Graphic file (type png)
 <use Figures/circle_r2.png>
 Package pdftex.def Info: Figures/circle_r2.png  used on input line 508.
@@ -2455,12 +2561,12 @@ Chapter 5.
 [54
 
 ] [55]
-<Figures/quadratic_curve.png, id=776, 803.0pt x 803.0pt>
+<Figures/quadratic_curve.png, id=890, 803.0pt x 803.0pt>
 File: Figures/quadratic_curve.png Graphic file (type png)
 <use Figures/quadratic_curve.png>
 Package pdftex.def Info: Figures/quadratic_curve.png  used on input line 699.
 (pdftex.def)             Requested size: 164.90968pt x 164.91013pt.
-<Figures/circ_tang_1.png, id=777, 803.0pt x 803.0pt>
+<Figures/circ_tang_1.png, id=891, 803.0pt x 803.0pt>
 File: Figures/circ_tang_1.png Graphic file (type png)
 <use Figures/circ_tang_1.png>
 Package pdftex.def Info: Figures/circ_tang_1.png  used on input line 723.
@@ -2477,17 +2583,17 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 10.07397pt on input line 724.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.63599pt on input line 724.
-<Figures/circ_tang_2.png, id=778, 803.0pt x 803.0pt>
+<Figures/circ_tang_2.png, id=892, 803.0pt x 803.0pt>
 File: Figures/circ_tang_2.png Graphic file (type png)
 <use Figures/circ_tang_2.png>
 Package pdftex.def Info: Figures/circ_tang_2.png  used on input line 728.
 (pdftex.def)             Requested size: 185.52498pt x 185.5193pt.
-<Figures/circ_tang_3.png, id=779, 803.0pt x 803.0pt>
+<Figures/circ_tang_3.png, id=893, 803.0pt x 803.0pt>
 File: Figures/circ_tang_3.png Graphic file (type png)
 <use Figures/circ_tang_3.png>
 Package pdftex.def Info: Figures/circ_tang_3.png  used on input line 733.
 (pdftex.def)             Requested size: 185.52498pt x 185.5193pt.
-<Figures/circ_tang_4.png, id=780, 803.0pt x 803.0pt>
+<Figures/circ_tang_4.png, id=894, 803.0pt x 803.0pt>
 File: Figures/circ_tang_4.png Graphic file (type png)
 <use Figures/circ_tang_4.png>
 Package pdftex.def Info: Figures/circ_tang_4.png  used on input line 738.
@@ -2498,43 +2604,43 @@ File: Figures/quadratic_curve.png Graphic file (type png)
 <use Figures/quadratic_curve.png>
 Package pdftex.def Info: Figures/quadratic_curve.png  used on input line 776.
 (pdftex.def)             Requested size: 206.14026pt x 206.14073pt.
-<Figures/paraboloid.png, id=801, 445.665pt x 494.84875pt>
+<Figures/paraboloid.png, id=914, 445.665pt x 494.84875pt>
 File: Figures/paraboloid.png Graphic file (type png)
 <use Figures/paraboloid.png>
 Package pdftex.def Info: Figures/paraboloid.png  used on input line 789.
 (pdftex.def)             Requested size: 164.90968pt x 183.10628pt.
-<Figures/parabolic_level_curves.png, id=802, 557.08125pt x 557.08125pt>
+<Figures/parabolic_level_curves.png, id=915, 557.08125pt x 557.08125pt>
 File: Figures/parabolic_level_curves.png Graphic file (type png)
 <use Figures/parabolic_level_curves.png>
 Package pdftex.def Info: Figures/parabolic_level_curves.png  used on input line
  831.
 (pdftex.def)             Requested size: 164.90968pt x 164.90706pt.
  [58] [59 <./Figures/paraboloid.png (PNG copy)>]
-<Figures/sphere.png, id=815, 851.18pt x 851.18pt>
+<Figures/sphere.png, id=928, 851.18pt x 851.18pt>
 File: Figures/sphere.png Graphic file (type png)
 <use Figures/sphere.png>
 Package pdftex.def Info: Figures/sphere.png  used on input line 869.
 (pdftex.def)             Requested size: 164.90968pt x 164.90791pt.
  [60 <./Figures/parabolic_level_curves.png>]
-<Figures/cone_surface.png, id=824, 1273.75874pt x 1202.4925pt>
+<Figures/cone_surface.png, id=937, 1273.75874pt x 1202.4925pt>
 File: Figures/cone_surface.png Graphic file (type png)
 <use Figures/cone_surface.png>
 Package pdftex.def Info: Figures/cone_surface.png  used on input line 890.
 (pdftex.def)             Requested size: 164.90968pt x 155.66896pt.
-<Figures/hyperboloid_1_sheet.png, id=825, 1247.66125pt x 1202.4925pt>
+<Figures/hyperboloid_1_sheet.png, id=938, 1247.66125pt x 1202.4925pt>
 File: Figures/hyperboloid_1_sheet.png Graphic file (type png)
 <use Figures/hyperboloid_1_sheet.png>
 Package pdftex.def Info: Figures/hyperboloid_1_sheet.png  used on input line 90
 0.
 (pdftex.def)             Requested size: 164.90968pt x 158.935pt.
-<Figures/hyperboloid_2_sheet.png, id=826, 1304.875pt x 1204.5pt>
+<Figures/hyperboloid_2_sheet.png, id=939, 1304.875pt x 1204.5pt>
 File: Figures/hyperboloid_2_sheet.png Graphic file (type png)
 <use Figures/hyperboloid_2_sheet.png>
 Package pdftex.def Info: Figures/hyperboloid_2_sheet.png  used on input line 91
 0.
 (pdftex.def)             Requested size: 164.90968pt x 152.21625pt.
  [61 <./Figures/sphere.png> <./Figures/cone_surface.png>]
-<Figures/torus.png, id=836, 180.675pt x 155.6214pt>
+<Figures/torus.png, id=950, 180.675pt x 155.6214pt>
 File: Figures/torus.png Graphic file (type png)
 <use Figures/torus.png>
 Package pdftex.def Info: Figures/torus.png  used on input line 923.
@@ -2543,7 +2649,7 @@ Package pdftex.def Info: Figures/torus.png  used on input line 923.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62 <./Figures/hyperboloid_1_sheet.png> <./Figures/hyperboloid_2_sheet.png>]
-<Figures/wind_field.png, id=846, 501.875pt x 501.875pt>
+<Figures/wind_field.png, id=960, 501.875pt x 501.875pt>
 File: Figures/wind_field.png Graphic file (type png)
 <use Figures/wind_field.png>
 Package pdftex.def Info: Figures/wind_field.png  used on input line 952.
@@ -2552,12 +2658,12 @@ Package pdftex.def Info: Figures/wind_field.png  used on input line 952.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63 <./Figures/torus.png>]
-<Figures/v_field_1.png, id=855, 501.875pt x 501.875pt>
+<Figures/v_field_1.png, id=968, 501.875pt x 501.875pt>
 File: Figures/v_field_1.png Graphic file (type png)
 <use Figures/v_field_1.png>
 Package pdftex.def Info: Figures/v_field_1.png  used on input line 964.
 (pdftex.def)             Requested size: 247.37083pt x 247.37592pt.
-<Figures/v_field_3.png, id=856, 501.875pt x 501.875pt>
+<Figures/v_field_3.png, id=969, 501.875pt x 501.875pt>
 File: Figures/v_field_3.png Graphic file (type png)
 <use Figures/v_field_3.png>
 Package pdftex.def Info: Figures/v_field_3.png  used on input line 976.
@@ -2574,12 +2680,12 @@ Underfull \vbox (badness 1033) has occurred while \output is active []
  [66
 
 ]
-<Figures/vec_v.png, id=878, 501.875pt x 501.875pt>
+<Figures/vec_v.png, id=991, 501.875pt x 501.875pt>
 File: Figures/vec_v.png Graphic file (type png)
 <use Figures/vec_v.png>
 Package pdftex.def Info: Figures/vec_v.png  used on input line 1027.
 (pdftex.def)             Requested size: 185.52498pt x 185.53001pt.
-<Figures/vec_u.png, id=879, 501.875pt x 501.875pt>
+<Figures/vec_u.png, id=992, 501.875pt x 501.875pt>
 File: Figures/vec_u.png Graphic file (type png)
 <use Figures/vec_u.png>
 Package pdftex.def Info: Figures/vec_u.png  used on input line 1032.
@@ -2592,7 +2698,7 @@ Package pdftex.def Info: Figures/v_field_1.png  used on input line 1039.
 Underfull \vbox (badness 1968) has occurred while \output is active []
 
  [67 <./Figures/vec_v.png> <./Figures/vec_u.png>] [68]
-<Figures/Line_integral_of_scalar_field.jpg, id=896, 803.0pt x 602.25pt>
+<Figures/Line_integral_of_scalar_field.jpg, id=1010, 803.0pt x 602.25pt>
 File: Figures/Line_integral_of_scalar_field.jpg Graphic file (type jpg)
 <use Figures/Line_integral_of_scalar_field.jpg>
 Package pdftex.def Info: Figures/Line_integral_of_scalar_field.jpg  used on inp
@@ -2604,13 +2710,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1213--1214
  []
 
 [72]
-<Figures/level_curves_gradient.png, id=936, 750.55406pt x 685.05937pt>
+<Figures/level_curves_gradient.png, id=1049, 750.55406pt x 685.05937pt>
 File: Figures/level_curves_gradient.png Graphic file (type png)
 <use Figures/level_curves_gradient.png>
 Package pdftex.def Info: Figures/level_curves_gradient.png  used on input line 
 1273.
 (pdftex.def)             Requested size: 185.52498pt x 169.33058pt.
-<Figures/level_curves_gradient_vectors.png, id=937, 849.92531pt x 758.08218pt>
+<Figures/level_curves_gradient_vectors.png, id=1050, 849.92531pt x 758.08218pt>
+
 File: Figures/level_curves_gradient_vectors.png Graphic file (type png)
 <use Figures/level_curves_gradient_vectors.png>
 Package pdftex.def Info: Figures/level_curves_gradient_vectors.png  used on inp
@@ -2618,13 +2725,13 @@ ut line 1278.
 (pdftex.def)             Requested size: 185.52498pt x 165.47148pt.
  [73 <./Figures/level_curves_gradient.png> <./Figures/level_curves_gradient_vec
 tors.png>] [74] [75] [76]
-<Figures/plane_n.png, id=975, 359.3425pt x 299.1175pt>
+<Figures/plane_n.png, id=1088, 359.3425pt x 299.1175pt>
 File: Figures/plane_n.png Graphic file (type png)
 <use Figures/plane_n.png>
 Package pdftex.def Info: Figures/plane_n.png  used on input line 1481.
 (pdftex.def)             Requested size: 164.90968pt x 137.27621pt.
  [77]
-<Figures/tangent-planes-1.png, id=983, 353.32pt x 292.09125pt>
+<Figures/tangent-planes-1.png, id=1096, 353.32pt x 292.09125pt>
 File: Figures/tangent-planes-1.png Graphic file (type png)
 <use Figures/tangent-planes-1.png>
 Package pdftex.def Info: Figures/tangent-planes-1.png  used on input line 1512.
@@ -2638,7 +2745,7 @@ Chapter 7.
 Underfull \vbox (badness 3792) has occurred while \output is active []
 
  [81]
-<Figures/divergence_field.png, id=1010, 847.66687pt x 714.41907pt>
+<Figures/divergence_field.png, id=1123, 847.66687pt x 714.41907pt>
 File: Figures/divergence_field.png Graphic file (type png)
 <use Figures/divergence_field.png>
 Package pdftex.def Info: Figures/divergence_field.png  used on input line 1651.
@@ -2646,19 +2753,19 @@ Package pdftex.def Info: Figures/divergence_field.png  used on input line 1651.
 (pdftex.def)             Requested size: 247.37083pt x 208.48436pt.
 
 [82] [83 <./Figures/divergence_field.png>]
-<Figures/curl_field.png, id=1024, 1083.04625pt x 902.37125pt>
+<Figures/curl_field.png, id=1137, 1083.04625pt x 902.37125pt>
 File: Figures/curl_field.png Graphic file (type png)
 <use Figures/curl_field.png>
 Package pdftex.def Info: Figures/curl_field.png  used on input line 1674.
 (pdftex.def)             Requested size: 247.37083pt x 206.09526pt.
  [84 <./Figures/curl_field.png>]
 [85]
-<Figures/pos_laplace.png, id=1039, 1098.1025pt x 846.16125pt>
+<Figures/pos_laplace.png, id=1153, 1098.1025pt x 846.16125pt>
 File: Figures/pos_laplace.png Graphic file (type png)
 <use Figures/pos_laplace.png>
 Package pdftex.def Info: Figures/pos_laplace.png  used on input line 1800.
 (pdftex.def)             Requested size: 185.52498pt x 142.95462pt.
-<Figures/0_laplace.png, id=1040, 1091.07625pt x 883.3pt>
+<Figures/0_laplace.png, id=1154, 1091.07625pt x 883.3pt>
 File: Figures/0_laplace.png Graphic file (type png)
 <use Figures/0_laplace.png>
 Package pdftex.def Info: Figures/0_laplace.png  used on input line 1805.
@@ -2677,7 +2784,7 @@ Chapter 9.
 Underfull \vbox (badness 7326) has occurred while \output is active []
 
  [97]
-<Figures/spring-mass.png, id=1128, 803.0pt x 1561.835pt>
+<Figures/spring-mass.png, id=1238, 803.0pt x 1561.835pt>
 File: Figures/spring-mass.png Graphic file (type png)
 <use Figures/spring-mass.png>
 Package pdftex.def Info: Figures/spring-mass.png  used on input line 157.
@@ -2689,14 +2796,14 @@ Underfull \vbox (badness 1112) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [99 <./Figures/spring-mass.png>] [100]
-<Figures/projectile-motion.png, id=1151, 516.9714pt x 223.0734pt>
+<Figures/projectile-motion.png, id=1259, 516.9714pt x 223.0734pt>
 File: Figures/projectile-motion.png Graphic file (type png)
 <use Figures/projectile-motion.png>
 Package pdftex.def Info: Figures/projectile-motion.png  used on input line 247.
 
 (pdftex.def)             Requested size: 310.50357pt x 133.98122pt.
  [101] [102 <./Figures/projectile-motion.png>]
-<Figures/projectile_example.png, id=1169, 1204.5pt x 803.0pt>
+<Figures/projectile_example.png, id=1276, 1204.5pt x 803.0pt>
 File: Figures/projectile_example.png Graphic file (type png)
 <use Figures/projectile_example.png>
 Package pdftex.def Info: Figures/projectile_example.png  used on input line 393
@@ -2708,53 +2815,53 @@ Chapter 10.
 [108
 
 ]
-<Figures/x+yx+y.png, id=1207, 803.0pt x 803.0pt>
+<Figures/x+yx+y.png, id=1311, 803.0pt x 803.0pt>
 File: Figures/x+yx+y.png Graphic file (type png)
 <use Figures/x+yx+y.png>
 Package pdftex.def Info: Figures/x+yx+y.png  used on input line 543.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/x+yx-y.png, id=1208, 803.0pt x 803.0pt>
+<Figures/x+yx-y.png, id=1312, 803.0pt x 803.0pt>
 File: Figures/x+yx-y.png Graphic file (type png)
 <use Figures/x+yx-y.png>
 Package pdftex.def Info: Figures/x+yx-y.png  used on input line 565.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/-x+y-x-y.png, id=1209, 803.0pt x 803.0pt>
+<Figures/-x+y-x-y.png, id=1313, 803.0pt x 803.0pt>
 File: Figures/-x+y-x-y.png Graphic file (type png)
 <use Figures/-x+y-x-y.png>
 Package pdftex.def Info: Figures/-x+y-x-y.png  used on input line 578.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/y-x.png, id=1210, 803.0pt x 803.0pt>
+<Figures/y-x.png, id=1314, 803.0pt x 803.0pt>
 File: Figures/y-x.png Graphic file (type png)
 <use Figures/y-x.png>
 Package pdftex.def Info: Figures/y-x.png  used on input line 591.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
  [109 <./Figures/x+yx+y.png>] [110 <./Figures/x+yx-y.png>] [111 <./Figures/-x+y
 -x-y.png>]
-<Figures/x+yx+yintegralcurves.png, id=1236, 803.0pt x 803.0pt>
+<Figures/x+yx+yintegralcurves.png, id=1339, 803.0pt x 803.0pt>
 File: Figures/x+yx+yintegralcurves.png Graphic file (type png)
 <use Figures/x+yx+yintegralcurves.png>
 Package pdftex.def Info: Figures/x+yx+yintegralcurves.png  used on input line 6
 12.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/x+y-x+yintegralcurves.png, id=1237, 803.0pt x 803.0pt>
+<Figures/x+y-x+yintegralcurves.png, id=1340, 803.0pt x 803.0pt>
 File: Figures/x+y-x+yintegralcurves.png Graphic file (type png)
 <use Figures/x+y-x+yintegralcurves.png>
 Package pdftex.def Info: Figures/x+y-x+yintegralcurves.png  used on input line 
 624.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/-x+y-x-yintegralcurves.png, id=1238, 803.0pt x 803.0pt>
+<Figures/-x+y-x-yintegralcurves.png, id=1341, 803.0pt x 803.0pt>
 File: Figures/-x+y-x-yintegralcurves.png Graphic file (type png)
 <use Figures/-x+y-x-yintegralcurves.png>
 Package pdftex.def Info: Figures/-x+y-x-yintegralcurves.png  used on input line
  636.
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/y-xintegralcurves.png, id=1239, 803.0pt x 803.0pt>
+<Figures/y-xintegralcurves.png, id=1342, 803.0pt x 803.0pt>
 File: Figures/y-xintegralcurves.png Graphic file (type png)
 <use Figures/y-xintegralcurves.png>
 Package pdftex.def Info: Figures/y-xintegralcurves.png  used on input line 648.
 
 (pdftex.def)             Requested size: 247.37083pt x 247.37132pt.
-<Figures/y-xintegralcurves2.png, id=1240, 803.0pt x 803.0pt>
+<Figures/y-xintegralcurves2.png, id=1343, 803.0pt x 803.0pt>
 File: Figures/y-xintegralcurves2.png Graphic file (type png)
 <use Figures/y-xintegralcurves2.png>
 Package pdftex.def Info: Figures/y-xintegralcurves2.png  used on input line 655
@@ -2820,7 +2927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1339--1340
 
  []
 
-<Figures/wave_solution_2.png, id=1383, 1545.775pt x 647.41875pt>
+<Figures/wave_solution_2.png, id=1475, 1545.775pt x 647.41875pt>
 File: Figures/wave_solution_2.png Graphic file (type png)
 <use Figures/wave_solution_2.png>
 Package pdftex.def Info: Figures/wave_solution_2.png  used on input line 1393.
@@ -2833,24 +2940,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2E220DD2D3A8B6564B2AD05DE3A6DA53;5239.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 4A088E9622296395C354F9F84AF4CFD6;3821
-(rerunfilecheck)             After:  2E220DD2D3A8B6564B2AD05DE3A6DA53;5239.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 52368 strings out of 492483
- 1185671 string characters out of 3121588
- 1368168 words of memory out of 3000000
- 55214 multiletter control sequences out of 15000+200000
+ 52613 strings out of 492483
+ 1190894 string characters out of 3121588
+ 1374060 words of memory out of 3000000
+ 55457 multiletter control sequences out of 15000+200000
  723886 words of font info for 205 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,20n,123p,1006b,2313s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2870,9 +2971,9 @@ pe1/public/fourier/fourier-ms.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX
 /MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Users/Colin/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/Colin/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (137 pages, 4107582 bytes).
+Output written on main.pdf (139 pages, 4119204 bytes).
 PDF statistics:
- 1671 PDF objects out of 1728 (max. 8388607)
- 595 named destinations out of 1000 (max. 500000)
- 833 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1764 PDF objects out of 2073 (max. 8388607)
+ 597 named destinations out of 1000 (max. 500000)
+ 1001 words of extra memory for PDF output out of 10000 (max. 10000000)
 

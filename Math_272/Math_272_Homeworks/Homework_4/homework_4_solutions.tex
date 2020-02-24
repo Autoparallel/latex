@@ -8,273 +8,381 @@
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 271, Homework 4, \emph{Solutions}}\\
-   \textsc{Due October 4$^\textrm{th}$}
+   \textsc{\large MATH 272, Homework 4, \emph{Solutions}}\\
+   \textsc{Due March 2$^\textrm{nd}$}
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-Consider the following sequences,
-\[
-a_n = \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \dots, \frac{1}{2^n}, \dots,
-\]
-and
-\[
-b_n =  1, \frac{1}{2}, \frac{1}{6},\frac{1}{24}, \dots,\frac{1}{n!}, \dots.
-\]
+Plot the following curves and print pictures of each using GeoGebra.  
 \begin{enumerate}[(a)]
-    \item For what values of $N$ do we need for $a_N<0.01$ and $b_N<0.01$? Note, these will be different values for $N$.
-    \item Compute $\displaystyle{\lim_{n\to \infty} a_n}$.
-    \item Compute $\displaystyle{\lim_{n\to \infty} b_n}$.
-    \item Which sequence converges more quickly to its limit? (\emph{Hint: consider a ratio of the terms of the sequences and take a limit. Part (a) should help you think about this.})
+	\item (Helix) $\curvegamma_1(t) = \begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ t\end{pmatrix}$, from $t=0$ to $t=2\pi$. Where might this show up? If you think about the Earth moving through space and Moon orbiting Earth, then the Moon follows a (locally) helical path.
+	
+	\item (Falling Ball) $\curvegamma_2(t) = \begin{pmatrix} t\\  0.5t \\ 9-t^2 \end{pmatrix}$ from $t=0$ to $t=3$.
+	
+	\item (Perturbed Orbiter) $\curvegamma_3(t) = \begin{pmatrix} 3\cos(t) \\ 3 \sin(t) \\ \sin(10t)\end{pmatrix}$ from $t=0$ to $t=2\pi$.
+	
+	\item Create your own curve.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item Consider first the sequence given by $a_n$.  Now, we want to find a value for $N$ so that
+    \item Here is the plot.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/helix.png}
+        \caption{Helix.}
+    \end{figure}
+    \item Here is the plot.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/falling_ball.png}
+        \caption{Falling ball.}
+    \end{figure}
+    \item Here is the plot.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/perturbed_orbiter.png}
+        \caption{Perturbed orbiter.}
+    \end{figure}
+\end{enumerate}
+And an extra plot of my own. Here, I used the equation
+\[
+\curvegamma = \begin{pmatrix} (5+3\cos(8t))\cos(t) \\ (5+3\cos(8t))\sin(t) \\ 3\sin(8t) \end{pmatrix}
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{Images/torus_knot.png}
+    \caption{A knot that can be tied around a torus (i.e., the surface of a donut).}
+\end{figure}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+The length of a curve is an important notion. In fact, the length of a curve is often related to the energy of some configuration. We can compute the length of a curve over the time $t=t_0$ to $t=t_1$ by integrating the \emph{speed} of the curve over that time.  That is,
+\[
+l(\curvegamma) = \int_{t_0}^{t_1} \left\|\tangentgamma(t)\right\| dt.
+\]
+We can compute the \emph{energy} of a curve by taking
+\[
+E(\curvegamma) = \int_{t_0}^{t_1} \frac{1}{2} \left\| \tangentgamma(t)\right\|^2dt.
+\]
+\begin{enumerate}[(a)]
+	\item Find the length of the Helix from Problem 1 (a).
+	\item Find the energy of the Perturbed Orbiter in Problem 1 (c).  Roughly, this corresponds to the potential energy a rubber band stretched this way would have.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We let $\curvegamma(t) = \begin{pmatrix} 3\cos (t) \\ 3\sin(t) \\ t\end{pmatrix}$ and we go from $t=0$ to $t=2\pi$. Then we have
+\[
+\tangentgamma(t) =\begin{pmatrix} -3\sin(t) \\ 3\cos(t) \\ 1\end{pmatrix}.
+\]
+and so
+\[
+\left\|\tangentgamma(t)\right\| = \sqrt{(-3\sin (t))^2+(3\cos (t))^2+1^2} = \sqrt{10},
+\]
+since $\sin^2(t)+\cos^2(t)=1$.
+
+Now we integrate to find
+\begin{align*}
+    l(\curvegamma) &= \int_0^{2\pi} \sqrt{10}dt\\
+    &= \sqrt{10} t|_0^{2\pi}\\
+    &= 2\pi \sqrt{10}.
+\end{align*}
+    \item Here we have $\curvegamma(t)=\begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ \sin(10t)\end{pmatrix}$ starting from $t=0$ to $t=2\pi$. Then we have
     \[
-    a_N=\frac{1}{2^N}<0.01.
+    \tangentgamma(t)=\begin{pmatrix} -3\sin(t) \\ 3\cos(t) \\ 10\cos(10t)\end{pmatrix}
     \]
-    We can play with this algebraically by
-    \begin{align*}
-        \frac{1}{2^N}&<0.01\\
-        100&< 2^N\\
-        \log_2(100)&< N\\
-        \approx 6.644&<N.
-    \end{align*}
-    Since $N$ is an integer, we round up to get $N=7.$
+    and so
+    \[
+    \left\|\tangentgamma'(t)\right\| = \sqrt{(-3\sin(t))^2+(3\cos(t))^2+(10\cos(10t))^2} = \sqrt{9+100\cos^2(10t)}.
+    \]
+    This is not a function that can be integrated without some trigonometric substitutions.  If you're interested, you can look at integration using trigonometric substitutions, but I will not go into it. Instead, I'd argue it's good practice for us to get more used to using technology to help solve our problems.  So, we wish to evaluate the integral
+    \[
+    E(\gamma) = \int_0^{2\pi} \frac{1}{2}(9+100\cos^2(10t))dt.
+    \]
+	Then we can type into WolframAlpha
+	\begin{verbatim}
+	integrate[(1/2)(9+100cos^2(10t)),{t,0,2*pi}]
+	\end{verbatim}
     
-    For the sequence given by $b_n$ we do the same and we want to find
-    \begin{align*}
-        b_N =\frac{1}{N!}&<0.01\\
-        100&<N!
-    \end{align*}
-    which has no nice inverse function to use (like $\log_2$ for $2^x$), so we just need to try a few values.  We have
+    Using this, we find
     \[
-    1!=1 \quad 2! = 2 \quad 3! = 6 \quad 4! = 24 \quad 5! = 120,
+    E(\gamma)=59\pi.
     \]
-    so $N=5$ works.
-    \item Since $a_n = f(n)=\frac{1}{2^n}$ we can consider
-    \[
-    \lim_{n\to \infty} f(n)= \lim_{x\to \infty} f(x) = \lim_{x\to \infty}\frac{1}{2^x} = 0,
-    \]
-    by our knowledge of limits from Calculus 1.
-    \item We can do this a few ways.  For one, we know that $n!$ grows unboundedly as $n$ gets larger and larger so $\lim_{n\to \infty} n! = +\infty$ and so $\lim_{n\to \infty} \frac{1}{n!} = 0$.  We could also prove this more rigorously by comparing $b_n$ to $a_n$.  Notice that for $K\geq 3$ we have $0<b_K<a_K$ and since $a_n\to 0$, we have $b_n\to 0$. One could also use the $\epsilon$ definition for convergence.
-    \item If we consider the limit of the ratio of the terms in the sequence as follows
-    \[
-    \lim_{n\to \infty} \left| \frac{a_n}{b_n}\right|
-    \]
-    then we can see which grows faster than the other.  Let's investigate further
-    \begin{align*}
-        \lim_{n\to \infty} \left| \frac{a_n}{b_n}\right| &= \lim_{n\to \infty} \left| \frac{\frac{1}{2^n}}{\frac{1}{n!}}\right|\\
-        &= \lim_{n\to \infty} \left| \frac{ n!}{2^n}\right|\\
-        &= \lim_{n\to \infty} \left| \frac{ n \cdot (n-1) \cdot (n-2)\cdots 2 \cdot 1}{2\cdot 2 \cdot 2 \cdots 2 \cdot 2}\right|.
-    \end{align*}
-    Here, notice that there are $n$ terms in the numerator, and $n$ in the denominator.  However, most of the terms in the numerator are larger than $2$ (and, for example, $4=2\cdot 2$).  So, the denominator is larger especially as $n$ gets larger and we find
-    \[
-    \lim_{n\to \infty} \left| \frac{a_n}{b_n}\right| = \infty
-    \]
-    which means that $b_n \to 0$ faster than $a_n \to 0$.
-\end{enumerate}
-\end{solution}
-\begin{remark}
-I have shown some work here that looks complicated and we haven't totally covered in class.  So, I don't expect your solutions to be as clean as mine! What I wanted you to do was just think about these ideas and try to gain intuition. Especially with part (d).
-\end{remark}
 
-\newpage
-\begin{problem}
-With the same $a_n$ from $1$, consider the series
-\[
-A = \sum_{n=1}^\infty a_n.
-\]
-\begin{enumerate}[(a)]
-    \item Write down the $N^\textrm{th}$ partial sum $A_N$ for this series.  
-    \item Does this sequence of partial sums converge? If so, to what?
-    \item Note that this is an \emph{geometric series} with $a=1$ and $r=\frac{1}{2}$. However, we start from $n=1$ instead of $n=0$. Show the value that this series converges to using the formula for a geometric series.
-\end{enumerate}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item The $N^\textrm{th}$ partial sum is given by
-    \[
-    \sum_{n=1}^N a_n = \sum_{n=1}^N \frac{1}{2^n} = \frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\cdots + \frac{1}{2^N}.
-    \]
-    \item Let us take a look at the sequence of partial sums
-    \[
-    A_1 = \frac{1}{2} \quad A_2 = \frac{3}{4} \quad A_2 = \frac{7}{8} \quad A_3 = \frac{15}{16},
-    \]
-    which leads us to
-    \[
-    A_N = \frac{2^N -1}{2^N}.
-    \]
-    Thus we can take
-    \[
-    \lim_{N\to \infty }A_n =\lim_{N\to \infty} \frac{2^N-1}{2^N} = 1.
-    \]
-    So the series converges to 1.
-    \item There is a formula for a geometric series 
-    \[
-    \sum_{n=1}^\infty ar^n = \frac{ar}{1-r}.
-    \]
-    If we take $a=1$ and $r=\frac{1}{2}$ then
-    \[
-    \sum_{n=1}^\infty \frac{1}{2^n} = \frac{1\cdot \frac{1}{2}}{1-\frac{1}{2}}=\frac{1}.
-    \]
-    So our result is identical.
 \end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-With the same $b_n$ from $1$, consider the series
-\[
-B = \sum_{n=0}^\infty b_n.
-\]
+Given a scalar field of two variables $F(x,y)$, we can create an object called the \emph{graph} of $F(x,y)$ by plotting the set of points $(x,y,F(x,y))$. In fact, you have done this many times in your life. For example, you have consistently plotted the graph of a function $f(x)$ by plotting $(x,f(x))$ in the plane!  
+
+Using GeoGebra, plot the graph of the following functions. Print these off and include them.  Also, describe the what the graph of the function does as we move along the $x$-axis, the $y$-axis, and along the line $y=x$. For each, use the range $-3\leq x \leq 3$ and $-3\leq y \leq 3$.
 \begin{enumerate}[(a)]
-    \item Use the ratio test to show that this series converges.
-    \item Approximate the value the series converges to by considering larger and larger partial sums.
-    \item What number does this series converge to?
+	\item $F(x,y) = \frac{4xy}{1+x^2+y^2}$.
+	\item $G(x,y) = \sin(xy)$.
+	\item $H(x,y) = \frac{-x^2-y^2}{5}$.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item Consider the limit for the ratio test
-    \begin{align*}
-        \lim_{n\to \infty} \left| \frac{b_{n+1}}{b_n} \right|&= \lim_{n\to \infty} \left| \frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right|\\
-        &= \lim_{n\to \infty} \left| \frac{n!}{(n+1)!}\right|\\
-        &= \lim_{n\to \infty} \left| \frac{1}{n+1}\right|\\
-        &=0.
-    \end{align*}
-    So by the ratio test, the series converges.
-    \item Using a tool like WolframAlpha, we can compute approximations to the series using partial sums. For example, we can take 
-    \begin{align*}
-        \sum_{n=0}^1 b_n &= 2\\
-        \sum_{n=0}^5 b_n &\approx 2.7166...\\
-        \sum_{n=0}^{50} b_n &\approx 2.718281828459
-    \end{align*}
-    That is, I put
-    \begin{verbatim}
-        sum[1/n!,{n,0,N}]
-    \end{verbatim}
-    into WolframAlpha (but of course replaced $N$ with the chosen $N$ values above).
-    \item Again, one could use WolframAlpha to find what this series converges to and we get that
+    \item Below is the graph of the function $F(x,y)$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/4a.png}
+        \caption{The graph of $F(x,y)$.}
+    \end{figure}
+    If we move along the $x$-axis, then we have that $y=0$ and thus our function takes the form
     \[
-    e=\sum_{n=0}^\infty \frac{1}{n!} \approx 2.718281828459.
+    F(x,0) = \frac{4x\cdot 0}{1+x^2+0^2} = 0.
     \]
+    Thus, along this axis the function is a constant zero. Similarly, if we take $x=0$ we have that $F(0,y)=0$ and our function is again constantly zero along this axis. Instead, if we take the function along the $y=x$ line, then we have
+    \[
+    F(x,x) = \frac{4x^2}{1+2x^2}
+    \]
+    We can plot this function as a single variable graph in the $(x=y)z$-plane by:
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=.6\textwidth]{Images/3a_y=x.png}
+    	\caption{The graph of $F(x,x)$ in the $xz$-plane.}
+    \end{figure}
+    \item Below is the graph of the function $G(x,y)$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/4b.png}
+        \caption{The graph of $G(x,y)$.}
+    \end{figure}
+    If we move along the $x$-axis, we take $y=0$ and thus
+    \[
+    G(x,0) = \sin(0) = 0.
+    \]
+    Hence, our function is constantly zero on this axis.  Similarly, if we take the function on the $y$-axis, then $x=0$ means
+    \[
+    G(0,y) = 0.
+    \]
+    Lastly, if we take $y=x$, then
+    \[
+    G(x,x) = \sin(x^2),
+    \]
+    which we can graph in the $(x=y)z$-plane by:
+        \begin{figure}[H]
+        	\centering
+        	\includegraphics[width=.6\textwidth]{Images/3b_y=x.png}
+        	\caption{The graph of $G(x,x)$ in the $xz$-plane.}
+        \end{figure}
+    \item Below is the graph of $H(x,y)$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/4c.png}
+        \caption{The graph of $H(x,y)$.}
+    \end{figure}
+    Here if we consider the function along the $x$-axis, we have
+    \[
+    H(x,0)= \frac{-x^2}{5},
+    \]
+    which is a parabola in the $xz$-plane. Similarly, on the $y$-axis, we have
+    \[
+    H(0,y) = \frac{-y^2}{5},
+    \]
+    which is the same parabola but in the $yz$-plane. Lastly, letting $x=y$ we get
+    \[
+    H(x,x) = \frac{-2x^2}{5},
+    \]
+    which is a steeper parabola in the $(x=y)z$-plane.
 \end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-Consider the two series
+For this problem, let us consider a family of scalar fields of varying dimensionality.  We will seek out an understanding of the level sets and how to relate these to the derivatives of a scalar field. For each part, compute the set of points such that $f(\vecx)=\frac{1}{2}$, $f(\vecx)=1$, $f(\vecx)=2$, and $f(\vecx)=3$ and plot these sets. 
+
+Compute as well the vector of partial derivatives (referred to as the \emph{gradient vector}) which we write as
 \[
-\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+\nablavec f(\vecx) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n}\end{pmatrix}.
 \]
+in $\R^n$. Draw the gradient vector on your plots at a three different points for each part.
 \begin{enumerate}[(a)]
-    \item Show that $\cos(-x)=\cos(x)$.
-    \item Show that $\sin(-x)=-\sin(x)$.
-    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
-    \[
-    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
-    \]
-    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
+	\item Consider the 1-dimensional scalar field 
+	\[
+	f(x) = \frac{1}{|x|}=\frac{1}{\sqrt{x^2}}.
+	\]
+	Here each level set will be made up of distinct points.
+	\item Consider the 2-dimensional scalar field
+	\[
+	f(x) = \frac{1}{|\vec{x}|} = \frac{1}{\sqrt{x^2+y^2}}.
+	\]
+	Here each level set will be a curve.
+	\item Consider the 3-dimensional scalar field
+		\[
+		f(x) = \frac{1}{|\vec{x}|} = \frac{1}{\sqrt{x^2+y^2+z^2}}.
+		\]
+		Here each level set will be a surface.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item We take
+    \item We first solve this problem algebraically then we'll deal with the plots.  We have
     \begin{align*}
-        \cos(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n}}{(2n)!} &= \sum_{n=0}^\infty \frac{(-1)^n \left((-x)^2\right)^n}{(2n)!}\\
-        &= \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}\\
-        &= \cos(x).
+        f(x)&=c\\
+        \iff \frac{1}{\sqrt{x}^2} &= c\\
+        \iff \sqrt{x^2}&=\frac{1}{c}\\
+        \iff x^2&= \frac{1}{c^2}\\
+        \iff x &= \pm \frac{1}{c}.
     \end{align*}
-    Fundamentally, this is because all powers of $x$ in the terms in the series are even.  This is why we call $\cos$ an \emph{even} function!
-    \item Similarly, we take
+    Now using this, we find that the level points follow:
     \begin{align*}
-        \sin(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n+1}}{(2n+1)!}&= \sum_{n=0}^\infty \frac{(-1)^n (-x)\cdot (-x)^{2n}}{(2n+1)!}\\
-        &= -\sum_{n=0}^\infty \frac{(-1)^n x\cdot x^{2n}}{(2n+1)!}\\
-        &= -\sum_{n=0}^\infty \frac{(-1) x^{2n+1}}{(2n+1)!}\\
-        &= -\sin(x).
+        \textrm{For $c_0=\frac{1}{2}$:~}\quad x&=\pm 2\\
+        \textrm{For $c_1=1$:~}\quad x&=\pm 1\\
+        \textrm{For $c_2=2$:~}\quad x&=\pm \frac{1}{2}\\
+        \textrm{For $c_3=3$:~}\quad x&=\pm \frac{1}{3}.\\
     \end{align*}
-    Again, this is happening due to the fact that all powers of $x$ in the terms for the series are odd. This is why we call $\sin$ an \emph{odd} function.
-    \item Consider first $\frac{d}{dx} \sin(x)$.  We take
+    Here are the plots.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_points.png}
+        \caption{Graph of $f(x)$ with level points on the $x$-axis.}
+    \end{figure}
+    \item Let's repeat the same process as in (a). We take
     \begin{align*}
-        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} &= \frac{d}{dx} \left( x-\frac{x^3}{3!}+\frac{x^5}{5!} - \cdots \right)\\
-        &= \frac{d}{dx} x -\frac{d}{dx} \frac{x^3}{3!} +\frac{d}{dx} \frac{x^5}{5!} - \cdots\\
-        &= 1 - \frac{x^2}{2!} +\frac{x^4}{4!} - \cdots.
+        f(x,y)&=c\\
+        \iff \frac{1}{\sqrt{x^2+y^2}}&= c\\
+        \iff \sqrt{x^2+y^2}&=\frac{1}{c}\\
+        \iff x^2+y^2 &= \frac{1}{c^2},
     \end{align*}
-    These are the first few terms of the $\cos(x)$ series.  Notice if we take
-    \[
-    \frac{d}{dx} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = \frac{(-1) x^{2n}}{(2n)!}.
-    \]
-    So we have
-    \[
-    \frac{d}{dx} \sin(x) = \cos(x).
-    \]
-    
-    When we consider $\frac{d}{dx}$ of $\cos(x)$ we have to be a bit more careful.  Let's see what happens.  We take
+    which is the equation for a circle of radius $\frac{1}{c}$. Now using this, we find that the level curves follow:
     \begin{align*}
-        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &= \frac{d}{dx} \left(1-\frac{x^2}{2!}+\frac{x^4}{4!} - \cdots \right)\\
-        &= \frac{d}{dx} 1 -\frac{d}{dx} \frac{x^2}{2!} +\frac{d}{dx} \frac{x^4}{4!} - \cdots\\
-        &= 0 - x +\frac{x^3}{3!} - \cdots
+        \textrm{For $c_0=\frac{1}{2}$:~}\quad x^2+y^2&=2\\
+        \textrm{For $c_1=1$:~}\quad x^2+y^2&=1\\
+        \textrm{For $c_2=2$:~}\quad x^2+y^2&=\frac{1}{4}\\
+        \textrm{For $c_3=3$:~}\quad x^2+y^2&=\frac{1}{9}.\\
     \end{align*}
-    which look like the first terms in the series for $-\sin(x)$. However, let's take a derivative of the term
-    \[
-    \frac{d}{dx} \frac{(-1)^n x^{2n}}{(2n)!} = \frac{(-1)^n x^{2n-1}}{(2n-1)!}.
-    \]
-    Now if we were to have this in our series we find
-    \[
-        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \not=  \sum_{n=0}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!},
-    \]
-    since the first term on the right has an $x^{-1}$ in it! When we write out the terms of the series and differentiate them, we don't make this mistake.  We just have to be careful.  What we really should have is
+    Here are the plots.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_curve_surface.png}
+        \caption{The graph of the function $f(x,y)$.}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_curves.png}
+        \caption{The level curves for the function $f(x,y)$.}
+    \end{figure}
+    \item Let's repeat the process one last time, so we have
     \begin{align*}
-                \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &=  \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}\\
-                &=\sum_{n=0}^\infty \frac{(-1)^{n+1} x^{2n+1}}{(2n+1)!}\\
-                &= -\sin(x).
+            f(x,y,z)&=c\\
+        \iff \frac{1}{\sqrt{x^2+y^2+z^2}}&= c\\
+        \iff \sqrt{x^2+y^2+z^2}&=\frac{1}{c}\\
+        \iff x^2+y^2+z^2 &= \frac{1}{c^2},
     \end{align*}
-    Notice above I \emph{reindexed} the series.  This is not something I'm going to worry too much about you doing.
+    which is the equation for a sphere of radius $\frac{1}{c}$.  Then the level surfaces follow:
+        \begin{align*}
+        \textrm{For $c_0=\frac{1}{2}$:~}\quad x^2+y^2+z^2&=2\\
+        \textrm{For $c_1=1$:~}\quad x^2+y^2+z^2&=1\\
+        \textrm{For $c_2=2$:~}\quad x^2+y^2+z^2&=\frac{1}{4}\\
+        \textrm{For $c_3=3$:~}\quad x^2+y^2+z^2&=\frac{1}{9}.\\
+    \end{align*}
+    Here are the plots
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_surface_c0.png}
+        \caption{Level surface for $f(x,y,z)=c_0$.}
+    \end{figure}
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_surface_c1.png}
+        \caption{Level surface for $f(x,y,z)=c_1$.}
+    \end{figure}
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_surface_c2.png}
+        \caption{Level surface for $f(x,y,z)=c_2$.}
+    \end{figure}
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Images/level_surface_c3.png}
+        \caption{Level surface for $f(x,y,z)=c_3$.}
+    \end{figure}
 \end{enumerate}
+One can think of these level sets as the sets of constant energy. For example, if this function $f(x,y,z)$ describes the potential energy (which this function does for the gravitational and electrostatic force), then the level sets correspond to the circular orbits of particles in this potential field. 
 \end{solution}
-\begin{remark}
-Again, some of my work here is beyond what I was expecting. If you would have taken the derivatives of the first few terms and showed they are equal, you can extrapolate beyond that and assume it will work for the rest of the terms.  Just be careful with this!
-\end{remark}
 
 \newpage
 \begin{problem}
-Consider the \emph{$p$-series}:
-\[
-\sum_{n=1}^\infty \frac{1}{n^p}.
-\]
+Consider the two dimensional scalar field $T(x,y)=x+y$ that describes the temperature on the square plate $\Omega$ given by the set $0\leq x,y \leq 1$.  Compare the two answers you get!
 \begin{enumerate}[(a)]
-    \item For $p=1$, show that the ratio test is inconclusive.
-    \item For $p=2$, show that the ratio test is again inconclusive.
-    \item Look up the sum of the series for $p=1$ and $p=2$.  Notice how the ratio test is not perfect!
+	\item Compute the integral
+	\[
+	\int_\Omega T(x,y)d\Omega,
+	\]
+	where $\unitvec$ is the outward normal vector to the square plate.
+	\item Let $\curvegamma$ be the curve that traverses the boundary of the square plate in the counterclockwise direction.  Compute
+	\[
+	\int_{\curvegamma} T(\curvegamma)d\curvegamma. 
+	\]
 \end{enumerate}
 \end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item Let us take $p=1$. Then we have
-    \begin{align*}
-        \sum_{n=1}^\infty \frac{1}{n}.
-    \end{align*}
-    This is known as the \emph{harmonic series}.  Now, the limit for the ratio test is
-    \begin{align*}
-        \lim_{n\to \infty} \left| \frac{\frac{1}{n+1}}{\frac{1}{n}}\right| &= \lim_{n\to \infty} \left| \frac{n}{n+1} \right|\\
-        &= 1.
-    \end{align*}
-    So the ratio test is inconclusive.
-    \item Similarly, for $p=2$, we have the limit for the ratio test
-    \begin{align*}
-                \lim_{n\to \infty} \left| \frac{\frac{1}{(n+1)^2}}{\frac{1}{n^2}}\right| &= \lim_{n\to \infty} \left| \frac{n^2}{n^2+2n+1} \right|\\
-                &= \lim_{n\to \infty} \left| \frac{n^2}{n^2}\right|\\
-                &=1.
-    \end{align*}
-    Note that here I used the fact that the leading power term dominates in the limit.  Thus, we again have the ratio test is inconclusive.
-    \item We have that the $p$-series for $p=1$ diverges and 
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}.
-    \]
-\end{enumerate}
+\begin{solution} ~
+	\begin{enumerate}[(a)]
+		\item We take
+		\begin{align*}
+			\iint_\Omega T(x,y)d\Omega &= \int_0^1 \int_0^1 x+y dxdy\\
+			&= \int_0^1 \left.\left(\frac{1}{2}x^2+xy\right)\right\vert_0^1 dy\\
+			&= \int_0^1 \frac{1}{2} + y dy\\
+			&= \left.\left(\frac{1}{2}y + \frac{1}{2}y^2\right)\right\vert_0^1\\
+			&= 1.
+		\end{align*}
+		\item	First, note that there are four straight curves that parameterize the boundary of the plate.  Namely, we can choose the parameterizations 
+		\[
+		\curvegamma_1(t) = \begin{pmatrix} t \\ 0 \end{pmatrix} \quad \curvegamma_2(t) = \begin{pmatrix} 1 \\ t \end{pmatrix} \quad \curvegamma_1(t) = \begin{pmatrix} 1-t \\ 1 \end{pmatrix} \quad \curvegamma_1(t) = \begin{pmatrix} 0 \\ 1-t \end{pmatrix},
+		\]
+		Note that there are many other parameterizations that work. We can see the chosen curves in this figure:
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.6\textwidth]{Images/plate_boundary.png}
+		\end{figure}
+		Thus, our integral can be written as
+		\[
+		\int_{\curvegamma} T(\curvegamma) d\curvegamma = \int_{\curvegamma_1} T(\curvegamma) d\curvegamma_1 + \int_{\curvegamma_2} T(\curvegamma) d\curvegamma_2 + \int_{\curvegamma_3} T(\curvegamma) d\curvegamma_3 + \int_{\curvegamma_4} T(\curvegamma) d\curvegamma_4.
+		\]
+		Then, we can compute each integral on the right hand side.
+		\begin{align*}
+			\int_{\curvegamma_1} T(\curvegamma_1) d\curvegamma_1 &= \int_0^1 T(\curvegamma_1(t))\left|\tangentgamma_1(t)\right|dt\\
+			&= \int_0^1 T(t,0) dt\\
+			&= \int_0^1 t dt\\
+			&= 1.
+		\end{align*}
+		Similarly, 
+		\begin{align*}
+				\int_{\curvegamma_2} T(\curvegamma_2) d\curvegamma_2 &= \int_0^1 T(\curvegamma_2(t))\left|\tangentgamma_2(t)\right|dt\\
+				&= \int_0^1 T(1,t) dt\\
+				&= \int_0^1 1+t dt\\
+				&= \left.\left(t+\frac{1}{2}t^2\right)\right\vert_0^1\\
+				&= \frac{3}{2}.
+		\end{align*}	
+		Again,
+		\begin{align*}
+				\int_{\curvegamma_3} T(\curvegamma_3) d\curvegamma_3 &= \int_0^1 T(\curvegamma_3(t))\left|\tangentgamma_3(t)\right|dt\\
+				&= \int_0^1 T(1-t,1) dt\\
+				&= \int_0^1 (1-t)+1 dt\\
+				&= \int_0^1 2-tdt\\
+				&= \left.\left( 2t-\frac{1}{2}t^2\right)\right\vert_0^1\\
+				&= \frac{3}{2}.
+		\end{align*}			
+		Lastly,
+		\begin{align*}
+			\int_{\curvegamma_4} T(\curvegamma_4) d\curvegamma_4 &= \int_0^1 T(\curvegamma_4(t))\left|\tangentgamma_4(t)\right|dt\\
+			&= \int_0^1 T(0,1-t) dt\\
+			&= \int_0^1 1-t dt\\
+			&= \left.\left(t-\frac{1}{2}t^2\right)\right\vert_0^1\\
+			&= \frac{1}{2}.
+		\end{align*}	
+	\end{enumerate}
+	Thus, we have
+	\[
+	\boxed{\int_{\curvegamma} T(\curvegamma) d\curvegamma = 1+\frac{3}{2}+\frac{3}{2}+\frac{1}{2} = \frac{9}{2}.}
+	\]
 \end{solution}
-
 \end{document}
