@@ -1,0 +1,337 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+
+\title{Calderon Problem via Boundary Control with Differential Forms}
+\author{Colin Roberts}
+
+\begin{document}
+
+\section{Introduction}
+This is the two dimensional case for calderon.
+
+\section{Preliminaries}
+
+\textcolor{red}{Also add that there should only be one boundary component of $M$}
+Let $(M,g)$ be a smooth Riemannian manifold with boundary $\partial M$ and metric $g$.  There is a natural inclusion $i \colon \partial M \hookrightarrow M$ with the induced pullback $i^*$.  Let $\mu_g$ be the induced Riemannian volume form on $M$. Let $\Delta_g$ be the Laplace-Beltrami operator and let $D_g = d+\delta_g$ be the Dirac operator such that $\Delta_g = (d+\delta_g)^2$. 
+
+
+\begin{definition}
+	Let $(M,g)$ and $(M',g')$ be smooth Riemannian manifolds such that $\partial M = \partial M'$. Then we say that $(M,g)$ and $(M',g')$ are \emph{conformally equivalent} if there exists a diffeomorphism $\varphi \colon M \to M'$ with $\varphi \vert_{\partial m} = id.$ and a positive function $\rho \in C^\infty (M)$ with $\rho \vert_{\partial M} = 1$ such that $\varphi$ is an isometry between $(M,\rho g)$ and $(M',g')$.
+\end{definition}
+
+\begin{theorem}
+	Let $(M,g)$ and $(M',g')$ be conformally equivalent.  Then the Laplace-Beltrami operators $\Delta_{g}$ and $\Delta_{g'}$ are equivalent.
+\end{theorem}
+\begin{proof}
+\textcolor{red}{This is likely due to something special with 1-forms being self dual and having a unique notion of an orthogonal complement.}
+\end{proof}
+
+Define next the \emph{Dirichlet-to-Neumann map} (DN) $\dnmap \colon \boundarykforms{k} \to \boundarykforms{n-k-1}$ in the following way.  Given $f\in \boundarykforms{k}$, then the solution $u^f$ to the boundary value problem
+\[
+\begin{cases} \Delta_g u^f = 0,\\ i^*u^f = f, & i^*(\delta u^f) = 0 \end{cases}
+\]
+defines the DN map by 
+\[
+\dnmap f = i^*(\star d u^f) = (-1)^{k+1}i^*(\delta \star u^f).
+\]
+
+\begin{remark}
+	If two manifolds are conformally equivalent, then their DN-maps are equivalent.  This is clear since the definition of $\Lambda_g$ depends only on the metric on the boundary and the fact that $M$ and $M'$ have isometric boundaries.
+\end{remark}
+
+\begin{remark}
+	The goal here is to prove the converse statement is also true.
+\end{remark}
+
+\begin{remark}
+\textcolor{red}{Similarly, we can prove for dim > 2 that the operators are equivalent up to (global?) isometry}.
+\end{remark}
+
+\subsection{Hodge Theory}
+
+Let $d \colon \kforms{k}{} \to \kforms{k+1}{}$ be the exterior derivative on the de Rham cochain complex.  One can find the properties for $d$ \textcolor{red}{insert some source}.  Then we can uniquely define the Hodge star $\star \colon \kforms{k}{} \to \kforms{n-k}{}$ so that for $\alpha,\beta \in \kforms{k}{}$ we have $\alpha \wedge (\star \beta) = \innprod{\alpha}{\beta} \mu_g$ where $\innprod{\cdot}{\cdot}$ is the inner product on $k$-vectors. Think of $\star$ as a morphism on $k$-forms $\omega$ specifying some $n-k$-form $\star \omega$ such that the  exterior product $\omega \wedge \star \omega$ is a top dimensional alternating form.  This operator is made unique by specifying the requirement above.
+
+Given the Hodge star, we can define the $L^2$ inner product for $k$-forms by
+\[
+\kforminnprod{\alpha}{\beta} = \int_M \alpha \wedge (\star \beta).
+\]
+The codifferential $\delta$ as the formal adjoint to $d$. That is,
+\[
+\kforminnprod{d\alpha}{\beta} = \kforminnprod{\alpha}{\delta \beta}.
+\]
+In terms of the Hodge star, we have $\delta = (-1)^{n(k-1)+1}\star d \star$.  
+
+We note that we have the following relationships on $k$-forms:
+\[
+\star \star = (-1)^{k(n-k)}. 
+\]
+From this follows
+\[
+ \star \delta = (-1)^{k}d\star, \quad \star d = (-1)^{k+1} \delta \star.
+\]
+We can then show that a general form of Green's theorem holds.
+\begin{theorem}
+Let $\alpha \in \kforms{k}{}$ and $\beta \in \kforms{k+1}{}$. Then,
+\[
+\kforminnprod{d\alpha}{\beta} - \kforminnprod{\alpha}{\delta \beta} = \int_{\partial M} i^* (\alpha \wedge \star \beta).
+\]
+\end{theorem}
+\begin{proof}
+Let $\alpha \in \kforms{k-1}{}$ and $\beta \in \kforms{k+1}{}$. Then,
+\begin{align*}
+d(\alpha \wedge \star \beta) &= d\alpha \wedge \star \beta + (-1)^{k} \alpha \wedge d\star \beta\\
+&= d\alpha \wedge \star \beta + (-1)^{k}(-1)^{k+1} \alpha \wedge \star \delta \beta\\
+&= d\alpha \wedge \star \beta - \alpha \wedge \star \delta \beta.
+\end{align*}
+Now, by Stokes' theorem, we can integrate both sides above to get
+\[
+\int_{\partial M} i^* (\alpha \wedge \star \beta) = \kforminnprod{d\alpha}{\beta} - \kforminnprod{\alpha}{\delta \beta}.
+\]
+\end{proof}
+One should note that the pullback $i^*$ also commutes with the exterior product $\wedge$ in that
+\[
+i^*(\omega \wedge \eta) = i^*\omega \wedge i^* \eta.
+\]
+Hence, in Green's theorem, we can put
+\[
+\int_{\partial M} i^*(\alpha \wedge \star \beta) = \int_{\partial M} i^*\alpha \wedge i^* \star \beta.
+\]
+
+There is a natural $L_2$-orthogonal decomposition of differential forms given by,
+\[
+\kforms{k}{} = \exact{k}{D} \oplus \coexact{k}{N} \oplus \harmonic{k}{},
+\]
+\textcolor{red}{as well as..???
+\[
+\kforms{k}{} = \exact{k}{N} \oplus \coexact{k}{D} \oplus \harmonic{k}{},
+\]
+}referred to as the \emph{Hodge-Morrey decomposition}. 
+
+Define the spaces of $k$-forms
+\[
+\kforms{k}{D} = \left\{ \omega \in \kforms{k}{} ~\vert~ i^* \omega = 0 \right\} \qquad \textrm{and} \qquad \kforms{k}{N} = \left\{ \omega \in \kforms{k}{} ~\vert~ i^* (\star \omega) = 0 \right\}
+\]
+where we have the \emph{exact $k$-forms}
+\[
+\exact{k}{} = \left\{d\alpha ~\vert~ \alpha \in \kforms{k-1}{}\right\},
+\]
+as well as the \emph{Dirichlet} and \emph{Neumann exact $k$-forms}
+\[
+\exact{k}{D} = \left\{ d\alpha ~\vert~ \alpha \in \kforms{k-1}{D} \right\} \qquad \textrm{and} \qquad \exact{k}{N} = \left\{ d\alpha ~\vert~ \alpha \in \kforms{k-1}{N} \right\}, 
+\]
+respectively.  Next, we have the \emph{coexact $k$-forms}
+\[
+\coexact{k}{} = \left\{ \delta \beta ~\vert~ \alpha \in \kforms{k+1}{}\right\},
+\]
+with the \emph{Dirichlet} and \emph{Neumann coexact $k$-forms}
+\[
+\coexact{k}{D} = \left\{ \delta\alpha ~\vert~ \alpha \in \kforms{k+1}{D} \right\} \qquad \textrm{and} \qquad \coexact{k}{N} = \left\{ \delta \alpha ~\vert~ \alpha \in \kforms{k+1}{N} \right\}, 
+\]
+respectively. Finally, we have the \emph{harmonic $k$-forms}
+\[
+\harmonic{k}{} = \left\{ \gamma ~\vert~ \gamma \in \kforms{k}, ~ d\gamma = 0, ~\delta \gamma =0 \right\},
+\]
+as well as the \emph{Dirichlet} and \emph{Neumann harmonic $k$-forms}
+\[
+\harmonic{k}{D} = \harmonic{k}{} \cap \kforms{k}{D} \qquad \textrm{and} \qquad \harmonic{k}{N} = \harmonic{k}{} \cap \kforms{k}{N},
+\]
+respectively.
+
+
+\begin{theorem}
+Let $\omega \in \kforms{k}{}$. Then there is a unique decomposition of $\omega$ by
+\[
+\omega = d\alpha + \delta \beta + \gamma,
+\]
+where $d\alpha \in \exact{k}{D}$, $\beta \in \coexact{k}{N}$, and $\gamma \in \harmonic{k}{}$.  
+\end{theorem}
+
+\begin{proof}
+First, we show that the spaces of exact, coexact, and harmonic forms are $L^2$-orthogonal.  First, take an Dirichlet exact $k$-form $d\alpha$, and Neumann coexact $k$-form $\delta \beta$.  Then, using Green's theorem
+\begin{align*}
+	\kforminnprod{d\alpha}{\delta \beta} &= \underbrace{\kforminnprod{\alpha}{\delta^2 \beta}}_{=0~ \textrm{since $\delta^2 = 0$}} + \underbrace{\int_{\partial M} i^*(\alpha\wedge \star \beta)}_{=0~ \textrm{since $i^*\alpha = 0$}}.
+\end{align*}
+Next, if we take $\gamma \in \harmonic{k}{}$, then
+\[
+	\kforminnprod{d\alpha}{\gamma} = \underbrace{\kforminnprod{\alpha}{\delta\gamma}}_{=0~ \textrm{since $\delta \gamma =0$}} + \underbrace{\int_{\partial M} i^*(\alpha \wedge \star \gamma)}_{=0~ \textrm{since $i^*\alpha = 0$}}.
+\]
+Lastly, we have
+\begin{align*}
+	\kforminnprod{\gamma}{\delta \beta} &= \underbrace{\kforminnprod{d\gamma}{\beta}}_{=0~ \textrm{since $d \gamma =0$}} + \underbrace{\int_{\partial M} i^*(d\gamma \wedge \star \beta)}_{=0~ \textrm{since $i^*( \star \beta) = 0$}}.
+\end{align*}
+To see that this decomposition fully spans $\kforms{k}{}$, see \cite{schwarz}.
+\end{proof}
+
+
+\begin{remark}
+	It's important to note that $\dim \harmonic{k}{} < \infty$ for all $k$. \textcolor{red}{Give a proof?}
+\end{remark}
+
+
+\begin{remark}
+	Note that a Dirichlet harmonic field is such that its pullback onto the boundary does not effect the tangential boundary components.  Similarly, the Neumann harmonic field pulls back so that the normal boundary component is left unchanged.
+\end{remark}
+
+\subsection{Hints of Geometric Algebra}
+
+Denote by $\kforms{}{}$ the graded algebra of differential $k$-forms given by
+\[
+\kforms{}{} = \bigoplus_{k=0}^n \kforms{k}{}.
+\]
+\begin{definition}
+An element of the exterior algebra of differential forms $\lambda\in \kforms{}{}$ is \emph{monogenic} if 
+\[
+D_g \lambda  = 0.
+\] 
+\end{definition}
+
+Specifically, if we take $\lambda = \lambda_0 + \lambda_2$ where $\lambda_0 \in \kforms{0}{}$ and $\lambda_2 \in \kforms{2}{}$, then
+\begin{align*}
+0=D_g \lambda &= (d+\delta_g) \lambda_0 + (d+\delta_g) \lambda_2 \\
+&= d\lambda_0 + \delta_g \lambda_2,
+\end{align*}
+and hence
+\[
+d\lambda_0 = - \delta_g \lambda_2.
+\]
+In this case, we say that $\lambda_0$ and $\lambda_2$ are \emph{conjugate}.  One should note that these equations mimic the Cauchy-Riemann equations in complex analysis.  Also, note that for an even  monogenic exterior element $\lambda$, the components $\lambda_0$ and $\lambda_2$ are necessarily harmonic in that
+\[
+\Delta_g \lambda 0 = 0 \qquad \textrm{and} \qquad \Delta_g \lambda_2 = 0.
+\]
+
+This is can be made fully transparent in the following sense.  Recall that $\dim M = 2$ and define the \emph{Clifford bundle} over $M$ as a quotient of the graded tensor algebra
+\[
+C\ell(M,g) = \sfrac{\bigoplus_{j=0}^2 T^*M^{\otimes j}}{\langle \omega^2 = g(\omega^\sharp,\omega^\sharp)\rangle}.
+\]
+One can realize the isomorphism 
+\[
+(\kforms{}{},\wedge,\cdot) \cong C\ell(M,g),
+\]
+by constructing the interior product $\lrcorner$ as the formal operator that equates
+\[
+\omega \eta = \omega \lrcorner \eta + \omega \wedge \eta,
+\]
+where $\omega \eta$ is the geometric product in $C\ell(M,g)$.  Note that $\lrcorner$ is more fully described in \cite{dirac-spectral}. Briefly taking local orthonormal coordinates $(x_1,x_2)$ on any open region on $M$, the \emph{even subalgebra} spanned by
+\[
+\lambda_0 + \lambda_2 dx^1 dx^2,
+\]
+is naturally isomorphic to an open subset of $\C$.  
+
+\subsection{Spaces of Interest}
+
+Then note that $\partial M$ is a curve, and therefore we can parameterize by arclength so that $\tau \in \boundarykforms{0}$ is the natural parameter for the tangential boundary component. This induces the gradient coordinate $d\tau \in \boundarykforms{1}$. Specifically, we can choose $\tau$ such that 
+\[
+\innprod{d\tau}{d\tau} = \mu_{\partial M}.
+\]
+Then, locally near $\partial M$ we have the function $\nu(p) = \operatorname{dist}(x,\partial M)$. Taking the differential, we arrive at the other local gradient coordinate $d\nu$. We can \textcolor{red}{by some normalization process or something} then take $d\tau \wedge d\nu$ to be the local volume form $\mu_g$ on $M$.  \textcolor{red}{we would hope that in this frame $i^*(fd\nu)=0$} Hence we have that $\star d\tau = d\nu$ acts as a \emph{rotation operator}.  
+
+Define the space 
+\[
+\zeromeanforms \coloneqq \left\{ g \in \boundarykforms{1} ~\vert~ \int_{\partial M} f = 0 \right\},
+\]
+as the boundary 1-forms with zero mean value.  In other words, let $Jf \in \zeromeanforms$ denote the primitive of the function $f$ with zero mean value.  Note that this means $\frac{d}{d\tau} Jf = f.$
+
+\textcolor{red}{Break into subsections to make this easier to parse}
+
+\subsection{Properties of the DN-Map}
+Note that $\ker \dnmap = \left\{c \in \boundarykforms{0} ~\vert~ c \textrm{~is constant.}\right\}$. Note as well that $\dnmap J$ is elliptic \textcolor{red}{proof and meaning?}, hence $\dnmap J \colon \lebesgue{\partial M} \mapsto \lebesgue{\partial M}$ is continuous with $\operatorname{domain} \dnmap J = \zeromeanforms$.
+
+\begin{itemize}
+	\item The operator is elliptic, so we should be able to show that the symbol is invertible.  \url{https://en.wikipedia.org/wiki/Symbol_of_a_differential_operator}
+	\item \url{https://mathoverflow.net/questions/3477/what-is-the-symbol-of-a-differential-operator}
+\end{itemize}
+
+\subsection{Hilbert Transform}
+
+Define the \emph{Hilbert transform} 
+\[
+T = d\dnmap^{-1} \colon i^* \harmonic{k}{} \to i^* \harmonic{n-k}{}.
+\]
+Note that by Equation 2.1 of \cite{shara},
+\[
+i^* \harmonic{k}{} = \boundaryexact{k} + i^* \harmonic{k}{N},
+\]
+that any $\boundaryexact{k}$ can be written as the trace of a harmonic $k$-form. In particular, this means that
+\[
+T \colon \boundaryexact{k} \to \boundaryexact{n-k}.
+\]
+This is relevant since the domain of the DN map 
+
+By construction, the Hilbert transform reduces to the typical Hilbert transform on $\C$ due to the complex structure we have imbued $M$ with.  In particular, if we are given a harmonic 0-form $\lambda_0$, then there exists a harmonic 2-form $\lambda_2$ such that
+\[
+T\lambda_0 = \lambda_2.
+\]
+This connection arises due to the complex (Clifford) structure on $M$ where $\lambda_2$ is the conjugate to $\lambda_0$ under the assertion that $\lambda_0$ and $\lambda_2$ are components of an even monogenic field. Specifically, we have
+\[
+D_g (\lambda_0 + \lambda_2) = 0,
+\]
+and note that $\lambda_0$ and $\lambda_2$ are conjugate harmonic functions by construction.
+
+\begin{theorem}
+A 0-form $\lambda_0 \in \kforms{0}{}$ satisfying $\Delta_g \lambda_0=0$ has a conjugate $2$-form $\lambda_2 \in \kforms{2}{}$ if and only if the boundary trace $i^*  \lambda_0$ satisfies
+\[
+(\dnmap + d \dnmap^{-1} d)i^* \lambda_0 = 0.
+\]
+In this case, if $\lambda_2$ is conjugate to $\lambda_0$, then
+\[
+Td(i^* \lambda_0) = d (i^* \star \lambda_2).
+\]
+\end{theorem}
+\begin{proof}
+Similar to the proof of Theorem 5.1 in \cite{shara}.
+\end{proof}
+
+
+
+\subsection{Spectral Analysis and the Gelfand Transform}
+
+\begin{itemize}
+	\item Is the $\dnmap$ a \emph{normal operator}? 
+	\item citing theorems from here would be helpful \url{https://en.wikipedia.org/wiki/Gelfand_representation} since Belishev just says stuff.
+\end{itemize}
+
+\section{Topology from the DN-map}
+
+\textcolor{red}{This should all make sense except for the fixed boundary values.}
+Note that the $k^\textrm{th}$ de Rham cohomology group is defined by
+\[
+H^k_{dR}(M) \cong \frac{\ker d_k}{\im d_{k-1}}.
+\]
+Then note $\exact{k}=\im d_{k-1}$, and by the Hodge decomposition $\ker d_k \subseteq \coexact{k}{D}\oplus \harmonic{k}{}$.
+
+Note that by the Hodge decomposition, we have that
+\[
+\textcolor{red}{something} =\operatorname{rank} H^k_{dR}(M) = \beta_k(M).
+\]
+
+
+Let $f\in \boundarykforms{0}$ be the Dirichlet data with corresponding solution $u^f \in \kforms{0}{}$.  Applying the Hodge decomposition to $u^f$, we have
+\[
+du^f = d\alpha + \delta \beta + \gamma.
+\] 
+
+%something about Lefschets duality
+
+
+\newpage
+\begin{thebibliography}{1}
+	
+	\bibitem{geo_alg} Doran, C. \& Lasenby A. (2003). \emph{Geometric Algebra for Physicists}. Cambridge University Press.
+	
+	\bibitem{clay_d-to-n_map} The Complete Dirichlet-to-Neumann Map.
+	
+	\bibitem{belishev_quaternion} \emph{On Algebraic and uniqueness properties of 3d harmonic quaternion fields}
+	
+	\bibitem{belishev_complex} \emph{The Calderon Problem for Two-Dimensional Manifolds by the BC-Method}
+	
+	\bibitem{dirac-spectral} \emph{Dirac operators and spectral geometry} by V\'arilly.
+	
+	\bibitem{schwarz} \emph{Hodge Decomposition - A Method for Solving Boundary Value Problems}
+	
+	\bibitem{shara} \emph{Dirichlet to Neumann operator on differential forms}, Belishev and Sharafutdinov
+	
+\end{thebibliography}
+\end{document}
+
+

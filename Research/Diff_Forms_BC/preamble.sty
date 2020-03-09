@@ -1,0 +1,139 @@
+\ProvidesPackage{preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titling} 
+\usepackage{blindtext} %stuff for title pages
+\usepackage{svg} %for images
+\usepackage{lmodern}
+
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}[\hrule] %section styles
+
+
+\usepackage{geometry}
+\geometry{
+  top=1in,            
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=10ex,       
+  headsep=7ex,          
+  footskip=10ex
+}
+
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\usepackage{etoolbox}
+%\makeatletter
+%%\patchcmd{\f@nch@head}{\rlap}{\color{red}\rlap}{}{}
+%\patchcmd{\headrule}{\hrule}{\color{gray}\hrule}{}{}
+%%\patchcmd{\f@nch@foot}{\rlap}{\color{green}\rlap}{}{}
+%%\patchcmd{\footrule}{\hrule}{\color{green}\hrule}{}{}
+%\makeatother
+%\rhead{\textcolor{gray}{Solving Problems in Applied Mathematics}}
+%\lhead{\textcolor{gray}{2D Calder\'on Problem}}
+%\lfoot{\textcolor{gray}{Colin Roberts}}
+%\rfoot{\textcolor{gray}{Colorado State University}}
+%\cfoot{\textcolor{gray}{\thepage}}
+
+
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles}
+\RequirePackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{pgf,tikz}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[percent]{overpic}
+\usepackage{caption}
+\usepackage{xfrac}
+%\captionsetup[figure]{labelformat=empty} %removes "Figure" from a caption on figures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+\newtheorem{proposition}{Proposition}[section]
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem*{answer*}{Answer}
+\newtheorem{exercise}{Exercise}[section]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\quat}{\mathbb{H}}
+
+\newcommand{\dnmap}{\Lambda_g}
+\newcommand{\zeromeanforms}{\dot{\Omega}^1(\partial M)}
+\newcommand{\boundarykforms}[1]{\Omega^{#1}(\partial M)}
+\newcommand{\boundaryexact}[1]{\mathcal{E}^{#1}(\partial M)}
+\newcommand{\kforms}[2]{\Omega_{#2}^{#1}(M)}
+\newcommand{\innprod}[2]{\left\langle #1, #2\right\rangle}
+\newcommand{\kforminnprod}[2]{\left( #1,#2 \right)}
+\newcommand{\coexact}[2]{\mathcal{CE}_{#2}^{#1}(M)}
+\newcommand{\exact}[2]{\mathcal{E}_{#2}^{#1}(M)}
+\newcommand{\harmonic}[2]{\mathcal{H}_{#2}^{#1}(M)}
+\newcommand{\dirichlet}[1]{\mathcal{H}_{\mathrm{D}}^{#1}(M)}
+\newcommand{\neumann}[1]{\mathcal{H}_{\mathrm{N}}^{#1}(M)}
+\newcommand{\lebesgue}[1]{L_2(#1)}
+\newcommand{\im}{\operatorname{im}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%color effects
+\usepackage[most]{tcolorbox}
+
+\definecolor{ocre}{RGB}{198,184,77} %csu gold
+\definecolor{nice_blue}{RGB}{59,140,245} 
+
+\newcommand\boldblue[1]{\textcolor{nice_blue}{\emph{\textbf{#1}}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Indexing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{makeidx}
+
+%% Special Tikz commands
+
+\newcommand{\AxisRotator}[1][rotate=0]{%
+    \tikz [x=0.25cm,y=0.60cm,line width=.2ex,-stealth,#1] \draw (0,0) arc (-150:150:1 and 1);%
+}

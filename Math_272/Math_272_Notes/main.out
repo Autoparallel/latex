@@ -37,16 +37,27 @@
 \BOOKMARK [0][-]{chapter.5}{Curves and Scalar Fields}{part.6}% 37
 \BOOKMARK [1][-]{section.5.1}{Overview of multivariate functions}{chapter.5}% 38
 \BOOKMARK [1][-]{section.5.2}{Curves in space}{chapter.5}% 39
-\BOOKMARK [0][-]{chapter.6}{Vector Fields}{part.6}% 40
-\BOOKMARK [1][-]{section.6.1}{Differentiation of fields}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.2}{Functions of Fields}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.3}{Line integrals of scalar fields}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.4}{Line integrals of vector fields}{chapter.6}% 44
-\BOOKMARK [1][-]{section.6.5}{Derivatives}{chapter.6}% 45
-\BOOKMARK [1][-]{section.6.6}{Optimization}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.7}{Approximation and the Tangent Space}{chapter.6}% 47
-\BOOKMARK [1][-]{section.6.8}{The Jacobian of a Vector Field}{chapter.6}% 48
-\BOOKMARK [1][-]{section.6.9}{Divergence and Curl}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.10}{The Laplacian of a Scalar Field}{chapter.6}% 50
-\BOOKMARK [1][-]{section.6.11}{Integration of Scalar Fields}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.12}{Antiderivatives}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.5.2.1}{Derivatives of Curves}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Lengths of Curves}{section.5.2}% 41
+\BOOKMARK [1][-]{section.5.3}{Scalar fields}{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.3.1}{Directional Derivatives}{section.5.3}% 43
+\BOOKMARK [1][-]{section.5.4}{Optimization}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.5}{Integrals of Scalar Fields}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.5.1}{Line Integrals}{section.5.5}% 46
+\BOOKMARK [0][-]{chapter.6}{Vector Fields}{part.6}% 47
+\BOOKMARK [1][-]{section.6.1}{Vector Fields}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{Differentiation of Vector fields}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.2.1}{Operations with Fields}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.2}{The Jacobian of a Vector Field}{section.6.2}% 51
+\BOOKMARK [2][-]{subsection.6.2.3}{Divergence and Curl}{section.6.2}% 52
+\BOOKMARK [1][-]{section.6.3}{Laplace Operator}{chapter.6}% 53
+\BOOKMARK [2][-]{subsection.6.3.1}{The Laplacian of a Scalar Field}{section.6.3}% 54
+\BOOKMARK [2][-]{subsection.6.3.2}{Vector Laplacian}{section.6.3}% 55
+\BOOKMARK [1][-]{section.6.4}{Integration of Vector Fields}{chapter.6}% 56
+\BOOKMARK [2][-]{subsection.6.4.1}{Line integrals of vector fields}{section.6.4}% 57
+\BOOKMARK [1][-]{section.6.5}{Flux and Surface Integrals}{chapter.6}% 58
+\BOOKMARK [2][-]{subsection.6.5.1}{Volume Integrals}{section.6.5}% 59
+\BOOKMARK [1][-]{section.6.6}{Antiderivatives}{chapter.6}% 60
+\BOOKMARK [0][-]{chapter.7}{Coordinate Systems and Parameterization}{part.6}% 61
+\BOOKMARK [1][-]{section.7.1}{Level surfaces}{chapter.7}% 62
+\BOOKMARK [1][-]{section.7.2}{Approximation and the Tangent Space}{chapter.7}% 63

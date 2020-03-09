@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  18 FEB 2020 15:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  2 MAR 2020 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3499,10 +3499,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 07EAD8F933B424C23D8A7B601A3784FD;506.
  ) 
 Here is how much of TeX's memory you used:
- 59157 strings out of 492609
- 1318191 string characters out of 6129048
+ 59156 strings out of 492609
+ 1318176 string characters out of 6129048
  1564205 words of memory out of 5000000
- 61709 multiletter control sequences out of 15000+600000
+ 61708 multiletter control sequences out of 15000+600000
  613418 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,17n,119p,771b,671s stack positions out of 5000i,500n,10000p,200000b,80000s
