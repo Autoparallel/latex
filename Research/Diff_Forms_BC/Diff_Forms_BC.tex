@@ -192,9 +192,10 @@ Specifically, if we take $\lambda = \lambda_0 + \lambda_2$ where $\lambda_0 \in 
 &= d\lambda_0 + \delta_g \lambda_2,
 \end{align*}
 and hence
-\[
+\begin{equation}
+\label{eq:CRE}
 d\lambda_0 = - \delta_g \lambda_2.
-\]
+\end{equation}
 In this case, we say that $\lambda_0$ and $\lambda_2$ are \emph{conjugate}.  One should note that these equations mimic the Cauchy-Riemann equations in complex analysis.  Also, note that for an even  monogenic exterior element $\lambda$, the components $\lambda_0$ and $\lambda_2$ are necessarily harmonic in that
 \[
 \Delta_g \lambda 0 = 0 \qquad \textrm{and} \qquad \Delta_g \lambda_2 = 0.
@@ -268,6 +269,23 @@ D_g (\lambda_0 + \lambda_2) = 0,
 \]
 and note that $\lambda_0$ and $\lambda_2$ are conjugate harmonic functions by construction.
 
+
+It's important to note that any exact form on the boundary can be written as the trace of a Harmonic form. \textcolor{red}{see \cite{shara} section 5}.
+
+  In \cite{shara}, one sees that two $k$-forms $\omega$ and $\epsilon$ are conjugate if
+\[
+d\omega = \star d \epsilon.
+\]
+Noting that $\star$ is an isomorphism from $k$-forms to $n-k$-forms, one can note the existence of $\tilde{\epsilon}$ such that $\star \tilde{\epsilon}=\epsilon$. It follows that
+\[
+d\omega = \star d \star \tilde{\epsilon}.
+\]
+In the case of $\omega \in \kforms{0}{}$ and $\dim M=2$, we have that
+\[
+d\omega = - \delta \tilde{\epsilon},
+\]
+which is exactly the condition forced on the monogenic $\lambda = \lambda_0 + \lambda_2$ in Equation \ref{eq:CRE}. This leads us to the following theorem.
+
 \begin{theorem}
 A 0-form $\lambda_0 \in \kforms{0}{}$ satisfying $\Delta_g \lambda_0=0$ has a conjugate $2$-form $\lambda_2 \in \kforms{2}{}$ if and only if the boundary trace $i^*  \lambda_0$ satisfies
 \[
@@ -313,6 +331,9 @@ du^f = d\alpha + \delta \beta + \gamma.
 
 %something about Lefschets duality
 
+\section{Algebras of Interest}
+
+Consider the space of functions 
 
 \newpage
 \begin{thebibliography}{1}

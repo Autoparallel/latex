@@ -63,15 +63,25 @@
 \contentsline {section}{\numberline {3}Laplace Operator}{90}{section.6.3}% 
 \contentsline {subsection}{\numberline {3.1}The Laplacian of a Scalar Field}{91}{subsection.6.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Vector Laplacian}{92}{subsection.6.3.2}% 
-\contentsline {section}{\numberline {4}Integration of Vector Fields}{93}{section.6.4}% 
-\contentsline {subsection}{\numberline {4.1}Line integrals of vector fields}{94}{subsection.6.4.1}% 
-\contentsline {section}{\numberline {5}Flux and Surface Integrals}{94}{section.6.5}% 
-\contentsline {subsection}{\numberline {5.1}Volume Integrals}{96}{subsection.6.5.1}% 
-\contentsline {section}{\numberline {6}Antiderivatives}{97}{section.6.6}% 
-\contentsline {subsubsection}{Potential Functions}{97}{subsubsection*.40}% 
-\contentsline {subsubsection}{Integrating the Gradient}{98}{subsubsection*.41}% 
-\contentsline {subsubsection}{Requirements for Potentials}{99}{subsubsection*.42}% 
-\contentsline {chapter}{\numberline {7}Coordinate Systems and Parameterization}{101}{chapter.7}% 
-\contentsline {section}{\numberline {1}Level surfaces}{101}{section.7.1}% 
-\contentsline {section}{\numberline {2}Approximation and the Tangent Space}{104}{section.7.2}% 
-\contentsline {subsubsection}{Equation for a Plane}{104}{subsubsection*.48}% 
+\contentsline {section}{\numberline {4}Composite Functions and Chain Rule}{93}{section.6.4}% 
+\contentsline {subsection}{\numberline {4.1}Composite Functions}{94}{subsection.6.4.1}% 
+\contentsline {section}{\numberline {5}Integration of Vector Fields}{95}{section.6.5}% 
+\contentsline {subsection}{\numberline {5.1}Line integrals of vector fields}{96}{subsection.6.5.1}% 
+\contentsline {section}{\numberline {6}Flux and Surface Integrals}{96}{section.6.6}% 
+\contentsline {subsection}{\numberline {6.1}Volume Integrals}{98}{subsection.6.6.1}% 
+\contentsline {section}{\numberline {7}Potential Functions}{99}{section.6.7}% 
+\contentsline {subsection}{\numberline {7.1}Integrating the Gradient}{100}{subsection.6.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Requirements for Potentials}{101}{subsection.6.7.2}% 
+\contentsline {subsection}{\numberline {7.3}Properties of Fields with Potentials}{102}{subsection.6.7.3}% 
+\contentsline {chapter}{\numberline {7}Coordinate Systems and Parameterization}{103}{chapter.7}% 
+\contentsline {section}{\numberline {1}Implicit surfaces}{103}{section.7.1}% 
+\contentsline {subsection}{\numberline {1.1}Normal Vectors to Implicit Surfaces}{108}{subsection.7.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Implicit Function Theorem}{109}{subsection.7.1.2}% 
+\contentsline {section}{\numberline {2}Surfaces as Graphs}{110}{section.7.2}% 
+\contentsline {subsection}{\numberline {2.1}Equation for a Plane}{111}{subsection.7.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Tangent Planes and Surface Normals}{111}{subsection.7.2.2}% 
+\contentsline {section}{\numberline {3}Area Form and Integration}{114}{section.7.3}% 
+\contentsline {chapter}{\numberline {8}Coordinate Systems}{119}{chapter.8}% 
+\contentsline {section}{\numberline {1}Cylindrical Coordinates}{119}{section.8.1}% 
+\contentsline {subsection}{\numberline {1.1}Functions and Calculus in Cylindrical Coordinates}{122}{subsection.8.1.1}% 
+\contentsline {section}{\numberline {2}Spherical Coordinates}{122}{section.8.2}% 

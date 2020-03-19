@@ -20,7 +20,6 @@
 \usepackage{tikz-cd} % For commutative diagrams
 \usepackage{tikz-3dplot}
 \usetikzlibrary{angles}
-\RequirePackage{pgfplots}
 \usepackage{mathtools}
 \usepackage{answers}
 \usepackage{setspace}
@@ -32,8 +31,10 @@
 \usepackage{marvosym,wasysym} %fucking smileys
 \usepackage{float}
 \usepackage{morefloats}
-\usepackage{pgf,tikz}
+\usepackage{pgf,tikz,pgfplots}
 \pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{subcaption}
@@ -71,6 +72,7 @@
 \newcommand{\unitop}{\mathcal{U}}
 \newcommand{\fourier}[1]{\mathcal{F}\left[ #1 \right]}
 \newcommand{\fourierinv}[1]{\mathcal{F}^{-1}\left[ #1 \right]}
+
 
 %Other symbols
 \newcommand{\veryshortarrow}[1][4pt]{\mathrel{%
@@ -195,24 +197,24 @@
 
 %GREEN
 \newtcbtheorem[number within=section]{thm}{Theorem}%
-{colback={black!3!white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt,fontupper=\normalsize\itshape}{th} % Theorem
+{colback={white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt,fontupper=\normalsize\itshape}{th} % Theorem
 
 \newtcbtheorem[number within=section]{prop}{Proposition}%
-{colback={black!3!white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt,fontupper=\normalsize\itshape}{prop} % Proposition
+{colback={white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt,fontupper=\normalsize\itshape}{prop} % Proposition
 
 \newtcbtheorem[number within=section]{cor}{Corollary}%
-{colback={black!3!white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt}{cor} % Corollary
+{colback={white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt}{cor} % Corollary
 
 \newtcbtheorem[number within=section]{df}{Definition}%
-{colback={black!3!white},arc=0pt,outer arc=0pt,,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced,before skip=20pt plus 2pt,after skip=20pt plus 2pt}{df} % Definition
+{colback={white},arc=0pt,outer arc=0pt,,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced,before skip=20pt plus 2pt,after skip=20pt plus 2pt}{df} % Definition
 
 
 %GOLD
 \newtcbtheorem[number within=section]{ex}{Example}%
-{colback={black!3!white},arc=0pt,outer arc=0pt,,colframe=csu_gold,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex} %example
+{colback={white},arc=0pt,outer arc=0pt,,colframe=csu_gold,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex} %example
 
 \newtcbtheorem[number within=section]{prob}{Problem}%
-{colback={black!3!white},arc=0pt,outer arc=0pt,,colframe=csu_gold,fonttitle=\bfseries,breakable,enhanced,before skip=20pt plus 2pt,after skip=20pt plus 2pt}{prob} %problem
+{colback={white},arc=0pt,outer arc=0pt,,colframe=csu_gold,fonttitle=\bfseries,breakable,enhanced,before skip=20pt plus 2pt,after skip=20pt plus 2pt}{prob} %problem
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Indexing

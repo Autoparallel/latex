@@ -493,6 +493,90 @@
                \end{exercise}
               
        
+       \section{Composite Functions and Chain Rule}
+       
+       We have introduced curves $\curvegamma$, scalar fields $f$, and vector fields $\vecfieldV$ as the fundamental types of functions in the space $\R^3$.  Given these types of functions, we can also consider composite functions such as
+       \[
+       f\circ \curvegamma, \qquad \vecfieldV \circ \curvegamma, \qquad f \circ \vecfieldV.
+       \]
+     	We will work through each example, and realize the derivative of the composite functions as well. Hence, we are seeking to generalize the chain-rule from single variable calculus.
+     	
+     	Earlier, we briefly remarked that \emph{the derivative of a function is the best linear approximation to that function.} So, let us briefly revisit a few things.
+     	
+     	First, if we have a curve $\curvegamma \colon \R \to \R^3$, we computed the derivative of this curve as $\tangentgamma$. Keep in mind, we may restrict the domain of a curve to a subset of $\R$ such as $[a,b]$, but this does not change the argument we are about to make.  If we have
+     	\[
+     	\curvegamma(t) = \begin{pmatrix} \gamma_1(t) \\ \gamma_2(t) \\ \gamma_3(t) \end{pmatrix},
+     	\]
+     	then
+     	\[
+     	\tangentgamma(t) = \begin{pmatrix} \dot{\gamma}_1(t) \\ \dot{\gamma}_2(t) \\ \dot{\gamma}_3(t) \end{pmatrix}.
+     	\]
+     	But, we can note that $\tangentgamma \colon \R \to \R^3$ as well.  At the time $t_0$, the derivative $\tangentgamma(t_0)$ is thus a $3\times 1$-matrix (a column vector).  
+     	
+     	Likewise, we can take a scalar field $f\colon \R^3 \to \R$ and note that the derivative of $f$ was the gradient $\grad \colon \R^3 \to \R$.  In other words, we should have that $\grad f$ is a $1\times 3$-matrix given by
+     	\[
+     	\grad f = \begin{pmatrix} \partialx & \partialy & \partialz \end{pmatrix}.
+     	\] 
+     	However, we wrote the gradient as a column vector.  This distinction is not extremely important, but the important part is that at some point $(x_0,y_0,z_0)$, one can supply a column vector $\vecu$ to $\grad f(x_0,y_0,z_0)$, and receive a number. How so? Well,
+     	\begin{align*}
+     	\grad f(x_0,y_0,z_0) \vecu &= \begin{pmatrix} \partialx(x_0,y_0,z_0) & \partialy (x_0,y_0,z_0) & \partialz(x_0,y_0,z_0) \end{pmatrix} \begin{pmatrix} u_1 \\ u_2 \\ u_3 \end{pmatrix}\\
+     	&= u_1 \partialx(x_0,y_0,z_0)+ u_2 \partialy(x_0,y_0,z_0)+ u_3 \partialz(x_0,y_0,z_0).
+     	\end{align*}
+     	
+     	Finally, we took a full derivative of a vector field $\vecfieldV \colon \R^3 \to \R^3$, and noted that this gave us a matrix $[J]_{\vecfieldV} \colon \R^3 \to \R^3$. Then, at each point in space $(x_0,y_0,z_0)$, the matrix $[J]_{\vecfieldV}(x_0,y_0,z_0)$ is merely a $3\times 3$-matrix of numbers. We could of course supply a 3-dimensional vector $\vecu$, and $[J]_{\vecfieldV}(x_0,y_0,z_0)\vecu$ will be another 3-dimensional vector.  We spent quite some time analyzing $3\times 3$-matrices in the prequel, and it is worth revisiting them again.
+     	
+     	\subsection{Composite Functions}
+     	
+     	First, let us consider the function 
+     	\[
+     	f\circ \curvegamma.
+     	\]
+     	Notice $f$ will have three inputs, and $\curvegamma$ has one. But, $\curvegamma$ outputs three quantities, and thus this composite function makes sense.
+     	
+     	For example, if we have 
+     	\[
+     	f(x,y,z) = 2x + 3y + 4z \qquad \textrm{and} \qquad \curvegamma(t) = \begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix},
+     	\]
+     	then
+     	\[
+     	f\circ \curvegamma = f(\curvegamma(t)) = 2t+3t^2+4t^3.
+     	\]
+     	But, how should we compute the derivative of this composite function?
+     	
+     	\begin{exercise}
+     		Let a vector field $\vecfieldV(x,y,z) = \begin{pmatrix} x^2 \\ x-y-z \\ z^2 \end{pmatrix}$ and compute the composite functions 
+     		\[
+     		\vecfieldV\circ \curvegamma \qquad \textrm{and} \qquad f\circ \vecfieldV.
+     		\]
+     	\end{exercise}
+     	
+     	In 1-dimension, if we had the functions $g,h \colon \R \to \R$, we had
+     	\[
+     	(g\circ h)'=\left(g(h(x))\right)' = g'(h(x))h'(x).
+     	\]
+     	Our result should mimic this, but our result should also be the best linear function of the correct dimensions.  For example, the composite function $f\circ \curvegamma \colon \R \to \R$ is a function from 1-dimension to 1-dimension, and so $(f\circ \curvegamma)'$ should be a linear function from $\R$ to $\R$. So, following our nose, the chain rule yields
+     	\begin{align*}
+     		(f\circ \curvegamma)' &= f'(\curvegamma(t))\tangentgamma(t)\\
+     		&= \grad f(\curvegamma(t)) \tangentgamma(t)\\
+     		&= \begin{pmatrix} \partialx(\curvegamma(t)) &\partialy(\curvegamma(t)) & \partialz(\curvegamma(t)) \end{pmatrix} \begin{pmatrix} \dot{\gamma}_1(t) \\ \dot{\gamma}_2(t) \\ \dot{\gamma}_3(t) \end{pmatrix}\\
+     		&= \partialx(\curvegamma(t)) \dot{\gamma}_1(t) + \partialy(\curvegamma(t)) \dot{\gamma}_2(t) +\partialz(\curvegamma(t)) \dot{\gamma}_3(t) .
+     \end{align*}
+ 
+ 	Repeating this, we can take
+ 	\begin{align*}
+ 		\left(\vecfieldV \circ \curvegamma\right)' = [J]_{\vecfieldV}(\curvegamma(t)) \tangentgamma(t).
+ 	\end{align*}
+ 	And lastly, we have
+ 	\[
+ 	\left(f \circ \vecfieldV\right)' = \grad f(\vecfieldV(x,y,z)) [J]_{\vecfieldV}(x,y,z).
+ 	\]
+ 	For this, one should think of $\grad f$ as a $1\times 3$-matrix, and perform the matrix product above.
+ 	
+ 	\begin{exercise}
+ 		Compute the derivatives of the composite functions using the $f$, $\curvegamma$, and $\vecfieldV$ given in this section.
+ 	\end{exercise}
+     
+       
         
        \section{Integration of Vector Fields}
        Adding up fields over curves, surfaces, or volumes is commonplace. We have already done this for scalar fields, but we would also like to do this for vector fields. The problem is, we don't have the ability to integrate vectors.  We only know how to integrate quantities such
@@ -613,7 +697,8 @@
         
  %% MULTIVARIATE INTEGRATION       \chapter{Integration in Multiple Dimensions}
         
-      \section{Antiderivatives}
+      \section{Potential Functions}
+      
                    	        In one variable calculus, we found that there is a relationship between the derivative and the indefinite integral.  In fact, this led us to call the indefinite integral the antiderivative.  This relationship was that
                    	        \[
                    	        \frac{d}{dx}\int f(x)dx = f(x)
@@ -624,7 +709,7 @@
                    	        \]
                    	        From this, we realized that the indefinite integral is almost an inverse operation of the derivative.  It's just that in the case where we integrate a derivative, we only determine the function up to an additive constant. 
                    	        
-                   	        \subsubsection{Potential Functions}
+                   	        
                    	        The higher dimensional analog happens to be a bit more nuanced but the idea remains the same. Let's say we are given a function $f(x,y,z)$ and we compute, for example,
                    	        \[
                    	        \partialx.
@@ -643,11 +728,11 @@
                    	        \]
                    	        That is to say, when we take an indefinite integral a multivariate function with respect to one variable, there could be a function of the residual variables that we cannot determine!
                    	        
-                   	        \subsubsection{Integrating the Gradient}
+                   	        \subsection{Integrating the Gradient}
                    	        
-                   	        Let's say that we are given $\mathbf{v}(x,y,z)=\nabla f(x,y,z)$ and are asked to find the original function $f(x,y,z)$.  This problem is called finding the \textbf{potential function} for $\mathbf{v}$.  Remember that
+                   	        Let's say that we are given $\vecfieldV(x,y,z)=\grad f(x,y,z)$ and are asked to find the original function $f(x,y,z)$.  This problem is called finding the \boldgreen{potential function} or just \boldgreen{potential} for $\vecfieldV$.  Remember that
                    	        \[
-                   	        \nabla f(x,y,z) = \begin{bmatrix} \partialx \\ \partialy \\ \partialz \end{bmatrix}.
+                   	        \grad f(x,y,z) = \begin{pmatrix} \partialx \\ \partialy \\ \partialz \end{pmatrix}.
                    	        \]
                    	        What we do is the following.
                    	        \begin{enumerate}[1.]
@@ -656,12 +741,12 @@
                    	            \item We integrate $\partialz$ with respect to $z$ and determine $f(x,y,z)$ up to adding a function of only $x$ and $z$.
                    	            \item Combine our knowledge from those three integrals we have determined $f(x,y,z)$ up to some additive constant!
                    	        \end{enumerate}
-                   	        Let's work through an example.
+                   	        Finding a potential is very helpful as there are some nice properties of these types of functions.  
                    	        
                    	        \begin{ex}{Finding a Potential Function}{find_potential}
                    	        Let's say that we are given the gradient of some function
                    	        \[
-                   	        \nabla f(x,y,z) = \begin{bmatrix} y+z \\ x+z \\ x+y \end{bmatrix}.
+                   	        \grad f(x,y,z) = \begin{bmatrix} y+z \\ x+z \\ x+y \end{bmatrix}.
                    	        \]
                    	        Then we follow the steps above
                    	        \begin{enumerate}[1.]
@@ -690,35 +775,57 @@
                    	        \end{enumerate}
                    	        \end{ex}
                    	        
-                   	        \subsubsection{Requirements for Potentials}
+                   	        \subsection{Requirements for Potentials}
                    	        
                    	        The main result here is the following.
                    	        
                    	        \begin{prop}{Curl of Gradient is Zero}{curl_of_gradient}
                    	        We have that
                    	        \[
-                   	        \nabla \times \nabla f(x,y,z) = \mathbf{0}
+                   	        \grad \times \grad f(x,y,z) = \zerovec
                    	        \]
                    	        for all $f(x,y,z)$.
                    	        \end{prop}
                    	        
+                   	        \begin{exercise}
+                   	        	Prove that the above statement is true.
+                   	        \end{exercise}
+                   	        
                    	        Then with a bit more work, one can show this follows.
                    	        
                    	        \begin{thm}{Potential $\iff$ Curl Free}{potential_curl_free}
-                   	        Let $\mathbf{v}(x,y,z)$ be a vector field.  Then if 
+                   	        Let $\vecfieldV(x,y,z)$ be a vector field.  Then if 
                    	        \[
-                   	        \nabla \times \mathbf{v} = \mathbf{0},
+                   	        \grad \times \vecfieldV = \zerovec,
                    	        \]
-                   	        then $\mathbf{v}(x,y,z) = \nabla f(x,y,z)$.  That is, a curl-free vector field $\mathbf{v}$ is really the gradient of some scalar function $f(x,y,z)$.  We call this scalar function $f$ the \textbf{potential} for $\mathbf{v}$.
+                   	        then $\vecfieldV(x,y,z) = \grad f(x,y,z)$.  That is, a curl-free vector field $\vecfieldV$ can be written as the gradient of some scalar function $f(x,y,z)$.  
                    	        \end{thm}
                    	        
-                   	        This is what allows one to define the \emph{voltage} in electrostatics.  When charges are not moving, we have that the electric field $\mathbf{E}$ satisfies
+                   	        This is what allows one to define the voltage $\phi(x,y,z)$ in electrostatics.  When charges are not moving, we have that the electric field $\vecfieldE$ satisfies
                    	        \[
-                   	        \nabla \times \mathbf{E} = \mathbf{0}
+                   	        \grad \times \vecfieldE = \zerovec
                    	        \]
                    	        and so it follows that
                    	        \[
-                   	        \nabla V(x,y,z) = \mathbf{E}
+                   	        \grad \phi= \vecfieldE.
                    	        \]
-                   	        where $V$ is the potential.  We often call this electrostatic potential the voltage.
+                   	        Hence, the voltage $\phi$ is the potential function for $\vecfieldE$. Thus the name of the electrostatic potential.
+                   	        
+                   	        \subsection{Properties of Fields with Potentials}
+                   	        
+                   	        Let $\vecfieldV$ be a vector field that has a potential $\phi$. Then, we refer to the vector field $\vecfieldV$ as \boldgreen{conservative}. The reason why we give the vector field this name is due to the fact that in physics, these types of vector fields tend to (in some way) conserve energy.  Mathematically, we can state this result as the following theorem.
+                   	        
+                   	        \begin{thm}{Curve Integration of Conservative Vector Fields}{curve_integrals_conservative}
+                   	        	Let $\curvegamma \colon [a,b] \to \R^3$ be a curve and let $\vecfieldV$ be a conservative vector field.  Then, if $\tilde{\curvegamma}$ is another curve satisfying $\curvegamma(a)=\tilde{\curvegamma(a)}$ and $\curvegamma(b)=\tilde{\curvegamma(b)}$, we have that
+                   	        	\[
+                   	        	\int_{\curvegamma} \vecfieldV \cdot d\curvegamma = \int_{\tilde{\curvegamma}} \vecfieldV \cdot d\tilde{\curvegamma}.
+                   	        	\]
+                   	        	In other words, the integral of a conservative vector field over a curve only depends on the endpoints of the curve.
+                   	        \end{thm}
+                   	        
+                   	        We have seen the name potential arise for us before. Namely, in the Schr\"odinger equation, we saw that the potential was a term in the Hamiltonian.  Namely, the Hamiltonian was
+                   	        \[
+                   	        H = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x),
+                   	        \]
+                   	        and $V(x)$ was the potential.  In this case, $V(x)$ is exactly the potential for some vector field, and in the realm of quantum mechanics, this vector field is often coming from one caused by the electromagnetic field.  We have only viewed quantum mechanics in one dimension, but later on we will revisit Sch\"odinger's equation in higher dimensions.                   	        
                    	

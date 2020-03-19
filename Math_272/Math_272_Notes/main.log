@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  2 MAR 2020 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  13 MAR 2020 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -997,17 +997,159 @@ File: pgflibraryarrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
 s/tikzlibraryangles.code.tex
 File: tikzlibraryangles.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count314
+\calc@Bcount=\count315
+\calc@Adimen=\dimen282
+\calc@Bdimen=\dimen283
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count316
+\calc@Cskip=\skip67
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count317
+\l_MT_multwidth_dim=\dimen284
+\origjot=\skip68
+\l_MT_shortvdotswithinadjustabove_dim=\dimen285
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen286
+\l_MT_above_intertext_sep=\dimen287
+\l_MT_below_intertext_sep=\dimen288
+\l_MT_above_shortintertext_sep=\dimen289
+\l_MT_below_shortintertext_sep=\dimen290
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/answers/answers.sty
+Package: answers 2014/08/24 v2.16 Production of solution sheets in LaTeX2e
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks43
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+\c@tracingmulticols=\count318
+\mult@box=\box75
+\multicol@leftmargin=\dimen291
+\c@unbalance=\count319
+\c@collectmore=\count320
+\doublecol@number=\count321
+\multicoltolerance=\count322
+\multicolpretolerance=\count323
+\full@width=\dimen292
+\page@free=\dimen293
+\premulticols=\dimen294
+\postmulticols=\dimen295
+\multicolsep=\skip69
+\multicolbaselineskip=\skip70
+\partial@page=\box76
+\last@line=\box77
+\maxbalancingoverflow=\dimen296
+\mult@rightbox=\box78
+\mult@grightbox=\box79
+\mult@gfirstbox=\box80
+\mult@firstbox=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\c@columnbadness=\count324
+\c@finalcolumnbadness=\count325
+\last@try=\dimen297
+\multicolovershoot=\dimen298
+\multicolundershoot=\dimen299
+\mult@nat@firstbox=\box99
+\colbreak@box=\box100
+\mc@col@check@num=\count326
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks44
+\thm@bodyfont=\toks45
+\thm@headfont=\toks46
+\thm@notefont=\toks47
+\thm@headpunct=\toks48
+\thm@preskip=\skip71
+\thm@postskip=\skip72
+\thm@headsep=\skip73
+\dth@everypar=\toks49
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/marvosym/marvosym.sty
+Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count327
+\float@exts=\toks50
+\float@box=\box101
+\@float@everytoks=\toks51
+\@floatcapt=\box102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/morefloats/morefloats.sty
+Package: morefloats 2015/07/22 v1.0h Raise limit of unprocessed floats (HMM)
+Package morefloats Info: Maximum number of possible floats asked for: 36
+(morefloats)             (i.e. 18 more floats).
+(morefloats)             LaTeX might run out of memory before this
+(morefloats)             (in which case it will notify you).
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks43
-\t@pgfplots@tokb=\toks44
-\t@pgfplots@tokc=\toks45
-\pgfplots@tmpa=\dimen282
-\c@pgfplots@coordindex=\count314
-\c@pgfplots@scanlineindex=\count315
+\t@pgfplots@toka=\toks52
+\t@pgfplots@tokb=\toks53
+\t@pgfplots@tokc=\toks54
+\pgfplots@tmpa=\dimen300
+\c@pgfplots@coordindex=\count328
+\c@pgfplots@scanlineindex=\count329
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
 .code.tex))
@@ -1023,7 +1165,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
 soldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count316
+\c@pgfmathroundto@lastzeros=\count330
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
 .tex
@@ -1033,14 +1175,14 @@ liststructure.code.tex)
 liststructureext.code.tex)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 array.code.tex
-\c@pgfplotsarray@tmp=\count317
+\c@pgfplotsarray@tmp=\count331
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 matrix.code.tex)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
 shared.code.tex
-\c@pgfplotstable@counta=\count318
-\t@pgfplotstable@a=\toks46
+\c@pgfplotstable@counta=\count332
+\t@pgfplotstable@a=\toks55
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 deque.code.tex)
@@ -1052,7 +1194,7 @@ ta.code.tex))
 .code.tex)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
 s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count319
+\c@pgfplotslibrarysurf@no=\count333
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def)))
@@ -1084,16 +1226,16 @@ x)
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\dimen283
-\pgfdecoratedremainingdistance=\dimen284
-\pgfdecoratedinputsegmentcompleteddistance=\dimen285
-\pgfdecoratedinputsegmentremainingdistance=\dimen286
-\pgf@decorate@distancetomove=\dimen287
-\pgf@decorate@repeatstate=\count320
-\pgfdecorationsegmentamplitude=\dimen288
-\pgfdecorationsegmentlength=\dimen289
+\pgfdecoratedcompleteddistance=\dimen301
+\pgfdecoratedremainingdistance=\dimen302
+\pgfdecoratedinputsegmentcompleteddistance=\dimen303
+\pgfdecoratedinputsegmentremainingdistance=\dimen304
+\pgf@decorate@distancetomove=\dimen305
+\pgf@decorate@repeatstate=\count334
+\pgfdecorationsegmentamplitude=\dimen306
+\pgfdecorationsegmentlength=\dimen307
 )
-\tikz@lib@dec@box=\box75
+\tikz@lib@dec@box=\box103
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathmorphing.code.tex
@@ -1103,13 +1245,13 @@ brarydecorations.pathmorphing.code.tex))
 s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count321
-\pgfplots@xmin@reg=\dimen290
-\pgfplots@xmax@reg=\dimen291
-\pgfplots@ymin@reg=\dimen292
-\pgfplots@ymax@reg=\dimen293
-\pgfplots@zmin@reg=\dimen294
-\pgfplots@zmax@reg=\dimen295
+\pgfplots@numplots=\count335
+\pgfplots@xmin@reg=\dimen308
+\pgfplots@xmax@reg=\dimen309
+\pgfplots@ymin@reg=\dimen310
+\pgfplots@ymax@reg=\dimen311
+\pgfplots@zmin@reg=\dimen312
+\pgfplots@zmax@reg=\dimen313
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryplotmarks.code.tex
@@ -1119,148 +1261,6 @@ File: tikzlibraryplotmarks.code.tex 2019/05/09 v3.1.3 (3.1.3)
 ks.code.tex
 File: pgflibraryplotmarks.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count322
-\calc@Bcount=\count323
-\calc@Adimen=\dimen296
-\calc@Bdimen=\dimen297
-\calc@Askip=\skip65
-\calc@Bskip=\skip66
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count324
-\calc@Cskip=\skip67
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
-)
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count325
-\l_MT_multwidth_dim=\dimen298
-\origjot=\skip68
-\l_MT_shortvdotswithinadjustabove_dim=\dimen299
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen300
-\l_MT_above_intertext_sep=\dimen301
-\l_MT_below_intertext_sep=\dimen302
-\l_MT_above_shortintertext_sep=\dimen303
-\l_MT_below_shortintertext_sep=\dimen304
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/answers/answers.sty
-Package: answers 2014/08/24 v2.16 Production of solution sheets in LaTeX2e
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks47
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
-\c@tracingmulticols=\count326
-\mult@box=\box76
-\multicol@leftmargin=\dimen305
-\c@unbalance=\count327
-\c@collectmore=\count328
-\doublecol@number=\count329
-\multicoltolerance=\count330
-\multicolpretolerance=\count331
-\full@width=\dimen306
-\page@free=\dimen307
-\premulticols=\dimen308
-\postmulticols=\dimen309
-\multicolsep=\skip69
-\multicolbaselineskip=\skip70
-\partial@page=\box77
-\last@line=\box78
-\maxbalancingoverflow=\dimen310
-\mult@rightbox=\box79
-\mult@grightbox=\box80
-\mult@gfirstbox=\box81
-\mult@firstbox=\box82
-\@tempa=\box83
-\@tempa=\box84
-\@tempa=\box85
-\@tempa=\box86
-\@tempa=\box87
-\@tempa=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
-\@tempa=\box92
-\@tempa=\box93
-\@tempa=\box94
-\@tempa=\box95
-\@tempa=\box96
-\@tempa=\box97
-\@tempa=\box98
-\@tempa=\box99
-\c@columnbadness=\count332
-\c@finalcolumnbadness=\count333
-\last@try=\dimen311
-\multicolovershoot=\dimen312
-\multicolundershoot=\dimen313
-\mult@nat@firstbox=\box100
-\colbreak@box=\box101
-\mc@col@check@num=\count334
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
-Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup4
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks48
-\thm@bodyfont=\toks49
-\thm@headfont=\toks50
-\thm@notefont=\toks51
-\thm@headpunct=\toks52
-\thm@preskip=\skip71
-\thm@postskip=\skip72
-\thm@headsep=\skip73
-\dth@everypar=\toks53
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup5
-\symAMSb=\mathgroup6
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/marvosym/marvosym.sty
-Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/wasysym.sty
-Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
-\symwasy=\mathgroup7
-LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
-(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count335
-\float@exts=\toks54
-\float@box=\box102
-\@float@everytoks=\toks55
-\@floatcapt=\box103
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/morefloats/morefloats.sty
-Package: morefloats 2015/07/22 v1.0h Raise limit of unprocessed floats (HMM)
-Package morefloats Info: Maximum number of possible floats asked for: 36
-(morefloats)             (i.e. 18 more floats).
-(morefloats)             LaTeX might run out of memory before this
-(morefloats)             (in which case it will notify you).
-)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 
@@ -1366,11 +1366,7 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 
 
 Writing index file main.idx
-(./main.aux
-
-LaTeX Warning: Label `ex:L' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -1494,7 +1490,7 @@ Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 Package caption Info: End \AtBeginDocument code.
 
 (./Frontmatter/title.tex
-<Frontmatter/ram_logo.jpg, id=296, 578.16pt x 578.16pt>
+<Frontmatter/ram_logo.jpg, id=352, 578.16pt x 578.16pt>
 File: Frontmatter/ram_logo.jpg Graphic file (type jpg)
 <use Frontmatter/ram_logo.jpg>
 Package pdftex.def Info: Frontmatter/ram_logo.jpg  used on input line 64.
@@ -1567,12 +1563,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (./main.toc [3
 
 
-])
+] [4])
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
- [4] [1
+ [5] [6
 
+] [1
 
 ]
 Chapter 1.
@@ -1582,7 +1579,7 @@ Chapter 1.
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
  [3]
-<Figures_Part_5/complex_function_visual.png, id=405, 1124.2pt x 843.15pt>
+<Figures_Part_5/complex_function_visual.png, id=483, 1124.2pt x 843.15pt>
 File: Figures_Part_5/complex_function_visual.png Graphic file (type png)
 <use Figures_Part_5/complex_function_visual.png>
 Package pdftex.def Info: Figures_Part_5/complex_function_visual.png  used on in
@@ -1600,47 +1597,47 @@ Overfull \hbox (47.29991pt too wide) detected at line 200
 []
  []
 
-<Figures_Part_5/psi_1.png, id=430, 1204.5pt x 803.0pt>
+<Figures_Part_5/psi_1.png, id=509, 1204.5pt x 803.0pt>
 File: Figures_Part_5/psi_1.png Graphic file (type png)
 <use Figures_Part_5/psi_1.png>
 Package pdftex.def Info: Figures_Part_5/psi_1.png  used on input line 208.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 209.
-<Figures_Part_5/psi_2.png, id=432, 1204.5pt x 803.0pt>
+<Figures_Part_5/psi_2.png, id=511, 1204.5pt x 803.0pt>
 File: Figures_Part_5/psi_2.png Graphic file (type png)
 <use Figures_Part_5/psi_2.png>
 Package pdftex.def Info: Figures_Part_5/psi_2.png  used on input line 214.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/Psi.png, id=433, 1204.5pt x 803.0pt>
+<Figures_Part_5/Psi.png, id=512, 1204.5pt x 803.0pt>
 File: Figures_Part_5/Psi.png Graphic file (type png)
 <use Figures_Part_5/Psi.png>
 Package pdftex.def Info: Figures_Part_5/Psi.png  used on input line 220.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi.png, id=434, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi.png, id=513, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi.png  used on input line 226.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi4.png, id=435, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi4.png, id=514, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi4.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi4.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_pi4.png  used on input line 25
 3.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi2.png, id=436, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi2.png, id=515, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi2.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi2.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_pi2.png  used on input line 25
 9.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_3pi4.png, id=437, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_3pi4.png, id=516, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_3pi4.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_3pi4.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_3pi4.png  used on input line 2
 65.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/prob_Psi_pi.png, id=438, 1204.5pt x 803.0pt>
+<Figures_Part_5/prob_Psi_pi.png, id=517, 1204.5pt x 803.0pt>
 File: Figures_Part_5/prob_Psi_pi.png Graphic file (type png)
 <use Figures_Part_5/prob_Psi_pi.png>
 Package pdftex.def Info: Figures_Part_5/prob_Psi_pi.png  used on input line 271
@@ -1683,25 +1680,25 @@ Overfull \hbox (47.30624pt too wide) detected at line 436
 [] [] [] [] \OML/lmm/m/it/12 :
  []
 
-<Figures_Part_5/triangle_n=1.png, id=546, 1204.5pt x 803.0pt>
+<Figures_Part_5/triangle_n=1.png, id=624, 1204.5pt x 803.0pt>
 File: Figures_Part_5/triangle_n=1.png Graphic file (type png)
 <use Figures_Part_5/triangle_n=1.png>
 Package pdftex.def Info: Figures_Part_5/triangle_n=1.png  used on input line 44
 9.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/triangle_n=5.png, id=547, 1204.5pt x 803.0pt>
+<Figures_Part_5/triangle_n=5.png, id=625, 1204.5pt x 803.0pt>
 File: Figures_Part_5/triangle_n=5.png Graphic file (type png)
 <use Figures_Part_5/triangle_n=5.png>
 Package pdftex.def Info: Figures_Part_5/triangle_n=5.png  used on input line 45
 5.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/triangle_n=20.png, id=548, 1204.5pt x 803.0pt>
+<Figures_Part_5/triangle_n=20.png, id=626, 1204.5pt x 803.0pt>
 File: Figures_Part_5/triangle_n=20.png Graphic file (type png)
 <use Figures_Part_5/triangle_n=20.png>
 Package pdftex.def Info: Figures_Part_5/triangle_n=20.png  used on input line 4
 61.
 (pdftex.def)             Requested size: 167.1932pt x 111.45126pt.
-<Figures_Part_5/triangle_n=50.png, id=549, 1204.5pt x 803.0pt>
+<Figures_Part_5/triangle_n=50.png, id=627, 1204.5pt x 803.0pt>
 File: Figures_Part_5/triangle_n=50.png Graphic file (type png)
 <use Figures_Part_5/triangle_n=50.png>
 Package pdftex.def Info: Figures_Part_5/triangle_n=50.png  used on input line 4
@@ -1727,32 +1724,32 @@ Overfull \hbox (12.14969pt too wide) detected at line 87
 2 ;  [] \OT1/lmr/m/n/12 = 1
  []
 
-<Figures_Part_5/N=0.png, id=665, 1204.5pt x 803.0pt>
+<Figures_Part_5/N=0.png, id=744, 1204.5pt x 803.0pt>
 File: Figures_Part_5/N=0.png Graphic file (type png)
 <use Figures_Part_5/N=0.png>
 Package pdftex.def Info: Figures_Part_5/N=0.png  used on input line 154.
 (pdftex.def)             Requested size: 127.95337pt x 85.29158pt.
-<Figures_Part_5/N=1.png, id=666, 1204.5pt x 803.0pt>
+<Figures_Part_5/N=1.png, id=745, 1204.5pt x 803.0pt>
 File: Figures_Part_5/N=1.png Graphic file (type png)
 <use Figures_Part_5/N=1.png>
 Package pdftex.def Info: Figures_Part_5/N=1.png  used on input line 159.
 (pdftex.def)             Requested size: 127.95337pt x 85.29158pt.
-<Figures_Part_5/N=3.png, id=667, 1204.5pt x 803.0pt>
+<Figures_Part_5/N=3.png, id=746, 1204.5pt x 803.0pt>
 File: Figures_Part_5/N=3.png Graphic file (type png)
 <use Figures_Part_5/N=3.png>
 Package pdftex.def Info: Figures_Part_5/N=3.png  used on input line 164.
 (pdftex.def)             Requested size: 127.95337pt x 85.29158pt.
-<Figures_Part_5/N=10.png, id=668, 1204.5pt x 803.0pt>
+<Figures_Part_5/N=10.png, id=747, 1204.5pt x 803.0pt>
 File: Figures_Part_5/N=10.png Graphic file (type png)
 <use Figures_Part_5/N=10.png>
 Package pdftex.def Info: Figures_Part_5/N=10.png  used on input line 169.
 (pdftex.def)             Requested size: 127.95337pt x 85.29158pt.
-<Figures_Part_5/N=50.png, id=669, 1204.5pt x 803.0pt>
+<Figures_Part_5/N=50.png, id=748, 1204.5pt x 803.0pt>
 File: Figures_Part_5/N=50.png Graphic file (type png)
 <use Figures_Part_5/N=50.png>
 Package pdftex.def Info: Figures_Part_5/N=50.png  used on input line 174.
 (pdftex.def)             Requested size: 127.95337pt x 85.29158pt.
-<Figures_Part_5/N=100.png, id=670, 1204.5pt x 803.0pt>
+<Figures_Part_5/N=100.png, id=749, 1204.5pt x 803.0pt>
 File: Figures_Part_5/N=100.png Graphic file (type png)
 <use Figures_Part_5/N=100.png>
 Package pdftex.def Info: Figures_Part_5/N=100.png  used on input line 179.
@@ -1776,13 +1773,13 @@ LaTeX Warning: Reference `tab:fourier_transform' on page 52 undefined on input
 line 405.
 
 [52]
-<Figures_Part_5/square_wave_force.png, id=728, 803.0pt x 803.0pt>
+<Figures_Part_5/square_wave_force.png, id=807, 803.0pt x 803.0pt>
 File: Figures_Part_5/square_wave_force.png Graphic file (type png)
 <use Figures_Part_5/square_wave_force.png>
 Package pdftex.def Info: Figures_Part_5/square_wave_force.png  used on input li
 ne 456.
 (pdftex.def)             Requested size: 213.25345pt x 213.24734pt.
-<Figures_Part_5/square_wave_diffeq_solution.png, id=729, 803.0pt x 803.0pt>
+<Figures_Part_5/square_wave_diffeq_solution.png, id=808, 803.0pt x 803.0pt>
 File: Figures_Part_5/square_wave_diffeq_solution.png Graphic file (type png)
 <use Figures_Part_5/square_wave_diffeq_solution.png>
 Package pdftex.def Info: Figures_Part_5/square_wave_diffeq_solution.png  used o
@@ -1798,39 +1795,39 @@ Chapter 5.
 (./Chapters_Part_6/curves_fields.tex [59
 
 ]
-<Figures_Part_6/straight_line_curve.pdf, id=775, 1011.78pt x 614.295pt>
+<Figures_Part_6/straight_line_curve.pdf, id=853, 1011.78pt x 614.295pt>
 File: Figures_Part_6/straight_line_curve.pdf Graphic file (type pdf)
 <use Figures_Part_6/straight_line_curve.pdf>
 Package pdftex.def Info: Figures_Part_6/straight_line_curve.pdf  used on input 
 line 72.
 (pdftex.def)             Requested size: 383.8536pt x 233.05959pt.
  [60] [61 <./Figures_Part_6/straight_line_curve.pdf>]
-<Figures_Part_6/quadratic_curve.png, id=798, 803.0pt x 803.0pt>
+<Figures_Part_6/quadratic_curve.png, id=877, 803.0pt x 803.0pt>
 File: Figures_Part_6/quadratic_curve.png Graphic file (type png)
 <use Figures_Part_6/quadratic_curve.png>
 Package pdftex.def Info: Figures_Part_6/quadratic_curve.png  used on input line
  109.
 (pdftex.def)             Requested size: 170.60016pt x 170.59541pt.
  [62 <./Figures_Part_6/quadratic_curve.png>]
-<Figures_Part_6/circ_tang_1.png, id=806, 803.0pt x 803.0pt>
+<Figures_Part_6/circ_tang_1.png, id=885, 803.0pt x 803.0pt>
 File: Figures_Part_6/circ_tang_1.png Graphic file (type png)
 <use Figures_Part_6/circ_tang_1.png>
 Package pdftex.def Info: Figures_Part_6/circ_tang_1.png  used on input line 134
 .
 (pdftex.def)             Requested size: 191.9268pt x 191.9275pt.
-<Figures_Part_6/circ_tang_2.png, id=807, 803.0pt x 803.0pt>
+<Figures_Part_6/circ_tang_2.png, id=886, 803.0pt x 803.0pt>
 File: Figures_Part_6/circ_tang_2.png Graphic file (type png)
 <use Figures_Part_6/circ_tang_2.png>
 Package pdftex.def Info: Figures_Part_6/circ_tang_2.png  used on input line 139
 .
 (pdftex.def)             Requested size: 191.9268pt x 191.9275pt.
-<Figures_Part_6/circ_tang_3.png, id=808, 803.0pt x 803.0pt>
+<Figures_Part_6/circ_tang_3.png, id=887, 803.0pt x 803.0pt>
 File: Figures_Part_6/circ_tang_3.png Graphic file (type png)
 <use Figures_Part_6/circ_tang_3.png>
 Package pdftex.def Info: Figures_Part_6/circ_tang_3.png  used on input line 144
 .
 (pdftex.def)             Requested size: 191.9268pt x 191.9275pt.
-<Figures_Part_6/circ_tang_4.png, id=809, 803.0pt x 803.0pt>
+<Figures_Part_6/circ_tang_4.png, id=888, 803.0pt x 803.0pt>
 File: Figures_Part_6/circ_tang_4.png Graphic file (type png)
 <use Figures_Part_6/circ_tang_4.png>
 Package pdftex.def Info: Figures_Part_6/circ_tang_4.png  used on input line 149
@@ -1844,13 +1841,13 @@ Package pdftex.def Info: Figures_Part_6/quadratic_curve.png  used on input line
  217.
 (pdftex.def)             Requested size: 213.25345pt x 213.24734pt.
  [65]
-<Figures_Part_6/paraboloid.png, id=833, 445.665pt x 494.84875pt>
+<Figures_Part_6/paraboloid.png, id=912, 445.665pt x 494.84875pt>
 File: Figures_Part_6/paraboloid.png Graphic file (type png)
 <use Figures_Part_6/paraboloid.png>
 Package pdftex.def Info: Figures_Part_6/paraboloid.png  used on input line 242.
 
 (pdftex.def)             Requested size: 170.60016pt x 189.42627pt.
-<Figures_Part_6/parabolic_level_curves.png, id=834, 557.08125pt x 557.08125pt>
+<Figures_Part_6/parabolic_level_curves.png, id=913, 557.08125pt x 557.08125pt>
 File: Figures_Part_6/parabolic_level_curves.png Graphic file (type png)
 <use Figures_Part_6/parabolic_level_curves.png>
 Package pdftex.def Info: Figures_Part_6/parabolic_level_curves.png  used on inp
@@ -1865,13 +1862,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 363--364
  []
 
 [69]
-<Figures_Part_6/level_curves_gradient.png, id=872, 750.55406pt x 685.05937pt>
+<Figures_Part_6/level_curves_gradient.png, id=951, 750.55406pt x 685.05937pt>
 File: Figures_Part_6/level_curves_gradient.png Graphic file (type png)
 <use Figures_Part_6/level_curves_gradient.png>
 Package pdftex.def Info: Figures_Part_6/level_curves_gradient.png  used on inpu
 t line 423.
 (pdftex.def)             Requested size: 191.9268pt x 175.17389pt.
-<Figures_Part_6/level_curves_gradient_vectors.png, id=873, 849.92531pt x 758.08
+<Figures_Part_6/level_curves_gradient_vectors.png, id=952, 849.92531pt x 758.08
 218pt>
 File: Figures_Part_6/level_curves_gradient_vectors.png Graphic file (type png)
 <use Figures_Part_6/level_curves_gradient_vectors.png>
@@ -1880,19 +1877,19 @@ Package pdftex.def Info: Figures_Part_6/level_curves_gradient_vectors.png  used
 (pdftex.def)             Requested size: 191.9268pt x 171.18576pt.
  [70 <./Figures_Part_6/level_curves_gradient.png> <./Figures_Part_6/level_curve
 s_gradient_vectors.png>] [71] [72] (./Figures_Part_6/surface_graph.pdf_tex
-<Figures_Part_6/surface_graph.pdf, id=897, page=1, 518.93501pt x 459.41158pt>
+<Figures_Part_6/surface_graph.pdf, id=975, page=1, 518.93501pt x 459.41158pt>
 File: Figures_Part_6/surface_graph.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_graph.pdf, page 1>
 Package pdftex.def Info: Figures_Part_6/surface_graph.pdf , page1 used on input
  line 52.
 (pdftex.def)             Requested size: 343.35364pt x 303.98367pt.
-<Figures_Part_6/surface_graph.pdf, id=898, page=2, 518.93501pt x 459.41158pt>
+<Figures_Part_6/surface_graph.pdf, id=976, page=2, 518.93501pt x 459.41158pt>
 File: Figures_Part_6/surface_graph.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_graph.pdf, page 2>
 Package pdftex.def Info: Figures_Part_6/surface_graph.pdf , page2 used on input
  line 56.
 (pdftex.def)             Requested size: 343.35364pt x 303.98367pt.
-<Figures_Part_6/surface_graph.pdf, id=899, page=3, 518.93501pt x 459.41158pt>
+<Figures_Part_6/surface_graph.pdf, id=977, page=3, 518.93501pt x 459.41158pt>
 File: Figures_Part_6/surface_graph.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_graph.pdf, page 3>
 Package pdftex.def Info: Figures_Part_6/surface_graph.pdf , page3 used on input
@@ -1915,7 +1912,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [76]
-<Figures_Part_6/Line_integral_of_scalar_field.jpg, id=938, 803.0pt x 602.25pt>
+<Figures_Part_6/Line_integral_of_scalar_field.jpg, id=1016, 803.0pt x 602.25pt>
+
 File: Figures_Part_6/Line_integral_of_scalar_field.jpg Graphic file (type jpg)
 <use Figures_Part_6/Line_integral_of_scalar_field.jpg>
 Package pdftex.def Info: Figures_Part_6/Line_integral_of_scalar_field.jpg  used
@@ -1925,7 +1923,7 @@ Package pdftex.def Info: Figures_Part_6/Line_integral_of_scalar_field.jpg  used
 [77 <./Figures_Part_6/Line_integral_of_scalar_field.jpg>]) [78]
 Chapter 6.
 (./Chapters_Part_6/vector_fields.tex
-<Figures_Part_6/wind_field.png, id=952, 501.875pt x 501.875pt>
+<Figures_Part_6/wind_field.png, id=1030, 501.875pt x 501.875pt>
 File: Figures_Part_6/wind_field.png Graphic file (type png)
 <use Figures_Part_6/wind_field.png>
 Package pdftex.def Info: Figures_Part_6/wind_field.png  used on input line 21.
@@ -1933,12 +1931,12 @@ Package pdftex.def Info: Figures_Part_6/wind_field.png  used on input line 21.
  [79
 
 ]
-<Figures_Part_6/v_field_1.png, id=958, 501.875pt x 501.875pt>
+<Figures_Part_6/v_field_1.png, id=1038, 501.875pt x 501.875pt>
 File: Figures_Part_6/v_field_1.png Graphic file (type png)
 <use Figures_Part_6/v_field_1.png>
 Package pdftex.def Info: Figures_Part_6/v_field_1.png  used on input line 33.
 (pdftex.def)             Requested size: 255.90674pt x 255.9069pt.
-<Figures_Part_6/v_field_3.png, id=959, 501.875pt x 501.875pt>
+<Figures_Part_6/v_field_3.png, id=1039, 501.875pt x 501.875pt>
 File: Figures_Part_6/v_field_3.png Graphic file (type png)
 <use Figures_Part_6/v_field_3.png>
 Package pdftex.def Info: Figures_Part_6/v_field_3.png  used on input line 45.
@@ -1948,12 +1946,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [80 <./Figures_Part_6/wind_field.png> <./Figures_Part_6/v_field_1.png>] [81 <.
 /Figures_Part_6/v_field_3.png>]
-<Figures_Part_6/vec_v.png, id=977, 501.875pt x 501.875pt>
+<Figures_Part_6/vec_v.png, id=1056, 501.875pt x 501.875pt>
 File: Figures_Part_6/vec_v.png Graphic file (type png)
 <use Figures_Part_6/vec_v.png>
 Package pdftex.def Info: Figures_Part_6/vec_v.png  used on input line 96.
 (pdftex.def)             Requested size: 191.9268pt x 191.9321pt.
-<Figures_Part_6/vec_u.png, id=978, 501.875pt x 501.875pt>
+<Figures_Part_6/vec_u.png, id=1057, 501.875pt x 501.875pt>
 File: Figures_Part_6/vec_u.png Graphic file (type png)
 <use Figures_Part_6/vec_u.png>
 Package pdftex.def Info: Figures_Part_6/vec_u.png  used on input line 101.
@@ -1964,49 +1962,49 @@ Package pdftex.def Info: Figures_Part_6/v_field_1.png  used on input line 108.
 (pdftex.def)             Requested size: 191.9268pt x 191.9321pt.
  [82 <./Figures_Part_6/vec_v.png> <./Figures_Part_6/vec_u.png>] [83] [84] [85] 
 [86]
-<Figures_Part_6/divergence_field.png, id=1012, 847.66687pt x 714.41907pt>
+<Figures_Part_6/divergence_field.png, id=1092, 847.66687pt x 714.41907pt>
 File: Figures_Part_6/divergence_field.png Graphic file (type png)
 <use Figures_Part_6/divergence_field.png>
 Package pdftex.def Info: Figures_Part_6/divergence_field.png  used on input lin
 e 257.
 (pdftex.def)             Requested size: 255.90674pt x 215.67911pt.
  [87 <./Figures_Part_6/divergence_field.png>]
-<Figures_Part_6/curl_field.png, id=1021, 1083.04625pt x 902.37125pt>
+<Figures_Part_6/curl_field.png, id=1100, 1083.04625pt x 902.37125pt>
 File: Figures_Part_6/curl_field.png Graphic file (type png)
 <use Figures_Part_6/curl_field.png>
 Package pdftex.def Info: Figures_Part_6/curl_field.png  used on input line 290.
 
 (pdftex.def)             Requested size: 255.90674pt x 213.21387pt.
  [88 <./Figures_Part_6/curl_field.png>] [89] [90]
-<Figures_Part_6/pos_laplace.png, id=1045, 1098.1025pt x 846.16125pt>
+<Figures_Part_6/pos_laplace.png, id=1123, 1098.1025pt x 846.16125pt>
 File: Figures_Part_6/pos_laplace.png Graphic file (type png)
 <use Figures_Part_6/pos_laplace.png>
 Package pdftex.def Info: Figures_Part_6/pos_laplace.png  used on input line 438
 .
 (pdftex.def)             Requested size: 191.9268pt x 147.88676pt.
-<Figures_Part_6/0_laplace.png, id=1046, 1091.07625pt x 883.3pt>
+<Figures_Part_6/0_laplace.png, id=1124, 1091.07625pt x 883.3pt>
 File: Figures_Part_6/0_laplace.png Graphic file (type png)
 <use Figures_Part_6/0_laplace.png>
 Package pdftex.def Info: Figures_Part_6/0_laplace.png  used on input line 443.
 (pdftex.def)             Requested size: 191.9268pt x 155.37502pt.
  [91] [92 <./Figures_Part_6/pos_laplace.png> <./Figures_Part_6/0_laplace.png>] 
-[93] [94]
+[93] [94] [95] [96]
 (./Figures_Part_6/surface_normals.pdf_tex
-<Figures_Part_6/surface_normals.pdf, id=1075, page=1, 293.33862pt x 166.52469pt
+<Figures_Part_6/surface_normals.pdf, id=1164, page=1, 293.33862pt x 166.52469pt
 >
 File: Figures_Part_6/surface_normals.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_normals.pdf, page 1>
 Package pdftex.def Info: Figures_Part_6/surface_normals.pdf , page1 used on inp
 ut line 52.
 (pdftex.def)             Requested size: 343.35364pt x 194.93219pt.
-<Figures_Part_6/surface_normals.pdf, id=1076, page=2, 293.33862pt x 166.52469pt
+<Figures_Part_6/surface_normals.pdf, id=1165, page=2, 293.33862pt x 166.52469pt
 >
 File: Figures_Part_6/surface_normals.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_normals.pdf, page 2>
 Package pdftex.def Info: Figures_Part_6/surface_normals.pdf , page2 used on inp
 ut line 54.
 (pdftex.def)             Requested size: 343.35364pt x 194.93219pt.
-<Figures_Part_6/surface_normals.pdf, id=1077, page=3, 293.33862pt x 166.52469pt
+<Figures_Part_6/surface_normals.pdf, id=1166, page=3, 293.33862pt x 166.52469pt
 >
 File: Figures_Part_6/surface_normals.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_normals.pdf, page 3>
@@ -2015,25 +2013,25 @@ ut line 57.
 (pdftex.def)             Requested size: 343.35364pt x 194.93219pt.
 )
 (./Figures_Part_6/surface_flux.pdf_tex
-<Figures_Part_6/surface_flux.pdf, id=1078, page=1, 293.3386pt x 163.37088pt>
+<Figures_Part_6/surface_flux.pdf, id=1167, page=1, 293.3386pt x 163.37088pt>
 File: Figures_Part_6/surface_flux.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_flux.pdf, page 1>
 Package pdftex.def Info: Figures_Part_6/surface_flux.pdf , page1 used on input 
 line 52.
 (pdftex.def)             Requested size: 343.35364pt x 191.24036pt.
-<Figures_Part_6/surface_flux.pdf, id=1079, page=2, 293.3386pt x 163.37088pt>
+<Figures_Part_6/surface_flux.pdf, id=1168, page=2, 293.3386pt x 163.37088pt>
 File: Figures_Part_6/surface_flux.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_flux.pdf, page 2>
 Package pdftex.def Info: Figures_Part_6/surface_flux.pdf , page2 used on input 
 line 55.
 (pdftex.def)             Requested size: 343.35364pt x 191.24036pt.
-<Figures_Part_6/surface_flux.pdf, id=1080, page=3, 293.3386pt x 163.37088pt>
+<Figures_Part_6/surface_flux.pdf, id=1169, page=3, 293.3386pt x 163.37088pt>
 File: Figures_Part_6/surface_flux.pdf Graphic file (type pdf)
 <use Figures_Part_6/surface_flux.pdf, page 3>
 Package pdftex.def Info: Figures_Part_6/surface_flux.pdf , page3 used on input 
 line 57.
 (pdftex.def)             Requested size: 343.35364pt x 191.24036pt.
-) [95 <./Figures_Part_6/surface_normals.pdf> <./Figures_Part_6/surface_normals.
+) [97 <./Figures_Part_6/surface_normals.pdf> <./Figures_Part_6/surface_normals.
 pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures_Part_6/surface_nor
@@ -2059,72 +2057,146 @@ x.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [96]
-[97] [98] [99]) [100]
+ [98]
+[99] [100] [101]) [102]
 Chapter 7.
 (./Chapters_Part_6/coordinate_systems_paramaterization.tex
-<Figures_Part_6/sphere.png, id=1146, 851.18pt x 851.18pt>
-File: Figures_Part_6/sphere.png Graphic file (type png)
-<use Figures_Part_6/sphere.png>
-Package pdftex.def Info: Figures_Part_6/sphere.png  used on input line 26.
-(pdftex.def)             Requested size: 170.60016pt x 170.59663pt.
- [101
+<Figures_Part_6/Sphere.png, id=1233, 2127.95pt x 1471.4975pt>
+File: Figures_Part_6/Sphere.png Graphic file (type png)
+<use Figures_Part_6/Sphere.png>
+Package pdftex.def Info: Figures_Part_6/Sphere.png  used on input line 30.
+(pdftex.def)             Requested size: 341.20682pt x 235.93839pt.
+
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [103
 
 ]
-<Figures_Part_6/cone_surface.png, id=1152, 1273.75874pt x 1202.4925pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104 <./Figures_Part_6/Sphere.png>]
+<Figures_Part_6/cone_surface.png, id=1247, 2127.95pt x 1373.13pt>
 File: Figures_Part_6/cone_surface.png Graphic file (type png)
 <use Figures_Part_6/cone_surface.png>
-Package pdftex.def Info: Figures_Part_6/cone_surface.png  used on input line 47
+Package pdftex.def Info: Figures_Part_6/cone_surface.png  used on input line 92
 .
-(pdftex.def)             Requested size: 170.60016pt x 161.04507pt.
-<Figures_Part_6/hyperboloid_1_sheet.png, id=1153, 1247.66125pt x 1202.4925pt>
+(pdftex.def)             Requested size: 341.20682pt x 220.16623pt.
+<Figures_Part_6/hyperboloid_1_sheet.png, id=1248, 2127.95pt x 1373.13pt>
 File: Figures_Part_6/hyperboloid_1_sheet.png Graphic file (type png)
 <use Figures_Part_6/hyperboloid_1_sheet.png>
 Package pdftex.def Info: Figures_Part_6/hyperboloid_1_sheet.png  used on input 
-line 57.
-(pdftex.def)             Requested size: 170.60016pt x 164.4212pt.
-<Figures_Part_6/hyperboloid_2_sheet.png, id=1154, 1304.875pt x 1204.5pt>
+line 106.
+(pdftex.def)             Requested size: 341.20682pt x 220.16623pt.
+<Figures_Part_6/hyperboloid_2_sheet.png, id=1249, 2127.95pt x 1373.13pt>
 File: Figures_Part_6/hyperboloid_2_sheet.png Graphic file (type png)
 <use Figures_Part_6/hyperboloid_2_sheet.png>
 Package pdftex.def Info: Figures_Part_6/hyperboloid_2_sheet.png  used on input 
-line 67.
-(pdftex.def)             Requested size: 170.60016pt x 157.47269pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [102 <./Figures_Part_6/sphere.png> <./Figures_Part_6/cone_surface.png>]
-<Figures_Part_6/torus.png, id=1164, 180.675pt x 155.6214pt>
+line 117.
+(pdftex.def)             Requested size: 341.20682pt x 220.16623pt.
+ [105] [106 <./Figures_Part_6/cone_surface.png>]
+<Figures_Part_6/torus.png, id=1262, 2778.38pt x 1471.4975pt>
 File: Figures_Part_6/torus.png Graphic file (type png)
 <use Figures_Part_6/torus.png>
-Package pdftex.def Info: Figures_Part_6/torus.png  used on input line 80.
-(pdftex.def)             Requested size: 170.60016pt x 146.94424pt.
+Package pdftex.def Info: Figures_Part_6/torus.png  used on input line 131.
+(pdftex.def)             Requested size: 341.20682pt x 180.70348pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103 <./Figures_Part_6/hyperboloid_1_sheet.png> <./Figures_Part_6/hyperboloid_
+ [107 <./Figures_Part_6/hyperboloid_1_sheet.png> <./Figures_Part_6/hyperboloid_
 2_sheet.png>]
-<Figures_Part_6/plane_n.png, id=1174, 359.3425pt x 299.1175pt>
+Underfull \vbox (badness 2103) has occurred while \output is active []
+
+ [108 <./Figures_Part_6/torus.png>]
+<Figures_Part_6/hemisphere.png, id=1278, 2127.95pt x 1471.4975pt>
+File: Figures_Part_6/hemisphere.png Graphic file (type png)
+<use Figures_Part_6/hemisphere.png>
+Package pdftex.def Info: Figures_Part_6/hemisphere.png  used on input line 209.
+
+(pdftex.def)             Requested size: 341.20682pt x 235.93839pt.
+ [109] [110 <./Figures_Part_6/hemisphere.png>]
+<Figures_Part_6/plane_n.png, id=1297, 359.3425pt x 299.1175pt>
 File: Figures_Part_6/plane_n.png Graphic file (type png)
 <use Figures_Part_6/plane_n.png>
-Package pdftex.def Info: Figures_Part_6/plane_n.png  used on input line 112.
+Package pdftex.def Info: Figures_Part_6/plane_n.png  used on input line 248.
 (pdftex.def)             Requested size: 170.60016pt x 142.00925pt.
- [104 <./Figures_Part_6/torus.png>]
-<Figures_Part_6/tangent-planes-1.png, id=1184, 353.32pt x 292.09125pt>
+ [111 <./Figures_Part_6/plane_n.png>]
+<Figures_Part_6/tangent-planes-1.png, id=1306, 353.32pt x 292.09125pt>
 File: Figures_Part_6/tangent-planes-1.png Graphic file (type png)
 <use Figures_Part_6/tangent-planes-1.png>
 Package pdftex.def Info: Figures_Part_6/tangent-planes-1.png  used on input lin
-e 143.
+e 306.
 (pdftex.def)             Requested size: 170.60016pt x 141.03564pt.
- [105 <./Figures_Part_6/plane_n.png> <./Figures_Part_6/tangent-planes-1.png>])
+ [112]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [113 <./Figures_Part_6/tangent-planes-1.png>] [114] [115] [116] [117] [118]
+Chapter 8.
+[119
+
+] (./Figures_Part_6/cylindrical_coordinates.pdf_tex
+<Figures_Part_6/cylindrical_coordinates.pdf, id=1349, page=1, 289.413pt x 318.3
+4558pt>
+File: Figures_Part_6/cylindrical_coordinates.pdf Graphic file (type pdf)
+<use Figures_Part_6/cylindrical_coordinates.pdf, page 1>
+Package pdftex.def Info: Figures_Part_6/cylindrical_coordinates.pdf , page1 use
+d on input line 52.
+(pdftex.def)             Requested size: 274.6857pt x 302.1497pt.
+<Figures_Part_6/cylindrical_coordinates.pdf, id=1350, page=2, 289.413pt x 318.3
+4558pt>
+File: Figures_Part_6/cylindrical_coordinates.pdf Graphic file (type pdf)
+<use Figures_Part_6/cylindrical_coordinates.pdf, page 2>
+Package pdftex.def Info: Figures_Part_6/cylindrical_coordinates.pdf , page2 use
+d on input line 55.
+(pdftex.def)             Requested size: 274.6857pt x 302.1497pt.
+<Figures_Part_6/cylindrical_coordinates.pdf, id=1351, page=3, 289.413pt x 318.3
+4558pt>
+File: Figures_Part_6/cylindrical_coordinates.pdf Graphic file (type pdf)
+<use Figures_Part_6/cylindrical_coordinates.pdf, page 3>
+Package pdftex.def Info: Figures_Part_6/cylindrical_coordinates.pdf , page3 use
+d on input line 61.
+(pdftex.def)             Requested size: 274.6857pt x 302.1497pt.
+<Figures_Part_6/cylindrical_coordinates.pdf, id=1352, page=4, 289.413pt x 318.3
+4558pt>
+File: Figures_Part_6/cylindrical_coordinates.pdf Graphic file (type pdf)
+<use Figures_Part_6/cylindrical_coordinates.pdf, page 4>
+Package pdftex.def Info: Figures_Part_6/cylindrical_coordinates.pdf , page4 use
+d on input line 63.
+(pdftex.def)             Requested size: 274.6857pt x 302.1497pt.
+)
+
+Package caption Warning: \label without proper reference on input line 579.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:cylindrical_coordinates' on page 120 undefined on
+ input line 586.
+
+[120 <./Figures_Part_6/cylindrical_coordinates.pdf> <./Figures_Part_6/cylindric
+al_coordinates.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures_Part_6/cylindrical
+_coordinates.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+> <./Figures_Part_6/cylindrical_coordinates.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures_Part_6/cylindrical
+_coordinates.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+> <./Figures_Part_6/cylindrical_coordinates.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures_Part_6/cylindrical
+_coordinates.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+>] [121])
 No file main.ind.
-[106]
+[122]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5DA79D296CE383D7DE12EAF26A49EBE3;4358.
+(rerunfilecheck)             Checksum: E98E0AA8B064E7D6AD45FBB74BF4ED17;5454.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2132,18 +2204,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 50571 strings out of 492609
- 1152843 string characters out of 6129048
- 1376222 words of memory out of 5000000
- 53269 multiletter control sequences out of 15000+600000
+ 50712 strings out of 492609
+ 1155942 string characters out of 6129048
+ 1376616 words of memory out of 5000000
+ 53356 multiletter control sequences out of 15000+600000
  653689 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,20n,121p,849b,2666s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,20n,121p,951b,2666s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -2174,10 +2243,10 @@ t/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
 e1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
 ic/wasy2-ps/wasy10.pfb>
-Output written on main.pdf (110 pages, 3779982 bytes).
+Output written on main.pdf (128 pages, 4383232 bytes).
 PDF statistics:
- 1369 PDF objects out of 1440 (max. 8388607)
- 1090 compressed objects within 11 object streams
- 375 named destinations out of 1000 (max. 500000)
- 951 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1594 PDF objects out of 1728 (max. 8388607)
+ 1271 compressed objects within 13 object streams
+ 425 named destinations out of 1000 (max. 500000)
+ 1088 words of extra memory for PDF output out of 10000 (max. 10000000)
 
