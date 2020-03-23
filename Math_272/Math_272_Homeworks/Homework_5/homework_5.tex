@@ -24,7 +24,7 @@ This function $u(x,y)$ describes the \emph{potential energy} for electrons in th
     \item Plot the level curves where $u(x,y)=0$, $u(x,y)=\frac{1}{4}$, $u(x,y)=\frac{1}{2}$, and $u(x,y)=1$ for the range of values $-\frac{3\pi}{2}\leq x \leq \frac{3\pi}{2}$ and $-\frac{3\pi}{2}\leq y \leq \frac{3\pi}{2}$. 
     
     Picking the constant for the level curve tells you the \emph{kinetic energy} of the electron you are looking at.  It turns out that electrons (roughly) will orbit along these level curves.  Notice, some level curves bleed into the different troughs of neighboring molecules which means that electrons of sufficient energy happily flow through the crystal. However, electrons like to behave a bit differently thanks to their quantum nature!
-    \item Find the gradient of this function $\nabla u(x,y)$.
+    \item Find the gradient of this function $\grad u(x,y)$.
     \item At what point(s) is the gradient zero? \emph{Hint: Use your graph of the level curves to help.}
     \end{enumerate}
 \end{problem}
@@ -42,7 +42,7 @@ Let us visualize vector fields using GeoGebra (specifically \url{https://www.geo
 \end{problem}
 
 \begin{problem}
-Compute the divergence and curl of the Source and Vortex fields from the previous problem.  Also, find the specific value for the divergence and curl at the origin. Give a physical interpretation of your result.
+Compute the divergence and curl of the Source and Vortex fields from the previous problem.  What can we say about the divergence and curl of these fields at the origin?
 \end{problem}
 
 \begin{problem}
@@ -67,18 +67,24 @@ Consider the following vector field
 which models the electric field of an proton (in units of of charge $q=1$) placed at the origin.
 \begin{enumerate}[(a)]
 	\item Show that $\vecfieldE(x,y,z) = - \grad V(x,y,z)$ where $V(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $V(x,y,z)$ as the electrostatic potential or voltage.
-	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Gamma$. That is,
+	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
 	\[
 	\int_\Gamma \vecfieldE(x,y,z) \cdot \unitvec d\Gamma.
 	\]
 	\item Does the total flux depend on the size or shape of the box?
-	\item Similarly, compute the total voltage contained inside of the box $\Omega$.  That is,
+	\item Using the provided argument, one can compute
 	\[
 	\int_\Omega \grad \cdot \vecfieldE(x,y,z) d\Omega.
 	\]
-	\textcolor{red}{This didn't work out because it's a delta function!}
+	\begin{itemize}
+		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
+		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Hence, you can now argue why
+		\[
+		\grad\cdot \vecfieldE = \delta(x,y,z),
+		\]
+		where $\delta(x,y,z)$ is the 3-dimensional Dirac delta.
+	\end{itemize}
 \end{enumerate}
-The two integrals you computed should be equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem}. Fundamentally, it relates fields defined in a region to fields on the boundary.
 \end{problem}
 
 \end{document}

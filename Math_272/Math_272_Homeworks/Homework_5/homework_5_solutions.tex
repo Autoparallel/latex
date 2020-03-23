@@ -8,167 +8,274 @@
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 271, Homework 5, \emph{Solutions}}\\
-   \textsc{Due October 11$^\textrm{th}$}
+   \textsc{\large MATH 272, Homework 5, \emph{Solutions}}\\
+   \textsc{Due March 9$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
-\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
-\[
-\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
-\]
-\begin{enumerate}[(a)]
-    \item Use the integral test to show that the $p$-series
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^2}
-    \]
-    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
-    \item Use the comparison test to show that the $p$-series
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^3}
-    \]
-    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
-\end{enumerate}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item Note that $a_n = f(n)=\frac{1}{n^2}$.  Hence we can make a comparison to the integral
-    \[
-    \int_1^\infty f(x)dx,
-    \]
-    where we start at $x=1$ since our sum begins there as well.  We evaluate the integral
-    \begin{align*}
-        \int_1^\infty f(x)dx &= \int_1^\infty \frac{1}{x^2}dx\\
-        &= \left[\frac{-1}{x}\right]_1^\infty\\
-        &= \lim_{b\to \infty} \left[ \frac{-1}{x}\right]_1^b\\
-        &= \lim_{b\to \infty} \frac{-1}{b} - \frac{-1}{1}\\
-        &= 1.
-    \end{align*}
-    So since the integral is finite the series converges.  \emph{Warning: the integral does \underline{not} tell us what the series converges to! The series in fact converges to $\zeta(2)=\frac{\pi^2}{6}$.}
-    \item Note that for $N\geq 2$ we have that $b_n=\frac{1}{n^3}\leq \frac{1}{n^2}=a_n$. Thus, since we have this inequality and we found $\sum_{n=1}^\infty a_n$ converges, we also have that $\sum_{n=1}^\infty b_n$ converges as well. \emph{Warning: again, this comparison test does \underline{not} tell us what the series converges to. If we look it up we find that $\zeta(3)\approx 1.20206$.}
-\end{enumerate}
-\end{solution}
-
-\newpage
 \begin{problem}
-How can we approximate a (possibly complicated) function by using a power series? Why is this useful (specifically for computation on a computer)?
-\end{problem}
-\begin{solution}
-We can often times approximate a function about a point $x=a$ using a truncated Taylor series centered about $a$. What I mean is that we will have a function $f(x)$ which (inside its interval of convergence) will be equal to
+A rough model of a molecular crystal can be described in the following way. Take the scalar function
 \[
-f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n
+u(x,y)=\cos^2(x)+\cos^2(y).
 \]
-This proves to be very useful as we can take finite truncations of the complete power series above. Specifically, we have that
-\[
-f(x)\approx \sum_{n=0}^N \frac{f^{(n)}(a)}{n!}(x-a)^n.
-\]
-It turns out that this is a reasonable approximation for $f$ as long as we don't look too far away from $x=a$.  Also, computers really only have the ability to add.  Of course, multiplication is sequential adding, division can be done through subtraction and multiplication, and powers come from sequential multiplication.  The point is, computers work with polynomials (or rational functions) and this gives us a way to realize a complicated non-polynomial function as (approximately) a polynomial function.
-\end{solution}
-
-\newpage
-\begin{problem} Consider the function
-\[
-f(x)=\frac{1}{1-x}.
-\]
+This function $u(x,y)$ describes the \emph{potential energy} for electrons in the crystal. Electrons are attracted to the areas with the smallest potential energy and move away from areas of high potential energy. 
 \begin{enumerate}[(a)]
-    \item Compute the Maclaurin series for the function.
-    \item Find the integral $\int \frac{dx}{1-x}$ using the Maclaurin series for $f(x)$ found in (a).  
-    \item Write down the Maclaurin series for $\ln(1-x)$ and compare to your answer in (b).
-\end{enumerate}
+    \item Plot this function and include a printout.  Notice what this looks like.  You can imagine that each of the low points (well) is where a nucleus is located in the crystal.
+    \item Plot the level curves where $u(x,y)=0$, $u(x,y)=\frac{1}{4}$, $u(x,y)=\frac{1}{2}$, and $u(x,y)=1$ for the range of values $-\frac{3\pi}{2}\leq x \leq \frac{3\pi}{2}$ and $-\frac{3\pi}{2}\leq y \leq \frac{3\pi}{2}$. 
+    
+    Picking the constant for the level curve tells you the \emph{kinetic energy} of the electron you are looking at.  It turns out that electrons (roughly) will orbit along these level curves.  Notice, some level curves bleed into the different troughs of neighboring molecules which means that electrons of sufficient energy happily flow through the crystal. However, electrons like to behave a bit differently thanks to their quantum nature!
+    \item Find the gradient of this function $\grad u(x,y)$.
+    \item At what point(s) is the gradient zero? \emph{Hint: Use your graph of the level curves to help.}
+    \end{enumerate}
 \end{problem}
+
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item To find the Maclaurin series (i.e., the Taylor series centered at $a=0$), we must compute $f^{(n)}(0)$ as we desire to find
+    \item Here is the plot
+    \begin{figure}[H]
+        \centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures/crystal.pdf_tex}
+    \end{figure}
+    \item Here is the plot of the level curves.
+    \begin{figure}[H]
+        \centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures/level_curves.pdf_tex}
+        \caption{Contour plot labeled with relevant values. Colors match the colors in the previous figure.}
+    \end{figure}
+    
+    \item The gradient is
     \[
-    f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n.
+    \grad u(x,y) = \begin{pmatrix} -2\cos(x)\sin(x) \\ -2\cos(y)\sin(y) \end{pmatrix}.
     \]
-    The derivatives are
-    \begin{align*}
-        f^{(0)}(x) &= \frac{1}{1-x} &\implies&& f^{(0)}(0)&=1=0!\\
-        f^{(1)}(x) &= \frac{1}{(1-x)^2} &\implies&& f^{(1)}(0)&=1=1!\\
-        f^{(2)}(x) &= \frac{2}{(1-x)^3} &\implies&& f^{(2)}(0)&=2=2!\\
-        f^{(3)}(x) &= \frac{6}{(1-x)^4} &\implies&& f^{(3)}(0)&=6=3!\\
-        f^{(4)}(x) &= \frac{24}{(1-x)^5} &\implies&& f^{(4)}(0)&=24=4!\\
-        && \vdots && &\\
-        f^{(n)}(x) &= \frac{n!}{(1-x)^{n+1}} &\implies&& f^{(n)}(0)&=n!.\\
-    \end{align*}
-    Hence, if we plug this into the formula for the Maclaurin series we have
+    \item We want to find where
     \[
-    f(x) = \sum_{n=0}^\infty x^n.
+    \grad u(x,y) = \zerovec.
     \]
-    \item We can integrate this series term by term to find the desired antiderivative. So we have
-    \[
-    \int\frac{dx}{1-x} = \int \sum_{n=0}^\infty x^n dx = C + \sum_{n=0}^\infty \frac{x^{n+1}}{n+1}.
-    \]
-    \item We can find the Maclaurin series for $\ln(1-x)$ in the same way as above. However, notice that $\frac{d}{dx} \ln(1-x) =\frac{-1}{1-x}$, and thus up to determining the constant $C$, we have that
-    \[
-    -\left(C + \sum_{n=0}^\infty \frac{x^{n+1}}{n+1}\right) = \ln(1-x).
-    \]
+    This gives us two equations to work with:
+    \begin{align}
+        -2\cos(x)\sin(x) &= 0,\\
+        -2\cos(y)\sin(y) &= 0.
+    \end{align}
+    Note that (1) is zero whenever $\cos(x)$ or $\sin(x)$ is zero, which happens at $x=\frac{n\pi}{2}$ for all integers $n$. Similarly, we have that (2) is zero when $y=\frac{m\pi}{2}$ for all integers $m$.  This gives us many different solutions in our given range of values.
+    
+    If we think graphically, these values where the gradient is zero occur at the tops and bottoms of the peaks and valleys respectively.  These are the maxima and minima of the function $u(x,y)$.
+    
+    However, not all of these solutions are solutions where the electrons will want to stay put.  We will have to work harder to find out which ones are minimizers of the energy!
 \end{enumerate}
 \end{solution}
+
 
 \newpage
 \begin{problem} 
-Compute the Taylor series centered at $a=0$ for $f(x)=e^{-\frac{x^2}{2}}$. Then, instead use the Taylor series for $e^x$ and modify it to work for $f(x)$.  For each of these power series, plot the original function $f(x)$ compared to the four term approximation on the same graph.
+Let us visualize vector fields using GeoGebra (specifically \url{https://www.geogebra.org/m/u3xregNW}). Plot the following vector fields and print them out. 
+\begin{enumerate}[(a)]
+    \item (Constant wind from the northwest) $\vecfieldV(x,y)=\begin{pmatrix} 1 \\ -1 \\ 0\end{pmatrix}$.
+        \item (Two wind fronts meeting) $\vecfieldU(x,y,z)=\begin{pmatrix} y \\ x \\ 0 \end{pmatrix}$.
+                        \item (Source) $\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}$.
+                  \item (Vortex) $\boldsymbol{\vec{S}}(x,y,z)=\begin{pmatrix} \frac{-y}{x^2+y^2+z^2} \\ \frac{x}{x^2+y^2+z^2} \\ 0\end{pmatrix}.$           
+\end{enumerate}
 \end{problem}
-\begin{solution}
-Again, we find the Taylor series centered at $a=0$ by computing $f^{(n)}(0)$. The derivatives are
-    \begin{align*}
-        f^{(0)}(x) &= e^{-\frac{x^2}{2}} &\implies&& f^{(0)}(0)&=1\\
-        f^{(1)}(x) &= xe^{-\frac{x^2}{2}} &\implies&& f^{(1)}(0)&=0\\
-        f^{(2)}(x) &= (x^2-1)e^{-\frac{x^2}{2}} &\implies&& f^{(2)}(0)&=-1\\
-        f^{(3)}(x) &= x(x^2-3)e^{-\frac{x^2}{2}} &\implies&& f^{(3)}(0)&=0\\
-        f^{(4)}(x) &= (x^4-6x^2+3)e^{-\frac{x^2}{2}} &\implies&& f^{(4)}(0)&=3.
-    \end{align*}
-    This gives us the first five terms of the Taylor series for $f(x)$ so that we have
-    \[
-    f(x)\approx 1 + 0 + \frac{-1}{2}x^2 + 0 \frac{3}{5!}x^5.
-    \]
-    
-    The easier way is to modify an already known power series like $e^x$. We have
-    \[
-    e^x = \sum_{n=0}^\infty \frac{x^n}{n!}.
-    \]
-    If we replace $x\mapsto -\frac{x^2}{2}$ then we have
-    \[
-    e^{-\frac{x^2}{2}} = \sum_{n=0}^\infty \frac{ \left( -\frac{x^2}{2}\right)}{n!} = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{2^n n!}.
-    \]
-    Below is a graph showing the three different functions.
+
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=.8\textwidth]{Homework_5/desmos-graph(4).png}
-        \caption{Red: $f(x)$; Green: Four terms from Taylor series; Purple: Four terms from modified Taylor series.}
-        \label{fig:my_label}
+        \includegraphics[width=.6\textwidth]{Figures/const_wind.png}
+        \caption{Plot for $\vecfieldV(x,y,z)$.}
     \end{figure}
-    \begin{remark}
-    The reason why the graphs are different is because the modified series skips the zero terms that show up in the Taylor series computation. So when we plot four terms in the modified series, it is equal to plotting the first eight terms of the actual Taylor series.
-    \end{remark}
+    \item 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Figures/wind_fronts.png}
+        \caption{Plot for $\vecfieldU(x,y,z)$.}
+    \end{figure}
+    \item 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Figures/source.png}
+        \caption{Plot for $\vecfieldE(x,y,z)$.}
+    \end{figure}
+    \item 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{Figures/vortex.png}
+        \caption{Plot for $\boldsymbol{\vec{S}}(x,y,z)$.}
+    \end{figure}
+\end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-Find the radius of convergence for the following power series
+Compute the divergence and curl of the Source and Vortex fields from the previous problem.  What can we say about the divergence and curl of these fields at the origin?
+\end{problem}
+\begin{solution}
+    First, let us take the curl of $\vecfieldE$.  We have
+    \begin{align*}
+        \grad \times \vecfieldE &= \begin{pmatrix} \frac{\partial E_3}{\partial y} - \frac{\partial E_2}{\partial z} \\ \frac{\partial E_1}{\partial z} -\frac{\partial E_3}{\partial 1} \\ \frac{\partial E_2}{\partial x} - \frac{\partial E_1}{\partial y} \end{pmatrix}\\
+        &= \begin{pmatrix} \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} \\ \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} \\
+        \frac{-3xy}{(x^2+y^2+z^2)^{5/2}} -\frac{-3xy}{(x^2+y^2+z^2)^{5/2}} \end{pmatrix}\\
+        &= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}.
+    \end{align*}
+    At the origin, this curl is also identically zero.  The curl of $\vecfieldE$ is simply zero everywhere.
+    
+    Next, the curl of $\boldsymbol{\vec{S}}$,
+        \begin{align*}
+            \grad \times \boldsymbol{\vec{S}} &= \begin{pmatrix} 0 - \frac{-2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} - 0 \\
+            \frac{-x^2+y^2+z^2}{(x^2+y^2+z^2)^2}- \frac{x^2-y^2+z^2}{(x^2+y^2+z^2)^2}\end{pmatrix}\\
+            &= \begin{pmatrix}  \frac{2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} \\ \frac{z^2}{(x^2+y^2+z^2)^2}. \end{pmatrix}.
+        \end{align*}
+    Note that at the origin, we have a discontinuity.  Specifically, the curl at the origin will go to infinity (in each direction) at the origin since the numerator of each component of the curl is of lesser degree (2) than the denominator (4).
+    
+    The divergence of $\vecfieldE$ is
+    \begin{align*}
+        \grad \cdot \vecfieldE &= \frac{\partial E_1}{\partial x} + \frac{\partial E_2}{\partial y} + \frac{\partial E_3}{\partial z}\\
+        &= \frac{-2x^2+y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2-2y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2+y^2-2z^2}{(x^2+y^2+z^2)^{5/2}}\\
+        &= 0.
+    \end{align*}
+    It appears that the divergence of this field $\vecfieldE$ is zero, however we will see in Problem 5 that this isn't entirely true!
+    
+    Similarly, the divergence of $\boldsymbol{\vec{S}}$
+    \begin{align*}
+        \grad \cdot \boldsymbol{\vec{S}} &= \frac{2xy}{(x^2+y^2+z^2)^2} + \frac{-2xy}{(x^2+y^2+z^2)^2}\\
+        &=0.
+    \end{align*}
+    Once again, this appears to be zero everywhere (including the origin). But one should be weary of whether or not this is totally true!
+   
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Consider the function
+\[
+f(x,y)=\sin\left(\frac{2\pi x}{5}\right)\sin\left(\frac{2\pi y}{5}\right).
+\]
+comes up when you want to find out how a square shaped drum head will vibrate when hit. 
 \begin{enumerate}[(a)]
-    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
-    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+    \item Plot this function on the region $\Omega$ given by $0\leq x \leq 5$ and $0\leq y \leq 5$.  
+    \item What is the value the function $f(x,y)$ on the boundary of the given region $\Omega$ (i.e, when $x=0$, $x=5$, $y=0$, and $y=5$)?
+    \item Show that $f(x,y)$ is an eigenfunction of the Laplacian $\Delta = \grad \cdot \grad$. What is the eigenvalue?
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item To find the radius of convergence we must look at the ratio of terms in the sequence as $n\to \infty$. Specifically, we take
+    \item Here is the plot of the vibrating square drum head:
+    \begin{figure}[H]
+        \centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures/drum_head.pdf_tex}
+    \end{figure}
+    \item When $x=0$ we have
+    \[
+    f(0,y) = \sin\left( \frac{2\pi 0}{5}\right) \sin\left(\frac{2\pi y}{5}\right) = 0.
+    \]
+    Similarly, when $x=5$ $f(5,y)=0$, when $y=0$ $f(x,0)=0$, and when $y=5$ $f(x,5)=0$. 
+    
+    These are the boundary of the drum head.  That is, where the head of the drum is clamped down.
+    
+    \item We have
     \begin{align*}
-        \lim_{n\to \infty} \left| \frac{\frac{x^{n+1}}{(n+1)(n+2)}}{\frac{x^n}{n(n+1)}}\right| &= \lim_{n\to \infty}\left| \frac{nx}{n+2}\right|\\
-        &= |x|.
+        \frac{\partial f}{\partial x} &= \frac{2\pi}{5} \cos \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right),\\
+        \frac{\partial^2 f}{\partial x^2} &= \frac{-4\pi^2}{25} \sin \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right),\\
+        \frac{\partial f}{\partial y} &= \frac{2\pi}{5} \sin \left( \frac{2\pi x}{5} \right) \cos \left( \frac{2\pi y}{5} \right),\\
+        \frac{\partial^2 f}{\partial y^2} &= \frac{-4\pi}{25} \sin \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right).
     \end{align*}
-    Now, in order for this series to converge, the ratio test above must give us a limit $L<1$, and hence we must have that $|x|<1$. So the radius of convergence is 1.
-    \item Similarly, we have
-    \begin{align*}
-        \lim_{n\to \infty} \left| \frac{\frac{x^{2n+3}}{(2n+3)!}}{\frac{x^{2n+1}}{(2n+1)!}} \right| &= \lim_{n\to \infty} \left|\frac{x^2}{(2n+3)(2n+2)}\right|\\
-        &= 0.
-    \end{align*}
-    Hence the limit is $0<1$ and so for any value of $x$ this series converges and it follows that the radius of convergence is infinite.
+    Then we have
+    \[
+    \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = -\frac{8\pi^2}{25} \sin \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right) = -\frac{8\pi^2}{25} f(x,y).
+    \]
+    So, the way a drum head vibrates is an eigen-problem.
 \end{enumerate}
 \end{solution}
 
+\newpage
+\begin{problem}
+Consider the following vector field
+\[
+\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
+\]
+which models the electric field of an proton (in units of of charge $q=1$) placed at the origin.
+\begin{enumerate}[(a)]
+	\item Show that $\vecfieldE(x,y,z) = - \grad V(x,y,z)$ where $V(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $V(x,y,z)$ as the electrostatic potential or voltage.
+	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
+	\[
+	\int_\Gamma \vecfieldE(x,y,z) \cdot \unitvec d\Sigma.
+	\]
+ 	\item Does the total flux depend on the size or shape of the box?
+	\item Using the provided argument, one can compute
+	\[
+	\int_\Omega \grad \cdot \vecfieldE(x,y,z) d\Omega.
+	\]
+	\begin{itemize}
+		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
+		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Hence, you can now argue why
+		\[
+		\grad\cdot \vecfieldE = 4\pi\delta(x,y,z),
+		\]
+		where $\delta(x,y,z)$ is the 3-dimensional Dirac delta.
+	\end{itemize}
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]
+        \item   We compute $-\grad V$,
+        \begin{align*}
+            -\grad V &= \begin{pmatrix} -\frac{\partial V}{\partial x} \\ -\frac{\partial V}{\partial y} \\ -\frac{\partial V}{\partial z} \end{pmatrix}\\
+            &= \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}.
+        \end{align*}
+        \item This portion requires computing six different (however, symmetric) integrals.  One can reduce the argument down to a single integral via a bit of physical/mathematical reasoning. Note that the field $\vecfieldE$ is radially symmetric in that the field points radially outward from the origin and the strength falls off as we move away from the origin.  Fundamentally, this means that each face of the cube receives the same amount of flux through it.
+        
+        Picture the situation as follows. We have the cube surface broken up into $6$ faces. We will label these faces as $\Sigma_1$, $\Sigma_2,\dots,\Sigma_6$.  
+        \begin{figure}[H]
+        	\centering
+        	\def\svgwidth{0.75\columnwidth}
+        	\input{Figures/cube_coordinate_axes.pdf_tex}
+        \end{figure}
+        One can take $\Sigma_4$, $\Sigma_5$, and $\Sigma_6$ to be the faces opposite to $\Sigma_1$, $\Sigma_2$ and $\Sigma_3$ respectively.  Each face then has a unique outward normal vector which we can denote by $\unitvec_{\Sigma_j}$ for the face $\Sigma_j$.
+        \begin{figure}[H]
+        	\centering
+        	\def\svgwidth{0.75\columnwidth}
+        	\input{Figures/cube_normal_vectors.pdf_tex}
+        \end{figure}
+        Thus, our integral over the cubic surface $\Sigma$ is given by
+        \[
+        \iint_{\Sigma} \vecfieldE \cdot \unitevec d\Sigma = \sum_{j=1}^6 \iint_{\Sigma_j} \vecfieldE \cdot \unitvec_{\Sigma_j}d\Sigma_j.
+        \]
+        By the symmetry argument before, we can simplify this further as
+        \[
+        \iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma = 6 \iint_{\Sigma_1} \vecfieldE \cdot \unitvec_{\Sigma_1}d\Sigma_1.
+        \]
+        Now, we can evaluate this integral
+        \begin{align*}
+            6\iint_{\Sigma_1} \vecfieldE \cdot \unitvec_{\Sigma_1}d\Sigma_1 &= \int_{-1}^1 \int_{-1}^1 \vecfieldE(x,y,1) \cdot \zhat dxdy\\&= 6\int_{-1}^1 \int_{-1}^1 \frac{1}{(x^2+y^2+1)^{3/2}}dxdy\\
+                &= 6\int_{-1}^1 \frac{2}{(y^2+1)\sqrt{y^2+2}} dy\\
+                &= 6\frac{2\pi }{3}\\
+                &= 4\pi.
+        \end{align*}
+    \end{enumerate}
+    \item Note that the divergence of $\vecfieldE$ is zero everywhere aside from the origin.  Hence, the only possible source of flux comes from the origin and our previous argument discussed the symmetry of this field.  So long as we integrate in a surface that encloses the origin, we will have the same answer.  This leads us to (d).
+    \item We have already computed $\grad \cdot \vecfieldE$ and noted this in an earlier problem.  It's now very physically reasonable to suspect that we have the following identity
+    \[
+    \int_\Omega \grad \cdot \vecfieldE d\Omega = \int_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
+    \]
+    since the amount of ``source behavior" in the region $\Omega$ should directly correspond to the flux that will pass through the boundary.  To picture this literally, if we pump in water at $(0,0,0)$, we know how much water we pumped in by seeing how much flows through any surface surrounding the origin.  
+    
+    Thus, our argument is that
+    \[
+    \int_\Omega \grad \cdot \vecfieldE d\Omega = 4\pi.
+    \]
+    Now, $\grad\cdot \vecfieldE$ is zero aside from at $(x,y,z)=(0,0,0)$, and thus $\grad \cdot \vecfieldE$ must mimic the Dirac delta by being infinite at the origin (which we observed previously).  Hence, we conclude that
+    \[
+    \grad \cdot \vecfieldE = 4\pi \delta(x,y,z).
+    \]
+    Furthermore, if we relate this to the Maxwell equation for the electric field $\vecfieldE$ due to a charge distribution $\rho(x,y,z)$, i.e.,
+    \[
+    \grad \cdot \vecfieldE = \rho/\epsilon_0,
+    \]
+    we see that a point charge corresponds to a distribution $\delta(x,y,z)$ times some constant.
+\end{solution}
 
 \end{document}

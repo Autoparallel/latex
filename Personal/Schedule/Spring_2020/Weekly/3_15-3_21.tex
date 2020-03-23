@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Weekly Timetable Calendar
+% LaTeX Template
+% Version 1.2 (19/9/18)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Evan Sultanik with modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the calendar.sty file to be in the same directory as the
+% .tex file. The calendar.sty file provides the necessary structure to create the
+% calendar.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article} % Can also use 11pt for a larger overall font size
+
+\usepackage{calendar} % Use the calendar.sty style
+
+\usepackage[landscape, a4paper, margin=1cm]{geometry} % Page dimensions and margins
+
+\usepackage{palatino} % Use the Palatino font
+
+\begin{document}
+
+\pagestyle{empty} % Disable default headers and footers
+
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+
+\StartingDayNumber=1 % Calendar starting day, default of 1 means Sunday, 2 for Monday, etc
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+	\textsc{\LARGE University Timetable}\\ % Title text
+	\textsc{\large Semester 1} % Subtitle text
+\end{center}
+
+%----------------------------------------------------------------------------------------
+
+\begin{calendar}{\textwidth} % Calendar to be the entire width of the page
+
+%----------------------------------------------------------------------------------------
+%	FIRST DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{
+	\textbf{9am-5pm} \daysep Work at McDonald's
+}
+
+%----------------------------------------------------------------------------------------
+%	SECOND DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{
+	\textbf{9am-10am} \daysep BIOSCI101 - BLT100 \timesep
+	\textbf{10am-11am} \daysep BIOSCI 104 - LLT \timesep
+	%\textbf{11am-12pm} \daysep No Lecture \timesep
+	\textbf{12pm-1pm} \daysep BIOSCI105 - BLT204 \timesep
+	%\textbf{1pm-2pm} \daysep No Lecture \timesep
+	\textbf{2pm-5pm} \daysep BIOSCI101 Laboratory \timesep
+	%\textbf{3pm-4pm} \daysep BIOSCI101 Laboratory \timesep
+	%\textbf{4pm-5pm} \daysep BIOSCI101 Laboratory
+} 
+
+%----------------------------------------------------------------------------------------
+%	THIRD DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{ % Tuesday
+	\textbf{9am-10am} \daysep BIOSCI101 - BLT100 \timesep
+	\textbf{10am-11am} \daysep BIOSCI 104 - LLT \timesep
+	%\textbf{11am-12pm} \daysep No Lecture \timesep
+	%\textbf{12pm-1pm} \daysep No Lecture \timesep
+	%\textbf{1pm-2pm} \daysep No Lecture \timesep
+	\textbf{2pm-3pm} \daysep GEO101 - HSB1 \timesep
+	%\textbf{3pm-4pm} \daysep No Lecture \timesep
+	%\textbf{4pm-5pm} \daysep No Lecture
+} 
+
+%----------------------------------------------------------------------------------------
+%	FOURTH DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{ % Wednesday
+	%\textbf{9am-10am} \daysep No Lecture \timesep
+	\textbf{10am-11am} \daysep BIOSCI 104 - LLT \timesep
+	%\textbf{11am-12pm} \daysep No Lecture \timesep
+	\textbf{12pm-1pm} \daysep BIOSCI105 - BLT204 \timesep
+	%\textbf{1pm-2pm} \daysep No Lecture \timesep
+	\textbf{2pm-3pm} \daysep GEO101 - HSB1 \timesep
+	%\textbf{3pm-4pm} \daysep No Lecture \timesep
+	%\textbf{4pm-5pm} \daysep No Lecture
+} 
+
+%----------------------------------------------------------------------------------------
+%	FIFTH DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{ % Thursday
+	%\textbf{9am-10am} \daysep No Lecture \timesep
+	\textbf{10am-11am} \daysep BIOSCI 104 - LLT \timesep
+	%\textbf{11am-12pm} \daysep No Lecture \timesep
+	%\textbf{12pm-1pm} \daysep No Lecture \timesep
+	%\textbf{1pm-2pm} \daysep No Lecture \timesep
+	\textbf{2pm-3pm} \daysep GEO101 - HSB1 \timesep
+	%\textbf{3pm-4pm} \daysep No Lecture \timesep
+	%\textbf{4pm-5pm} \daysep No Lecture
+} 
+
+%----------------------------------------------------------------------------------------
+%	SIXTH DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{ % Friday
+	\textbf{9am-10am} \daysep BIOSCI101 - BLT100 \timesep
+	\textbf{10am-11am} \daysep BIOSCI 104 - LLT \timesep
+	%\textbf{11am-12pm} \daysep No Lecture \timesep
+	\textbf{12pm-1pm} \daysep BIOSCI105 - BLT204 \timesep
+	%\textbf{1pm-2pm} \daysep No Lecture \timesep
+	%\textbf{2pm-3pm} \daysep No Lecture \timesep
+	\textbf{3pm-4pm} \daysep GEO101 Tutorial \\ Room A \timesep
+	%\textbf{4pm-5pm} \daysep No Lecture
+} 
+
+%----------------------------------------------------------------------------------------
+%	SEVENTH DAY
+%----------------------------------------------------------------------------------------
+
+\day{}{} % Saturday
+
+%----------------------------------------------------------------------------------------
+ 
+\finishCalendar
+\end{calendar}
+\end{document}
