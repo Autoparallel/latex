@@ -4,327 +4,278 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
+
+
 
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 271, Homework 7, \emph{Solutions}}\\
-   \textsc{Due November 1$^\textrm{st}$}
+   \textsc{\large MATH 272, Homework 7, \emph{Solutions}}\\
+   \textsc{Due March 31$^\textrm{st}$}
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-Let $S$ be the set of general solutions $x(t)$ to the following homogeneous linear differential equation 
-\[
-x''+f(t)x'+g(t)x=0.
-\]
-Show that this set $S$ is a vector space over the complex numbers by doing the following. Let $x(t),y(t) \in S$ be solutions to the above equation and let $\alpha, \beta \in \C$ be complex scalars.
-\begin{enumerate}[(a)]
-    \item Write down the eight requirements for $S$ to be a vector space.  
-    \item Identify the $\zerovec \in S$ and $1\in \C$. 
-    \item Show that $\alpha x(t) + \beta y(t) \in S$. That is, show that a superposition of solutions is also a solution. \emph{Hint: We have shown this before.}
-\end{enumerate}
+    Plot each of the following vector fields.
+    \begin{enumerate}[(a)]
+        \item $\rhohat = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$.
+        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
+        \item $\zhat$.
+    \end{enumerate}
 \end{problem}
-\begin{solution}
+\begin{solution} Here are the plots for these three fields.
+
 \begin{enumerate}[(a)]
-    \item We can remember these requirements via the acronym CANI ADDU.  So we have for the vector addition properties
-    \begin{itemize}
-        \item Commutivity: If we have two solutions $x(t)$ and $y(t)$ in the set $S$, then we know 
-        \[
-        x(t)+y(t)=y(t)+x(t)
-        \]
-        is satisfied.
-        \item Associativity: If we have three solutions $x(t),y(t),z(t)\in S$, then we know
-        \[
-        (x(t)+y(t))+z(t)=x(t) + (y(t)+z(t))
-        \]
-        is satisfied.
-        \item Neutral Element: We have that there exists the zero function $0\in S$ such that
-        \[
-        0+x(t)=x(t).
-        \]
-        \item Inverses: Given an $x(t)\in S$, we have the function $-x(t)\in S$ such that
-        \[
-        x(t)+(-x(t))=0.
-        \]
-    \end{itemize}
-    Then we have the scalar multiplication properties
-    \begin{itemize}
-        \item Associativity: If we have $\alpha,\beta \in \C$ and $x(t)\in S$ then we have
-        \[
-        \alpha (\beta x(t)) = (\alpha \beta)x(t)
-        \]
-        holds.
-        \item Distribution: Given $\alpha,\beta \in \C$ and $x(t)\in S$ we have
-        \[
-        (\alpha +\beta)x(t) = \alpha x(t) + \beta x(t)
-        \]
-        holds.
-        \item Distribution: Given $\alpha\in \C$ and $x(t),y(t)\in S$, we have
-        \[
-        \alpha(x(t)+y(t))=\alpha x(t) + \alpha y(t)
-        \]
-        holds.
-        \item Unit element: We have $1\in \C$ satisfies that for any $x(t)\in S$ that
-        \[
-        1 x(t) = x(t).
-        \]
-    \end{itemize}
-    \item Now, note that above we defined $\zerovec\in S$ to be the zero function 0. That is, the function that is 0 for every value of $t$. Note that $0$ is a solution to the equation since
-    \[
-    0'' + f(t)\cdot 0' + g(t) 0 = 0.
-    \]
-    Then, we have $1\in \C$ that satisfies the necessary property to. In this case, 1 is literally the unit element we care about.  
-    
-    \begin{remark} 
-        Not all vector spaces will have such obvious neutral elements, $\zerovec$, or unit elements $1$.  This is why we must be a bit careful at times.
-    \end{remark}
-    \item Now, the biggest requirement for a vector space is that linear combinations of vectors actually produce another vector. This is quite obvious in the plane $\R^2$ for example, but here, it is not necessarily obvious.  
-    
-    Now, we take $\alpha,\beta \in \C$ and $x(t),y(t)\in S$ and we consider the linear combination
-    \[
-    z(t) = \alpha x(t) + \beta y(t).
-    \]
-    We then wish to show that this linear combination (or superposition) is a solution as well. So we plug in $z(t)$ into our equation as follows
-    \begin{align*}
-        z''(t)+f(t)z'(t)+g(t)z(t)&= (\alpha x''(t) + \beta y''(t))+f(t)(\alpha x'(t) + \beta y'(t))+g(t)(\alpha x(t)+\beta y(t))\\
-        &= \alpha \left[x''(t)+f(t)x'(t)+g(t)x(t)\right] + \beta \left[ y''(t)+f(t)y'(t)+g(t)y(t)\right]\\
-        &=0,
-    \end{align*}
-    since we knew that $x(t)$ and $y(t)$ themselves are solutions. Thus, $z(t)$ is as well and now we have that $S$ is a vector space.
+    \item The plot for $\rhohat$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{rho_hat.png}
+    \end{figure}
+    \item The plot for $\thetahat$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{theta_hat.png}
+    \end{figure}
+    \item The plot for $\zhat$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{z_hat.png}
+    \end{figure}        
 \end{enumerate}
+
 \end{solution}
 
 \newpage
 \begin{problem}
-Consider the following vectors in the real plane $\R^2$. We let
+Consider the following vector field
 \[
-\vecu = 1\xhat + 2\yhat \qquad \textrm{and} \qquad \vecv = -3\xhat+ 3\yhat.
+\vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat.
 \]
+Here, $\vecfieldB$ denotes the magnetic field. It may be helpful to plot the fields in this problem.
 \begin{enumerate}[(a)]
-    \item Draw both $\vecu$ and $\vecv$ in the plane and label the origin.
-    \item Draw the vector $\vecw = \vecu+\vecv$ in the plane.
-    \item Find the area of the parallelogram generated by $\vecu$ and $\vecv$.
-\end{enumerate}
-\end{problem}
-\begin{solution}
-\begin{enumerate}[(a)]
-    \item See the plane below.
-    \item Both (a) and (b) are in the plane here:
-    \begin{center}
-        \begin{tikzpicture}
-        \draw[thin,gray!40] (-3,-3) grid (5,5);
-        \draw[<->] (-3,0)--(5,0) node[right]{$x$};
-        \draw[<->] (0,-3)--(0,5) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(1,2) node[anchor=west] at (1,2){$\vecu$};
-        \draw[line width=2pt, red, -stealth](0,0)--(-3,3) node[anchor=north] at (-3,3){$\vecv$};
-        \draw[line width=2pt, green, -stealth](0,0)--(-2,5) node[anchor=west] at (-2,5){$\vecu+\vecv$};
-        \end{tikzpicture}
-        \end{center}
-        \item One could compute the area of the parallelogram generated by $\vecu$ and $\vecv$ in many ways. First, let us see what this looks like:
-            \begin{center}
-        \begin{tikzpicture}
-        \draw[thin,gray!40] (-3,-3) grid (5,5);
-        \draw[<->] (-3,0)--(5,0) node[right]{$x$};
-        \draw[<->] (0,-3)--(0,5) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(1,2) node[anchor=west] at (1,2){$\vecu$};
-        \draw[line width=2pt, red, -stealth](0,0)--(-3,3) node[anchor=north] at (-3,3){$\vecv$};
-        \draw[line width=2pt, blue, -stealth](-3,3)--(-2,5) node[anchor=west] at (-2,5){};
-        \draw[line width=2pt, red, -stealth](1,2)--(-2,5) node[anchor=west] at (-2,5){};
-        \end{tikzpicture}
-        \end{center}
-        In order to compute this area, we can use the cross product by thinking of these vectors as being in $3$-dimensional space by
-        \[
-        \vecu = 1\xhat + 2\yhat + 0\zhat \qquad \textrm{and} \qquad \vecv = -3\xhat +3\yhat + 0\zhat.
-        \]
-        Then the cross product of these two vectors must only have a $z$-component since these two vectors lie in the $xy-$plane. Thus, we can compute
-        \begin{align*}
-            \vecu \times \vecv = (1\cdot 3 - (-3)\cdot2)\zhat = 9\zhat.
-        \end{align*}
-        Hence, the area is $\|\vecu\times \vecv\| = \|9\zhat \| = 9.$
-\end{enumerate}
-\end{solution}
-
-\newpage
-\begin{problem}~
-\begin{enumerate}[(a)]
-    \item We can reflect a vector in the plane by first reflecting basis vectors. Let $R\colon \R^2 \to \R^2$ be a function be defined by 
+    \item Show that $\grad \times \vecfieldB = \vecfieldJ$ (Amp\'ere's law) where 
     \[
-    R(\xhat) = -\xhat \qquad \textrm{and} \qquad R(\yhat)=\yhat.
+    \vecfieldJ = \zhat.
     \]
-    Let $\vecv = \alpha_1 \xhat + \alpha_2 \yhat$ and define
+    This vector field $\vecfieldJ$ represents the electric current (moving charges) in space. One could argue that the current creates the magnetic field via Amp\'ere's law.
+    \item Magnetic fields induce a force $\vecfieldF$ on charged particles by the Lorentz force
     \[
-    R(\vecv) = \alpha_1 R(\xhat) + \alpha_2 R(\yhat).
+    \vecfieldF = \tangentgamma \times \vecfieldB = \normalgamma
     \]
-    When this is the case, we call the function $T$ \underline{linear}.\\
-    \noindent Show that $R$ reflects the vector $\vecu = 1\xhat + 2\yhat$ about the $y$-axis and draw a picture.
-    \item We can rotate a vector in the plane by first rotating the basis vectors $\xhat$ and $\yhat$. Define a \underline{linear} function $T\colon \R^2 \to \R^2$ defined by
-    \[
-    T(\xhat)=\yhat \qquad \textrm{and} \qquad T(\yhat)=-\xhat.
-    \]
-    \noindent Show that $T$ rotates $\vecu$ by $\pi/2$ in the counterclockwise direction and draw a picture.
+    Where $\tangentgamma$ is the velocity of the particle (where we have chosen a mass $m=1$ and charge $q=1$).  Let us do the following.
+    \begin{itemize}
+        \item Assume that $\tangentgamma = \xhat$, what is the force on the particle?
+        \item Repeat the previous step for $\tangentgamma=\yhat$ and $\tangentgamma=\zhat$. 
+        \item Compare and contrast the forces you found.
+    \end{itemize}
+    \item Can you argue why applying a magnetic field to a molecule may cause it to heat up? Can you compare this idea with your home microwave? (Please don't put anything dangerous in your microwave due to this discovery!)
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item So, we can take the vector $\vecu$ and then we have
-    \[
-    R(\vecu)=1R(\xhat)+2R(\yhat) = -1\xhat +2\yhat.
-    \]
-    So we can plot both $\vecu$ and $R(\vecu)$ in the plane:
-        \begin{center}
-        \begin{tikzpicture}
-        \draw[thin,gray!40] (-3,-3) grid (3,3);
-        \draw[<->] (-3,0)--(3,0) node[right]{$x$};
-        \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(1,2) node[anchor=west] at (1,2){$\vecu$};
-        \draw[line width=2pt, red, -stealth](0,0)--(-1,2) node[anchor=east] at (-1,2){$R(\vecu)$};
-        \end{tikzpicture}
-        \end{center}
-        We can see that this is definitely the reflection of the vector $\vecu$ across the $y$-axis.
-    \item We can now do this for the function $T$ to get
-    \[
-    T(\vecu) = 1T(\xhat)+2T(\yhat)=1\yhat -2\xhat.
-    \]
-    Then we can plot both $\vecu$ and $T(\vecu)$ in the plane:
-        \begin{center}
-        \begin{tikzpicture}
-        \draw[thin,gray!40] (-3,-3) grid (3,3);
-        \draw[<->] (-3,0)--(3,0) node[right]{$x$};
-        \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(1,2) node[anchor=west] at (1,2){$\vecu$};
-        \draw[line width=2pt, red, -stealth](0,0)--(-2,1) node[anchor=east] at (-2,1){$T(\vecu)$};
-        \end{tikzpicture}
-        \end{center}
-        We can see that this is definitely the rotation  of the vector $\vecu$ an angle of $\pi/2$ in the counter-clockwise direction.
+    \item We have
+    \begin{align*}
+        \begin{pmatrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \\ \frac{\partial}{\partial z} \end{pmatrix} \times \begin{pmatrix} \frac{-y}{2} \\ \frac{x}{2} \\ 0 \end{pmatrix} &= \begin{pmatrix} 0 \\ 0 \\   \frac{\partial}{\partial x} \frac{x}{2} - \frac{\partial}{\partial y} \frac{-y}{2} \end{pmatrix} \\
+                &= \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\\
+                &= \zhat.
+    \end{align*}
+    \item We will look at the case for the three different tangent vectors.
+    \begin{itemize} 
+        \item If $\tangentgamma = \xhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = \frac{x}{2}\zhat.
+        \]
+        \item If $\tangentgamma = \yhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = \frac{y}{2} \zhat.
+        \]
+        \item Finally, if $\tangentgamma =\zhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = -\frac{y}{2}\yhat -\frac{x}{2}\xhat.
+        \]
+    \end{itemize}
+    Note that if $\tangentgamma$ is in the $x$- or $y$-direction, we get a force that is aligned in the $z$-direction.  When $\tangentgamma$ is in the $z$-direction, then the forces are in the $x$- and $y$-direction. Moreover, the forces that align in the $z$-direction will cause the particle to move away indefinitely in the $z$-direction whereas when the force is in the $x$- or $y$-direction, we will have a force that causes the particle to oscillate.
+    
+    \item If we apply a magnetic field to charged particles, the particles undergo forces. By giving particles more energy of motion, we are heating them up.  If we apply the correct kind of magnetic field, it is conceivable that we would simply causes a particle to vibrate with more intensity.
 \end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-Consider the following vectors in space $\R^3$
-\[
-\vecu = 1\xhat + 2\yhat + 3\zhat \qquad \textrm{and} \qquad \vecv = -2\xhat +1\yhat -2\zhat.
-\]
+Let us see some of the usefulness of cylindrical coordinates.
 \begin{enumerate}[(a)]
-    \item Compute the dot product $\vecu\cdot \vecv$. 
-    \item Compute the cross product $\vecu \times \vecv$.
-    \item \textbf{(Experimental)} Let us try this: Take
-    \begin{align*}
-        \vecu \vecv &= (1\xhat + 2\yhat + 3\zhat)(-2\xhat + 1\yhat -2\zhat).
-    \end{align*}
-    Distribute the above multiplication.
-    \item \textbf{(Experimental)} Now, in the above multiplication, adopt the following rules:
-    \begin{align*}
-        \xhat \xhat = \yhat \yhat = \zhat \zhat &= 1 &&&
-        \xhat \yhat &= - \yhat \xhat &&& \xhat \zhat &= - \zhat \xhat &&& \yhat \zhat &= -\zhat \yhat.
-    \end{align*}
-    Then, simplify the multiplication in part (c) to
-    \[
-    \vecu\vecv = \alpha + \beta_1 \yhat\zhat  \ + \beta_2 \zhat \xhat + \beta_3 \xhat \yhat. 
-    \]
-    That is, what are $\alpha$, $\beta_1$, $\beta_2$, and $\beta_3$?
-    \item \textbf{(Experimental)} If we perform one more step, we will notice something quite nice.  Note that the pairs of vectors above define a plane, and there is a unique vector perpendicular to that plane.  Using this fact, we can let 
-    \[
-    \yhat \zhat = \xhat \qquad \zhat \xhat = \yhat \qquad \xhat \yhat = \zhat.
-    \]
-    In other words, we can replace the two vectors above with their cross product, (i.e., $\yhat \zhat = \yhat \times \zhat = \xhat$.) Show that with these rules
-    \[
-    \vecu \vecv = \vecu\cdot \vecv + \vecu \times \vecv.
-    \]
+    \item Using the fact that $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$, convert the magnetic field from Problem 2 into Cylindrical coordinates (i.e., only a function of $\rho$, $\theta$, $z$, and $\rhohat$, $\thetahat$, and $\zhat$).  
+        \item Parameterize a curve $\curvegamma(t)$ that traces out the unit circle in the $xy$-plane in cylindrical coordinates.
+        \item What is the tangent vector $\tangentgamma(t)$ in terms of $\rhohat$, $\thetahat$, and $\zhat$?
+        \item Compute the following integral using cylindrical coordinates that we have found:
+        \[
+        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma
+        \]
+        \item Using cylindrical coordinates, compare your result with
+        \[
+        \iint_\Sigma \left(\grad \times \vecfieldB\right) \cdot \unitvec d\Sigma,
+        \]
+        where $\Sigma$ is the unit disk.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
     \item We have that
-    \begin{align*}
-        \vecu \cdot \vecv &= 1\cdot (-2) + 2 \cdot 1 + 3 \cdot (-3)\\
-        &= -6.
-    \end{align*}
-    \item Here, feel free to use a formula for a cross product instead of writing it all out.  We will find that
-    \begin{align*}
-        \vecu \times \vecv &= -7\xhat -4\yhat +5\zhat.
-    \end{align*}
-    \item Note, I put experimental in these following parts as they are \underline{not} the traditional way of teaching these topics. However, I think this methodogology gives a more intuitive notion of vectors than the traditional dot and cross products.
-    
-    So we have
-    \begin{align*}
-        \vecu \vecv &= (1\xhat + 2\yhat +3\zhat)(-2\xhat +1\yhat -2\zhat)\\
-        &= -2\xhat\xhat + 1 \xhat \yhat - 2\xhat \zhat \\
-        &~ + -4\yhat \xhat + 2\yhat \yhat -4\yhat \zhat \\
-        &~ + -6\zhat \xhat +3\zhat \yhat -6\zhat \zhat.
-    \end{align*}
-    \item Now, we can use the rules to find that we get
-    \begin{align*}
-        \vecu\vecv &= (-2 +2 - 6) + (-4-3)\yhat \zhat + (-6+2)\zhat \xhat + (1+4)\xhat \yhat\\
-        &= -6  -7 \yhat \zhat - 4\zhat \xhat +5 \xhat \yhat.
-    \end{align*}
-    Hence, we have $\alpha = -6$, $\beta_1 = -7$, $\beta_2=-4$, $\beta_3 = 5$.
-    
-    Here we can imagine that there are units attached to the quantities $\xhat$, $\yhat$, and $\zhat$.  There is a scalar quantity which contains none of these unit vectors, and there are quantities which contain two (i.e., $\xhat\yhat$).  The quantities containing two unit vectors represent the plane given by the two vectors.
-    \item Now, we can identify a unit vector perpendicular to a plane in $\R^3$ that satisfies the right hand rule given by the cross product.  In which case, we replace the above ``multivectors" (i.e., $\xhat\yhat$) with the unique unit vector perpendicular to the two.  So we have
     \[
-    \vecu \vecv = -6 -7\xhat -4\yhat +5\zhat,
+    \vecfieldB = -\frac{y}{2} \xhat + \frac{x}{2}\yhat.
     \]
-    which is indeed giving us that
+    Then, note that we have
+    \begin{align*}
+        \vecfieldB &= \frac{1}{2}\sqrt{x^2+y^2} \left( \frac{-y}{\sqrt{x^2+y^2}} \xhat + \frac{x}{\sqrt{x^2+y^2}} \right)\\
+        &=\frac{1}{2} \sqrt{x^2+y^2} \thetahat.
+    \end{align*}
+    Finally, we have that $\rho = \sqrt{x^2+y^2}$ and hence
     \[
-    \vecu \vecv = \vecu\cdot \vecv + \vecu \times \vecv.
+    \vecfieldB = \frac{\rho}{2} \thetahat.
     \]
+    \item It suffices to find functions $\rho(t)$, $\theta(t)$, and $z(t)$ to create the curve
+    \[
+    \curvegamma(t) = \rho(t) \rhohat + \theta(t) \thetahat + z(t) \zhat.
+    \]
+    Note that for a circle centered along the $z$-axis, we have that $\rho$ is constant and in this case since we are considering the unit circle, we have $\rho(t)=1$.  Similarly, we want the circle to lie in the $xy$-plane where $z=0$, hence we must have $z(t)=0$.  Finally, we must trace the whole unit circle so we must have $\theta$ cover all of $[0,2\pi)$. One choice is to have $\theta(t)=t$ for $t\in[0,2\pi)$, but there are many other options! Using these choices, we have
+    \[
+    \curvegamma(t) = \rhohat + t \thetahat.
+    \]
+    \item Then, we have the tangent vector $\tangentgamma = \frac{d\curvegamma}{dt}$ and thus
+    \[
+    \tangentgamma(t) = \thetahat.
+    \]
+    \item Note that from the above work we have
+    \[
+    d \curvegamma = \tangentgamma dt = \thetahat dt.
+    \]
+    Thus, 
+    \[
+    \vecfieldB \cdot \tangentgamma = \frac{\rho}{2}.
+    \]
+    This gives us that
+    \begin{align*}
+        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma &= \int_0^{2\pi} \frac{\rho(t)}{2}dt\\
+        &=\int_0^{2\pi} \frac{1}{2} dt\\
+        &= \pi.
+    \end{align*}
+    Above, we can note that $\rho(t)=1$ since we are integrating along the unit circle in the $xy$-plane.
+    \item We had computed $\grad \times \vecfieldB = \zhat$ earlier.  Then, the unit disk has the normal vector $\unitvec=\zhat$ and thus
+    \[
+    \left( \grad \times \vecfieldB \right) \cdot \unitvec = 1.
+    \]
+    Now we have
+    \[
+    \iint_{\Sigma} \left( \grad \times \vecfieldB \right) \cdot \unitvec d\Sigma = \iint_{\Sigma} d\Sigma,
+    \]
+    which is equal to the area of the unit disk.  So, we don't even need to compute the integral by finding bounds and since we know the area of the unit circle is $\pi$.  It follows that
+    \[
+    \pi = \iint_{\Sigma} \left( \grad \times \vecfieldB \right) = \int_{\curvegamma} \vecfieldB \cdot d\curvegamma.
+    \]
+    Indeed, the two integrals are equal (possibly up to a sign depending on your work). 
 \end{enumerate}
-
-\begin{remark}
-This all falls under the mathematics of \emph{geometric algebra} which is a more general way of understanding vectors.  It is rather useful, yet it is not quite mainstream.  Maybe one day it will be!
-\end{remark}
-
 \end{solution}
 
 \newpage
 \begin{problem}
-Consider the same vectors $\vecu,\vecv\in \R^3$ from Problem 4.  
-\begin{enumerate}[(a)]
-    \item Compute the lengths $\|\vecu\|$ and $\|\vecv\|$ using the dot product.
-    \item Compute the angle between vectors $\vecu$ and $\vecv$. \emph{Hint: Save some work and use results from Problem 4.}
-    \item Compute the projection of $\vecu$ in the direction of $\vecv$. \emph{Hint: Again, save yourself some time and use results from Problem 4.}
-\end{enumerate}
+    Convert the following integrals to integrals in cylindrical coordinates. Also, describe the region in which you are integrating over. Do not evaluate the integrals.
+    \begin{enumerate}[(a)]
+        \item $\displaystyle{\int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz}$.
+        \item $\displaystyle{\int_0^1 \int_{-z}^z \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}} x^2+y^2+z^2 dxdydz}$.
+    \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item Note that we have
+    \item First, let us convert the integrand to cylindrical coordinates. We have
     \[
-    \|\vecu \| = \sqrt{ \vecu \cdot \vecu}
+    xyz = \rho \cos (\theta) \rho \sin(\theta) z = \rho^2 \cos(\theta)\sin(\theta)z.
     \]
-    and so we have
+    Now, as for the bounds to the integral, we are letting
     \[
-    \|\vecu \| = \sqrt{1^2+2^2+3^2} = \sqrt{14}.
+    -\sqrt{1-y^2}\leq x \leq \sqrt{1-y^2}.
     \]
-    Similarly,
+    If we square the above equation, we get
     \[
-    \|\vecv\| = \sqrt{(-2)^2+1^2+(-2)^2} = \sqrt{9}=3.
+    1-y^2 \leq x^2 \leq 1-y^2,
     \]
-    \item Now, we found $\vecu\cdot \vecv = -6$ and we have
+    which means that
     \[
-    \vecu \cdot \vecv = \|\vecu\|\|\vecv \| \cos \theta
+    x^2+y^2 =1.
     \]
-    as well. Hence, it follows that
+    This is the implicit equation for the unit circle in the $xy$-plane.  So, if we then let $y$ range from $-1$ to $1$, we must be integrating over the unit disk in the $xy$-plane.  Then, we have $-1\leq z\leq 1$, so it must be that we are integrating over a cylindrical region.  So, to convert the whole integral to cylindrical coordinates, we note that
+    \[
+    dxdydz = \rho d\rho d\theta dz,
+    \]
+    and thus
+    \[
+    \int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz = \int_{-1}^1 \int_{0}^{2\pi} \int_{0}^1 \rho^3 \cos(\theta)\sin(\theta)z d\rho d\theta dz.
+    \]
+    \item The intuition from (a) can help us here. We can note
+    \[
+    x^2+y^2+z^2 = \rho^2+z^2
+    \]
+    and as always
+    \[
+    dx\,dy\,dz = \rho \, d\rho \, d\theta \, dz.
+    \]
+    The bounds for $x$ and $y$ are similar to (a), except that we have that the radius of the circle depends on $z$ and is not just fixed at 1 since we can repeat the work above to get
     \begin{align*}
-        \theta &= \arccos\left(\frac{\vecu \cdot \vecv}{\|\vecu\|\|\vecv\|}\right)\\
-        &= \arccos\left(\frac{-6}{\sqrt{14}\cdot 3}\right)\\
-        &\approx  2.1347 \approx 122.3^\circ.
+        -\sqrt{z^2-y^2}\leq &x \leq \sqrt{z^2-y^2} \\
+        \implies ~ x^2&= z^2-y^2 \\
+        \implies ~ x^2+y^2-z^2=0,
     \end{align*}
-    \item To compute this projection of $\vecu$ onto the direction of $\vecv$, we must first normalize $\vecv$ to make $\boldsymbol{\hat{v}}$. We have
+    which is the implicit equation for a double cone. Thus, we have that we are integrating over just a part of this double cone! In cylindrical coordinates, this gives us that $\rho^2=z^2$ and that $z=\pm\rho$. However, we require $0\leq z \leq 0$, so $\rho=z$.  Thus, our integral then becomes
     \[
-    \boldsymbol{\hat{v}} = \frac{\vecv}{\|\vecv\|} = -\frac{2}{3}\xhat + \frac{1}{3}\yhat - \frac{2}{3}\zhat.
+    \int_0^1 \int_{-z}^z \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}} x^2+y^2+z^2 dx\,dy\,dz = \int_{0}^1 \int_0^{2\pi} \int_{0}^z \left(\rho^2 + z^2 \right) \rho \, d\rho \, d \theta\, dz. 
     \]
-    Then we can compute the projection by
-    \begin{align*}
-        (\vecu \cdot \boldsymbol{\hat{v}})\boldsymbol{\hat{v}}&= \left((\xhat + 2\yhat + 3\zhat ) \cdot \left( -\frac{2}{3}\xhat + \frac{1}{3}\yhat - \frac{2}{3}\zhat\right)\right) \boldsymbol{\hat{v}} \\
-        &= 2\boldsymbol{\hat{v}}.
-    \end{align*}
-    You could also just compute
+    
+    \end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+	In spherical coordinates (either implicitly or explicitly), parameterize the following objects.
+	\begin{enumerate}[(a)]
+		\item A solid sphere with radius 3.
+		\item The surface of an infinite cone with a vertex angle of $\pi/4$.
+		\item A latitudinal curve on the unit sphere at the latitude of 30$^\circ$ above the equator.
+		\item A solid unit sphere with a cylinder of radius 1/2 removed from the core.
+	\end{enumerate}
+\end{problem}
+ \begin{solution} ~
+ \begin{enumerate}[(a)]
+    \item In this case, it's easiest to just take $0\leq r \leq 3$, $0\leq \theta < 2\pi$ and $0\leq \phi \leq \pi$.  
+    \item Here, we let $\phi=\frac{\pi}{8}$ so that the vertex angle is $\frac{\pi}{4}$.  Then we let $r\in [0,\infty)$ and $\theta \in [0,2\pi)$.
+    \item We can write this in spherical coordinates by noting that 30$^\circ$ is $\frac{\pi}{6}$ and that we can get $\phi(t)$ must be constant and indeed 
     \[
-    \frac{\vecu \cdot \vecv}{\|\vecv\|^2}\vecv
+    \phi(t) = \frac{\pi}{2}-\frac{\pi}{6}=\frac{\pi}{3}.
     \]
-    and get the same answer.
-\end{enumerate}
+    Then, since the curve is on the unit sphere, it must be that $r(t)=1$ and finally we have freedom to choose $\theta(t)$ so long as $\theta$ runs over the range $[0,2\pi)$. Most easily is to take $\theta(t)=t$ and $t\in [0,2\pi)$ to get the curve
+    \[
+    \curvegamma(t) = \rhat + t \thetahat +\frac{\pi}{3} \phihat.
+    \]
+    \item Recall that a cylinder of radius $\frac{1}{2}$ has the equation
+    \[
+    x^2+y^2=\frac{1}{4}.
+    \]
+    The unit sphere is given by $r\leq 1$ with $\theta \in [0,2\pi)$ and $\phi \in [0,\pi]$. However, one can see that for this object to be properly parameterized, we need that $r$ depends on $\phi$.  Drawing from a side profile can lead one to find that we must always have the small value for $r$ is
+    \[
+    r_{\textrm{min}} \sin \phi = \frac{1}{2}
+    \]
+    Then, it must be that at smallest $\phi = \frac{\pi}{6}$ since when $r=1$ we have $\phi = \arcsin(1/2) = \frac{\pi}{6}$.  So, the description is given by $\phi \in [\pi/6, 5\pi/6]$ with $\frac{1}{2\sin \phi} \leq r \leq 1$ and $\theta \in [0,2\pi)$.
+ \end{enumerate}
 \end{solution}
 \end{document}

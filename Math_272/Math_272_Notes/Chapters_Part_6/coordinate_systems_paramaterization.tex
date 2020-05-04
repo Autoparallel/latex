@@ -1,3 +1,33 @@
+    The real world is composed of geometrical objects and our models for physics, chemistry, and biology rely heavily on utilizing them.  But, how can one describe certain objects such as a sphere, a donut, or a helical curve?  We have seen these types of surfaces arise in a few ways, but we need something that provides us a more pragmatic approach to constructing such objects. The two means we will look at in this chapter are that of \boldgreen{implicit} and \boldgreen{explicit parameterizations}. First and foremost, a \boldgreen{parameterization} is a means in which one can describe a geometrical object via variables.  For example, one could describe the unit sphere as the level set to $x^2+y^2+z^2=1$ or one could describe a parabaloid via the graph of the function $z=x^2+y^2$. The former is an example of an implicit paramaterization while the latter is explicit. Let's briefly discuss the differences between these approaches.
+    
+    Let us now consider surfaces in $\R^3$ as the prototypical example for a need for providing a parameterization.  To be a bit more precise, a surface is a 2-dimensional membrane that lives inside of space.  It is not a bad idea to picture a sphere, a donut, or a wiggly sheet of rubber. In general, an implicit parameterization of a surface is given by a list of equations of functions of more than two variables.  For example, if we consider
+    \[
+    f(x,y,z) = x^2+y^2+z^2,
+    \]
+    then we take
+    \[
+    f(x,y,z) = 1,
+    \]
+    this gives us a spherical surface.  Notice how $f(x,y,z)$ depends on three variables, and setting this equation equal to a constant gives us a surface.  There is a far more general approach where we may consider a list of functions $f_1(x_1,x_2,\dots,x_n)$, $f_2(x_1,x_2,\dots,x_n)$, $\dots$, $f_m(x_1,x_2,\dots,x_n)$ where we set each of these functions equal to a constant. For example,
+    \begin{align*}
+        f_1(x_1,x_2,\dots,x_n) &= c_1\\
+        f_2(x_1,x_2,\dots,x_n) &= c_2\\
+        &\vdots\\
+        f_m(x_1,x_2,\dots,x_n) &= c_m.
+    \end{align*}
+    However, we will not need such abstraction.
+    
+    In the explicit case, we provide a different perspective.  Namely, we seek to describe the two dimensional membrane using two variables $u$ and $v$, and we take the functions $x(u,v)$, $y(u,v)$, and $z(u,v)$ to describe the points in space that live on this surface.  That is, if $u\in [u_0,u_1]$ and $v\in [v_0,v_1]$, then a surface can be described by the set of points
+    \[
+    (x(u,v),y(u,v),z(u,v)).
+    \]
+    This description is a bit more abstract than we wish.  For us, we will take surfaces to be broken up into graphs.  For example, we could take the surface given by the points
+    \[
+    (x,y,f(x,y)),
+    \]
+    where $f(x,y)=x^2+y^2$ to receive the parabaloid surface.  Notice that here we have swapped $u$ and $v$ for $x$ and $y$ since we are able to construct this as a graph. Graphs are simply the nicest examples of explicit surfaces.
+
+
 \section{Implicit  surfaces}
                 In the planar case, we would often have to specify a set of points by providing an equation
                 \[
@@ -661,16 +691,281 @@ f(\rho,\theta,z),
 \]
 and a vector field by
 \[
-\vecfieldV(\rho,\theta,z) =  x(\rho,\theta,z)\xhat + y(\rho,\theta,z)\yhat + z(\rho,\theta,z)\zhat.
+\vecfieldV(\rho,\theta,z) =  V_1(\rho,\theta,z)\xhat + V_2(\rho,\theta,z)\yhat + V_3(\rho,\theta,z)\zhat.
+\]
+Or, indeed,
+\[
+\vecfieldV(\rho,\theta,z) = V_1(\rho,\theta,z) \rhohat + V_2(\rho,\theta,z) \thetahat + V_3(\rho,\theta,z)\zhat.
 \]
 Perhaps it is confusing to see what we are describing in the case of the curve and vector field.  
 
-For the curve $\curvegamma(t)$ in cylindrical coordinates, we will describe how the coordinates $\rho$, $\theta$, and $z$ change with respect to the variable $t$.  But, for a vector field $\vecfieldV(\rho,\theta,z)$, we will see how the $x$, $y$, and $z$ components of the vector field depend on $\rho$, $\theta$, and $z$.  One could generate new basis vectors $\boldsymbol{\hat{\rho}}$, $\boldsymbol{\hat{\theta}}$, and $\boldsymbol{\hat{z}}$, but we will not be doing that. In fact, these basis vectors will depend on the position in space (which makes them quite a bit harder to work with). Instead, we will find the above descriptions more than adequate.
+For the curve $\curvegamma(t)$ in cylindrical coordinates, we will describe how the coordinates $\rho$, $\theta$, and $z$ change with respect to the variable $t$.  But, for a vector field $\vecfieldV(\rho,\theta,z)$, we will see how the $x$, $y$, and $z$ components of the vector field depend on $\rho$, $\theta$, and $z$.  One could generate new basis vectors $\boldsymbol{\hat{\rho}}$, $\boldsymbol{\hat{\theta}}$, and $\boldsymbol{\hat{z}}$, but we will get to this in a bit. The key point of using new coordinates is to simplify expressions that are not well suited for the Cartesian coordinate system.  Let's take an example.
+
+\begin{ex}{A Cylindrical Curve}{cylindrical_curve}
+    Take for example the following curve in space
+    \[
+    \curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \\ 0 \end{pmatrix} = \cos(t)\xhat + \sin(t)\yhat.
+    \]
+    We have seen this curve before, and it parameterizes the unit circle in the plane.  However, the description of this curve can be drastically simplified.  Notice that the unit circle satisfies $\rho(t)=1$ since the distance from the $z$-axis never changes over time.  Also, one can see that $\theta(t)=t$, since $\theta$ changes constantly over time.  Specifically, we notice that we complete a full revolution when $t=2\pi$.
+    
+    Recall that $x=\cos(\theta)$ and $y=\sin(\theta)$, and for a curve in Cartesian coordinates we provide
+    \[
+    x(t), \quad y(t), \quad z(t).
+    \]
+    Since $x(t)=\rho(t)\cos(\theta(t))$ and $y(t)=\rho(t)\sin(\theta(t))$, we can see that we must have $\rho(t)=1$ $\theta=t$. Lastly, $z(t)=0$, which does not change under these new coordinates.  So, one could write the curve in cylindrical coordinates as
+    \[
+    \curvegamma(t) = \begin{pmatrix} 1 \\ t \\ 0 \end{pmatrix},
+    \]
+    which is considerably more simple.  
+\end{ex}
+
+In the previous example, we wrote
+\[
+\curvegamma(t) = \begin{pmatrix} 1 \\ t \\ 0 \end{pmatrix},
+\]
+which through context specifies $\rho(t)=1$, $\theta(t)=t$, and $z(t)=0$.  But, we have written this as a vector, and thus we should be considering some basis vectors in which this is inherently using.  It turns out that we can put
+\[
+\curvegamma(t) = 1\rhohat + t \thetahat + 0\zhat,
+\]
+where $\rhohat$ and $\thetahat$ are the cylindrical unit vector(fields).  Again, we will discuss these vectors in a bit.
+
+\begin{ex}{A Cylindrical Scalar Field}{cylindrical_scalar_field}
+    Consider the scalar field
+    \[
+    f(x,y,z) = \frac{z}{\sqrt{x^2+y^2}}.
+    \]
+    One can claim that this scalar field is much more natural in cylindrical coordinates.  Let's see why that is.  Recall that $x=\rho\cos(\theta)$ and $y=\sin(\theta)$, and hence if we plug these substitutions into the field, we get
+    \[
+    f(\rho,\theta,z) = \frac{z}{\sqrt{\rho^2 \cos^2(\theta) + \rho^2 \sin^2(\theta)}} = \frac{z}{\rho}.
+    \]
+    Thus, this field is really just coming from a ratio of $z$ to $\rho$.  In Cartesian coordinates, this is not as clear.
+\end{ex}
+
+Though the scalar field example may seem somewhat contrived, it is not so.  Indeed, there are many descriptions of our world that are actually described most easily using this coordinate system from the beginning.  For example, if one has a constantly charged wire aligned with the $z$-axis (which you could always choose the axis of alignment), then the strength of this field would fall off according to a function of just $\rho$.  Hence, the cylindrical description is not only adequate, but it is natural.
+
+\subsection{Cylindrical Unit Vector Fields}
+
+In Cartesian coordinates, we took the basis vectors to be $\xhat$, $\yhat$, and $\zhat$. At any point in space, we chose to use this same basis in order to describe curves and vector fields. In principle, however, one does not have to choose the same basis vectors at each point in space!  Thinking this way is new, but it is important.  
+
+Recall that if we are given a point in space in cylindrical coordinates, that we can convert this back to Cartesian coordinates via
+\begin{align*}
+\rho(x,y,z) &= \sqrt{x^2+y^2}\\
+\theta(x,y,z) &= \arctan\left(\frac{y}{x}\right) ~\textrm{if $x>0$}, \\
+\theta(x,y,z) &= \arctan\left(\frac{y}{x}\right) + \pi ~\textrm{if $x<0$},\\
+z(x,y,z) &= z.
+\end{align*}
+As we've written above, we can think of each of these as scalar fields of $x$, $y$, and $z$.  That is, for example, we took $\rho(x,y,z)=\sqrt{x^2+y^2}$.  From this perspective, we can generate new vector fields by taking the gradient of these coordinate functions.  For example,
+\[
+\grad \rho(x,y,z) = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat.  
+\]
+Note that this vector field is normalized since
+\[
+\left|\grad \rho(x,y,z)\right| = 1,
+\]
+at every point in space.  Thus, we will refer to this unit vector field as
+\[
+\rhohat(x,y,z) = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat.
+\]
+This vector field points away from the $z$-axis in the direction of increasing $\rho$ at every point in space!
+
+Likewise, we can compute the other unit vectors
+\[
+\thetahat(x,y,z) = \frac{\grad \theta}{\left| \grad \theta \right|} = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat.
+\]
+and
+\[
+\zhat(x,y,z) = \zhat.
+\]
+Notice that $\zhat$ is constant much like we found $\xhat$ and $\yhat$ to be constant in Cartesian coordinates.
+
+\begin{exercise}
+    Compute the vector fields above. Then, plot those vector fields.
+\end{exercise}
+
+A primary concern for the basis vectors $\xhat$, $\yhat$, and $\zhat$ was that these vector fields were orthonormal at every point. This meant that we could decompose vectors into this basis very nicely.  It also meant that we could more easily compute a cross product.  The same is true for the vector fields $\rhohat$, $\thetahat$, and $\zhat$.  
+
+\begin{exercise}
+    Show that the vector fields $\rhohat$, $\thetahat$, and $\zhat$ are orthonormal.
+\end{exercise}
+
+\textcolor{red}{insert figure}
+
+These vector fields come into play immediately. For example, we considered the curve given by $\rho(t)=1$, $\theta(t)=t$ and $z(t)=0$ which we wrote as
+\[
+\curvegamma(t) = \begin{pmatrix} 1 \\ t \\ 0 \end{pmatrix}.
+\]
+But, this was really implying that we should write
+\[
+\curvegamma(t) = \rho(t)\rhohat(x(t),y(t),z(t)) + \theta(t)\thetahat(x(t),y(t),z(t))+z(t)\zhat = \rhohat + t\thetahat.
+\]
+Using the substitutions above, we have that
+\[
+x(t) = \rho(t)\cos(\theta(t)) = \cos(t), \quad y(t) = \rho(t)\sin(\theta(t))=\sin(t), \quad z(t)=0,
+\]
+and thus we arrive at
+\[
+\curvegamma(t) = \cos(t)\xhat + \sin(t)\yhat,
+\]
+which was the curve we started with.
+
+\begin{remark}
+It may seem a bit circular to describe quantities in this manner, but it turns out to simplify our expressions quite a bit.
+\end{remark}
+
+Likely the most useful application is to use new orthonormal basis vectors to describe a vector field.  Some vector fields in nature simply seem to align themselves along these cylindrical basis elements.  For example, we saw that a charged wire generated a scalar field that could be described nicely in terms of these coordinates.  One could also find that a charged wire generates a vector field in terms of these coordinates as well. In the next example, we can see a vector field that sits in this coordinate system nicely.  One can interpret this vector field as the magnetic field as being related to one generated by a current carrying wire.
 
 
+\begin{ex}{A Cylindrical Vector Field}{cylindrical_vect_field}
+    Consider the vector field
+    \[
+    \vecfieldV(x,y,z) = \begin{pmatrix} \frac{-y}{x^2+y^2} \\ \frac{x}{x^2+y^2} \\ 0 \end{pmatrix},
+    \]
+    previously.  If one plots this field, you can see that this vector field rotates in the $\theta$-direction. Said another way, this vector field curls around the $z$-axis.  Due to this nature, it may be apt to describe this field not in Cartesian coordinates, but in cylindrical coordinates.  Let us write
+    \[
+    \vecfieldV(x,y,z) = \frac{-y}{x^2+y^2}\xhat + \frac{x}{x^2+y^2}\yhat.
+    \]
+    Now, recall that
+    \[
+    \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat, \qquad \textrm{and} \qquad \rho(x,y,z) = \sqrt{x^2+y^2},
+    \]
+    and we have
+    \[
+    \vecfieldV(\rho,\theta,z) = \frac{1}{\rho} \thetahat.
+    \]
+    Hence, we can see that this vector field rotates in the $\theta$-direction with decreasing magnitude as we move further from the $z$-axis.
+\end{ex}
+
+\begin{exercise}
+    Confirm that the substitution above is correct.
+\end{exercise}
+
+\subsection{Integration in Cylindrical Coordinates}
+
+The next installment of our treatment of the cylindrical coordinate system is to determine how we can integrate functions.  For the same reasoning as before, one may find that using a new coordinate system simplifies the problem at hand.  But, we must be careful in how we set this up.
+
+For a region in space $\Omega$, we used a triple integral to integrate a function over this region.  Specifically, in Cartesian coordinates we would put
+\[
+\iiint_\Omega f d\Omega = \iiint_\Omega f(x,y,z) dxdydz.
+\]
+However, if our function $f$, for example, is a function of $\rho$, $\theta$, and $z$, then we would need to integrate with respect to those variables.  Likewise, we must then be able to describe the region $\Omega$ in these variables as well.  We can make note of the fact that some regions (e.g., a solid cylinder) are more easily described in these coordinates anyway.
+
+We must then determine the \boldgreen{volume form} $d\Omega$ in cylindrical coordinates.  Let us think of the coordinate transformations as functions.  That is, we have $x(\rho,\theta,z)$, $y(\rho,\theta,z)$, and $z(\rho,\theta,z)$.  We can then collect these functions into a single transformation
+\[
+\vecfieldT(\rho,\theta,z) = \begin{pmatrix} x(\rho,\theta,z) \\ y(\rho,\theta,z) \\ z(\rho,\theta,z) \end{pmatrix} = \begin{pmatrix} \rho \cos(\theta) \\ \rho \sin(\theta) \\ z \end{pmatrix}.
+\]
+Then, if we take the Jacobian of this transformation, we have
+\[
+[J]_{\vecfieldT} = \begin{pmatrix} \frac{\partial T_1}{\partial \rho} & \frac{\partial T_1}{\partial \theta} & \frac{\partial T_1}{\partial z} \\ \frac{\partial T_2}{\partial \rho} & \frac{\partial T_2}{\partial \theta} & \frac{\partial T_2}{\partial z} \\ \frac{\partial T_3}{\partial \rho} & \frac{\partial T_3}{\partial \theta} & \frac{\partial T_3}{\partial z}  \end{pmatrix} =  \begin{pmatrix} \cos(\theta) & - \rho \sin(\theta) & 0 \\ \sin(\theta) & \rho \cos(\theta) & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\]
+The Jacobian is then the matrix (for a linear transformation) that tells us how our coordinates $x$, $y$, and $z$ change as we change the variables $\rho$, $\theta$, and $z$ infinitesimally.  Remember, the determinant of a matrix describes the stretching of space caused by the transformation, and here we have
+\[
+\det \left( [J]_{\vecfieldT}\right) = \rho.
+\]
+Intuitively, this tells us that our space is more stretched in these coordinates as we move further out in $\rho$.
+
+\begin{exercise}
+Confirm that the above determinant is correct.
+\end{exercise}
+
+It is a fact that this leads us to the volume form by
+\[
+d\Omega = \left| \det \left([J]_{\vecfieldT}\right)\right|d\rho d\theta dz = \rho d\rho d\theta dz,
+\]
+with the ordering $d\rho d\theta dz$ chosen due to the order of these coordinates that we started with. Thus, in cylindrical coordinates we would find
+\[
+\iiint_\Omega f d\Omega = \iiint_\Omega f(\rho,\theta,z) \rho d\rho d\theta dz.
+\]
+
+We can picture this as follows. \textcolor{red}{insert figure}
+
+\begin{ex}{Integral in Cylindrical Coordinates}{int_cylindrical}
+    Consider the scalar field $f(x,y,z) = \frac{z}{\sqrt{x^2+y^2}}$ over the region $\Omega$ which is the solid cylinder of radius $\rho=1$ centered around the $z$-axis with $z\in [0,5]$. Thus, we also have that $\theta \in [0,2\pi)$. We want,
+    \[
+    \iiint_\Omega f d\Omega.
+    \]
+    We have converted $f(x,y,z)$ into cylindrical coordinates to get $f(x,y,z) = \frac{z}{\rho}$.  This yields the integral
+    \[
+    \int_0^5 \int_0^{2\pi} \int_0^1 \frac{z}{\rho} \rho d\rho d\theta dz.
+    \]
+    We can then compute this integral
+    \begin{align*}
+        \int_0^5 \int_0^{2\pi} \int_0^1 \frac{z}{\rho} \rho d\rho d\theta dz &= \int_0^5 \int_0^{2\pi} \int_0^1 z d\rho d\theta dz \\
+        &= \int_0^5 \int_0^{2\pi} z d\theta dz \\
+        &= \int_0^5 2\pi z dz\\
+        &= \left. \pi z^2 \right|_0^5\\
+        &= 25 \pi.
+    \end{align*}
+    One can notice that we get rid of a pesky $\infty$ in this coordinate system as well.  That is, when $x=y=0$, we have $f(0,0,z)=+\infty$.  But, when it came to integration, this was not even noticed!
+\end{ex}
+
+\begin{exercise}
+    One should challenge themselves to integrate the above function over the same region but in Cartesian coordinates.
+\end{exercise}
+
+\subsection{Derivatives in Cylindrical Coordinates}
+
+In Cartesian coordinates we defined a few notions of derivatives depending on what types of functions (curves, scalar fields, or vector fields) we wanted to analyze.  Not only that, but for vector fields, we saw a few different derivatives such as the Jacobian, divergence, and curl.  Underlying these definitions was the Cartesian coordinate system.  Fundamentally, each coordinate in the Cartesian system was given the same weighting. We can see this by looking at the volume form which was $dxdydz$.  However, in cylindrical coordinates, the volume form has dependence on the current position in space.  Specifically, we saw that the volume form was $\rho d\rho d\theta dz$. 
+
+We will choose now to concentrate on scalar fields and their derivatives.  Recall that given a scalar field in Cartesian coordinates, that we have
+\[
+\grad f(x,y,z) = \begin{pmatrix} \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z} \end{pmatrix} = \frac{\partial f}{\partial x}\xhat + \frac{\partial f}{\partial y}\yhat + \frac{\partial f}{\partial z} \zhat.
+\]
+But, in cylindrical coordinates, will it be as simple?  The answer is no.  Specifically, it's due to the same fact that the area swept out as we change in $\theta$ is given by $\rho d\theta$. So, it is not as simple as just taking partial derivatives. Also, we will have to write the gradient in terms of the cylindrical basis vectors $\rhohat$, $\thetahat$, and $\zhat$.  
+
+By doing some work, one can derive that the gradient in cylindrical coordinates is given by 
+\[
+\grad f(\rho,\theta,z) = \frac{\partial f}{\partial \rho} \rhohat + \frac{1}{\rho} \frac{\partial f}{\partial \theta} \thetahat + \frac{\partial f}{\partial z}\zhat.
+\]
+The major difference is the inclusion of the $1/\rho$ factor in front of the partial derivative with respect to $\theta$. It is important to remember that the gradient of a scalar field is a vector field!
+
+We also discussed the Laplace operator $\Delta$ which was given by
+\[
+\Delta f(x,y,z) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}.
+\]
+Here, the Laplacian of a scalar field is once again a scalar field.  But, seeing as we found the Laplacian as
+\[
+\grad \cdot (\grad f(x,y,z)) = \Delta f(x,y,z),
+\]
+we should expect that the Laplacian in cylindrical coordinates undergoes a change as well.  Indeed, the cylindrical Laplacian is given by
+\[
+\Delta f(\rho,\theta,z) = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho}\right)+\frac{1}{\rho^2} \frac{\partial^2 f}{\partial \theta^2} + \frac{\partial^2 f}{\partial z^2}.
+\]
 
 
 \section{Spherical Coordinates}
 
-\textcolor{red}{Ooh! Exciting.}
-                
+Perhaps one of the most useful coordinate systems is the \boldgreen{spherical coordinates} given by the variables $r$, $\theta$, and $\phi$.  Let us first write the coordinate transformations by
+\begin{align*}
+    x &= r\cos \theta \sin \phi\\
+    y &= r\sin \theta \sin \phi\\
+    z &= r\cos \phi.
+\end{align*}
+The picture to keep in mind with these coordinates is the following.
+
+\begin{figure}[H]
+	\label{fig:spherical_coordinates}
+	\centering
+	\def\svgwidth{0.6\textwidth}
+		\input{Figures_Part_6/3d_spherical_coordinates.pdf_tex}
+		\caption{A diagram of spherical coordinates in $\R^3$.}
+\end{figure}
+
+\subsection{Integration in Spherical Coordinates}
+
+We begin by determining the volume form in spherical coordinates. Take the coordinate transformation
+\[
+\vecfieldT(r,\theta,\phi) = \begin{pmatrix} x(r,\theta,\phi) \\ y(r,\theta,\phi) \\ z(r,\theta,\phi) \end{pmatrix} = \begin{pmatrix} r \cos\theta \sin \phi \\ r \sin \theta \sin \phi \\ r\cos \phi \end{pmatrix}.
+\]
+Then, if we take the Jacobian of this transformation, we have
+\[
+[J]_{\vecfieldT} = \begin{pmatrix} \frac{\partial T_1}{\partial r} & \frac{\partial T_1}{\partial \theta} & \frac{\partial T_1}{\partial \phi} \\ \frac{\partial T_2}{\partial r} & \frac{\partial T_2}{\partial \theta} & \frac{\partial T_2}{\partial \phi} \\ \frac{\partial T_3}{\partial r} & \frac{\partial T_3}{\partial \theta} & \frac{\partial T_3}{\partial \phi}  \end{pmatrix} =  \begin{pmatrix} \cos \theta \sin \phi & -r\sin \theta \sin \phi & r\cos \theta \cos \phi \\ \sin \theta \sin \phi & r\cos \theta \sin \phi & r \sin \theta \cos \phi \\ \cos \phi & 0 & -r\sin \phi \end{pmatrix}
+\]
+The determinant of a matrix describes the stretching of space as our coordinates change in $r$, $\theta$, and $\phi$ to yield
+\[
+\det \left( [J]_{\vecfieldT}\right) = r^2 \sin \phi
+\]
+Thus we arrive at the volume form 
+\[
+d\Omega = r^2 \sin \phi dr d\theta d\phi.
+\]
+

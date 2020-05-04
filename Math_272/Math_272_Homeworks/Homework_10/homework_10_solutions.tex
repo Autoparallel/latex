@@ -5,388 +5,329 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
 
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\veclaplace}{\boldsymbol{\vec{\Delta}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldA}{\boldsymbol{\vec{A}}}
+
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 271, Homework 10, \emph{Solutions}}\\
-   \textsc{Due November 22$^\textrm{nd}$}
+   \textsc{\large MATH 272, Homework 10, \emph{Solutions}}\\
+   \textsc{Due April 27$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-Consider the system of linear equations
-\begin{align*}
-    2x-y-2z&=4\\
-    -x + 3y +4z &= -2\\
-    2x+y-2z&=8.
-\end{align*}
+Consider the 1-dimensional wave equation given by
+\[
+\left(-\frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial  t^2} \right) u(x,t) = 0.
+\]
+We'll consider two distinct scenarios. First, we'll take an infinitely long elastic rod and second we'll take a rod of finite length with Dirichlet boundary conditions.
 \begin{enumerate}[(a)]
-    \item Write this system of equations as a matrix/vector equation
+    \item For a rod of infinite length, consider the initial conditions
     \[
-    [A]\vecv=\boldsymbol{\vec{b}}.
+    u(x,0) = \begin{cases} x+1 & -1\leq x \leq 0 \\ 1-x & 0\leq x \leq 1 \\ 0 & \textrm{otherwise} \end{cases} \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0) = 0.
     \]
-    \item Solve the system of equations by finding the inverse of the matrix $[A]$.
-\end{enumerate}
-\end{problem}
-\begin{solution}
-Let
-\[
-\vecv = \begin{pmatrix} x \\ y \\ z \end{pmatrix} \qquad \textrm{and} \qquad \vecb =\begin{pmatrix} 4 \\ -2 \\ 8\end{pmatrix}
-\]
-Then we want a matrix $[A]$ such that we have
-\[
-[A]\vecv = \vecb,
-\]
-which is given by the coefficients on the system above. That is,
-\[
-[A]=\begin{pmatrix} 2 & -1 & -2 \\ -1 & 3 & 4 \\ 2 & 1 & -2 \end{pmatrix}
-\]
-This gives us the augmented matrix
-\[
-[M] = \left( \begin{array}{ccc|c} 
-    2 & -1 & -2 & 4\\
-    -1 & 3 & 4 & -2\\
-    2 & 1 & -2 & 8
-\end{array}\right).
-\]
-Then we can row reduce this matrix by first subtracting $R_1$ from $R_3$ to get
-\begin{align*}
-    \left( \begin{array}{ccc|c} 
-    2 & -1 & -2 & 4\\
-    -1 & 3 & 4 & -2\\
-    0 & 2 & 0 & 4
-\end{array}\right),
-\end{align*}
-then adding $1/2\cdot R_1$ to $R_2$ to get
-\[
-\left( \begin{array}{ccc|c} 
-    2 & -1 & -2 & 4\\
-    0 & 5/2 & 3 & 0\\
-    0 & 2 & 0 & 4
-\end{array}\right),
-\]
-then subtracting $5/4\cdot R_3$ from $R_2$ to get
-\[
-\left( \begin{array}{ccc|c} 
-    2 & -1 & -2 & 4\\
-    0 & 0 & 3 & -5\\
-    0 & 2 & 0 & 4
-\end{array}\right),
-\]
-then adding $1/2\cdot R_3$ to $R_1$ to get
-\[
-\left( \begin{array}{ccc|c} 
-    2 & 0 & -2 & 6\\
-    0 & 0 & 3 & -5\\
-    0 & 2 & 0 & 4
-\end{array}\right),
-\]
-then we can swap $R_2$ and $R_3$ and divide by some constants to get
-\[
-\left( \begin{array}{ccc|c} 
-    1 & 0 & -1 & 3\\
-    0 & 1 &  & 2\\
-    0 & 0 & 1 & -5/3
-\end{array}\right),
-\]
-and finally add $R_3$ to $R_1$ to get
-\[
-\left( \begin{array}{ccc|c} 
-    1 & 0 & 0 & 4/3\\
-    0 & 1 &  & 2\\
-    0 & 0 & 1 & -5/3
-\end{array}\right)
-\]
-which gives us $x=4/3$, $y=2$, and $z=-5/3$.
-\item Now, we can repeat those same steps above, but with a different augmented matrix. Namely, we start with
-\[
-[M]=  \left( \begin{array}{ccc|ccc} 
-    2 & -1 & -2 &    1 & 0 & 0 \\
-    -1 & 3 & 4 &     0 & 1 & 0 \\
-    2 & 1 & -2 &     0 & 0 & 1
-\end{array}\right).
-\]
-Perform the exact same row operations, and we get
-\[
-\left( \begin{array}{ccc|ccc} 
-    1 & 0 & 0 &    5/6 & 1/3 & -1/6 \\
-    0 & 1 & 0 &     -1/2 & 0 & 1/2 \\
-    0 & 0 & 1 &     7/12 & 1/3 & -5/12
-\end{array}\right),
-\]
-which means the inverse matrix is
-\[
-[A]^{-1}=\begin{pmatrix}
-    5/6 & 1/3 & -1/6 \\
-    -1/2 & 0 & 1/2 \\
-    7/12 & 1/3 & -5/12
-\end{pmatrix}.
-\]
-Then to solve the equation we take
-\[
-\vecv = [A]^{-1}\vecb,
-\]
-and we get that
-\[
-\vecv = \begin{pmatrix} 4/3 \\ 2 \\ -5/3 \end{pmatrix}.
-\]
-\end{solution}
-\begin{remark}
-This is why computing the inverse is advantageous. It takes no more work to compute, but it makes the job easier if we had to compute the solution to many more equations.
-\end{remark}
-
-\newpage
-\begin{problem}
-Consider the matrix
-\[
-[A] = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}.
-\]
-\begin{enumerate}[(a)]
-    \item Find the eigenvalues and eigenvectors for this matrix.
-    \item Construct the matrix $[P]$ such that
+    Find and plot the portion of the wave that moves to the right with $c=1$.
+    \item Let $u_R(x,t)$ be your solution from (a), show that this satisfies the right-moving wave equation
     \[
-    [\Lambda] = [P]^{-1}[A][P]
+    \left(\frac{\partial}{\partial x} + \frac{1}{c} \frac{\partial}{\partial t} \right)u_R(x,t) = 0.
     \]
-    from the eigenvectors you found. 
-    \item Find $[P]^{-1}$ and compute
+    \item Why is it that we can ignore the points where your function $u_R(x,t)$ is not differentiable even though we are considering this as a solution to a PDE?
+    \item For an elastic rod $\Omega$ of finite length, $\Omega = [0,1]$, assume that we take the Dirichlet conditions $u(0,t)=0=u(1,t)$.  With the initial conditions
     \[
-    [P]^{-1}[A][P].
+    u(x,0) = \sin(\pi x) \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0)=0,
     \]
-    Is this $[\Lambda]$ diagonal?
-\end{enumerate} 
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item First we find the eigenvalues by putting
+    find the solution using d'Alembert's formula.
+    \item Let $w(x,t)$ be your solution for (d), show that it is indeed equal to
     \[
-    [A]-\lambda [I] = \begin{pmatrix} 1 - \lambda & 1 \\ 0 & 2-\lambda \end{pmatrix},
+    w(x,t) = \sin(\pi x)\cos(\pi c t).
     \]
-    and taking the determinant to get the characteristic polynomial
-    \[
-    \det([A]-\lambda[I])=(1-\lambda)(2-\lambda).
-    \]
-    Then we set the characteristic polynomial equal to zero and solve
-    \[
-    (1-\lambda)(2-\lambda)=0
-    \]
-    to get $\lambda_1 = 1$ and $\lambda_2=2$.  
-    
-    Then we can find the eigenvectors. First, we will find $\Null([A]-\lambda_1 [I])$ to get the eigenvector corresponding to $\lambda_1$. So we have
-    \[
-    [A]-1[I]= \begin{pmatrix} 0 & 1 \\ 0 & 1 \end{pmatrix},
-    \]
-    which means that $y=0$ and $x$ is free to be anything. Hence, we have that
-    \[
-    \evec_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
-    \]
-    by simply choosing $x=1$. Next, we consider the case for $\lambda_2 = 2$ and we have
-    \[
-    [A]-2[I] = \begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix},
-    \]
-    which means that $x=y$. Thus, we can choose $x=1$ which forces $y=1$ as well and we have
-    \[
-    \evec_2 = \begin{pmatrix} 1 \\ 1\end{pmatrix}.
-    \]
-    \item We have that
-    \[
-    [P]=\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}.
-    \]
-    \item Then we can compute $[P]^{-1}$ fairly easily to get
-    \[
-    [P]^{-1} = \begin{pmatrix} 1 & -1\\ 0  & 1 \end{pmatrix}.
-    \]
-    Then we can compute
-    \[
-    [P]^{-1}[A][P] = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}.
-    \]
-    So yes, $[\Lambda]$ is diagonal.
-\end{enumerate}
-\end{solution}
-
-\newpage
-\begin{problem}
-Consider the matrix
-\[
-[A]=\begin{pmatrix} 1 & 3 & 0 \\ 3 & 1 & 0 \\
- 0 & 4 & 1 \end{pmatrix}
-\]
-\begin{enumerate}[(a)]
-    \item Compute the eigenvalues and eigenvectors for the matrix $[A]$.
-    \item Show that $\det([A])=\lambda_1\lambda_2\lambda_3$ and $\tr([A])=\lambda_1 + \lambda_2+\lambda_3$ where $\lambda_1$, $\lambda_2$, and $\lambda_3$ are the eigenvalues you found in (a).
-    \item Argue why the eigenvalues of $[A]^{-1}$ must be $\frac{1}{\lambda_1}$, $\frac{1}{\lambda_2}$, and $\frac{1}{\lambda_3}$.
+    \item With your result from (e), explain how we can decompose a standing wave into a linear combination of two waves; one moving towards the left and one moving towards the right and both reflecting off the boundary.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item We first compute the characteristic polynomial by
+    \item We have that the solution is given by
+\[
+u(x,t) = \frac{1}{2} \left( u_L(x,t) + u_R(x,t)\right),
+\]
+where $u_L(x,t)$ is a portion of the wave moving to the left and $u_R(x,t)$ is the portion of the wave moving towards the right.  From our initial conditions, we have
+\[
+u_L(x,t) = \begin{cases} x+ct+1 & -1\leq x+ct \leq 0 \\ 1-x-ct & 0\leq x+ct \leq 1 \\ 0 & \textrm{otherwise} \end{cases} \qquad \textrm{and} \qquad u_R(x,t)=\begin{cases} x-ct+1 & -1\leq x-ct \leq 0 \\ 1-x+ct & 0\leq x-ct \leq 1 \\ 0 & \textrm{otherwise} \end{cases},
+\]
+which follows from d'Alembert's formula. 
+
+We can then plot $u_R(x,t)$ for a few different times with $c=1$. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{right_moving_triangle.png}
+    \caption{Plots of $u_R$ for $t=0$ (green), $t=1/2$ (blue), $t=1$ (purple), $t=2$ (red), and $t=4$ (orange).}
+\end{figure}
+    \item We can take the derivatives of $u_R(x,t)$ to get
     \[
-    \det([A]-\lambda[I]) = \left| \begin{matrix} 1 - \lambda & 3 & 0 \\ 3 & 1-\lambda & 0 \\ 0 & 4 & 1-\lambda \end{matrix}\right|.
+    \frac{\partial}{\partial x} u_R(x,t) = \begin{cases} 1 & -1< x-ct < 0 \\ -1 & 0<x-ct < 1 \\ 0 & \textrm{otherwise} \end{cases}
     \]
-    Then, expand along the right column to get
+    as well as
     \[
-    \left| \begin{matrix} 1 - \lambda & 3 & 0 \\ 3 & 1-\lambda & 0 \\ 0 & 4 & 1-\lambda \end{matrix}\right| = (1-\lambda)((1-\lambda)^2-9).
+    \frac{1}{c}\frac{\partial}{\partial t} u_R(x,t) = \frac{1}{c}\begin{cases} -c & -1< x-ct < 0 \\ c & 0<x-ct < 1 \\ 0 & \textrm{otherwise} \end{cases}.
     \]
-    Then we find that one root is $\lambda_1=1$ and we have left
+    Then, if we add the two together, we get our intended result
     \[
-    (1-\lambda)^2-9=0,
+    \left(\frac{\partial}{\partial x} + \frac{1}{c} \frac{\partial}{\partial t} \right)u_R(x,t) = 0
     \]
-    which has the roots $\lambda_2=-2$ and $\lambda_3=4$. 
+    Notice, this is true aside from the three points where we see the kinks in our wave.
     
-    Now we find the eigenvectors. First for $\lambda_1=1$, we have
+    \item The function may not be differentiable at three distinct $x$ values for every time $t$, but this is fairly unimportant.  Roughly speaking, we can choose to ignore three points in which we have issues since this works on infinitely many other points.  There is more detail here, but that is mathematics left to discover for yourself on a later day.
+    
+    \item From d'Alembert's formula we see that
     \[
-    [A]-1[I] = \begin{pmatrix} 0 & 3 & 0 \\ 3 & 0 & 0 \\ 0 & 4 & 0 \end{pmatrix}.
+    u_L(x,t) = \sin(\pi (x+ct)) \qquad \textrm{and} \qquad u_R(x,t) = \sin(\pi (x-ct)).
     \]
-    Hence, it must be that $x=y=0$ and $z$ is free. So the first eigenvector is
+    Hence, our solution is given by
     \[
-    \evec_1 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}.
+    u(x,t) = \frac{1}{2} \left(\sin(\pi (x+ct))+\sin(\pi(x-ct))\right).
     \]
-    Next, for $\lambda_2 = -2$, we have
+    
+    \item Note that we have the trigonometric identity
     \[
-    [A]+2[I] = \begin{pmatrix} 3 & 3 & 0 \\ 3 & 3 & 0\\ 0 & 4 & 3 \end{pmatrix}.
+    \sin(a+b) = \sin(a)\cos(b)+\cos(a)\sin(b).
     \]
-    Hence $-x=y$ and $z=-4/3y$. Hence we can choose $x=3$ (just to make the vector have integer entries) to get the second eigenvector
+    Applying this to $u_L$ and $u_R$ we have
     \[
-    \evec_2 = \begin{pmatrix} 3 \\ -3  \\ 4 \end{pmatrix}.
-    \]
-    Lastly, for $\lambda_3 = 4$, we have
-    \[
-    [A]-4[I] =\begin{pmatrix} -3 & 3 & 0 \\ 3 & -3 & 0 \\ 0 & 4 & -3 \end{pmatrix}.
-    \]
-    Thus we have $x=y$ and $z=4/3y$. Again, choose $x=3$ to get the last eigenvector
-    \[
-    \evec_3 = \begin{pmatrix} 3 \\ 3 \\ 4 \end{pmatrix}.
-    \]
-    \item Now, we have by expanding along the right column
-    \[
-    \det([A])=1(1\cdot 1 - 3\cdot 3)=-8.
-    \]
-    Then we also have
-    \[
-    \lambda_1\lambda_2 \lambda_3 = -8.
-    \]
-    Lastly, we have
-    \[
-    \tr([A]) = 1 + 1 + 1 =3 
+    u_L(x,t) = \sin(\pi x+\pi ct) = \sin(\pi x)\cos(\pi c t)+ \cos(\pi x)\sin(\pi c t),
     \]
     and
     \[
-    \lambda_1 + \lambda_2 + \lambda_3 = 3.
+    u_R(x,t) = \sin(\pi x-\pi ct) = \sin(\pi x)\cos(-\pi c t)+ \cos(\pi x)\sin(-\pi c t).
     \]
-    \item Now, we know that
-    \[
-    \det([A]^{-1})=\frac{1}{\det([A])},
-    \]
-    which means that
-    \[
-    \det([A]^{-1})=\frac{1}{\lambda_1 \lambda_2 \lambda_3}.
-    \]
-    However, this is not quite enough to realize that the eigenvalues are in fact $\frac{1}{\lambda_1}$, $\frac{1}{\lambda_2}$, and $\frac{1}{\lambda_3}$. To see this, we note that if $[A]^{-1}$ does exist, we have
+    Then, we have
     \begin{align*}
-        [A]\evec_i &= \lambda_i \evec_i\\
-        \iff ~ [A]^{-1}[A]\evec_i &= [A]^{-1}\lambda_i \evec_i\\
-        \iff ~ \evec_i &= \lambda_i ([A]^{-1} \evec_i),
+        u(x,t) &= \frac{1}{2} \left(\sin(\pi x)\cos(\pi c t)+ \cos(\pi x)\sin(\pi c t) + \sin(\pi x)\cos(-\pi c t)+ \cos(\pi x)\sin(-\pi c t) \right)\\
+        &= \frac{1}{2} \left( \sin(\pi x)\cos(\pi c t) + \sin(\pi x)\cos(\pi c t) + \cos(\pi x)\sin(\pi c t) - \cos(\pi x)\sin(\pi c t)\right)\\
+        &= \sin(\pi x) \cos(\pi c t) = w(x,t),
     \end{align*}
-    which means that we must have
+    which is indeed the solution we have found to this problem previously.
+    
+    \item In the previous example, we took two different waves; one moving towards the left and one moving towards the right.  It turned out that adding these solutions could be cleverly combined into a single standing wave solution.  Essentially, the separation of variables seems to help us find standing waves (though it can also find traveling waves) where as the d'Alembert method decomposes waves into their portions that move in either direction naturally. 
+    
+    In this case, it must be that the traveling waves are reflected by the boundaries in order to produce a standing wave.  If you play with a slinky, you may be able to discover this behavior yourself!
+  \end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
+\[
+H \Psi(x,t) = i\hbar \frac{\partial}{\partial t} \Psi(x,t),
+\]
+where $H$ is the Hamiltonian operator.  Consider the situation for the free particle in the 1-dimensional box of length $L$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(L,t)$.  
+\begin{enumerate}[(a)]
+    \item Take a separation of variables ansatz and find a set of solutions (one for every positive integer $n$) to the time-dependent equation.
+    \item Show that a super position of solutions is also a solution.
+    \item For a single state $\psi_n(x,t)$, show that 
     \[
-    [A]^{-1} \evec_i = \frac{1}{\lambda_i}.
+    \int_0^L \left|\psi_n(x,t)\right|^2 dx,
     \]
-    Thus it follows that the eigenvalues of $[A]^{-1}$ are reciprocals of the eigenvalues of $[A]$.
+    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their total probability does not depend on time.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Here, we take
+    \[
+    \Psi(x,t) = X(x)T(t),
+    \]
+    where we allow for both $X(x)$ and $T(t)$ to take on complex values since $\Psi(x,t)$ itself is complex.  Recall as well that
+    \[
+    H= \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x).
+    \]
+    Note that $V(x)=0$ for a free particle, and thus our PDE takes the form
+    \[
+    \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t)=0.
+    \]
+    One may call the operator to the left of $\Psi$ the time-dependent Schr\"odinger operator with zero potential. Notice the similarities of this equation and the heat equation. The order of the derivatives matches, but there now appears a complex constant in the mix.  The complex constant $i\hbar$ will in fact make this equation act more like the wave equation in it's solution. Both interpretations have physical meaning however. 
+    
+    Plugging in our ansatz, we arrive at
+    \[
+    -\frac{\hbar^2}{2m} X''T - i\hbar XT' = 0.
+    \]
+    We can then separate the variables to arrive at the two ODEs
+    \[
+    -\frac{\hbar^2}{2m} \frac{X''}{X} = E \qquad \textrm{and} \qquad i\hbar \frac{T'}{T} = E.
+    \]
+    
+    Taking the $T$ equation first, we find
+    \[
+    T'=\frac{-iE}{\hbar} T,
+    \]
+    which has the general solution
+    \[
+    T(t) = Ae^{-\frac{iE}{\hbar}t}.
+    \]
+    Next, with the $X$ equation, we have
+    \[
+    X''+\frac{2m}{\hbar^2}E X = 0,
+    \]
+    which has a general solution
+    \[
+    X(x) = Be^{\sqrt{-\frac{2mE}{\hbar^2}}x} + C e^{-\sqrt{-\frac{2mE}{\hbar^2}}x}
+    \]
+    
+    Note that $T(t)$ cannot be zero unless the constant $A=0$, which gives us only trivial solutions.  Hence, to satisfy our boundary conditions, we must have that $X(0)=0$ and $X(L)=0$.  Thus, it must be that $E>0$ and we end up with
+    \[
+    X(x) = B \sin\left(\sqrt{\frac{2mE}{\hbar^2}}x\right) + C\cos\left(\sqrt{\frac{2mE}{\hbar^2}}x\right)
+    \]
+    Applying our boundary conditions yields that $C=0$ and $\sqrt{\frac{2mE}{\hbar^2}}=\frac{n\pi}{L}$ for all positive integers $n$. Thus,
+    \[
+    X_n(x)=B_n \sin\left(\frac{n\pi x}{L}\right) \qquad \textrm{and} \qquad E_n = \frac{n^2\hbar^2 \pi^2}{2mL^2}.
+    \]
+    Note that $E_n$ now corresponds to the energy eigenvalues we found for the time-independent equation! Our separation of variables technique gave us back the same spatial solution as the time-independent case which is to be expected.  This is why I used this notation for the separation constant.
+    
+    Plugging in $E_n$ for the $T$ solutions gives us
+    \[
+    T_n(t) = A_ne^{-i\frac{E_n}{\hbar}t}=A_n e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t}
+    \]
+    Our general solution for the time-dependent equation is then
+    \[
+    \boxed{\psi_n(x,t) = C_n e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t} \sin\left(\frac{n\pi x}{L}\right).}
+    \]
+    We refer to these solutions as the time-dependent states for the free particle in the 1-dimensional box.
+    
+    \item Consider the superposition of all possible states
+    \[
+    \Psi(x,t) = \sum_{n=1}^\infty C_n \psi_n(x,t).
+    \]
+    We wish to show that this is also a solution to the equation.  Plugging this in, we have
+    \begin{align*}
+        \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) &= \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \sum_{n=1}^\infty C_n \psi_n(x,t)\\
+        &= \sum_{n=1}^\infty C_n \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \psi_n(x,t)\\
+        &= 0.
+    \end{align*}
+    
+    Note as well that each $\psi_n(x,t)$ satisfies the boundary conditions $\psi_n(0,t)=0=\psi_n(L,t)$. Hence, it follows that $\Psi(0,t)=0=\Psi(L,t)$.
+    \item Note that
+    \begin{align*}
+    \left| \psi_n(x,t)\right| &= \left| e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t} \sin\left(\frac{n\pi x}{L}\right) \right|\\
+    &= \left| e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t} \right| \left| \sin\left(\frac{n\pi x}{L}\right) \right|\\
+    &= \left|\sin\left(\frac{n\pi x}{L}\right)\right|.
+    \end{align*}
+    Thus, it follows that the integral must also not depend on time since the magnitude of the function we are integrating does not.
 \end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-For each description below, construct a single $3\times 3$ transformation matrix.
+Maxwell's equations are given as
+\begin{align*}
+\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
+\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
+\end{align*}
 \begin{enumerate}[(a)]
-    \item A rotation by $\frac{\pi}{2}$ in the $yz$-plane.
-    \item A rotation by $\frac{\pi}{2}$ in the $xy$-plane, an interchange of the $x$ and $y$ coordinates.
-    \item A matrix which undoes everything in part (b).
+    \item Look up each of the terms in the equations above and describe them.
+    \item Describe what each equation is saying and why these are PDEs.
+    \item In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
+    \[
+    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
+    \]
+    derive the vector wave equations for light
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
+    \]
+    and
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
+    \]
+    \item From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
-First, note that these rotation matrices are in my notes as well as readily available online. Specifically, we have
-\[
-\Rot_{xy,\theta} = \begin{pmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta & 0 \\ 0 & 0 & 1 \end{pmatrix},
-\]
-and
-\[
-\Rot_{yz,\theta} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos \theta & -\sin \theta \\ 0 & \sin \theta & \cos \theta \end{pmatrix}.
-\]
-Can you derive what the matrix for rotating in the $xz$-plane would be?
 \begin{enumerate}[(a)]
-    \item Taking $\Rot_{yz,\theta}$ above with $\theta=\pi/2$, we get
+    \item From top left to bottom right, we have names for the equations.  They are:
+    \begin{itemize}
+        \item Gauss's law for magnetism: $\grad \cdot \vecfieldB = 0$.
+        \item Gauss's law: $\grad \cdot \vecfieldE = \frac{\rho}{\epsilon_0}$.
+        \item Amp\`ere's circuital law: $\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}=\mu_0 \vecfieldJ$.
+        \item Faraday's law of induction: $\grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} = \zerovec$.
+    \end{itemize}
+    
+    In the above equations we have a few terms that we should define and describe.  First, there are the fields, $\vecfieldE$ and $\vecfieldB$ which are the electric and magnetic fields respectively.  Both are functions of space and time, so we could put $\vecfieldE(x,y,z,t)$ and $\vecfieldB(x,y,z,t)$ if we wanted to be a bit more transparent.  Both of these fields cause forces on charged particles and arise from the single electromagnetic field that permeates all of space.  Indeed, the fields themselves can also arise from charged particles as well.  They can also take on different values depending on how the charges are placed or whether or not they are moving.
+    
+    We refer to the static distribution of charge with the variable $\rho$ which physically represents the charge density.  In principle, this charge density (per unit volume) can depend on both space and time and we could put $\rho(x,y,z,t)$ to again be fully transparent.  There may also be a current density (per unit area) present in space, which we represent by $\vecfieldJ$. Again, this is a function that can change over space and time and we could put $\vecfieldJ(x,y,z,t)$.  The electric and magnetic fields become unified into the single electromagnetic field when we start to think of $\rho$ and $\vecfieldJ$ as describing an analogous quantity. One can realize this by noting that moving charges are what generate a current.  If two observers are to view the same configuration of charges and currents from different perspectives (different reference frames) they may disagree on the values for $\vecfieldE$ and $\vecfieldB$.  However, if you properly transform space and time between their perspectives, you will see that this difference just has to do with their differences in relative motion.  This sparked the idea of Einstein and other physicists and mathematicians (like Lorentz) to develop \emph{special relativity}.  Under special relativity, we see that these two fields $\vecfieldE$ and $\vecfieldB$ are just portions of the electromagnetic field that depend on your relative motion.
+    
+    Finally, we can take a look at the constants $\epsilon_0$ and $\mu_0$ which appear.  In general, $\epsilon$ describes the permittivity of a substance.  That is, how freely the electric field $\vecfieldE$ can pass through a given substance.  The subscript $0$ pertaining to $\epsilon_0$ states that this is the permittivity of free space (i.e., the permittivity of the vacuum).  In this sense, even the vacuum has some notion of resisting how the electric field can pass through it. On the flip side, $\mu$ describes the permeability of a substance.  It is the magnetic analog to $\epsilon$. So, in this case, $\mu_0$ represents the permeability of the vacuum.  Roughly speaking, $\mu$ is describing how easily a substance allows the magnetic field to pass through it. One should be a bit careful here.  We are actually finding that we may need to think about these quantities in different ways as we learn more.  So, this point of view may be a bit defunct in some ways.
+    
+    \item The above equations are indeed PDEs.  For each, we are intending to find vector fields that satisfy conditions.  In fact, each equation is coupled to one another.  Specifically, what this means is that we require the vector field $\vecfieldE$ and $\vecfieldB$ to simultaneously solve all of the above equations. We take $\rho$ and $\vecfieldJ$ to be external to these equations in that these are values we supply in order to determine the induced fields $\vecfieldE$ and $\vecfieldB$.  
+    
+    In this sense, these are PDEs of vector fields while all the previous examples we had considered were PDEs of scalar fields.  One may then refer to these equations as vector PDEs and the others as scalar PDEs.  
+    
+    Lastly, it may be illuminating to see that if we supply no charge density $\rho$ and no current density $\vecfieldJ$, that the equations above still provide \underline{nontrivial} solutions! That is, the vector fields aren't just constants.  We will see this in the next part.
+    
+    If we remove all current density by taking $\vecfieldJ$ to be zero and we let $\rho(x,y,z)$ not depend on time, then we arrive at the vacuum electrostatic equations
+    \begin{align*}
+        \grad \times \vecfieldE = \zerovec \qquad \textrm{and} \qquad \grad \cdot \vecfieldE = \frac{\rho}{\epsilon_0}.
+    \end{align*}
+    Here, we can see that $\vecfieldE$ is conservative since its curl is zero.  Indeed, that means there exists a potential function $\phi(x,y,z)$ such that $\grad \phi = \vecfieldE$.  This potential is called the \emph{electrostatic potential} or the \emph{voltage}.  Thus, the equations simply reduce to finding a scalar field $\phi$ such that
     \[
-    \Rot_{yz,\pi/2} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}.
+    \Delta \phi = \frac{\rho}{\epsilon_0},
     \]
-    \item We first create the rotation matrix 
+    which is the Poisson equation.  Once again, we arrive back at an equation we have seen in other contexts. Note that this means we actually only define $\phi$ up to a constant! Typically, we choose to let this constant be zero.  One may call this \emph{gauge fixing}.
+    
+    Analogously, we can force $\rho$ to be zero and let $\vecfieldJ(x,y,z)$ not depend on time and we arrive at the realm of the vacuum magnetostatic equations given by
     \[
-    \Rot_{xy,\pi/2} = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+        \grad \cdot \vecfieldB = 0 \qquad \textrm{and} \qquad \grad \times \vecfieldB = \mu_0 \vecfieldJ.
     \]
-    Then, the matrix that exchanges $x$ and $y$ coordinates is
+    Note that when we are working in $\R^3$, if we have $\grad \cdot \vecfieldB=0$, it means that $\vecfieldB = \grad \times \vecfieldA$ where we refer to the vector field $\vecfieldA$ as the \emph{vector potential} for the vector field $\vecfieldB$.  This is analogous to having a scalar potential when a vector field is curl free. By the Helmholtz decomposition of vector fields, we know that $\vecfieldA$ can be written as a part that is curl free plus a part that is divergence free. Thus, if we choose to let $\grad \cdot \vecfieldA=0$, we can still satisfy $\grad \times \vecfieldA = \vecfieldB$ and by doing this we have
     \[
-    [S]=\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \grad \left(\grad \cdot \vecfieldA\right) - \grad \times \left(\grad \times \vecfieldA\right)= \veclaplace \vecfieldA = \vecfieldJ.
     \]
-    Thus the matrix for (b) is given by
+    However, the divergence of $\vecfieldA$ being zero implies that we must have
     \[
-    [S]\Rot_{xy,\pi/2} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \veclaplace \vecfieldA = \vecfieldJ,
     \]
-    \item Now, note that in (b) we found the matrix simply reflects across the $yz$-plane by outputting negative the input $x$-value. Thus, the inverse for this matrix is in fact itself!
+    which is the vector form of the Laplace equation.  The choice of forcing the extra condition
+    \[
+    \grad \cdot \vecfieldA=0,
+    \]
+    fixes what we refer to as the \emph{Coulomb gauge}.  One may also notice that the idenity
+    \[
+    \grad \cdot \left( \grad \times \vecfieldV \right) = 0,
+    \]
+    means that we must have $\grad \cdot \vecfieldJ=0$.  So, we can only find magnetostatic vector fields when we have a source/sink free current.
+    
+    \item Now, let us fix $\rho=0$ and $\vecfieldJ=\zerovec$.  Then, we can take the curl of Faraday's law yields
+        \begin{align*}
+            \grad \times \left(\grad \times \vecfieldE +  \frac{\partial \vecfieldB}{\partial t} \right) &=\zerovec\\
+            \implies ~ \grad \times \left(\grad \times \vecfieldE\right) + \grad \times \left(\frac{\partial \vecfieldB}{\partial t} \right)&=\zerovec \\
+            \implies ~ \grad \left( \grad \cdot \vecfieldE\right)-\veclaplace \vecfieldE + \frac{\partial}{\partial t} \left( \grad \times \vecfieldB\right)&=\zerovec\\
+            \implies ~ -\veclaplace \vecfieldE +  \frac{\partial}{\partial t} \left(\mu_0 \epsilon_0 \frac{\partial \vecfieldE}{\partial t}\right) &= \zerovec\\
+            \implies ~ \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE &= \zerovec,
+        \end{align*}
+        which is our intended equation.  Likewise, we can take the curl of Amp\`ere's law to get
+    \begin{align*}
+        \grad \times \left(\grad \times \vecfieldB - \mu_0 \epsilon_0 \frac{\partial \vecfieldE}{\partial t} \right) &=\zerovec\\
+        \implies ~ \grad \times \left(\grad \times \vecfieldB\right) - \grad \times \left(\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t} \right)&=\zerovec \\
+        \implies ~ \grad \left( \grad \cdot \vecfieldB\right)-\veclaplace \vecfieldB - \mu_0\epsilon_0\frac{\partial}{\partial t} \left( \grad \times \vecfieldE\right)&=\zerovec\\
+        \implies ~ -\veclaplace \vecfieldB - \mu_0 \epsilon_0 \frac{\partial}{\partial t} \left(-\frac{\partial \vecfieldB}{\partial t}\right) &= \zerovec\\
+        \implies ~ \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB &= \zerovec,
+    \end{align*}
+    which is the other intended equation. These are both the vector wave equations for the electromagnetic field. Otherwise known as light.
+    
+    \item The wavespeed in the wave equation is typically written as $c$ and appears as
+    \[
+    \left( - \veclaplace + \frac{1}{c^2} \frac{\partial^2 }{\partial t^2}\right).
+    \]
+    Hence, the wave speed here is
+    \[
+    c_0 = \frac{1}{\sqrt{\mu_0\epsilon_0}} = 2.998 \cdot 10^8 m/s,
+    \]
+    which is the speed of light in the vacuum.
 \end{enumerate}
 \end{solution}
-\begin{remark}
-The matrix in (c) generates a group by multiplication. Specifically, this is the group with the elements
-\[
-\begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}, \quad \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix},
-\]
-which is called the \emph{cyclic group of order 2} and denoted by $C_2$. This group is the reflection symmetry group as reflecting across the same plane twice does nothing.
-\end{remark}
 
-\newpage
-\begin{problem}
-A matrix in the group of rotation matrices in $\R^2$ (i.e., $\mathrm{SO}(2)$) can be written as
-\[
-\Rot_\theta = \begin{pmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos \theta \end{pmatrix},
-\]
-for any choice of $\theta$. Another way to think about $\mathrm{SO}(2)$ is to consider it as the rotational symmetry group of the unit circle in the plane.
-
-Next, consider a cyclohexane $C_6H_{12}$ molecule:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.3\textwidth]{Homework_10/cyclohexane-500x500.png}
-    \end{figure}
-    \noindent This molecule also has rotational symmetry, but it is a smaller symmetry group than $\mathrm{SO}(2)$. We want to determine this rotational symmetry \emph{subgroup}.
-\begin{enumerate}[(a)]
-    \item This molecule looks much like a hexagon. Determine the external angles of a hexagon.
-    \item Note that if we rotate a hexagon (or cyclohexane) by an external angle, then this leaves the molecule invariant (i.e., it looks no different). Using the internal angle you found, write the rotation matrix for that angle and name this matrix $[g]$.
-    \item We can \emph{generate} this group $C_6$ from $[g]$ by repeatedly multiplying $[g]$ with itself.  Show that there are only six elements in this group $C_6$.
-    \item These are not all the symmetries of cyclohexane! Explain another symmetry operation that we could use that isn't captured by the rotations above.
-\end{enumerate}
-If you're interested, look up the group $D_{12}$ which is the \emph{dihedral group of order 12}. Or, taking it further, look at \url{https://en.wikipedia.org/wiki/Cyclohexane_conformation}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item The external angles of a hexagon are $\pi/3$ since the sum of the external angles must be $2\pi$ and there are six angles on a hexagon.
-    \item Then we have
-    \[
-    [g]=\begin{pmatrix} \sqrt{3}/2 & -1/2 \\ 1/2 & \sqrt{3}/2 \end{pmatrix}.
-    \]
-    \item Now, we can explicitly compute $[g]$, $[g]^2$, $[g]^3$, and so on, but remember that this is a rotation matrix.  Hence, for example, we have
-    \[
-    \Rot_\theta \Rot_\varphi = \Rot_{\theta+\varphi}.
-    \]
-    Hence, we have
-    \[
-    [g]^2 = \Rot_{\pi/3},\quad [g]^3 = \Rot_{\pi/2}, \quad [g]^4 = \Rot_{2\pi/3}, \quad [g]^5 = \Rot_{5\pi/6}, \quad [g]^6 = \Rot_{2\pi}=[I].
-    \]
-    Indeed, this group does have six elements as there is no way to create any others. This group is known as the \emph{cyclic group of order 6} and we denote it by $C_6$.
-    \item The cyclohexane molecule also has reflectional symmetry. That is, we could pick up the molecule, and flip it over (across some axis) and place it back in the same spot. If we include this symmetry as well, we can then generate $D_{12}$. 
-\end{enumerate}
-\end{solution}
-
-\begin{remark}
-The groups $C_n$ and $D_{2n}$ always have this same relationship as the groups $\Orth(n)$ and $\SO(n)$. The idea of rotations and reflections are very related. In fact, reflections are more fundamental in that any rotation is a product of two reflections. This is exactly why we see this relationship.
-
-Also, $\Orth(n)$ and $\SO(n)$ give the reflection/rotation symmetries of $n$-dimensional space. However, we can see that some objects living in those spaces will have smaller symmetry groups. In this case, the group is even finite (order 6) as opposed to infinite!
-\end{remark}
 
 \end{document}
