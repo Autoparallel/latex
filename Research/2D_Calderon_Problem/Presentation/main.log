@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  27 APR 2020 09:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  11 MAY 2020 14:09
 entering extended mode
 **./main.tex
 (main.tex
@@ -1395,6 +1395,56 @@ arent.sty"
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 
 )
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xfrac\x
+frac.sty"
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty
+"
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
+d-pdfmode.def"
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count333
+\l__pdf_internal_box=\box81
+))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3keys2
+e\l3keys2e.sty"
+Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.sty"
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\
+xparse.sty"
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count334
+\g__xparse_grabber_int=\count335
+\l__xparse_m_args_int=\count336
+\l__xparse_v_nesting_int=\count337
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xtempla
+te\xtemplate.sty"
+Package: xtemplate 2020-02-14 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen308
+\l__xtemplate_tmp_int=\count338
+\l__xtemplate_tmp_muskip=\muskip18
+\l__xtemplate_tmp_skip=\skip68
+)
+Package: xfrac 2020-02-14 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box82
+\l__xfrac_tmp_box=\box83
+\l__xfrac_denominator_bot_sep_dim=\dimen309
+\l__xfrac_numerator_bot_sep_dim=\dimen310
+\l__xfrac_numerator_top_sep_dim=\dimen311
+\l__xfrac_slash_left_sep_dim=\dimen312
+\l__xfrac_slash_right_sep_dim=\dimen313
+\l__xfrac_slash_left_muskip=\muskip19
+\l__xfrac_slash_right_muskip=\muskip20
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 80.
+
+)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/soul\soul.sty"
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks50
@@ -1402,10 +1452,10 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@cmds=\toks52
 \SOUL@buffer=\toks53
 \SOUL@token=\toks54
-\SOUL@spaceskip=\skip68
-\SOUL@ttwidth=\dimen308
-\SOUL@uldp=\dimen309
-\SOUL@ulht=\dimen310
+\SOUL@spaceskip=\skip69
+\SOUL@ttwidth=\dimen314
+\SOUL@uldp=\dimen315
+\SOUL@ulht=\dimen316
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tikz-cd\tikz-cd.st
 y"
@@ -1424,10 +1474,10 @@ File: tikzlibraryquotes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryarrows.meta.code.tex"
 File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowinset=\dimen311
-\pgfarrowlength=\dimen312
-\pgfarrowwidth=\dimen313
-\pgfarrowlinewidth=\dimen314
+\pgfarrowinset=\dimen317
+\pgfarrowlength=\dimen318
+\pgfarrowwidth=\dimen319
+\pgfarrowlinewidth=\dimen320
 )))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tikz-3dplot\tikz-3
 dplot.sty"
@@ -1449,7 +1499,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryarrows.code.tex"
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen315
+\arrowsize=\dimen321
 )))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
 r/tikz/libraries\tikzlibraryangles.code.tex"
@@ -1468,9 +1518,9 @@ score.code.tex"
 \t@pgfplots@toka=\toks55
 \t@pgfplots@tokb=\toks56
 \t@pgfplots@tokc=\toks57
-\pgfplots@tmpa=\dimen316
-\c@pgfplots@coordindex=\count333
-\c@pgfplots@scanlineindex=\count334
+\pgfplots@tmpa=\dimen322
+\c@pgfplots@coordindex=\count339
+\c@pgfplots@scanlineindex=\count340
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pgf
 plotssysgeneric.code.tex"))
@@ -1488,13 +1538,13 @@ ucture\pgfplotsliststructure.code.tex")
 ucture\pgfplotsliststructureext.code.tex")
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count335
+\c@pgfplotsarray@tmp=\count341
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsmatrix.code.tex")
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/numtabl
 e\pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count336
+\c@pgfplotstable@counta=\count342
 \t@pgfplotstable@a=\toks58
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
@@ -1507,7 +1557,7 @@ fplotsbinary.data.code.tex"))
 fplotsutil.verb.code.tex")
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\pg
 flibrarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count337
+\c@pgfplotslibrarysurf@no=\count343
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pgf
 librarypgfplots.surfshading.pgfsys-pdftex.def")))
@@ -1539,16 +1589,16 @@ s.paths.code.tex")
 r/tikz/libraries\tikzlibrarydecorations.code.tex"
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 oduledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen317
-\pgfdecoratedremainingdistance=\dimen318
-\pgfdecoratedinputsegmentcompleteddistance=\dimen319
-\pgfdecoratedinputsegmentremainingdistance=\dimen320
-\pgf@decorate@distancetomove=\dimen321
-\pgf@decorate@repeatstate=\count338
-\pgfdecorationsegmentamplitude=\dimen322
-\pgfdecorationsegmentlength=\dimen323
+\pgfdecoratedcompleteddistance=\dimen323
+\pgfdecoratedremainingdistance=\dimen324
+\pgfdecoratedinputsegmentcompleteddistance=\dimen325
+\pgfdecoratedinputsegmentremainingdistance=\dimen326
+\pgf@decorate@distancetomove=\dimen327
+\pgf@decorate@repeatstate=\count344
+\pgfdecorationsegmentamplitude=\dimen328
+\pgfdecorationsegmentlength=\dimen329
 )
-\tikz@lib@dec@box=\box81
+\tikz@lib@dec@box=\box84
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
 r/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex"
@@ -1558,13 +1608,13 @@ corations\pgflibrarydecorations.pathmorphing.code.tex"))
 r/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/de
 corations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count339
-\pgfplots@xmin@reg=\dimen324
-\pgfplots@xmax@reg=\dimen325
-\pgfplots@ymin@reg=\dimen326
-\pgfplots@ymax@reg=\dimen327
-\pgfplots@zmin@reg=\dimen328
-\pgfplots@zmax@reg=\dimen329
+\pgfplots@numplots=\count345
+\pgfplots@xmin@reg=\dimen330
+\pgfplots@xmax@reg=\dimen331
+\pgfplots@ymin@reg=\dimen332
+\pgfplots@ymax@reg=\dimen333
+\pgfplots@zmin@reg=\dimen334
+\pgfplots@zmax@reg=\dimen335
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
 r/tikz/libraries\tikzlibraryplotmarks.code.tex"
@@ -1592,30 +1642,27 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\multicol.sty
 "
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count340
-\mult@box=\box82
-\multicol@leftmargin=\dimen330
-\c@unbalance=\count341
-\c@collectmore=\count342
-\doublecol@number=\count343
-\multicoltolerance=\count344
-\multicolpretolerance=\count345
-\full@width=\dimen331
-\page@free=\dimen332
-\premulticols=\dimen333
-\postmulticols=\dimen334
-\multicolsep=\skip69
-\multicolbaselineskip=\skip70
-\partial@page=\box83
-\last@line=\box84
-\maxbalancingoverflow=\dimen335
-\mult@rightbox=\box85
-\mult@grightbox=\box86
-\mult@gfirstbox=\box87
-\mult@firstbox=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
+\c@tracingmulticols=\count346
+\mult@box=\box85
+\multicol@leftmargin=\dimen336
+\c@unbalance=\count347
+\c@collectmore=\count348
+\doublecol@number=\count349
+\multicoltolerance=\count350
+\multicolpretolerance=\count351
+\full@width=\dimen337
+\page@free=\dimen338
+\premulticols=\dimen339
+\postmulticols=\dimen340
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box86
+\last@line=\box87
+\maxbalancingoverflow=\dimen341
+\mult@rightbox=\box88
+\mult@grightbox=\box89
+\mult@gfirstbox=\box90
+\mult@firstbox=\box91
 \@tempa=\box92
 \@tempa=\box93
 \@tempa=\box94
@@ -1650,15 +1697,18 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box123
 \@tempa=\box124
 \@tempa=\box125
-\c@minrows=\count346
-\c@columnbadness=\count347
-\c@finalcolumnbadness=\count348
-\last@try=\dimen336
-\multicolovershoot=\dimen337
-\multicolundershoot=\dimen338
-\mult@nat@firstbox=\box126
-\colbreak@box=\box127
-\mc@col@check@num=\count349
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\c@minrows=\count352
+\c@columnbadness=\count353
+\c@finalcolumnbadness=\count354
+\last@try=\dimen342
+\multicolovershoot=\dimen343
+\multicolundershoot=\dimen344
+\mult@nat@firstbox=\box129
+\colbreak@box=\box130
+\mc@col@check@num=\count355
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\mathrsfs.
 sty"
@@ -1677,11 +1727,11 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 ) ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count350
+\c@float@type=\count356
 \float@exts=\toks61
-\float@box=\box128
+\float@box=\box131
 \@float@everytoks=\toks62
-\@floatcapt=\box129
+\@floatcapt=\box132
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/morefloats\moreflo
 ats.sty"
@@ -1703,25 +1753,25 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 ty"
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen339
-\captionmargin@=\dimen340
-\captionwidth=\dimen341
-\caption@tempdima=\dimen342
-\caption@indent=\dimen343
-\caption@parindent=\dimen344
-\caption@hangindent=\dimen345
+\captionmargin=\dimen345
+\captionmargin@=\dimen346
+\captionwidth=\dimen347
+\caption@tempdima=\dimen348
+\caption@indent=\dimen349
+\caption@parindent=\dimen350
+\caption@hangindent=\dimen351
 Package caption Info: beamer document class detected.
 )
-\c@caption@flags=\count351
-\c@continuedfloat=\count352
+\c@caption@flags=\count357
+\c@continuedfloat=\count358
 Package caption Info: beamer document class.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 )
-\c@subfigure=\count353
-\c@subtable=\count354
+\c@subfigure=\count359
+\c@subtable=\count360
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcolorbo
 x.sty"
@@ -1731,31 +1781,31 @@ Package: tcolorbox 2019/11/15 version 4.22 text color boxes
 y"
 Package: environ 2014/05/04 v0.3 A new way to define environments
 )
-\tcb@titlebox=\box130
-\tcb@upperbox=\box131
-\tcb@lowerbox=\box132
-\tcb@phantombox=\box133
-\c@tcbbreakpart=\count355
-\c@tcblayer=\count356
-\tcolorbox@number=\count357
-\tcb@temp=\box134
-\tcb@temp=\box135
-\tcb@temp=\box136
+\tcb@titlebox=\box133
+\tcb@upperbox=\box134
+\tcb@lowerbox=\box135
+\tcb@phantombox=\box136
+\c@tcbbreakpart=\count361
+\c@tcblayer=\count362
+\tcolorbox@number=\count363
 \tcb@temp=\box137
+\tcb@temp=\box138
+\tcb@temp=\box139
+\tcb@temp=\box140
 \tcb@out=\write5
 \tcb@record@out=\write6
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbraste
 r.code.tex"
 Library (tcolorbox): 'tcbraster.code.tex' version '4.22'
-\c@tcbrastercolumn=\count358
-\c@tcbrasterrow=\count359
-\c@tcbraster=\count360
+\c@tcbrastercolumn=\count364
+\c@tcbrasterrow=\count365
+\c@tcbraster=\count366
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbskins
 .code.tex"
 Library (tcolorbox): 'tcbskins.code.tex' version '4.22'
-\tcb@waterbox=\box138
+\tcb@waterbox=\box141
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbskins
 jigsaw.code.tex"
@@ -1764,9 +1814,9 @@ Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.22'
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbbreak
 able.code.tex"
 Library (tcolorbox): 'tcbbreakable.code.tex' version '4.22'
-\tcb@testbox=\box139
-\tcb@totalupperbox=\box140
-\tcb@totallowerbox=\box141
+\tcb@testbox=\box142
+\tcb@totalupperbox=\box143
+\tcb@totallowerbox=\box144
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbhooks
 .code.tex"
@@ -1779,33 +1829,15 @@ Library (tcolorbox): 'tcbtheorems.code.tex' version '4.22'
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbfitti
 ng.code.tex"
 Library (tcolorbox): 'tcbfitting.code.tex' version '4.22'
-\tcbfitdim=\dimen346
-\tcb@lowerfitdim=\dimen347
-\tcb@upperfitdim=\dimen348
-\tcb@cur@hbadness=\count361
+\tcbfitdim=\dimen352
+\tcb@lowerfitdim=\dimen353
+\tcb@upperfitdim=\dimen354
+\tcb@cur@hbadness=\count367
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbxpars
 e.code.tex"
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.22'
-
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\
-xparse.sty"
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty
-"
-Package: expl3 2020-02-14 L3 programming layer (loader) 
-
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
-d-pdfmode.def"
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count362
-\l__pdf_internal_box=\box142
-))
-Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count363
-\g__xparse_grabber_int=\count364
-\l__xparse_m_args_int=\count365
-\l__xparse_v_nesting_int=\count366
-))
+)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcblisti
 ngsutf8.code.tex"
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.22'
@@ -1816,25 +1848,25 @@ Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
 sty"
-\lst@mode=\count367
-\lst@gtempboxa=\box143
+\lst@mode=\count368
+\lst@gtempboxa=\box145
 \lst@token=\toks63
-\lst@length=\count368
-\lst@currlwidth=\dimen349
-\lst@column=\count369
-\lst@pos=\count370
-\lst@lostspace=\dimen350
-\lst@width=\dimen351
-\lst@newlines=\count371
-\lst@lineno=\count372
-\lst@maxwidth=\dimen352
+\lst@length=\count369
+\lst@currlwidth=\dimen355
+\lst@column=\count370
+\lst@pos=\count371
+\lst@lostspace=\dimen356
+\lst@width=\dimen357
+\lst@newlines=\count372
+\lst@lineno=\count373
+\lst@maxwidth=\dimen358
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
 ty"
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count373
-\lst@skipnumbers=\count374
-\lst@framebox=\box144
+\c@lstnumber=\count374
+\lst@skipnumbers=\count375
+\lst@framebox=\box146
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
 cfg"
@@ -1859,7 +1891,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 ssing.code.tex"
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
 )
-\c@tcblisting=\count375
+\c@tcblisting=\count376
 )))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbexter
 nal.code.tex"
@@ -1888,52 +1920,52 @@ Library (tcolorbox): 'tcbposter.code.tex' version '4.22'
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyvrb\fancyvrb.
 sty"
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count376
+\FV@CodeLineNo=\count377
 \FV@InFile=\read4
-\FV@TabBox=\box145
-\c@FancyVerbLine=\count377
-\FV@StepNumber=\count378
+\FV@TabBox=\box147
+\c@FancyVerbLine=\count378
+\FV@StepNumber=\count379
 \FV@OutFile=\write7
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
 y"
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip71
-\LTright=\skip72
-\LTpre=\skip73
-\LTpost=\skip74
-\LTchunksize=\count379
-\LTcapwidth=\dimen353
-\LT@head=\box146
-\LT@firsthead=\box147
-\LT@foot=\box148
-\LT@lastfoot=\box149
-\LT@cols=\count380
-\LT@rows=\count381
-\c@LT@tables=\count382
-\c@LT@chunks=\count383
+\LTleft=\skip72
+\LTright=\skip73
+\LTpre=\skip74
+\LTpost=\skip75
+\LTchunksize=\count380
+\LTcapwidth=\dimen359
+\LT@head=\box148
+\LT@firsthead=\box149
+\LT@foot=\box150
+\LT@lastfoot=\box151
+\LT@cols=\count381
+\LT@rows=\count382
+\c@LT@tables=\count383
+\c@LT@chunks=\count384
 \LT@p@ftn=\toks64
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs.
 sty"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen354
-\lightrulewidth=\dimen355
-\cmidrulewidth=\dimen356
-\belowrulesep=\dimen357
-\belowbottomsep=\dimen358
-\aboverulesep=\dimen359
-\abovetopsep=\dimen360
-\cmidrulesep=\dimen361
-\cmidrulekern=\dimen362
-\defaultaddspace=\dimen363
-\@cmidla=\count384
-\@cmidlb=\count385
-\@aboverulesep=\dimen364
-\@belowrulesep=\dimen365
-\@thisruleclass=\count386
-\@lastruleclass=\count387
-\@thisrulewidth=\dimen366
+\heavyrulewidth=\dimen360
+\lightrulewidth=\dimen361
+\cmidrulewidth=\dimen362
+\belowrulesep=\dimen363
+\belowbottomsep=\dimen364
+\aboverulesep=\dimen365
+\abovetopsep=\dimen366
+\cmidrulesep=\dimen367
+\cmidrulekern=\dimen368
+\defaultaddspace=\dimen369
+\@cmidla=\count385
+\@cmidlb=\count386
+\@aboverulesep=\dimen370
+\@belowrulesep=\dimen371
+\@thisruleclass=\count387
+\@lastruleclass=\count388
+\@thisrulewidth=\dimen372
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\stackrel.
 sty"
@@ -1955,7 +1987,7 @@ tex"
 \XKV@toks=\toks65
 \XKV@tempa@toks=\toks66
 )
-\XKV@depth=\count388
+\XKV@depth=\count389
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\ifdraft.s
@@ -1973,73 +2005,65 @@ Package zref Info: New property list: main on input line 763.
 Package zref Info: New property: default on input line 764.
 Package zref Info: New property: page on input line 765.
 )
-\c@abspage=\count389
+\c@abspage=\count390
 Package zref Info: New property: abspage on input line 66.
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/media9\pdfbase.sty
 "
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3keys2
-e\l3keys2e.sty"
-Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
-)
 Package: pdfbase 2020/03/25 v0.41 driver independent access to low-level PDF fe
 atures
-\g_pbs_page_int=\count390
-\g_pbs_oc_int=\count391
+\g_pbs_page_int=\count391
+\g_pbs_oc_int=\count392
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ocgx2\ocgbase.sty"
 Package: ocgbase 2019/11/04 v0.17 support package for ocgx2.sty
-\g_ocgbase_nd_int=\count392
+\g_ocgbase_nd_int=\count393
 )
-\@anim@box=\box150
-\@anim@measbox=\box151
-\@anim@tmpdima=\dimen367
-\@anim@tmpdimb=\dimen368
-\@anim@num=\count393
-\@anim@curframe=\count394
-\@anim@curframe@zb=\count395
-\@anim@resizeflags=\count396
-\@anim@skipfram=\count397
-\@anim@mulframecnt=\count398
+\@anim@box=\box152
+\@anim@measbox=\box153
+\@anim@tmpdima=\dimen373
+\@anim@tmpdimb=\dimen374
+\@anim@num=\count394
+\@anim@curframe=\count395
+\@anim@curframe@zb=\count396
+\@anim@resizeflags=\count397
+\@anim@skipfram=\count398
+\@anim@mulframecnt=\count399
 \@anim@@tmlnfile=\read5
-\@anim@tmpcnt=\count399
-\c@@anim@ltxcnt=\count400
-\@anim@curlayer=\count401
-\@anim@lineno=\count402
-\@anim@curfield=\count403
-\@anim@@resizeflags=\count404
+\@anim@tmpcnt=\count400
+\c@@anim@ltxcnt=\count401
+\@anim@curlayer=\count402
+\@anim@lineno=\count403
+\@anim@curfield=\count404
+\@anim@@resizeflags=\count405
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/overpic\overpic.st
 y"
 Package: overpic 2020/02/22 1.3 picture overlays (RN)
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epic\epic.sty"
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
-\@@multicnt=\count405
-\d@lta=\count406
-\@delta=\dimen369
-\@@delta=\dimen370
-\@gridcnt=\count407
-\@joinkind=\count408
-\@dotgap=\dimen371
-\@ddotgap=\dimen372
-\@x@diff=\count409
-\@y@diff=\count410
-\x@diff=\dimen373
-\y@diff=\dimen374
-\@dotbox=\box152
-\num@segments=\count411
-\num@segmentsi=\count412
+\@@multicnt=\count406
+\d@lta=\count407
+\@delta=\dimen375
+\@@delta=\dimen376
+\@gridcnt=\count408
+\@joinkind=\count409
+\@dotgap=\dimen377
+\@ddotgap=\dimen378
+\@x@diff=\count410
+\@y@diff=\count411
+\x@diff=\dimen379
+\y@diff=\dimen380
+\@dotbox=\box154
+\num@segments=\count412
+\num@segmentsi=\count413
 \@datafile=\read6
 )
-\OVP@box=\box153
+\OVP@box=\box155
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mnsymbol\MnSymbol.
 sty"
 Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
-
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.sty"
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
 LaTeX Info: Redefining \dagger on input line 84.
 LaTeX Info: Redefining \ddagger on input line 84.
 LaTeX Info: Redefining \mathparagraph on input line 84.
@@ -2119,23 +2143,23 @@ LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
 y"
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
 sages
-\sl@Save=\count413
-\sl@StateNumber=\count414
-\sl@MessageCount=\count415
-\sl@Casualties=\count416
+\sl@Save=\count414
+\sl@StateNumber=\count415
+\sl@MessageCount=\count416
+\sl@Casualties=\count417
 \sl@Filter=\toks67
 \sl@Message=\toks68
 \sl@UnexpandedMessage=\toks69
 \sl@Mess@ge=\toks70
-\sl@WarningCount=\count417
-\sl@WarningNumber=\count418
-\sl@WarningCasualties=\count419
+\sl@WarningCount=\count418
+\sl@WarningNumber=\count419
+\sl@WarningCasualties=\count420
 \sl@TempBOW=\toks71
 \sl@BankOfWarnings=\toks72
 LaTeX Info: Redefining \GenericWarning on input line 433.
-\sl@ErrorCount=\count420
-\sl@ErrorNumber=\count421
-\sl@ErrorCasualties=\count422
+\sl@ErrorCount=\count421
+\sl@ErrorNumber=\count422
+\sl@ErrorCasualties=\count423
 \sl@TempBOE=\toks73
 \sl@BankOfErrors=\toks74
 LaTeX Info: Redefining \GenericError on input line 601.
@@ -2510,7 +2534,7 @@ ns
 sty"
 Package: thmtools 2019/12/22 v68
 \thmt@toks=\toks75
-\c@thmt@dummyctr=\count423
+\c@thmt@dummyctr=\count424
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/thmtools\thm-patch
 .sty"
@@ -2573,14 +2597,14 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
 File: babel.def 2020/02/28 3.41 Babel common definitions
-\babel@savecnt=\count424
-\U@D=\dimen375
+\babel@savecnt=\count425
+\U@D=\dimen381
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.d
 ef")
 \bbl@readstream=\read7
 LaTeX Info: Redefining \textlatin on input line 2402.
-\bbl@dirlevel=\count425
+\bbl@dirlevel=\count426
 )
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
@@ -2590,7 +2614,9 @@ Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language72) on input line 108.
 ))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerinner
-themerectangles.sty"))
+themerectangles.sty")
+\c@tcb@cnt@lem=\count427
+)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerfontt
 hemeserif.sty")
 Package csquotes Info: Checking for multilingual support...
@@ -2600,33 +2626,33 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 107.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 136.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-07.
+36.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cbfonts-fd\lgrcmr.
 fd"
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10
-7.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
+6.
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2668,16 +2694,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count426
-\scratchdimen=\dimen376
-\scratchbox=\box154
-\nofMPsegments=\count427
-\nofMParguments=\count428
+\scratchcounter=\count428
+\scratchdimen=\dimen382
+\scratchbox=\box156
+\nofMPsegments=\count429
+\nofMParguments=\count430
 \everyMPshowfont=\toks78
-\MPscratchCnt=\count429
-\MPscratchDim=\dimen377
-\MPnumerator=\count430
-\makeMPintoPDFobject=\count431
+\MPscratchCnt=\count431
+\MPscratchDim=\dimen383
+\MPnumerator=\count432
+\makeMPintoPDFobject=\count433
 \everyMPtoPDFconversion=\toks79
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
@@ -2686,8 +2712,8 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box155
-Package hyperref Info: Link coloring ON on input line 107.
+\AtBeginShipoutBox=\box157
+Package hyperref Info: Link coloring ON on input line 136.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -2701,11 +2727,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count432
+\c@section@level=\count434
 )
-LaTeX Info: Redefining \ref on input line 107.
-LaTeX Info: Redefining \pageref on input line 107.
-LaTeX Info: Redefining \nameref on input line 107.
+LaTeX Info: Redefining \ref on input line 136.
+LaTeX Info: Redefining \pageref on input line 136.
+LaTeX Info: Redefining \nameref on input line 136.
  (main.out) (main.out)
 \@outlinefile=\write8
 \openout8 = `main.out'.
@@ -2713,41 +2739,41 @@ LaTeX Info: Redefining \nameref on input line 107.
 \symnumbers=\mathgroup12
 \sympureletters=\mathgroup13
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 107.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 107.
+(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 107.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 107.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 107.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 107.
+(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/lmr/m/n on input line 107.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 107.
+(Font)                  OT1/cmss/bx/n --> T1/lmr/m/n on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 107.
+(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 107.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 107.
+(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 136.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 107.
+(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 107.
+(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 136.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 107.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 136.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 107.
+(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 107.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 107.
+(Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 107.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 107.
+(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 136.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 107.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 136.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-basic-dictionary-English.dict"
@@ -2773,14 +2799,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 107.
+LaTeX Info: Redefining \microtypecontext on input line 136.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 107.
+LaTeX Info: Redefining \showhyphens on input line 136.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2802,13 +2828,13 @@ sty"
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count433
-<UiB-images/colorado-state-university-logo.png, id=72, 628.43478pt x 471.32608p
-t>
+\c@lstlisting=\count435
+<UiB-images/colorado-state-university-logo.png, id=100, 628.43478pt x 471.32608
+pt>
 File: UiB-images/colorado-state-university-logo.png Graphic file (type png)
 <use UiB-images/colorado-state-university-logo.png>
 Package pdftex.def Info: UiB-images/colorado-state-university-logo.png  used on
- input line 107.
+ input line 136.
 (pdftex.def)             Requested size: 94.26114pt x 70.69586pt.
  [1
 
@@ -2819,8 +2845,46 @@ s/colorado-state-university-logo.png>] (main.nav) [2
 
 ] [4
 
+] [5
+
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 131
+[6
+
+] [7
+
+] [8
+
+] [9
+
+] [10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+]
+<eit.jpg, id=197, 615.29875pt x 615.29875pt>
+File: eit.jpg Graphic file (type jpg)
+<use eit.jpg>
+Package pdftex.def Info: eit.jpg  used on input line 189.
+(pdftex.def)             Requested size: 187.62204pt x 187.6142pt.
+ [15
+
+ <./eit.jpg>] [16
+
+] [17
+
+] [18
+
+]
+[19
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 235
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -2830,7 +2894,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 131
+LaTeX Font Info:    Trying to load font information for U+msb on input line 235
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -2840,27 +2904,495 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
-1.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
+5.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 13
-1.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 23
+5.
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-) [5
+) [20
 
-] [6
+] [21
 
-] [7
+] [22
 
-] [8
+] [23
 
-] [9
+] [24
 
-] [10
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+] [32
+
+]
+(sphere_charts_maps.pdf_tex
+<sphere_charts_maps.pdf, id=323, page=1, 765.41641pt x 545.24957pt>
+File: sphere_charts_maps.pdf Graphic file (type pdf)
+<use sphere_charts_maps.pdf, page 1>
+Package pdftex.def Info: sphere_charts_maps.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 337.71738pt x 240.57613pt.
+<sphere_charts_maps.pdf, id=324, page=2, 765.41641pt x 545.24957pt>
+File: sphere_charts_maps.pdf Graphic file (type pdf)
+<use sphere_charts_maps.pdf, page 2>
+Package pdftex.def Info: sphere_charts_maps.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 337.71738pt x 240.57613pt.
+<sphere_charts_maps.pdf, id=325, page=3, 765.41641pt x 545.24957pt>
+File: sphere_charts_maps.pdf Graphic file (type pdf)
+<use sphere_charts_maps.pdf, page 3>
+Package pdftex.def Info: sphere_charts_maps.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 337.71738pt x 240.57613pt.
+)
+Overfull \vbox (3.19084pt too high) detected at line 268
+ []
+
+[33
+
+ <./sphere_charts_maps.pdf> <./sphere_charts_maps.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+> <./sphere_charts_maps.pdf
+
+pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>] (pushforward.pdf_tex
+<pushforward.pdf, id=343, page=1, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 1>
+Package pdftex.def Info: pushforward.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+<pushforward.pdf, id=344, page=2, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 2>
+Package pdftex.def Info: pushforward.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+<pushforward.pdf, id=345, page=3, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 3>
+Package pdftex.def Info: pushforward.pdf , page3 used on input line 62.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+<pushforward.pdf, id=346, page=4, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 4>
+Package pdftex.def Info: pushforward.pdf , page4 used on input line 66.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+<pushforward.pdf, id=347, page=5, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 5>
+Package pdftex.def Info: pushforward.pdf , page5 used on input line 69.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+<pushforward.pdf, id=348, page=6, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 6>
+Package pdftex.def Info: pushforward.pdf , page6 used on input line 71.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+<pushforward.pdf, id=349, page=7, 738.76355pt x 438.37627pt>
+File: pushforward.pdf Graphic file (type pdf)
+<use pushforward.pdf, page 7>
+Package pdftex.def Info: pushforward.pdf , page7 used on input line 75.
+(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
+) [34
+
+ <./pushforward.pdf> <./pushforward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./pushforward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./pushforward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./pushforward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./pushforward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./pushforward.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>] (area.pdf_tex
+<area.pdf, id=366, page=1, 853.58266pt x 569.05513pt>
+File: area.pdf Graphic file (type pdf)
+<use area.pdf, page 1>
+Package pdftex.def Info: area.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 450.29175pt x 300.19981pt.
+<area.pdf, id=367, page=2, 853.58266pt x 569.05513pt>
+File: area.pdf Graphic file (type pdf)
+<use area.pdf, page 2>
+Package pdftex.def Info: area.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 450.29175pt x 300.19981pt.
+)
+Overfull \hbox (23.00883pt too wide) in paragraph at lines 287--287
+ |   [] 
+ []
+
+
+Overfull \vbox (80.49248pt too high) detected at line 287
+ []
+
+[35
+
+ <./area.pdf> <./area.pdf
+
+pdfTeX warning: pdflatex.exe (file ./area.pdf): PDF inclusion: multiple pdfs wi
+th page group included in a single page
+>]
+<1forms.png, id=384, 505.89pt x 308.65312pt>
+File: 1forms.png Graphic file (type png)
+<use 1forms.png>
+Package pdftex.def Info: 1forms.png  used on input line 295.
+(pdftex.def)             Requested size: 300.1964pt x 183.15872pt.
+ [36
+
+ <./1forms.png>]
+<2forms.png, id=391, 537.50812pt x 330.23375pt>
+File: 2forms.png Graphic file (type png)
+<use 2forms.png>
+Package pdftex.def Info: 2forms.png  used on input line 303.
+(pdftex.def)             Requested size: 300.1964pt x 184.4358pt.
+ [37
+
+ <./2forms.png>]
+<3forms.png, id=399, 510.40688pt x 336.75812pt>
+File: 3forms.png Graphic file (type png)
+<use 3forms.png>
+Package pdftex.def Info: 3forms.png  used on input line 312.
+(pdftex.def)             Requested size: 300.1964pt x 198.07408pt.
+ [38
+
+ <./3forms.png>] [39
+
+] [40
+
+]
+[41
+
+] [42
+
+] [43
+
+] [44
+
+] [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+] [50
+
+] [51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+]
+[56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+] [67
+
+] [68
+
+] [69
+
+] [70
+
+]
+[71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] [80
+
+] [81
+
+] [82
+
+] [83
+
+] [84
+
+] [85
+
+]
+[86
+
+] [87
+
+] [88
+
+] [89
+
+] [90
+
+] [91
+
+] [92
+
+]
+File: 2forms.png Graphic file (type png)
+<use 2forms.png>
+Package pdftex.def Info: 2forms.png  used on input line 523.
+(pdftex.def)             Requested size: 300.1964pt x 184.4358pt.
+ [93
+
+] [94
+
+] [95
+
+] [96
+
+] [97
+
+] [98
+
+] [99
+
+] [100
+
+]
+[101
+
+] [102
+
+] [103
+
+] [104
+
+] [105
+
+] [106
+
+] [107
+
+] [108
+
+] [109
+
+] [110
+
+] [111
+
+] [112
+
+]
+[113
+
+] [114
+
+] [115
+
+] [116
+
+] [117
+
+] [118
+
+] [119
+
+] [120
+
+] [121
+
+] [122
+
+] [123
+
+] [124
+
+]
+[125
+
+] [126
+
+] [127
+
+] [128
+
+] [129
+
+] [130
+
+] [131
+
+] [132
+
+] [133
+
+] [134
+
+] [135
+
+] [136
+
+]
+[137
+
+] [138
+
+] [139
+
+] [140
+
+] [141
+
+] [142
+
+] [143
+
+] [144
+
+] [145
+
+] [146
+
+] [147
+
+] [148
+
+]
+[149
+
+] [150
+
+] [151
+
+] [152
+
+] [153
+
+] [154
+
+] [155
+
+] [156
+
+] [157
+
+] [158
+
+] [159
+
+] [160
+
+]
+[161
+
+] [162
+
+] [163
+
+] [164
+
+] [165
+
+] [166
+
+] [167
+
+] [168
+
+] [169
+
+] [170
+
+] [171
+
+] [172
+
+]
+[173
+
+] [174
+
+] [175
+
+] [176
+
+] [177
+
+] [178
+
+] [179
+
+] [180
+
+] [181
+
+] [182
+
+] [183
+
+] [184
+
+]
+[185
 
 ]
 \tf@nav=\write9
@@ -2872,44 +3404,53 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 978.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 978.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 978.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 978.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 43B3E265AE66BD245EDBE9959E5E254E;369.
+(rerunfilecheck)             Checksum: 853E86F5E7ADDA5AEF89BBD74437CDF0;867.
  ) 
 Here is how much of TeX's memory you used:
- 51079 strings out of 481556
- 1169804 string characters out of 2913869
- 1602066 words of memory out of 3000000
- 65223 multiletter control sequences out of 15000+200000
- 596015 words of font info for 85 fonts, out of 3000000 for 9000
+ 52205 strings out of 481556
+ 1190771 string characters out of 2913869
+ 1625045 words of memory out of 3000000
+ 65913 multiletter control sequences out of 15000+200000
+ 640937 words of font info for 159 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,119p,773b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
-c}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
+ 69i,15n,119p,773b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
 SymbolE.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
-nsymbol/MnSymbolD.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/mnsymbol/MnSymbolC.enc}<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Colin/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Colin/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Use
-rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Colin/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Colin/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb>
-Output written on main.pdf (10 pages, 247461 bytes).
+nsymbol/MnSymbolS.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
+nc/dvips/mnsymbol/MnSymbolA.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Users/Colin/AppData/Local/Program
+s/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{C:/Users/Colin/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Colin/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}<C:/Users/Colin/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:
+/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSy
+mbol12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/mnsymbol/MnSymbol8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Us
+ers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
+bx10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
+m/lmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmbxi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/lm/lmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmr17.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmri10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmri8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (185 pages, 853063 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 14576 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 1488 PDF objects out of 1728 (max. 8388607)
+ 384 named destinations out of 1000 (max. 500000)
+ 25464 words of extra memory for PDF output out of 29859 (max. 10000000)
 
