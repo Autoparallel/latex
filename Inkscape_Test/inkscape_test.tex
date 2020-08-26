@@ -5,6 +5,9 @@
 \usepackage{float}
 \usepackage{morefloats}
 \usepackage{amsmath,amsthm,amssymb}
+\usepackage{relsize}
+
+\newcommand\scaleInNode[1][1]{\tikzset{execute at begin node={\normalsize\larger[#1]}}}
 
 \newcommand{\unitvec}{\boldsymbol{\hat{n}}}
 \newcommand{\xhat}{\boldsymbol{\hat{x}}}
@@ -14,8 +17,8 @@
 
 \begin{figure}[H]
 	\centering
-	\def\svgwidth{0.75\columnwidth}
-	\input{cube_coordinate_axes.pdf_tex}
+	%\def\svgwidth{\columnwidth}
+	\resizebox{\columnwidth}{!}{\input{projected_pf_decision_tree.pdf_tex}}
 \end{figure}
 
 \end{document}

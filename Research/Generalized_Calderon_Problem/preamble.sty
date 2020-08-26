@@ -34,8 +34,8 @@
 %\patchcmd{\f@nch@foot}{\rlap}{\color{green}\rlap}{}{}
 %\patchcmd{\footrule}{\hrule}{\color{green}\hrule}{}{}
 \makeatother
-\rhead{\textcolor{gray}{Notes}}
-\lhead{\textcolor{gray}{3D Calder\'on Problem}}
+%\rhead{\textcolor{gray}{Notes}}
+%\lhead{\textcolor{gray}{3D Calder\'on Problem}}
 \lfoot{\textcolor{gray}{Colin Roberts}}
 \rfoot{\textcolor{gray}{Colorado State University}}
 \cfoot{\textcolor{gray}{\thepage}}
@@ -86,28 +86,58 @@
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
 \newcommand{\RE}{\mathrm{Re}}
 \newcommand{\IM}{\mathrm{Im}}
-\newcommand{\cliffbund}{\mathrm{C}\ell(TM)}
-\newcommand{\cliffsect}{\Gamma\left(\mathrm{C}\ell(TM)\right)}
+\newcommand{\cliffordbundle}{\mathrm{C}\ell(TM, g)}
+\newcommand{\cliffordfields}{C\ell(M)}
+\newcommand{\cliffordforms}{C\ell^*(M)}
+\newcommand{\cliffordkforms}[1]{C\ell_{#1}^*(M)}
+\newcommand{\evencliffordfields}{C\ell^{[0]}(M)}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\conjugates}{\mathcal{C}(M)}
+\newcommand{\innerproduct}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\harmonicfunctions}{\mathcal{H}(M)}
+
+\makeatletter
+\DeclareFontFamily{OMX}{MnSymbolE}{}
+\DeclareSymbolFont{MnLargeSymbols}{OMX}{MnSymbolE}{m}{n}
+\SetSymbolFont{MnLargeSymbols}{bold}{OMX}{MnSymbolE}{b}{n}
+\DeclareFontShape{OMX}{MnSymbolE}{m}{n}{
+    <-6>  MnSymbolE5
+   <6-7>  MnSymbolE6
+   <7-8>  MnSymbolE7
+   <8-9>  MnSymbolE8
+   <9-10> MnSymbolE9
+  <10-12> MnSymbolE10
+  <12->   MnSymbolE12
+}{}
+\DeclareFontShape{OMX}{MnSymbolE}{b}{n}{
+    <-6>  MnSymbolE-Bold5
+   <6-7>  MnSymbolE-Bold6
+   <7-8>  MnSymbolE-Bold7
+   <8-9>  MnSymbolE-Bold8
+   <9-10> MnSymbolE-Bold9
+  <10-12> MnSymbolE-Bold10
+  <12->   MnSymbolE-Bold12
+}{}
+
+\let\llangle\@undefined
+\let\rrangle\@undefined
+\DeclareMathDelimiter{\llangle}{\mathopen}%
+                     {MnLargeSymbols}{'164}{MnLargeSymbols}{'164}
+\DeclareMathDelimiter{\rrangle}{\mathclose}%
+                     {MnLargeSymbols}{'171}{MnLargeSymbols}{'171}
+\makeatother
+
+\newcommand{\kforminnerproduct}[2]{\llangle #1, #2 \rrangle}
 
 \DeclarePairedDelimiter\angles{\langle}{\rangle}
-\newcommand{\projzero}[1]{\angles*{#1}_0}
-\newcommand{\projone}[1]{\angles*{#1}_1}
-\newcommand{\projtwo}[1]{\angles*{#1}_2}
-\newcommand{\projthree}[1]{\angles*{#1}_3}
+\newcommand{\proj}[2]{\angles*{#2}_{#1}}
+
 
 \DeclarePairedDelimiter\parentheses{\lparen}{\rparen}
 \newcommand{\grad}[1]{\operatorname{grad} \parentheses*{#1}}
 
 % Useful Symbols
-\newcommand{\vectv}{\mathbf{v}}
-\newcommand{\vectw}{\mathbf{w}}
-\newcommand{\nspacealg}{\mathcal{G}_n}
-\newcommand{\spacealg}{\mathcal{G}_3}
-\newcommand{\twospacealg}{\mathcal{G}_2}
-\newcommand{\alg}{\mathcal{A}}
-\newcommand{\Spin}{\mathrm{Spin}}
-\newcommand{\id}{\mathrm{Id}}
-\newcommand{\Spinors}{\mathrm{Spinor}(TM)}
+\newcommand{\alg}{\mathcal{A}(M)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

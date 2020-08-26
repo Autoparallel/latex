@@ -1,0 +1,104 @@
+\documentclass[UKenglish]{beamer}
+
+
+\usepackage[utf8]{inputenx} % For æ, ø, å
+\usepackage{csquotes}       % Quotation marks
+\usepackage{microtype}      % Improved typography
+\usepackage{amssymb}        % Mathematical symbols
+\usepackage{mathtools}      % Mathematical symbols
+\usepackage[absolute, overlay]{textpos} % Arbitrary placement
+\setlength{\TPHorizModule}{\paperwidth} % Textpos units
+\setlength{\TPVertModule}{\paperheight} % Textpos units
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}  % Overlay effects for TikZ
+
+\usepackage{hyperref}
+\usepackage{svg}
+
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles}
+\RequirePackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{pgf,tikz}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{subcaption}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{fancyvrb}
+\usepackage{longtable,booktabs}
+\usepackage{stackrel}
+
+
+\usetheme{UiB}
+
+
+\author{Colin Roberts}
+\setbeamercolor{title}{fg=white} 
+\title{A Multiscale approach to modeling the municipal spread of COVID-19}
+\setbeamercolor{subtitle}{fg=white} 
+\subtitle{}
+
+
+\begin{document}
+
+\begin{frame}{}
+\vfill
+    Joint work with
+    \begin{itemize}
+        \item Elijah Pivo, MIT Institute for Data, Systems, and Society.
+        \item Claire Valva, NYU Courant Center for Atmosphere and Ocean Science.
+    \end{itemize}
+    \vfill
+\end{frame}
+
+\begin{frame}{Question}
+\vfill
+    \center
+    How do schools and universities impact the viral spread in a city or county?
+\vfill
+\end{frame}
+
+
+
+
+\begin{frame}{Acknowledgements}
+\vfill
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/mcrn_logo.png}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/nsf_logo.png}
+     \end{subfigure}
+     \\
+     \vspace*{1cm}
+     \begin{subfigure}[b]{0.8\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/aim_logo.jpg}
+     \end{subfigure}
+\end{figure}
+\vfill
+\end{frame}
+
+
+
+
+\end{document}

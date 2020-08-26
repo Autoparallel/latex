@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  23 MAR 2020 08:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  24 AUG 2020 19:43
 entering extended mode
 **./inkscape_test.tex
 (inkscape_test.tex
@@ -245,6 +245,10 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\relsize.st
+y"
+Package: relsize 2013/03/29 ver 4.1
+)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
 d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
@@ -253,20 +257,20 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 ) (inkscape_test.aux)
 \openout1 = `inkscape_test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
@@ -288,13 +292,13 @@ pdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) (cube_coordinate_axes.pdf_tex
-<cube_coordinate_axes.pdf, id=1, page=1, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 1>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page1 used on input line 56
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
+) (projected_pf_decision_tree.pdf_tex
+<projected_pf_decision_tree.pdf, id=1, page=1, 557.75945pt x 183.17009pt>
+File: projected_pf_decision_tree.pdf Graphic file (type pdf)
+<use projected_pf_decision_tree.pdf, page 1>
+Package pdftex.def Info: projected_pf_decision_tree.pdf , page1 used on input l
+ine 56.
+(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
@@ -306,96 +310,53 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<cube_coordinate_axes.pdf, id=2, page=2, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 2>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page2 used on input line 59
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
-<cube_coordinate_axes.pdf, id=3, page=3, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 3>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page3 used on input line 61
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
-<cube_coordinate_axes.pdf, id=4, page=4, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 4>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page4 used on input line 63
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
-<cube_coordinate_axes.pdf, id=5, page=5, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 5>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page5 used on input line 65
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
-<cube_coordinate_axes.pdf, id=6, page=6, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 6>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page6 used on input line 67
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
-<cube_coordinate_axes.pdf, id=7, page=7, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 7>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page7 used on input line 69
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
-<cube_coordinate_axes.pdf, id=8, page=8, 345.03535pt x 291.76164pt>
-File: cube_coordinate_axes.pdf Graphic file (type pdf)
-<use cube_coordinate_axes.pdf, page 8>
-Package pdftex.def Info: cube_coordinate_axes.pdf , page8 used on input line 71
-.
-(pdftex.def)             Requested size: 292.5pt x 247.33968pt.
+<projected_pf_decision_tree.pdf, id=2, page=2, 557.75945pt x 183.17009pt>
+File: projected_pf_decision_tree.pdf Graphic file (type pdf)
+<use projected_pf_decision_tree.pdf, page 2>
+Package pdftex.def Info: projected_pf_decision_tree.pdf , page2 used on input l
+ine 59.
+(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
+<projected_pf_decision_tree.pdf, id=3, page=3, 557.75945pt x 183.17009pt>
+File: projected_pf_decision_tree.pdf Graphic file (type pdf)
+<use projected_pf_decision_tree.pdf, page 3>
+Package pdftex.def Info: projected_pf_decision_tree.pdf , page3 used on input l
+ine 61.
+(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
+<projected_pf_decision_tree.pdf, id=4, page=4, 557.75945pt x 183.17009pt>
+File: projected_pf_decision_tree.pdf Graphic file (type pdf)
+<use projected_pf_decision_tree.pdf, page 4>
+Package pdftex.def Info: projected_pf_decision_tree.pdf , page4 used on input l
+ine 66.
+(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
 ) [1
 
-{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./cube_coor
-dinate_axes.pdf> <./cube_coordinate_axes.pdf
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./projected
+_pf_decision_tree.pdf> <./projected_pf_decision_tree.pdf
 
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./cube_coordinate_axes.pdf
+pdfTeX warning: pdflatex.exe (file ./projected_pf_decision_tree.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./projected_pf_decision_tree.pdf
 
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./cube_coordinate_axes.pdf
+pdfTeX warning: pdflatex.exe (file ./projected_pf_decision_tree.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./projected_pf_decision_tree.pdf
 
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./cube_coordinate_axes.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex.exe (file ./projected_pf_decision_tree.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
 >] (inkscape_test.aux) ) 
 Here is how much of TeX's memory you used:
- 4363 strings out of 481556
- 65353 string characters out of 2913869
- 327423 words of memory out of 3000000
- 19539 multiletter control sequences out of 15000+200000
+ 4416 strings out of 481556
+ 65882 string characters out of 2913869
+ 329522 words of memory out of 3000000
+ 19588 multiletter control sequences out of 15000+200000
  537296 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,44p,265b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,15n,44p,322b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on inkscape_test.pdf (1 page, 45021 bytes).
+/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on inkscape_test.pdf (1 page, 16210 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 16 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

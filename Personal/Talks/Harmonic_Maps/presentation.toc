@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Overview}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Motivation}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Framework}{11}{0}{1}
+\beamer@sectionintoc {2}{PDEs and Geometry}{14}{0}{2}
+\beamer@subsectionintoc {2}{1}{Harmonic Maps}{14}{0}{2}
+\beamer@subsectionintoc {2}{2}{Gradient Flow}{20}{0}{2}
+\beamer@subsectionintoc {2}{3}{Geometry and Other Applications}{30}{0}{2}

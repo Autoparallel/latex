@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  18 JUN 2020 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  12 AUG 2020 16:20
 entering extended mode
 **./main.tex
 (main.tex
@@ -1286,6 +1286,11 @@ Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 )
 \OVP@box=\box125
 )
+\symMnLargeSymbols=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `MnLargeSymbols' in version `bold'
+(Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
+02.
+
 
 LaTeX Warning: You have requested package `preamble',
                but the package provides `design'.
@@ -1302,17 +1307,11 @@ Package: environments
 \c@proposition=\count367
 \c@definition=\count368
 \c@example=\count369
-\c@solution=\count370
-\c@problem=\count371
-\c@question=\count372
-\c@exercise=\count373
-\c@tcb@cnt@thm=\count374
-\c@tcb@cnt@prop=\count375
-\c@tcb@cnt@ex=\count376
-\c@tcb@cnt@ques=\count377
-\c@tcb@cnt@remark=\count378
-\c@tcb@cnt@df=\count379
-\c@tcb@cnt@rmk=\count380
+\c@remark=\count370
+\c@solution=\count371
+\c@problem=\count372
+\c@question=\count373
+\c@exercise=\count374
 ) (main.aux)
 \openout1 = `main.aux'.
 
@@ -1336,16 +1335,16 @@ LaTeX Font Info:    ... okay on input line 20.
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count381
+\scratchcounter=\count375
 \scratchdimen=\dimen329
 \scratchbox=\box126
-\nofMPsegments=\count382
-\nofMParguments=\count383
+\nofMPsegments=\count376
+\nofMParguments=\count377
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count384
+\MPscratchCnt=\count378
 \MPscratchDim=\dimen330
-\MPnumerator=\count385
-\makeMPintoPDFobject=\count386
+\MPnumerator=\count379
+\makeMPintoPDFobject=\count380
 \everyMPtoPDFconversion=\toks56
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
@@ -1392,7 +1391,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.15).
 
-\c@lstlisting=\count387
+\c@lstlisting=\count381
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks57
@@ -1416,7 +1415,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count388
+\c@section@level=\count382
 )
 LaTeX Info: Redefining \ref on input line 20.
 LaTeX Info: Redefining \pageref on input line 20.
@@ -1448,53 +1447,90 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 24
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1
 
-{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(introduction.tex) (bc_method.tex) (clifford_fields_eit.texpdfTeX warning (ext4
-): destination with the same identifier (name{page.1}) has been already used, d
-uplicate ignored
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX warni
+ng (ext4): destination with the same identifier (name{page.1}) has been already
+ used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 \[
-        [1] [2] [3] [4] [5] [6] [7] [8] [9]) [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
+l.46 \[
+        [1] [2]
+Overfull \hbox (3.98828pt too wide) in paragraph at lines 109--109
+|[]\OT1/cmr/bx/n/20.74 Dirichlet to Neu-mann Op-er-a-tor and Hilbert
+ []
+
+[3]
+Overfull \hbox (17.5485pt too wide) in paragraph at lines 161--161
+|[]\OT1/cmr/bx/n/20.74 Recovering a Sub-al-ge-bra of Mono-genic Fields| 
+ []
+
+[4]
+
+LaTeX Warning: Reference `eq:clifford_norm' on page 5 undefined on input line 1
+73.
+
+(main.bbl
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+5.
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
+
+Underfull \hbox (badness 1515) in paragraph at lines 20--24
+[]|\OT1/cmr/m/n/12 , \OT1/cmr/m/it/12 On al-ge-braic and unique-ness prop-er-ti
+es of 3d har-monic quater-nion fields\OT1/cmr/m/n/12 ,
+ []
+
+[5]) [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9F93830D0D6457658AFA41847839038C;580.
+(rerunfilecheck)             Checksum: 26FEF658CFD2A64E8B54EC643B38FCD3;392.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 40136 strings out of 481556
- 952798 string characters out of 2913869
- 1366371 words of memory out of 3000000
- 54583 multiletter control sequences out of 15000+200000
- 545961 words of font info for 80 fonts, out of 3000000 for 9000
+ 39945 strings out of 481556
+ 950058 string characters out of 2913869
+ 1354016 words of memory out of 3000000
+ 54419 multiletter control sequences out of 15000+200000
+ 548765 words of font info for 88 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,13n,123p,810b,1201s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,12n,123p,1067b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1200.pk><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmbx10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Colin/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Col
-in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Colin/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
-s/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Colin/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (11 pages, 238636 bytes).
+tcti1200.pk>{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
+nsymbol/MnSymbolE.enc}<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/mnsymbol/MnSymbol12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mex10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
+s/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
+pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsl12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Col
+in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb>
+Output written on main.pdf (7 pages, 264267 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 205 words of extra memory for PDF output out of 10000 (max. 10000000)
 

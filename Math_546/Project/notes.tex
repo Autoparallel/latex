@@ -1,0 +1,213 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report} %report allows for chapters
+\renewcommand\thesection{\arabic{section}} % ignore the title number for sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Pseudocode
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{hyperref}
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{subcaption}
+\usepackage{morefloats}
+\usepackage{float}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\partialx}{\frac{\partial f}{\partial x}}
+\newcommand{\partialy}{\frac{\partial f}{\partial y}}
+\newcommand{\partialz}{\frac{\partial f}{\partial z}}
+
+% Operators/functions
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+\newtheorem{proposition}{Proposition}[section]
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{solution}{Solution}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Gradient Flow and Geometric Regularization: \emph{Notes}}
+\author{Colin Roberts}
+
+\begin{document}
+
+\maketitle
+
+https://en.wikipedia.org/wiki/Harmonic_map
+
+\section{outline}
+
+
+\begin{itemize}
+    \item Ask the motivating questions and give the benefits in mind
+    \item Define the finite dimensional case
+    \item Introduce the infinite dimensional case.
+    \item Define the dirichlet energy functional
+    \item Recover laplace's equation
+    \item Heat equation
+    \item Geodesics and Minimal surfaces using the dirichlet energy functional
+\end{itemize}
+
+Paper: Flowing maps to minimal surfaces: Existence and uniquenessof solutions
+
+\section{Statement}
+
+``Yes, great idea. The Poincare conjecture was proven using a technique
+like this, called "Gradient Flow". I think this would be an interesting
+project where we all (including me) could learn something about the
+application of PDEs outside the realm of physical models."CaC
+
+Many physical phenomenon are described as being optimizers to some type of functional usually with an added constraint.  A few examples: The shape of a rain drop minimizes drag with the constraint that the volume is fixed; the way a cable hangs between two poles minimizes the total energy while keeping the total length fixed; an elastic band attached at two endpoints minimizes its length between these two points where there may be obstacles in the path.  The issue at hand is that these solutions can be rather difficult to find analytically even when we can prove that the solutions should exist and may even be unique.  Not all is lost, however.  One technique to assist in finding these solutions is called ``gradient flow." This technique is powerful in computationally finding optimizers and proving existence in theory.
+The analogy I'll seek to describe will begin in the finite dimensional case with Lagrange multipliers and pictorially describing the flow of the gradients in this case.  With the picture in mind, we can approach the (homogeneous, source free) heat equation and its long time limit and discuss how we can consider this as a gradient flow problem.  We can in fact show that this directly relates to finding minimal surfaces and geodesics in flat space.  One may then take an extrinsic point of view and add a constraint that our surfaces or curves must lie on manifolds embedded in flat space.  For example, we can find the geodesics on the 2-sphere embedded in $\R^3$ using the techniques described.  The last idea to note is the following: What if we think of living on the manifold instead of viewing it from the outside? That is, what if we take an intrinsic point of view versus the previously described extrinsic point of view.  It turns out that the constraints are lifted and, instead, the notion of what a straight line is changes.  
+
+\section{Notes on \emph{Variational Modelling: Energies, Gradient Flows, and Large Variations}}
+
+The paper is given here: \url{https://arxiv.org/pdf/1402.1990.pdf}
+
+\begin{itemize}
+    \item 
+    \item 
+\end{itemize}
+
+\section{Gradient Flows in Function Spaces}
+
+\url{https://math.stackexchange.com/questions/1687804/what-is-the-l2-gradient-flow}\\
+
+\noindent\textbf{One of the slides:}\\
+            Given an infinite dimensional vector space space $V$ equipped with a functional
+            \[
+            \mathcal{E}\colon V \to \R.
+            \]
+            The gradient flow is
+            \[
+            \frac{\partial u}{\partial t}=\left.-\frac{\delta \mathcal{E}}{\delta v}\right|_{v=u}
+            \]
+            
+            Think of
+            \begin{itemize}
+                \item $\frac{\partial u}{\partial t}$ as the change in ``position" over time;
+                \item $\frac{\delta \mathcal{E}}{\delta v}$ as the change in the functional over ``space."
+            \end{itemize}
+        
+\textcolor{blue}{How do I formalize all of this? That is, what exactly is the relationship here? In the finite case, you have two vectors set equal and this makes total sense.  Here we have two functions equal?  Is the $v=u$ sensible? I'm not sure this is exactly right.}
+
+In the finite case, we are considering a derivative over "all" directions.  In the infinite case, we do the same, and arrive at the weak form of a PDE.  Maybe this is how we should bridge the gap.
+
+\section{Algorithm}
+            \begin{algorithm}
+            \caption{Finite Dimensional Gradient Descent}\label{euclid}
+            \begin{algorithmic}[1]
+            \Procedure{FinDimGradDesc}{}
+                \State $\textit{stringlen} \gets \text{length of }\textit{string}$
+                \State $i \gets \textit{patlen}$
+                \BState \emph{top}:
+                \If {$i > \textit{stringlen}$} \Return false
+                \EndIf
+                \State $j \gets \textit{patlen}$
+                \BState \emph{loop}:
+                \If {$\textit{string}(i) = \textit{path}(j)$}
+                \State $j \gets j-1$.
+                \State $i \gets i-1$.
+                \State \textbf{goto} \emph{loop}.
+                \State \textbf{close};
+                \EndIf
+                \State $i \gets i+\max(\textit{delta}_1(\textit{string}(i)),\textit{delta}_2(j))$.
+                \State \textbf{goto} \emph{top}.
+        \EndProcedure
+        \end{algorithmic}
+        \end{algorithm}
+        
+            \begin{algorithm}
+            \caption{Infinite Dimensional Gradient Descent}\label{euclid}
+            \begin{algorithmic}[1]
+            \Procedure{InfDimGradDesc}{}
+                \State $\textit{stringlen} \gets \text{length of }\textit{string}$
+                \State $i \gets \textit{patlen}$
+                \BState \emph{top}:
+                \If {$i > \textit{stringlen}$} \Return false
+                \EndIf
+                \State $j \gets \textit{patlen}$
+                \BState \emph{loop}:
+                \If {$\textit{string}(i) = \textit{path}(j)$}
+                \State $j \gets j-1$.
+                \State $i \gets i-1$.
+                \State \textbf{goto} \emph{loop}.
+                \State \textbf{close};
+                \EndIf
+                \State $i \gets i+\max(\textit{delta}_1(\textit{string}(i)),\textit{delta}_2(j))$.
+                \State \textbf{goto} \emph{top}.
+        \EndProcedure
+        \end{algorithmic}
+        \end{algorithm}
+
+
+\end{document}
