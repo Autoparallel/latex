@@ -1,6 +1,8 @@
 \babel@toc {english}{}
-\beamer@sectionintoc {1}{Preliminaries}{18}{0}{1}
-\beamer@subsectionintoc {1}{1}{Agent based modeling}{23}{0}{1}
-\beamer@subsectionintoc {1}{2}{Compartmental modeling}{39}{0}{1}
+\beamer@sectionintoc {1}{Preliminaries}{16}{0}{1}
+\beamer@subsectionintoc {1}{1}{Agent based modeling}{21}{0}{1}
+\beamer@subsectionintoc {1}{2}{Compartmental modeling}{37}{0}{1}
 \beamer@subsectionintoc {1}{3}{Multiscale modeling}{63}{0}{1}
-\beamer@sectionintoc {2}{Multiscale COVID-19 modeling}{69}{0}{2}
+\beamer@sectionintoc {2}{Multiscale COVID-19 modeling}{70}{0}{2}
+\beamer@subsectionintoc {2}{1}{Compartmental model}{70}{0}{2}
+\beamer@subsectionintoc {2}{2}{Agent model}{90}{0}{2}

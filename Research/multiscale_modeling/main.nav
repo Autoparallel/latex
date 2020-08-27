@@ -4,58 +4,92 @@
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\slideentry {0}{0}{3}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {0}{0}{4}{4/17}{}{0}}
-\headcommand {\beamer@framepages {4}{17}}
-\headcommand {\beamer@sectionpages {1}{17}}
-\headcommand {\beamer@subsectionpages {1}{17}}
-\headcommand {\sectionentry {1}{Preliminaries}{18}{Preliminaries}{0}}
-\headcommand {\slideentry {1}{0}{1}{18/19}{}{0}}
-\headcommand {\beamer@framepages {18}{19}}
-\headcommand {\slideentry {1}{0}{2}{20/22}{}{0}}
-\headcommand {\beamer@framepages {20}{22}}
-\headcommand {\beamer@subsectionpages {18}{22}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{23}{Agent based modeling}}
-\headcommand {\slideentry {1}{1}{1}{23/26}{Agent based modeling}{0}}
-\headcommand {\beamer@framepages {23}{26}}
-\headcommand {\slideentry {1}{1}{2}{27/28}{Agent based modeling}{0}}
+\headcommand {\slideentry {0}{0}{4}{4/15}{}{0}}
+\headcommand {\beamer@framepages {4}{15}}
+\headcommand {\beamer@sectionpages {1}{15}}
+\headcommand {\beamer@subsectionpages {1}{15}}
+\headcommand {\sectionentry {1}{Preliminaries}{16}{Preliminaries}{0}}
+\headcommand {\slideentry {1}{0}{1}{16/17}{}{0}}
+\headcommand {\beamer@framepages {16}{17}}
+\headcommand {\slideentry {1}{0}{2}{18/20}{}{0}}
+\headcommand {\beamer@framepages {18}{20}}
+\headcommand {\beamer@subsectionpages {16}{20}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{21}{Agent based modeling}}
+\headcommand {\slideentry {1}{1}{1}{21/24}{Agent based modeling}{0}}
+\headcommand {\beamer@framepages {21}{24}}
+\headcommand {\slideentry {1}{1}{2}{25/26}{Agent based modeling}{0}}
+\headcommand {\beamer@framepages {25}{26}}
+\headcommand {\slideentry {1}{1}{3}{27/28}{Agent based modeling}{0}}
 \headcommand {\beamer@framepages {27}{28}}
-\headcommand {\slideentry {1}{1}{3}{29/30}{Agent based modeling}{0}}
-\headcommand {\beamer@framepages {29}{30}}
-\headcommand {\slideentry {1}{1}{4}{31/34}{Agent based modeling}{0}}
-\headcommand {\beamer@framepages {31}{34}}
-\headcommand {\slideentry {1}{1}{5}{35/38}{Agent based modeling}{0}}
-\headcommand {\beamer@framepages {35}{38}}
-\headcommand {\beamer@subsectionpages {23}{38}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{39}{Compartmental modeling}}
-\headcommand {\slideentry {1}{2}{1}{39/42}{Compartmental modeling}{0}}
-\headcommand {\beamer@framepages {39}{42}}
-\headcommand {\slideentry {1}{2}{2}{43/44}{Compartmental modeling}{0}}
-\headcommand {\beamer@framepages {43}{44}}
-\headcommand {\slideentry {1}{2}{3}{45/46}{Compartmental modeling}{0}}
-\headcommand {\beamer@framepages {45}{46}}
-\headcommand {\slideentry {1}{2}{4}{47/50}{Compartmental modeling}{0}}
-\headcommand {\beamer@framepages {47}{50}}
-\headcommand {\slideentry {1}{2}{5}{51/55}{Compartmental modeling}{0}}
-\headcommand {\beamer@framepages {51}{55}}
-\headcommand {\slideentry {1}{2}{6}{56/58}{Compartmental modeling}{0}}
-\headcommand {\beamer@framepages {56}{58}}
+\headcommand {\slideentry {1}{1}{4}{29/32}{Agent based modeling}{0}}
+\headcommand {\beamer@framepages {29}{32}}
+\headcommand {\slideentry {1}{1}{5}{33/36}{Agent based modeling}{0}}
+\headcommand {\beamer@framepages {33}{36}}
+\headcommand {\beamer@subsectionpages {21}{36}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{37}{Compartmental modeling}}
+\headcommand {\slideentry {1}{2}{1}{37/40}{Compartmental modeling}{0}}
+\headcommand {\beamer@framepages {37}{40}}
+\headcommand {\slideentry {1}{2}{2}{41/42}{Compartmental modeling}{0}}
+\headcommand {\beamer@framepages {41}{42}}
+\headcommand {\slideentry {1}{2}{3}{43/45}{Compartmental modeling}{0}}
+\headcommand {\beamer@framepages {43}{45}}
+\headcommand {\slideentry {1}{2}{4}{46/49}{Compartmental modeling}{0}}
+\headcommand {\beamer@framepages {46}{49}}
+\headcommand {\slideentry {1}{2}{5}{50/54}{Compartmental modeling}{0}}
+\headcommand {\beamer@framepages {50}{54}}
+\headcommand {\slideentry {1}{2}{6}{55/58}{Compartmental modeling}{0}}
+\headcommand {\beamer@framepages {55}{58}}
 \headcommand {\slideentry {1}{2}{7}{59/62}{Compartmental modeling}{0}}
 \headcommand {\beamer@framepages {59}{62}}
-\headcommand {\beamer@subsectionpages {39}{62}}
+\headcommand {\beamer@subsectionpages {37}{62}}
 \headcommand {\beamer@subsectionentry {0}{1}{3}{63}{Multiscale modeling}}
 \headcommand {\slideentry {1}{3}{1}{63/67}{Multiscale modeling}{0}}
 \headcommand {\beamer@framepages {63}{67}}
-\headcommand {\slideentry {1}{3}{2}{68/68}{Multiscale modeling}{0}}
-\headcommand {\beamer@framepages {68}{68}}
-\headcommand {\beamer@sectionpages {18}{68}}
-\headcommand {\beamer@subsectionpages {63}{68}}
-\headcommand {\sectionentry {2}{Multiscale COVID-19 modeling}{69}{Multiscale COVID-19 modeling}{0}}
-\headcommand {\slideentry {2}{0}{1}{69/73}{}{0}}
-\headcommand {\beamer@framepages {69}{73}}
-\headcommand {\slideentry {2}{0}{2}{74/74}{}{0}}
-\headcommand {\beamer@framepages {74}{74}}
-\headcommand {\beamer@partpages {1}{74}}
-\headcommand {\beamer@subsectionpages {69}{74}}
-\headcommand {\beamer@sectionpages {69}{74}}
-\headcommand {\beamer@documentpages {74}}
-\headcommand {\gdef \inserttotalframenumber {21}}
+\headcommand {\slideentry {1}{3}{2}{68/69}{Multiscale modeling}{0}}
+\headcommand {\beamer@framepages {68}{69}}
+\headcommand {\beamer@sectionpages {16}{69}}
+\headcommand {\beamer@subsectionpages {63}{69}}
+\headcommand {\sectionentry {2}{Multiscale COVID-19 modeling}{70}{Multiscale COVID-19 modeling}{0}}
+\headcommand {\beamer@subsectionpages {70}{69}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{70}{Compartmental model}}
+\headcommand {\slideentry {2}{1}{1}{70/74}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {70}{74}}
+\headcommand {\slideentry {2}{1}{2}{75/77}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {75}{77}}
+\headcommand {\slideentry {2}{1}{3}{78/80}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {78}{80}}
+\headcommand {\slideentry {2}{1}{4}{81/81}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {81}{81}}
+\headcommand {\slideentry {2}{1}{5}{82/82}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {82}{82}}
+\headcommand {\slideentry {2}{1}{6}{83/86}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {83}{86}}
+\headcommand {\slideentry {2}{1}{7}{87/89}{Compartmental model}{0}}
+\headcommand {\beamer@framepages {87}{89}}
+\headcommand {\beamer@subsectionpages {70}{89}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{90}{Agent model}}
+\headcommand {\slideentry {2}{2}{1}{90/91}{Agent model}{0}}
+\headcommand {\beamer@framepages {90}{91}}
+\headcommand {\slideentry {2}{2}{2}{92/92}{Agent model}{0}}
+\headcommand {\beamer@framepages {92}{92}}
+\headcommand {\slideentry {2}{2}{3}{93/93}{Agent model}{0}}
+\headcommand {\beamer@framepages {93}{93}}
+\headcommand {\slideentry {2}{2}{4}{94/94}{Agent model}{0}}
+\headcommand {\beamer@framepages {94}{94}}
+\headcommand {\slideentry {2}{2}{5}{95/98}{Agent model}{0}}
+\headcommand {\beamer@framepages {95}{98}}
+\headcommand {\slideentry {2}{2}{6}{99/99}{Agent model}{0}}
+\headcommand {\beamer@framepages {99}{99}}
+\headcommand {\slideentry {2}{2}{7}{100/100}{Agent model}{0}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\slideentry {2}{2}{8}{101/101}{Agent model}{0}}
+\headcommand {\beamer@framepages {101}{101}}
+\headcommand {\slideentry {2}{2}{9}{102/102}{Agent model}{0}}
+\headcommand {\beamer@framepages {102}{102}}
+\headcommand {\slideentry {2}{2}{10}{103/103}{Agent model}{0}}
+\headcommand {\beamer@framepages {103}{103}}
+\headcommand {\beamer@partpages {1}{103}}
+\headcommand {\beamer@subsectionpages {90}{103}}
+\headcommand {\beamer@sectionpages {70}{103}}
+\headcommand {\beamer@documentpages {103}}
+\headcommand {\gdef \inserttotalframenumber {36}}
