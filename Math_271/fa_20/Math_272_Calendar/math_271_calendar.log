@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  24 AUG 2020 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  28 SEP 2020 08:54
 entering extended mode
 **./math_271_calendar.tex
 (math_271_calendar.tex
@@ -232,7 +232,7 @@ Underfull \vbox (badness 10000) detected at line 110
 Here is how much of TeX's memory you used:
  2985 strings out of 481556
  37732 string characters out of 2913869
- 314095 words of memory out of 3000000
+ 315095 words of memory out of 3000000
  18243 multiletter control sequences out of 15000+200000
  535255 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -244,7 +244,7 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/C
 olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
 ><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
-Output written on math_271_calendar.pdf (3 pages, 67778 bytes).
+Output written on math_271_calendar.pdf (3 pages, 67834 bytes).
 PDF statistics:
  32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

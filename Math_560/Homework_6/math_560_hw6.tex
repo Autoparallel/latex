@@ -1,0 +1,512 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 6}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Verify that the Fourier vectors are eigenvectors of circulant matrices.  What are the eigenvalues? 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} 
+Let $F$ be an $n\times n$ circulant matrix given by
+\begin{align*}F=
+\begin{bmatrix}
+c_1 & c_n & c_{n-1} & \cdots & c_2\\
+c_2 & c_1 & c_{n} & \cdots & c_3\\
+c_3 & c_2 & c_1 & \cdots & c_4\\
+\vdots & \vdots & \vdots &  \ddots & \vdots\\
+c_{n-1} & c_{n-2} & c_{n-3} & \cdots & c_1
+\end{bmatrix}.
+\end{align*}
+Then consider the Fourier vector $v_j = (1,z^j,...,z^{(n-1)j})^T$. Then 
+\begin{align*}
+Fv_j = 
+\begin{bmatrix}
+c_1 & c_n & c_{n-1} & \cdots & c_2\\
+c_2 & c_1 & c_{n} & \cdots & c_3\\
+c_3 & c_2 & c_1 & \cdots & c_4\\
+\vdots & \vdots & \vdots &  \ddots & \vdots\\
+c_{n-1} & c_{n-2} & c_{n-3} & \cdots & c_1
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+z^j\\
+\vdots\\
+z^{(n-2)j}\\
+z^{(n-1)j}
+\end{bmatrix}
+= 
+\begin{bmatrix}
+c_1+c_2 z^j+ ...+c_2 z^{(n-1)j}\\
+c_2+c_1z^j+...+c_3z^{(n-1)j}\\
+\vdots\\
+c_{n} + c_{n-2}z^j+...+c_{n-1}z^{(n-1)j}\\
+c_{n-1}+c_{n-2}z^j...+c_1z^{(n-1)j}
+\end{bmatrix}
+=\lambda_j
+\begin{bmatrix}
+1\\
+z^j\\
+\vdots\\
+z^{(n-2)j}\\
+z^{(n-1)j}
+\end{bmatrix}.
+\end{align*}
+Where $\lambda_j=c_1+c_{n}z^j+c_{n-1}z^{2j}+...+c_2z^{(n-1)j}$ are the eigenvalues.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 5.2 Problem 14 (b))} Find the general solution to each system of differential equations.
+\begin{align*}
+x_1'&=8x_1+10x_2\\
+x_2'&=-5x_1-7x_2
+\end{align*}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+If we let $x(t)=\begin{bmatrix} x_1(t) \\ x_2(t) \end{bmatrix}$, $x'(t)=\begin{bmatrix} x_1'(t)\\ x_2'(t) \end{bmatrix}$, and $A=\begin{bmatrix} 8 & 10 \\ -5 & -7 \end{bmatrix}$. Then $x'(t)=Ax(t)$.  We then diagonalize $A$.  So
+\begin{align*}
+\det\left( \begin{bmatrix}
+8-\lambda & 10\\
+-5 & -7 - \lambda
+\end{bmatrix}\right)&=
+\lambda^2-\lambda-6&=(\lambda-3)(\lambda+2).
+\end{align*}
+So we have eigenvalues $\lambda_1=3$ and $\lambda_2=-2$.  Next we get the eigenvectors as follows.
+\begin{align*}
+\begin{bmatrix}
+5 & 10\\
+-5 & -7
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+&=
+\begin{bmatrix}
+3a\\
+3b
+\end{bmatrix}\\
+\implies 5a+10b&=3a\\
+-5a-5b&=3b.
+\end{align*}
+Which gives us the eigenvector $\begin{bmatrix} -2 \\1\end{bmatrix}$ corresponding to $\lambda_1=3$. Then we find the next eigenvector for $\lambda_2=-2$.
+\begin{align*}
+\begin{bmatrix}
+5 & 10\\
+-5 & -7
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+&=
+\begin{bmatrix}
+-2a\\
+-2b
+\end{bmatrix}\\
+\implies 5a+10b&=-2a\\
+-5a-5b&=-2b.
+\end{align*}
+Which gives us the eigenvector $\begin{bmatrix} -1 \\1\end{bmatrix}$ corresponding to $\lambda_2=-2$. This gives us that $Q=\begin{bmatrix} -2 & -1 \\ 1 & 1 \end{bmatrix}$ and $Q^{-1}= \begin{bmatrix} -1 & -1 \\ 1 & 2 \end{bmatrix}$.  So now we can write $Q^{-1}x'(t)=DQ^{-1}x(t)$ for $D$ a diagonal matrix. Which yields equations
+\begin{align*}
+y_1'&=3y_1\\
+y_2'&=-2y_1.
+\end{align*}
+This gives us $y_1(t)=c_1e^{3t}$ and $y_2(t)=c_2e^{-2t}$. Then $Qy(t)=x(t)$ so
+\begin{align*}
+\begin{bmatrix}
+-2 & -1\\
+1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+c_1 e^{3t}\\
+c_2 e^{-2t}
+\end{bmatrix}&=
+\begin{bmatrix}
+-2c_1 e^{3t} - c_2 e^{-2t}\\
+c_1^{3t} - c_2 e^{-2t}
+\end{bmatrix}=x(t).
+\end{align*}
+This is our general solution for $x(t)$.
+\end{solution}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 5.2 Problem 18.)} 
+\begin{enumerate}[(a)]
+\item Prove that if $T$ and $U$ are simultaneously diagonalizable operators, then $T$ and $U$ commute.
+\item Show that if $A$ and $B$ are simultaneously diagonalizable matrices, then $A$ and $B$ commute.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+First, let's show that if we have two diagonal $n\times n$ matrices $A$ and $B$ then $AB=BA$.  Let 
+\begin{align*}
+A&= \begin{bmatrix}
+\lambda_1 & & \\
+& \ddots & \\
+& & \lambda_n 
+\end{bmatrix}\\
+B&=
+\begin{bmatrix}
+\gamma_1 & & \\
+& \ddots & \\
+& & \gamma_n 
+\end{bmatrix}.
+\end{align*}
+Then
+\begin{align*}
+AB&= 
+\begin{bmatrix}
+\lambda_1 \gamma_1 & & \\
+& \ddots & \\
+& & \lambda_n \gamma_n
+\end{bmatrix}=
+\begin{bmatrix}
+\gamma_1 \lambda_1 & & \\
+& \ddots & \\
+& & \gamma_n \lambda_n 
+\end{bmatrix}
+=BA.
+\end{align*}
+
+Now, let $T$ and $U$ be simultaneously diagonalizable.  Thus for some basis $\beta$, $[T]_\beta$ and $[U]_\beta$ are diagonal.  Then
+\begin{align*}
+[T]_\beta [U]_\beta &= [U]_\beta [T]_\beta \textrm{~~~ since both are diagonal}\\
+\implies [TU]_\beta &= [UT]_\beta\\
+\implies TU&=UT.
+\end{align*}
+\end{proof}
+
+\begin{proof}[b]
+Since $A$ and $B$ are simultaneously diagonalizable, we have that $Q^{-1} A Q$ and $Q^{-1} B Q$ are diagonal for some $Q$. Then
+\begin{align*}
+(Q^{-1}AQ)(Q^{-1}BQ)&=(Q^{-1}BQ)(Q^{-1}BQ)(Q^{-1}AQ) \textrm{~~~ since both are diagonal}\\
+\implies Q^{-1}ABQ&=Q^{-1}BAQ\\
+ABQ&=BAQ\\
+AB&=BA.
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (\S 5.2 Problem 19.)}  Let $T$ be a diagonalizable linear operator on a finite-dimensional vector space, and let $m$ be any positive integer. Prove that $T$ and $T^m$ are simultaneously diagonalizable.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $T$ is diagonal we have that for some basis $\beta$ that $[T]_\beta=Q^{-1}[T]_\beta Q$ and $Q^{-1}[T]_\beta Q$ is diagonal. Then
+\begin{align*}
+(Q^{-1}[T]_\beta Q)^m &= Q^{-1} [T]_\beta^m Q.
+\end{align*}
+Hence $[T]_\beta^m$ is simultaneously diagonalizable.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 5.4 Problem 2.)} For each of the following linear operators $T$ on the vector space $V$, determine whether the given subspace $W$ is a $T$-invariant subspace of $V$.
+\begin{enumerate}[(a)]
+\item $V=P_3(\mathbb{R})$, $T(f(x))=f'(x)$, and $W=P_2(\mathbb{R})$
+\item $V=P(\mathbb{R})$, $T(f(x))=xf(x)$, and $W=P_2(\mathbb{R})$
+\item $V=\mathbb{R}^3$, $T(a,b,c)=(a+b+c,a+b+c,a+b+c)$, and $W=\{(t,t,t)\vert t\in \mathbb{R}\}$
+\item $V=C([0,1])$, $T(f(t))=\left[ \int_0^1 f(x)dx \right]t$, and $W=\{f\in V\vert f(t)=at+b \textrm{~ for $a$ and $b$}\}$
+\item $V=\mathbf{M}_{2\times 2}(\mathbb{R})$, $T(A)=\begin{bmatrix}
+0 & 1\\
+1 & 0
+\end{bmatrix}A$, and $W=\{A\in V\vert A^t=A\}$
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Let $f(x)=a_0+a_1 x+a_2 x^2 \in P_2(\R)=W$. Then
+\begin{align*}
+T(f(x))&=a_1+2a_2x\in P_2(\R).
+\end{align*}
+Hence $W$ is $T$ invariant.
+\end{proof}
+
+\begin{proof}[b]
+Let $f(x)=a_0+a_1x+a_2x^2 \in P_2(\R)=W$. Then
+\begin{align*}
+T(f(x))&=a_0x+a_1x^2+a_2x^2\notin P_2(\R).
+\end{align*}
+Hence $W$ is not $T$ invariant.
+\end{proof}
+
+\begin{proof}[c]
+Let $(a,a,a)\in W$. Then
+\begin{align*}
+T(a,a,a)=(3a,3a,3a)\in W.
+\end{align*}
+Hence $W$ is $T$ invariant.
+\end{proof}
+
+\begin{proof}[d]
+Let $f(t)=at+b\in W$. Then
+\begin{align*}
+T(f(t))=\left[ \int_0^1 ax+b dx \right] t&=\left(\frac{a}{2}x^2+bx\right)\vert_0^1 t\\
+&= \left(\frac{a}{2}+b\right)t\in W.
+\end{align*}
+Hence $W$ is $T$ invariant.
+\end{proof}
+
+\begin{proof}[e]
+Let $A=\begin{bmatrix} A_{11} & A_{12}\\ A_{12} & A_{22}\end{bmatrix} \in W$. Then
+\begin{align*}
+\begin{bmatrix} 0 & 1\\ 1 & 0\end{bmatrix} \begin{bmatrix} A_{11} & A_{12}\\ A_{12} & A_{22}\end{bmatrix}&=\begin{bmatrix} A_{12} & A_{22}\\ A_{11} & A_{12}\end{bmatrix}\notin W.
+\end{align*}
+Hence $W$ is not $T$ invariant.
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 5.4 Problem 3.)} Let $T$ be a linear operator on a finite-dimensional vector space $V$. Prove that the following subspaces are $T$-invariant.
+\begin{enumerate}[(a)]
+\item $\{0\}$ and $V$
+\item $\mathcal{N}(T)$ and $\mathcal{R}(T)$
+\item $E_\lambda$ for any eigenvalue $\lambda$ of $T$
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+We have that $T(0)=0$ so then $\{0\}$ is surely invariant. Then since $T$ is an operator and by definition $T\colon V \to V$, we have that for any $v\in V$ that $T(v)=w \in V$. So both $\{0\}$ and $V$ are $T$ invariant.
+\end{proof}
+
+\begin{proof}[b]
+Let $v\in \mathcal{N}(T)$, then $T(v)=0\in \mathcal{N}(T)$. Thus $\mathcal{N}(T)$ is $T$ invariant.  Next let $u\neq 0 \in \mathcal{R}(T)$. Then if $T(u)\notin \mathcal{R}(T)$ we have that $T(u)\in \mathcal{N}(T)$ and $T(u)=0$. Since $V=\mathcal{R}(T) \oplus \mathcal{N}(T)$, we have that $u=0$ which contradicts $u\neq 0$ and thus $T(u)\in \mathcal{R}(T)$.  If $u=0$ then $T(u)=0$ and $0\in \mathcal{R}(T)$ and thus we have that $\mathcal{R}(T)$ is $T$ invariant.
+\end{proof}
+
+\begin{proof}[c]
+Let $v\in E_\lambda$. Then $T(v)=\lambda v \in E_\lambda$. So $E_\lambda$ is $T$ invariant.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7. (\S 5.4 Problem 5.)} Let $T$ be a lienar operator on a vector space $V$. Prove that the intersection of any collection of $T$-invariant subspaces of $V$ is a $T$-invariant subspace of $V$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $U$ and $W$ be $T$-invariant subspaces of $V$. Then let $v\in U\cap W$ and consider $T(v)$.  Since $v\in U \cap W$ then $v\in U$ and $v\in W$ and thus since both are $T$-invariant, $T(v)\in U$ and $T(v) \in W$.  Thus $T(v)\in U\cap W$ and thus $U\cap W$ is $T$-invariant.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 8. (\S 5.4 Problem 11.)} Let $T$ be a linear operator on a vector space $V$, and let $v$ be a nonzero vector in $V$, and let $W$ be the $T$-cyclic subspace of $V$ generated by $v$. Prove that
+\begin{enumerate}[(a)]
+\item $W$ is $T$-invariant
+\item Any $T$-invariant subspace of $V$ containing $v$ also contains $W$.
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+For $w\in W = \mathrm{span}(\{v,T(v),T^2(v),...\})$, we have that $w=\lambda_1 v +\lambda_2 T(v) + \lambda_3 T^2(v) + ...$ so then $T(w)=\lambda_1 T(v) + \lambda_2 T^2(v) + ... \in W$. So $W$ is $T$ invariant.
+\end{proof}
+
+\begin{proof}[b]
+Let $U$ be a $T$ invariant subspace with $v\in U$.  Thus
+\begin{align*}
+T(v)&\in U\\
+\iff T(T(v))&\in U \textrm{~~~ since $U$ is $T$ invariant}\\
+\iff T^2(v)&\in U\\
+\iff T^3(v)&\in U \textrm{~~~ since $U$ is $T$ invariant}\\
+&\vdots\\
+\iff T^n(v)&\in U \textrm{~~~ for all $n\in \mathbb{N}$ since $T^{n-1}(v)\in U$.}
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 9. (\S 5.4 Problem 17.)} Let $A$ be an $n\times n$ matrix. Prove that
+\[
+\dim(\mathrm{span}(\{I_n,A,A^2,...\}))\leq n.
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $T \colon V \to V$ which is realized by $[T]_\beta = A\in M_{n\times n}(\mathbb{F})$ for $\dim(V)=n$. We have from Theorem 5.22 that for a $W$ $T$-cyclic subspace of $V$ generated by a nonzero vector $v$ that a $T$-invariant subspace of dimension $k$ has a basis $\{v, T(v),T^2(v),...,T^{k-1}(v)\}$.   Then $\{I_n [v]_\beta, A[v]_\beta,...,A^{k-1}[v]_\beta\}$ is the largest linearly independent set of vectors for $W$ by how we defined $A=[T]_\beta$.  Note that \[\dim(\mathrm{span}(\{I_n [v]_\beta, A[v]_\beta,...,A^{k-1}[v]_\beta\}))=k=\dim(W).\]  This implies that \[\dim(\mathrm{span}(\{I_n, A,...,A^{k-1}\}))=k=\dim(W),\] and any other matrix $A^m$ for $m\geq k$ would make the set linearly dependent if added.  Since $W$ is a subspace of $V$ we have that $\dim(W)\leq n$ which implies that \[\dim(\mathrm{span}(\{I_n, A,...,A^{k-1}\}))\leq n.\]
+\end{proof}
+
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 10. (\S 5.4 Problem 18.)} Let $A$ be an $n\times n$ matrix with characteristic polynomial
+\[
+f(t)=(-1)^n t^n + a_{n-1}t^{n-1}+...+a_1 t + a_0.
+\]
+\begin{enumerate}[(a)]
+\item Prove that $A$ is invertible if and only if $a_0\neq 0$.
+\item Prove that if $A$ is invertible, then
+\[
+A^{-1}=(-1/a_0)[(-1)^n A^{n-1} + a_{n-1} A^{n-2} + ... + a_1 I_n].
+\]
+\item Use (b) to compute $A^{-1}$ for
+\[
+A=\begin{bmatrix}
+1 & 2 & 1\\
+0 & 2 & 3\\
+0 & 0 & -1
+\end{bmatrix}
+\]
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+For the forward direction, let $A$ is invertible. Then no eigenvalues $t=0$. Thus the characteristic polynomial does not have a factor of $t$ (i.e., a zero root) which means that $a_0\neq 0$. For the converse direction, let $a_0\neq 0$ and thus $t=0$ is not a root. Thus no eigenvalue is zero which means that $A$ is invertible.
+\end{proof}
+
+\begin{proof}[b]
+By Cayley-Hamilton we have
+\begin{align*}
+(-1)^n A^n + a_{n-1}A^{n-1}+...+a_1 A +a_0 I&=0\\
+a_0^{-1}((-1)^n A^n + a_{n-1} A^{n-1} + ... + a_1 A)&=I\\
+a_0^{-1}((-1)^n A^{n-1} + a_{n-2} A^{n-1} + ... + a_1 I)&=A^{-1}.
+\end{align*}
+\end{proof}
+
+\begin{proof}[c]
+We have that
+\[
+\det(A-t I)=
+\left| \begin{bmatrix}
+1-t & 2 & 1\\
+0 & 2-t & 3\\
+0 & 0 & -1-t
+\end{bmatrix} \right|=(1-t)(2-t)(-1-t)=-t^3+2t^2+t-2.
+\]
+Then
+\[
+A^{-1}=\frac{1}{2}(-A^2+2A+I).
+\]
+So we have
+\begin{align*}
+A^{-1}&= \frac{1}{2}\left(-
+\begin{bmatrix}
+1 & 6 & 6\\
+0 & 4 & 3\\
+0 & 0 & 1
+\end{bmatrix}
++2
+\begin{bmatrix}
+1 & 2 & 1\\
+0 & 2 & 3\\
+0 & 0 & -1
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}\right)\\
+&=
+\begin{bmatrix}
+1 & -1 & -2\\
+0 & \frac{1}{2} & \frac{3}{2}\\
+0 & 0 & -1
+\end{bmatrix}.
+\end{align*}
+Which is indeed the inverse of $A$.
+\end{proof}
+
+\pagebreak
+
+\end{document}
+

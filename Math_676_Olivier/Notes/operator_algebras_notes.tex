@@ -1,0 +1,328 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\author{Colin Roberts}
+\title{Operator Algebras: Notes}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amssymb, amsmath ,cleveref ,thmtools, amsthm, mathtools}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{color}
+
+%%fonts
+%??
+
+
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+\newtheorem*{question}{Question}
+\newtheorem*{exercise}{Exercise}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{axiom}{Axiom}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Notes From Papers}	
+
+\subsection{Notes from Operator Algebras: An Informal Overview:}  
+There is a lot of info on Von Neumann algebras which are more important in quantum theory.  Von Neumann algebras deal with operators on Hilbert spaces.
+	
+	All Von Neumann algebras are $C^*$ algebras. Any commutative Von Neumann algebra is isomorphic to the algebra of continuous functions $C(X)$ where $X$ is an \emph{extremely disconnected compact Hausdorff space}. 
+	
+	There are only two examples of commutative (abelian) $C^*$ algebras and Von Neumann algebras. These are $(C_0(X),\|\cdot \|)$ and $L^\infty (Z, d\mu)$ respectively.  $(C_0(X),\|\cdot \|)$ is the algebra of continuous functions which vanish at infinity on a locally compact Hausdorff space. The involution is complex conjugation and the norm $\|f\|:=\sup_{x\in X} |f(x)|$. The latter, $L^\infty (Z,d\mu)$ is the algebra of essentially bounded measurable functions for some $\sigma$-finite measure space $(Z,d\mu)$. The operators are understood to be multiplication operators on the complex Hilbert space.
+	
+	It is possible to recover the topological space $X$ from $(C_0(X),\|\cdot\|)$.  This gives some meaning to a non-commutative topological space $X$ when considering non-abelian $C^*$ algebras. Similarly you can find an association between non-commutative Von Neumann algebras and non-commutative measure spaces. These can be useful in non-commutative geometry, non-commutative $L^p$ spaces, and quantum groups.
+	
+	Operator algebras are also the ``natural universe" for spectral theory. There is a proposition that implies that any von Neumann algebra is generated as a norm closed subspace by the set of the spectral projections corresponding to its self-adjoint elements.
+	
+	One way of explaining the spectral theorem is that for bounded and unbounded normal operators on a Hilbert space, we have that the operator is unitarily equivalent to a multiplication operator.  I guess a classic example is the Fourier transform of the derivative operator.
+	
+	There is an analogous way of decomposing operators on infinite dimensional Hilbert spaces much like we do for operators on $\mathbb{C}^n$. This is of the form of \emph{direct integrals}.  Let $(Z, d\mu)$ be a suitable measure space. Denote by $H := Z H(z) dz$, the direct integral of the family of separable Hilbert spaces $\{H(z)\}_{z\in Z}$ in-dexed by points in $Z$ and with the corresponding measurability and convergence restrictions. 
+	
+	Let $T$ be a closed unbounded operator. We say that $T$ on $H$ is \emph{affiliated} to a von Neumann algebra $\mathcal{M} \subset L(H)$ if $U T U^{-1} = T$ for every unitary $U \in \mathcal{M}'$ . In this context we have the following natural characterization: if $T = V \cdot |T |$ is the corresponding polar decomposition of the closed operator, then $T$ is affiliated to $\mathcal{M}$ iff $V \in \mathcal{M} \subset \{E |T | (B) ~\vert~ B \subset \R^+ , \textrm{Borel} \}$. Moreover, it can be shown that an (unbounded) operator is normal on a Hilbert space $H$ iff it is affiliated to an Abelian von Neumann algebra $\mathcal{A}$.  A symmetric operator affiliated with a finite factor is automatically self-adjoint.
+	
+	See 4.3.1 for some usefulness in quantum mechanics and 4.3.2 for local quantum mechanics.  They are at the end of the paper.
+	
+\subsection{Notes from The $C^*$-Algebraic Formalism of Quantum Mechanics}
+	 The notion of a state and the notion of an observable are important in both classical and quantum physics. In Hamiltonian mechanics, we describe the state of a system by an point $(q, p)$ in a symplectic manifold $M$ , known as phase space. Now, in all real physical
+systems, a particles position and momentum must remain bounded, and hence, for the remainder of the paper, we shall assume that $M$ is compact.
+
+	Classical observables can be measured with arbitrary precision.  A physical requirement is that observables depend on the state of the system: position $q$ and momentum $p$. Secondly, we better require that these functions be real-valued.
+Thirdly, we must require that there is some way to make the error, when we measure an observable in the laboratory, arbitrarily small. Let $f$ be a real-valued function of $q$ and $p$, and we want to measure $f$ with error less
+than some $\epsilon > 0$. Now, I know that I can make the error in $q$ and $p$ arbitrarily small, so, if there is some maximum error in $q$ and $p$, call it $\delta$, so that when I plug in my measured values of $q$ and $p$ into $f$ , my experimental value of $f$ will be within $\epsilon$ of the true value of $f$ , then $f$ will be observable. But of course, this is just the definition of a continuous function! Thus, the natural definition for an observables in classical mechanics can be stated as follows:
+
+\begin{definition}
+The \emph{classical observables} are exactly the continuous real-valued functions on $M$.
+\end{definition}
+
+\begin{theorem}
+The set of observables $\mathcal{O}$ are exactly the self-adjoint elements of a commutative unital $C^*$-Algebra $\mathcal{A}$.
+\end{theorem}
+
+\begin{remark}
+This above theorem will source as an axiom in the quantum theory.
+\end{remark}
+
+It is useful to think of classical states as a linear functional on an algebra $\mathcal{A}$.  So that we have for a state $S$ and $f\in \mathcal{A}$ that
+\[
+f(S)=S(f).
+\]
+
+\begin{theorem}
+Let $S\in M$ be a state.  Then $S\colon \mathcal{A} \to \mathbb{C}$ is a normalized positive linear functional on $\mathcal{A}$.
+\end{theorem}
+
+\begin{theorem}[(Riesz-Markov Theorem)] Let X be a locally compact Hausdorff
+space, and let $S$ be a state on $C^0 (X, \R)$. Then, there exists a unique Borel proba-
+bility measure $\mu_S$ on $X$ such that, for all $f \in C^0 (X, \R)$
+\[
+S(f)=\int_X f d\mu_S
+\]
+\end{theorem}
+
+\begin{remark}
+When viewed in the light of the Riesz-Markov Theorem, it makes sense to view
+$S(f )$ as the expected value of the observable $f$ in the state $S$. Physically, if we
+measure f many times in the laboratory, and our particle is in the state $S$, then
+our results should average to the value $S(f )$. 
+\end{remark}
+
+Given the previous definition, it makes sense to define the variance of an observable as well. We do that as follows:
+
+\begin{definition}
+Let $S\in M$ be a state and let $f \in \mathcal{O}$.  Then the \emph{variance of $f$ with respect to $S$} is defined as
+\[
+\sigma_S (f)^2 = S\left[ (f-S(f))^2 \right].
+\]
+\end{definition}
+
+We find that for classical systems, the variance will be zero.  So this doesn't make sense based on what we know with quantum mechanics, i.e., 
+\[
+\sigma_S(p)\sigma_S(q)\geq \frac{\hbar}{2}.
+\]
+
+However, if we take the observables to be a non-commutative algebra, with the commutator \[[q,p]=i\hbar \mathbf{1}\], we recover the above equation.
+
+Now we can create the axioms for quantum mechanics from the above ideas:
+
+\begin{axiom}[(Quantum Observables)]
+The set of observables $\mathcal{O}$ of a quantum system are exactly the self-adjoint elements of a separable (noncommutative) unital $C^*$-algebra $\mathcal{A}$.
+\end{axiom}
+
+\begin{axiom}[(Quantum States)]
+The set of states $\mathcal{S}$ of a quantum system is the set of all positive linear functionals $\psi$ on $\mathcal{A}$ such that $\psi (\mathbf{1}) = 1$.
+\end{axiom}
+
+\begin{proposition}[(Bounded Operators on a Hilbert Space Form a $C^*$-Algebra)]
+Let $H$ be a Hilbert space. Then, $\mathcal{BL}(H)$ (bounded linear operators on $H$) with pointwise addition, scalar multiplication, multiplication, the unary operation of “adjointing” for an involution, and the operator norm make $\mathcal{BL}(H)$ into a $C^*$-algebra.
+\end{proposition}
+
+\begin{proposition}
+Let $H$ be a separable Hilbert space, let $\{e_n ~\vert~ n \in N\}$ and $\{f_n ~\vert~ n \in N\}$ be countable orthonormal bases for $H$, which exist by virtue of $H$ being seperable, and let $A \in \mathcal{L}(H)$ be trace-class. Then, 
+\[
+\sum_{n\in \N} (e_n \vert Ae_n ) = \sum_{n\in \N} (f_n \vert Af_n ) < \infty.
+\]
+\end{proposition}
+
+\begin{proposition}
+Let $V$ be a normed vector space, let $W$ be a Banach space, and let $U$ be a dense subset of $V$. Then for $\mathbf{A}\in \mathcal{BL}(U,W)$, there exists a unique $\tilde{\mathbf{A}} \in \mathcal{BL}(V,W)$ such that $\tilde{\mathbf{A}}\vert_U = \mathbf{A}$.
+\end{proposition}
+
+\color{blue}{Need more info on:
+\begin{enumerate}[1.]
+\item Weak-* topology (wikipedia)
+\item Nets (wikipedia)
+\item Gelfand-Naiman-Segal Theorem (wikipedia)
+\end{enumerate} 
+Left off note taking at section 6}\color{black}
+
+\subsection{Notes from Algebraic Quantum Field Theory and Operator Algebras}
+
+\color{blue}{Need more info on:
+\begin{enumerate}[1.]
+\item Weyl Algebras (operator algebra, specific von Neumann algebra)
+\item Superselection (Wightman and Wigner), connection between different spins
+\item LQP, specifically what does this all mean:
+``In fact one could define LQP as being the theory of spacetime dynamics of local densities of superselected
+charges. It turns out that the localized version of these charges constitute the backbone of the observable algebra
+which, as we will see in more detail in the next section, is described by a map (a net) of spacetime regions into $C^*$-
+algebras."
+\item Quantum mechanics on a circle.  What the fuck
+\item von Neumann wave packet collapse
+\item Gelfand-Naimark-Segal is very important everywhere
+\item The norm of a $C^*$-algebra is determined by the algebraic structure.
+\end{enumerate} 
+}\color{black}
+
+\begin{theorem}
+Every commutative unital $C^*$-algebra is isomorphic to the multiplication algebra of continuous
+complex-valued functions on an $L^2(M, \mu)$ where $M$ is an appropriately chosen measure space with measure $\mu$.
+\end{theorem}
+
+
+\begin{theorem}
+Every $C^*$-algebra is isomorphic to a norm-closed $~^*$-algebra of operators in a Hilbert space.
+\end{theorem}
+
+\begin{definition}
+A state $\psi$ is a linear functional on $\A$ with the following properties.
+\begin{enumerate}[(1)]
+\item $\psi(A^*A)\geq 0$ $\forall A \in \A$ (positivity)
+\item $\psi(\mathbf{1})=1$ (normalization).
+\end{enumerate}
+\end{definition}
+
+\color{blue}{left off on state in appendix (b) for notes}\color{black}
+
+\subsection*{Notes from An Introduction into the Mathematical Structure of Quantum Mechanics}
+
+\begin{enumerate}[1.]
+\item Section 1.2
+\item I like the interpretation of uncertainty in beginning of chapter 2
+\item GNS theory for classical and quantum will be good
+\item Are observables (operators) for classical mechanics always bounded? I think I read that in here.
+\item Unbounded operators in quantum case, definitely get to these. Theorem 2.3.1
+\end{enumerate}
+
+\subsection*{Notes from Wikipedia}
+
+\begin{theorem}[Gefland-Naimark Theorem]
+Any $C^*$-algebra $\A$ is isometrically $~^*$-isomorphic to a $C^*$-algebra of bounded operators on a Hilbert space.
+\end{theorem}
+
+\begin{proposition}[Gelfand-Naimark-Segal Construction]
+
+
+\end{proposition}
+
+\begin{proposition}[Gelfand Representation/Isomorphism]
+
+\end{proposition}
+
+\begin{enumerate}[1.]
+\item Pure states, vector states, and more about states.  Find how they relate to states in QM.  Intro to Mathematical Structure of Quantum Mechanics may have some. \url{https://en.wikipedia.org/wiki/State_(functional_analysis)#Pure_states}
+\end{enumerate}
+
+
+
+\pagebreak
+
+\section{Preliminary Definitions}
+
+\begin{definition}
+An bounded linear operator $A$ over a seperable Hilbert space $H$ is said to be in the \emph{trace class} if for some orthonormal basis $\{e_k\}_k$ we have
+\[
+\|A\|_1 = \mathrm{Tr}|A| \coloneqq \sum_{k} \langle (A^*A)^{1/2} e_k,e_k \rangle
+\]
+is finite. In this case we have
+\[
+\mathrm{Tr}A \coloneqq \sum_k \langle A e_k,e_k \rangle.
+\]
+\end{definition}
+
+\begin{definition}
+An \emph{isometry} between metric spaces is a map that preserves distance. In other words, if $T\colon X \to Y$ is such that 
+\begin{align*}
+\|Tx\|_Y = \|x\|_X, ~\textrm{for all $x\in X$}.
+\end{align*}
+\end{definition}
+
+\begin{definition}
+If $X$ and $Y$ are normed spaces, $X$ and $Y$ are \emph{isometrically isomorphic} if there is a surjective linear isometry from $X$ onto $Y$.
+\end{definition}
+
+\begin{definition}
+An \emph{isomorphism} between Banach spaces $X$ and $Y$ is a linear bijection $T\colon X \to Y$ that is also a homeomorphism.
+\end{definition}
+
+\begin{definition}
+If $H$ and $K$ are Hilbert spaces, an \emph{isomorphism} between $H$ and $K$ is a linear surjection $U\colon H \to K$ such that
+\[
+\langle Uh, Ug \rangle = \langle h, g\rangle.
+\]
+\end{definition}
+
+
+\section{Banach Algebras}
+
+\subsection{Basic Definitions and Properties}
+
+\begin{definition}
+An \emph{algebra} over $\F$ is a vector space $\A$ over $\F$ that also has a multiplication defined on it that makes $\A$ into a ring such that if $\alpha \in \F$ and $a,b\in \A$ then $\alpha(ab)=(\alpha a)b=a(\alpha b)$.
+\end{definition}
+
+\begin{definition}
+A \emph{Banach algebra} is an algebra $\A$ over $\F$ that has a norm $\|\cdot \|$ relative to which $\A$ is a Banach space and such that for all $a,b\in \A$ we have
+\[
+\|ab\|\leq \|a\|\|b\|.
+\]
+\end{definition}
+
+Note that $\A$ does not always have to have an identity.  If $\A$ does contain an identity $e$, then the map $\alpha \to \alpha e$ is an isomorphism of $\F$ into $\A$ and $\|\alpha e \|=|\alpha|$. Of course when $\A$ does have an identity we have $\|e\|=1$. However, we can create a new Banach algebra containing an identity from $\A$.
+
+\begin{proposition}
+If $\A$ is a Banach algebra without an identity, let $\A_1=\A\times \F$. Then define algebraic operations on $\A_1$ by
+\begin{enumerate}[\textnormal{(i)}]
+\item $(a,\alpha)+(b,\beta)=(a+b,\alpha+\beta)$;
+\item $\beta(a,\alpha)=(\beta a,\beta \alpha)$;
+\item $(a,\alpha)(b,\beta)=(ab+\alpha b+\beta a, \alpha \beta)$.
+\end{enumerate}
+Define $\|(a,\alpha)\|=\|a\|+|\alpha|$. Then $\A_1$ with this norm and the algebraic operations defined in (i), (ii), and (iii) is a Banach algebra with identity $(0,1)$ and $a\mapsto (a,0)$ is an isometric isomorphism of $\A$ into $\A_1$.
+\end{proposition}
+
+\subsection{Theory for Banach Algebras}
+
+
+
+
+
+\section{$C^*$-Algebras}
+
+\subsection{Basic Definitions}
+\begin{definition}
+An \emph{involution} is a function $f$ that is its own inverse.  In other words, $f(f(x))=x$ for every $x\in \mathrm{domain}(f)$.
+\end{definition}
+
+\begin{remark}
+In our case, the adjoint is the involution we care about.  Since we have that $(A^*)^*=A$.
+\end{remark}
+
+
+\subsection{Theory for $C^*$-Algebras}
+
+
+\pagebreak
+\section{Bibliography}
+Put stuff here for now:
+
+\begin{enumerate}[1.]
+\item Conway, A Course in Functional Analysis.
+\item \url{http://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Gleason.pdf}\\
+\item \url{https://www.imsc.res.in/~sunder/psc.pdf}
+\end{enumerate}
+
+\end{document}

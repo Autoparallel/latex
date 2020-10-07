@@ -1,0 +1,429 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm,pifont}
+\author{Colin Roberts}
+\title{Math 474 Exam \# 2}
+\begin{document}
+\maketitle
+\newcommand{\RN}[1]{%
+	\textup{\uppercase\expandafter{\romannumeral#1}}}
+\newcommand\Ireqn[2]{\noindent\makebox[\textwidth]{$\displaystyle#1$\hfill{#2}}\vspace{2ex}}
+\pagebreak
+
+
+%Start of Problem 1
+\setlength{\parindent}{0cm}
+1. Consider the surface parameterized by
+\[
+\vec{\mathbf{x}}(u,v)=\left(u,v,\frac{1}{a} \ln\left(\frac{\cos(av)}{\cos(au)}\right)\right)
+\]
+What is the mean curvature of this surface?
+\\
+\\
+\textit{\textbf{Solution.}}
+The mean curvature is half of the trace of the differential of the Gauss map.
+\[H = \frac{1}{2}tr(dN_p ) = \frac{1}{2}tr(\RN{1}_p^{-1}\RN{2}_p)
+\]
+So,
+
+\[\RN{1}_p = \left(
+	\begin{tabular}{cc}
+	$\langle x_u , x_u \rangle$ & $\langle x_u , x_v \rangle$ \\
+	$\langle x_u , x_v \rangle$ & $\langle x_v , x_v \rangle$
+	\end{tabular}
+	\right)
+	= \left(
+	\begin{tabular}{cc}
+	$E$ & $F$ \\
+$F$ & $G$
+	\end{tabular}\right)
+\]
+\\
+\[\vec{\mathbf{x}}_u = \left(1,0,tan(au)\right) \quad \textrm{and}\quad \vec{\mathbf{x}}_v = \left(0,1,-tan(av)\right)
+\]
+\\
+\[\implies \RN{1}_p = \left(\begin{tabular}{cc}
+$1 + \tan^2(au)$ & $-\tan(au)\tan(av)$\\
+$-\tan(au)\tan(av)$ & $1 + \tan^2(av$)
+\end{tabular}\right)
+\]
+\\
+Next, we need $n$ so we can find $\RN{2}_p$.\\
+
+\[\RN{2}_p = \left(\begin{tabular}{cc}
+$\mathbf{x}_{uu} \cdot n$ & $\mathbf{x}_{uv} \cdot n$ \\
+$\mathbf{x}_{uv} \cdot n$ & $\mathbf{x}_{vv} \cdot n$
+\end{tabular}\right) \textrm{where,  }n=\frac{
+\vec{\mathbf{x}}_u \times \vec{\mathbf{x}_v}}{\sqrt{EG-F^2}}
+\]
+\\
+\[n = \frac{1}{\sqrt{\sec(av)^2+\tan(au)^2}} \textrm{ } det \left(\begin{tabular}{ccc}
+$\hat{i}$ & $\hat j$ & $\hat k$\\
+1 & 0 &	\tan{(au)}\\
+0 & 1 & -\tan{(av)}
+\end{tabular}\right)
+\\
+\]
+\\
+\[n=\frac{\left(-\tan(au),\tan(av),1\right)}{\sqrt{\sec(av)^2+\tan(au)^2}}
+\]
+\\
+\[\vec{\mathbf{x}}_{uu}=\left(0,0,a\sec^2(au)\right) \textrm{, }\vec{\mathbf{x}}_{uu}=\vec{0}  \textrm{, and }\vec{\mathbf{x}}_{vv}=\left(0,0,-a\sec^2(av)\right)
+\]
+\\
+\[\implies \RN{2}_p=\left(\begin{tabular}{cc}
+a\sec^2(au) & $0$\\
+$0$ & a\sec^2(av)
+\end{tabular}\right)
+\]
+\\
+Using the equation, $H=\frac{1}{2}tr(\RN{1}_p^{-1}\RN{2}_p)$ the mean curvature can be found.
+\\
+\[H=\frac{1}{2} tr\left(
+\left(\begin{tabular}{cc}
+1 + \tan^2(au) & -\tan(au)\tan(av)\\
+-\tan(au)\tan(av) & 1 + \tan^2(av)
+\end{tabular}\right) ^{-1}
+\left(\begin{tabular}{cc}
+a\sec^2(au) & $0$\\
+$0$ & a\sec^2(av)
+\end{tabular}\right)
+\right)
+\]
+\\
+\[H=0
+\]
+\Ireqn{}{\qedsymbol}
+\textit{This was computed using Mathematica.}
+\pagebreak
+
+2. Consider the surface with parameterization
+\\
+\[\vec{\mathbf{x}}(u,v)=(u\cos(v),u\sin(v),0)
+\]
+for $u>0$ (notice that this is just the plane minus the origin, written in polar coordinates).  Compute the Christoffel symbols of this parameterization, and use those Christoffel symbols to compute the Gaussian curvature of the surface.
+\\
+\\
+\textit{\textbf{Solution.}}
+Find the first fundamental form, and use the inverse to calculate Christoffel symbols.  Then calculate Gaussian curvature.
+\\
+\[\RN{1}_p = \left(
+	\begin{tabular}{cc}
+	\langle x_u , x_u \rangle & \langle x_u , x_v \rangle \\
+	\langle x_u , x_v \rangle & \langle x_v , x_v \rangle
+	\end{tabular}
+	\right)
+	= \left(
+	\begin{tabular}{cc}
+	$E$ & $F$ \\
+$F$ & $G$
+	\end{tabular}\right)
+\]
+\\
+\[\vec{\textbf{x}}_u=(\cos v,\sin v, 0) \quad \textrm{and} \quad \vec{\textbf{x}}_v=(-u\sin v,u\cos v, 0)
+\]
+\[\implies \RN{1}_p = \left(
+	\begin{tabular}{cc}
+	$1$ & $0$\\
+	$0$ & $u^2$
+	\end{tabular}\right)
+	\implies \RN{1}_p^{-1} = \left(
+	\begin{tabular}{cc}
+	$1$ & $0$\\
+	$0$ & $\frac{1}{u^2}$
+	\end{tabular}\right)
+\]
+\\
+\\
+First we need to calculate: $E_u$, $E_v$, $F_u$, $F_v$, $G_u$, and $G_v$.
+\\
+\[E_u = E_v = 0 \textrm{, } F_u=F_v=0 \textrm{, } G_u=2u \textrm{ and, } G_v=0
+\]
+\\
+Now we can calculate the Christoffel symbols using the following equations.
+\[
+\left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\Gamma_{uu}^u $\\
+$\Gamma_{uu}^v$
+\end{tabular}\right)
+= \left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{cc}
+$E$ & $F$ \\
+$F$ & $G$
+\end{tabular}\right)^{-1}
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\frac{1}{2} E_u $\\
+$F_u - \frac{1}{2} E_v$
+\end{tabular}\right)
+\]
+\\
+\[
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\Gamma_{uv}^u $\\
+$\Gamma_{uv}^v$
+\end{tabular}\right)
+= \left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{cc}
+$E$ & $F$ \\
+$F$ & $G$
+\end{tabular}\right)^{-1}
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\frac{1}{2} E_v$ \\
+$\frac{1}{2} G_u$
+\end{tabular}\right)
+\]
+\\
+\[
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\Gamma_{vv}^u$ \\
+$\Gamma_{vv}^v$
+\end{tabular}\right)
+= \left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{cc}
+$E$ & $F$ \\
+$F$ & $G$
+\end{tabular}\right)^{-1}
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$F_v -\frac{1}{2} G_u$ \\
+$\frac{1}{2} G_v$
+\end{tabular}\right)
+\]
+\\
+
+These yield:
+\\
+\[
+\left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\Gamma_{uu}^u $\\
+$\Gamma_{uu}^v$
+\end{tabular}\right)
+= \left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{cc}
+$1$ & $0$ \\
+$0$ & $\frac{1}{u^2}$
+\end{tabular}\right)^{-1}
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$0$\\
+$0$
+\end{tabular}\right)
+= \left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$0$\\
+$0$
+\end{tabular}\right)
+\]
+\\
+\[
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\Gamma_{uv}^u $\\
+$\Gamma_{uv}^v$
+\end{tabular}\right)
+= \left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{cc}
+$1$ & $0$ \\
+$0$ & $\frac{1}{u^2}$
+\end{tabular}\right)^{-1}
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$0$ \\
+$u$
+\end{tabular}\right)
+= \left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$0$\\
+$\frac{1}{u}$
+\end{tabular}\right)
+\]
+\\
+\[
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$\Gamma_{vv}^u$ \\
+$\Gamma_{vv}^v$
+\end{tabular}\right)
+= \left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{cc}
+$1$ & $0$ \\
+$0$ & $\frac{1}{u^2}$
+\end{tabular}\right)^{-1}
+\left(
+\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$-u$ \\
+$0$
+\end{tabular}\right)
+= \left(\bgroup
+\def\arraystretch{1.25}
+\begin{tabular}{c}
+$-u$\\
+$0$
+\end{tabular}\right)
+\]
+\\
+\\
+Using the Gauss equations, specifically $EK$, the Gaussian curvature can be found.
+\\
+\[EK=(\Gamma_{uu}^v)_v - (\Gamma_{uv}^v)_u + \Gamma_{uu}^u \Gamma_{uv}^v + \Gamma_{uu}^v \Gamma_{vv}^v - \Gamma_{uv}^u \Gamma_{uu}^v - (\Gamma_{uv}^v)^2
+\]
+\\
+Since $E=1$ and most of these terms are zero we see that,
+\[K=-\left(\frac{-1}{u^2}\right)-\frac{1}{u^2}
+\]
+\[K=0
+\]
+Which is entirely expected from a planar curve.
+\\
+\Ireqn{ }{\qedsymbol}
+\pagebreak
+
+3. Generalizing the previous problem (where $\alpha$ was the unit circle), suppose $\alpha(s)$ is a regular curve, and consider the cone surface
+\[\vec{\mathbf{x}}(u,v)=u\alpha(v)
+\]
+for $u>0$. What conditions on $\alpha$ will guarantee that the surface is regular?  What are the Gaussian and mean curvatures of this surface (in terms of $\alpha$ and its derivatives)? Feel free to assume $\alpha$ is parameterized by arc length.  In the previous problem you had to use the Christoffel symbols to compute the Gaussian curvature, but in this problem you can compute the Gaussian and mean curvatures any way you want.
+\\
+\\
+\textit{\textbf{Solution.}}
+We can look at the coordinate map of this surface and find $\RN{1}_p,\RN{2}_p$ and then compute Gaussian and mean curvatures.  Then we can also look at restrictions imposed upon $\alpha$.
+\\
+\[\vec{\mathbf{x}}_u=\alpha(v) \textrm{ and } \vec{\mathbf{x}}_v=u\alpha'(v)
+\]
+\[\vec{\mathbf{x}}_{uu}=\vec{0} \textrm{, } \vec{\mathbf{x}}_{uv}=\alpha' \textrm{ and, } \vec{\mathbf{x}}_{vv}=u\alpha''
+\]
+\[n=\frac{
+\vec{\mathbf{x}}_u \times \vec{\mathbf{x}_v}}{\sqrt{EG-F^2}}=\frac{\alpha\times\alpha'}{\sqrt{|\alpha|^2-(\alpha\cdot\alpha')^2}}
+\]
+\\
+We can calculate the first and second fundemental forms.
+\\
+\[\RN{1}_p = \left(
+	\begin{tabular}{cc}
+	$\langle x_u , x_u \rangle$ & $\langle x_u , x_v \rangle$ \\
+	$\langle x_u , x_v \rangle$ & $\langle x_v , x_v \rangle$
+	\end{tabular}
+	\right)
+\textrm{ and } \RN{2}_p = \left(\begin{tabular}{cc}
+\mathbf{x}_{uu} \cdot n & \mathbf{x}_{uv} \cdot n \\
+\mathbf{x}_{uv} \cdot n & \mathbf{x}_{vv} \cdot n
+\end{tabular}\right) 
+\]
+\[\implies \RN{1}_p=\left(
+	\begin{tabular}{cc}
+	$|\alpha|^2$ & $u(\alpha\cdot\alpha')$ \\
+$u(\alpha\cdot\alpha')$ & $u^2$
+	\end{tabular}\right)
+	\textrm{ and } \RN{2}_p=\left(
+	\begin{tabular}{cc}
+	$0$ & $0$ \\
+$0$ & $\frac{\alpha''\cdot(\alpha\times\alpha')}{\sqrt{|\alpha|^2-(\alpha\cdot\alpha')^2}}$
+	\end{tabular}\right)
+\]
+\[\implies dN_p=\RN{1}_p^{-1}\RN{2}_p=\left(\\
+\bgroup
+\def\arraystretch{1.75}\begin{tabular}{cc}
+	$0$ & $\frac{-(\alpha\cdot\alpha')(\alpha''\cdot(\alpha\times\alpha')}{u(|\alpha|^2-(\alpha\cdot\alpha')^2))^{3/2}}$ \\
+$0$ & $\frac{|\alpha|^2(\alpha''\cdot(\alpha\times\alpha')}{u^2(|\alpha|^2-(\alpha\cdot\alpha')^2))^{3/2}}$
+	\end{tabular}\right)
+\]
+From this we can calculate $K=det(dN_p)$ and $H=\frac{1}{2}tr(dN_p)$.
+\[K=0
+\]
+\[H=\frac{|\alpha|^2(\alpha''\cdot(\alpha\times\alpha'))}{2u^2(|\alpha|^2-(\alpha\cdot\alpha')^2)^{3/2}}
+\]
+For a surface to be \textit{regular} the coordinate map $\vec{\mathbf{x}}(u,v)$ must have a defined surface normal (\textit{ie}: $\vec{\mathbf{x}}_u \times \vec{\mathbf{x}}_v\neq0$).
+In this case, $\vec{\mathbf{x}}_u=\alpha(v)$ and $\vec{\mathbf{x}}_v=u\alpha'(v)$, and the cross product is the numerator of $n$.
+\[\vec{\mathbf{x}}_u\times\vec{\mathbf{x}}_v=u(\alpha\times\alpha')
+\]
+This means that the surface is not \textit{regular} if $u =0$, if $\alpha' = 0$, if $\alpha$ is a straight line, or if $\alpha$ includes the origin.  If $\alpha$ is a straight line, then $\alpha'$ points in the same direction as $\alpha$ and the cross product will be zero.  Basically, I think $\alpha$ should be $\mathcal{C}^2$.
+\\
+\Ireqn{}{\qedsymbol}
+\pagebreak
+
+4. Let $\Sigma$ be a compact surface without boundary (compact means it is closed and bounded as a subset of $\mathbb{R}^3$).  Is it true that $\Sigma$ must have an elliptic point? Prove or give an explicit counterexample. (\textit{Hint}: it's very helpful to think carefully about what it means geometrically to be elliptic.)
+\\
+\\
+\textbf{\textit{Solution.}} $\Sigma$ must have an elliptic point.
+\begin{proof}
+Let $\vec{\mathbf{x}}(u,v)$ be the coordinate map for $\Sigma$ where $dNp$ is diagonalized. If $\Sigma$ is compact that means there must be some point $p\in\Sigma$ where $|\vec{\mathbf{x}}(u,v)|$ is maximized, or the surface is totally unbounded and not compact at all.
+\\
+\\
+This means,
+\[
+|\vec{\mathbf{x}}(u,v)|_p'=[\left((\vec{\mathbf{x}}(u,v)\cdot\vec{\mathbf{x}}(u,v))_p\right)^{1/2}]'=0
+\]
+\\
+But the derivatives in each direction should also fall to zero at this point.
+\[
+\frac{2(\vec{\mathbf{x}}_u\cdot\vec{\mathbf{x}}(u,v))_p}{\sqrt{(\vec{\mathbf{x}}(u,v)\cdot\vec{\mathbf{x}}(u,v))_p}}=0
+\textrm{ and } 
+\frac{2(\vec{\mathbf{x}}_v\cdot\vec{\mathbf{x}}(u,v))_p}{\sqrt{(\vec{\mathbf{x}}(u,v)\cdot\vec{\mathbf{x}}(u,v))_p}}=0
+\]
+\\
+So, obviously, the surface can't just be the origin since $|\vec{\mathbf{x}}(u,v)|\neq0$.
+\\
+\\
+The previous equations can be simplified slightly to show:
+\[
+(\vec{\mathbf{x}}_u\cdot\vec{\mathbf{x}}(u,v))_p=0 \textrm{ and } (\vec{\mathbf{x}}_v\cdot\vec{\mathbf{x}}(u,v))_p=0
+\]
+So $\vec{\mathbf{x}}_u \textrm{ and } \vec{\mathbf{x}}_v$ are perpendicular to $\vec{\mathbf{x}}(u,v)$ which means that $\vec{\mathbf{x}}(u,v)$ is in the direction of the surface normal $n$.
+\\
+If we differentiate again, we know that the value will have to be negative since this was the maximal point of distance from the origin.  Again we can look at the derivatives with respect to the principal directions.  This yields:
+\\
+\[
+(\vec{\mathbf{x}}_{uu}\cdot\vec{\mathbf{x}}(u,v))_p<0 \textrm{ and } (\vec{\mathbf{x}}_{vv}\cdot\vec{\mathbf{x}}(u,v))_p<0
+\]
+But since $\vec{\mathbf{x}}(u,v)$ is in the direction of $n$,
+\[
+\implies e<0 \textrm{ and } g<0
+\]
+
+But since $dNp$ is diagonal that means that $det(dNp)>0$ at some point (and hence elliptic) since the sign of $e$ and $g$ are the same and since $E=\sqrt{|\vec{\mathbf{x}}_u|}$ and $G=\sqrt{|\vec{\mathbf{x}}_v|}$.
+\\
+\end{proof}
+\end{document}

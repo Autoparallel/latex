@@ -1,0 +1,172 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\author{Colin Roberts}
+\usepackage{amsthm,pifont}
+\title{MATH474 Homework \#6}
+\begin{document}
+\maketitle
+\pagebreak
+\setlength{\parindent}{0cm}
+
+
+
+1. The goal of this problem is to determine which surfaces of revolution have constant Gaussian curvature.  Suppose the surface of revolution $\Sigma$ has parameterization
+
+\[\vec{\mathbf{x}}(u,v)=(\phi(v)\cos[u],\phi(v)\sin[u],\psi(v)),
+\]
+
+where the template curve $\alpha(s)=(\phi(s),0,\psi(s))$ is parameterized by arclength (which of course means that $(\phi')^2+(\psi')^2=1$).  The goal is to solve for $\phi$ and $\psi$ so that $\Sigma$ has constant Gaussian curvature $K$.
+\\
+\\
+
+(a) Prove that $\phi$ and $\psi$ satisfy
+
+\[\phi''(v)+K\phi(v)=0 \textrm{   and   } \psi(v)=\int_0^v\sqrt{1-(\phi'(t))^2}dt
+\]
+\textbf{\textit{Solution(a).}} We know $K$ in terms of $E$, $G$ and their derivatives from Gauss when $F=0$.
+\\
+\[K=\frac{1}{2\sqrt{EG}}\left(\left(\frac{E_v}{\sqrt{EG}}\right)_v+\left(\frac{G_u}{\sqrt{EG}}\right)_u\right)
+\]
+\\
+So we just need to find $E$ and $G$ then their derivatives and make sure $F=0$.
+\[
+\vec{\mathbf{x}}_u=(-\phi(v)\sin{u},\phi(v)\cos{u},0)\\
+\]
+\[
+\vec{\mathbf{x}}_v=(\phi'(v)\cos{u},\phi'(v)\sin{u},\psi'(v))
+\]
+\[
+\implies E=\phi^2 \textrm{ and } G=(\phi')^2+(\psi')^2=1 \textrm{ and } F=0
+\]
+\\
+If we plug these into the equation above, then we receive the following:
+\[
+K=\frac{-1}{2\sqrt{EG}}\left(\left(\frac{2\phi\phi'}{\sqrt{\phi^2}}\right)_v+0\right)
+\]
+\[
+K=\frac{-\left(\phi'\right)_v}{\phi}=\frac{-\phi''}{\phi}
+\]
+\[\implies \phi''+K\phi=0
+\]
+\\
+For the next part, we start with,
+\[
+(\phi')^2+(\psi')^2=1
+\]
+Which gives,
+\[
+\psi'=\sqrt{1-(\phi')^2}
+\]
+Which if we integrate yields,
+\[
+\psi(v)=\int_0^v\sqrt{1-(\phi'(t))}dt
+\]
+\\
+Which is the expression we wanted.
+\pagebreak
+
+(b)Now assume $K=1$ and show that, assuming the initial condition $\phi'(0)=0$, the solutions of the equations from (a) are
+
+\[\phi(v)=C\cos[v] \textrm{   and   } \phi(v)=\int_0^v\sqrt{1-C^2\sin^2{t}}dt,
+\]
+
+where $C$ is a constant.  Obviously, $\psi(v)$ is not defined for all $v$; find the domain of $\psi(v)$ (which depends on $C$) and sketch the curve $\alpha(s)=(\phi(s),0,\psi(s))$ for $C<1, C=1$ and $C>1$ (feel free to use Mathematica, Maple, Matlab, Wolfram Alpha, etc. for this).  Show that only the $C=1$ surface can be rotated around the $z$-axis to get a compact regular surface.
+\\
+\\
+
+(c) Now assume $K=-1$ and show that $\psi$ and $\phi$ satisfy one of the following set of equations:
+
+\begin{equation}
+\phi(v)=C\cosh{v} \textrm{ and } \psi(v)=\int_0^v\sqrt{1-C^2\sinh^2{t}}dt
+\end{equation}
+
+\begin{equation}
+\phi(v)=C\sinh{v} \textrm{ and } \psi(v)=\int_0^v\sqrt{1-C^2\cosh^2{t}}dt
+\end{equation}
+
+\begin{equation}
+\phi(v)=\exp{v} \textrm{ and } \psi(v)=\int_0^v\sqrt{1-C^2\exp{2t}}dt
+\end{equation}
+
+In each case, determine the domain of $\psi(v)$ and sketch the resulting surface.
+\\
+\\
+
+(d) Finally, assume $K=0$.  Prove that the only solutions are the cylinder, the cone, and the plane.
+\\
+\pagebreak
+
+
+
+
+2. Show that if $F=0$ then the Gaussian curvature $K$ of a surface $\Sigma$ is given by
+
+\[K=-\frac{1}{2\sqrt{EG}}\left[\frac{\partial}{\partial v}\left(\frac{E_v}{\sqrt{EG}}\right)+\frac{\partial}{\partial u}\left(\frac{G_u}{\sqrt{EG}}\right)\right].
+\]
+
+\pagebreak
+
+
+
+
+3. Let $\Sigma$ be an oriented regular surface and let $\alpha(s)$ be an arclength parameterized curve on $\sigma$.  Since $\alpha$ lies on $\Sigma$, we know that $\alpha'=T(s)\in T_{\alpha(s)}\Sigma$, and in particular $T(s)$ is perpendicular to the surface normal $N_{\Sigma}(s)$.
+\\
+The \textit{Darboux frame} of $\alpha$ is defined to be the triple of vectors
+
+\[(T(s),V(s)=N_{\Sigma}(s)\times T(s),N_{\Sigma}(s)).
+\]
+Like the Frenet frame, this frame's derivatives give information about the local geometry of $\alpha$, but now that information relates also to how $\alpha$ lies in $\Sigma$.
+\\
+\\
+(a) Show that the Darboux frame satisfies a system of equations vaguely similar to the Frenet equations:
+
+\[\begin{tabular}{cccc}
+$T'=$ & & $\alpha(s)V(s)$&$+N_{\Sigma}(s)$\\
+$V'=$ & $-\alpha(s)T$ & & $+c(s)N_{\Sigma}(s)$\\
+$N_{\Sigma}'=$ & $-b(s)T$ & $-c(s)V(s)$ &
+\end{tabular}
+\]
+for some coefficient functions $a(s)$, $b(s)$, and $c(s)$, which interpret in the following parts.
+\\
+\\
+
+(b) Show that $c(s)=-\langle N_{\Sigma},V\rangle$.  In particular, $\alpha$ is a line of curvature if and only if $c(s)=0$.\\
+The function $-c(s)$ is called the \textit{geodesic torsion} for obvious reasons.
+\\
+\\
+
+(c) Show that $b(s)$ is the normal curvature $\kappa_n$ of $\alpha$.
+\\
+\\
+
+(d) Show that $\alpha(s)$ is the geodesic curvature $\kappa_g$ of $\alpha$.
+\\
+\pagebreak
+
+
+
+
+4. Let $\Sigma$ be the hyperboloid of revolution
+
+\[\vec{\mathbf{x}}(u,v)=(\cosh{v}\cos{u},\cosh{v}\sin{u},\sinh{v}),
+\]
+which can also be described implicitly by the equation $x^2+y^2-z^2=1$.  Suppose $\alpha(s)$ is a geodesic on $\Sigma$ which makes the angle $\phi(s)$ with the $\vec{\mathbf{x}}_u$ direction at the point $\alpha(s)=\vec{\mathbf{x}}(u(s),v(s))$ and that the angle $\phi$ satisfies
+
+\[\cos{(\phi(s))}=\frac{1}{\cosh{(v(s))}}.
+\]
+Show that the geodesic $\alpha$ spirals asymptotically into the circle $v=0$.
+
+\pagebreak
+
+
+
+
+
+
+
+\end{document}

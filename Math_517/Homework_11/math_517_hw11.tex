@@ -1,0 +1,195 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 11}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} Find the minimum of the function
+\[
+f(x_1,x_2,\dots,x_n)=\frac{x_1+x_2+\cdots+x_n}{n}
+\]
+on the hypersurface $S=\{(x_1,x_2,\dots,x_n)~\vert~ x_1x_2\dots x_n=c, \textrm{each $x_i\geq 0$}\}$, where $C>0$ is a constant. \\
+Use your answer to deduce the \emph{arithmetic-geometric mean inequality}: for $a_1,a_2,\dots,a_n\geq 0$,
+\[
+(a_1 a_2 \cdots a_n)^{1/n}\leq \frac{a_1 + a_2 + \cdots + a_n}{n},
+\]
+with equality if and only if $a_1=a_2=\cdots = a_n$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Define $g\colon \R^n\to \R$ by $g(\vec{x})=x_1 x_2 \cdots x_n - C$ and note that $S=g(0)$.  Then
+\begin{align*}
+\nabla g(\vec{x})&= \begin{bmatrix}
+x_2x_3x_4 x_5\cdots x_n\\
+x_1 x_3 x_4 x_5\cdots x_n \\
+x_1 x_2 x_3 x_5 \cdots x_n\\
+\vdots\\
+x_1 x_2 x_3 x_4 \cdots x_{n-1}
+\end{bmatrix}\\
+\nabla f(\vec{x})&= \begin{bmatrix}
+1/n\\
+1/n\\
+1/n\\
+\vdots\\
+1/n
+\end{bmatrix}.
+\end{align*}
+Now to minimize this function with the constraint we want 
+\begin{align*}
+\nabla f(\vec{x})&=\lambda \nabla g(\vec{x}),
+\end{align*}
+which only has a solution when $\vec{x}=(a,a,\dots,a)$, which results in 
+\begin{align*}
+\begin{bmatrix}
+a^{n-1}\\
+a^{n-1}\\
+\vdots\\
+a^{n-1}
+\end{bmatrix}
+&=
+\lambda
+\begin{bmatrix}
+1/n\\
+1/n\\
+\vdots\\
+1/n
+\end{bmatrix},
+\end{align*}
+meaning $\lambda=na^{n-1}$. Of course we also have that $a^n =C$ so we know $a=C^{1/n}$. 
+
+To see that this is in fact a minimum and not a maximum or saddle point , note that there exists a lower bound 0 for the function $f$ restricted to $S$ since all $x_i\geq 0$. To see there is no maximum, we note that we can make $x_1$ arbitrarily large and adjust all other $x_i$ so that $x_1 \cdots x_n = C$ but $\frac{x_1+\cdots + x_n}{n}$ is not bounded from above.  Since the lagrange multiplier method finds these extrema points, we know that we must find a local minimum for $f$ on $S$.
+
+
+So now we let $a_1,a_2,\dots,a_n\geq 0$ and note that $a_1 a_2 \cdots a_n = C$ for some $C$, and we know that when $C^{1/n}=a_1=a_2=\cdots=a_n$ we minimize the arithmetic mean. It follows that for not all $a_i=a_j$ we have
+\begin{align*}
+\frac{C^{1/n}+\cdots+c^{1/n}}{n}&\leq \frac{a_1+\cdots+a_n}{n}\\
+nC^{1/n}&\leq a_1+\cdots + a_n\\
+C^{1/n}&\leq \frac{a_1+\cdots + a_n}{n}\\
+(a_1 a_2 \cdots a_n)^{1/n} &\leq \frac{a_1+\cdots + a_n}{n}.
+\end{align*}
+
+Now if $a=a_1=a_2=\cdots =a_n$ we have
+\[
+(a\cdots a)^{1/n}=a=\frac{n}{n}a=\frac{a+\cdots +a}{n}.
+\]
+For the other direction, suppose for a contradiction that we have that for $\vec{a}'$
+\[
+(a_1'\cdots a_n')^{1/n}=\frac{a_1'+\cdots + a_n'}{n},
+\]
+with not all $a_i'=a_j'$ but still satisfying $(a_1' a_2' \cdots a_n')^{1/n}=(a_1 a_2 \cdots a_n)^{1/n}=C$.  By the lagrange multiplier method above, we have that $\vec{a}'$ is not a solution, and is thus not a local minimum of $f(\vec{x})$. This means that
+\begin{align*}
+f(\vec{a})&<f(\vec{a}')\\
+\frac{a+\cdots +a}{n} &< \frac{a_1'+\cdots + a_n'}{n}\\
+(a_1 a_2 \cdots a_n)^{1/n} &< \frac{a_1'+\cdots + a_n'}{n} && \textrm{by the equality shown above}.
+\end{align*}
+Hence, we only have equality if $a=a_1=a_2=\cdots =a_n$.
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. } Let $A$ be a symmetric $n\times n$ matrix and define $Q\colon \R^n \to \R$ by $Q(\vec{x})=\langle \vec{x},A\vec{x} \rangle$ (the $Q$ is for \emph{\textbf{Q}uadratic form}). Suppose the restriction of $Q$ to the unit sphere attains a maximum or a minimum at the point $\vec{v}$. Show that $A\vec{v}=\lambda \vec{v}$ for some $\lambda \in \R$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+So we define $g\colon \R^n \to \R$ by $g(\vec{x})=x_1^2+x_2^2+\cdots x_n^2 -1$ and note that the unit sphere $S^n = g(0)$. Then we have that 
+\begin{align*}
+\nabla Q(x)&=\begin{bmatrix}
+\frac{\partial}{\partial x_1} \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_i x_j\\
+\frac{\partial}{\partial x_2} \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_i x_j\\
+\vdots\\
+\frac{\partial}{\partial x_n} \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_i x_j
+\end{bmatrix}\\
+&= \begin{bmatrix}
+\sum_{i=1}^n a_{i1} x_i + \sum_{j=1}^n a_{1j} x_j\\
+\sum_{i=1}^n a_{i2} x_i + \sum_{j=1}^n a_{2j} x_j\\
+\vdots\\
+\sum_{i=1}^n a_{in} x_i + \sum_{j=1}^n a_{nj} x_j
+\end{bmatrix}\\
+&=2 \begin{bmatrix}
+\sum_{i=1}^n a_{i1} x_i\\
+\sum_{i=1}^n a_{i2} x_i\\
+\vdots \\
+\sum_{i=1}^n a_{in} x_i
+\end{bmatrix} && \textrm{since $A$ is symmetric, $a_{ij}=a_{ji}$}\\
+&= 2 A\vec{x}.
+\end{align*}
+We also have
+\begin{align*}
+\nabla g(\vec{x})&=\begin{bmatrix}
+2x_1\\
+2x_2\\
+\vdots\\
+2x_n
+\end{bmatrix}.
+\end{align*}
+Then, it follows 
+\begin{align*}
+\nabla Q(\vec{x}) &= \lambda \nabla g(\vec{x})\\
+2A\vec{x}&= 2\lambda \vec{x}\\
+A\vec{x}&=\lambda \vec{x},
+\end{align*}
+and we know that $\vec{v}$ is an extremal point, so it must be that 
+\begin{align*}
+A\vec{v}&=\lambda \vec{v}
+\end{align*}
+by the work above.
+
+
+\end{proof}
+
+
+\pagebreak
+
+
+\end{document}
+
+
+

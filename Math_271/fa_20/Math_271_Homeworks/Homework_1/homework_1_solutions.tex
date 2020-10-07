@@ -180,11 +180,24 @@ So we have
         \end{center}
     Geometrically what the inverse does is reverses the angle (or argument) $\theta$ of the complex number to $-\theta$ and scales the length $r$ by $1/r$. 
 \end{solution}
+\newpage
+
+\begin{problem}
+    What is an (ordinary) differential equation? Explain what it means to be a general and particular solution to a differential equation.
+\end{problem}
+\begin{solution}
+    An Ordinary Differential Equation (ODE) is an equation involving an unknown function $x(t)$ that depends on one independent variable $t$.  We tend to think of the dependent variable $x$ as representing position and we think of the independent variable $t$ as representing time.
+
+    A general solution is a function $x(t)$ that solves an ODE. These general solutions will have undetermined constants.  Specifically, there will be an unknown constant for the order of the problem (e.g., a second order problem will have two unknown constants). When given initial conditions for an ODE, we call this an Initial Value Problem (IVP).  A particular solution is a solution to an IVP. That is, it not only solves the ODE, but satisfies the given initial conditions as well.  A particular solution is a single member of the set of general solutions.  
+
+    The analogy is as follows: If a ball falls due to gravity, then I can determine a general solution that describes this.   If I then also provide the initial position and velocity of the ball, then I would know the exact trajectory of the ball.  This exact trajectory is a particular solution unique to those initial conditions.
+\end{solution}
+
 
 \newpage
 
 \begin{problem}
-    Look up a differential equation in chemistry that interests you.  Write it down, and explain what it attempts to model.
+    Look up a differential equation in chemistry that interests you.  Write it down, and explain what it attempts to model. Why does it interest you?
 \end{problem}
 
 \begin{solution}
@@ -201,20 +214,74 @@ So we have
     \int_\Omega \Psi^*(\mathbf{r}',t) \Psi(\mathbf{r}',t) d\mathbf{r}'
     \]
     gives the probability of a particle being in the region $\Omega$ at time $t$.
+
+    This equation interests me because it describes the world in the best detail that we know of.  Our beliefs in classical mechanics is simply not correct -- quantum mechanics shows us that our classical intuition has to be thrown out in the case of small particles and their interactions.  It's amazing to get to learn what happens on small scales and use this to understand, for example, the periodic table.
 \end{solution}
 
 \newpage
 
 \begin{problem}
-    What is a differential equation? What does it mean for a function to be a solution to a differential equation?
-\end{problem}
+Objects near Earth fall due to gravity.  The acceleration of an object due to gravity is then
+\[
+y''=g,
+\]
+where $x$ represents the distance above the ground and $g\approx -9.8\frac{m}{s^2}$ is constant.  
+\begin{enumerate}[(a)]
+    \item Find the general solution to the equation.
+    \item Given the initial data $y(0)=0$ and $y'(0)=1$, find the particular solution.
+    \item At what time $t>0$ does the object first contact the ground?
+    \item Plot your solution over the range of time that makes physical sense.
+\end{enumerate}
 
-\begin{solution}
-    A differential equation is an expression containing a function and its derivatives. The idea is that a differential equation relates the rate of change of a function at a point with its values at that point.  For example, a function may have a rate of change proportional to its current value which gives rise to
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item This equation can be solved by integrating twice.  However, I like to make a substitution of $f=y'$ so that we can write
     \[
-    x'(t)=kx(t).
+    f'=g.
     \]
-    A function is a solution to a differential equation if, when we plug it in, the expression holds true. The solution may describe the path a particle takes over time, or a how a system chages in space, or many other things really.   
+    Now, this is a first order separable equation which we can solve by
+    \begin{align*}
+        \frac{df}{dt}&=g\\
+        \int df&= \int gdt\\
+        f&= gt+C_1.
+    \end{align*}
+    Now, since $y=x'$ we can look at
+    \[
+    y'=gt+C_1
+    \]
+    which is also separable.  We integrate and find
+    \begin{align*}
+        \frac{dy}{dt}&=gt+C_1\\
+        \int dy &= \int gt+C_1 dt\\
+        y(t)&= \frac{1}{2}gt^2+C_1t+C_2
+    \end{align*}
+    is our general solution.
+    \item Now, we use our initial data along with our general solution
+    \begin{align*}
+        0=y(0)&=\frac{1}{2}g(0)^2+C_1(0)+C_2\\
+        &=C_2.
+    \end{align*}
+    So $C_2=0$. Next, use the information about the first derivative $x'(0)=1$ and we have
+    \begin{align*}
+        1=y'(0)&=g(0)+C_1\\
+        =C_1.
+    \end{align*}
+    Thus $C_1=1$. Now, our particular solution is
+    \[
+    \boxed{y(t)=\frac{1}{2}gt^2+t.}
+    \]
+    \item Now, the points at which the object is on the ground are the values of $t$ where $y(t)=0$ since $y$ represents the height above the ground.  So we have to solve
+    \[
+    0=y(t)=\frac{1}{2}gt^2+t=t\left(\frac{1}{2}gt+1\right).
+    \]
+    This has roots $t=0$ and $t=-\frac{2}{g}$.  So the time $t>0$ the ball hits the ground is $t=-\frac{2}{g} \approx 0.204$.
+    \item Here's a plot of the solution from time $t=0$ until it hits the ground (see (d)).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{projectile.png}
+    \end{figure}
+\end{enumerate}
 \end{solution}
 
 \end{document}

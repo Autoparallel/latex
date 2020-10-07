@@ -1,0 +1,260 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 10}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 9.9)} If $E \subseteq \R^n$ is a connected open set and $F\colon E \to \R^m$ is differentiable such that $F'(\vec{x})=\vec{0}$ for all $\vec{x}\in E$, prove that $F$ is constant on $E$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $F$ is differentiable, we have that $F'(\vec{x})_{ij}=\frac{\partial_j F}{\partial x_i} (\vec{x})=0$.  Consider then the mean value theorem on the components of $F$, $F_j$.  Denote $E_i\subseteq \R$ as the set containing the $i$th components of the vectors in $E$. Now choose $\vec{p}=(p_1,\dots,p_n)$ and let $F(\vec{x})=q$ and consider $\tilde{F_j}\colon \R \to \R$ defined by $F_{j_i}(\tilde{p_i})=F(p_1,p_2,\dots,\tilde{p_i},\dots,p_n)$ where each $p_l$ are fixed except $l=i$, where $\tilde{p_i}\in (a_i,b_i)\subseteq E_i$. Then we have by Theorem 5.11 that $F_{j_i}$ is constant on this interval. This is true for all $F_{j_i}$, and so we consider the set $X=\{\vec{x}\in E ~\vert~ F(\vec{x})=q\}$.  We have by construction that $X$ is open since it is the finite product of unions of open sets.  Finally, consider a limit point $\vec{r}\in X$ and consider the sequence $\{r_n\}_{n\in \N}\in F$ converging to $\vec{r}$.  We have that $F(\vec{r_n})=p$ for all $n$ since $\vec{r}\in X$, and since $F$ is continuous, $\lim_{n\to \infty} F(q_n)=F(q)=p$.  This implies that $X$ is also closed, and thus since $E$ is connected, the only open and closed subsets of $E$ are $E$ itself and $\emptyset$. Certainly $X$ is nonempty, and thus $X=E$ and we have $F$ is constant on $E$.
+\end{proof}
+
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (Rudin 9.12)} Fix two real numbers $0<a<b$. Define $F\colon \R^2 \to \R^3$ where $F(s,t)=(f_1(s,t),f_2(s,t),f_3(s,t))$ with
+\begin{align*}
+f_1(s,t)&=(b+a\cos s) \cos t\\
+f_2(s,t)&=(b+a \cos s) \sin t\\
+f_3(s,t)&=a \sin s.
+\end{align*}
+
+\begin{enumerate}[(a)]
+\item Describe the range $T$ of $F$ (it is a compact subset of $\R^3)$.
+\item Show that there are exactly 4 points $\vec{p}\in T$ such that
+\[
+(\nabla f_1) (F^{-1}(\vec{p}))=\vec{0}.
+\]
+\item Determine the set of all $\vec{q}\in T$ such that
+\[
+(\nabla f_3)(F^{-1}(\vec{q}))=\vec{0}.
+\]
+\item Show that one of the points $\vec{p}$ found in part (b) corresponds to a local maximum of $f_1$, one corresponds to a local minimum, and that the other two are neither (they are saddle points).
+
+\noindent Which of the points $\vec{q}$ found in part (c) correspond to maxima or minima?
+\item Let $\lambda \in \R$ be irrational, and define $G(t)=F(t,\lambda t)$. Prove that $G$ is an injective mapping of $\R$ onto a dense subset of $T$, and show that 
+\[
+|G'(t)|^2=a^2+\lambda^2 (b+a\cos t)^2.
+\]
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+\begin{enumerate}[(a)]
+\item The range of $F$ is a hollow torus with $b$ as the distance from the center of the ``donut hole" to the center of the tube portion and $a$ is the radius of the tube.
+
+\item For $(\nabla f_1)(s,t)=0$, we see that $(\nabla f_1)(s,t)=(-a\sin s \cos t,-(b+a\cos s)\sin t)$. Note that these functions are $2\pi$ periodic, and we can restrict $s,t\in [0,2\pi)$. Then we have,
+\begin{align*}
+-a\sin s \cos t &=0\\
+-(b+a \cos s)\sin t)&=0.
+\end{align*}
+The first equation is 0 when $s\in \{0,\pi\}$ and $t\in \left\{\frac{\pi}{2},\frac{3\pi}{2}\right\}$. The second equation is $0$ when $t\in \{0,\pi\}$, and is otherwise nonzero.  So we find that the solutions for this are $\{(0,0),(0,\pi),(\pi,0),(\pi,\pi)\}$. By plugging these into $F$, we find that these points correspond to $\vec{q}\in \{(b+a),0,0),(b-a,0,0),(-b+a,0,0),(-b-a,0,0)\}$.
+
+\item We have that $(\nabla f_3)(s,t)=(a\cos s,0)$ which means that $s=\frac{\pi}{2}$ or $s=\frac{3\pi}{2}$ and $t\in [0,2\pi)$. The image of these points gives us two circles of radius $b$ in the planes $z=\pm a$.
+
+\item Notice that $(a+b,0,0)$ was the largest possible value of $f_1(s,t)$ and that $(-a-b,0,0)$ was the smallest. These two points correspond to the local maxima and minima and for $(s,t)=(0,0)$ and $(s,t)=(0,\pi)$ respectively.  The other two points, $(s,t)=(\pi,0)$ and $(s,t)=\pi,\pi)$ are saddle points.  We show this by looking at $f_1(\pi,t)=(b-a)\cos t$ and for $t=\pi$ we have that this is a minimum yet for $f_1(s,\pi)=-(b+a\cos s)$ we have that $s=\pi$ is a maximum.  Likewise for the point $(s,t)=(\pi,0)$ we have $f_1(\pi,t)=(b-a)\cos t$ is maximal when $t=0$ and $f_1(s,0)=(b+a\cos s)$ is minimal when $s=0$. Hence $(\pi,\pi)$ and $(\pi,0)$ are saddle points.
+
+\item To see that $G(t)=((b+a\cos t)\cos \lambda t,(b+a\cos t) \sin \lambda t,\sin t)$ is injective, consider distinct $t_1,t_2\in \R$, then suppose we have $G(t_1)=G(t_2)$. Now
+\begin{align*}
+G(t_1)&=G(t_2)\\
+\implies \sin t_1 &= \sin t_2.
+\end{align*}
+This shows that $t_1-t_2=2n\pi$ for any nonzero integer $n$. We also have that
+\begin{align*}
+\sin \lambda t_1 &= \sin \lambda t_2,
+\end{align*}
+which implies $\lambda (t_1-t_2)=2m \pi$ for any nonzero integer $m$ and $(t_1-t_2)=\frac{2m}{\lambda} \pi$. However, since $\lambda$ is irrational, that means $n$ and $m$ both had to be $0$, else both conditions cannot be simultaneously true. Thus $t_1=t_2$.
+
+(\emph{Note: I found some help from StackExchange (Question 449756) for this portion. This was really tough, so my aim was to just figure it out.} To show that the range of $G(t)$ is dense in $T$, we can use Kronecker's Estimation Theorem which states: Given any $\alpha\in [0,1]$, any irrational $\lambda$, and any $\epsilon>0$, there exist an integer $k>0$ such that
+\[
+|k\lambda-\lfloor k\lambda \rfloor -\alpha|<\epsilon.
+\]
+This can be extended to showing that this is true for any $\alpha\in [0,2\pi]$ by replacing the floor function with $[x]$ symbolizing taking ``modulo $2\pi$." This shows that for $k\in \N$ we have $k\lambda$ is dense modulo $2\pi$. 
+
+Now let $f(s_0,t_0)$ be any point on $T$ and consider $g(s_0+2\pi n)$. By Kronecker's Estimation Theorem we have
+\[
+|(t_0-\lambda s_0) -2n\pi \lambda + 4\pi m| < \epsilon.
+\]
+This implies that
+\begin{align*}
+|\sin t_0 - \sin \lambda (s_0+2\pi n)|&\leq 2\left| \sin\frac{t_0-\lambda s_0 - 2\pi n \lambda}{2} \right| && \textrm{by trigonometric identities}\\
+&= 2\left| \sin 2\pi \left( \frac{t_0-\lambda s_0}{4\pi}-n\frac{\lambda}{2}+m \right) \right|\\
+&\leq 4\pi \left| \frac{t_0-\lambda s_0}{4\pi}-n \frac{\pi}{2}+m\right| && \textrm{by $\sin x \leq x$}\\
+&<\epsilon.
+\end{align*}
+There is an analogous result for $|\cos t_0 - \cos \lambda(s_0+2\pi n)|<\epsilon$. Thus it has been shown that an arbitrary point, $f(s_0,t_0)$, is a limit point of $g(s_0+2\pi n)$, meaning the image of $g$ is dense in $T$.
+
+
+We calculate 
+\begin{align*}
+G'(t)=\begin{bmatrix}
+-a\sin t \cos \lambda t - \lambda (b+a)\sin \lambda t)\\
+-a\sin t \cos \lambda t + \lambda (b+a)\cos \lambda t)\\
+a \cos t
+\end{bmatrix}.
+\end{align*}
+Then $|G'(t)|^2$ is found by 
+\begin{align*}
+(G'(t))(G'(t))^T&=\begin{bmatrix}
+-a\sin t \cos \lambda t - \lambda (b+a\cos t)\sin \lambda t)\\
+-a\sin t \sin \lambda t + \lambda (b+a\cos t)\cos \lambda t)\\
+a \cos t
+\end{bmatrix}
+\begin{bmatrix}
+-a\sin t \cos \lambda t - \lambda (b+a\cos t)\sin \lambda t)\\
+-a\sin t \sin \lambda t + \lambda (b+a\cos t)\cos \lambda t)\\
+a \cos t
+\end{bmatrix}^T\\
+&=(-a \cos \lambda t \sin t - \lambda (b+a\cos t)\sin \lambda t)^2 +(-a \sin \lambda t \sin t + \lambda (b+a\cos t)\cos \lambda t) \\
+&~+ a^2 \cos^2 \lambda t\\
+&= a^2 \cos^2 \lambda t \sin^2 t + 2\lambda a (b+a \cos t) \cos \lambda t \sin t \sin \lambda t + \lambda^2 (b+a \cos t)^2 \sin^2 \lambda t \\
+&~+ a^2 \sin^2 \lambda t \sin^2 t - 2\lambda a (b+a \cos t) \cos\lambda t \sin t \sin \lambda t + \lambda^2 (b+a \cos t)^2 \cos^2 \lambda t \\
+&~+ a^2 \cos^2 \lambda t\\
+&= a^2\sin^2 \lambda t +\lambda^2(b+a\cos t)^2 + a^2 \cos^2 t\\
+&=a^2 + \lambda^2(b+a\cos t)^2.
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Let $F=(f_1,f_2)\colon \R^2 \to \R^2$ be given by 
+\[
+f_1(x,y)=e^x \cos y,~~~ f_2(x,y)=e^x \sin y.
+\]
+\begin{enumerate}[(a)]
+\item What is the range of $F$?
+\item Show that the Jacobian of $F$ is not zero at any point of $\R^2$, so every point of $\R^2$ has a neighborhood on which $F$ is injective. However, $F$ is not injective globally.
+\item Put $\vec{a}=(0,\pi/3)$, $\vec{b}=F(\vec{a})$, and let $G$ be the continuous inverse of $F$ defined in a neighborhood of $\vec{b}$ so that $G(\vec{b})=\vec{a}$. Find an explicit formula for $G$, compute $F'(\vec{a})$ and $G'(\vec{b})$, and verify that they satisfy the equation
+\[
+G'(\vec{b})=\left[F'(G(\vec{b}))\right]^{-1}
+\]
+that came up in the proof of the Inverse Function Theorem.
+\item What are the images under $F$ of lines parallel to the coordinate axes of $\R^2$?
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} ~
+\begin{enumerate}[(a)]
+
+\item The range of $F$ is $\R^2 \setminus \{0\}$. Note that any point on a circle is given by $(\cos y, \sin y)$ and $e^x$ will scale the radius of that circle, but $e^x$ is always nonzero.
+
+\item We have
+\begin{align*}
+F'(x,y)=\begin{bmatrix}
+\frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y}\\
+\frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y}
+\end{bmatrix}=
+\begin{bmatrix}
+e^x \cos y & -e^x \sin y\\
+e^x \sin y & e^x \cos y
+\end{bmatrix}.
+\end{align*} 
+The Jacobian is then 
+\begin{align*}
+J=\det(F'(x,y))=e^{2x} \cos^2 y + e^{2x} \sin^2 y = e^{2x},
+\end{align*}
+which is nonzero everywhere. To see $F$ is not injective everywhere, just consider a fixed $x_0$ and note that $F(x_0,y)=F(x_0,y+2\pi)$.
+
+\item We have $\vec{b}=(\cos \pi/3, \sin \pi/3)=(1/2,\sqrt{3}/2)$, so we define $G(x,y)=(\sqrt{x^2+y^2},\tan^{-1} y/x)$ so that $G(\vec{b})=\vec{a}$. Note I found this by realizing that $\sqrt{x^2+y^2}$ provides the length of the vector and $\tan^{-1} y/x$ proves the angle. Now we have
+\begin{align*}
+G'(x,y)&=\begin{bmatrix}
+\frac{1}{x} & \frac{1}{y}\\
+\frac{-y}{x^2+y^2} & \frac{x}{x^2+y^2}
+\end{bmatrix}.
+\end{align*}
+\begin{align*}
+F'(\vec{a})&=\begin{bmatrix}
+1/2 & -\sqrt{3}/2\\
+\sqrt{3}/2 & 1/2
+\end{bmatrix}\\
+G'(\vec{b})&=\begin{bmatrix}
+1/2 & \sqrt{3}/2\\
+-\sqrt{3}/2 & 1/2
+\end{bmatrix}.
+\end{align*}
+Now we just compute 
+\begin{align*}
+F'(G(\vec{b}))=F'(\vec{a})=\begin{bmatrix}
+1/2 & -\sqrt{3}/2\\
+\sqrt{3}/2 & 1/2
+\end{bmatrix},
+\end{align*}
+which has an inverse 
+\begin{align*}
+\left[F'(G(\vec{b}))\right]^{-1}=F'(\vec{a})=\begin{bmatrix}
+1/2 & \sqrt{3}/2\\
+-\sqrt{3}/2 & 1/2
+\end{bmatrix}.
+\end{align*}
+Hence we have shown that they are equivalent.
+
+\item If we fix $x_0$ and let $y$ vary, we find that the image of $F(x_0,y)=(e^{x_0}\cos y, e^{x_0} \sin y)$ is a circle with radius $e^{x_0}$.  This is the image of lines parallel to the $y$ axis. Now if we fix $y_0$ and let $x$ vary we have $F(x,y_0)=(e^{x} \cos y_0, e^{x} \sin y_0)$ which are lines with a slope of $\frac{\sin y_0}{\cos y_0}$.
+\end{enumerate}
+\end{proof}
+\pagebreak
+
+
+
+\end{document}
+
+
+

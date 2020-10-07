@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  20 MAY 2020 10:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  21 SEP 2020 18:02
 entering extended mode
 **./worksheet_4_solutions.tex
 (worksheet_4_solutions.tex
@@ -1066,35 +1066,37 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1
 
 {C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-[3] [4] [5] (worksheet_4_solutions.aux) ) 
+[3] [4] [5] [6] [7] [8] [9] [10] [11] (worksheet_4_solutions.aux) ) 
 Here is how much of TeX's memory you used:
- 28689 strings out of 481556
- 734150 string characters out of 2913869
- 1071575 words of memory out of 3000000
- 43400 multiletter control sequences out of 15000+200000
- 540219 words of font info for 55 fonts, out of 3000000 for 9000
+ 28691 strings out of 481556
+ 734203 string characters out of 2913869
+ 1070575 words of memory out of 3000000
+ 43402 multiletter control sequences out of 15000+200000
+ 540387 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,102p,745b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Colin/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Colin/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Us
-ers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Colin/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on worksheet_4_solutions.pdf (5 pages, 158127 bytes).
+ <C:\Users\C
+olin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C
+:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Colin/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Colin/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/C
+olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Colin/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Use
+rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
+2.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on worksheet_4_solutions.pdf (11 pages, 182209 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

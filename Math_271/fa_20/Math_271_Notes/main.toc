@@ -46,71 +46,73 @@
 \contentsline {section}{\numberline {6}Problems}{42}{section.3.6}%
 \contentsline {chapter}{\numberline {4}First and Second Order Dynamics}{43}{chapter.4}%
 \contentsline {section}{\numberline {1}Ordinary Differential Equations}{44}{section.4.1}%
-\contentsline {section}{\numberline {2}Solutions to an ODE}{46}{section.4.2}%
+\contentsline {section}{\numberline {2}Solutions to an ODE}{47}{section.4.2}%
 \contentsline {section}{\numberline {3}General and Particular Solutions}{48}{section.4.3}%
 \contentsline {section}{\numberline {4}Separable Equations}{51}{section.4.4}%
-\contentsline {section}{\numberline {5}Changing Variables and Symmetry}{52}{section.4.5}%
-\contentsline {section}{\numberline {6}First Order Linear Differential Equations}{56}{section.4.6}%
-\contentsline {subsubsection}{Integrating Factor}{56}{subsubsection*.26}%
-\contentsline {section}{\numberline {7}Applications to Chemical Kinetics}{58}{section.4.7}%
-\contentsline {section}{\numberline {8}Second Order Equations}{62}{section.4.8}%
-\contentsline {subsection}{\numberline {8.1}Homogeneous and Constant Coefficients}{62}{subsection.4.8.1}%
-\contentsline {subsection}{\numberline {8.2}Qualitative Analysis}{66}{subsection.4.8.2}%
-\contentsline {subsection}{\numberline {8.3}Inhomogeneous Linear Equations}{69}{subsection.4.8.3}%
-\contentsline {section}{\numberline {9}Problems}{72}{section.4.9}%
-\contentsline {chapter}{\numberline {5}Boundary Value Problems}{73}{chapter.5}%
-\contentsline {subsubsection}{Second Order Initial Value Problem}{73}{subsubsection*.35}%
-\contentsline {subsubsection}{Second Order Boundary Value Problem}{73}{subsubsection*.36}%
-\contentsline {section}{\numberline {1}Laplace's and Poisson's Equations}{74}{section.5.1}%
-\contentsline {section}{\numberline {2}A Particle in a 1-Dimensional Box}{76}{section.5.2}%
-\contentsline {subsubsection}{Summary of the 1-Dimensional Box}{81}{subsubsection*.38}%
-\contentsline {part}{III\hspace {1em}Elements of Analysis}{83}{part.3}%
-\contentsline {chapter}{\numberline {6}Sequences and Series}{84}{chapter.6}%
-\contentsline {section}{\numberline {1}Sequences}{84}{section.6.1}%
-\contentsline {subsection}{\numberline {1.1}Convergence}{85}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {1.2}Recursive Sequences}{88}{subsection.6.1.2}%
-\contentsline {section}{\numberline {2}Series}{89}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Power Series}{96}{chapter.7}%
-\contentsline {section}{\numberline {1}Power Series}{96}{section.7.1}%
-\contentsline {section}{\numberline {2}Taylor Series}{99}{section.7.2}%
-\contentsline {section}{\numberline {3}Operations with Power Series}{102}{section.7.3}%
-\contentsline {section}{\numberline {4}Approximation with Power Series}{104}{section.7.4}%
-\contentsline {section}{\numberline {5}Power Series Solutions to Differential Equations}{108}{section.7.5}%
-\contentsline {section}{\numberline {6}Orthogonal Polynomials from Power Series Solutions}{112}{section.7.6}%
-\contentsline {subsection}{\numberline {6.1}Legendre's Equation}{112}{subsection.7.6.1}%
-\contentsline {subsubsection}{Solving Legendre's Equation}{113}{subsubsection*.46}%
-\contentsline {subsubsection}{Orthogonality and Normalization}{115}{subsubsection*.47}%
-\contentsline {part}{IV\hspace {1em}Finite Dimensional Linear Algebra}{116}{part.4}%
-\contentsline {chapter}{\numberline {8}Vectors and Vector Spaces}{117}{chapter.8}%
-\contentsline {section}{\numberline {1}Vector Spaces}{118}{section.8.1}%
-\contentsline {section}{\numberline {2}Vector Algebra}{121}{section.8.2}%
-\contentsline {subsection}{\numberline {2.1}Linear Combinations}{123}{subsection.8.2.1}%
-\contentsline {section}{\numberline {3}Vector Components}{123}{section.8.3}%
-\contentsline {section}{\numberline {4}Vector Algebra with Components}{124}{section.8.4}%
-\contentsline {section}{\numberline {5}Products of Vectors}{129}{section.8.5}%
-\contentsline {subsection}{\numberline {5.1}The Dot Product}{129}{subsection.8.5.1}%
-\contentsline {subsubsection}{Length of a Vector from the Inner Product}{131}{subsubsection*.48}%
-\contentsline {subsubsection}{Components via the Inner Product}{132}{subsubsection*.49}%
-\contentsline {subsection}{\numberline {5.2}The Cross Product}{133}{subsection.8.5.2}%
-\contentsline {subsubsection}{Computing the Cross Product}{133}{subsubsection*.50}%
-\contentsline {subsection}{\numberline {5.3}The Geometric Product}{135}{subsection.8.5.3}%
-\contentsline {chapter}{\numberline {9}Linear Transformations and Matrices}{136}{chapter.9}%
-\contentsline {section}{\numberline {1}Linear Transformations}{136}{section.9.1}%
-\contentsline {section}{\numberline {2}Matrix Representation of Linear Transformations}{139}{section.9.2}%
-\contentsline {subsection}{\numberline {2.1}Matrix Algebra}{140}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {2.2}Properties of Matrix Multiplication}{142}{subsection.9.2.2}%
-\contentsline {section}{\numberline {3}Systems of Linear Equations}{142}{section.9.3}%
-\contentsline {section}{\numberline {4}Solving Linear Systems of Equations}{143}{section.9.4}%
-\contentsline {subsubsection}{Systems of Equations as Linear Combinations of Columns}{148}{subsubsection*.54}%
-\contentsline {section}{\numberline {5}Linear Independence, Span, and Bases}{149}{section.9.5}%
-\contentsline {section}{\numberline {6}The Determinant and Trace}{150}{section.9.6}%
-\contentsline {subsection}{\numberline {6.1}Determinants and Systems of Equations}{155}{subsection.9.6.1}%
-\contentsline {subsection}{\numberline {6.2}Properties of determinants}{159}{subsection.9.6.2}%
-\contentsline {subsection}{\numberline {6.3}The Trace}{160}{subsection.9.6.3}%
-\contentsline {section}{\numberline {7}Inverse Matrices and Similarity }{161}{section.9.7}%
-\contentsline {subsubsection}{Inverting a matrix}{164}{subsubsection*.57}%
-\contentsline {subsection}{\numberline {7.1}Properties Related to Inverse Matrices}{164}{subsection.9.7.1}%
-\contentsline {section}{\numberline {8}The Eigen-Problem}{166}{section.9.8}%
-\contentsline {section}{\numberline {9}Diagonalization and Special Matrices}{173}{section.9.9}%
-\contentsline {subsection}{\numberline {9.1}Hermitian Matrices}{174}{subsection.9.9.1}%
-\contentsline {section}{\numberline {10}Groups and Symmetry}{177}{section.9.10}%
+\contentsline {section}{\numberline {5}Changing Variables and Symmetry}{53}{section.4.5}%
+\contentsline {section}{\numberline {6}Qualitative analysis for first order equations}{56}{section.4.6}%
+\contentsline {subsection}{\numberline {6.1}Autonomous equations}{58}{subsection.4.6.1}%
+\contentsline {section}{\numberline {7}First Order Linear Differential Equations}{61}{section.4.7}%
+\contentsline {subsubsection}{Integrating Factor}{62}{subsubsection*.30}%
+\contentsline {section}{\numberline {8}Applications to Chemical Kinetics}{64}{section.4.8}%
+\contentsline {section}{\numberline {9}Second Order Equations}{70}{section.4.9}%
+\contentsline {subsection}{\numberline {9.1}Homogeneous and Constant Coefficients}{70}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {9.2}Qualitative Analysis}{74}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {9.3}Inhomogeneous Linear Equations}{77}{subsection.4.9.3}%
+\contentsline {section}{\numberline {10}Problems}{80}{section.4.10}%
+\contentsline {chapter}{\numberline {5}Boundary Value Problems}{81}{chapter.5}%
+\contentsline {subsubsection}{Second Order Initial Value Problem}{81}{subsubsection*.39}%
+\contentsline {subsubsection}{Second Order Boundary Value Problem}{81}{subsubsection*.40}%
+\contentsline {section}{\numberline {1}Laplace's and Poisson's Equations}{82}{section.5.1}%
+\contentsline {section}{\numberline {2}A Particle in a 1-Dimensional Box}{85}{section.5.2}%
+\contentsline {subsubsection}{Summary of the 1-Dimensional Box}{89}{subsubsection*.43}%
+\contentsline {part}{III\hspace {1em}Elements of Analysis}{91}{part.3}%
+\contentsline {chapter}{\numberline {6}Sequences and Series}{92}{chapter.6}%
+\contentsline {section}{\numberline {1}Sequences}{92}{section.6.1}%
+\contentsline {subsection}{\numberline {1.1}Convergence}{93}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {1.2}Recursive Sequences}{96}{subsection.6.1.2}%
+\contentsline {section}{\numberline {2}Series}{97}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Power Series}{104}{chapter.7}%
+\contentsline {section}{\numberline {1}Power Series}{104}{section.7.1}%
+\contentsline {section}{\numberline {2}Taylor Series}{107}{section.7.2}%
+\contentsline {section}{\numberline {3}Operations with Power Series}{110}{section.7.3}%
+\contentsline {section}{\numberline {4}Approximation with Power Series}{112}{section.7.4}%
+\contentsline {section}{\numberline {5}Power Series Solutions to Differential Equations}{116}{section.7.5}%
+\contentsline {section}{\numberline {6}Orthogonal Polynomials from Power Series Solutions}{120}{section.7.6}%
+\contentsline {subsection}{\numberline {6.1}Legendre's Equation}{120}{subsection.7.6.1}%
+\contentsline {subsubsection}{Solving Legendre's Equation}{121}{subsubsection*.51}%
+\contentsline {subsubsection}{Orthogonality and Normalization}{123}{subsubsection*.52}%
+\contentsline {part}{IV\hspace {1em}Finite Dimensional Linear Algebra}{124}{part.4}%
+\contentsline {chapter}{\numberline {8}Vectors and Vector Spaces}{125}{chapter.8}%
+\contentsline {section}{\numberline {1}Vector Spaces}{126}{section.8.1}%
+\contentsline {section}{\numberline {2}Vector Algebra}{129}{section.8.2}%
+\contentsline {subsection}{\numberline {2.1}Linear Combinations}{131}{subsection.8.2.1}%
+\contentsline {section}{\numberline {3}Vector Components}{131}{section.8.3}%
+\contentsline {section}{\numberline {4}Vector Algebra with Components}{132}{section.8.4}%
+\contentsline {section}{\numberline {5}Products of Vectors}{137}{section.8.5}%
+\contentsline {subsection}{\numberline {5.1}The Dot Product}{137}{subsection.8.5.1}%
+\contentsline {subsubsection}{Length of a Vector from the Inner Product}{139}{subsubsection*.53}%
+\contentsline {subsubsection}{Components via the Inner Product}{140}{subsubsection*.54}%
+\contentsline {subsection}{\numberline {5.2}The Cross Product}{141}{subsection.8.5.2}%
+\contentsline {subsubsection}{Computing the Cross Product}{141}{subsubsection*.55}%
+\contentsline {subsection}{\numberline {5.3}The Geometric Product}{143}{subsection.8.5.3}%
+\contentsline {chapter}{\numberline {9}Linear Transformations and Matrices}{144}{chapter.9}%
+\contentsline {section}{\numberline {1}Linear Transformations}{144}{section.9.1}%
+\contentsline {section}{\numberline {2}Matrix Representation of Linear Transformations}{147}{section.9.2}%
+\contentsline {subsection}{\numberline {2.1}Matrix Algebra}{148}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {2.2}Properties of Matrix Multiplication}{150}{subsection.9.2.2}%
+\contentsline {section}{\numberline {3}Systems of Linear Equations}{150}{section.9.3}%
+\contentsline {section}{\numberline {4}Solving Linear Systems of Equations}{151}{section.9.4}%
+\contentsline {subsubsection}{Systems of Equations as Linear Combinations of Columns}{156}{subsubsection*.59}%
+\contentsline {section}{\numberline {5}Linear Independence, Span, and Bases}{157}{section.9.5}%
+\contentsline {section}{\numberline {6}The Determinant and Trace}{158}{section.9.6}%
+\contentsline {subsection}{\numberline {6.1}Determinants and Systems of Equations}{163}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {6.2}Properties of determinants}{167}{subsection.9.6.2}%
+\contentsline {subsection}{\numberline {6.3}The Trace}{168}{subsection.9.6.3}%
+\contentsline {section}{\numberline {7}Inverse Matrices and Similarity }{169}{section.9.7}%
+\contentsline {subsubsection}{Inverting a matrix}{172}{subsubsection*.62}%
+\contentsline {subsection}{\numberline {7.1}Properties Related to Inverse Matrices}{172}{subsection.9.7.1}%
+\contentsline {section}{\numberline {8}The Eigen-Problem}{174}{section.9.8}%
+\contentsline {section}{\numberline {9}Diagonalization and Special Matrices}{181}{section.9.9}%
+\contentsline {subsection}{\numberline {9.1}Hermitian Matrices}{182}{subsection.9.9.1}%
+\contentsline {section}{\numberline {10}Groups and Symmetry}{185}{section.9.10}%

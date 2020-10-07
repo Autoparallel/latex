@@ -1,0 +1,214 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 571, Homework 7}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} 
+\begin{enumerate}[(a)]
+\item Pick a $\Delta$-complex structure on the $n$-dimensional ball $D^n$. Note that this induces a $\Delta$-complex structure on its boundary $(n-1)$-sphere $S^{n-1}$. Compute the simplicial relative homology $H_n(D^n, S^{n-1})$ by using the definition of relative homology.
+\item Verify that your answer is correct by using the LES for a pair of spaces (on pages 115 and 117 of Hatcher).
+\end{enumerate}
+
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item Let $\Delta^n$ be the $n$-simplex and note that simplicial complexes are also $\Delta$-complexes. Also we have that $\Delta^n\cong D^n$ and $\partial \Delta^n\cong S^{n-1}$.  Then we have that $C_n(\Delta^n,\partial \Delta^n)\cong C_n(D^n, S^{n-1})$. Now note that for $m>n$ we have
+\begin{align*}
+C_{m}(\Delta^n, \partial \Delta^n)&\cong C_{m}(\Delta^n)/C_{n+1}(\partial \Delta^n)\cong 0/0 \cong 0\\
+\end{align*}since there are no higher dimensional simplicies than $n$ in $\Delta^n$. Also,
+\begin{align*}
+C_n(\Delta^n,\partial \Delta^n)&\cong C_n(\Delta^n)/C_n(\partial \Delta^n)\cong \Z/0\cong \Z.
+\end{align*}
+Finally, for $l<n$, 
+\begin{align*}
+C_l(\Delta^n,\partial \Delta^n)&=\cong C_l(\Delta^n)/C_l(\partial \Delta^n)\cong \Z/\Z\cong 0
+\end{align*}
+since $\Delta^n$ and $\partial \Delta^n$ contain all the same  $l<n$ dimensional simplicies. Then we have 
+\begin{align*}
+\cdots \xrightarrow{\partial_{n+2}} C_{n+1}(\Delta^n,\partial \Delta^n) \xrightarrow{\partial_{n+1}} C_n(\Delta^n,\partial \Delta^n) \xrightarrow{\partial_{n}} C_{n-1}(\Delta^n,\partial \Delta^n) \xrightarrow{\partial_{n-1}}\cdots.
+\end{align*}
+With the above work, we have
+\begin{align*}
+\cdots \xrightarrow{\partial_{n+2}} 0 \xrightarrow{\partial_{n+1}} \Z \xrightarrow{\partial_{n}} 0 \xrightarrow{\partial_{n-1}}\cdots.
+\end{align*}
+Now 
+\[
+H_n(\Delta^n,\partial \Delta^n)\cong\textrm{Ker}(\partial_n)/\textrm{Im}(\partial_{n+1}\cong \Z/0\cong \Z.
+\]
+
+\item Now we have the following LES
+\begin{align*}
+\cdots \rightarrow H_n(S^{n-1}) \rightarrow H_n(D^n)\xrightarrow{\alpha} H_n(D^n, S^{n-1}) \xrightarrow{\beta} H_{n-1}(S^{n-1})\xrightarrow{\gamma} H_{n-1}(D^n)\rightarrow \cdots.
+\end{align*}
+Note that 
+\begin{align*}
+H_n(S^{n-1})&\cong 0\\
+H_n(D^n)&\cong 0\\
+H_{n-1}(S^{n-1})&\cong \Z\\
+H_{n-1}(D^n)&\cong 0.
+\end{align*}
+By exactness, we must have that $\beta$ is an isomorphism and hence $H_n(D^n,S^{n-1})\cong \Z$.
+\end{enumerate}
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 2.} The proof of Theorem 2.16 in Hatcher contains 6 verification of inclusions. Prove them. For one of the last three such inclusions ($\ker j_* \subseteq \im i_*$ or $\ker \partial \subseteq \im j_*$ or $\ker i_* \subseteq \im \partial$, your choice of which one), draw a diagram of the SES of chain complexes $0\to A_\bullet \to B_\bullet \to C_\bullet \to 0$, and show where all the elements you consider live in this diagram.
+
+\begin{proof}
+We have that $\im i_* \subset \ker j_*$ since $ji=0$ means that $j_*i_*=0$.  Then $\im j_* \subset \ker \partial$ since $\partial j_*=0$ by definition of $\partial$. Specifically we have $c=j(b)$ for some $b\in B_n$ and then we have $j(\partial b)=\partial j(b)$. Then we also have $\im \partial \subset \ker i_*$ since $i_*\partial = 0$.
+
+$\ker j_* \subset \im i_*$. A homology class in $\ker j_*$ is represented by a cycle $b\in B_n$ with $j(b)$ a boundary. We can then write $j(b)=\partial c'$ for some $c'\in C_{n+1}$.  By surjectivity of $j$, $c'=j(b')$ for some $b'\in B_{n+1}$. This means that $j(b-\partial b')=j(b)-j(\partial b')=j(b)-\partial j(b')=0$. This is because $\partial j(b')=\partial c'=j(b)$ and we defined $j(b)$ as a boundary. It follows that $b-\partial b'=i(a)$ for some $a\in A_n$ and in fact this $a$ is a cycle since $i(\partial(a)=\partial i(a)=\partial(b-\partial b')=\partial b=0$ since $\partial^2=0$ and since $b$ is a cycle.  Then we have that $i_*[a]=[b-\partial b']=[b]$, which shows that $i_*$ maps onto $\ker j_*$. See the diagram below!
+
+\begin{center}
+$
+\begin{tikzcd}
+ & \vdots \arrow[d, "\partial"] & \vdots \arrow[d, "\partial"] & \vdots \arrow[d, "\partial"] &  \\
+0 \arrow[r] & A_{n+1} \arrow[d, "\partial"] \arrow[r, "i"] & B_{n+1} \arrow[d, "\partial"] \arrow[r, "j"] & C_{n+1} \arrow[d, "\partial"] \arrow[r] & 0 \\
+0 \arrow[r] & A_n \arrow[d, "\partial"] \arrow[r, "i"] & B_n \arrow[d, "\partial"] \arrow[r, "j"] & C_n \arrow[d, "\partial"] \arrow[r] & 0 \\
+ & \vdots & \vdots & \vdots & 
+\end{tikzcd}
+$
+\end{center}
+
+$\ker \partial \subset \im j_*$. We let $c$ be a homology class in $\ker \partial$, then we know that $a=\partial a'$ for $a'\in A_n$. Then $b-i(a')$ is a cycle since $\partial(b-i(a'))=\partial b-\partial i(a')=\partial b -i(\partial a')=\partial b-i(a)=0$ since by definition we have $\partial b =i(a)$.  Also, $j(b-i(a'))=j(b)-ji(a')=j(b)=c$, hence $j_*$ maps $[b-i(a')]$ to $[c]$.
+
+$\ker i_*\subset \im \partial$. Take a cycle $a\in A_{n-1}$ so that $i(a)=\partial b$ for some $b\in B_n$. Then we have that $j(b)$ is a cycle since $\partial j(b)=j(\partial b)=ji(a)=0$ again by definition. This means that $\partial [j(b)]=[a]$.
+
+
+
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 3.} Exercise 16 on page 132 of Hatcher:
+
+\begin{enumerate}[(a)]
+\item Show that $H_0(X,A)=0$ iff $A$ meets each path-component of $X$.
+\item Show that $H_1(X,A)=0$ iff $H_1(A)\to H_1(X)$ is surjective and each path-component of $X$ contains at most one path-component of $A$.
+\end{enumerate}
+
+\noindent \emph{Remark: For (b), Exercise 15 of Hatcher is useful. It says that if $A\to B \to C \to D \to E$ is an exact sequence, then $C=0$ iff the map $A\to B$ is surjective and $D\to E$ is injective.}
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item It's worth noting that we can reduce this problem by noting
+\begin{align*}
+H_n(X,A)\cong \bigoplus_{i\in I} H_n(X_i,A_i)
+\end{align*}
+where each $X_i$ is a path component of $X$ with the index set $I$.  Now this specifically means that we need to show 
+\begin{align*}
+H_0(X_i,A_i)\cong 0
+\end{align*}
+For the backward direction, suppose that $A_i$ is empty, then we have
+\begin{align*}
+\cdots \rightarrow H_0(A_i)\xrightarrow{i_*} H_0(X) \xrightarrow{j_*} H_0(X_i,A_i) \xrightarrow{\partial} 0
+\end{align*}
+where $H_0(A_i)\cong 0$ and $H_0(X)\cong \Z$.  Then exactness shows that $H_0(X_i,A_i)\cong \Z$.  Hence we must have that $A_i$ is nonempty.
+
+For the forward direction, we suppose that $H_0(X_i,A_i)=0$ for each $i$. Then we have
+\begin{align*}
+\cdots \rightarrow H_0(A_i)\xrightarrow{i_*} H_0(X_i) \xrightarrow{j_*} H_0(X,A) \xrightarrow{\partial} 0
+\end{align*}
+where we see that we have the exact sequence
+\begin{align*}
+H_0(A_i)\xrightarrow{i_*} \Z \xrightarrow{j_*} 0.
+\end{align*}
+But exactness here implies that $i_*$ is surjective, and hence $H_0(A_i)\not\cong 0$ and hence $A_i$ is nonempty.  
+
+\item Suppose that $H_1(X,A)\cong 0$. We have 
+\begin{align*}
+\rightarrow H_1(A) \xrightarrow{i_*} H_1(X) \xrightarrow{j_*} H_1(X,A) \xrightarrow{\partial} H_0(A) \xrightarrow{i_*} H_0(X) \rightarrow
+\end{align*}
+is an exact sequence.  But here, we must have that $H_1(A)\to H_1(X)$ is surjective and $H_0(A)\to H_0(X)$ is injective.  We can decompose $A$ into the path components $A_i$ for $i\in I$ and do the same for $X$ by decomposing $X$ into $X_j$ with $j\in J$. Then note that injectivity of $H_0(A)\to H_0(X)$ means that $\bigoplus_{i\in I}H_0(A_i)\to \bigoplus_{j\in J}H_0(X_j)$ is injective for each component and so there must only be at most one path component of $A$ in each path component of $X$ or this map fails to be injective.
+
+For the other direction, we have that $H_1(A)\to H_1(X)$ is surjective.  Then if each path component of $X$ contains at most a single path component of $A$, then $H_0(A)\to H_0(X)$ is injective by the argument above.  These two maps being surjective and injective, respectively, implies that $H_1(X,A)\cong 0$.
+\end{enumerate}
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 4.} Choose any midterm (or old homework) problem. Clearly state the problem. Write a solution that is as clear as possible.
+
+I will redo problem 3 from the midterm.
+
+\begin{proof}
+Note that $A_1$ and $A_2$ are each a torus with a disk removed and so each is homotopy equivalent to a wedge sum of two circles. This means
+\begin{align*}
+\pi_1(A_1) &\cong \langle a, b \rangle\\
+\pi_1(A-2) &\cong \langle c,d \rangle.
+\end{align*}
+We have that $A_1 \cap A_2$ is path connected and this gives the following diagram:
+\begin{center}
+$
+\begin{tikzcd}
+ & A_1 \arrow[rd, "j_1"] &  \\
+A_1 \cap A_2 \arrow[ru, "i_{12}", hook] \arrow[rd, "i_{21}", hook] &  & X=A_1 \cup A_2 \\
+ & A_2 \arrow[ru, "j_2", hook] & 
+\end{tikzcd}
+$
+\end{center}
+Specifically, we have that
+\begin{align*}
+\pi_1(A_1 \cup A_2) \cong \pi_1(X) \cong (\pi_1(A_1)\ast \pi_1(A_2))/N
+\end{align*}
+where $N$ is the normal subgroup generated by all elements of the form $i_{12}(w)i_{21}(w)^{-1}$ with $w\in \pi_1(A_1 \cap A_2)$. So we find by looking at $A_1 \cap A_2$ in the identification polygon for $A_1$ that $i_{12}(w)=aba^{-1}b^{-1}$ and for $A_2$ that $i_{21}(w)cdc^{-1}d^{-1}$. Hence we get
+\begin{align*}
+\pi_1(X)&\cong \langle a,b,c, d \rangle / N\\
+&\cong \langle a,b,c,d \vert aba^{-1}b^{-1}cdc^{-1}d^{-1} \rangle.
+\end{align*}
+\end{proof}
+
+
+
+\end{document}
+
+
+

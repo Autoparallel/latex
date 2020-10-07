@@ -1,0 +1,374 @@
+\documentclass[pdf]{beamer}
+\mode<presentation>{\usetheme{Warsaw}}
+\usepackage{textpos} %package for text positioning
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Normal Math Packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+\usepackage{mathrsfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Created Commands
+\theoremstyle{definition}
+\newtheorem*{remark}{Remark}
+\newtheorem*{question}{Question}
+
+\theoremstyle{theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{axiom}{Axiom}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\opO}{\mathcal{O}}
+\newcommand{\states}{\mathcal{S}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Stuff to make things look good
+% Color modification
+\setbeamercolor{structure}{fg=green!30!black}% to modify  immediately all palettes
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{title in head/foot}{fg=yellow}
+
+%Size Modification
+\setbeamerfont{frametitle}{size=\small}
+
+% position the logo
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{1cm}(\textwidth,-1.1cm)
+\includegraphics[height=.9cm,width=.9cm,keepaspectratio]{csu.png}
+\end{textblock*}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% preamble
+\title{The Framework of Quantum Mechanics}
+\subtitle{A $C^*$-Algebraic Approach}
+\author{Colin Roberts}
+
+\begin{document}
+
+%%Title Frame
+{
+\setbeamertemplate{headline}{}
+\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
+\begin{frame}
+\titlepage
+\end{frame}
+}
+
+
+\AtBeginSection[]
+{
+	\begin{frame}{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction to Algebras}
+\begin{frame}{Algebras}
+	\begin{definition}
+	An \emph{algebra} $\A$ over a field $\F$ is a vector space $\A$ over $\F$ with an binary operation such that if $\alpha \in \F$ and $A,B\in \A$ then $\alpha(AB)=(\alpha A)B=A(\alpha A)$.
+	\end{definition}
+	\begin{example}
+	Consider an $n$-dimensional vector space $V$ over any $\F$.  Then the elements in $\mathcal{L}(V)$ form an algebra.\\
+	Then $\C$ is a matrix algebra over $\R$, and the quaternions $\mathcal{Q}$ are a matrix algebra over $\C$.
+	\end{example}
+\end{frame}
+
+\subsection{Banach Algebras}
+\begin{frame}{Banach Algebras}
+	\begin{definition}
+	A \emph{Banach algebra} is an algebra $\A$ over $\F$ that has a norm $\|\cdot \|$ relative to which $\A$ is a Banach space and such that for all $A,B\in \A$ we have
+	\[
+	\|AB\|\leq \|A\|\|B\|.
+	\]
+	\end{definition}
+	
+	\begin{example}
+	If $X$ is a compact Hausdorff space, then $\A=\mathcal{C}_0(X,\C)$ form a Banach algebra if we define multiplication for $f,g\in \A$ by $(fg)(x)=f(x)g(x)$ for $x\in X$.  This is a commutative unital algebra.
+	\end{example}
+\end{frame}
+
+\begin{frame}{Banach Algebras}
+We can safely assume that the algebras we look at are unital by the following.
+	\begin{proposition}
+		If $\A$ is a Banach algebra without identity, then $\tilde{\A} = \A\times \F$ with operations
+		\begin{itemize}
+		\item $(A,\alpha)+(B+\beta)=(A+B,\alpha+\beta)$;
+		\item $\beta(A,\alpha)=(\beta A,\beta \alpha)$;
+		\item $(A,\alpha)(B,\beta)=(AB+\alpha B+\beta A,\alpha \beta)$
+		\item $\|(A,\alpha)\|=\|A\|+|\alpha|$
+		\end{itemize}
+	give us that $\tilde{\A}$ is a Banach algebra with identity $(0,1)$ and $A\mapsto 		(A,0)$ is an \emph{isometric isomorphism} (linear bijective isometry) of $\A$ into $\tilde{\A}$.
+	\end{proposition}
+\end{frame}
+
+\subsection{$C^*$-Algebras}
+\begin{frame}{$*$-algebras}
+	\begin{definition}
+	A $*$-algebra $\A$ is an algebra together with an \emph{involution} that for $A,B\in \A$ and $\lambda \in \C$, satisfies
+	\begin{itemize}
+	\item $A^{**}=A,$
+	\item $(A+B)^*=A^*+B^*$ and $(AB)^*=B^*A^*,$
+	\item $(\lambda A)^*=\overline{\lambda}A^*.$
+	\end{itemize}
+	\end{definition}
+\end{frame}
+
+\begin{frame}{$C^*$-Algebras}
+	\begin{definition}
+A $C^*$-algebra $\A$ is a Banach algebra over $\C$ with an involution $*$ so that $\A$ is also a $*$-algebra and $\forall a \in \A$
+\[
+\|A^* A\|=\|A\|~\|A^*\|.
+\]
+The extra requirement is called the \emph{$C^*$-condition}, and shows $\|A A^*\|=\|A\|^2.$
+	\end{definition}
+\end{frame}
+
+\begin{frame}{Examples}
+	\begin{example}
+	$\C$ itself is a $C^*$-algebra with $*$ being the complex conjugate.
+	\end{example}
+	\begin{example}
+	If $H$ is a Hilbert space, $\A=\mathscr{B}(H)$ is a $C^*$-algebra where $*$ denotes the adjoint.
+	\end{example}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Some Necessary $C^*$-Algebra Theory}
+\subsection{$*$-Isomorphisms}
+	\begin{frame}{$*$-Isomorphisms}
+	\begin{definition}
+	If $\A$ and $\mathcal{B}$ are $C^*$-algebras, then a bounded linear map $\pi\colon \A \to \mathcal{B}$ is a \emph{$*$-homomorphism} if
+	\begin{itemize}
+	\item For $A,B\in \A$, we have $\pi(AB)=\pi(A)\pi(B)$.
+	\item For $A\in \A$, we have $\pi(A^*)=\pi(A)^*$.
+	\end{itemize}
+	\end{definition}
+	For $C^*$-algebras, any $*$-homomorphism is bounded with norm $\leq 1$. We also have that injective $*$-homomorphisms are isometries.  A bijective $*$-homomorphism is a \emph{$C^*$-isomorphism} and we say $\A$ and $\mathcal{B}$ are \emph{isomorphic}.
+	\end{frame}
+
+
+\subsection{States}
+%possibly states and representations
+
+	\begin{frame}{States}
+	\begin{definition}
+	Let $\A$ be a $C^*$-algebra. Then a \emph{state} is a positive linear functional $S\colon \A \to \R$ with norm 1. 
+	\end{definition}
+	Specifically, we will care about the following.
+	\begin{definition}
+	Let $\A$ be a $C^*$-algebra of bounded operators on a corresponding Hilbert space $H$, then the linear functional $S_x \colon \A \to \R$ is given by 
+	\[
+	S_x(A)\coloneqq \langle Ax,x \rangle
+	\]
+	for $A\in A$. Note $S_x(1)=\|x\|^2$ thus $S_x$ is a state if $\|x\|=1$. Specifically $S_x$ is a \emph{vector state}.
+	\end{definition}
+	\end{frame}
+	
+\subsection{Gelfand-Naimark (GN) Theorems}
+
+	\begin{frame}{GN Theorems}
+	\begin{theorem}[GN Theorem for Commutative $C^*$-Algebras]
+	A commutative (unital) $C^*$-algebra $\A$ is isomorphic to the $C^*$-algebra of bounded continuous functions on a compact Hausdorff space $X$.
+	\end{theorem}
+	\begin{theorem}[GN Theorem for Non-Commutative $C^*$-Algebras]
+	An arbitrary $C^*$-Algebra $\A$ is isomorphic to a $C^*$-algebra of bounded operators on a Hilbert space $H$.
+	\end{theorem}
+	\end{frame}		
+	
+%Maybe just have the results of the GN theorems and stuff	
+	
+%	\begin{frame}{$*$-Representations}
+%	\begin{definition}
+%	A $*$-representation of a $C^*$
+%	\end{definition}
+%	\end{frame}
+
+%\subsection{Gelfand-Nemark-Segal (GNS) Construction}
+%	\begin{frame}
+%	
+%	\end{frame}
+%\subsection{Gelfand-Nemark (GN) Theorem}
+%	\begin{frame}
+%	blah blah blah
+%	\end{frame} 
+%\subsection{Implications of GNS}
+%	\begin{frame}
+%	
+%	\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Applications to Quantum Mechanics}
+\begin{frame}{Goal}
+Now, with some machinery defined (and more to come), we want to relate operator algebras in classical mechanics to those in quantum mechanics. \\
+\textbf{Goal:} Provide a way to realize the axioms for quantum mechanics.
+\end{frame}
+\subsection{The Algebras of Classical Observables}
+	\begin{frame}
+	Classically, we think of \emph{phase space} (think position and momentum as coordinates) of a system to be a compact (symplectic) manifold $\Gamma$. Then:
+	\begin{definition}[Classical Observables]
+	The \emph{classical observables} are the continuous real-valued functions acting on the phase space. Namely, $\mathcal{C}^0(\Gamma,\R)$. We will denote all classical observables on $\Gamma$ as $\mathcal{O}=\mathcal{C}^0(\Gamma,\R)$.
+	\end{definition}
+	Why is it the case that $\Gamma$ is compact and that the observables are continuous?
+	\end{frame}
+	
+	\begin{frame}{First Result}
+	If we let $S=(p,q)\in \Gamma$, $A,B\in \opO$, and $\lambda \in \R$, then we define
+	\begin{itemize}
+	\item $(A+B)(S) \coloneqq A(S)+B(S)$,
+	\item $(\lambda A)(S) \coloneqq \lambda A(S)$,
+	\item $(AB)(S)\coloneqq A(S)B(S)$,
+	\item $\|A\|\coloneqq \sup \{|A(S)| ~\colon~ S\in \Gamma\}$,
+	\item $(A^*)(S)=\overline{A(S)}$.
+	\end{itemize}
+	Notice that $A$ is a real valued function, and thus $\overline{A(S)}=A(S)$.  This leads us to believe that elements of $\opO$ are self-adjoint. 
+	\end{frame}
+	
+	\begin{frame}{First Result}
+	What can be stated in the classical case as a theorem will eventually become an axiom for the quantum case. Namely:
+	\begin{theorem}[Properties of Classical Observables]
+	The set of observables $\opO$ of a classical system are the self-adjoint elements of a separable commutative $C^*$-algebra $\A$.
+	\end{theorem}
+	\end{frame}
+	
+	\begin{frame}{Classical States}
+	\begin{itemize}
+	\item It is a result of the Reisz-Markov-Kakutani Representation Theorem that we can write a classical state as a linear functional $S\colon \A \to \C$ by
+	\[
+	S(A)=\int_\Gamma A d\mu_S
+	\]
+	where $\mu_S$ is a uniquely defined Borel probability measure. 
+	\item We can then think of $S(A)$ as the \emph{expected value of the observable $A$ with the particle in the state $S$}.  
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\begin{itemize}
+	\item We can then define variance from this by
+	\[
+	\Delta_S(A)^2\coloneqq S[(A-S(A))^2].
+	\]
+	\item Yet we find that for classical states and observables that $\Delta_S(A)=0$.  
+	\item This brings to light that the algebra of observables for quantum systems must not be commutative so that $\Delta_S(P)\Delta_S(Q)\geq \frac{\hbar}{2}$.
+	\item Digression on uncertainty.
+	\end{itemize}
+	\end{frame}
+	
+\subsection{The Algebras of Quantum Observables}
+	\begin{frame}
+	\begin{itemize}
+	\item From the earlier theorem for classical systems, we consider just removing commutivity.  
+	\item We will see now that this coupled Heisenberg's commutation relation
+	\[
+	[Q,P]=\alpha \hbar \mathbf{1},
+	\]
+	with $\alpha\in \C$ and $|\alpha|=1$ forces the Heisenberg uncertainty principle \[
+	\Delta_S(P)\Delta_S(Q)\geq \frac{\hbar}{2},
+	\]
+	to hold.
+	\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Heisenberg's Uncertainty}
+	\begin{proof}[Non-Commuting Observables Imply Uncertainty Principle]\renewcommand{\qedsymbol}{}
+	Let $A,B\in \opO$ and fix a state $S$.  We can assume $S(A)=S(B)=0$ since we could take the observables $A-S(A)$ and $B-S(B)$. Then 
+	\[
+	\Delta_S(A)^2\Delta_S(B)^2=S(A^2)S(B^2).
+	\]
+	Since $(A-i\lambda B)(A+i\lambda B)\geq 0$, $\forall \lambda \in \R$, positivity of $S$ implies
+	\[
+	S(A^2)+|\lambda|^2 S(B^2)+i\lambda S([A,B])\geq 0,
+	\]
+	where $[A,B]=AB-BA$. 
+	\end{proof}
+	\end{frame}
+	
+	\begin{frame}{Heisenberg's Uncertainty}
+	\begin{proof}[Continued]\renewcommand{\qedsymbol}{}
+	Now, define 
+	\[
+	M=\begin{bmatrix}
+	S(A^2) & \frac{1}{2} S(i[A,B])\\
+	\frac{1}{2} S(i[A,B]) & S(B^2)
+	\end{bmatrix}
+	~~ \textrm{and} ~~ \vec{\alpha}=\begin{bmatrix}
+	\alpha\\
+	\beta
+	\end{bmatrix}
+	\]
+	and we see that the inequality
+	\[
+	(A-i\lambda B)(A+i\lambda B)\geq 0
+	\]
+	becomes 
+	\[
+	\vec{\alpha}^T M \vec{\alpha}\geq 0.
+	\]
+	This means $M$ is positive semi-definite.
+	\end{proof}
+	\end{frame}
+	
+	\begin{frame}{Heisenberg's Uncertainty}
+	\begin{proof}[Continued]
+	Hence
+	\[
+	\det M = S(A^2)S(B^2)-\frac{1}{4}S(i[A,B])^2\geq 0
+	\]
+	and thus
+	\[
+	\Delta_S(A)\Delta_S(B)\geq \frac{1}{2} |S([A,B])|.
+	\]
+	We then find that if $[P,Q]=\alpha \hbar \mathbf{1}$ with $\alpha \in \C$ and $|\alpha|=1$,
+	\[
+	\Delta_S(P)\Delta_S(Q)\geq \frac{\hbar}{2}.
+	\]
+	\end{proof}
+	\end{frame}
+	
+	\begin{frame}{Conclusions}
+	With what we've shown above, we can conclude the two major axioms for quantum mechanics. 
+	\begin{axiom}[Quantum Observables]
+	The observables of a quantum system are the self adjoint elements of a separable Hilbert space.
+	\end{axiom}
+	\begin{axiom}[Quantum States]
+	The set of states $\mathcal{S}$ of a quantum system is the set of all positive linear functionals $\psi$ on $\A$ such that $\psi(\mathbf{1})=1$. We think of the functional $\psi(A)$ as $\langle A\psi, \psi\rangle$.
+	\end{axiom}
+	\end{frame}
+	
+	\begin{frame}{Future}
+	These results start to bleed into other specific areas of research surrounding quantum mechanics.  Just to list a few,
+	\begin{itemize}
+	\item second quantization,
+	\item (local) quantum field theory,
+	\item deformation quantization,
+	\item geometrical quantization.
+	\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Main Sources}
+	If you're interested to read more, my main sources were
+	\begin{itemize}
+	\item \emph{The $C^*$-Algebraic Formalism of Quantum Mechanics}, Jonathan Gleason,
+	\item \emph{An Introduction to the Mathematical Structure of Quantum Mechanics}, Franco Strocchi.
+	\end{itemize}
+	\end{frame}
+
+	
+	
+	
+\end{document}

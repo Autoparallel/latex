@@ -41,7 +41,7 @@ since we often like to think of $\frac{d}{dx}$ as an \emph{operator}.  We will g
 
 This problem statement leads us to consider the following boundary value problem
 \[
-\frac{d^2}{dx^2}(x)=0
+\frac{d^2}{dx^2}u(x)=0
 \]
 on the region $\Omega = [0,L]$ with boundary data $u(0)=1$ and $u(L)=0$. Here, we are providing the function value that $u(x)$ must satisfy on the boundary.  Everywhere inside $\Omega$ (i.e., $(0,L)$), $u(x)$ must satisfy the differential equation as well. 
 
@@ -68,31 +68,7 @@ which means that $C_1=-\frac{1}{L}$.  Thus our particular solution to this bound
 Plot the above solution and verify it satisfies the ODE and the boundary values.  What can we say about the shape of the rod? Is is what we would expect?
 \end{exercise}
 
-So, the set up to these problems is a bit different, but solving them is fundamentally the same idea. Let's see another example with slightly different boundary values.
-
-\begin{ex}{Poisson's Equation: Dirichlet Boundary Data}{poisson_neumann}
-\emph{Consider again a rod of length $L$ attached at endpoints $x=0$ and $x=L$.  Now, the angle of the rod is prescribed at the endpoints by $u(0)=0$ and $u(L)=0$. The rod is also being pushed down by a force more concentrated in the center and weaker on the edges.}\\
-
-This gives us the boundary value problem
-\[
-\frac{d^2}{dx^2}(x)=\sin\left(\frac{x}{L}\pi\right)
-\]
-on the region $[0,L]$ with boundary data $u(0)=0$ and $u(L)=0$. We can integrate this equation twice to get
-\[
-u(x)=\frac{L^2}{\pi^2}\sin\left(\frac{x}{L}\pi\right)+C_1x+C_2.
-\]
-Now, we can use our boundary data to try and solve this problem. We require
-\begin{align*}
-    0=u(0)&=\frac{L^2}{\pi^2}\sin\left( \frac{0}{L}\pi\right)+C_1(0)+C_2\\
-    0=u(L)&=\frac{L^2}{\pi^2}\sin\left(\frac{L}{L}\pi\right)+C_1(L)+C_2.
-\end{align*}
-The first equation gives us $C_2=0$ which we can plug into the second equation to get that $C_1=0$ as well.  Hence our particular solution to the boundary value problem is
-\[
-\boxed{u(x)=\frac{L^2}{\pi^2}\sin\left(\frac{x}{L}\pi\right).}
-\]
-\end{ex}
-
-The above two equations are very common in the realm of differential equations.  Each gets its own name.  Let's write that here.
+So, the set up to these problems is a bit different, but solving them is fundamentally the same idea. Let's see some other examples of different equations.
 
 \begin{df}{Laplace and Poisson Equations}{laplace_poisson}
 On a region $\Omega=[a,b]$ we prescribe boundary data $u(a)=u_a$ and $u(b)=u_b$.  On this region, \boldgreen{Laplace's equation} is
@@ -101,7 +77,7 @@ On a region $\Omega=[a,b]$ we prescribe boundary data $u(a)=u_a$ and $u(b)=u_b$.
 \]
 and \boldgreen{Poisson's equation} is 
 \[
-\frac{d^2}{dx^2}(x)=F(x)
+-\frac{d^2}{dx^2}(x)=F(x)
 \]
 for some given function $F(x)$. If this $F(x)$ is of the form $ku(x)$ for some constant $k$, then we have the equation for \boldgreen{eigenfunctions of the Laplacian}
 \[
@@ -111,6 +87,39 @@ We'll see that this equation shows up in quantum mechanics.
 \end{df}
 
 If we read the two examples and the definition of the Laplace and Poisson equations, we can get an intuition on what they're describing.  In a sense, both equations can describe the curvature of a 1-dimensional object.  Why is that? The second derivative gives us information about the curvature of a function at each point! For the Laplace equation, the curvature is said to be zero everywhere, hence when we integrated and found a solution, we found that we got a linear equation with some unknown coefficients that we could find with boundary data.  For the Poisson equation, however, there is some external force function $F(x)$ that deforms the rod.  So, the curvature should not be zero everywhere, which gives us a different set of solutions.  One may also notice that the solution to the Laplace equation appeared within the solution to the Poisson equation (go back and reread both to see this).  This is very much like solving homogeneous versus inhomogeneous second order linear ODEs with constant coefficients.
+
+\begin{ex}{Poisson's Equation: Dirichlet Boundary Data}{poisson_neumann}
+\emph{Consider a cable of length $1$ attached at endpoints $x=0$ and $x=1$.  Now, the attachment points of the cable is prescribed by specifying $u(0)=0$ and $u(1)=0$. The cable is also being pushed down by a constant force (like gravity). That is, $F(x)=-1$ constantly pulls the cable down.  We expect this cable to sag under this force much like power lines due under the force of gravity.}\\
+
+This gives us the boundary value problem
+\[
+-\frac{d^2}{dx^2}(x)=-1
+\]
+on the region $\Omega = [0,1]$ with boundary data $u(0)=0$ and $u(1)=0$. We can integrate this equation twice to get
+\[
+u(x)= \frac{1}{2}x^2+bx+c.
+\]
+Now, we can use our boundary data to try and solve this problem. We require
+\begin{align*}
+    0=u(0)&=c,
+\end{align*}
+and hence $c=0$.  Thus, at this point we have $u(x)=\frac{1}{2}x^2+bx$.  The second equation from the second boundary value is then
+\[
+u(1)=\frac{1}{2}+b,
+\]
+and so $b=-\frac{1}{2}$. Hence our particular solution to the boundary value problem is
+\[
+\boxed{u(x)=\frac{1}{2}x^2-\frac{1}{2}x.}
+\]
+We can plot this solution and see if this makes physical sense.
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=.6\textwidth]{Figures_Part_1/poisson_equation_gravity.png}
+    \caption{The profile of a cable under a constant force directed downward.}
+\end{figure}
+
+It seems like the curvature of this cable is close to what we would expect.  How much deformation there is would depend on the strength of the force $F(x)$ as well as the elastic properties of the cable.  These would all factor in to the equation if we considered it in greater detail.
+\end{ex}
 
 \section{A Particle in a 1-Dimensional Box}
 

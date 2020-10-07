@@ -9,7 +9,7 @@
 
 \begin{center}
    \textsc{\large MATH 271, Homework 5}\\
-   \textsc{Due October 11$^\textrm{th}$}
+   \textsc{Due October 9$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
@@ -32,7 +32,27 @@
 \end{problem}
 
 \begin{problem}
-How can we approximate a (possibly complicated) function by using a power series? Why is this useful (specifically for computation on a computer)?
+Find the radius of convergence for the following power series
+\begin{enumerate}[(a)]
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
+    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the two series
+\[
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+\]
+\begin{enumerate}[(a)]
+    \item Show that $\cos(-x)=\cos(x)$.
+    \item Show that $\sin(-x)=-\sin(x)$.
+    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
+    \[
+    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
+    \]
+    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
+\end{enumerate}
 \end{problem}
 
 \begin{problem} Consider the function
@@ -40,23 +60,24 @@ How can we approximate a (possibly complicated) function by using a power series
 f(x)=\frac{1}{1-x}.
 \]
 \begin{enumerate}[(a)]
-    \item Compute the Maclaurin series for the function.
-    \item Find the integral $\int \frac{dx}{1-x}$ using the Maclaurin series for $f(x)$ found in (a).  
-    \item Write down the Macluarin series for $\ln(1-x)$ and compare to your answer in (b).
+    \item Compute the Taylor series centered at $a=0$ for the function.
+    \item Find the antiderivative $\int \frac{dx}{1-x}$ using the Taylor series for $f(x)$ found in (a).  
+    \item Write down the Taylor series for $\ln(1-x)$ centered at $a=0$ and compare to your answer in (b).
 \end{enumerate}
-\end{problem}
-
-\begin{problem} 
-Compute the Taylor series centered at $a=0$ for $f(x)=e^{-\frac{x^2}{2}}$. Then, instead use the Taylor series for $e^x$ and modify it to work for $f(x)$.  For each of these power series, plot the original function $f(x)$ compared to the four term approximation on the same graph.
 \end{problem}
 
 \begin{problem}
-Find the radius of convergence for the following power series
 \begin{enumerate}[(a)]
-    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
-    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+    \item Compute the Taylor series centered at $a=0$ for $f(x)=e^{-\frac{x^2}{2}}$.
+    \item Use the Taylor series for $e^x$ and modify it to find a power series for $f(x)$. Is this the same as the series in (a)?
+    \item Plot the original function $f(x)$ compared to the first, second, third, and fourth term approximation for the series on the same graph.
 \end{enumerate}
 \end{problem}
+
+\begin{problem}
+How can we approximate a (possibly complicated) function by using a power series? Why is this useful (specifically for computation on a computer)?
+\end{problem}
+
 
 
 \end{document}

@@ -1,0 +1,322 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 12}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\usepackage{amssymb}
+\usepackage{graphics}
+
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0in
+\topmargin=-0.50in
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+  \textsc{\large ColoState ~~ Spring 2018 ~~ MATH 617 ~~ Assignment 1}
+\end{center}
+
+\begin{center}
+  \textrm{Due Wed. 01/31/2018}
+\end{center}
+
+\vglue 0.15in
+
+\bigskip
+\noindent
+\textsc{Name:} \underline{Colin Roberts\hglue 3.05in} ~~
+\textsc{CSUID:} \underline{829773631\hglue 2.10in}
+
+\vskip 0.25in
+
+\bigskip
+\noindent
+(15 points) \textit{Problem 1}. \quad
+Let $ X,Y $ be fixed nonempty sets,
+$ f $ be a mapping from $ X $ to $ Y $,
+$ A, A_n (n \in \mathbb{N}) $ subsets of $ X $,
+and $ B, B_n (n \in \mathbb{N}) $ subsets of $ Y $.
+\begin{itemize}
+\item [(i)]
+  Prove that
+  $ \displaystyle f(\bigcap_{n \in \mathbb{N}} A_n) \subseteq \bigcap_{n \in \mathbb{N}} f(A_n) $.
+\item [(ii)]
+  Give an example for (i) such that it is indeed a proper subset.
+\item [(iii)]
+  Prove that
+  $ \displaystyle f^{-1}(\bigcap_{n \in \mathbb{N}} B_n) = \bigcap_{n \in \mathbb{N}} f^{-1}(B_n) $.
+\item [(iv)]
+  Give an example such that
+  $ \displaystyle A \subsetneq f^{-1}(f(A)) $.
+\end{itemize}
+
+\bigskip
+\noindent
+(15 points) \textit{Problem 2}. \quad
+Study set operations
+\begin{itemize}
+\item [(i)]
+  Let $ \displaystyle A_n = \left[ -1+\frac{1}{n}, 1-\frac{1}{n} \right] $
+  for $ n \in \mathbb{N} $.
+  Find $ \displaystyle \bigcup_{n \in \mathbb{N}} A_n $
+  and $ \displaystyle \bigcap_{n \in \mathbb{N}} A_n $.
+\item [(ii)]
+  Let $ f(x) $ be a real-valued function
+  defined on a subset $ E $ of $ \mathbb{R} $.
+  Prove that
+  $$
+    \displaystyle
+    \{ x \in E: f(x)>\alpha \}
+    = \bigcup_{n=1}^\infty \left\{ x \in E: f(x) \ge \alpha + \frac{1}{n} \right\}
+  $$
+  holds for any $ \alpha \in \mathbb{R} $.
+\end{itemize}
+
+\bigskip
+\noindent
+(20 points) \textit{Problem 3}. \quad
+% It is known that a countable set is a null set.
+Give an example of an uncountable null set.
+
+\bigskip
+\noindent
+(15 points) \textit{Problem 4}. \quad
+Prove that a countable union of null sets is still a null set.
+
+\bigskip
+\noindent
+(15 points) \textit{Problem 5}. \quad
+Let $ f $ be a nonnegative continuous function defined on $ [a,b] $.
+Prove that if the Riemann integral $ \int_a^b f(x) dx = 0 $,
+then $ f(x) \equiv 0 $.
+
+\bigskip
+\noindent
+(20 points) \textit{Problem 6}. \quad
+Prove that any bounded monotone function on a closed finite interval 
+is Riemann integrable.  
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} \quad
+Let $ X,Y $ be fixed nonempty sets,
+$ f $ be a mapping from $ X $ to $ Y $,
+$ A, A_n (n \in \mathbb{N}) $ subsets of $ X $,
+and $ B, B_n (n \in \mathbb{N}) $ subsets of $ Y $.
+\begin{itemize}
+\item [(i)]
+  Prove that
+  $ \displaystyle f(\bigcap_{n \in \mathbb{N}} A_n) \subseteq \bigcap_{n \in \mathbb{N}} f(A_n) $.
+\item [(ii)]
+  Give an example for (i) such that it is indeed a proper subset.
+\item [(iii)]
+  Prove that
+  $ \displaystyle f^{-1}(\bigcap_{n \in \mathbb{N}} B_n) = \bigcap_{n \in \mathbb{N}} f^{-1}(B_n) $.
+\item [(iv)]
+  Give an example such that
+  $ \displaystyle A \subsetneq f^{-1}(f(A)) $.
+\end{itemize}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item Let $y\in f\left( \bigcap_{n\in \N} A_n \right)$.  Thus there exists (possibly many) $x \in \bigcap_{n\in \N} A_n$ so that $f(x)=y$.  By definition of the intersection, this implies that $x\in A_n$ for every $n\in \N$ and hence $y\in f(A_n)$ for every $n$.  Thus $y\in \bigcap_{n\in \N} f(A_n)$ and we have $f \left( \bigcap_{n\in \N} A_n \right) \subseteq \bigcap_{n\in \N} f(A_n)$.
+
+\item For all $n \in \N$ let $A_n = \left( \frac{-1}{n}, \frac{1}{n} \right)$ so that $\bigcap_{n\in \N} A_n = \emptyset$. Define $f \colon \R \to \R$ by 
+\[
+f(x)=1
+\]
+Then we have that $f\left( \bigcap_{n\in \N} A_n \right) = \emptyset$ and $\bigcap_{n\in \N} f(A_n)=\{1\}$ and hence $f\left( \bigcap_{n\in \N} A_n \right) \nsupseteq\bigcap_{n\in \N} f(A_n)$. 
+
+\item Let $x\in f^{-1}\left(\bigcap_{n\in \N} B_n \right)$. Then there exists $y\in B_n$ for all $n\in \N$ so that $f^{-1}(y)=x$ and hence $x\in f^{-1}(B_n)$ for every $n$. Thus we have $x \in \bigcap_{n \in \N} f^{-1}(B_n)$ showing that $f^{-1}\left( \bigcap_{n\in \N} B_n \right) \subseteq \bigcap_{n\in \N} f^{-1}(B_n)$.  
+
+For the other containment we let $x \in \bigcap_{n\in \N} f^{-1}(B_n)$.  This means that we have $y \in B_n$ satisfying $f^{-1}(y)=x$ for every $n\in \N$. Hence, $y\in \bigcap_{n\in \N} B_n$ and we have that $x\in f^{-1}\left(\bigcap_{n\in \N} B_n \right)$.  Thus $f^{-1}\left( \bigcap_{n\in \N} B_n \right) \subseteq \bigcap_{n\in \N} f^{-1}(B_n)$.  Both containments then show  $f^{-1}(\bigcap_{n \in \mathbb{N}} B_n) = \bigcap_{n \in \mathbb{N}} f^{-1}(B_n)$.
+
+\item Let $f\colon \R \to \R$ and let $A=[0,1]$.  Note that $f(A)=[0,1]$ and $f^{-1}(f(A))=f^{-1}([0,1])=[-1,1]$. Thus $A\subsetneq f^{-1}(f(A))$.
+\end{enumerate}
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} \quad
+Study set operations
+\begin{itemize}
+\item [(i)]
+  Let $ \displaystyle A_n = \left[ -1+\frac{1}{n}, 1-\frac{1}{n} \right] $
+  for $ n \in \mathbb{N} $.
+  Find $ \displaystyle \bigcup_{n \in \mathbb{N}} A_n $
+  and $ \displaystyle \bigcap_{n \in \mathbb{N}} A_n $.
+\item [(ii)]
+  Let $ f(x) $ be a real-valued function
+  defined on a subset $ E $ of $ \mathbb{R} $.
+  Prove that
+  $$
+    \displaystyle
+    \{ x \in E: f(x)>\alpha \}
+    = \bigcup_{n=1}^\infty \left\{ x \in E: f(x) \ge \alpha + \frac{1}{n} \right\}
+  $$
+  holds for any $ \alpha \in \mathbb{R} $.
+\end{itemize}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item First we consider $\bigcup_{n\in \N} A_n$.  Let $x\in (-1,1)$.  Then let $\delta=\min (|x-1|,|x+1|)$ and we have that there $\exists N \in \N$ so that $1/N<\delta$ and hence $x\in \bigcup_{n=1}^N A_n = \left[-1+\frac{1}{N},1-\frac{1}{N}\right]$. Next, suppose $x$ with $|x|\geq 1$ is in $\bigcup_{n\in \N} A_n$.  Then $\exists N \in \N$ so that $x \in \left[-1+\frac{1}{N},1-\frac{1}{N}\right]$. But, for any $N$, we have that $\left| -1+\frac{1}{N}\right|\leq 1$ and $\left| 1-\frac{1}{N}\right| \leq 1$ which means that $x \notin \left[ -1 +\frac{1}{n},1-\frac{1}{n}\right]$ for any $n$ and hence $\bigcup_{n\in \N} A_n = (-1,1)$.
+
+Next, note that $0\in A_1$ and since $A_n \supset A_{n+1}$ for every $n\in \N$, we have that $0 \in \bigcap_{n\in \N} A_n$.  Suppose some $x\neq 0$ is in $\bigcap_{n\in \N} A_n$, then $x\notin A_1$ since $A_1 = \{0\}$ and hence $\bigcap_{n\in \N} A_n = \{0\}$.
+
+\item If we let $p\in \{x\in E \colon f(x)>\alpha\}$ then we have that $f(p)-\alpha>0$.  Hence by the archimedean property, $\exists N \in \N$ so that $f(p)-\alpha> \frac{1}{N}$.  Thus we have that 
+\[
+\{x\in E \colon f(x)> \alpha \} \subseteq \bigcup_{n=1}^\infty \left\{ x \in E \colon f(x)\geq \alpha +\frac{1}{n} \right\}.
+\]
+Next, let $p\in \bigcup_{n=1}^\infty \left\{ x \in E \colon f(x)\geq \alpha +\frac{1}{n} \right\}$.  Then we have that $f(p)-\alpha \geq \frac{1}{N}$ for $N\in \N$.  This means that $f(p)>\alpha$ and hence
+\[
+\{x\in E \colon f(x)> \alpha \} \supseteq \bigcup_{n=1}^\infty \left\{ x \in E \colon f(x)\geq \alpha +\frac{1}{n} \right\}.
+\]
+Finally, both containments show equality between sets.
+\end{enumerate}
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} \quad
+% It is known that a countable set is a null set.
+Give an example of an uncountable null set.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider the Cantor set $K$ taken by removing the middle 1/3 open interval from $[0,1]$ as the first step, and repeating this process for the remaining closed intervals for each step. We then let the number of steps done, $N$, go to infinity to get the Cantor set $K$.  We will show two major qualities: the Cantor set is uncountable and this set is also a null set.
+
+To see that the Cantor set $K$ is uncountable, note that we represent a point in the Cantor set by using a ternary representation. Put $K_n$ as the Cantor set at the $n$th step. Then, let $x\in [0,1]$, then the ternary representation is given by the sequence $\{a_n\}$ with each $a_n\in \{0,1,2\}$. The $a_n$ are chosen by labeling the intervals at the $n$th step with the numbers $0$ or $2$ if $x\in K_n$ or $1$ if $x\notin K_n$. If $x\notin K$, then at some finite $N\in \N$, $a_N$ for the ternary representation is $1$ and all subsequent $a_n$ are $1$ as well.  However, if $x\in K$, then $x\in K_n$ for all $n\in N$, and hence the ternary representation of $x$ is an infinite sequence of $0$ and $2$.  It turns out that the set of every possible infinite sequence consisting of only $0$ and $2$ is exactly the power set of a countable set.  Hence $K$ is uncountable since there are as many members in $x$ as there are the power set of some countable set, and the power set of a countable set is, by definition, uncountable.
+
+Now, to see that $K$ is a null set.  Let $I_i^{(n)}$ be the $i$th remaining interval at step $n$. Note that there will be $2^n$ intervals $I_i^{(n)}$ at step $n$. Then $\displaystyle K=\cap_{n=1}^\infty \cup_{i=1}^{2^n} I_i^{(n)}$.   Then, the length of all of these intervals at the $N$th step is given by
+\[
+\sum_{n=1}^{2^N} \left( \frac{1}{3} \right)^N = \left( \frac{2}{3} \right)^N.
+\]
+Finally, for any $\epsilon>0$ there exists an $N\in \N$ sufficiently large so that we have $(2/3)^N<\epsilon$.  Hence, $K$ is a null set since it is covered by open intervals with arbitrarily small length.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4.} \quad
+Prove that a countable union of null sets is still a null set.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $\{A_n\}_{n\in \N}$ be a countable collection of null sets and fix $\epsilon>0$.  Then for each $A_n$ we have a countable union of intervals $\{I_{n_i}\}_{i\in \N}$ such that $A_n \subseteq \bigcup_{i\in \N} I_{n_i}$ and that $\sum_{i=1}^\infty \lambda\left( I_{n_i} \right) < \frac{\epsilon}{2^i}$ by choosing $I_{n_i}$ sufficiently small for each $i$. Then we have that
+\[
+\sum_{n=1}^\infty \sum_{i=1}^\infty \lambda \left( I_{n_i} \right) = \sum_{i=1}^\infty \frac{\epsilon}{2^i} \leq \epsilon,
+\]
+which shows that $\{A_n\}_{n\in \N}$ is a null set.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5.} \quad
+Let $f$ be a nonnegative continuous function defined on $[a,b]$. Prove that if the Riemann integral $\int_a^b f(x) dx =0$, then $f(x)\equiv 0$.  
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We will show the contrapositive.  Suppose that $f(x)\neq 0$ for some $x_0$.  Then since $f$ is nonnegative, we have that $f(x_0)>0$ and since $f$ is continuous, there exists a $\delta>0$ so that for $x \in (x_0-\delta,x_0+\delta)\subset [a,b]$ we have $f(x)>0$.  Then note that continuity of $f$ implies that $f$ is Riemann integrable and we have that $\int_{x_0-\delta}^{x_0+\delta} f(x)dx>0$.  It then follows that
+\[
+0<\int_{x_0-\delta}^{x_0+\delta} f(x)dx \leq \int_a^b f(x)dx.
+\]
+Thus if $\int_a^b f(x)dx=0$ we must have that $f(x)\equiv 0$.  
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 6.} \quad
+Prove that any bounded monotone function on a closed finite interval is Riemann integrable.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $f$ be a bounded monotone function on the closed finite interval $[a,b]$.  Without loss of generality, assume that $f$ is monotone increasing so that $f(x)\geq f(y)$ when $x>y$. We will see where this extra assumption is used and explain why it's safe to do this.   Let $P_n$ be a regular partition of $[a,b]$ so that $x_i-x_{i-1}=(b-a)/n$.  Then
+\begin{align*}
+U(P_n,f)&= \sum_{k=1}^n f\left(a+\frac{k(b-a)}{n}\right) \left( \frac{b-a}{n} \right) \\
+L(P_n,f)&=\sum_{k=1}^n f\left(a+\frac{(k-1)(b-a)}{n} \right) \left( \frac{b-a}{n} \right).
+\end{align*}
+Note, if $f$ was monotone decreasing, we just switch the $k$ for the $k-1$ in the two sums previously (this was the assumption made without losing generality).  Now, we have that
+\begin{align*}
+\lim_{n\to \infty} U(P_n,f)-L(P_n,f)&= \lim_{n\to \infty}\frac{b-a}{n} \sum_{k=1}^\infty f \left( a+\frac{k(b-a)}{n} \right) - \left( a + \frac{(k-1)(b-a)}{n} \right)\\
+&=\lim_{n\to \infty}\frac{b-a}{n}f(b)-f(a)=0.
+\end{align*}
+Thus $f$ is Riemann integrable.
+\end{proof}
+
+\pagebreak
+
+
+
+\end{document}
+
+
+

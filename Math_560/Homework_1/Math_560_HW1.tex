@@ -1,0 +1,390 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 1}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{\S 1.2 Problem 11.} Let $V = \{0\}$ consist of a single vector $0$, and define $0+0=0$ and $c0=0$ for each $c$ in $\mathbb{F}$.  Prove that $V$ is a vector space over $\mathbb{F}$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} ~\linebreak
+\begin{enumerate}[(1)]
+\item To see $V$ is commutative with addition we have $0+0=0$ and since $V$ is a singleton set, there is just this one value to check.
+\item We have $(0+0)+0=0+0=0=0+(0+0)$
+\item $V$ only contains the $0$ element and $0+0=0$.
+\item Let $x,y\in V$, then $x+y=0+0=0$.
+\item Let $x\in V$, then $1(x)=1(0)=0=x$.
+\item Let $a,b\in \mathbb{F}$ and $x\in V$, then $(ab)x=(ab)0=0=a(0)=a(b0)=a(bx)$.
+\item Let $a\in\mathbb{F}$ and $x,y \in V$, then $a(x+y)=a(0+0)=0=a(0)+a(0)=a(x)+a(y)$.
+\item Let $a,b \in \mathbb{F}$ and $x\in V$, then $(a+b)x=(a+b)0=0=a(0)+b(0)=a(x)+b(x)$.
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.2 Problem 12.} A real-valued function defined on the real line is called an \emph{even function} if $f(-x)=f(x)$ for each real number $x$. Prove that the set of even functions defined on the real line with the operations of addition and scalar multiplication defined in Example $3$ is a vector space.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} First note that for any even function $f\colon \mathbb{R} \to \mathbb{R}$ that $f(t)\in \mathbb{R}$ $\forall t \in \mathbb{R}$.  This allows us to treat any even function $f$ as a member of $\mathbb{R}$ and use field properties inherited from $\mathbb{R}$\\
+\begin{enumerate}[(a)]
+\item Let $f,g\in V$ and then $f+g=g+f$ by commutivity of addition in $\mathbb{R}$.
+\item Let $f,g,h \in V$, then we have $(f+g)+h=f+(g+h)$ by associativity of $\mathbb{R}$
+\item Let $f,g \in V$ and $g(t)=0$ $\forall t$ (which is even), then $f+g=f+g=f$.
+\item Let $f \in V$ and let $g(t)=-f(t)$ $\forall t$ and notice that $g$ is even and thus $g \in V$.  Then $f+g=f-f=0$.
+\item Let $f \in V$ then $1f=f$ since $1$ is the multiplicative identity in $\mathbb{R}$.
+\item Let $f \in V$ and $a,b\in \mathbb{R}$, then $(ab)f=a(bf)$ by associativity of multiplication in $\mathbb{R}$.
+\item Let $f,g \in V$ and $a \in \mathbb{R}$, then $a(f+g)=af+ag$ by distribution in $\mathbb{R}$.
+\item Let $f \in V$ and $a,b \in \mathbb{R}$ then $(a+b)f=af+bf$ by distribution in $\mathbb{R}$.
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.3 Problem 6.} Prove that $\tr(aA+bB)=a\tr(A)+b\tr(B)$ for any $A,B\in M_{n\times n}(\mathbb{F})$
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+\begin{align*}
+\tr(aA+bB)&=(aA_{11}+aA_{22}+...+aA_{nn})+(bB_{11}+bB_{22}+...+bB_{nn})\\
+&= a(A_{11}+...+A_{nn})+b(B_{11}+...+B_{nn})\\
+&= a\tr(A)+b\tr(B)
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.3 Problem 12.}  Verify that the upper triangular matrices form a subspace of $M_{m\times n}(\mathbb{F})$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First notice that $A$ with $A_{ij}=0$ $\forall i,j$ is upper triangular.  And for $B$ upper triangular we have $A+B=0+B=B$ shows that the additive identity exists.  Next, let $A,B$ be arbitrary upper triangular matrices.  Then $(A+B)_{ij}=A_{ij}+B_{ij}$ so that $(A+B)_{ij} = 0$ $\forall i>j$.  Next, let $A$ be an upper triangular matrix and let $x\in \mathbb{F}$ and then $(aA)_{ij}=a(A_{ij})$ and since $a0=0$ we have that $A$ is upper triangular.  Finally let $A,B$ be upper triangular matrices.  Then if we have $A_{ij}=-B_{ij}$ we have $A_{ij}=0$ $\forall i,j$ thus $A+B=0$.  Thus upper triangular matrices form a subspace.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.3 Problem 23.} Let $W_1$ and $W_2$ be subspaces of a vector space $V$.
+\begin{enumerate}[(a)]
+\item Prove that $W_1+W_2$ is a subspace of $V$ that contains both $W_1$ and $W_2$.
+\item Prove that any subspace of $V$ that contains both $W_1$ and $W_2$ must also contain $W_1+W_2$.
+\end{enumerate} 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+First note that $W_1+W_2=\{w_1 + w_2 | w_1\in W_1 \textrm{ and } w_2\in W_2\}$, and since $W_1,W_2$ are subspaces we have $0\in W_1$ and $0\in W_2$. Thus $0\in W_1+W_2$.  Second, let $u,v \in W_1+W_2$ and note that $u=u_1+u_2$ and $v=v_1+v_2$ with $u_1,u_2 \in W_1$ and $v_2,v_2 \in W_2$ then consider $u+v = (u_1 + u_2)+(v_1 + v_2)=(u_1+v_1)+(u_2+v_2)$ and then we have $u_1+v_1 \in W_1$ and $u_2+v_2 \in W_2$ by the fact that $W_1$ and $W_2$ are subspaces. So $u+v\in W_1+W_2$. Next, let $w\in W_1+W_2$ be given by $w=w_1+w_2$ with $w_1\in W_1$ and $w_2 \in W_2$ and let $a\in \mathbb{F}$.  Then $aw=a(w_1+w_2)=aw_1+aw_2$ thus $aw_1+aw_2\in W_1+W_2$ since $aw_1 \in W_1$ and $aw_2 \in W_2$ by the fact that $W_1$ and $W_2$ are subspaces.  Finally, let $u,v \in W_1+W_2$ and note that $u=u_1+u_2$ and $v=v_1+v_2$ with $u_1,u_2 \in W_1$ and $v_2,v_2 \in W_2$.  Then, since $W_1$ and $W_2$ are subspaces, we can let $v_1=-u_1$ and $v_2=-u_2$ and then $u+v=(u_1+v_1)+(u_2+v_2)=(u_1-u_2)+(u_2-u_2)=0\in W_1+W_2$.
+\end{proof}
+
+\begin{proof}[b]
+Let $W$ be a subspace of $V$ with $W_1\subseteq W$ and $W_2\subseteq W$.  Thus a vector $w_1\in W_1$ also satisfies $w_1\in W$ as well as $w_2 \in W_2$ satisfying $w_2 \in W$.  So we can say that $W\supseteq \{w_1+w_2 | w_1\in W_1 \textrm{ and } w_2 \in W_2\}$. So then $W\supseteq W_1+W_2$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.3 Problem 28.} A matrix $M$ is called \textbf{skew-symmetric} if $M^t=-M$. Clearly, a skew-symmetric matrix is square. Let $\mathbb{F}$ be a field. Prove that the set $W_1$ of all skew-symmetric $n\times n$ matrices with entries from $\mathbb{F}$ is a subspace of $M_{n\times n}(\mathbb{F})$. Now assume that $\mathbb{F}$ is not of characteristic $2$, and let $W_2$ be the subspace of $M_{n\times n}(\mathbb{F})$ consisting of all symmetric $n \times n$ matrices. Prove that $M_{n\times n}(\mathbb{F})=W_1 \oplus W_2$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[First Part]
+I will do this by showing the properties hold for all components of a matrix $A=A_{ij}$ to make notation easier. Just note $A_{ij}^T=A_{ji}$ for a general square matrix.\\
+\noindent Let $A,B$ be skew-symmetric matrices. Then $(A+B)_{ij}=A_{ij}+B_{ij}=-A_{ji}-B_{ji}=-(A+B)_{ji}$ which shows closure. Second, let $A$ be skew-symmetric and $a\in \mathbb{F}$, then $(aA)_{ij}=a(A_{ij})=a(-A_{ji})=-(aA)_{ji}$.  Third, let $A, B$ be skew-symmetric with $A_{ij}=0$ $\forall i,j$.  Then, $(A+B)_{ij}=A_{ij}+B_{ij}=B_{ij}=-B_{ji}$.  Finally, let $A,B$ be skew-symmetric with $A_{ij}=-B_{ij}$ $\forall i,j$ then $(A+B)_{ij}=A_{ij}+B_{ij} = A_{ij}-A_{ij}=0$. So the skew symmetric matrices form a subspace of square matrices.
+\end{proof}
+
+\begin{proof}[Second Part]
+Again I will do this using indices.  Let $A$ be an $n\times n$ matrix, $B$ be a skew-symmetric matrix, and $C$ be a symmetric matrix. Then $A_{ii}=B_{ii}$ and $C_{ii}=0$ $\forall i$ shows the diagonal of an $n \times n$ matrix can be written as a sum of a skew-symmetric and a symmetric matrix.  Next, consider the following,
+\begin{align*}
+A_{ij}&=B_{ij}+C_{ij} &\textrm{and}\\
+A_{ji}&=B_{ji}+C_{ji} &\forall j>i
+\end{align*}
+Notice, these equations will allow us to solve for each value in the matrix $A$.  Then with $B_{ji}=B_{ij}$ and $C_{ij}=-C_{ij}$ we have,
+\begin{align*}
+A_{ij}&=B_{ij}+C_{ij} &\textrm{and}\\
+A_{ji}&=B_{ij}-C_{ij} &\forall j>i
+\end{align*}
+Subtracting the two equations yields,
+\begin{align*}
+A_{ij}-A_{ji}&=B_{ij}+C_{ij}-B_{ij}+C_{ij}=2C_{ij}\\
+C_{ij}&=\frac{1}{2}(A_{ij}-A_{ji})
+\end{align*}
+Finally, we plug $C_{ij}$ into the first equation to yield,
+\begin{align*}
+B_{ij}&=A_{ij}+\frac{1}{2}(A_{ij}-A_{ji})
+\end{align*}
+Thus we have $B_{ij}$ and $C_{ij}$ in terms of $A_{ij}$ and $A_{ji}$ for every $i$ and $j$ and so we can write $A$ as a sum of a skew-symmetric matrix $B$ and a symmetric matrix $C$ since $\textrm{char}(\mathbb{F})\neq 2$. Lastly if $A\in W_1$ and $B\in W_2$ then if $W_1\cap W_2\neq 0$ we can find a matrix that is both symmetric and skew-symmetric.  First note that if $T \in M_{n\times n}(\mathbb{F})$ is skew symmetric then $T_{ii}=0$ $\forall i$.  Then if $T$ is to also be symmetric $T_{ij}=T_{ji}$.  However it must also be skew-symmetric so $T_{ij}=-T_{ji}$.  So then $T_{ji}=-T_{ji}$ thus $T_{ij}=0$.  So $T$ is the zero matrix.  Thus $W_1 \cap W_2 = 0$ and $M_{n\times n}(\mathbb{F})=W_1\oplus W_2$. 
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.3 Problem 30.} Let $W_1$ and $W_2$ be subspaces of a vector space $V$. Prove that $V$ is the direct sum of $W_1$ and $W_2$ if and only if each vector in $V$ can be uniquely written as $w_1+w_2$ where $w_1 \in W_1$ and $w_2 \in W_2$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the forward direction suppose that $V=W_1\oplus W_2$.  Then we can write $v\in V$ as $w_1+w_2=v$ with $w_1\in W_1$ and $w_2\in W_2$.  Then consider $u_1\in W_1$ and $u_2 \in W_2$ with $u_1+u_2=v$  Then $w_1+w_2=u_1+u_2$ which implies that $u_1-w_1=w_2-u_2$. Since the left hand side $u_1-w_1\in W_1$ and the right hand side $w_2-u_2\in W_2$ then $v\in W_1\cap W_2$.  Thus $v=0$ and $u_1=w_1$ and $u_2=w_2$ so that $w_1$ and $w_2$ are unique elements of $W_1$ and $W_2$ respectively.
+
+For the reverse direction, suppose that each vector $v\in V$ can be written uniquely as $w_1+w_2=v$ with $w_1\in W_1$ and $w_2\in W_2$.  Then if $u\in W_1\cap W_2$ and suppose for a contradiction that $w\neq 0$ and that we have $v=w_1+w_2=w_1+w_2+u-u=(w_1-u)+(w_2+u)$ which means that $w_1$ and $w_2$ weren't unique.
+
+
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.3 Problem 31.} Let $W$ be a subspace of a vector space $V$ over a field $\mathbb{F}$. For any $v\in V$ the set $\{v\}+W=\{v+w | w\in W\}$ is called the \textbf{coset} of $W$ containing $v$. It is costumary to denote this coset by $v+W$ rather than $\{v\} + W$.
+\begin{enumerate}[(a)]
+\item Prove that $v+W$ is a subspace of $V$ if and only if $v\in W$\\
+\item Prove that $v_1 +W = v_2+W$ if and only if $v_1-v_2 \in W$.
+Addition and scalar multiplication by scalars of $\mathbb{F}$ can be defined in the following collection $S=\{v+W |v\in V\}$ of all cosets of $W$ as follows:
+\[(v_1+W)+(v_1+W)=(v_1+v_2)+W\]
+for all $v_1,v_2\in V$ and
+\[a(v+W)=av+W\]
+\item Prove that the preceding operations are well defined; that is show that if $v_1+W=v_1'+W$ and $v_2+W=v_2'+W$, then 
+\[(v_1+W)+(v_2+W)=(v_1'+W)+(v_2'+W)
+\]
+and
+\[
+a(v_1+W)=a(v_1'+W)
+\]
+\item Prove that the set $S$ is a vector space with the operations defined in (c).  This vector space is called the \textbf{quotient space of $V$ modulo $W$} and is denoted by $V/W$
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+For the forward direction, suppose that for $v \in V$ we have that $v+W$ is a subspace.  Then let $u_1,u_2\in v+W$.  So $u_1=v+w_1$ and $u_2=v+w_2$.  So $u_1-u_2=w_1-w_2$ and by closure of $W$ we have that $u_1-u_2\in W$. So $v+W=W$, which implies $v\in W$. For the reverse direction, suppose that $v\in W$.  Then since $v\in W$ we have $v+W=W$ and $W$ is a subspace.
+\end{proof}
+\begin{proof}[b]
+For the forward direction suppose that $v_1+W=v_2+W$.  Then we have $v_1+w_1=v_2+w_2$ which means that $v_1-v_2=w_2-w_1$.  Since $W$ is a subspace, it is closed, and thus $v_1-v_2\in W$.  For the reverse direction, suppose that $v_1-v_2\neq 0 \in W$, then $(v_1-v_2)+w=0$. Thus $v_1+\frac{1}{2}w=v_2+\frac{1}{2}w$ Thus we have $v_1+W=v_2+W$.
+\end{proof}
+\begin{proof}[c] Suppose we have $v_1+W=v_1'+W$ and $v_2+W=v_2'+W$, then 
+\[(v_1+W)+(v_2+W)=(v_1+v_2)+W=(v_1'+v_2')+W=(v_1'+W)+(v_2'+W).\]
+Next we have $a\in \mathbb{F}$ and then,
+\[a(v_1+W)=av_1+W=av_1'+W=a(v_1'+W)\]
+\end{proof}
+\begin{proof}[d]
+First let $u_1,u_2 \in V/W$ be written as $v_1+W$ and $v_2+W$ respectively. . Then, $u_1+u_2=(v_1+W)+(v_2+W)=(v_1+v_2)+W$ so $V/W$ is closed.  Next let $a\in \mathbb{F}$ and consider $a(u_1)=a(v_1+W)=av_1+W$ which is also in $V/W$.  Then if we let $v_1=0$ so $u_1=W$ we have $u_1+u_2=W+(v_2+W)=v_2+W$.  So the zero element exists.  If we let $u_2=-u_1$ then $u_1+u_2=(v_1 +W)+(v_2+W)=(v_1 +W)-(v_1+W)=0+W=W$.  
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.4 Problem 8.} Show that $P_n(\mathbb{F})$ is generated by $\{1,x,...,x^n\}$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $f(x)\in P_n(\mathbb{F})$ be an arbitrary polynomial in $x$ of degree $n$.  It can be written as $a_0+a_1x+a_2x^2+...+a_nx^n=a_0(1)+a_1(x)+...+a_nx^n$.  Since we can write $f(x)$ as a linear combination of elements of $\{1,x,...,x^n\}$ we know that $P_n(\mathbb{F})=\textrm{span}(\{1,x,...,x^n\})$
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.4 Problem 9.} Show that the matrices
+\[
+\begin{bmatrix}
+	1 & 0 \\
+	0 & 0 
+\end{bmatrix},
+\begin{bmatrix}
+	0 & 1 \\
+	0 & 0 
+\end{bmatrix},
+\begin{bmatrix}
+	0 & 0 \\
+	1 & 0 
+\end{bmatrix}, \textrm{ and }
+\begin{bmatrix}
+	0 & 0 \\
+	0 & 1 
+\end{bmatrix}
+\]
+generate $M_{2\times 2}(\mathbb{F})$.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $A\in M_{2\times 2}(\mathbb{F})$ be arbitrary. So,
+\[
+\begin{bmatrix}
+	a_{11} &	a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix}
+=a_{11}
+\begin{bmatrix}
+	1 & 0 \\
+	0 & 0 
+\end{bmatrix}
++a_{12}\begin{bmatrix}
+	0 & 1 \\
+	0 & 0 
+\end{bmatrix}
++a_{21}\begin{bmatrix}
+	0 & 0 \\
+	1 & 0 
+\end{bmatrix} 
++a_{22}\begin{bmatrix}
+	0 & 0 \\
+	0 & 1 
+\end{bmatrix}
+\]
+Since $A$ is written as a linear combination of these matrices, these matrices generate $M_{2\times 2}(\mathbb{F})$.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.5 Problem 16.} Prove that a set $S$ of vectors is linearly independent if and only if each finite subset of $S$ is linearly independent.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the forward direction, suppose that $S$ contains linearly independent vectors $\{v_1,...,v_n\}$. Since $S$ is linearly independent we have that $a_1v_1+...+a_nv_n=0$ implies $a_i=0$ $\forall i$. Thus, no finite linear combination containing the same number of terms or less will make it so that $a_i\neq 0$ since they all have to be zero.  So any subset of $S$ will contain only linearly independent vectors. For the reverse direction, suppose each finite subset $U\subseteq S$ is linearly independent. Then note $U=S\subseteq S$ so $S$ is linearly independent.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.5 Problem 18.} Let $S$ be a set of nonzero polynomials in $P(\mathbb{F})$ such that no two have the same degree.  Prove that $S$ is linearly independent.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose for a contradiction that for $p_1,...,p_n\in S$ we have that $a_1p_1,...,a_np_n=0$ and that $a_i\neq 0$.  So $(a_1p_1+...+a_{n-1}p_{n-1})=-a_np_n.$  Since $p_n$ is arbitrary, let it be of degree $n$. So $a_np_n \in \textrm{span}(\{p_1,...,p_n\}$.  But $p_n$ has a different degree than each other $p_i$, $i\neq n$ and thus $a_1p_n+...+a_2p_n$ is at most degree $n-1$ and cannot be equal to $a_np_n$.  Thus $S$ is linearly independent.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.6 Problem 29.} 
+\begin{enumerate}[(a)]
+\item Prove that if $W_1$ and $W_2$ are finite-dimensional subspaces of a vector space $V$, then the subspace $W_1+W_2$ is finite-dimensional, and $\dim(W_1+W_2)=\dim(W_1)+\dim(W_2)-\dim(W_1\cap W_2)$.
+\item Let $W_1$ and $W_2$ be finite-dimensional subspaces of a vector space $V$, and let $V=W_1+W_2$. Deduce that $V$ is the direct sum of $W_1$ and $W_2$ if and only if $\dim(V)=\dim(W_1)+\dim(W_2)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Suppose $W_1$ and $W_2$ are finite-dimensional subspaces of a vector space $V$.  Let $\{u_1,...,u_n\}$ be a basis for $W_1\cap W_2$.  Then we also have $\{u_1,...,u_n,v_1,...,v_m\}$ as a basis for $W_1$ and $\{u_1,...,u_m,w_1,...,w_k\}$ as a basis for $W_2$. Then,
+\begin{align*}
+\dim(W_1+W_2)&=n+m+k\\
+&=(n+m)+(n_k)-n\\
+&=\dim(W_1)+\dim(W_2)-\dim(W_1\cap W_2)
+\end{align*}
+which also shows that $\dim(W_1+W_2)$ is finite.
+\end{proof}
+
+\begin{proof}[b]
+For the forward direction suppose that $V=W_1\oplus W_2$. Then $\dim(W_1\cap W_2)=0$ and from the previous exercise we have $\dim(V)=\dim(W_1+W_2)=\dim(W_1)+\dim(W_2)-\dim(W_1\cap W_2)=\dim(W_1)+\dim(W_2)$. For the reverse direction suppose that $\dim(V)=\dim(W_1)+\dim(W_2)$.  Thus by the previous exercise we have that $\dim(W_1 \cap W_2)=0$ and so $W_1\cap W_2=\{0\}$ and $V=W_1\oplus W_2$.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.6 Problem 31.} Let $W_1$ and $W_2$ be subspaces of a vector space $V$ having dimensions $m$ and $n$, respectively, where $m\geq n$.
+\begin{enumerate}[(a)]
+\item Prove that $\dim(W_1\cap W_2) \leq n$.
+\item Prove that $\dim(W_1+W_2)\leq m+n$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+We have that $\dim(W_1+W_2)=\dim(W_1)+\dim(W_2)-\dim(W_1\cap W_2)=m+n-\dim(W_1\cap W_2)$.  Suppose $\dim(W_1\cap W_2)>n$ then $\dim(W_1+W_2)<m$ which contradicts that $W_1$ has $m$ basis vectors. 
+\end{proof}
+\begin{proof}[b]
+We have that $\dim(W_1+W_2)=\dim(W_1)+\dim(W_2)-\dim(W_1\cap W_2)=m+n-\dim(W_1\cap W_2)=m+n-\dim(W_1\cap W_2)$.  Since $\dim(W_1\cap W_2)\geq 0$ we have that $\dim(W_1\cap W_2)\leq m+n$.
+\end{proof}
+\pagebreak
+
+\end{document}
+

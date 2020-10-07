@@ -1,0 +1,348 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{heuristica}
+\author{Colin Roberts}
+\title{MATH 317, Homework 2}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+ \usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Let $A$ and $B$ be sets. Suppose that $A$ is a finite set and that there exists a bijection $f \colon A \to B$. Prove that the set $B$ is finite.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose that $B$ is infinite.  Since $f \colon A\to B$ is surjective, $\forall b \in B, \exists a \in A $ such that $f(a)=b$.  Since $A$ is finite, we can say for some $n\in \mathbb{N}$ that the members of $A$ are $a_1, a_2, ... , a_n$.  Since $f$ is also injective we have $f(a_i)=b_i$ where each $b_i \in B$.  But this is a contradiction!  The list $b_1, b_2, ..., b_n$ is the same length as $a_1,a_2, ..., a_n$ which we stated was finite.  Thus $B$ must also be finite.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Find the supremum and infimum of the set $S= \left\{1+ \frac{(-1)^n}{n} \mid n\in \mathbb{N}\right\}$. Prove your claims.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+Here we can see that the contribution from $\frac{(-1)^n}{n}$ gets smaller and smaller in magnitude as $n$ gets larger.  So we expect that the infimum and supremum occur with small $n$ and can check some values. 
+\[
+n=1 \implies 1+\frac{-1}{1}=0 
+\]
+\[
+n=2 \implies 1 + \frac{(-1)^2}{2}=\frac{3}{2}
+\]
+\[
+n=3 \implies 1+ \frac{(-1)^3}{3}=\frac{2}{3}
+\]
+If we go on, the no greater or lesser values are achieved.  $\sup S = \frac{3}{2}$ and $\inf S = 0$.  
+
+\begin{proof}[Infimum]
+Suppose $\exists n_0 \in \mathbb{N}$ such that $1+\frac{(-1)^{n_0}}{n_0} < 0$  Then,
+\begin{align*}
+(-1)^{n_0} < -n_0
+\end{align*}
+Since $n_0 \in \mathbb{N}$, we have $-n_0 \leq -1$.  
+\begin{align*}
+(-1)^{n_0} \leq -n_0 < -1
+\end{align*}
+
+This is not possible. The left hand side can only equal $\pm 1$ and will never be less than $-1$. This is a contradiction and so $\inf S =0$.
+\end{proof}
+
+\begin{proof}[Supremum]
+Suppose $\exists n_0 \in \mathbb{N}$ such that,
+\[
+1+\frac{(-1)^{n_0}}{n_0} > \frac{3}{2}
+\]
+\[
+\implies (-1)^{n_0} > \frac{1}{2}n_0
+\]
+This is untrue $\forall n \in \mathbb{N}$ as if $n_0=1$ we have $-1 > \frac{1}{2}$.  If $n_0=2$ we have $1>1$ which is also untrue.  Past this, as $n_0$ were to increase, the right hand side grows monotonically and is unbounded, and the left oscillates between $\pm 1$ and thus the left hand side will never be greater than the left. This is a contradiction and thus $\sup S = \frac{3}{2}$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Find the supremum and infimum of the set $S=\left\{\frac{1}{n} - (-1)^n \mid n\in \mathbb{N}\right\}$.  Prove your claims.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+\begin{equation*}
+\begin{split}
+n=1 \implies & 1-(-1)=2\\
+n=2 \implies & \frac{1}{2}-(-1)^2=\frac{-1}{2}\\
+n=3 \implies & \frac{1}{3}-(-1)^3 = \frac{4}{3}\\
+n=4 \implies & \frac{1}{4}-(-1)^4 = \frac{-3}{4}\\
+\end{split}
+\end{equation*}
+Since the fraction $\frac{1}{n}$ is decreasing, it is largest when $n=1$ and $\sup S =2$.  As $n$ gets larger, $\frac{1}{n}$ will decrease to $0$ while the contribution from $(-1)^n$ will oscillate between $\pm 1$ giving us $\inf S = -1$.
+
+\begin{proof}[Infimum]
+Suppose that $\inf S < -1$, then $\exists n_0 \in \mathbb{N}$ such that,
+\begin{align*}
+\frac{1}{n_0}-(-1)^{n_0} &< -1\\
+\frac{1}{n_0}&<-1+(-1)^{n_0}
+\end{align*}
+Here on the right hand side we have a number that oscillates only between the values $-2,0$.  On the left we have $\frac{1}{n_0}$ which is positive and nonzero $\forall n \in \mathbb{N}$.  Thus this is a contradiction and $\inf S =-1$. 
+\end{proof}
+
+\begin{proof}[Supremum]
+Suppose that $\sup S >2$ for some $n_0 \in \mathbb{N}$.  Then,
+\begin{align*}
+\frac{1}{n_0} - (-1)^{n_0} &> 2\\
+\frac{1}{n_0} &> 2+ (-1)^{n_0}
+\end{align*}
+Here the right hand side oscillates between $1$ and $3$.  The left hand side decreases from $1$ to arbitrarily close to $0$ as $n$ increases from $1$ to $n$.  Because of this, the right hand side will never be less than the left which contradicts our statement about $n_0$.  Thus $\sup S=2$.
+
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} 
+
+(a) Show $|b| \leq a$ if and only if $-a\leq b \leq a$.  
+
+(b) Prove $||a|-|b||\leq |a|+|b|$ for all $a,b \in \mathbb{R}$
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+(a)We want to show that $|b| \leq a \iff -a \leq b \leq a$.  Based on these definitions, we know that $a \geq 0$.  
+
+\begin{proof}[Part (a)]
+This is a biconditional statement, so I will prove the forward direction first.  \\
+
+Suppose that $|b| \leq a$.  Using the fact that $b=0$, $b>0$, or $b<0$,
+
+(1) If $b=0$ and $a\geq 0$ then we have that $-a \leq 0$. Which is what we wanted to satisfy.
+
+(2) If $b>0$ and $|b| \geq a$, then $a\geq b$ which implies $-a \leq -b \leq b$.  Thus $-a \leq -b < b$.
+
+(3) If $b<0$ then $|b|=-b \leq a$.  This implies $b \geq -a$ and $-b > b$ so $-a \leq b \leq a$. \\ 
+
+Next, suppose that $-a \leq b \leq a$.  
+
+(1) If $b=0$ and $a \geq b$ then $a\geq 0 = |b|$.
+
+(2) If $b>0$ and $b \leq a$ then $|b|=b\leq a = |a|$.
+
+(3) If $b<0$ and $-a \leq b$, then $-b \leq a$. Since $b<0$, $|b| = -b \leq a$.
+\end{proof}
+
+\begin{proof}[Part (b)]
+We have a few different conditions here to prove:
+
+(1) If $a=0$ and $b=0$ then we have 
+\begin{align*}
+||0|-|0|| &= |0-0|\\
+&=|0|\\
+&\leq |0|+|0|
+\end{align*}
+
+(2) If $a<0$ and $b=0$ then we have
+\begin{align*}
+||a|-|b|| &= ||a|-0|\\
+&=||a||\\
+&=|(a)|\\
+&=|a|\\
+&\leq |a|+|b|
+\end{align*}
+
+(3) If $a>0$ and $b=0$ then we have
+\begin{align*}
+||a|-|b|| &= ||a|-0|\\
+&=||a||\\
+&=|(a)|\\
+&\leq |a|+|b|
+\end{align*}
+
+(4) If $a=0$ and $b<0$ then we have
+\begin{align*}
+||a|-|b|| &= |0-|b||\\
+&=|-(-b)|\\
+&=|b|\\
+&\leq |a|+|b|
+\end{align*}
+
+(5) If $a=0$ and $b>0$ then we have
+\begin{align*}
+||a|-|b|| &= |0-|b||\\
+&=|-|b||\\
+&=|-(-b)|\\
+&=|b|\\
+&\leq |a|+|b|
+\end{align*}
+
+(6) If $a<0$ and $b<0$ then we have
+\begin{align*}
+||a|-|b|| &= ||a|-(-b)|\\
+&=|(a)+b|\\
+&\leq |a|+|b|
+\end{align*}
+
+(7) If $a>0$ and $b>0$ then we have
+\begin{align*}
+||a|-|b|| &= |(a)-(b)||\\
+&=|a-b|
+\end{align*}
+Since both $a>0$ and $b>0$
+\begin{align*}
+&< |a+b|\\
+&\leq |a|+|b|
+\end{align*}
+
+
+(8) If $a<0$ and $b>0$ then we have
+\begin{align*}
+||a|-|b|| &= |-a-(b)|\\
+\end{align*}
+Since $-a>0$ and $b>0$
+\begin{align*}
+&< |a+b|
+&\leq |a|+|b|
+\end{align*}
+
+(9) If $a>0$ and $b<0$ then we have
+\begin{align*}
+||a|-|b|| &= |a-(-b)|\\
+&=|a+b|
+&\leq |a|+|b|
+\end{align*}
+
+Given all of the possible combinations of conditions are satisfied, we know that $\forall a, b \in \mathbb{R}$, $||a|-|b||\leq |a|+|b|$
+\end{proof}
+
+Note: I think there is probably a more elegant way to argue this.  I thought of the brute force way, and it was fairly easy and algebraic (plus \LaTeX ~lets me copy and paste).
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} 
+
+(a) Prove $|a + b +c| \leq |a|+|b|+|c|$ for all $a,b,c \in \mathbb{R}$. 
+
+(b) Use induction to prove
+\[
+|a_1 + a_2 +... +a_n| \leq |a_1| +|a_2| + ... + |a_n|
+\]
+for $n$ numbers $a_1, a_2, ...,a_n$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+\begin{align*}
+|a+b+c| &= |(a+b)+c|\\
+&\leq |(a+b)|+|c|\\
+&= |a+b|+|c|\\
+&\leq |a|+|b|+|c|
+\end{align*}
+Thus, $|a+b+c| \leq |a|+|b|+|c|$.
+\end{proof}
+
+
+\begin{proof}[Part (b)] Depending on your point of view, the base case is given by the original triangle inequality $|a_1 + a_2| \leq |a_1|+|a_2|$.  Or we can assume the case in (a).  Either way, it has been shown.  Let's assume $|a_1 + a_2 +... +a_n| \leq |a_1| +|a_2| + ... + |a_n|$, and prove for $(n+1)$.  
+\begin{align*}
+|a_1 + a_2 + ... + a_n + a_{n+1}| &= |(a_1 + a_2 + ... + a_n) + a_{n+1}|\\
+&\leq |(a_1 + a_2 + ... + a_n)|+|a_{n+1}|\\
+&= |a_1|+|a_2|+...+|a_n|+|a_{n+1}|
+\end{align*}
+Thus, $|a_1 + a_2 + ... +a_n + a_{n+1}|\leq |a_1|+|a_2|+...+|a_n|+|a_{n+1}|$.  Since it also holds true for $(n+1)$ we have shown $\forall n \in \mathbb{N}$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6.} Let $f \colon X \to Y$ be a function, and let $A, B \subseteq Y$. Prove the following:
+
+(i) $f^{-1}(A \cup B) = f^{-1}(A)\cup f^{-1}(B)$
+
+(ii) $f^{-1}(A\setminus B) = f^{-1}(A) \setminus f^{-1}(B)$
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $x \in f^{-1}(A \cup B)=\{x \in X \mid f(x)\in A \cup B \}$. Suppose, for a contradiction, that $x \notin f^{-1}(A) \cup f^{-1}(B)$.  This is equivalent to saying $x\in \{x \in X \mid f(x)\notin A \textrm{~ and ~} f(x) \notin B\}$.  Since $f(x)\notin A$ and $f(x) \notin B$, we contradict the original statement $f(x)\in A \cup B$.  Thus, $f^{-1}(A \cup B) \subseteq f^{-1}(A) \cup f^{-1}(B)$.
+
+Next, let $x \in f^{-1}(A) \cup f^{-1}(B)=\{x\in X \mid f(x) \in A \textrm{~~ or ~~} f(x)\in B\}$.  Suppose, for a contradiction, $x \notin f^{-1}(A \cup B)$.  This is equivalent to saying $x \in \{x \in X \mid f(x)\notin A \cup B\}$.  Since $f(x) \notin A$ and $f(x) \notin B$ we contradict the original statement $f(x)\in A$ or $x\in B$.  Thus $f^{-1}(A) \cup f^{-1}(B) \subseteq  f^{-1}(A \cup B)$
+
+Since $f^{-1}(A \cup B) \subseteq f^{-1}(A) \cup f^{-1}(B)$ and $f^{-1}(A) \cup f^{-1}(B) \subseteq  f^{-1}(A \cup B)$, $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7.} Let $A, B \subseteq \mathbb{R}$ be bounded (compact?) sets. Define $A + B \coloneqq \{a+b \mid a\in A \textrm{~ and ~} b\in B\}$. Prove or disprove the following statement:
+\[
+\sup(A+B)=\sup A + \sup B
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose that $\sup (A+B) > \sup A + \sup B$.  This means $\exists a_0 \in A$ and $\exists b_0 \in B$ such that $a_0 + b_0 > \sup A + \sup B$. Thus,
+\begin{align*}
+a_0 + b_0 &> \sup A + \sup B\\
+0 &> (\sup A - a_0) + (\sup B - b_0)\\
+\end{align*}
+Since $a_0 \leq \sup A$ and $b_0 \leq \sup B$ we have a contradiction.  It is not possible for the side on the right to be less than zero since that would require at least one of $a_0$ or $b_0$ to be greater than one of the supremums which contradicts the fact that they are the least upper bound of the sets.  Thus we have that $\sup (A+B) \leq \sup A + \sup B$.
+
+Next, suppose that $\sup(A+B) < \sup A + \sup B$.  Then $\forall a_0 \in A$ and $\forall b_0 \in B$, $a_0 + b_0 < \sup A + \sup B$.  We can write this in a similar way,
+\begin{align*}
+a_0 + b_0 &< \sup A + \sup B\\
+0 &< (\sup A - a_0) + (\sup B - b_0)
+\end{align*}  
+Since $a_0$ is at most $\sup A$ and $b_0$ is at most $\sup B$ by definition since those are the least upper bounds of the set.  However, if $a_0 =\sup A$ and $b_0 = \sup B$ we have $0<0$ which is false.  Thus it must be that $\sup (A+B) \geq \sup A + \sup B$.
+
+Since we have shown that $\sup (A+B) \leq \sup A + \sup B$ and $\sup (A+B) \geq \sup A + \sup B$, we know $\sup (A+B) = \sup A + \sup B$.
+\end{proof}
+
+
+\end{document}

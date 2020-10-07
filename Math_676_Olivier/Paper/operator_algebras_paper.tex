@@ -1,0 +1,457 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\author{Colin Roberts}
+\title{Operator Algebras: Notes}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amssymb, amsmath ,cleveref ,thmtools, amsthm, mathtools, mathrsfs}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{color, soul}
+
+%%fonts
+%??
+
+
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+\newtheorem*{question}{Question}
+\newtheorem*{exercise}{Exercise}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{axiom}{Axiom}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\opO}{\mathcal{O}}
+\newcommand{\states}{\mathcal{S}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+The relationship between classical and quantum mechanics is studied in many different frameworks. There are two large fields that aim to study the agreement between the two theories by using an underlying mathematical model.  These models are known as deformation quantization and geometrical quantization.  In classical mechanics, we traditionally consider states of a particle in a classical system as points on a symplectic manifold $M$ as the phase space of the system.  This manifold is completely determined by the interaction with the particle and potential.  Observables of the system, i.e., momentum or position, are thought of as operators acting on the phase space.
+
+This point of view works beautifully with particles bound in a potential as the manifold will then be compact and thus any observables are bounded operators. There is also no limitation on the precision of measurements, leading us to believe that observables are exactly the continuous real-valued operators acting on phase space.  In fact we also have, classically, that all operators commute with each other.  Thus it's found that we can think of the set of observables to be the algebra of continuous real valued functions on $M$.  The quantum case poses different challenges and we find multiple novel approaches by starting from classical mechanics and moving to the quantum world.
+
+From here, we see a fork in the road giving us two distinct paths from classical to quantum mechanics: deformation and geometrical quantization.  The realm of geometrical quantization depends relates to the Sch{\"o}dinger interpretation by focusing on the spaces on states rather than on observables.  On the other end of the spectrum, we can adapt the Heisenberg viewpoint of quantum mechanics and we find ourselves moving towards deformation quantization.  In the Heisenberg viewpoint we concentrate on the study of the observables as operators on the system and not on the states.  The aim here is to take the algebras of these operators on a classical phase space and deform them into the non-commutative algebra in the quantum case.  This will be the main interest in this paper; specifically we start with some stepping stones into the operator-algebraic approach to quantum theory. 
+
+In the quantum case, we see the breakdown of commutivity and the implications that follow show us that we need a different set of observables.  Namely, our observables are now the self-adjoint elements of a seperable non-abelian unital $C^*$-algebra $\mathcal{A}$. On top of that, we also have that these operators may very well be unbounded.  Here enters the usefulness of the Gelfand-Naimark-Segal (GNS) construction and the Gelfand-Naimark (GN) theorem.  Here, we are able to think of any $C^*$-algebra as being isometrically $*$-isomorphic to a $C^*$-algebra of bounded operators on a Hilbert space. The GNS construction then points us to think of quantum states as the set of all positive norm-1 linear functionals on this operator algebra. 
+
+The usefulness of this framework is in providing a (non-commutative) geometrical outlook on quantum mechanics that relates back to the classical picture.  Other perks are the axiomatic construction of the quantum theory.  Unlike other physical theory such as general relativity, there do not exist a ``nice" set of physical postulates to motivate the theory.  Rather, we generally assume that: (i) quantum states satisfy the Sch{\"o}dinger equation and (ii) observables are self adjoint operators of the correct Hilbert space. From this viewpoint posed here, we find that this is really a natural extension from classical physics with the physical observation that observables satisfy Heisenberg's uncertainty principle.
+
+Algebraic framework has allowed for deeper results in fields not covered here.  Further theory allows for viewing systems of infinitely many particles, quantum statistical mechanics, second quantization, and a generalization of classical probability theory.  All topics that are interesting to me and will be on my reading list.  In other future endeavors, I plan to investigate the non-commutative geometry involved in quantum mechanics in the perspective of geometric quantization.
+
+\section{Operator Algebras}
+
+\subsection{Preliminary Definitions}
+In order to be engaged in this theory, we must first dive into the background of the theory of operator algebras.  Of course, this is a large field of mathematics in its own right, so we will concentrate on specific $C^*$-algebras as specialized Banach algebras.  We begin with the necessary definitions and a few classical examples.  
+
+\begin{definition}
+An \emph{algebra} $\A$ is a vector space over a field $\mathbb{F}$ together with a (not necessarily associative) binary operation $ab$ for $a,b\in \A$ so that $ab\in \A$ as well as $\alpha(ab)=(\alpha a)b=a(\alpha b)\in \A$. We say that the algebra $\A$ is associative if this operation is a ring operation (associative).  We say that the algebra is \emph{unital} if there exists a multiplicative identity.
+\end{definition}
+
+There are of course many examples of algebras.  The largest example that comes to mind is the following.
+
+\begin{example}
+Let $V$ be an $n$-dimensional vector space over $\mathbb{F}$ and consider $\A=\mathcal{L}(V)$ as the set of linear operators on $V$.  Then $\A$ is a unital associative algebra.  
+
+This becomes apparent when we think of elements of $\A$ as $n\times n$ matrices. Matrices form a vector space of their own right, and also have the extra ring operation as matrix multiplication.
+\end{example}
+
+\begin{remark}
+This example contains many other \emph{sub-algebras} as well.  For example, we can think of the complex numbers $\C$ as a $2\times 2$ matrix algebra over $\R$ or the quaternions $\mathcal{Q}$ as the $2\times 2$ matrix algebra over $\C$.  Both of these are closed under the vector space operations and the ring operation of matrix multiplication making them a subalgebra of $\A$ from the previous example.  A quantum example would also be the spin projection observables which are matrices over $\C$.
+\end{remark}
+
+\begin{definition}
+A \emph{Banach space} is a complete normed vector space over a field $\F$.
+\end{definition}
+
+\begin{definition}
+A \emph{Banach algebra} is an algebra $\A$ over a field $\F$ with a norm $\|\cdot \|$ so that $\A$ is a Banach space and such that for all $a,b\in \A$ we have
+\[
+\|ab\|\leq \|a\|~\|b\|.
+\]
+Note that $\A$ does not always have to have an identity element with respect to the algebraic operation.  
+\end{definition}
+
+Of course, it becomes necessary to know when two Banach algebras are considered equal.  We define this notion now. 
+
+\begin{definition}
+An \emph{isometry} between metric spaces is a map that preserves distance. In other words, if $T\colon X\to Y$ is such that
+\[
+\|Tx\|_Y = \|x\|_X, ~~  \textrm{for all $x\in X$},
+\]
+then $T$ is an isometry.
+\end{definition}
+
+\begin{definition}
+An \emph{isomorphism} between Banach spaces $X$ and $Y$ is a linear bijection $T\colon X\to Y$ that is also a homeomorphism.
+\end{definition}
+
+\noindent Then the specific isomorphism we care the most about follows.
+
+\begin{definition}
+An \emph{isometric isomorphism} between Banach spaces $X$ and $Y$ is a bijective linear map $T\colon X \to Y$ that is also an isometry.
+\end{definition}
+
+\noindent We will specialize these isomorphisms further when we are dealing with $C^*$-algebras.
+
+\begin{proposition}
+If $\A$ is a Banach algebra without an identity, then $\tilde{\A}=\A\times \F$ with operations
+\begin{enumerate}[(i)]
+\item $(a,\alpha)+(b+\beta)=(a+b,\alpha+\beta)$;
+\item $\beta(a,\alpha)=(\beta a,\beta \alpha)$;
+\item $(a,\alpha)(b,\beta)=(ab+\alpha b+\beta a,\alpha \beta)$
+\item $\|(a,\alpha)\|=\|a\|+|a|$
+\end{enumerate}
+give us that $\tilde{\A}$ is a Banach algebra with identity $(0,1)$ and $a\mapsto (a,0)$ is an isometric isomorphism of $\A$ into $\tilde{\A}$.
+\end{proposition}
+
+\noindent To be able to define a $C^*$-algebra, we first need to introduce the algebraic unary operation of involution.
+
+\begin{definition}
+Given a space $X$ (left very general for now), an \emph{involution} is a function $*$ that is its own inverse, i.e., $x^{**}=x$ for every $x\in X$.
+\end{definition}
+
+\begin{remark}
+I did not define what the space was before as involution can be defined very generally.  However, we will care about the context where the space $X$ is an algebra.  Also, $*$ will usually denote the adjoint in our case.
+\end{remark}
+
+\noindent Now the most important definition for this paper. We define a $C^*$-algebra as a special case of a Banach algebra. 
+
+\begin{definition}
+A $*$-algebra $\A$ is an algebra together with an involution $*$ satisfying:
+\begin{enumerate}[1.]
+\item $*$ is an involution.
+\item For all $a,b\in \A$
+\begin{align*}
+(a+b)^*&=a^*+b^*\\
+(ab)^*&=b^*a^*.
+\end{align*}
+\item For every $\lambda \in \C$ and $a\in \A$
+\[
+(\lambda a)^*=\overline{\lambda}a^*.
+\]
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+A $C^*$-algebra $\A$ is a Banach algebra over $\C$ with an involution $*$ so that $\A$ is a $*$-algebra.  Finally we need that $\forall a\in \A$,
+\[
+\|a^*a\|=\|a\|~\|a^*\|.
+\]
+\end{definition}
+
+\begin{remark}
+The extra requirement over a $*$-algebra above shows that $\|aa^*\|=\|a\|^2$.
+\end{remark}
+
+\begin{definition}
+If $\A$ and $\mathcal{B}$ are $C^*$-algebras, then a bounded linear map $\pi\colon \A \to \mathcal{B}$ is a \emph{$*$-homomorphism} if
+\begin{enumerate}[1.]
+\item For $a,b\in \A$
+\[
+\pi(ab)=\pi(a)\pi(b).
+\]
+\item For $a\in \A$
+\[
+\pi(a^*)=\pi(a)^*.
+\]
+\end{enumerate}
+For $C^*$ algebras, any $*$-homomorphism is bounded with norm $\leq 1$. We also have that an injective $*$-homomorphism is an isometry.  Finally, a bijective $*$-homomorphism is a \emph{$C^*$-isomorphism} and we say $\A$ and $\mathcal{B}$ are \emph{isomorphic} (really \emph{isometrically  $*$-isomorphic} due to injectivity implying isometry).
+\end{definition}
+
+\begin{example}
+Similar to the examples for algebras, we can construct a $C^*$-algebra from an $n$-dimensional vector space $V$ over $\C$.  Just consider $\A=\mathcal{L}(V)$ and let $*$ be the adjoint operation.  Again $\C$ and $\mathcal{Q}$ are then $C^*$-algebras with $*$ denoting the complex conjugate and quaternion conjugate respectively.
+\end{example}
+
+
+\subsection{Important Results}
+
+Since we have defined all the necessary ingredients, we now look towards finding the results needed to pursue the algebraic framework for classical and quantum mechanics.  Here we lead into the Reisz-Markov theorem which will allow us to define states on a quantum system.  We end with the Gelfand-Naimark-Segal (GNS) construction and the Gelfand-Naimark (GN) theorem.  These combined will allow us to look at arbitrary $C^*$-algebras as being isometrically $*$-isomorphic to a $C^*$-algebra of bounded operators on a Hilbert space.
+
+We can define states in a ``functional analysis sense", which will relate to classical and quantum states.  We take a $C^*$-algebra and consider positive linear functionals of norm 1.  This is to say the following.
+
+\begin{definition}
+Let $\A$ be a $C^*$-algebra.  Then a \emph{state} is a positive linear functional with norm 1 defined by $S\colon \A \to \R$.  
+\end{definition}
+
+\noindent Note that there are many notions of states.  The states we will consider in the quantum case will be vector states.  The physical interpretation of these states will be exactly the probabilistic (Copenhagen) interpetation of quantum mechanics.
+
+\begin{definition}
+Given a $C^*$-algebra $\A$ of bounded operators on the corresponding Hilbert space $H$, we can define the linear functional $S_x \colon \A \to \R$.  We let $S_x(A)\coloneq \langle Ax,x\rangle$ for $A\in \A$.  We have that $S_x(1)=\|x\|^2$ and thus $S_x$ is a state if $\|x\|=1$. If this is satisfied, we call $S_x$ a \emph{vector state}.
+\end{definition}
+
+In the specific case where we have a sufficiently nice topological space, we can define the linear functional in a different way. This will apply directly to classical mechanics, but can be extended into the quantum case.
+
+\begin{theorem}[(Riesz-Markov-Kakutani (RMK) Representation Theorem)]
+Let $X$ be a locally compact Hausdorff space, and let $S$ be a state on the continuous real valued functions on $X$, $C^0(X,\R)$. Then, there exists a unique Borel probability measure $\mu_S$ on $X$ such that, for all $f\in C^0(X,\R)$
+\[
+S(f)=\int_X f d\mu_S.
+\]
+\end{theorem}
+
+\begin{remark}
+It's worth noting that in the vector state definition, we usually define this inner product as an integral in the quantum case. Specifically $H$ is a Hilbert space of complex-valued functions (think $L^2(\R^3)$) and $\Omega \subseteq \R^3$ and we have $\psi \in H$. Then 
+\[
+\langle \psi, \psi \rangle = \int_\Omega \overline{\psi}\psi  dx
+\]
+Of course, we return to the definition of a state when we let $\Omega=\R^3$, as we take $\psi$ to be normalized.
+
+In the RMK representation theorem, we will find that this works well in describing the outcome of an observing $f$ in a probabilistic way (classically). Really, if we are measuring $f$ in a lab, then as we limit towards measuring infinitely many times, we should find that the value $S(f)$ is found exactly.
+\end{remark}
+
+\noindent We now move on to the most important result in $C^*$-algebras for this paper. 
+
+\subsection{Preliminaries for the GNS Construction}
+
+First we need a few more definitions to build into the GNS construction.
+
+\begin{definition}
+A \emph{$*$-representation} of a $C^*$-algebra $\A$ on a Hilbert space $H$ is a mapping $\pi$ into the algebra of bounded operators on $H$, $\mathscr{B}(H)$, such that
+\begin{enumerate}[1.]
+\item $\pi$ is a ring homomorphism which takes the involution on $\A$ to involution on operators in $\mathscr{B}(H)$.
+\item $\pi$ is \emph{nondegenerate}, meaning that the space of vectors $\pi(a)\xi$ is dense for $a\in \A$ and $\xi\in H$. When $\A$ has an identity, then nondegeneracy means that $\pi$ is \emph{unit-preserving} which means that $\pi$ maps the identity in $\A$ to the identity in $H$.  
+\end{enumerate}
+\end{definition}
+
+\noindent For our case, we will have that $\A$ has an identity element.  Which means we can just check the unit-preserving case.
+
+\begin{definition}
+For a $*$-representation $\pi$ of a $C^*$-algebra $\A$ on a Hilbert space $H$, an element $\xi$ is called a \emph{cyclic vector} if the set of vectors
+\[
+\{\pi(a)\xi ~\vert~ a\in \A\}
+\]
+is norm dense in $H$, in which case $\pi$ is called a \emph{cyclic representation}.
+\end{definition}
+
+\subsection{Gelfand-Naimark-Segal Construction}
+
+We let $\pi$ be a $*$-representation on an arbitrary $C^*$-algebra $\A$ on a Hilbert space $H$ and $\xi$ be a unit norm cyclic vector for $\pi$.  We then have that 
+\[
+a \mapsto \langle \pi(a)\xi,\xi \rangle
+\]
+is a (vector) state of $\A$. This is something we can do in general given the proper (canonical) representation.
+
+\begin{theorem}
+Given a state $S$ of $\A$, there is a $*$-representation $\pi$ of $\A$ acting on a Hilbert space $H$ with a unit cyclic vector $\xi$ such that $\rho(a)=\langle \pi(a)\xi,\xi\rangle$ for every $a \in A$.
+\end{theorem}
+
+\subsection{Gelfand-Naimark Theorems}
+
+We will now use the GNS construction in order to build up the Gelfand-Naimark representation.  Finally, this representation allows us to prove the Gelfand-Naimark theorem. 
+
+\begin{proposition}
+There admits a representation over all pure states $f$ of a $C^*$-algebra $\A$ from the irreducible representation associated to $f$ by the GNS construction. This is to say, that we have the GN representation given by
+\[
+\pi(a)\left[ \bigoplus_{f} \xi_f \right] = \bigoplus_{f}\pi_f(a)\xi_f
+\]
+for $a\in \A$, $f$ a pure state of $\A$, and $\pi_f$ an irredicible representation given by the GNS construction.
+\end{proposition}
+
+\begin{theorem}[(GN Theorem)]
+The GN representation of a $C^*$-algebra is an isometric $*$-representation.  
+\end{theorem}
+
+\begin{theorem}[(GN Theorem for Abelian $C^*$-Algebras)]
+An abelian unital $C^*$-algebra $\A$ is isometrically isomorphic to the $C^*$-algebra of bounded continuous functions on a compact Hausdorff topological space $X$. 
+\end{theorem}
+
+\begin{theorem}[(GN Theorem for Non-Abelian $C^*$-Algebras)]
+An arbitrary $C^*$-algebra $\A$ is isometrically isomorphic to a $C^*$-algebra of bounded operators on a Hilbert space.
+\end{theorem}
+
+These three theorems follow by use of the construction and representation.  Proofs are omitted here.
+
+\section{Classical Mechanics}
+\subsection{Hamiltonian Kinematics}
+Classical mechanics allows one to predict future events entirely based on knowledge of a few variables.  Given a system of $n$ (possibly interacting) particles, we let $q_i$ and $p_i$ denote the position and momentum, respectively, of the $i$th particle.  For this paper, we mostly consider single particle systems, but it's worth noting that this can all generalize to finitely many particles in the viewpoint of statistical mechanics or to, in a sense, infinitely many particles when viewed from the lens of a quantum field theory.
+
+For a single particle with no potential, we find that at a time $t$ we have the \emph{state}, $(q,p)$.  We can simply allow find a state at a later time, $t+\epsilon$, by using traditional kinematic equations with constant velocity. In this case, nothing is really interesting.  Interesting theory appears when we allow external forces to do work on the particle.  Traditionally, we will find that fundamental physical forces are \emph{conservative} and hence we can write the force as $-\nabla V(x)$, with $V(x)$ a potential dependent on the spatial coordinate of the particle.  
+
+We now define the \emph{Hamiltonian} of the system to be the total energy of the system given by $H=\frac{p\cdot p}{2m} + V(x)$, where $m$ is the mass of the particle. This Hamiltonian defines the \emph{phase space} of the particle to be a (symplectic) manifold, and it is this manifold that tells us each possible state of the system.  We find that the time evolution of states is governed by the Hamilton equations
+\[
+\dot{q}=\frac{\partial H}{\partial p}, ~ \dot{p}=-\frac{\partial H}{\partial q}.
+\]
+Specifically this shows us that given a Hamiltonian and an initial state, we can find all subsequent future states of the system. The last geometric takeaway is that our phase space manifold $\Gamma$ defined via the Hamiltonian is compact since position and momentum are to remain bounded.
+
+\subsection{Classical Observables}
+We now move on towards the idea of measurement of \emph{observable} quantities of a system. We think of these observables as functions of the variables $p$ and $q$ since those define the configuration of our system, and take the functions to be real valued.  Classical observables are quantities we can measure with infinite precision, meaning that if experimental error of measuring an observable is required to be arbitrarily small, then we can accomplish this by making the maximal error of $p$ and $q$ arbitrarily small as well.  This leads us to the first result.
+
+\begin{definition}[(Classical Observables)]
+The \emph{classical observables} are the continuous real-valued functions acting on the phase space.   Namely, $\mathcal{C}^0(\Gamma,\R)$.
+\end{definition}
+
+We now denote all classical observables on $\Gamma$ as $\opO=C^0(\Gamma,\R)$.  It follows that observables of a classical system are contained within an abelian $C^*$-algebra $\A$. In fact, we have some stronger results.
+
+\begin{definition}
+Let $S=(p,q)\in \Gamma$, $A,B\in \opO$, and $\lambda\in \R$. Then, define
+\begin{enumerate}[1.]
+\item $(A+B)(S)\coloneqq A(S)+B(S)$,
+\item $(\lambda A)(S)\coloneqq \lambda A(S)$,
+\item $(AB)(S)\coloneqq A(S)B(S)$,
+\item $\|A\|\coloneqq \sup \{|A(S)| ~\colon~ S\in \Gamma\}$,
+\item $(A^*)(S)=\overline{A(S)}$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+Notice in the last line of the definition that $\overline{A(S)}=A(S)$ since $A$ is a real valued function.  This leads us to believe that elements of $\opO$ are self-adjoint.
+\end{remark}
+
+\begin{theorem}[(Properties of Classical Observables)]
+The set of observables $\opO$ of a classical system are the self-adjoint elements of a separable abelian unital $C^*$-algebra $\A$.
+\end{theorem}
+
+The physical states of the system will then correspond exactly to the states of the $C^*$-algebra $\A$. 
+
+\begin{definition}
+Let $S=(p,q)\in \Gamma$ be a state. We define the linear functional $S\colon \A \to \C$ such that, for $A\in \A$, 
+\[
+S(A)=A(S).
+\]
+In fact, these classical states are vector states since each is properly normalized.
+\end{definition}
+
+Specifically, the RMK Representation Theorem (Thm. 2.1) provides us the linear functional we need,
+\[
+S(A)=\int_\Gamma Ad\mu_S.
+\]
+This then allows us to view $S(A)$ as the \emph{expected value of the observable $A$ with a particle in the state $S$}.  We then have the following.
+
+\begin{definition}[(Variance)]
+Let $S\in \Gamma$ be a state and let $A\in \opO$. Then, the \emph{variance of $A$ with respect to $S$} is defined as
+\[
+\Delta_S(A)^2\coloneqq S\left[ (A-S(A))^2\right].
+\]
+\end{definition}
+
+\begin{remark}
+For all classical states and observables, it is found that the variance is identically 0.  We will soon find that this cannot hold in the quantum regime.
+\end{remark}
+
+We now have a framework in which classical mechanics can be deformed into a framework for quantum mechanics.  Though I will not go into how this transition is done rigorously, I will spend time showing how this generalizes to a natural setting for quantum mechanics with one slight change in the algebra of observables. 
+
+
+\subsection{The Need for a New Theory}
+But what are the issues with classical mechanics?  There are many experiments that display problems, but let us consider one in particular.  If we think of a hydrogen  atom, we have a single proton with a single electron existing in a bound state.  Classically, we think of the electron orbiting the proton in an analogous manner that the Earth revolves about the Sun.  But, also classically, this orbit is \emph{not} stable.  This is due to the fact that an accelerating charge produces electromagnetic radiation, and thus radiates away energy.  Ultimately the radiation of energy would cause the electron to collapse into the nucleus (proton) and we would find that no atoms are stable.  It must be that there is another description of the orbit, and we find that we enter the realm of quantum mechanics.
+
+\section{Quantum Mechanics}
+\subsection{Non-Abelian Quality of Microscopic Phenomena}
+In stark contrast with classical mechanics, we do not have the ability to measure states (position and momentum) of particles with infinite precision.  Hence the need for an updated theoretical model.  To see this physically, imagine we wish to photograph the location of a particle on the atomic scale.  In order to gain a more knowledge on the position of this particle, we require that our camera operates with higher and higher frequencies (smaller wavelengths).  However, light caries momentum that is of magnitude relative (linear in relation) to the frequency.  If the photograph is then taken, the particle will be in a very well known position due to the high frequency. But this will correspond to a large added momentum from the reflection of the light back into the photocell.  
+
+Though this is not the typical physical argument for the uncertainty principle, it fits basic physics knowledge well and provides a basis for where the effect may arise from. The most important aspect of the uncertainty principle is the difference in the operator algebras associated of observables of classical versus quantum systems.  Namely, we find that instead of $(\Delta_S(P))(\Delta_S(Q))=0$, we have that $(\Delta_S(P))(\Delta_S(Q))\geq \hbar/2$.  In the language used here, given a state $S$, we find that the position and momentum operators satisfy the commutation relation
+\[
+[Q_j,P_k]=Q_j P_k - P_kQ_j = i\hbar \delta_{jk}\mathbf{1},
+\]
+where $\mathbf{1}$ is the identity operator and the subscripts allow for the particle to exist in $\R^n$. This stresses that the abelian algebra for classical systems does not fit experimental results, and thus we require a non-abelian operator algebra for the quantum case.  
+
+\subsection{An Approach to the Proper Setting for Quantum Observables}
+Due to this non-abelian behavior, we can no longer think of states as living in a symplectic manifold $\Gamma$.  In fact, due to the nature of microscopic particles, we may have that observables are now unbounded operators as well. We now take a previous theorem with some modification to be the main axiom for quantum observables.
+
+\begin{axiom}[(Quantum Observabes)]
+The set of observables $\opO$ of a quantum system are the self-adjoint elements of a seperable non-abelian unital $C^*$-algebra $\A$.
+\end{axiom}
+
+We have only added the non-abelian requirement as is found in experimental observation.  We then find that states are defined similarly.
+
+\begin{axiom}[(Quantum States)]
+The set of states $\states$ of a quantum system is the set of all positive linear functionals $\psi$ on $\A$ such that $\psi(1)=1$.
+\end{axiom}
+
+Now, we want to show that these axioms follow from our knowledge in classical mechanics.  By the analogy of photographing particles, we know that the Heisenberg's uncertainty principle must be satisfied.  It turns out this follows directly from non-commutivity.
+
+\begin{proposition}[(Heisenberg's Uncertainty from Non-Commuting Observables)]
+Uncertainty in measurement is due to the non-commutative nature of quantum observables.  Specifically, if $[P,Q]=\alpha \hbar \mathbf{1}$, then we find that
+\[
+\Delta_S(P)\Delta_S(Q)\geq \frac{\hbar}{2}.
+\]
+\end{proposition} 
+
+\begin{proof}
+	Let $A,B\in \opO$ and fix a state $S$.  We can assume $S(A)=S(B)=0$ since we could take the observables $A-S(A)$ and $B-S(B)$. Then 
+	\[
+	\Delta_S(A)^2\Delta_S(B)^2=S(A^2)S(B^2).
+	\]
+	Since $(A-i\lambda B)(A+i\lambda B)\geq 0$, $\forall \lambda \in \R$, positivity of $S$ implies
+	\[
+	S(A^2)+|\lambda|^2 S(B^2)+i\lambda S([A,B])\geq 0,
+	\]
+	where $[A,B]=AB-BA$. Now, define 
+	\[
+	M=\begin{bmatrix}
+	S(A^2) & \frac{1}{2} S(i[A,B])\\
+	\frac{1}{2} S(i[A,B]) & S(B^2)
+	\end{bmatrix}
+	~~ \textrm{and} ~~ \mathbf{\alpha}=\begin{bmatrix}
+	\alpha\\
+	\beta
+	\end{bmatrix}
+	\]
+	and we see that the inequality
+	\[
+	(A-i\lambda B)(A+i\lambda B)\geq 0
+	\]
+	becomes 
+	\[
+	\mathbf{\alpha}^T M \mathbf{\alpha}\geq 0.
+	\]
+	This means $M$ is positive definite. Hence
+	\[
+	\det M = S(A^2)S(B^2)-\frac{1}{4}S(i[A,B])^2\geq 0
+	\]
+	and thus
+	\[
+	\Delta_S(A)\Delta_S(B)\geq \frac{1}{2} |S([A,B])|.
+	\]
+	We then find that if $[P,Q]=\alpha \hbar \mathbf{1}$ with $\alpha \in \C$ and $|\alpha|=1$,
+	\[
+	\Delta_S(P)\Delta_S(Q)\geq \frac{\hbar}{2}.
+	\]
+	\end{proof}
+This proposition shows that the axioms are well founded as a generalization of the classical case. 
+
+Finally,  the fact that quantum states are so that $\psi(\mathbf{1})=1$ comes from the probabilistic interpretation of the theory. We can rest easy knowing that there is an underlying foundation for these choices of axioms.  The theory is motivated from experimental observation, and from the knowledge we have on classical physics.  Sadly, we lose some of the nice qualities, such as the Hamiltonian as a symplectic manifold.
+
+\section{Conclusion}
+
+As presented here, we have found that the quantum theory, specifically the Heisenberg picture, corresponds well to the classical Hamiltonian theory.  By developing an idea of classical observables, it is not hard to generalize these results to those for the quantum case.  Similarly, we defined classical states in a way that is analogous to performing repeated measurements and that corresponds very well to the quantum regime.  Notably, the quantum regime shows that measurements have probabilistic outcomes, and hence we should expect vector states. 
+
+Moving forward, there is much to be investigated in how much more useful the operator algebraic approach can be used in quantum physics.  There is an abundance of papers, books, and lecture notes on the usefulness in quantum statistical mechanics, (local) quantum field theory, deformation quantization, and geometric quantization.  The realm of geometry ties together well with the classical Hamiltonian theory, yet requires a larger (non-commutative) toolbox.
+
+
+
+
+
+\section{References}
+\begin{enumerate}[1.]
+\item Conway, A Course in Functional Analysis.
+\item \url{http://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Gleason.pdf}\\
+\item \url{https://www.imsc.res.in/~sunder/psc.pdf}
+\item An Introduction to the Mathematical Structure of Quantum Mechanics
+\item \url{https://ncatlab.org/nlab/show/geometric+quantization}
+\item \url{https://ncatlab.org/nlab/show/deformation+quantization}
+\end{enumerate}
+
+\end{document}

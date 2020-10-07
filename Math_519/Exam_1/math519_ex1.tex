@@ -1,0 +1,162 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 519, Exam 1}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.}  Use the Cauchy Integral Formula to evaluate $\int_C \frac{\cos(z)}{z}dz$ where $C$ is the unit circle.
+
+\begin{proof}
+We have 
+\begin{align*}
+\int_C \frac{\cos(z)}{z}dz &= \int_C \frac{\exp(iz)-\exp(-iz)}{2z}dz\\
+&= \frac{1}{2} \left( \int_C \frac{\exp(iz)}{z-0}dz + \int_C \frac{\exp(-iz)}{z-0}dz \right)\\
+&= \frac{1}{2} \left( 2\pi i \exp(i\cdot 0)+ 2\pi i \exp(-i\cdot 0)\right) &&\textrm{by Cauchy's Integral Formula}\\
+&= 2\pi i.
+\end{align*}
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 2.} Let $f(z)=\frac{1}{p(z)}$, where $p(z)$ is some degree $k$ polynomial. What is the maximum number of different values for the integral of $f(z)$ around various closed, simple, positively-oriented contours $C$ that do not pass through any of the roots of $p(z)$? (\underline{NOTE:} If you can handle the combinatorics and write down the explicit answer, do so. Otherwise, describe how you might go about counting all the possible values.)
+
+\begin{proof}
+Letting ${n\choose m} = \frac{n!}{m!(n-m)!}$, we have that there are ${k\choose 0}=1$ ways for a simple closed curve to inclose zero roots of $p(z)$, ${k\choose 1}$ ways for a simple closed curve to inclose a single root of $p(z)$, and in general we have ${k\choose n}$ ways for a simple closed curve to inclose $n\leq k$ roots of $p(z)$. Since we only allow for positively-oriented curves, we then have that the total number of values for a contour integral around our simple closed positively-oriented curve is given by
+\begin{align*}
+\sum_{n=0}^k {k \choose n}.
+\end{align*}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 3.} ~
+\begin{enumerate}[(a)]
+\item Evaluate $\int_C \frac{\cos(z)}{z^5-1}dz$ where $C$ is the circle $|z-2i|=\frac{1}{2}$.
+\item Evaluate $\int_C \frac{e^z}{z^2+4}dz$ where $C$ is the circle $|z-2i|=\frac{1}{2}$.
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}[(a)]
+\item Note that $\displaystyle{\frac{\cos(z)}{z^5-1}}$ is holomorphic on $C$ and within the interior of $C$. Thus 
+\begin{align*}
+\int_C\frac{\cos(z)}{z^5-1}dz = 0.
+\end{align*}
+\item We have that $z^2+4=(z-2i)(z+2i)$.  Then note that we have
+\begin{align*}
+\int_C \frac{e^z}{z+2i}\cdot \frac{1}{z-2i} dz
+\end{align*}
+allows for the use of Cauchy's integral formula.  Namely, $\displaystyle{\frac{e^z}{z+2i}}$ is holomorphic on $C$ and in the interior of $C$ as well, meaning that if we let $\displaystyle{f(z)=\frac{e^z}{z+2i}}$ then we have
+\begin{align*}
+\int_C \frac{e^z}{z^2+4}dz &= \int_C \frac{f(z)}{z-2i}dz\\
+&= 2\pi i f(2i)\\
+&= 2\pi i \frac{e^{2i}}{4i}\\
+&=\frac{\pi e^{2i}}{2}.
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 4.} Suppose $f\colon \C \to \C$ is entire and $|f(z)|<e^{-|z|}$ for all $z\in \C$. What can you say about the image of $\C$ under $f(z)$?
+
+
+\begin{proof}
+The image of $f$ is a singleton since $f$ must be constant.  We have this by Liouville's theorem since $f$ is entire and $f$ is bounded. We're given $f$ is entire, and to see that $f$ is bounded, note that $\sup_{z\in \C} e^{-|z|}=1$ and hence $|f(z)|<1$ which shows $f$ is bounded.
+\end{proof}
+
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 5.}  Each of the following functions has an isolated singularity at $z=0$. Determine which type of isolated singularity each on is AND
+\begin{itemize}
+\item if it is removable, define $f(0)$ so that $f(z)$ is analytic;
+\item if it is a pole, find the residue of $f(z)$ at $z=0$; and
+\item if it is essential, decide which value (if any) is neglected from the range in a (any) neighborhood of $z=0$.
+\end{itemize}
+
+\begin{enumerate}[(a)]
+\item $\frac{\cos(z)}{z}$
+\item $\frac{\cos(z)-1}{z}$
+\item $e^{\frac{1}{z}}-5$
+\item $\frac{z^2+1}{z(z-1)}$.
+\end{enumerate}
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item At $z=0$ residue should be $1$. We show this by computing $a_{-1}$ of the laurent expansion where
+\begin{align*}
+a_n=\frac{1}{2\pi i} \int_\gamma \frac{f(z)}{(z-c)^{n+1}}dz.
+\end{align*}
+Here $\gamma$ is a closed path around the point we are doing the expansion on, $c$. In our case, we will choose $\gamma$ to be the unit circle with the typical orientation. Then we have
+\begin{align*}
+a_{-1}&=\frac{1}{2\pi i} \int_\gamma \frac{\cos(z)/z}{z^{-1+1}}dz\\
+&= \frac{1}{2\pi i}\int_\gamma \frac{\cos(z)}{z}\\
+&=1.
+\end{align*}
+This result is from Problem 1.
+\item At $z=0$ residue should be $0$. We compute by using $\gamma$ as the unit circle with typical orientation again, and we find
+\begin{align*}
+a_{-1}&=\frac{1}{2\pi i} \int_\gamma \frac{\cos(z)}{z}-\frac{1}{z}dz\\
+&= \frac{1}{2\pi i} \int_\gamma \frac{\cos(z)}{z}dz - \frac{1}{2\pi i} \int_\gamma \frac{1}{z}dz\\
+&=1-1.
+\end{align*}
+Note that the $\cos(z)/z$ integral is Problem 1 again and that the $1/z$ integral is easily seen by Cauchy's integral formula.
+\item This has an essential singularity at $z=0$ and the neglected value is $z=-5$.
+\item At $z=0$ residue should be $-1$. Here we choose $\gamma$ to be the circle $|z|=\frac{1}{2}$ with the typical orientation so that we avoid the singularity at $z=1$.  Then letting $f(z)=\frac{z^2+1}{z-1}$ we have
+\begin{align*}
+a_{-1}&= \int_\gamma \frac{z^2+1}{z(z-1)}dz\\
+&= \int_\gamma f(z)\cdot \frac{1}{z}dz\\
+&= f(0) = -1.
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+
+
+\end{document}
+
+
+

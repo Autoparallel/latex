@@ -1,0 +1,277 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 617, Homework 4}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sets}{\mathcal{S}}
+\newcommand{\Leb}{\mathcal{L}}
+
+
+\usepackage{amssymb}
+\usepackage{graphics}
+
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0in
+\topmargin=-0.50in
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+  \textsc{\large ColoState ~~ Spring 2018 ~~ MATH 617 ~~ Assignment 2}
+\end{center}
+
+\begin{center}
+  \textrm{Due Fri. 03/23/2018}
+\end{center}
+
+\vglue 0.10in
+
+\bigskip
+\noindent
+\textsc{Name:} \underline{Colin Roberts\hglue 1.5in} ~~
+\textsc{CSUID:} \underline{829773631\hglue 1.5in}
+
+\vskip 0.15in
+
+\bigskip
+\noindent
+(20 points) \textit{Problem 1}. \quad
+Let $(X,\mathcal{S})$ be a measurable space and $\langle \mu_n \rangle_{n\in \N}$ a sequence of measures such that for any $E\in \mathcal{S}$, we have $\mu_n(E)\leq \mu_{n+1} (E)$. For any $E\in \mathcal{S}$, define $\mu(E)\coloneqq \lim_{n\to \infty} \mu_n(E)$. Prove that $\mu$ is a measure on $\Sets$.
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 2}. \quad
+Let $(\R,\Leb, \lambda)$ be the Lebesgue measure space and $A\in \Leb$ be a measurable bounded set with $\lambda(A)>0$. Prove that for any $0<b<\lambda(A)$, there exists a $B \in \Leb$ such that $B\subset A$ and $\lambda(B)=b$.
+
+\noindent{\emph{Hint: Assume $A\subseteq [-a,a]$. Apply the Intermediate Value Theorem.}}
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 3}. \quad
+Let $f(x)$ be a continuous real-valued function defined on a closed finite interval $[a,b]$. Prove that
+\begin{enumerate}[(i)]
+\item $f$ is a bounded measurable function;
+\item $f\in L_1[a,b]$.
+\end{enumerate}
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 4}. \quad
+Textbook p.141 Problem 5.3.23.
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 5}. \quad
+Assume $(X,\Sets,\mu)$ is a complete measure space, $f\in L_1(X,\Sets,\mu)$. Prove that for any $\epsilon>0$, there exists $\delta>0$ such that for any $E\in \Sets$ with $\mu(E)\leq \delta$, we have $\displaystyle{\int_E |f|d\mu <\epsilon}$. (\emph{Hint: First consider $f$ is bounded. For the case that $f$ is unbounded, construct a bounded monotone sequence that converges to $f$}.)
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} \quad
+Let $(X,\mathcal{S})$ be a measurable space and $\langle \mu_n \rangle_{n\in \N}$ a sequence of measures such that for any $E\in \mathcal{S}$, we have $\mu_n(E)\leq \mu_{n+1} (E)$. For any $E\in \mathcal{S}$, define $\mu(E)\coloneqq \lim_{n\to \infty} \mu_n(E)$. Prove that $\mu$ is a measure on $\Sets$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Note that since each $\mu_n$ is a measure and since for any $E\in \Sets$, $\mu_n(E)\leq \mu_{n+1}(E)$ that necessarily $\mu \colon \Sets \to [0,\infty)$.  Now, to see that $\mu(\emptyset)=0$, we show
+\begin{align*}
+\mu(\emptyset)=\lim_{n\to \infty} \mu_n(\emptyset)=\lim_{n\to \infty} 0 = 0.
+\end{align*}
+Hence $\mu(\emptyset)=0$.  Now, we need to show that $\mu$ is countably additive so we let $A=\bigcup_{i=1}^\infty A_i$ be a countable union of disjoint sets $A_i\in \Sets$. Then note that
+\begin{align*}
+\mu(A)-\mu_1(A)&=\sum_{n=1}^\infty (\mu_{n+1}(A)-\mu_n(A)).
+\end{align*}
+Working with this, we see that
+\begin{align*}
+\mu(A)-\mu_1(A)&=\sum_{n=1}^\infty (\mu_{n+1}(A)-\mu_n(A))\\
+&= \sum_{n=1}^\infty \left( \sum_{i=1}^\infty \mu_{n+1}(A_i) -\sum_{i=1}^\infty \mu_n(A_i)\right)\\
+&= \sum_{n=1}^\infty \sum_{i=1}^\infty \left( \mu_{n+1}(A_i)-\mu_{n}(A_i)\right)\\
+&= \sum_{i=1}^\infty \sum_{n=1}^\infty \left( \mu_{n+1}(A_i)-\mu_{n}(A_i)\right)&&\textrm{since each term here is positive by $\mu_n(E)\leq \mu_{n+1}(E)$}\\
+&=\sum_{i=1}^\infty (\mu(A_i)-\mu_1(A_i))\\
+\implies \mu(A)&=\sum_{i=1}^\infty \mu(A_i) &&\textrm{since $\mu_1$ is a measure}.
+\end{align*}
+Hence, $\mu$ is countably additive and thus is a measure.
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} \quad
+Let $(\R,\Leb, \lambda)$ be the Lebesgue measure space and $A\in \Leb$ be a measurable bounded set with $\lambda(A)>0$. Prove that for any $0<b<\lambda(A)$, there exists a $B \in \Leb$ such that $B\subset A$ and $\lambda(B)=b$.
+
+\noindent{\emph{Hint: Assume $A\subseteq [-a,a]$. Apply the Intermediate Value Theorem.}}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}
+Without loss of generality, we can assume $A\subseteq [-a,a]$ since translation does not affect measure and since $A$ is bounded.  Now consider the function $f\colon \R \to \R$ defined by $x\mapsto \lambda(A\cap (A+x))$.  Note that since $\lambda(A)<\infty$, theorem 4.3.4 implies that $f$ is a continuous function.  We have 
+\[
+f(-2a)=\lambda(A\cap (A-2a))=\lambda(\emptyset)=0
+\]
+by construction as well as
+\[
+f(0)=\lambda(A\cap (A+0))=\lambda(A).
+\]
+By continuity of $f$, there exists $c\in (-2a,0)$ such that $f(c)=b$.  Then we have that $B=A\cap(A+c)$ is Lebesgue measurable and that $B\subset A$.
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} \quad
+Let $f(x)$ be a continuous real-valued function defined on a closed finite interval $[a,b]$. Prove that
+\begin{enumerate}[(i)]
+\item $f$ is a bounded measurable function;
+\item $f\in L_1[a,b]$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item To see that $f$ is bounded note that the continuous image of a compact set is compact and that compact subsets of $\R$ are bounded.  
+
+To see that $f$ is measurable, let $E\subseteq f([a,b])$. By outer regularity of $\lambda$, we know
+\begin{align*}
+\lambda(E)&= \inf \{\lambda(U) ~\colon U\supseteq E \textrm{ with $U$ open}\}.
+\end{align*}
+It's important to note that $[a,b]$ is open as a subset of $[a,b]$ in order for the case where $E=[a,b]$ to be understood.  Now, note that
+\begin{align*}
+\lambda(f^{-1}(E))&= \inf \{\lambda(f^{-1}(U)) ~ \colon U\supseteq E \textrm{ with $U$ open}\}.
+\end{align*}
+Since the preimage of open sets is open under a continuous function, we have that $f^{-1}(U)$ is open for each open $U$ and hence we have that $f^{-1}(E)$ must be measurable. Thus $f$ is a measurable function.
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4.} \quad
+Let $f\in \mathbb{L}$. For $x\in X$ and $n\geq 1$, define
+\begin{align*}
+f_n(x)\coloneqq 
+\begin{cases}
+f(x) & \textrm{if } |f(x)|\leq n,\\
+n & \textrm{if } f(x)>n,\\
+-n & \textrm{if } f(x)<-n. 
+\end{cases}
+\end{align*}
+Prove the following:
+\begin{enumerate}[(i)]
+\item $f_n\in \mathbb{L}$ and $|f_n(x)|\leq n$ $\forall n$ and $\forall x \in X$.
+\item $\lim_{n\to \infty} f_n(x)=f(x)$ $\forall x \in X$.
+\item $\|f_n(x)\|\coloneqq \min\{|f_n(x)|,n\}\coloneqq (|f|\wedge n)(x)$ is an element of $\mathbb{L}^+$ and 
+\[
+\lim_{n\to \infty} \int \|f_n\|d\mu = \int \|f\|d\mu.
+\]
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item Fix an arbitrary $n_0$ and an arbitrary $x_0$.  Note that if $|f(x_0)|\leq n_0$ then we have $|f_{n_0}(x_0)|\leq n_0$.  Now if $|f(x)|>n_0$ we have that $|f_{n_0}(x_0)|=n_0$ hence $|f_{n_0}(x_0)|\leq n_0$ for arbitrary $n_0$ and arbitrary $x_0$.  Now, consider a measurable subset $E\subseteq \textrm{Image}(f_n(x))\subseteq [-n,n]$. Note that we then have $f_n^{-1}(E)=f^{-1}(E)$ is measurable and hence $f_n(x)\in \mathbb{L}$.
+\item Fix $x$.  Then note that $\lim_{n\to \infty} f_n(x)=f_\infty(x)$ is defined so that $f_\infty(x)=f(x)$ if $|f(x)|\leq \infty$.  Hence we have that $\lim_{n\to \infty}=f_\infty(x)=f(x)$. 
+\item First we show that $\|f_n(x)\|$ is in $\mathbb{L}^+$. To see this, note that if $f_n$ is measurable, then $|f_n|$ is measurable.  Then we have that $\|f_n(x)\|$ is a piecewise function where each piece is positive and measurable. So we have that $\|f_n(x)\|\in \mathbb{L}^+$.
+
+Then note that $\{\|f_n(x)\|\}_{n\in \N}$ is clearly an increasing sequence of functions since $n<n+1$ and $|f_n(x)|<|f_{n+1}(x)|$ by definition (just note $\textrm{Image}(f_n(x))$ from (i)).  Now, we have that $\lim_{n\to \infty} f_n(x)=f(x)$ and so $\lim_{n\to \infty}\|f_n(x)\|\to \|f\|$ as well (see that $\min\{|f_\infty(x),\infty\}=\min\{|f_\infty(x)|\}=|f_\infty(x)|=\|f(x)\|$). So by the monotone convergence theorem (5.2.7) we have that
+\begin{align*}
+\int \|f\|d\mu &= \lim_{n\to \infty} \int \|f_n\|d\mu.
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5.} \quad
+Assume $(X,\Sets,\mu)$ is a complete measure space, $f\in L_1(X,\Sets,\mu)$. Prove that for any $\epsilon>0$, there exists $\delta>0$ such that for any $E\in \Sets$ with $\mu(E)\leq \delta$, we have $\displaystyle{\int_E |f|d\mu <\epsilon}$. (\emph{Hint: First consider $f$ is bounded. For the case that $f$ is unbounded, construct a bounded monotone sequence that converges to $f$}.)
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $f$ is bounded we have that $|f(x)|\leq M$ for all $x \in X$. Fix $\epsilon>0$ and let $\delta<\frac{\epsilon}{M}$. Consider any $E\in \Sets$ such that $\mu(E)\leq \delta$. Then
+\begin{align*}
+\int_E |f|d\mu &\leq \int_E M d\mu\\
+&= M \int_E d\mu\\
+&\leq M \delta\\
+&< M\frac{\epsilon}{M}=\epsilon.
+\end{align*}
+
+Using the fact that $f$ is integrable iff $|f|$ is integrable, we consider the case where $|f|$ is unbounded. Let $\{|f_n|\}_{n\in \N}$ be defined by $|f_n|(x)=(|f|\wedge n)(x)$ and note that $\{|f_n|\}_{n\in \N}$ is a bounded monotone sequence that converges to $|f|$ by Problem 4. Then note that $|f_n|$ is bounded by $M$ so $|f_n|\leq M$.  Fix $\epsilon>0$, then we also have the ability to choose $E\in \Sets$ such that $\mu(E)\leq \delta$ with $\delta=\frac{\epsilon}{2M}$. 
+\begin{align*}
+\int_E |f| d\mu &= \int_E |f|-|f_n|+|f_n|d\mu\\
+&=\int_E |f|-|f_n|d\mu + \int_E |f_n|d\mu.
+\end{align*}
+Note that $\exists N\in \N$ such that for $n\geq N$ we have $\int_E |f|-|f_n|d\mu<\frac{\epsilon}{2}$ since $|f_n|$ converges monotonically to $|f|$. Hence
+\begin{align*}
+\int_E |f|d\mu &<\frac{\epsilon}{2}+\delta M\\
+&= \frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon.
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+\end{document}
+
+
+

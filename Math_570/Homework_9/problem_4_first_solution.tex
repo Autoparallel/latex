@@ -1,0 +1,60 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 9}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\obj}{\ensuremath{\mathrm{Obj}}}
+
+
+\begin{document}
+
+\noindent\textbf{Problem 4.} Let $f\colon X\to Y$ be a continuous injective function with $X$ compact and $Y$ Hausdorff. Prove that $X$ and $f(X)$ are homeomorphic.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $f$ is injective we have that $f$ is a bijection between $X$ and $f(X)$.  Thus, we just need to show that $f^{-1}$ is continuous.  So, let $U\in X$ be open and then consider $f(U)\in Y$.  Since $f$ is injective, any $x\in U$ is mapped to a unique point $f(x)=y \in f(X)$.  Since $Y$ Hausdorff, we have that there exist disjoint neighborhoods about $y$ and any $p\in f(X)\setminus f(U)$. Note that $X$ compact and $f$ continuous implies that $f(X)$ is also compact. Let $N_p (y)$ be an open set containing $y$ such that it is disjoint from the open set $V_p \in f(X)\setminus f(U)$ containing the point $p$.  Note then that this collection $\{V_p\}_{p\in f(X)\setminus f(U)}$ with the subspace topology (meaning each $V_p=O_p \cap f(X)\setminus f(U)$ for some $O_p$ open in $X$) is a cover of $f(X)\setminus f(U)$ and has a finite subcover given by the collection $\{V_{p_i}\}_{i=1,\dots, n}$ since $f(X)$ is compact. Finally we have that $\cap_{i=1}^n N_{p_i}$ is an open  set containing $y$ in $f(U)$ disjoint from $f(X)\setminus f(U)$ and this implies that $f(U)$ is open in $f(X)$. Thus, $X$ and $f(X)$ are homeomorphic.
+\end{proof}
+
+
+
+\pagebreak
+
+
+
+\end{document}
+

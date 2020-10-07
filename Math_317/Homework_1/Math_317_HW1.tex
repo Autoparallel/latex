@@ -1,0 +1,375 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{heuristica}
+\author{Colin Roberts}
+\title{MATH 317, Homework 1}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+ \usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Let $A$ and $B$ be subsets of another set $U$, and let $B^c = U \setminus B$.  
+
+(i) Prove that $A \setminus B = A \cap B^c$.
+
+(ii) The \emph{symmetric difference} (or \emph{Boolean sum}) of $A$ and $B$ is defined to be $A\Delta B \coloneqq A\setminus B \cup B \setminus A$.  Prove that $A \Delta B = A^c \Delta B^c$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (i)]
+Consider some $x \in A \setminus B$.  Thus, $x \in \{x \in A | x \notin B \}$.  Suppose that $x \notin A \cap B^c$, then $x \in B$ and $x\in A^c$.  But by definition $x \in A$, so this contradicts the original statement.  Thus if $x \in A \setminus B$ then $x \in A \cap B^c$ and $A \setminus B \subseteq A \cap B^c$. 
+ 
+Next, consider some $x \in A \cap B^c$.  Thus, $x \in \{x \in A \textrm{~~ and ~~)} x \in B^c\}$.  So $x\in A$ and $x\notin B$. Suppose that $x \notin A\setminus B$, then $x \in B$ or $x \in A^c$.  But this is a contradiction to the original statement.  Thus $x\in A \setminus B$ and $A \cap B^c \subseteq A \cap B^c$.  
+
+Since $A \setminus B \subseteq A \cap B^c$ and $A \cap B^c \subseteq A \cap B^c$, $A \setminus B = A \cap B^c$.
+\end{proof}
+
+\begin{solution}[Part (ii)] Instead of proving the statement itself, I found it easier to prove a lemma first, and then use that lemma to prove (ii). 
+\begin{lemma}[Lemma 1]$A^c \setminus B^c = B \setminus A$
+\label{lemma: 1}
+\begin{proof}[Lemma 1]
+Consider some $x \in B\setminus A$.  Suppose for a contradiction that $x \notin A^c \setminus B^c$.  By definition we have $U\supseteq A$ and $U \supseteq B$ as well as $A^c \setminus B^c = (U \setminus A) \setminus (U \setminus B)$.  Since $x \in B \setminus A$ we know that $x \in U\setminus A$. Since we know that $U \setminus A \supseteq U \setminus B$ and also require that $x\in B$ we must remove any part of the set $U \setminus A$ that is \emph{not} in $B$ or else $x \notin B$ which contradicts our definition of $x$.  Thus $x \in (U\setminus A) \setminus B^c =A^c \setminus B^c$ and $B \setminus A \subseteq A^c \setminus B^c$.
+
+Next, consider some $x \in A^c \setminus B^c$.  Suppose for a contradiction, $x\notin B \setminus A$.  By definition, $x \in \{x\in A^c | x\notin B^c\}$.  Since $x\notin B^c$, $x\in B$.  But this is in fact a contradiction as we said $x\notin B\setminus A$.  Thus $x\in B\setminus A$ and $A^c \setminus B^c \subseteq B\setminus A$.  Since we have that, and $A^c \setminus B^c \supseteq B\setminus A$ we know that $A^c \setminus B^c = B \setminus A$.
+\end{proof}
+\end{lemma} 
+Now I can move on to the problem itself.
+
+\begin{proof}[Part (ii)]Consider the two symmetric differences,
+\[
+A \Delta B = A\setminus B \cup B\setminus A
+\]
+and
+\[
+A^c \Delta B^c = A^c \setminus B^c \cup B^c \setminus A^c
+\]
+By \emph{Lemma \ref{lemma: 1}} we know that for any sets $A \subseteq U$ and $B \subseteq U$ that $A^c \setminus B^c = B\setminus A$.  Thus we simply use this as a substitution to show the statement is true.
+\[
+A\setminus B \cup B\setminus A = A^c \setminus B^c \cup B^c \setminus A^c
+\]
+\[
+A\setminus B \cup B\setminus A = (B \setminus A) \cup (A \setminus B)
+\]
+\[
+A\setminus B \cup B\setminus A = A \setminus B \cup B \setminus A
+\]
+\end{proof}
+
+\end{solution}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $a,b \in \mathbb{R}$ be such that $a < b$. Prove that for every $n\in \mathbb{N}$, if $x_1 , x_2, ..., x_n \in [a,b]$, then
+\[
+a \leq \frac{x_1 + x_2 + ... + x_n}{n} \leq b.
+\]
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First off,
+\[
+a \leq \frac{x_1 + x_2 + ... + x_n}{n} \leq b.
+\]
+\[
+\implies na \leq x_1 +x_2+...+x_n \leq nb
+\]
+Next, suppose that $x_1 +x_2 +...+ x_n \notin [na,nb]$.  Since each $x_i\in [a,b]$, the minimal value for each $x_i$ is $a$.  If we let all $x_i=a$ then $x_1 + x_2 +...+x_n=na\in [na, nb]$.  This is a contradiction and thus $x_1 + x_2 + ... +x_n \geq na$.  If we allow each $x_i$ to take on the maximum value, $b$, then we find a similar contradiction.  Namely, $x_1 + x_2 +...+x_n = nb \in [na,nb]$. Since we have this contradiction as well, we know $x_1 + x_2 + ... +x_n \leq nb$.  Thus $na \leq x_1 + x_2 + ... +x_n \leq nb$, which means that $a \leq \frac{x_1 + x_2 + ... + x_n}{n} \leq b$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Let $X$ and $Y$ be sets and let $A \subseteq X$, $B\subseteq Y$. Let $f \colon X \to Y$ be a function.  
+
+(i) Prove that $f(f^{-1}(B)) \subseteq B$.
+
+(ii) Is it true that $B=f(f^{-1}(B))$? Either prove or give a counter example.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (i)]
+If we let $A$ be the inverse image of $B$ under $f$ then we have for all $b\in B$, $f^{-1}(b)=\{a \in A | f(a) \in B \}$.  Thus we have $f^{-1}(b)=a$ and we know that $f(a)\in B$.  If we compose the functions, $f(f^{-1}(b))=f(a)\in B$  and this means that $f(f^{-1}(B))\subseteq B$.
+\end{proof}
+
+\begin{proof}[Part (ii)]
+Yes this is true!  We already showed that $ f(f^{-1}(B))\subseteq B$ so we just need to show inclusion the other direction.  Consider some $b\in B$.  Since, $f^{-1}(b)=\{a \in A | f(a) \in B \}$ we have $f^{-1}(b)=a$.  Since this means that $f(a)=b$ we know that $f(f^{-1}(b))=f(a)=b$.  Since $b$ was arbitrary, $B \subseteq f(f^{-1}(B))$.  Thus, $f(f^{-1}(B))=B$.
+\end{proof}
+
+Note: If we consider $f$ to be non-injective, then we have $f^{-1}(f(A))\neq A$. But when $f$ is injective, we have equality and the proof is fairly similar.
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Prove $1^2 + 2^2 + ... + n^2 = \frac{1}{6} n (n+1)(2n+1)$ for all positive integers $n$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First we check the base case, which is $n=1$.
+\[
+1^2 = \frac{1}{6}(1+1)(2(1)+1)
+\]
+\[
+=\frac{1}{6}(2)(3)
+\]
+\[
+\frac{6}{6}=1
+\]
+Which is correct. Next we assume that this is true for the $n^{th}$ case, and test the $(n+1)^{th}$ case.
+\[
+1^2 + 2^2 + ... n^2 + (n+1)^2 = \frac{1}{6}(n+1)(n+2)(2(n+1)+1)
+\]
+\[
+\frac{1}{6}n(2n+1)+(n+1)=\frac{1}{6}(n+2)(2n+3)
+\]
+\[
+\frac{1}{6}n(2n^2+n)+(n+1)=\frac{1}{6}(2n^2+7n+6)
+\]
+\[
+\frac{1}{6}n(2n^2+n)+\frac{1}{6}(6n+6)=\frac{1}{6}(2n^2+7n+6)
+\]
+\[
+\frac{1}{6}n(2n^2+7n+6)=\frac{1}{6}(2n^2+7n+6)
+\]
+Which is equal. 
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} Prove $1^3 + 2^3 +... +n^3 = (1+2+...+n)^2$ for all positive integers $n$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For this problem, I will use the fact that
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}
+\]
+First though, we need to establish our base case.  For this example, the base case is $n=1$.
+\[
+1^3=(1)^2
+\]
+\[
+1=1
+\]
+This is true.  Next we assume that the case is true for $n$ and prove the $(n+1)^{th}$ case.  
+\[
+1^3 + 2^3 +...+n^3 + (n+1)^3 = (1+2+...+n+(n+1))^2
+\]
+Let us just look at the left hand side of the equality first,
+\[
+1^3 + 2^3 +...+n^3 + (n+1)^3=\left(\frac{n(n+1)}{2}\right)^2 + (n+1)^3
+\]
+\[
+=\frac{1}{4}(n^2 (n+1)^2)+(n+1)(n+1)^2
+\]
+\begin{equation}
+\label{equation: 1}
+=(\frac{1}{4} n^2 +n+1)(n+1)^2
+\end{equation}
+Next, let's take the right hand side of the original expression and use the same property mentioned before,
+\[
+(1+2+...+n+(n+1))^2=\left( \frac{(n+1)(n+2)}{2} \right)^2
+\]
+\[
+=\frac{1}{4}(n+1)^2(n^2+4n+4)
+\]
+\begin{equation}
+\label{equation:2}
+=(\frac{1}{4} n^2 +n+1)(n+1)^2
+\end{equation}
+We have shown that the left hand side reduces to \emph{Eqn. \ref{equation: 1}} and the right reduces to \emph{Eqn. \ref{equation:2}} which are equal.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6.} 
+
+(a) Decide for which integers the inequality $2^n > n^2$ is true.
+
+(b) Prove your claim in (a) by mathematical induction.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[Part (a)] 
+We want to find where the inequality is equal, since we know that $n^2$ grows slower than $2^n$ as soon as the last equality is achieved, any number following that will make the inequality true.  
+\[
+2^n = n^2
+\]
+Is true for $n=2,4$.  To show that $n>4$ will make the equality true, we can begin with our base case of $n=5$,
+\[
+2^5>5^2
+\]
+\[
+32>25
+\]
+Which is also true.
+\end{solution}
+
+\begin{proof}[Part (b)] We already showed the base case in the previous part.  Now we can assume that this holds for the $n^{th}$ case and then test the $(n+1)^{th}$ case.  
+\[
+(n+1)^2<n^{n+1}
+\]
+\[
+n^2<n^{n+1}-2n-1
+\]
+\[
+1<n^{n-1}-\frac{2}{n}-\frac{1}{n^2}
+\]
+Notice that since $n>5$ the fractions $\frac{2}{n}$ and $\frac{1}{n^2}$ are both less than $1$.  Also since $n>5$ and $n^2$ is monotone $\forall n\in \mathbb{N}$, we know that $n^{n-1}$ is at the very least, $5^4=625$.  It is very obvious that $625-1-1=623>1$ and since the two fractions are actually less than one, we have $n^{n-1} -\frac{2}{n} -\frac{1}{n^2}> 623 >1$.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7.} For $n \in \mathbb{N}$, define 
+\[{n \choose k} = \frac{n!}{k! (n-k)!} \textrm{~~~ for ~~~} k=0,1,...,n.\]
+The \emph{binomial theorem} asserts that 
+\[
+(a+b)^n = {n \choose 0} a^n + {n \choose 1} a^{n-1} b + { n \choose 2} a^{n-2} b^2 +...+ {n \choose n-1} a b^{n-1} + {n \choose n} b^n
+\]
+\[
+a^n +na^{n-1}b+\frac{1}{2}n (n-1) a^{n-2}b^2+...+nab^{n-1}+b^n
+\]
+(a) Verify the binomial theorem for $n=1,2$ and $3$. \\
+(b) Show ${n \choose k} + {n \choose k-1} = { n+1 \choose k}$ for $k=1,2,...,n$.\\
+(c) Prove the binomial theorem using mathematical induction and part (b).
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[Part (a)] For $n=1$, we have the left hand side,
+\[
+(a+b)^1 = a +b
+\]
+On the right hand side,
+\[
+{1 \choose 0} a^1 + {1 \choose 1} b^1
+\]
+\[
+=a +b = (a+b)^1
+\]
+For $n=2$, we have the left hand side,
+\[
+(a+b)^2 = a^2 +2ab +b^2
+\]
+On the right hand side,
+\[
+{2 \choose 0} a^2 + {2 \choose 1} a^1 b^1 + {2 \choose 2} b^2
+\]
+\[
+=a^2 + 2ab + b^2 = (a+b)^2
+\]
+For $n=3$, we have the left hand side,
+\[
+(a+b)^3 = a + 3a^2 b +3a b^2 + b^3
+\]
+On the right hand side,
+\[
+{3 \choose 0} a^3 + {3 \choose 1} a^2 b^1 + {3 \choose 2} a^1 b^2 + {3 \choose 3} b^3
+\]
+\[
+=a + 3a^2 b +3a b^2 + b^3 =(a+b)^3
+\]
+Thus, we know that the binomial theorem is correct for $n=1,2$ and $3$.
+\end{solution}
+
+\begin{solution}[Part (b)]
+First let's see what we are aiming to get,
+\[
+{n+1 \choose k} = \frac{(n+1)!}{k!(n+1-k)!}
+\]
+Which is the right hand side of our equation we are trying to show.  On the left,
+\[
+{n \choose k} + {n \choose k-1}
+\]
+\[
+=\frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n+1-k)!}
+\]
+\[
+=\frac{n!(n+1-k)}{k!(n+1-k)!} + \frac{k(n!)}{k!(n+1-k)!}
+\]
+\[
+=\frac{n! (n+1)}{k! (n+1-k)!}
+\]
+\[
+=\frac{(n+1)!}{k! (n+1-k)!}
+\]
+\end{solution}
+
+\begin{proof}[Part (c)]
+For our base case we have shown that $(a+b)^1= a+b= {n \choose 0} a + {1 \choose 1} b$.  Now we assume the statement is true for $n$, and begin induction with the $(n+1)$ step.
+\[
+(a+b)^{n+1} = {n+1 \choose 0} a^{n+1} + {n+1 \choose 1} a^n b+...+ {n+1 \choose n+1}b^{n+1}
+\]
+\[
+(a+b)(a+b)^n = {n+1 \choose 0} a^{n+1} + {n+1 \choose 1} a^n b+...+ {n+1 \choose n+1}b^{n+1}
+\]
+\[
+(a+b)\left({n \choose 0} a^{n} + {n \choose 1} a^{n-1} b+...+ {n \choose n}b^{n}\right)={n+1 \choose 0} a^{n+1} + {n+1 \choose 1} a^n b+...+ {n+1 \choose n+1}b^{n+1}
+\]
+\[
+{n \choose 0} a^{n+1} + {n+1 \choose 1} a^n b+...+ {n \choose n+1}a b^{n}+{n \choose 0} a^n b + {n \choose 1} a^{n-1} b^2+...+ {n \choose n}b^{n+1}={n+1 \choose 0} a^{n+1} + {n+1 \choose 1} a^n b+...+ {n+1 \choose n+1}b^{n+1}
+\]
+\[
+{n \choose 1} a^n b + ... + {n \choose n} a b^n + {n \choose 0}a^n b + ... + {n \choose n-1}a b^n={n+1 \choose 1}a^n b + ... + {n+1 \choose n-1} a b^n
+\]
+\[
+\left({n \choose 1} + {n \choose 0}\right) a^n b + ... + \left({n \choose n} + {n \choose n-1}\right)a b^n ={n+1 \choose 1}a^n b + ... + {n+1 \choose n-1} a b^n
+\]
+And using the fact from (b),
+\[
+{n+1 \choose 1}a^n b + ... + {n+1 \choose n-1} a b^n={n+1 \choose 1}a^n b + ... + {n+1 \choose n-1} a b^n
+\]
+
+\end{proof}
+
+P.S. Sorry about the messiness on this part (c). I was getting a bit lazy and didn't want to go through breaking lines and stuff.
+\end{document}

@@ -1,0 +1,183 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 5}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.}  
+\begin{enumerate}[(a)]
+\item Prove that a topological space $X$ is disconnected if and only if there exists a surjective continuous function from $X$ to the discrete space $\{0,1\}$.
+\item Prove that if $X$ is path-connected and $f\colon X \to Y $ is continuous, then $f(X)$ is path-connected.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+For the forward direction, suppose that $X$ is disconnected. Thus we can say that there exists $A\subset X$ with $A\neq \emptyset$ which is open and closed in $X$. Then $X\setminus A$ is also open and closed. Let $f\colon X\to \{0,1\}$ with $f(A)=0$ and $f(X\setminus A)=1$. Then $f^{-1}(0)=A$ and $f^{-1}(1)=X\setminus A$. Thus we have that $f$ is continuous since $\{0\},\{1\}$ are open in $\{0,1\}$ and $A,X\setminus A$ are open.
+
+For the reverse direction, suppose we have $f\colon X \to \{0,1\}$ is continuous and surjective. Thus $f^{-1}(0)\subseteq X$ and $f^{-1}(1)\subseteq X$ are nonempty and open due to surjectivity and continuity respectively.  Thus $X\setminus f^{-1}(0)$ and $X\setminus f^{-1}(1)$ are nonempty, open and closed in $X$.  Thus $X$ is disconnected.
+\end{proof}
+
+
+\begin{proof}[Part (b)]
+Suppose $F$ is path connected and $f\colon X \to Y $ is continuous.  Let $\gamma\colon [0,1]\to X$ be an arbitrary path connected $x_1,x_2$ (i.e., $\gamma(0)=x_1$ and $\gamma(1)=x_2$). Then $f\circ \gamma$ is a path in $f(x)$ with $f\circ \gamma(0)=f(x_1)$ and $f\circ \gamma(1)=f(x_2)$. This is a continuous function since composition of continuous functions is continuous.  Since $x_1,x_2$ were arbitrary we have that $f(x_1)$ and $f(x_2)$ are arbitrary points in $f(X)$ and thus $f(X)$ is path connected.
+\end{proof}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Prove Lemma 4.27 in our book, which says that if $X$ is a topological space, then $A\subseteq X$ (with the subspace topology) is compact if and only if every cover of $A$ by open subsets of $X$ has a finite subcover.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the forward direction, let $A\subseteq \cup_{\alpha \in A}{U_\alpha}$ with each $U_\alpha$ open in $X$.  Since we are supposing $A$ is compact, there exists a finite collection of $U_\alpha$ so that $A\subseteq \cup_{i=1}^n U_{\alpha_i}$.  So $A$ has a finite subcover for an arbitrary cover given by a collection of open subsets in $X$.
+
+For the reverse direction, suppose that we have an arbitrary open cover $\{U_\alpha\}_{\alpha\in A}$ of $A$. Since $A\subseteq X$, these $U_\alpha \subseteq X$ and thus we have a finite subcover of $A$ given by $A\subseteq \cup_{i=1}^n U_{\alpha_i}$.  Which means that $A=\cup_{i=1}^n A\cap U_{\alpha_i}$ is a finite open cover for $A$ and we have that $A$ is compact since our original cover was arbitrary.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Solutions to this problem are in our book -- feel free to learn and use those solutions!
+\begin{enumerate}[(a)]
+\item Let $X$ be a Hausdorff space and let $A,B \subseteq X$ be disjoint compact subsets. Prove that there exist disjoint open sets $U,V \subseteq X$ with $A\subseteq U$ and $B\subseteq V$.
+\item Prove that every compact subset $A$ of a Hausdorff space $X$ is closed.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+I will use the proof from the book, but just rewritten slightly.  First, consider $B=\{q\}$ and then we have for all $p\in A$ that there exists open subsets $p\in U_p \subseteq X$ and $q\in V_p \subseteq X$ with $U_p\cap V_p = \emptyset$.  Then $\cup_{p\in A}U_p$ is an open cover of $A$ and so we have $\mathbb{U}=\cup_{i=1}^n U_{p_i}$ is a finite open subcover. Then $\mathbb{V}=\cap_{i=1}^n V_{p_i}$ is disjoint from $\mathbb{U}$ with $A\subseteq \mathbb{U}$ and $\{q\}\in \mathbb{V}$.
+
+Now, suppose that $B\subseteq X$ is compact and disjoint from $A$.  Then for each $q\in B$ we have open subsets created as in the above paragraph which we denote $\mathbb{U}_q,\mathbb{V}_q$ with $A\subseteq \mathbb{U}_q$ and $q\in \mathbb{V}_q$. Since $B$ is compact, we have $\mathbb{B}=\cup_{i=1}^m \mathbb{V}_{q_i}$ covers $B$ and $\mathbb{A}=\cap_{i=1}^m \mathbb{U}_{q_i}$ is a cover of $A$ disjoint from $\mathbb{B}$.  
+\end{proof}
+
+\begin{proof}[Part (b)]
+Let $A$ be a compact subset of a Hausdorff space $X$.  Suppose that $\exists p \in X\setminus A$ which is a limit point of $A$.  So for every neighborhood of $p$, $N(p)$, we have $N(p)\cap A \neq \emptyset$.  But this means that points in $A$ are not distinct from $p$ since $X$ is Hausdorff and each pair of distinct points can be contained in disjoint open sets.  This contradicts $p\in X\setminus A$ and thus $p\in A$ and $A$ must be closed since $p$ was an arbitrary limit point.
+
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.}  Define $id\colon S^1 \to S^1$ by $id(p)=p$, and define $g\colon S^1 \to S^1$ by $g(p)=-p$. Find a homotopy $F\colon S^1 \times I \to S^1$ from $id$ to $g$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+We have $\textrm{id}(p)=p=e^{i\theta}$ and $g(p)=-p=e^{i(\theta+\pi)}$. Then let $F\colon S^1\times I \to S^1$ be given by $F(\theta,t)=e^{i(\theta+\pi t)}$. Then $F(\theta, 0)=\textrm{id}(p)$ and $F(\theta,1)=g(p)$.
+\end{solution}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.}  Let $n>1$. Prove that $\mathbb{R}^n$ is not homeomorphic to any open subset of $\mathbb{R}$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose that our open subset $U\subseteq \mathbb{R}$ is multiple disjoint open intervals.  Then $U$ is not connected, but $\mathbb{R}^n$ is.  Thus there cannot be a homeomorphism.  Since a single open interval is homeomorphic to $\mathbb{R}$, it suffices to show that $\mathbb{R}^n$ is not homeomorphic to $\mathbb{R}$.  Suppose, for a contradiction, we have a homeomorphism $h\colon \mathbb{R}^n \to \mathbb{R}$.  Then we also have a homeomorphism on the set $\mathbb{R}^n\setminus \{\vec{p}\}$ given by $h\colon \mathbb{R}^n\setminus\{\vec{p}\} \to \mathbb{R}\setminus \{h(\vec{p})\}$.  But $\mathbb{R}\setminus \{h(\vec{p})\}$ is not connected and $\mathbb{R}^n\setminus \{\vec{p}\}$ is.  Thus we contradict $h$ being a homeomorphism and we have that $\mathbb{R}^n$ for $n>1$ is not homeomorphic to any open subset of $\mathbb{R}$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6.}  Let $A$ be an infinite set, and let $\mathbb{R}^A$ denote the Cartesian product of $A$ copies of $\mathbb{R}$ (namely $\mathbb{R}^A = \prod_{\alpha \in A} X_\alpha$ where $X_\alpha = \mathbb{R}$ for all $\alpha \in A$). Consider $\mathbb{R}^A$ equipped with two different topologies: $(\mathbb{R^A}, \textrm{product})$ with the product topology, and $(\mathbb{R}^A,\textrm{box})$ with the box topology, as defined on page 63 of our book.
+
+\noindent Show that $(\mathbb{R}^A,\textrm{box})$ equipped with the maps $\pi_\alpha^\textrm{box} \colon (\mathbb{R}^A,\textrm{box}) \to X_\alpha = \mathbb{R}$ defined via $\pi_\alpha^\textrm{box}((x_\alpha)_{\alpha \in A})=x_\alpha$ is not the categorical product of $A$ copies of $\mathbb{R}$ in the category of topological spaces, as follows (and \emph{not} by using Corollary 3.39). Suppose for a contradiction $(\mathbb{R}^A,\textrm{box})$ satisfied the universal property on page 213. Choose $W$ to be the actual categorical product $(\mathbb{R}^A,\textrm{product})$ equipped with the maps $\pi_\alpha^\textrm{prod} \colon (\mathbb{R}^A,\textrm{box}) \to X_\alpha = \mathbb{R}$ similarly defined via $\pi_\alpha^\textrm{prod}((x_\alpha)_{\alpha \in A})=x_\alpha$. Show that there is no continuous $f$ making the necessary diagrams commute. 
+
+\noindent \emph{Hint: Note that $(0,1)^A$ is open in $(\mathbb{R}^A,\textrm{box})$. Can you explain why $(0,1)^A$ is not open in $\mathbb{R}^A,\textrm{product})$?}
+
+\noindent \emph{Remark: When showing that an object is not a categorical product, it is often a good idea to choose ``test object" $W$ to be the actual categorical product.}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We have the following diagram:
+
+\centering
+\begin{tikzcd}
+ &  & (\mathbb{R}^A,\textrm{prod}) \arrow[lldd, "\pi_\alpha^\textrm{prod}"'] \arrow[dd, "f", dashed] \\
+ &  &  \\
+X_\alpha &  & (\mathbb{R}^A , \textrm{box}) \arrow[ll, "\pi_\alpha^\textrm{box}"]
+\end{tikzcd}
+\justify
+We have that $(\mathbb{R}^A,\textrm{prod})$ is a product in the category of topological spaces and thus $\pi_\alpha^\textrm{prod}$ is continuous.  Note if this diagram commutes then $\pi_\alpha^\textrm{box} \circ f = \pi_\alpha^\textrm{prod}$ is continuous. Due to how $\pi_\alpha^\textrm{box}$ and $\pi_\alpha^\textrm{prod}$ are defined, $f\colon (\mathbb{R}^A,\textrm{prod}) \to (\mathbb{R}^A,\textrm{box})$ is given by $(V,\textrm{prod})\mapsto (V,\textrm{box})$ for $U \subset \mathbb{R}^A$.  But note that if $V=(0,1)^A$ then $f^{-1}((0,1)^A,\textrm{box})=((0,1)^A,\textrm{prod})$ is not open since the product topology is generated by a base where all but finitely many $U_\alpha = X_\alpha$, and this is not the case.  Thus $f$ is not continuous and this diagram does not commute.
+\end{proof}
+
+
+\pagebreak
+
+
+\end{document}
+

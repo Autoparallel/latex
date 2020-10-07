@@ -1,0 +1,162 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 8}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\obj}{\ensuremath{\mathrm{Obj}}}
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.}  The two parts of this problem are unrelated.
+\begin{enumerate}[(a)]
+\item Prove that the circle $S^1 = \{x\in \R^2 ~\vert~ \|x\|=1\}$ is not a retract of the closed disk $\overline{B^2} = \{x\in \R^2 ~\vert~ \|x\|\leq 1\}$.
+
+\item Suppose $f\colon S^1 \to S^1$ is a map which is not homotopic to the identity map on $S^1$. Prove that $f(x)=-x$ for some point $x\in S^1$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Suppose that $S^1$ is a retract of $\overline{B^2}$.  Then $\iota_{S^1} \colon S^1 \to \overline{B^2}$ is the inclusion map which induces an injection on the fundamental groups given by $(\iota_{S^1})_* \colon \pi_1(S^1) \hookrightarrow \pi_1(\overline{B^2})$.  But note that $\pi_1(S^1)=\mathbb{Z}$ and $\pi_1(\overline{B^2})$ is the trivial group.  This is a contradiction since there is \underline{no} injection from $\mathbb{Z}$ to the trivial group.
+\end{proof}
+
+\begin{proof}[b]
+Suppose that $f$ is not homotopic to $\mathrm{Id}$. Then, for a contradiction, suppose that $f(x)\neq -x$ for any point $x$.  From the last homework, we know that if for any $x$, $f(x)\neq -x = - \mathrm{Id} (x)$, then $f(x)\simeq \mathrm{Id}$.  This contradicts our supposition that $f(x)\neq -x$ at some point since otherwise $f$ would be homotopic to $\mathrm{Id}$.  Thus $f(x)=-x$ for some point.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $S^1$ be the unit circle and let $C=S^1\times [-1,1]$ be a cylinder. Prove that $S^1 \simeq C$.  
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider the following maps $f\colon S^1 \times [-1,1] \to S^1 \times \{0\}$ and and $g\colon S^1 \times \{0\} \hookrightarrow S^1\times [-1,1]$ with $f(\theta,x)\mapsto (\theta,0)$ and $g(\theta,0)\mapsto (\theta,0)$.  Note that $S^1\times \{0\} \cong S^1$ and we have $f\circ g = \mathrm{Id}_{S^1}$.  Then consider $H \colon I \times [-1,1] \to [-1,1]$ defined by 
+\begin{align*}
+H(t,x)= (1-t)x.
+\end{align*}
+So we have $H$ continuous and $H(0,x)=Id_{[-1,1]}(x)$ and $H(1,x)=0$. Then $\mathrm{Id}_{S^1} \times H$ is continuous and provides a homotopy equivalence between $g\circ f$ and $Id_{S^1 \times [-1,1]}$. So we have $g\circ f \simeq Id_{S^1 \times [-1,1]}$.  Hence, $C\simeq S^1$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} A topological space $X$ is \emph{contractible} if $\mathrm{Id}_X \colon X \to X$ is homotopic to a constant map.
+\begin{enumerate}[(a)]
+\item Prove that $X$ is contractible if and only if $X$ is homotopy equivalent to a one-point space.
+\item Let $X$ and $Y$ be topological spaces. Prove that if either $X$ or $Y$ is contractible, then every continuous map from $X$ to $Y$ is homotopic to a constant map.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+For the forward direction, suppose that $X$ is contractible.  Thus $\mathrm{Id}_X$ is homotopic via $H(t,x)$ to a constant map. Then let $f\colon X \to \{p\}$ be defined by $f(x)=p$ and let $g \colon \{p\} \to X$ be defined by $g(p)=q$ for some specific $q\in X$. and note that $f \circ g = \mathrm{Id}_{\{p\}}$. Consider then $g\circ f$ and note $g\circ f \simeq \mathrm{Id}_{X}$ by the homotopy $H$ given by the fact $X$ is contractible.  Thus $X\simeq \{p\}$, with $\{p\}$ a one point space.
+
+For the converse, suppose that $X\simeq \{p\}$ with $\{p\}$ a one point space.  Then there exists $f \colon X \to \{p\}$ and $g\colon \{p\} \to X$ with $f\circ g \simeq \mathrm{Id}_{\{p\}}$ and $g\circ f \simeq \mathrm{Id}_X$.  Note that $g\circ f(x)=q$ for all $x\in X$ and some $q\in X$.  This then implies that $X$ is contractible since $g\circ f$ is a constant map that is homotopic to the identity map on $X$, $\mathrm{Id}_X$.
+\end{proof}
+
+\begin{proof}[b]
+Without loss of generality, let $Y$ be contractible.  Thus $\mathrm{Id}_Y$ is homotopic to a constant map $C$.  Let $f \colon X \to Y$ be a continuous map.  Then notice that $f=\mathrm{Id}_{Y}\circ f \simeq C \circ f=C$.  Thus we have $f$ is homotopic to a constant map.
+\end{proof}
+
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} The fundamental theorem of algebra states that every non-constant single-variable polynomial with complex coefficients has at least one complex root. Give a proof of the fundamental theorem of algebra \emph{using facts related to the fundamental group of the circle} (there are many other different proofs).
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+Let $f(x)=x^n +c_1x^{n-1}+\cdots + c_{n-1} x+c_n$ be a polynomial with $n>0$ and each $c_i\in \mathbb{C}$. We want to show that there are $n$ complex numbers, including multiplicities, $x_i$ such that $f(x_i)=0$. 
+
+\begin{proof}
+We may assume without loss of generality that $p(z)$ is monic. So let
+
+\[\displaystyle p(z) = a_0 + a_1z + \dots + a_{n-1}z^{n-1} + z^n.\]
+
+Supposing $p(z)$ has no roots in $\mathbb{C}$, we will show $p$ is constant. First, consider for a fixed $r \in \mathbb{C}$ the loop
+
+\[\displaystyle f_r(s) = \frac{p(re^{2 \pi is})/p(r)}{\left | p(re^{2 \pi is})/p(r) \right |}\]
+
+Indeed, by assumption the denominators are never zero, so this function is continuous for all $s \in [0,1]$. Further, each value $f_r(s)$ is on the unit circle. Finally, $f_r(0) = (p(r)/p(r)) / |p(r)/p(r)| = 1$, and $f_r(1)$ yields the same value, so this is a closed path based at 1.
+
+We note this function is continuous in both s and r (indeed, they are simply rational functions defined for all $s,r$), so that $f_r(s)$ is a homotopy of loops as $r$ varies. If $r=0$, then the function is constant for all s, and so for any fixed $r$, the loop $f_r(s)$ is homotopic to the constant loop.
+
+Now fix a value of r which is larger than both $|a_0| + \dots + |a_{n-1}|$ and 1. For $|z| = r$, we have
+
+\[\displaystyle |z^n| = r \cdot r^{n-1} > (|a_0| + \dots + |a_{n-1}|)|z^{n-1}|\]
+
+And hence $|z^n| > |a_0 + a_1z + \dots + a_{n-1}z^{n-1}|$. It follows that the polynomial $p_t(z) = z^n + t(a_{n-1}z^{n-1} + \dots + a_0)$ has no roots when both $|z| = r$ and $0 \leq t \leq 1$. Fixing this $r$, and replacing $p$ with $p_t(z)$ in the formula for $f_r(s)$, we have a homotopy from $f_r(s)$ (when $t=1$, nothing is changed) to the loop which winds around the unit circle $n$ times, where n is the degree of the polynomial. Indeed, plug in $t=0$ to get $f_r(s) = (r^ne^{2 \pi ins}/r^n)/|r^ne^{2 \pi ins}/r^n|$, which is the loop $\omega_n(s) = e^{2 \pi ins}$.
+
+In other words, we have shown that the homotopy classes of $f_r$ and $\omega_n$ are equal, but $f_r$ is homotopic to the constant map. Translating this into fundamental groups, as $\pi_1(S^1,1) = \mathbb{Z}$, we note that $[\omega_n] = [f_r] = 0$, but if $\omega_n = 0$ then it must be the case that $n = 0$, as $\mathbb{Z}$ is the free group generated by $\omega_1$. Hence, the degree of $p$ to begin with must have been 0, and so $p$ must be constant.
+\end{proof}
+
+
+
+\pagebreak
+
+
+
+\end{document}
+

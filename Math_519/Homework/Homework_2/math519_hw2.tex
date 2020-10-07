@@ -1,0 +1,304 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 519, Homework 2}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (S \& S 2.2.)}  Show that $\int_0^\infty \frac{\sin x}{x} dx = \frac{\pi}{2}$.
+
+\begin{proof}
+First, consider breaking this into four contours: $\gamma_1 = [-R,-\epsilon]$, $\gamma_2 = \{z\in \C ~\colon~ z=\epsilon e^{-it} , \leq t \leq 1 \}$, $\gamma_3 = [\epsilon,R]$, and $\gamma_4 = \{z \in \C ~\colon~ z=R e^{i t}, 0\leq 1 \leq \pi\}$.  Then we denote $\gamma = \gamma_1 \cup \gamma_2 \cup \gamma_3 \cup \gamma_4$. Then
+\begin{align*}
+\int_\gamma \frac{\sin(z)}{z} dz = \int_{\gamma_1} \frac{\sin(z)}{z}dz+\int_{\gamma_2} \frac{\sin(z)}{z}dz+\int_{\gamma_3} \frac{\sin(z)}{z}dz+\int_{\gamma_4} \frac{\sin(z)}{z}dz.
+\end{align*}
+Note that by Cauchy's theorem, we have that for all $\epsilon>0$ that
+\begin{align*}
+\int_\gamma \frac{\sin(z)}{z}dz = 0,
+\end{align*}
+since $\frac{\sin(z)}{z}$ is holomorphic on $\C\setminus \{0\}$.  We can then rearrange the above integrals slightly to receive the following:
+\begin{align*}
+0&=\int_{\gamma_1} \frac{\sin(z)}{z}dz+\int_{\gamma_2} \frac{\sin(z)}{z}dz+\int_{\gamma_3} \frac{\sin(z)}{z}dz+\int_{\gamma_4} \frac{\sin(z)}{z}dz\\
+\implies -\int_{\gamma_1} \frac{\sin(z)}{z}dz-\int_{\gamma_3}\frac{\sin(z)}{z}dz &= \int_{\gamma_2}\frac{\sin(z)}{z}dz + \int_{\gamma_4}\frac{\sin(z)}{z}dz.
+\end{align*}
+Notice that in the limit as $R\to \infty$ and $\epsilon \to 0$ we have
+\begin{align*}
+-2\int_0^\infty \frac{\sin(x)}{x}dx &= \int_{\gamma_2}\frac{\sin(z)}{z}dz + \int_{\gamma_4}\frac{\sin(z)}{z}dz,
+\end{align*}
+since $\frac{\sin(x)}{x}$ is even and where we of course let the limits be taken for $\gamma_2$ and $\gamma_4$ as well. This leaves us to evaluate the contour integrals for $\gamma_2$ and $\gamma_4$ and we are done.  
+
+Note that we can take $\Im \left( \int_{\gamma_2} \frac{e^{iz}-1}{z}dz\right) = \int_{\gamma_2} \frac{\sin(z)}{z}$ and so we have for the $\gamma_2$ contour integral
+\begin{align*}
+\int_{\gamma_2}\frac{\sin(z)}{z}dz &= \Im\left(\int_{\gamma_2} \frac{e^{iz}}{z}dz\right)\\
+&=\Im\left(\int_{\gamma_2} \frac{\left(1+iz-\frac{z^2}{2}-\frac{iz^3}{3!}+\cdots\right)-1}{z}dz\right).
+\end{align*}
+Then we want to apply the ML theorem,
+\begin{align*}
+\left|\Im \left( \int_{\gamma_2} \left(i-\frac{z}{2}-\frac{iz^2}{3!}+\cdots \right) dz \right) \right| &\leq \pi \epsilon M.
+\end{align*}
+Note that the integrand is bounded and we denote this bound by $M$.  Then as $\epsilon \to 0$ we find that $\pi \epsilon M \to 0$ and hence
+\begin{align*}
+\int_{\gamma_2}\frac{\sin(z)}{z}dz &=0.
+\end{align*}
+
+Next, consider the $\gamma_4$ contour integral.  We have
+\begin{align*}
+\int_{\gamma_2}\frac{\sin(z)}{z}dz &= \Im\left( \int_{\gamma_4} \frac{e^{iz}-1}{z}dz\right).
+\end{align*}
+Concentrating on just the integral portion, we find
+\begin{align*}
+\int_{\gamma_4}\frac{e^{iz}-1}{z}dz &= \int_{\gamma_4} \frac{e^{iz}}{z}dz - \int_{\gamma_4}\frac{1}{z}dz\\
+&= -\int_{\gamma_4}\frac{1}{z}dz &&\textrm{since we showed the other integral goes to zero in class}\\
+&=\int_0^\pi \frac{1}{Re^{it}}iRe^{it}dt\\
+&=-i\int_0^\pi dt &= -i\pi.
+\end{align*}
+Hence the imaginary part of this integral is just $-\pi$.
+
+Thus we have
+\begin{align*}
+-2\int_0^\infty \frac{\sin(x)}{x}dx &= \int_{\gamma_4}\frac{\sin(z)}{z}dz=-\pi\\
+\implies \int_0^\infty \frac{\sin(x)}{x}dx &= \frac{\pi}{2}.
+\end{align*}
+
+\noindent \emph{Note: I got help from Jeremy on this problem.}
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 2.(S \& S 2.12.a)} Let $u$ be a real valued function defined on the unit disk $\mathbb{D}$. Suppose that $u$ is twice continuously differentiable and harmonic, that is, 
+\[
+\Delta u(x,y) = 0
+\]
+for all $(x,y)\in \mathbb{D}$. 
+
+Prove that there exists a holomorphic function $f$ on the unit disk such that $\Re(f)=u$. Also show that the imaginary part of $f$ is uniquely defined up to an additive (real) constant.
+
+\begin{proof}
+We will use the hint.  First, let $g(z)=2\frac{\partial u}{\partial z}$ and note that
+\begin{align*}
+2\frac{\partial}{\partial z} u(x,y)&=\left( \frac{\partial}{\partial x}+\frac{1}{i}\frac{\partial}{\partial y} \right) u(x,y)\\
+&= \frac{\partial u}{\partial x}-i\frac{\partial u}{\partial y}.
+\end{align*}
+Now we let $\frac{\partial u}{\partial x}=w(x,y)$ and $-\frac{\partial u}{\partial y}=v(x,y)$ and hence $g(z)=w+iv$. Then taking the partial derivatives, we find
+\begin{align*}
+w_x &=\frac{\partial^2 u}{\partial x^2}\\
+w_y &= \frac{\partial}{\partial y} \frac{\partial u}{\partial x}\\
+v_x &= -\frac{\partial}{\partial x}\frac{\partial v}{\partial y}\\
+v_y &= -\frac{\partial^2 v}{\partial y^2}.
+\end{align*}
+Note that $w_x=v_y$ since $u$ is harmonic and that $w_y=-v_x$ by commuting partial derivatives ($u$ is twice continuously differentiable). Hence this shows that $g(z)$ is holomorphic.
+
+Since $g(z)$ is holomorphic we have that there exists a primitive $F$ such that $F'=g$.  Now we want that $f(x,y)=u(x,y)+i(\nu(x,y)+K)$ where $k$ is some real constant. Let $F=\mu +i \nu$ and we have
+\begin{align*}
+F'=2\frac{d\mu}{dz}=2\frac{du}{dz}
+\end{align*} 
+so that $\Re(F)=u+c$ with $c\in \C$. We can choose $F$ so that $c=0$ and hence $\Re(F)=u$. So we take Now since $F$ is holomorphic we have that the CREs hold and this means that 
+\begin{align*}
+\nu= \int \frac{\partial u}{\partial x}dy + \phi(y)=-\int \frac{\partial u}{\partial y}dx + \psi(x)
+\end{align*}
+by just integrating the CREs. Note that this was done via real integration and hence the potential functions $\phi(y)$ and $\psi(x)$ are real. Now we differentiate with respect to $x$ to find
+\begin{align*}
+\int \frac{\partial^2 u}{\partial x^2}dy &= =\int \frac{\partial^2 u}{\partial y \partial x} dx + \psi'(x)\\
+\implies -\frac{\partial u}{\partial y} &= -\int \frac{\partial^2 u}{\partial y^2}dy = \frac{-\partial u}{\partial y}+\psi'(x)\\
+\implies \psi'(x)=0.
+\end{align*}
+Letting $f=u+iv$ we have that $v=\nu + K$ where $K=\psi(x)$ is a constant.
+
+\noindent \emph{Note: I got help from Emily and Jeremy on this problem.}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 3. (S \& S 2.13.)} Suppose that $f$ is an analytic function defined everywhere in $\C$ and such that for each $z_0 \in \C$ at least one coefficient in the expansion
+\[
+f(z)=\sum_{n=0}^\infty c_n (z-z_0)^n
+\]
+is equal to 0. Prove that $f$ is a polynomial.
+
+\begin{proof}
+First note that $c_n= \frac{f^(n)(z_0)}{n!}$. Then, suppose for a contradiction that no $f^(n)(z)$ is indentically zero. This means that
+\begin{align*}
+\bigcup_{n=0}^\infty (f^(n))^{-1}(0)
+\end{align*}
+is a countable set.  However, this is a contradiction since the original supposition is that for each $z_0\in \C$ at least one coefficient is zero and since $\C$ is uncountable.  Hence, the set of points where some derivative $f^(n)$ vanishes must be uncountable (since a countable union of countable sets is still countable).  This then implies that $f$ must be a polynomial.
+
+\noindent \emph{Note: I found some help online for this problem.}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 4. S \& S.} Complete the proof of Theorem 4.4,  stated on page 49 (the bit about $a_n$).
+
+
+\begin{proof}
+We wish to show that 
+\[
+f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n
+\]
+where coefficients
+\[
+a_n= \frac{f^{(n)}(z_0)}{n!}.
+\]
+Up to this point, we have that
+\[
+f(z)=\sum_{n=0}^\infty \left( \frac{1}{2\pi i} \int_C \frac{f(\zeta)}{(\zeta-z_0)^{n+1}}d\zeta \right)\cdot (z-z_0)^n.
+\]
+Note that the Cauchy integral formula for derivatives is as follows:
+\begin{align*}
+f^{(n)}(z)&=\frac{n!}{2\pi i} \int_C \frac{f(\zeta)}{(\zeta-z)^{n+1}}d\zeta,
+\end{align*}
+and this holds by the assumptions of the theorem.  Hence a slight rearrangement and letting $z=z_0$ gives that 
+\begin{align*}
+\frac{f^{(n)}(z_0)}{n!}&=\frac{1}{2\pi i} \int_C \frac{f(\zeta)}{(\zeta-z_0)^{n+1}}d\zeta.
+\end{align*}
+Hence we have
+\[
+f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n,
+\] 
+where 
+\[
+a_n= \frac{f^{(n)}(z_0)}{n!}.
+\]
+\end{proof}
+
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 5.}  Let $C$ be the boundary of the triangle with vertices at the points 0, $3i$, and $-4$, with positive orientation. Show that $\left| \int_C (e^z - \overline{z}) dz \right| \leq 60$.
+
+\begin{proof}
+First note that the length of the contour $C$ is $L(C)=12$.  Then consider
+\begin{align*}
+\sup_{z\in C} |e^z - \overline{z}|&\leq \sup_{z\in C} |e^z|+\sup_{z\in C} |\overline{z}|\\
+&=1+4=5=M.
+\end{align*}
+Then by the ML theorem we have that
+\begin{align*}
+\left| \int_C (e^z-\overline{z})dz \right| \leq ML(C)=60.
+\end{align*}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 6.} Evaluate these integrals using any paths between the limits of integration:
+\begin{enumerate}[(a)]
+\item $\int_i^{i/2} e^{\pi z} dz$.
+\item $\int_1^3 (z-2)^3 dz$.
+\end{enumerate} 
+
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item Let $\gamma \colon [0,1] \to \C$ be given by $\gamma(t)=i-\frac{i}{2}t$.  Then we have
+\begin{align*}
+\int_i^{i/2} \exp(\pi z) dz  &= \int_\gamma \exp(\pi \gamma(t))\gamma'(t)dt\\
+&= \int_0^1 \exp\left( i -\frac{i}{2}t \right)\left(\frac{-i}{2}\right) dt\\
+&= \frac{i}{2} \int_0^1 \exp\left( -\frac{i\pi}{2}t\right) dt\\
+&= \frac{i}{2} \left[ \frac{-2}{i\pi} \exp\left( -\frac{i\pi}{2}t \right) \right]_0^1\\
+&= \frac{-1}{\pi} (-i-1)=\frac{1+i}{\pi}.
+\end{align*}
+\item Let $\gamma \colon [0,1] \to \C$ by $\gamma(t)=1+2t$. Then we have
+\begin{align*}
+\int_1^3 (z-2)^3dz &= \int_\gamma (\gamma(t)-2)^3\gamma'(t)dt\\
+&= \int_0^1 (1+2t-2)^3 2dt\\
+&= 2 \int_0^1 (2t-1)^3 dt\\
+&= \frac{1}{4} \left[(2t-1)^4\right]_0^1\\
+&= \frac{1}{4} (1^4-(-1)^4)\\
+&= 0.
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 7.}  Let Cauchy help you evaluate these integrals, where $C_1$ is the square with sides along $x=\pm 2$ and $y=\pm 2$ (positively oriented) and $C_2$ is the positively-oriented circle $|z-i|= 2$:
+
+\begin{enumerate}[(a)]
+\item $\int_{C_1} \frac{e^{-z}}{z-\frac{\pi i}{2}} dz$.
+\item $\int_{C_1} \frac{z}{2z+1}dz$.
+\item $\int_{C_2} \frac{1}{z^2+4}dz$.
+\item $\int_{C_2} \frac{1}{(z^2+4)^2}dz$.
+\end{enumerate}
+
+\begin{proof}
+\item Cauchy's integral formula extends to rectangles as well, so we find
+\begin{align*}
+\int_{C_1} \frac{\exp(-z)}{z-\frac{\pi i}{2}}dz &= 2\pi i \left(\exp\left( -\frac{\pi i}{2} \right)\right)\\
+&= 2\pi.
+\end{align*}
+\item Again, we have
+\begin{align*}
+\int_{C_1}\frac{z}{2z+1}dz &= \frac{1}{2} \int_{C_1} \frac{z}{z+\frac{1}{2}}dz\\
+&= \frac{1}{2}(2\pi i)\left(-\frac{1}{2}\right)\\
+&= -\frac{\pi i}{2}.
+\end{align*}
+\item We have
+\begin{align*}
+\int_{C_2}\frac{1}{z^2+4}dz&= \int_{C_2} \frac{1}{(z-2i)(z+2i)}dz.
+\end{align*}
+Now, note that $\displaystyle{\frac{1}{z+2i}}$ is holomorphic on the interior of $C_2$. Hence we find
+\begin{align*}
+\int_{C_2} \frac{1}{z^2+4}dz&= \int_{C_2} \frac{\left(\frac{1}{z+2i}\right)}{z-2i}dz\\
+&= 2\pi i \left( \frac{1}{2i+2i}\right)\\
+&= \frac{\pi}{2}.
+\end{align*}
+\item We have
+\begin{align*}
+\int_{C_2}\frac{1}{(z^2+4)^2}dz&=\int_{C_2}\frac{1}{(z-2i)^2(z+2i)^2}dz\\
+&=\int_{C_2}\frac{1}{(z+2i)^2}\cdot \frac{1}{(z-2i)^2}dz.
+\end{align*}
+Letting $f(z)=\frac{1}{(z+2i)^2}$ and noting that $f$ is holomorphic on the interior of $C_2$, we find
+\begin{align*}
+\int_{C_2} \frac{1}{(z^2+4)^2}dz&=2\pi i f'(z) \vert_{z=2i}\\
+&=2\pi i \left( - \frac{2}{(2i+2i)^3}\right)\\
+&= \frac{\pi}{16}.
+\end{align*}
+\end{proof}
+
+
+\end{document}
+
+
+

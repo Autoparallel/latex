@@ -1,0 +1,269 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 8}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1. (\S 6.2 Problem 10.)} Let $W$ be a finite-dimensional subspace of an inner product space $V$. Prove that there exists a projection $T$ on $W$ along $W^\perp$ that satisfies $\mathcal{N}(T)=W^\perp$. In addition, prove that $\|T(v)\|\leq \|v\|$ for all $v\in V$. \emph{Hint:} Use Theorem 6.6 and Exercise 10 of Section 6.1.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Problem.]
+Let $v\in V$ be equal to $v=w+w'$ with $w\in W$ and $w'\in W^\perp$.  By Theorem 6.6 we have, $V=W\oplus W^\perp$, and it follows that $w$ and $w'$ are uniquely defined.  Then we define $T\colon V \to V$ by $Tv=w$. Then if $u\in W^\perp$ we have $Tu=0$. Lastly, for the same arbitrary $v$ we have
+\begin{align*}
+\|T(v)\|&= \langle Tv,Tv\rangle\\
+&= \langle w,w \rangle. 
+\end{align*}
+Note that if $v\in W$ then $w'=0$ and $\|T(v)\|=\|v\|$ else $w'\neq 0$ and we have that $\|T(v)\|<\|v\|$. It then follows that $\|T(v)\|\leq \|v\|$.
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 6.3 Problem 2(c).)} For each of the following inner product spaces $V$ (over $\mathbb{F}$) and linear transformations $g\colon V \to \mathbb{F}$, find a vector $y$ such that $g(x)=\langle x,y\rangle$ for all $x\in V$.
+\[
+V=P_2(\R) \textrm{~ with ~} \langle f,h \rangle =\int_0^1 f(t)h(t)dt, ~g(f)=f(0)+f'(1)
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider $f(t)=a_0+a_1 t + a_2 t^2$ and $h(t)=b_0 + b_1 t +  a_2 t^2$. Note that $f'(t)=a_1 + 2a_2t$ and $f(0)=a_0$ and $f'(1)=a_1 + 2a_2$. Then
+\begin{align*}
+\langle f,h \rangle &= \int_0^1 (a_0+a_1 t + a_2 t^2)(b_0+b_1 t + b_2 t^2)dt\\
+&= \int_0^1 (a_0 b_0 + a_0 b_1 t+a_0 b_2 t^2 + a_1 b_0 t + a_1 b_1 t^2 + a_1 b_2 3^2 + a_2 b_0 t^2 + a_2 b_1 t^3 + a_2 b_2 t^4) dt\\
+&= \left[ a_0b_0 t + \frac{1}{2}a_0 b_1 t^2 + \frac{1}{3} a_0 b_2 t^3 + \frac{1}{2} a_1 b_0 t^2 + \frac{1}{3} a_1 b_1 t^3 + \frac{1}{4} a_1 b_2 t^4 + \frac{1}{3} a_2 b_0 t^3 + \frac{1}{4} a_2 b_1 t^4 + \frac{1}{5} a_2 b_2 t^5 \right]_0^1\\
+&=a_0b_0  + \frac{1}{2}a_0 b_1  + \frac{1}{3} a_0 b_2  + \frac{1}{2} a_1 b_0  + \frac{1}{3} a_1 b_1  + \frac{1}{4} a_1 b_2  + \frac{1}{3} a_2 b_0  + \frac{1}{4} a_2 b_1  + \frac{1}{5} a_2 b_2. 
+\end{align*}
+Setting this equal to $f(0)+f'(1)=a_0+a_1+2a_2$ yields
+\begin{align*}
+a_0+a_1+2a_2 &=a_0b_0  + \frac{1}{2}a_0 b_1  + \frac{1}{3} a_0 b_2  + \frac{1}{2} a_1 b_0  + \frac{1}{3} a_1 b_1  + \frac{1}{4} a_1 b_2  + \frac{1}{3} a_2 b_0  + \frac{1}{4} a_2 b_1  + \frac{1}{5} a_2 b_2\\
+&= a_0 \left( b_0 + \frac{1}{2}b_1 + \frac{1}{3} b_2 \right) + a_1 \left( \frac{1}{2} b_0 + \frac{1}{3} b_1 + \frac{1}{4} b_2 \right) + a_2 \left( \frac{1}{3} b_0 + \frac{1}{4} b_1 + \frac{1}{5} b_2 \right),
+\end{align*}
+and we find $b_0=33$, $b_1=-204$, and $b_2=210$.  So $h(t)=33-204t+210t^2$.
+\end{proof}
+
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 6.3  Problem 4.)} Complete the proof of Theorem 6.11.
+
+Let $V$ be an inner product space, and let $T$ and $U$ be linear operators on $V$. Then
+\begin{enumerate}[(a)]
+\item $(T+U)^* = T^* + U^*$;
+\item $(cT)^* = \overline{c} T^*$ for any $c\in \mathbb{F}$;
+\item $(TU)^*=U^* T^*$;
+\item $T^{**} =T$;
+\item $I^* = I$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Done in the text.
+\end{proof}
+
+\begin{proof}[b]
+We have
+\begin{align*}
+\langle x, (cT)^* y \rangle &=\langle (cT)x,y \rangle\\
+&= \langle c (Tx),y \rangle \\
+&= c \langle Tx, y \rangle\\
+&= c \langle x,T^* y \rangle\\
+&= \langle x, \overline{c}T^* y \rangle.
+\end{align*}
+\end{proof}
+
+\begin{proof}[c]
+We have
+\begin{align*}
+\langle x, (TU)^* y \rangle &= \langle (TU)x, y \rangle\\
+&= \langle T(Ux),y\rangle \\
+&= \langle Ux, T^* y \rangle\\
+&= \langle x, U^* T^* y \rangle.
+\end{align*}
+\end{proof}
+
+\begin{proof}[d]
+Done in the text.
+\end{proof}
+
+\begin{proof}[e]
+We have
+\begin{align*}
+\langle x,y \rangle &= \langle Ix, y \rangle\\
+&= \langle x,I^* y \rangle\\
+&= \langle x, Iy\rangle && \textrm{by the first line.}
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (\S 6.3  Problem 9.)} Prove that if $V=W\oplus W^\perp$ and $T$ is the projection on $W$ along $W^\perp$, then $T=T^*$. \emph{Hint:} Recall that $\mathcal{N}(T)=W^\perp$. 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $T$ is the projection on $W$ along $W^\perp$ and $V= W \oplus W^\perp$, we have for $v\in V$ that $v=w+w'$ with $w\in W$ and $w' \in W^\perp$. Then note that $Tv=w$. It follows that for $v_1, v_2 \in V$ we have
+\begin{align*}
+\langle Tv_1, v_2 \rangle &= \langle T (w_1 + w_1'), w_2+w_2' \rangle &&\textrm{$w_1, w_2 \in W$ and $w_1',w_2' \in W^\perp$,}\\
+&= \langle w_1, w_2+w_2' \rangle \\
+&= \langle w_1, w_2 \rangle + \langle w_1, w_2' \rangle \\
+&= \langle w_1, w_2 \rangle && \textrm{since $w_2' \in W^\perp$.}  
+\end{align*}
+Finally,
+\begin{align*}
+\langle v_1, Tv_2 \rangle &= \langle w_1 + w_1',T( w_2+w_2') \rangle \\
+&= \langle w_1+w_1', w_2 \rangle \\
+&= \langle w_1, w_2 \rangle + \langle w_1', w_2 \rangle \\
+&= \langle w_1, w_2 \rangle && \textrm{since $w_1' \in W^\perp$.}  
+\end{align*}
+Hence, $T=T^*$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 6.3 Problem 13.)}  Let $T$ be a linear on a finite-dimensional vector space $V$. Prove the following results.
+\begin{enumerate}[(a)]
+\item $\mathcal{N}(T^* T)=\mathcal{N}(T).$ Deduce that $\mathrm{rank}(T^* T)=\mathrm{rank}(T)$.
+\item $\mathrm{rank}(T)=\mathrm{rank}(T^*)$. Deduce from $(a)$ that $\mathrm{rank}(TT^*)=\mathrm{rank}(T)$.
+\item For any $n\times n$ matrix $A$, $\mathrm{rank}(A^* A)=\mathrm{rank}(AA^*)=\mathrm{rank}(A)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Let $v \in \mathcal{N}(T)$.  Then
+\begin{align*}
+\langle T^* T v,v \rangle &= \langle Tv,Tv \rangle\\
+&= 0 &&\textrm{since $v \in \mathcal{N}(T)$}.
+\end{align*}
+Thus a vector $v \in \mathcal{N}(T)$ is also in $\mathcal{N}(T^*T)$.  Now let $v'\neq 0 \in \mathcal{R}(T)$, i.e., $v'\notin \mathcal{N}(T)$, then
+\begin{align*}
+\langle T^*Tv',v' \rangle &= \langle Tv', Tv' \rangle \neq 0 && \textrm{since $v'\in \mathcal{R}(T)$}.
+\end{align*}
+Thus if $v' \notin \mathcal{N}(T)$ then $v' \notin \mathcal{N}(T^* T)$. By both of the above, we have $\mathcal{N}(T)=\mathcal{N}(T^*T)$.
+
+It follows that $\mathrm{rank}(T^* T)=\mathrm{rank}(T)$ by above, or by noting the dimension theorem.  In other words, 
+\begin{align*}
+\dim(V)&=\mathrm{rank}(T)+\mathrm{nullity}(T)\\
+&=\mathrm{rank}(T^* T) + \mathrm{nullity}(T^* T)\\
+\implies \mathrm{rank}(T^* T)&=\mathrm{rank}(T) &&\textrm{since $\mathrm{nullity}(T^* T)=\mathrm{nullity}(T)$.}
+\end{align*}
+\end{proof}
+
+\begin{proof}[b]
+Consider $v\neq 0 \in V$ and we have, by definition,
+\begin{align*}
+\langle Tv,v \rangle &= \langle v,T^* v \rangle.
+\end{align*}
+If $v\in \mathcal{R}(T)$ then it follows that $v\in \mathcal{R}(T^*)$ else the above equality would not hold.  Similarly, if $v\in \mathcal{N}(T)$ then, necessarily, $v\in \mathcal{N}(T^*)$, else, again, the above equality does not hold. It follows immediately that $\mathrm{rank}(T)=\mathrm{rank}(T^*)$.  
+
+By part (a) and the above proof, we have that $\mathrm{rank}(T^* T) = \mathrm{rank}(T)=\mathrm{rank}(T^*)$. Then for $v\in V$ we have $\langle T^* Tv,T*v \rangle = \langle Tv, TT^* v\rangle$.  It follows that $\mathrm{rank}(TT^*)=\mathrm{rank}(T)$. 
+\end{proof}
+
+\begin{proof}[c]
+Fix a basis $\beta$ for $V$.  Then let $A=[T]_\beta$.  Then since $T$ was arbitrary and the choice of basis does not matter, we have that $\mathrm{rank}(A^* A) =\mathrm{rank}(AA^*)=\mathrm{rank}(A)$ by parts (a) and (b).
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 6.4 Problem 13.)} An $n\times n$ real matrix $A$ is said to be a \emph{Gramian} matrix if there exists a real (square) matrix $B$ such that $A=B^T B$. Prove that $A$ is a Gramian matrix if and only if $A$ is symmetric and all of its eigenvalues are nonnegative. \emph{Hint:} Apply Theorem 6.17 to $T=L_A$ to obtain an orthonormal basis $\{v_1,v_2,\dots, v_n\}$ of eigenvectors with the associated eigenvalues $\lambda_1,\lambda_2,\dots,\lambda_n$. Define the linear operator $U$ by $U(v_i)=\sqrt{\lambda_i}v_i$.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First, suppose that $A$ is Gramian.  Thus $A=B^T B$, and it follows immediately that $A$ is self adjoint since $A$ is real and $(B^T B)^T = B^T B$.  This means that we have a basis $\beta = \{v_1,v_2,\dots,v_n\}$ of orthonormal eigenvectors of $A$ by Theorem 6.17.  Let $T=L_A$ and then $[T]_\beta v_i = \lambda_i v_i$.  In other words, $Av_i=\lambda_i v_i = B^T B v_i$. Then consider any eigenvalue $\lambda_r$ and we have
+\begin{align*}
+\lambda_r &= \langle Av_r,v_r \rangle \\
+&= \langle B^T B v_r,v_r \rangle\\
+&= \langle B v_r, B v_r \rangle\\
+&= \|Bv_r\|^2 = \|B\|^2 \geq 0.
+\end{align*}
+Hence, all the eigenvalues are nonnegative.
+
+For the converse, suppose that $A$ is symmetric and all of its eigenvalues are nonnegative.  $A$ symmetric implies that $A^T = A$ and that we have a basis $\beta=\{v_1,v_2,\dots,v_n\}$ of orthonormal eigenvectors and each eigenvalue $\lambda_i$ is real.  By supposition, these eigenvalues are also nonnegative.  Define an operator $U$ such that $U(v_i)=\sqrt{\lambda_i}v_i$ and then note that $A=Q^{-1}U^2Q$ where $Q$ changes bases from the original basis of $A$ to the basis of orthonormal eigenvectors.  Then
+\begin{align*}
+\langle Av_i, v_i \rangle &= \langle U^2 v_i, v_i \rangle\\
+ &= \langle U v_i, U^T v_i \rangle\\
+ &= \langle v_i, (U^T)^2 v_i \rangle\\
+ &= \langle (U^T)^2 v_i,v_i \rangle && \textrm{since every eigenvalue is real.}
+\end{align*}
+Hence $U=U^T$ and we have that $A=Q^{-1}U^2Q$. Letting $UQ=B$ we have $B^TB=A$ and  thus $A$ is Gramian.   
+\end{proof}
+
+\pagebreak
+
+
+\end{document}
+

@@ -1,0 +1,804 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{environments}
+% package for todo 
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\setuptodonotes{size=\scriptsize,backgroundcolor=red!15!white} 
+
+\usepackage{showkeys} %show cites and refs
+
+\title{Commutative Algebras of Multivectors from the Scalar Dirichlet-to-Neumann Operator}
+\author{Colin Roberts}
+
+
+
+\begin{document}
+
+ \begin{titlingpage}
+     \maketitle
+     \vfill
+     \begin{abstract}
+        \textcolor{red}{TODO}
+     \end{abstract}
+ \end{titlingpage}
+
+\section{Outline}
+\begin{enumerate}
+    \item Show that we can determine the metric on $M$ from axial monogenic paravectors at least in the case for $\R^3$ or something.
+    \item Recover a space of monogenic paravectors from $\Lambda$.
+    \item Show that this space of monogenic paravectors contains the axial subalgebras.
+    \item Use this fact to recover $g$ from $\Lambda$.
+\end{enumerate}
+
+\section{Introduction}
+
+\textcolor{red}{Key citations for geometric algebra/calculus \cite{doran_geometric_2003, hestenes_clifford_1984} and for the Hilbert transform \cite{brackx_hilbert_2008, belishev_dirichlet_2008}. } 
+
+In 1980, Alberto Calder\'on proposed an inverse problem in his paper \emph{On an inverse boundary value problem} \cite{calderon_inverse_2006} where he asks if one can determine the conductivity matrix of a medium from Cauchy data supplied on the boundary.  In practice, one determines the Cauchy data from measurements of voltage and current which often leads to this being referred to as the Electrical Impedance Tomography (EIT) problem.  In this landscape, this mapping is known as the voltage-to-current map. Very much related is the Calder\'on problem for Riemannian manifolds which is introduced in \cite{feldman_calderproblem_nodate} and \cite{salo_calderon_nodate}.  Rather than determining the conductivity matrix from the voltage-to-current map, one attempts to reconstruct the Riemannian metric from the Dirichlet-to-Neumann (DN) map.  \textcolor{red}{These probably have to be smooth to some extent...} The DN map takes any given Dirichlet boundary values and outputs the corresponding Neumann data in order to generate the Cauchy data. In dimension $n=2$, the EIT and Calder\'on problem are not equivalent but in dimensions $n\neq 2$ the problems are equivalent via a change of variables seen in \cite{uhlmann_inverse_2014}.
+
+One approach to reconstructing the Riemannian metric in dimension $n=2$ appears in \cite{belishev_calderon_2003}, where Belishev uses the Boundary--Control (BC) method to determine the metric up to conformal class. The BC method takes an algebraic approach to determining the conformal class of the metric by first constructing the algebra of holomorphic functions on $M$ from the DN map and realizing $M$ as the topologized spectrum of this algebra \textcolor{red}{this is probably not exactly right}. In dimension $n=2$, the Laplace-Beltrami operator is conformally invariant, and this result cannot be improved.  Belishev and Vakulenko attempts to move towards generalizing this approach to dimension $n=3$ in \cite{belishev_algebras_2017, belishev_algebraic_2019} by replacing the complex structure with a quaternionic structure but this has not lead to a complete solution.
+
+To extend the BC method to higher dimensions, one essentially needs to generalize two important pieces. First, from the DN map, recover the algebra of holomorphic functions on $M$.  This algebra provides means for constructing the complex structure on the manifold. The complex structure on a surface, one can then determine the Hodge star operator. Then, using theory from Gelfand for commutative Banach algebras, $M$ is shown to be homeomorphic to the topologized spectrum of the algebra of holomorphic functions on $M$ with the complex structure determining the metric $g$. In this paper, we provide a means for generalizing the first component of the BC method to manifolds of arbitrary dimension as the following theorem. \textcolor{red}{give more background on the BC method}
+
+\begin{theorem}
+    Let $\Lambda$ be the scalar Dirichlet-to-Neumann map on some unknown smooth, connected, and oriented Riemannian manifold $(M,g)$, then $\Lambda$ determines a unique Banach $\ast$-algebra of even monogenic Clifford fields on $M$.
+\end{theorem}
+
+Given an inner product, the complex structure is naturally isomorphic to the even sub-Clifford algebra of scalars and bivectors in dimension $n=2$ with the inner product acting as the quadratic form.  Fortunately, this can be generalized for arbitrary dimension.  The notion of holomorphicity is then replaced by monogenicity as the Wirtinger derivative $\frac{\partial}{\partial \overline{z}}$ is exchanged by the more general Dirac operator $D$.  The DN map allows one to recover an algebra of conjugate scalars and bivectors whose sum are monogenic functions. From this set, we generate a Banach $\ast -$algebra of even monogenic Clifford fields on $M$.
+
+\section{Clifford algebras}
+
+Let $(V,Q)$ be an $n$-dimensional vector space $V$ over some field $K$ with quadratic form $Q$.  Then, we can construct the tensor algebra as the space
+\[
+\mathcal{T}(V) \coloneqq \bigoplus_{j=0}^\infty V^{\otimes j} = K \bigoplus V \oplus (V\otimes V) \oplus (V\otimes V \otimes V) \oplus \cdots.
+\]
+From the tensor algebra $\mathcal{T}(V)$, we can quotient by the ideal generated by $v\otimes v - Q(v)$ to define \emph{Clifford algebra} $C\ell(V,Q)$. That is, 
+\[
+C\ell(V,Q) = \mathcal{T}(V) ~ / ~ \langle v \otimes v - Q(v) \rangle.
+\]
+Let $e_1, \dots, e_n$ be an arbitrary basis for $V$, then we can consider the tensor product of basis elements $e_i \otimes e_j$.  The tensor product in $\mathcal{T}(V)$ induces a product in the quotient $C\ell(V,Q)$ which we refer to as the \emph{Clifford multiplication}. We write this product as concatenation $e_ie_j$ and define the multiplication by
+\[
+e_i e_j = \begin{cases} Q(e_i) & \textrm{if $i=j$}, \\ e_i \wedge e_j & \textrm{if $i\neq j$},\end{cases}
+\]
+where $\wedge$ is the exterior product satisfying $v\wedge w = - w\wedge v$ for all $v,w\in V$.  As a consequence, the exterior algebra $\bigwedge(V)$ can be realized as a subalgebra of any Clifford algebra over $V$ or as a Clifford algebra with a trivial quadratic form $Q=0$.  
+
+Note that $C\ell(V,Q)$ is a $\mathbb{Z}$-graded algebra with elements of grade-0 up to elements of grade-$n$. We refer to grade-0 elements as scalars, grade-1 elements as vectors, grade-2 elements as \emph{bivectors}, grade-$k$ elements as \emph{$k$-vectors}, and grade-$n$ elements as \emph{pseudoscalars}.   For each grade, there is a basis of ${n\choose k}$ simple $k$-vectors.  For example, if $\dim(V)=4$, then there are ${4\choose 3}=4$ 3-vectors that form a basis. In particular, one may choose the following list
+\[
+\label{eq:4_dim_basis}
+e_1 \wedge e_2 \wedge e_3, \quad e_1 \wedge e_2 \wedge e_4, \quad e_1 \wedge e_3 \wedge e_4, \quad e_2 \wedge e_3 \wedge e_4.
+\]
+
+In general, an element $A \in C\ell(V,Q)$ is written as a linear combination of basis elements of all possible grades and we refer to $M$ as a \emph{multivector}.  To extract the grade-$k$ components of $A$, we use the notation
+\[
+\proj{k}{A}
+\]
+to denote the grade-$k$ components of the multivector $M$. For example, we could let $A\in C\ell(\R^4, \|\cdot \|)$ be given by
+\[
+A= 1 + 2e_1+e_3 + 3e_1e_3e_4
+\]
+and we have
+\[
+\proj{0}{A}=1, \quad \proj{1}{A}=2e_1+e_3, \quad \proj{2}{A}=0, \quad \proj{3}{A} = 3e_1e_3e_4, \quad \proj{4}{A}=0.
+\]
+Thus, a general multivector $A$ can be given by
+\[
+A = \sum_{k=0}^n \proj{k}{A}.
+\]
+If $A$ contains only grade-$k$ components, then we say that $A$ is \emph{homogeneous}.  For example, we can think of vectors as homogeneous grade-1 multivectors. 
+
+The Clifford multiplication of vectors can be extended to multiplication of vectors with homogeneous grade-$k$ multivectors.  In particular, given a vector $v \in C\ell(V,Q)$ and a homogeneous grade-$k$ multivector $A_k \in C\ell(V,Q)$, we have
+\begin{equation}
+\label{eq:vector_multiplication}
+aA_k = \proj{k-1}{aA_k} + \proj{k+1}{aA_k},
+\end{equation}
+which decomposes the multiplication into a grade lowering \emph{interior product} and a grade raising \emph{exterior product}.  This allows us to extend the Clifford multiplication further. Given a homogeneous grade-$s$ multivector $B_s$, we have
+\begin{equation}
+\label{eq:general_clifford_multiplication}
+A_k B_s = \proj{|r-s|}{A_rB_s} + \proj{|r-s|+2}{A_rB_s} + \cdots + \proj{r+s}{A_rB_s}.
+\end{equation}
+Some specific graded elements of the product are worth noting here,
+\begin{equation}
+    A_k \cdot B_s \coloneqq \proj{|k-s|}{A_k B_s}
+\end{equation}
+\begin{equation}
+    A_k \wedge B_s \coloneqq \proj{k+s}{A_k B_s}
+\end{equation}
+\begin{equation}
+\label{eq:left_contraction}
+    A_k \rfloor B_s \coloneqq \proj{s-k}{A_k B_s}
+\end{equation}
+\begin{equation}
+\label{eq:right_contraction}
+    A_k \lfloor B_s \coloneqq \proj{k-s}{A_k B_s}.
+\end{equation}
+This rule for multiplication then allows for the multiplication of two general multivectors in $C\ell(V,Q)$. Then we also have the identities
+\begin{equation}
+\label{eq:left_contraction_dot}
+A_r \cdot B_s = A_r \rfloor B_s \qquad \textrm{if $k\leq s$}
+\end{equation}
+\begin{equation}
+\label{eq:right_contraction_dot}
+A_r \cdot B_s = A_r \lfloor B_s \qquad \textrm{if $k\geq s$}.
+\end{equation}
+For homogeneous $k$-vectors $A_k$ and $B_k$, the products above simplify to 
+\begin{equation}
+\label{dot_equivalent_contraction}
+    A_k \lfloor B_k = A_k \rfloor B_k = A_k \cdot B_s.
+\end{equation}
+Finally, for a vector $\alpha$ we have
+\begin{equation}
+\alpha A_k = \alpha \rfloor A_k + \alpha \wedge A_k,
+\end{equation}
+so the $\cdot$ and $\lfloor$ notation coincide for left multiplication by vectors. Proofs and more details for these identities can be found in \cite{chisolm_geometric_2012}. The key reasoning behind the extra multiplication symbols $\rfloor$ and $\lfloor$ is to avoid needing to pay special attention to the specific grade of each multivector in a geometric product.  The product $\cdot$ on $A_k$ and $B_s$ depends on $k$ and $s$ and as such given by either $\rfloor$ or $\lfloor$ but one must know $k$ and $s$ in order to define this product exactly.  
+
+If a homogeneous grade-$k$ multivector $A_k$ is an exterior product of $k$ vectors so $A_k = v_1 \wedge \cdots \wedge v_k$, we say that $A_k$ is a \emph{$k$-blade}. For example, the basis vectors given in \ref{4_dim_basis} are all blades. We refer to an $(n-1)$-blade as a \emph{pseudovector} and one can note that every $(n-1)$-vector is a pseudovector.. In other literature, some will refer to a $k$-blade as \emph{simple} or \emph{decomposable}. If we are given two $k$-blades $A_k = \alpha_1 \wedge \cdots \wedge \alpha_k$ and $B_k = \beta_1 \wedge \cdots \wedge \beta_k$ we have 
+\begin{equation}
+\label{eq:dot_product}
+A_k \cdot B_k = \det(\alpha_i \cdot \beta_j )_{i,j=1}^k,
+\end{equation}
+which is equivalent to $A_k \rfloor B_k$ and $A_k \lfloor B_k$ through \ref{dot_equivalent_contraction}. 
+\todo[inline]{fix this and replace the later version.}
+
+$C\ell(V,Q)$ is naturally a $\mathbb{Z}/2\mathbb{Z}$-graded algebra since we can partition the grades of elements into either even or odd.  We say that $A$ is an \emph{even} (resp. \emph{odd}) \emph{multivector} if $A$ is a sum of only even (resp. odd) grade elements.  Taking note of the multiplication defined in \ref{eq:general_clifford_multiplication}, one can see that the multiplication of a an even (resp. odd) multivector with another even (resp. odd) multivector results in an even (resp. odd) multivector.  Thus, the even and odd multivectors form closed subalgebras of $C\ell(V,Q)$.
+
+\begin{example}
+Let $V=\R^2$ and let the quadratic form $Q$ be given by the Euclidean norm $Q(\cdot)=\|\cdot\|$.  Let $e_1$ and $e_2$ be the standard unit vectors and note that we have $1$ as the basis scalar, and $e_1e_2$ as the basis pseudoscalar.  Thus, a general multivectors $m$ and $r$ can be written as
+\[
+m = m_0 + m_1 e_1 + m_2 e_2 + m_{12} e_1 e_2, \qquad r = r_0 +r_1 e_1 + r_2 e_2 + r_{12}e_1 e_2.
+\]
+We can then multiply $mr$ and find
+\[
+\proj{0}{mr} = m_0r_0 + m_1 r_1 + m_2 r_2 - m_{12}r_{12},
+\]
+\[
+\proj{1}{mr} = (m_0 r_1 + m_1 r_0 - m_2 r_{12} + m_{12} r_2) e_1 + (m_0 r_2 + m_2 r_0 + m_1r_{12} - m_{12} r_1) e_2,
+\]
+and
+\[
+\proj{2}{mr} = (m_1r_2 - m_2 r_1)e_1e_2.
+\]
+
+Most notably, we see that $(e_1e_2)^2=-1$ and this allows us to consider a multivector 
+\[
+z = x + y e_1 e_2 
+\]
+as a representation of the complex number $\zeta = x+ iy$.  Thus, the even subalgebra of this Clifford algebra is indeed isomorphic to the complex numbers $\C$. \textcolor{red}{Show that there is a nice way to represent complex numbers sitting inside of every clifford algebra dim>2}
+\end{example}
+
+\begin{example}
+\label{ex:quaternions}
+Let $V=\R^3$ and $Q(\cdot)=\|\cdot \|$.  Then, let
+\[
+b_1 = e_2 e_3, \quad b_2 = e_3 e_1, \quad b_3 = e_1 e_2,
+\]
+and note that we can write a even multivector as
+\[
+q = q_0 + q_1b_1 + q_2 b_2 + q_3 b_3.
+\]
+Note as well that
+\[
+b_1^2 = b_2^2 = b_3^2 = -1,
+\]
+and
+\[
+b_1b_2b_3 = +1.
+\]
+In this case, this even subalgebra is extremely close to being a copy of the quaternion algebra. Indeed, one can arrive at a representation of the quaternions by taking
+\[
+\boldsymbol{i} \leftrightarrow B_1, \quad \boldsymbol{j} \leftrightarrow -B_2, \quad \boldsymbol{k} \leftrightarrow B_3,
+\]
+and noting that we then have $ijk=-1$ as well as $i^2=j^2=k^2=1$. A more rigorous explanation is again provided in \cite{doran_geometric_2003}.
+\end{example}
+
+In the case where $V$ has a (pseudo) inner $(\cdot,\cdot)$, we can define the quadratic form $Q$ for a clifford algebra by $Q(v)=(v,v)$.  In this case, we refer to the Clifford algebra $C\ell(V,Q)$ as a \emph{geometric algebra} and we generally put $\geometricalg$ and assume the inner product will be given alongside.  For example, when $V=\R^n$ and we define $Q$ using the Euclidean inner product, we have $C\ell(V,Q)=\mathcal{G}(\R^n)$ and moreover we put $\mathcal{G}(R^n)=\mathcal{G}_n$. For more information on the topic, the text \cite{doran_geometric_2003} gives an extremely thorough treatment of geometric algebra as well as a wide range of applications to physics problems. 
+
+\subsection{Duality and pseudoscalars}
+\label{subsection:duality_and_pseudoscalars}
+
+In a geometric algebra, one has access to an inner product and hence there is a natural isomorphism between $V$ and $V^*$.  Namely, given an arbitrary basis $e_i$ for $V$ there exists the basis $f_i$ for $V^*$ such that $f_i(e_j)=\delta_{ij}$.  There is then a unique map $\sharp \colon V^* \to V$ with $f\mapsto f^\sharp$ such that
+\[
+f_i^\sharp \cdot e_j = \delta_{ij}.
+\]
+For sake of ease, we put $e^i \coloneqq f_i^\sharp$.  In terms of a generic basis for $V$, if the coefficients for the inner product is given by $g_{ij}=e_i\cdot e_j$, we can put $e^i = g^{ij}e_j$ where $g^{ij}$ is the coefficients to matrix inverse of $g_{ij}$.  One can see this definition taken in \cite{schindler_geometric_2020}. Similarly, there is the isomorphism $\flat \colon V \to V^*$ given by $e \mapsto e^\flat$ satisfying
+\[
+e_i^\flat (e_j)= \delta_{ij}.
+\]
+Thus, there is no need to distinguish between the vector space $V$ and its dual $V^*$ as it suffices to consider $V$ itself with reciprocal basis elements $e^i$.
+
+Based on the inner product, a volume element can be defined by $\mu=e_1 \wedge e_2 \wedge \cdots \wedge e_n = \sqrt{|g|} I$ where $\sqrt{|g|}$ is the square root of the determinant of the matrix $g_{ij}$ and $I$ us the unit pseudoscalar. Note that $I=\frac{1}{\sqrt{|g|}} e_1 \wedge e_2 \wedge \cdots e_n$. We can define $\mu^{-1}$ such that $\mu^{-1}\mu = 1 = \mu \mu^{-1}$ and analogously $I^{-1}$.  One can equivalently put $e^j = (-1)^{j-1} e_1 \wedge e_2 \wedge \cdots \wedge \breve{e_j} \wedge \cdots \wedge e_n \mu^{-1}$ and note that this gives $\mu^{-1} = e^n \wedge \cdots \wedge e^1$. \todo[inline]{maybe mention the reverse here.} Conveniently, the unit pseudoscalar satisfies the relation
+\[
+IA_k = (-1)^{k(n-1)} A_k I.
+\]
+Thus, $I$ commutes with the even subalgebra, and anticommutes with the odd subalgebra.  Moreso, the pseudoscalar allows one to exchange the interior and exterior products as
+\begin{equation}
+\label{eq:wedge_to_dot}
+ (A_k \wedge B_s) I = A_k \cdot (B_s I)
+\end{equation}
+for homogeneous $k$ and $s$-vectors $A_k$ and $B_s$. The above holds true if we replace $I$ with $I^{-1}$ when working in spaces where $g$ is positive definite due to the fact that $I^{-1}$ differs only by a sign. If $B_s = C_{n-s}I$ then,
+\begin{align*}
+ (A_k \cdot B_s)I^{-1} = A_k \cdot (C_{n-s}I) = (A_k \wedge C_{n-s})I = (A_k \wedge (B_sI))I,
+\end{align*}
+and in particular
+\begin{equation}
+\label{eq:dot_to_wedge}
+    (A_k \cdot B_s)I^{-1} = A_k \wedge (B_s I).
+\end{equation}
+This shows the duality between the inner and exterior products.
+
+\todo[inline]{define reverse operator}
+
+
+\begin{example}
+Consider $\spacealg$ with the standard orthonormal vector basis $e_1,\dots,e_n$.  Then, we can define the \emph{cross product} of two vectors $u$ and $v$ by
+\[
+u \times v = (u\wedge v)I^{-1}.
+\]
+The special fact of $\spacealg$ is that vectors and bivectors are Hodge dual to one another. That is to say, bivectors are pseudovectors when the underlying vector space is dimension 3. One can also note that the vector $w=u\times v$ is sometimes refered to as axial and in other cases the pseudovector $u\wedge v$ is referred to as axial.  
+\end{example}
+
+\subsubsection{Projection onto subspaces}
+
+There is a direct relationship between unit $k$-blades and $k$-dimensional subspaces.  Indeed, each unit $k$-blade $B_k$ corresponds to a $k$-dimensional subspace.  That is, each point in $Gr(k,n)$ corresponds to a unit $k$-blade.  Since blades represent subspaces, they also give us a compact way of projecting vectors into subspaces.  In particular, given a vector $a$, the projection onto the subspace spanned by the $k$-blade $B_k$ is given by
+\[
+(a\cdot B_k)B_k^{-1}.
+\]
+
+
+\section{Multivector fields}
+
+We want to generalize the setting of geometric algebra to include a smooth structure. One can take the work above for $\mathcal{G}_n$ and consider a $C^{\infty}$-module structure as opposed to the $\R$-algebra structure in the proceeding section. For brevity, we utilize the same notation $\mathcal{G}_n$ for the $C^\infty$-module and $\R$-algebra as the structure will be clear from context. This smooth setting simply makes the coefficients of the global basis blades given by $C^\infty$ functions as opposed to $\R$ scalars.  In this case, we refer to a generic element in the $C^{\infty}$-module $\mathcal{G}_n$ as a \emph{multivector field}.
+
+\subsection{Directional derivative and gradient}
+
+\todo[inline]{remove hodge star from here and put it in the integration section. Get rid of stuff with exterior derivative and codifferential}
+Note that $\R^n$ has global coordinates and thus we can choose a global vector basis $e_1,\dots,e_n$ and generate $\mathcal{G}_n$ from this basis.  Multiplication of fields is computed pointwise. The directional derivative $\nabla_\omega$ is defined in the usual sense, and we can develop the gradient as $\grad = \sum_{i} e^i \nabla_{e_i}$.  We will adopt the Einstein summation convention when needed (e.g., the repeated indices in $\grad = e^i \nabla_{e_i}$ indicates summation over $i$). Note then that $\omega \cdot \grad = \nabla_\omega$ defines the directional derivative via the gradient.  
+
+This structure defined above is typically referred to as \emph{geometric calculus}.  The setting for geometric calculus extends the setting of differential forms and reduces some of the complexity with tensor computations.  The gradient operator acts on a homogeneous $k$-vector $A_k$ by
+\[
+\grad A_k = \proj{k-1}{\grad A_k} + \proj{k+1}{\grad A_k} \coloneqq \grad \cdot A_k + \grad \wedge A_k.
+\]
+Thus, the gradient splits into two operators $\grad \cdot$ and $\grad \wedge$.  Here, $\grad \wedge$ can be identified with the exterior derivative $d$ and $\grad \cdot$ can be identified with the codifferential $\delta$ on differential forms (see \cite{schindler_geometric_2020}). This of course means the standard properties that apply to $d$ and $\delta$ apply to $\grad \wedge$ and $\grad \cdot$. Namely, we have
+\begin{equation}
+\label{eq:differential_properties}
+(\grad \wedge)^2=0 \qquad (\grad \cdot)^2 = 0 
+\end{equation}
+and likewise $\delta = (-1)^{n(k-1)+1}\star \grad \wedge \star$ and thus 
+\begin{equation}
+\grad \cdot = (-1)^... \star \grad \wedge \star 
+\end{equation}
+when acting on a homogeneous $k$-vector. Indeed, this property follows from \ref{wedge_to_dot} and one can realize the $\pm$ term as arising from the commutivity properties of the unit pseudoscalar. Since \ref{eq:differential_properties} holds, the gradient operator gives rise to the grade preserving Laplace-Beltrami or Hodge-Laplacian operator
+\[
+\Delta = \grad \grad = \grad \cdot \grad \wedge + \grad \wedge \grad \cdot,
+\]
+which is manifestly coordinate invariant by definition.  It also motivates the use of the physicist notation $\grad^2=\Delta$.
+
+\subsection{Differential forms}
+
+\todo[inline]{Introduce the directed measure and hodge duality. Then prove greens formula. Give an example of the 3-ball in spherical coordinates and surface integrals and stuff}
+Naturally, we would also like to be able to integrate multivectors.  In order to do so, we appeal to the language of differential forms and build a path from multivectors to forms. Given the coordinate system $x^i$ on $\R^n$, we form the basis of tangent vector fields $\partial_i = \frac{\partial}{\partial x^i}$ with the reciprocal 1-forms $dx^i$ which are gradients of the coordinate functions.  Thinking of 1-forms as linear functions on tangent vectors, we have $dx^i  \partial_j = \delta^i_j$.  The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product.  For example, we have $d\Sigma = e_i \wedge e_j dx^i dx^j$.  Then,we have $(e^j \wedge e^i)\cdot d\Sigma = dx^idx^j - dx^j dx^i$ which retains the antisymmetry of the differential forms. 
+
+In an $n$-dimensional space with a position dependent inner product $g$, we have the $n$-dimensional volume measure $d\Omega = \sqrt{|g|} dx^1\dots dx^n$. If we then define $dX_n = e^n \wedge \cdots \wedge e^1 dx^1 \dots dx^n$ we then find that $d\Omega = I^\dagger \cdot dX_n$ as
+\[
+I^\dagger \cdot dX_n = \sqrt{|g|} (e_n \wedge \cdots \wedge e_1) \cdot (e^n \wedge \cdots \wedge e^1) dx^1 \cdots dx^n.
+\]
+Similarly, for $k<n$, we can define the $k$-dimensional volume measure as 
+\[
+dX_k = \frac{1}{k!}(e^{i_k}\wedge \cdots \wedge e^{i_1}) dx^{i_1} \cdots dx^{i_k}.
+\]
+We can now write a $k$-form $\alpha_k$ as $\alpha_k = A_k \cdot dX_k$. In this sense, a differential form is made up of two essential components namely the multivector field and the $k$-dimensional volume measure.  This decomposition is important when the underlying space has interesting topological or geometrical features. In $\R^n$, this distinction is less important. 
+
+For example, if we wish to write a 2-form $\alpha_2$ we take $dX_2 = \frac{1}{2!} e^j \wedge e^i dx^i dx^j$ and $A_2 = a_{ij} e_i \wedge e_j$ to yield
+\[
+\alpha_2 = A_2 \cdot dX_2 = \frac{a_{ij}}{2!} (e_i \wedge e_j) \cdot (e^j \wedge e^i) dx^i dx^j = \frac{a_{ij}}{2!} (dx^i dx^j - dx^j dx^i)
+\]
+Thus, we arrive at an isomorphism between $k$-forms and $k$-vectors as a contraction with the $k$-dimensional volume measure $dX_k$ since
+\[
+\alpha_k = A_k \cdot dX_k.
+\]
+Hence, we can see now how a differential form simply appends the measure attached to the underlying space. We can also see how this generalizes the musical isomorphisms $\sharp$ and $\flat$ by taking a vector field $a$ and noting
+\[
+a \cdot dX_1 = a^i e_i \cdot e^j dx^j = a^i dx^i,
+\]
+corresponds to the usual $\flat$ map on vector fields.
+
+The exterior algebra of differential forms comes with an addition $+$ and exterior multiplication $\wedge$.  We note that the sum of two $k$-forms $\alpha_k$ and $\beta_k$ that $\alpha_k+\beta_k$ is also a $k$-form which we can see by letting $\alpha_k = A_k \cdot dX_k$ and $\beta_k = B_k \cdot dX_k$ and putting
+\[
+\alpha_k + \beta_k = (A_k \cdot dX_k)+(B_k \cdot dX_k) = (A_k + B_k) \cdot dX_k,
+\]
+due to the linearity of $\cdot$.  If instead had an $s$ form $\beta_s$ then we have the exterior product
+\[
+\alpha_k \wedge \beta_s = (A_k \wedge B_k) \cdot dX_{k+s},
+\]
+where $dX_{k+s}=0$ if $k+s>n$.  
+
+With differential forms one also has the exterior derivative $d$, the Hodge star $\star$, and the codifferential $\delta$.  Given we can write a differential $k$-form as $\alpha_k = A_k \wedge dX_k^\dagger$, we wish to define $d$, $\star$, $\delta$ by their actions on the $k$-vector $A_k$.  In particular, we have
+\[
+d \alpha_k = (\grad \wedge A_k) \cdot dX_{k+1}^\dagger,
+\]
+which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalars, this returns the gradient as desired.  The Hodge star inputs a $k$-form and outputs a $(n-k)$-form and we define $\star$ so that for two $k$-forms $\alpha_k$ and $\beta_k$ we have $\alpha_k \wedge \star \beta_k  = (A_k\cdot B_k^\dagger)d\Omega$.  This is since
+\[
+A_k \cdot B_k^\dagger = \langle A_{K}, B_{K} \rangle \sqrt{|g|},
+\]
+where $\langle A_{K}, B_{K} \rangle$ is the typical inner product on $k$-vectors extended through to exterior algebra. Thus, a coordinate expression for $\star$ acting on multivectors is given by $B_k^\star = (I^{-1} B_k)^\dagger$ so that $\star \beta = (I^{-1} B_k)^\dagger \cdot dX_{n-k}$.  Indeed, we have
+\begin{align*}
+    \alpha_k \wedge \star \beta_k &= (A_k^\dagger \wedge B_k^\star) \cdot dX_n\\
+    &= (A_k \wedge (I^{-1}B_k)^\dagger )\cdot dX_n\\
+    &= (A_k \wedge (B_k^\dagger I))\cdot dX_n\\
+    &= (A_k \cdot B_k^\dagger) I^{-1} \cdot dX_n\\
+    &= A_k \cdot B_k^\dagger d\Omega,
+\end{align*}
+since $I^{-1}=I^\dagger$ in spaces with $g$ positive definite.
+
+\todo[inline]{Cite Hestenes.}
+
+Then, in the typical fashion we define the codifferential $\delta = (-1)^{n(k-1)+1} \star d \star$ when acting on $k$-forms.  Then,
+\begin{align*}
+    \delta \alpha_k &= (-1)^{n(k-1)+1} \star d \star \alpha_k \\
+    &= (-1)^{n(k-1)+1} \star d [(I^{-1} A_k)^\dagger  \cdot dX_{n-k}]\\
+    &= (-1)^{n(k-1)+1} \star [\grad \wedge (A_k^\dagger I)] \cdot dX_{n-k+1}\\
+    &= (-1)^{n(k-1)+1} \star [(\grad \cdot A_k^\dagger)I^{-1} ] \cdot dX_{n-k+1}\\
+    &= (-1)^{n(k-1)+1} \star [
+\end{align*}
+
+\todo[inline]{introduce the $\Omega^k(M)$ notation here at some point}
+
+\subsection{Riemannian manifolds}
+
+\todo[inline]{Define the exterior derivative and codifferential here as well?}
+
+Given the natural invariance of the differential operator $\grad$, extending geometric calculus to non-Euclidean spaces follows readily.  For two other introductions to the topic, see \cite{schindler_geometric_2020} which we follow more closely and \url{https://math.uchicago.edu/~amathew/dirac.pdf} which is more general. In order to build a geometric algebra structure parameterized by smooth manifolds, we need a smoothly varying inner product defined on the tangent bundle  As such, we will be working with Riemannian manifolds.
+
+Let $(M,g)$ be an $n$-dimensional smooth, compact, and oriented Riemannian manifold with boundary $\partial M$.  Then at each point  $p\in M$, we have the tangent space $T_pM$ and the metric $g_p$ which can be combined to yield a geometric algebra structure. We can glue together the geometric algebras $\mathcal{G}(T_pM,g_p)$ the bundle
+\[
+\multivectorbundle \coloneqq \dot{\bigcup}_{p\in M} \mathcal{G} (T_pM,g_p),
+\]
+which we refer to as the \emph{geometric algebra bundle}.  We can then define the space of $C^\infty$-smooth sections of the geometric algebra bundle, $\multivectorfields$, and refer to its elements as the \emph{multivector fields} on $M$. The space of multivector fields then forms a both a $\mathbb{Z}$- and $\mathbb{Z}/2\mathbb{Z}$-graded $\R$-algebra with an inherited geometric multiplication from the pointwise product. The $\mathbb{Z}$-grading allows us to define the space of homogeneous $k$-vector fields which we denote by $\kvectorfields{k}$.  The $\mathbb{Z}/2\mathbb{Z}$-grading allows us to define the space of even (resp. odd) multivector fields denoted by $\evenfields$ (resp. $\oddfields$).
+
+Given the metric $g$, we have an isomorphism between $T^*M$ and $TM$ which extends to an isomorphism between the multivector fields and the corresponding differential forms $\mathcal{G}^*(M)$.  Indeed, this is entirely encapsulated by the musical isomorphisms $\sharp$ and $\flat$ seen in Subsection \ref{subsection:duality_and_pseudoscalars} when a choice of local coordinates is made. As before, it suffices to work with $\multivectorfields$ as one always has access to reciprocal elements. 
+
+Specifically, let us take local coordinates $x^1,\dots,x^n$ on $M$ and put $e_i = \frac{\partial}{\partial x^i}$ as a local vector field basis.  We also have the covectors $dx^1,\dots,dx^n$ which satisfy $dx^i(e_j) = \delta^i_j$.   Following Subsection \ref{subsection:duality_and_pseudoscalars} again, it suffices to consider $e^i = dx^{i^\sharp}$ that satisfies $e^i \cdot e_j = \delta^i_j$ where $\cdot$ here represents the Riemannian inner product.  For the remainder of the paper, we will use this relationship repeatedly.
+
+One then extends the directional derivative $\nabla_\omega$ previously defined to the covariant derivative $\nabla_\omega$ that acts on multivector fields. This is done typically; start with the unique Levi-Civita connection on $(M,g)$ and form the coordinate independent covariant derivative on $(M,g)$. In \cite{schindler_geometric_2020} one will find the construction of $\nabla_\omega$ and a list of properties.  Following that, we have the gradient $\nabla$ given in local coordinates by $e^i \grad_{e_i}$ which gives rise to the exterior derivative $\grad \wedge$ and codifferential $\grad \cdot$. Similarly, we define the Hodge-Laplacian $\Delta = \grad^2$. Using the terminology from differential forms, we have the following definition.
+
+\begin{definition}
+Let $\alpha \in \kvectorfields{k}$, $\beta \in \kvectorfields{k+1}$, and $\gamma \in \kvectorfields{k-1}$.  Then
+\begin{itemize}
+    \item $\alpha$ is \emph{closed} if $\grad \wedge \alpha =0$.
+    \item $\alpha$ is \emph{exact} if $\alpha = \grad \wedge \gamma$ for some $\gamma$.
+    \item $\alpha$ is \emph{coclosed} if $\grad \cdot \alpha = 0$.
+    \item $\alpha$ is \emph{coexact} if $\alpha = \grad \cdot \beta$ for some $\beta$.
+    \item $\alpha$ is \emph{harmonic} if $\Delta \alpha =0$.
+\end{itemize}
+\end{definition}
+
+Geometric calculus includes another definition for multivectors that is a big motivation for those who study Clifford analysis.  
+
+\begin{definition}
+ Let $f \in \multivectorfields$. Then we say that $f$ is \emph{monogenic} if $f \in \ker(\grad)$.
+\end{definition}
+
+Monogenic fields are of utmost importance as they have many beautiful properties.  For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values.  This is the exact analog of the Cauchy integral formula in complex analysis.  More can be seen \textcolor{red}{include some sources.}
+
+
+\todo[inline]{go through this stuff and clean it up using the pseudoscalar definitions and what not above.  It will be much easier. Add stokes theorem in with directed measures. These will work for coordinate patches and I'll have to show it converges using a partition of unity.}
+
+\todo[inline]{Fix this remaining stuff. Intuition from this part can be spread through the multivector parts of this paper.}
+
+The metric also induces the Riemannian volume form $\mu \in \kvectorfields{n}$ on $M$ which is of top degree and hence a pseudoscalar as well as a inner product $\innerproduct{\cdot}{\cdot}$ on each fiber of $\kvectorfields{k}$. Let $\omega$ and $\eta$ be homogeneous Clifford fields, then the \emph{Hodge star} operator is then defined to be the unique operator $\star \colon \kvectorfields{k} \to \kvectorfields{n-k}$ satisfying
+\[
+\omega_p \wedge \star \eta_p = \innerproduct{\omega_p}{\eta_p} \mu_p,
+\]
+at any point $p \in M$ and for any $\omega,\eta \in \kvectorfields{k}$.  Note that this extends to all of $M$ as
+\[
+\kforminnerproduct{\omega}{\eta} = \int_M \omega \wedge \star \eta.
+\]
+
+For example, let $M$ be a submanifold of $\R^3$ with the Euclidean inner product.  Thus, $\mu$ is the standard volume form inherited from $\R^3$. Then, $M$ has a global orthonormal coordinates $x^1$, $x^2$, and $x^3$ which induce the orthonormal set of basis 1-forms  $dx^1$, $dx^2$, and $dx^3$. One should think of 1-forms and vectors on $M$ as being equivalent. Of course, this is made rigorous by the isomorphism given by the Riesz representation theorem with the given inner product. \textcolor{red}{maybe this is worth showing.} With these coordinates, the Hodge star on 1-forms is given explicitly by
+\[
+\star dx^1 = dx^2 \wedge dx^3, \quad \star dx^2 = dx^3 \wedge dx^1, \quad \star dx^3 = dx^1 \wedge dx^2.
+\]
+We can see that for 1-forms on $M$, the Hodge star outputs a 2-form that represents an oriented plane element that is perpendicular to the original 1-form. This plane element is also scaled by the magnitude equal to that of the original 1-form due to the linearity in the original definition.  Working this way allows us to recover the same notion of an inner product of vectors in $\R^3$ but with 1-forms instead.  Indeed, if we have the 1-forms
+\[
+\alpha = \alpha_1 dx^1 + \alpha_2 dx^2 + \alpha_3 dx^3, \qquad \beta = \beta_1 dx^1 + \beta_2 dx^2 + \beta_3 dx^3,
+\]
+then 
+\begin{align*}
+\alpha \wedge \star \beta = (\alpha_1 \beta_1 + \alpha_2 \beta_2 + \alpha_3 \beta_3)dx^1\wedge dx^2 \wedge dx^3.
+\end{align*}
+Note that the coefficient on $dx^1\wedge dx^2 \wedge dx^3$ is exactly the inner product if we utilized the $\sharp$ map on the 1-forms and applied the Euclidean inner product. That is, $\alpha^\sharp \cdot \beta^\sharp$.
+
+Since $M$ is a manifold with boundary $\partial M$, we have the map $\iota \colon \partial M \hookrightarrow M$ as the inclusion of the boundary into $M$.  This map induces the pullback $\iota^* \colon T^*M \to T^* \partial M$ on forms. Of particular interest will be pulling back 0- and $(n-1)$-forms to the boundary. For 0-forms $u$, $\iota^*(u)$ is simply the boundary values for a smooth function. In the case for a 1-form $\alpha$ on $M$, we have that $\star \alpha$ is a $(n-1)$-form everywhere perpendicular to $\alpha$.  Thus, the pullback $\iota^*( \star \alpha)$ is an $(n-1)$-form on the $(n-1)$-dimensional boundary manifold.  Indeed, since $\star \alpha$ is perpendicular to $\alpha$, $\iota^*( \star \alpha)$ represents the normal component of the 1-form $\alpha$ at the boundary $\partial M$. Letting $\mu_{\partial M}$ be the boundary volume form, the total flux of the field $\alpha$ through $\partial M$ is given by
+\begin{equation}
+\label{eq:flux}
+\kforminnerproduct{\iota^*(\star \alpha)}{\mu_{\partial M}}_{\partial M}.
+\end{equation}
+\textcolor{red}{This equation is not right and I should write it in terms of the multivectors first.}
+
+
+
+\section{Dirichlet to Neumann Operator and Hilbert Transform}
+
+Let $u^\phi \in \Omega^0(M)$ be a smooth 0-form (scalar function) that is a solution to the following Dirichlet boundary value problem
+\begin{equation}
+\label{eq:dirichlet_problem}
+\begin{cases} \Delta u^\phi = 0 & \textrm{ in $M$} \\  \iota^*( u) = \phi. \end{cases},
+\end{equation}
+where $\Delta$ refers to the Laplace-Beltrami operator on differential forms. For the Calder\'on problem, the manifold $M$ and metric $g$ are unknown and one seeks to determine as much as possible about $(M,g)$ from measurements on the boundary.  Due to the relationship between the EIT and Calder\'on problem, we use the notation $\phi$ for the Dirichlet boundary values since $\phi$ should be thought of as the prescribed voltage along the boundary. 
+
+For any given solution to the boundary value problem, there is the corresponding Neumann data $E=\iota^*(\star d u)$.  As with $\phi$, the notation $E$ is used as the Neumann data measured in the EIT problem corresponds to the electric field flux at the boundary. One attains the current $J$ by multiplying with $E$ by the boundary conductivity matrix. The set of both boundary conditions $(\phi, E)$ is the \emph{Cauchy data} and the \emph{Dirichlet-to-Neumann (DN) map} $\Lambda$ is defined such that $\Lambda \phi = E$ and in particular this yields $\iota^*(\star d u^\phi)= E$. Note that this map $\Lambda$ is often referred to as the \emph{scalar} DN map as $\Lambda \colon \Omega^0(\partial M) \to \Omega^{n-1}(\partial M)$ inputs a scalar Dirichlet condition. An extension of the DN map to forms can be found in \cite{belishev_dirichlet_2008,sharafutdinov_complete_2013}. The Calder\'on problem for Riemannian manifolds is then to recover the pair $(M,g)$ up to isometry from complete knowledge of the DN map $\Lambda$. 
+
+Denote by $\harmonicfunctions = \{u \in \Omega^0(M) ~\vert~ du=0\}$ the space of harmonic 0-forms on $M$.  From the DN map, one can define the \emph{Hilbert transform} $T\colon \iota^* \harmonicfunctions \to \iota^* \harmonicfunctions$.  This function acts on traces of harmonic forms by
+\[
+T \phi  = d\Lambda^{-1} \phi,
+\]
+and is defined in \cite{belishev_dirichlet_2008}. The authors show benefit to defining the Hilbert transform as it provides the ability to generate so called conjugate forms.  When the condition
+\begin{equation}
+\label{eq:conjugate_requirement}
+\left( \Lambda + (-1)^{n}d\Lambda^{-1}d\right)\phi = 0, 
+\end{equation}
+is met, then there exists a \emph{conjugate form} $\epsilon^\psi \in \Omega^{n-2}(M)$ with boundary trace $\psi = \iota^* \epsilon$ satisfying $Td\phi = d \psi$. As well, $\epsilon$ is also coclosed in that $\delta \epsilon=0$. 
+
+Now, there exists a 2-form $b^\psi$ such that $\star b^\psi = \epsilon$.  Using the isomorphism between forms and multivectors, we can let $U$ be the scalar field corresponding to $u^\phi$ and we can let $B$ be the bivector field corresponding to $b^\psi$.  We can add these to yield the paravector $F=U+B \in \multivectorfields$.   Recall that a multivector field is monogenic if $\grad F=0$.  Applying this to the paravector $F$ yields the equations
+\[
+\grad \wedge U = -\grad \cdot B \qquad \textrm{and} \qquad \grad \wedge B = 0.
+\]
+The conjugacy relation $du^\phi = \star d \epsilon^\psi$ is equivalent to having the multivector $F$ be monogenic.
+
+\begin{lemma}
+Given the forms $u^\phi$ and $b^\psi$ conjugate as above, the corresponding paravector field
+\[
+F = U + B
+\]
+is monogenic.
+\end{lemma}
+\begin{proof}
+Let $\star b^\psi = \epsilon$ and note that 
+\[
+d u = \star d \epsilon = \star d \star b^\psi.  
+\]
+Now, writing the multivector equivalent of the right hand side yields
+\begin{align*}
+(\grad \wedge B^\star )^\star &= [(\grad \cdot B^\dagger) I]^\star\\
+    &= [I^{-1} ((\grad \cdot B^\dagger) I)]^\dagger\\
+    &= ((\grad \cdot B^\dagger)I)^\dagger I\\
+    &= I^\dagger (\grad \cdot B^\dagger)^\dagger I\\
+    &= \grad \cdot B^\dagger && \textrm{since $\dagger$ of a vector is trivial}\\
+    &= -\grad \cdot B. && \textrm{since $\dagger$ of a bivector is -1}
+\end{align*}
+Thus, we have $\grad \wedge U + \grad \cdot B = 0$. Since $\epsilon$ is coclosed we have
+\begin{align*}
+0=\grad \cdot B^\star &= \grad \cdot (I^{-1} B)^\dagger \\
+    &= \grad \cdot (B^\dagger I)\\
+    &= (\grad \wedge B^\dagger) I\\
+    &= \grad \wedge B.
+\end{align*}
+Thus $\grad F =0$ and $F$ is monogenic.
+\end{proof}
+
+\todo[inline]{Add about the 2D problem and generating algebras?}
+
+
+\section{Algebras of monogenic fields}
+
+\todo[inline]{Rephrase in terms of hilbert transform? Copy stuff from other paper here.}
+
+For this section, let $n=\dim(M)=3$. Supposing that $\phi$ satisfies \ref{eq:conjugate_requirement} one can generate paravectors $f=u+b$ and define the space of \emph{monogenic paravectors}
+\begin{align*}
+\monogenics &= \{ f ~ \vert ~ (\Lambda - d\Lambda^{-1}d)\phi =0, ~\grad f=0\}\\
+\end{align*}
+The original requirement that $\Delta u^\phi =0$ is obtained since $f$ is monogenic. We can then generate an algebra from this set by
+\[
+\algebra{} = \{ fg ~\vert~ f,g \in \monogenics\},
+\]
+but, as mentioned in \cite{belishev_algebras_2019}, this algebra generated by these monogenic fields in $\monogenics$ produce fields that are not monogenic.  Indeed, this is a well known fact in Clifford analysis mentioned in \cite{schepper_introductory_nodate}.  Fundamentally, however, this fact that the product of monogenics is no longer monogenics makes the direct approach in \cite{belishev_calderon_2003} intractable. This issue comes down to the lack of commutivity of paravectors in dimensions higher than $2$.  However, for certain so-called axial fields, commutivity is regained. In fact, the construction of these fields was done in \cite{belishev_algebras_2017} in order to create a closed commutative algebra of monogenic fields. These axial fields will relate directly to complex holomorphic functions.
+
+In \cite{belishev_algebras_2017, belishev_algebras_2019}, the definition of axial is defined for quaternion fields and the properties are discussed.  It is evident from the Example \ref{ex:quaternions} that quaternion fields are analogous to paravector fields via the given identification.  This identification is key in connecting the relevant algebras to the DN map. So we proceed by following the definitions in place.  
+
+\begin{definition}
+    Let $F=U+B$ be a paravector and let $\omega$ be a unit vector.  We then say that $F$ is \emph{$\omega$-axial} if $\nabla_\omega F = 0$.  
+\end{definition}
+
+\todo[inline]{Make sure I define the covariant derivative and stuff}
+
+From the grade preserving nature of $\nabla$, we see that the requirement $\nabla_\omega f=0$ reduces to a grade-wise requirement
+\[
+\nabla_\omega U = 0 \qquad \textrm{and} \qquad \nabla_\omega B = 0.
+\]
+Thus, we can write $B=\beta \omega I = \beta B$ for a smooth scalar field $\beta$ satisfying $\nabla_\omega \beta =0$. So long as $\omega$-axial monogenics are closed under multiplication, we can recover a sub-algebra of holomorphic functions inside of the larger algebra $\monogenics$ generated by monogenic paravectors. If we take two $\omega$-axial monogenic fields $f=u_f + \beta_f B$ and $g=u_g + \beta_g B$, then we have
+\begin{equation}
+\label{eq:axial_multiplication}
+fg = u_f u_g - \beta_f \beta_g + B (u_f b_g + u_g b_f).
+\end{equation}
+Namely, this follows from the fact that
+\[
+B^2 = (\omega I)^2 = -1.
+\]
+This fact is essential. In essence, we now have a direct representation of a holomorphic function if we let $i=B$.  One should then realize that an $\omega$-axial monogenic $f$ is built by translating a holomorphic function along the direction defined by $\omega$ since $f$ has no dependence on this direction. Moreover, it is clear that $B$ is a 2-blade.  Note that for some unit vectors $r$ and $p$, we have $\omega = r \times p$.  Thus, $B =  (r \times p)I^{-1}$.  Indeed, this fits with the interpretation above in that $B$ is acting as a pseudoscalar in some manner.  To say this fully, $B$ is the pseudoscalar for the plane spanned by $r$ and $p$. Another way of rephrasing $f$ being $\omega$-axial is then to say that $f$ is constant on all translations of the $r p$-plane. In this case, $f$ depends solely on two variables and is exactly a holomorphic function. This is simply dual to the notion of being constant along straight lines in a 3-dimensional space.  One can think of $\omega$ as a member of the Grassmanian $Gr(1,3)$ whereas its dual $B=\omega I$ lies in $Gr(2,3)$ which is isomorphic. Indeed, $I$ gives a natural isomorphism between $Gr(1,3)$ and $Gr(2,3)$.
+
+If $f$ is an $\omega$-axial monogenic, then we can recall the Cauchy-Riemann equations yield
+\begin{equation}
+\label{eq:axial_cauchy_riemann}
+\grad u = (\omega \wedge \grad \beta)I \qquad \textrm{and} \qquad - B \wedge \grad \beta B = 0.
+\end{equation}
+
+On this plane given by the blade $B$, we want to realize $B$ acting as $i$ for a holomorphic function. In particular, this means we need the Dirac operator to respect multiplication by constant paravectors (which is analogous to scaling complex functions by a complex number). If one has an $\omega$-axial monogenic $f$, we wish that for a constant paravector $k=k_1 + k_2 B$ that $\grad (kf)=0$ as well. $\grad$ is clearly $\R$-linear, so it sufficies to show the following.
+
+\begin{lemma}
+    \label{lem:mult_by_i_monogenic}
+    Let $f=u+\beta B$ be an $\omega$-axial monogenic paravector, then $B f$ is $\omega$-axial and monogenic.
+\end{lemma}
+\begin{proof}~
+    
+\todo[inline]{I can use equations 82 from Chisolm to avoid the use of the cross product}
+    It is clear that $B f$ is $\omega$-axial due to the grade preserving linearity of the covariant derivative.
+    
+    To see that $B f$ is monogenic, we take $B  f = B  u - \beta$.  Then,
+    \begin{align*}
+    \grad (Bf) = \grad (B u) - \grad \beta,
+    \end{align*}
+    where we have the graded components
+    \begin{align*}
+        \proj{1}{\grad (B f)} &= (\grad \cdot Bu)  - \grad \beta\\
+        \proj{3}{\grad (Bf)} &= (\grad \wedge B u).
+    \end{align*}
+    Note that
+    \begin{align*}
+    \grad \cdot (Bu) =  -\omega \times (\grad \wedge u)  =- \omega \times (\omega \times \grad\beta) = -\omega (\nabla_\omega \beta)+\grad \beta = \grad \beta
+    \end{align*}
+    by \ref{eq:axial_cauchy_riemann} and thus $\proj{1}{\grad (Bf)}=0$. 
+    
+    For the grade-3 component,
+    \begin{align*}
+        \grad \wedge (B u) &= \omega \cdot  (\grad \wedge B)II^{-1}u = I^{-1} \nabla_\omega u=0
+    \end{align*}
+    since $u$ is $\omega$-axial. Thus we have $\grad(B f)=0$ is monogenic.
+\end{proof}
+
+The point here is that we have now effectively found functions that can be scaled by $\alpha + \beta B$ and remain monogenic.  This is the constant multiple rule for the Wirtinger derivative for complex functions. Generically, if I take some multivector $A$ times a monogenic field $f$, $Af$ need not be monogenic.
+
+\begin{proposition}
+    Let $f$ and $g$ be monogenic and $\omega$-axial. Then $fg=gf$, $fg$ is $\omega$-axial, and $fg$ is monogenic.
+\end{proposition}
+\begin{proof}
+\todo[inline]{Clean this up with better notation}
+    \begin{itemize}
+        \item First, it is clear that $fg=gf$ by Equation \ref{eq:axial_multiplication}.
+        \item The product $fg$ is $\omega$-axial simply by the product rule of the multivector covariant derivative. That is,
+        \[
+            \nabla_\omega (fg) = (\nabla_\omega f)g + f(\nabla_\omega g) =0.
+        \]
+
+    \item 
+
+
+
+To see that the product is monogenic, we have
+    \[
+        \grad(fg) = \grad(u_fu_g - b_f b_g +  B(u_f b_g + u_g b_f)).
+    \]
+    Then the grade-1 components are
+    \[
+        \proj{1}{\grad(fg)}=\grad \wedge (u_f u_g - b_f b_g) + \grad \cdot B(u_f b_g + u_g b_f),
+    \]
+    and the grade-3 components are
+    \[
+        \proj{3}{\grad(fg)} = \grad \wedge B (u_f b_g + u_g b_f).
+    \]
+    For the grade-1 components, we have
+    \begin{align*}
+        \grad(u_f u_g - b_f b_g) &= (\grad u_f) u_g + u_f (\grad u_g) - (\grad b_f) b_g - b_f (\grad b_g)\\
+        \grad \cdot I\omega(u_f b_g + u_g b_f) &= (\grad \cdot I\omega u_f) b_g + u_f (\grad \cdot B b_g) + b_f(\grad \cdot B u_g) + (\grad \cdot B b_f) u_g,
+    \end{align*}
+    and since $f$ and $g$ are both monogenic we have
+    \begin{align*}
+        \proj{1}{\grad(fg)} &= (\grad \cdot B u_f - \grad  b_f)b_g + (\grad \cdot B) u_g - \grad  b_g)b_f.
+    \end{align*}
+    Then, note that 
+    \[
+        \proj{1}{\grad Bf} = \grad \cdot B u_f - \grad b_f=0
+    \]
+    by Lemma \ref{lem:mult_by_i_monogenic} and likewise for $\proj{1}{\grad Bg}$. Thus,
+    \[
+        \proj{1}{\grad(fg)}=0.
+    \]
+    Likewise, for the grade-3 component of the gradient 
+    \begin{align*}
+        \proj{3}{\grad(fg)} &= I^{-1} \nabla_\omega (u_f b_g + u_g b_f)=0,
+    \end{align*}
+    by the product rule for the covariant derivative and the fact that $f$ and $g$ are $\omega$-axial.
+\end{itemize}
+\end{proof}
+
+\todo[inline]{Add in power series stuff here.  We can write $f=u+ib$ as a power series of $x+yB$?}
+
+
+\textcolor{red}{As we move through the different axial vectors, it's as if we're doing some tomography on 2d slices of the domain.}
+
+\todo[inline]{Now describe how to do the rest of the algebra stuff here.}
+
+Now, we have shown that we can recover $\monogenics$ from $\Lambda$.  The question remains on whether we can also recover the copies of $\algebra{\omega}$. We have that $\algebra{\omega}$ is a commutative uniform Banach algebra, but it is not clear that $\algebra{\omega}\subset \monogenics$.  This differs from \cite{belishev_algebras_2019} where they begin with the full set of monogenic fields (harmonic quaternions). 
+
+\todo[inline]{Add $B$-planar fields and show they are equivalent to $\omega$-axial but also generalize the idea. This should allow this paper to be generalized to the $n$-ball.}
+
+\textcolor{red}{In local coordinates the following definition works...}
+
+\begin{definition}
+    Let $B$ be a unit 2-blade then we say that a paravector $f=u+\beta B$ is $B$-planar if $f((x\cdot B)B^{-1})=f(x)$ for all $x$.
+\end{definition} 
+
+\begin{theorem}
+    In $\R^3$, if $\omega I = B$, then $B$-planar is equivalent to $\omega$-axial.
+\end{theorem}
+\begin{proof}
+    \todo[inline]{finish}
+\end{proof}
+
+\textcolor{red}{Now I can use the fact that we can build a monogenic $f$ with those boundary values.  Then can I show this satisfies the conjugacy requirement? It may also be good to do the hilbert transform stuff here. Also, describe $\monogenics$ as just taking all possible boundary values satisfying conjugacy condition.  This should just be $L_2(\partial M)$ by the other hilbert transform stuff.}
+
+\subsection{Cauchy and Poisson integrals}
+
+In regions of $\R^n$, one can define a Cauchy integral operator and Hilbert transform for multivector fields.  The details of these integral operators are laid out in \cite{brackx_hilbert_2008}. Note that the authors there take the opposite signature to $\mathcal{G}_n$ and define the gradient operator as $\underline{\partial} = e_j \nabla_{e_j}$.  Thus, we have $\grad = g^{ij} \underline{\partial}$.  Nonetheless, the fundamental solution to $\grad$ is a vector field given by
+\[
+E(x) = \frac{1}{a_m} \frac{x}{|x|^m},
+\]
+for $x\in \R^n$.  This is clear to see if we take $e_i$ to be a (local) orthonormal basis
+\begin{align*}
+\grad \wedge E &= \frac{1}{a_m}  \left( \frac{1}{|x|^n} \nabla_{e_i} x^j + x^j \nabla_{e_i} \frac{1}{|x|^n} \right) e^i \wedge e_j\\
+&= \left( \frac{1}{|x|^n} \delta_i^j -\frac{3x^ix^j}{|x|^{n+2}} \right) e^i \wedge e_j\\
+&= -\frac{3x^i x^j}{|x|^{n+2}} e^i \wedge e_j &&\textrm{since $e^i \wedge e_i=0$}\\
+&= 0 &&\textrm{since $e^j\wedge e_i = -e^i \wedge e_j$ for an orthonormal basis.}
+\end{align*}
+(see \url{https://math.stackexchange.com/questions/811248/wedge-product-between-nonorthogonal-basis-and-its-reciprocal-basis-in-geometric}. This is also clear since $E$ is a radial field and thus has no curl. Then, let $B_{\epsilon}$ be the $n$-ball of radius $\epsilon$ centered at the origin and we have
+\begin{align*}
+\int_{B_\epsilon} \grad \cdot Ed \Omega &= \int_{S_\epsilon} E \cdot \nu d\Sigma\\
+&=\frac{1}{a_n} \int_{S_\epsilon} \frac{x\cdot \frac{x}{|x|}}{|x|^n} d\Sigma\\
+&= \frac{1}{a_n} \int_{S_\epsilon} \frac{1}{\epsilon^{n-1}} d\Sigma\\
+&= \frac{1}{a_n} \int_{S_\epsilon} \frac{1}{\epsilon^{n-1}} \epsilon^{n-1} d\phi_1 d\phi_2 \cdots d\phi_{n-1}\\
+&= 1.
+\end{align*}
+
+Let $\partial M = \Sigma$ and define now the $\G_n$ valued inner product on multivector fields $f,g \in L_2(\Sigma)$
+\[
+\innerproduct{f}{g} = \int_{\partial M} f(\zeta)g(\zeta)d\Sigma(\zeta).
+\]
+We can then define the \emph{Cauchy kernel} for $x\in M$ and $\zeta \in \partial M$ using the fundamental solution $E$ as
+\[
+C(\zeta, x) = -\frac{1}{a_n} \nu(\zeta) E(x-\zeta)
+\]
+where $\nu(\zeta)$ is the outward normal vector to the hypersurface $\Sigma = \partial M$. Note the inclusion of the minus sign is due to the signature of the inner product $g$. The Cauchy integral for $\phi \in L_2(\partial M)$ is then
+\[
+\cauchy[\phi](x) = \innerproduct{C(\zeta,x)}{\phi(\zeta)} =\frac{1}{a_n} \int_{\Sigma} \frac{\zeta-x}{|x-\zeta|^n} \nu(\zeta) \phi(\zeta) d\Sigma(\zeta).
+\]
+The most important properties of the Cauchy integral is that $\cauchy[\phi]$ is monogenic in $M$ and for a scalar function $\phi$, $\cauchy[\phi]$ is a paravector.  Specifically,
+\begin{align*}
+\cauchy[\phi](x) &= \frac{1}{a_n} \int_{\Sigma} \frac{\zeta-x}{|x-\zeta|^n} \nu(\zeta) \phi(\zeta) d\Sigma(\zeta)\\
+&= \frac{1}{a_n} \left(\int_{\Sigma} \phi(\zeta) \frac{\zeta-x}{|x-\zeta|^n} \cdot \nu(\zeta) d\Sigma(\zeta) + \int_{\Sigma} \phi(\zeta) \frac{\zeta-x}{|x-\zeta|^n} \wedge \nu(\zeta) d\Sigma(\zeta)\right)
+\end{align*}
+
+Similarly, for the $n$-ball of radius $r$, $B_r \subset \R^n$, we have the \emph{Poisson kernel}
+\[
+P(\zeta,x) = \frac{1}{a_n}\frac{r^2-|x|^2}{r|x-\zeta|^n}.
+\]
+Notably, we have the Poisson integral
+\[
+\poisson[\phi](x) = \innerproduct{P(\zeta,x)}{\phi(\zeta)} = \frac{1}{a_n} \int_\Sigma \phi(\zeta) \frac{r^2-|x|^2}{r|x-\zeta|^n},
+\]
+which is harmonic on $B_r$ and extends continuously onto $\Sigma$. Briefly letting $g_{ij}=\delta_{ij}$, if we then consider the Cauchy integral over $\Sigma = \partial B_r = S_r$ then it is apparent that the Poisson integral deviates from the scalar part of the Cauchy integral as
+\[
+\proj{0}{\cauchy[\phi](x)} = \frac{1}{a_n} \int_\Sigma \phi(\zeta) \frac{r^2- x\cdot \xi}{r|x-\xi|^n} d\Sigma (\zeta).
+\]
+Sadly, this means that we do not have the boundary behavior of the Cauchy integral that we desire.  Namely, the $\iota^* \proj{0}{\cauchy[\phi](x)}\neq \phi$ in general. It is also worth noting that it is an open problem to determine a general form for the Poisson integral for other domains in $\R^n$. However, since $\cauchy[\phi](x)$ is monogenic, we have that the components are harmonic.
+
+\subsection{Generating axial monogenics}
+
+The following questions remain for a domain in $\R^3$.
+
+\begin{question}
+    For what boundary values $\varphi \in C_\infty(\Sigma)$ can we generate axial monogenics?
+\end{question}
+
+\begin{question}
+    Do these boundary values exhaust the whole axial algebra $\algebra{\omega}$?
+\end{question}
+
+Fix an axis $\omega$ which defines the blade $B = \omega I$ and thus defines the $B$-plane in $\R^3$.  Then, let $f=u+\beta B$ be an $\omega$-axial monogenic.  We can then determine the boundary values for $f$ on $\Sigma$ by orthogonal projection onto the $B$-plane.  That is, we care only about the components of $f$ perpendicular to the axis $\omega$ and hence we take for $\zeta \in \Sigma$
+\[
+\zeta^\perp = \omega \omega \wedge \zeta = (x\cdot B)B^{-1}.
+\]
+showing the relationship between projection onto a plane and being orthogonal to an axis in $\R^3$. Specifically, this means that the relationship $f(x)=f(x+t\omega)$ can be written as
+\[
+f(x)=f((x\cdot B)B^{-1}),
+\]
+in that we only care about the portion of $x$ along the plane given by $B$.  Thus, for $\xi \in \Sigma$ we have
+\[
+f(\xi) = f((\xi \cdot B)B^{-1}).
+\]
+
+\textcolor{red}{So boundary values of axial monogenics are axial and...?.}
+
+\begin{example}
+    Consider the 3-dimensional example with $M=B_3$ and $\Sigma=S^2$.  Let $e_1,e_2,e_3$ be a global orthonormal basis and let $g_{ij}=\delta_{ij}$.  Then let $B=e_1 \wedge e_2$.  Then the paravector field $f(x^1,x^2,x^3)=x^1+x^2B$ is $e_3$-axial. Clearly we can see that $f(x^1,x^2,x^3+t)=f(x^1,x^2,x^3)$ for any $t$.  $f$ is also monogenic as one can show
+    \[
+        \grad f = e_1 + (e_2 \wedge e_3)I = e_1 - e_1 = 0.
+    \]
+    Indeed, this $f$ is none other than the complex function $f(z)=z$ with $B$ taking the role of the imaginary unit $i$. 
+
+    Let $x=x^1e_1 + x^2e_2 + x^3e_3$.  Then, 
+    \[
+        B (x\cdot B) = (e_1e_2)( x^1e_2 -x^2 e_1 ) = x^1 e_1 + x^2 e_2.
+    \] 
+    Thus, for $\xi \in S^2$, we have $f(\xi)=\xi^1 +\xi^2 B$.
+\end{example}
+
+\todo[inline]{If we consider now every $\omega$-axial monogenic can be written as a power series, if we can construct $z$ we should be done...?}
+
+It is clear that we can define a monogenic field $f=u+b$ via the Cauchy integral, but we then require $\nabla_\omega f = 0$.  Let $f=\cauchy[\varphi](x)$, then we must have
+\[
+\nabla_\omega \proj{0}{\cauchy[\varphi](x)} = 0 \qquad \textrm{and} \qquad \nabla_\omega \proj{2}{\cauchy[\varphi](x)}=0.
+\]
+The first condition yields
+\[
+0 = \int_\Sigma \frac{(\nu(\zeta)\cdot x) (\omega \cdot x)}{|x-\zeta|^2} \phi(\zeta) d\Sigma(\zeta).
+\]
+
+
+
+
+\subsection{Other}
+
+\begin{itemize}
+    \item Prove that the Hilbert transforms are equivalent on traces of harmonic functions. Specifically, $Td\phi = d\psi$.  
+    \item Discuss hardy spaces as closure of $\monogenics$. 
+    \item $H^2=1$ on $L_2(\partial M)$ which should show we satisfy the theorem below.
+\end{itemize}
+
+Let $M\subset \R^3$ be a 
+
+
+
+
+
+
+
+
+
+
+\begin{theorem}
+    For any $\omega \in Gr(1,3)$ we have that $\algebra{\omega}\subset \monogenics$. 
+\end{theorem}
+\begin{proof}
+    \textcolor{red}{This seems to be saying that we need boundary values in some hardy space or something. They defined this conjugacy thing as $G$.}
+    Fix a unit vector $\omega$.  We want to show that for any $f=u+b\in \algebra{\omega}$ that $\iota^* u=\phi$ satisfies \ref{eq:conjugacy_requirement}.  That is,
+    \[
+        G\phi = (\Lambda - d\Lambda^{-1}d) \phi = 0.
+    \]
+    Note that $\phi$ is the trace of a harmonic function, so this operator is well defined.  Note that the equation
+    \[
+        \Lambda \psi = d \phi
+    \]
+    has a solution
+\end{proof}
+
+\section{Relation to the BC Method}
+
+\textcolor{red}{Describe how this process can lead to the BC method in dimension $n=2$}
+
+
+\section{Conclusion}
+
+
+\appendix
+\section{Appendix}
+
+\todo[inline]{Put axial condition for cauchy integral and some other quick proofs in here.}
+
+\bibliographystyle{siam}
+\bibliography{calderon_problem}
+
+
+
+
+
+\end{document}

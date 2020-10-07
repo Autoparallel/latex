@@ -1,0 +1,305 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 617, Homework 3}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\usepackage{amssymb}
+\usepackage{graphics}
+
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0in
+\topmargin=-0.50in
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+  \textsc{\large ColoState ~~ Spring 2018 ~~ MATH 617 ~~ Assignment 2}
+\end{center}
+
+\begin{center}
+  \textrm{Due Fri. 03/02/2018}
+\end{center}
+
+\vglue 0.10in
+
+\bigskip
+\noindent
+\textsc{Name:} \underline{Colin Roberts\hglue 1.5in} ~~
+\textsc{CSUID:} \underline{829773631\hglue 1.5in}
+
+\vskip 0.15in
+
+\bigskip
+\noindent
+(20 points) \textit{Problem 1}. \quad
+Define $\mathcal{A}=\{A\subseteq \R ~\colon~ \textrm{Either $A$ or $A^c$ is countable}\}$. For $A\in \mathcal{A}$, define $\mu(A)=0$ if $A$ is countable and $\mu(A)=1$ if $A^c$ is countable.
+\begin{enumerate}[(i)]
+\item Show that $\mu$ is a measure on $\mathcal{A}$.
+\item Consider the outer measure $\mu^*$ on $\mathcal{P}(\R)$ induced by $\mu$. Show that $\mu^*$ is not finitely additive.
+\end{enumerate}
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 2}. \quad
+Assume $\mu$ is a measure defined on an algebra $\mathcal{A}$ consisting of subsets of a fixed nonempty set $X$. Let $(X,\mathcal{S}^*,\mu^*)$ be the measure space obtained through outer measure and the Caratheodory condition. Let $E\subset \mathcal{S}^*$ with $\mu^*(E)<+\infty$. Prove that for any $\epsilon>0$, there exists $A_\epsilon \in \mathcal{A}$ such that $\mu^*(E\Delta A_\epsilon)<\epsilon$.
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 3}. \quad
+Prove the following regarding the Lebesgue outer measure $\lambda^*$:
+\begin{enumerate}[(i)]
+\item For $E\in \R$, $\lambda^*(E)=0$ iff $E$ is a null set.
+\item For $E\in \R$, if $\lambda^*(E)=0$, then $E$ has an empty interior.
+\end{enumerate}
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 4}. \quad
+Let $E\subset \R$ be bounded. Prove that there exists a Borel set $F$ such that 
+\begin{enumerate}[(i)]
+\item $E\subseteq F$ and $\lambda^*(E)=\lambda(F)$.
+\item For any Borel subset $G\subseteq (F\setminus E)$, we have $\lambda(G)=0$.
+\end{enumerate}
+Here $\lambda^*$ is the Lebesgue outer measure and $\lambda$ is the Lebesgue measure.
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 5}. \quad
+Suppose that $A\subset \R$ is a Lebesgue nonmeasurable set and $0<\lambda^*(A)<\infty$. Prove that $\lambda(E)<\lambda^*(A)$ for any Lebesgue measurable set $E\subset A$.
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} \quad
+Define $\mathcal{A}=\{A\subseteq \R ~\colon~ \textrm{Either $A$ or $A^c$ is countable}\}$. For $A\in \mathcal{A}$, define $\mu(A)=0$ if $A$ is countable and $\mu(A)=1$ if $A^c$ is countable.
+\begin{enumerate}[(i)]
+\item Show that $\mu$ is a measure on $\mathcal{A}$.
+\item Consider the outer measure $\mu^*$ on $\mathcal{P}(\R)$ induced by $\mu$. Show that $\mu^*$ is not finitely additive.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item First we see that $\mu(\emptyset)=0$ since $\emptyset$ is countable. Next, we must show that $\mu$ is countably additive. Let $\{A_n\}_{n\in \N}$ be a countable collection of disjoint sets. Then if $\bigcup_{n\in \N} A_n$ is countable we have that each $A_n$ is countable and hence
+\begin{align*}
+\mu\left( \bigcup_{n\in \N} A_n \right)&=0=\sum_{n \in \N} \mu(A_n).
+\end{align*}
+If $\bigcup_{n\in \N}A_n$ is such that $\R\setminus \bigcup_{n\in \N}A_n$ is countable, then in order for each $A_n$ to be disjoint, we must have that only a single $A_i$ is so that $\R \setminus \bigcup_{n\in \N}A_i$ is countable and all other sets are countable by the construction of $\mathcal{A}$.  Hence
+\begin{align*}
+\mu\left(\bigcup_{n\in \N} A_n\right) &=1= \sum_{n\in \N}\mu(A_n) = \mu(A_i). 
+\end{align*}
+So we have that $\mu$ is a measure.
+
+\item Consider a counter example of a finite collection of two sets $E_1=[0,1]$ and $E_2=[2,3]$.  Then note that
+\begin{align*}
+\mu^*(E_1\cup E_2)=1
+\end{align*}
+since there is no countable covering of $E_1\cup E_2$. But we also have, by the same logic, 
+\begin{align*}
+\mu^*(E_1)+\mu^*(E_2)=2.
+\end{align*}
+Hence, $\mu^*$ is not finitely additive.
+\end{enumerate}
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} \quad
+Assume $\mu$ is a measure defined on an algebra $\mathcal{A}$ consisting of subsets of a fixed nonempty set $X$. Let $(X,\mathcal{S}^*,\mu^*)$ be the measure space obtained through outer measure and the Caratheodory condition. Let $E\subset \mathcal{S}^*$ with $\mu^*(E)<+\infty$. Prove that for any $\epsilon>0$, there exists $A_\epsilon \in \mathcal{A}$ such that $\mu^*(E\Delta A_\epsilon)<\epsilon$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}
+Note that the infimum definition of $\mu^*$ allows us to find a countable collection of pairwise disjoint sets $A_n \in \mathcal{A}$ so that $E\subseteq \bigcup_{n=1}^\infty A_n$ so that we have
+\begin{align*}
+\mu^*(E)+\epsilon\geq \sum_{n=1}^\infty \mu^*(A_n)\geq \mu^*(E).
+\end{align*}
+Then of course we have $\sum_{n=1}^\infty \mu^*(A_n) < \infty$ which weans that we have some $N\in \N$ so that 
+\begin{align*}
+\sum_{n=N+1}^\infty \mu^*(A_n) <\epsilon/2.
+\end{align*}
+We denote $A_\epsilon = \bigcup_{n=1}^N A_n$ and we find that
+\begin{align*}
+E\setminus A_\epsilon = E\setminus \left( \bigcup_{n=1}^N A_n \right) \subseteq \left( \bigcup_{n=1}^\infty A_n\right) \setminus \left( \bigcup_{n=1}^N A_n \right) = \bigcup_{n=N+1}^\infty A_n.
+\end{align*}
+It follows that we have
+\begin{align*}
+\mu^*(E\setminus A_\epsilon \leq \sum_{n=N+1}^\infty \mu^*(A_n)<\epsilon/2
+\end{align*}
+and that
+\begin{align*}
+A_\epsilon \setminus E \subseteq \left( \bigcup_{n=1}^\infty A_n \right) \setminus E.
+\end{align*}
+Then we have
+\begin{align*}
+\mu^*(A_\epsilon \setminus E ) \leq \sum_{n=1}^\infty \mu^*(A_n)-\mu^*(E).
+\end{align*}
+Lastly, the countable additivity of $\mu^*$ implies that
+\begin{align*}
+\mu^*(E\Delta A_\epsilon) = \mu^*(E\setminus A_\epsilon)+\mu^*(A_\epsilon \setminus E ) \leq \epsilon.
+\end{align*}
+
+\noindent \emph{Note: I saw a very similar solution in the text. I tried to clean it up and make it as nice as possible.}
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} \quad
+Prove the following regarding the Lebesgue outer measure $\lambda^*$:
+\begin{enumerate}[(i)]
+\item For $E\subseteq \R$, $\lambda^*(E)=0$ iff $E$ is a null set.
+\item For $E\subseteq \R$, if $\lambda^*(E)=0$, then $E$ has an empty interior.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item Let $E\subseteq \R$ and that $\lambda^*(E)=0$.  Then 
+\begin{align*}
+&\lambda^*(E)=0\\
+&\iff \inf\left\{\sum_{i=1}^\infty \lambda(I_i) ~\vert~ I_i \in \mathcal{I} \forall i, I_i \cap I_j = \emptyset ~\textrm{for } i\neq j \textrm{ and } E\subseteq \bigcup_{i=1}^\infty I_i\right\}=0\\
+&\iff E \textrm{ for all $\epsilon>0$, can be covered by a countable family of intervals with $\sum_{n=1}^\infty \lambda(I_n)\leq \epsilon$}\\
+&\iff E \textrm{ is a null set.}
+\end{align*}
+\item Suppose that $E\subseteq \R$ with $\lambda^*(E)=0$.  Suppose that $\textrm{int}(E) \neq \emptyset$. Then we have that there exists an open interval $I \subset E$ and we necessarily have that $\lambda^*(I)\geq 0$. Hence, $E$ must have an empty interior.
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4.} \quad
+Let $E\subset \R$ be bounded. Prove that there exists a Borel set $F$ such that 
+\begin{enumerate}[(i)]
+\item $E\subseteq F$ and $\lambda^*(E)=\lambda(F)$.
+\item For any Borel subset $G\subseteq (F\setminus E)$, we have $\lambda(G)=0$.
+\end{enumerate}
+Here $\lambda^*$ is the Lebesgue outer measure and $\lambda$ is the Lebesgue measure.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item By definition of $\lambda^*$, we know that $\lambda^*(E)$ is the infimum of the measure of all possible coverings of $E$ by disjoint intervals in $\R$.  Hence, for any $m\in \N$ and $\frac{1}{m}>0$ we have a countable collection of pairwise disjoint intervals $\{I_n^m\}_{n\in \N}$ so that $E\subseteq \bigcup_{n\in \N} I_n^m$. Since $E$ is bounded, $\lambda^*(E)<\infty$ and we have
+\begin{align*}
+\lambda\left(\bigcup_{n\in \N} I_n^m \right) - \lambda^*(E)<\frac{1}{m}.
+\end{align*}
+Since this is true for all $\frac{1}{m}>0$, we necessarily have $F\subseteq \bigcap_{m\in \N}\bigcup_{n\in \N} I_n^m$. Then with this, we see 
+\begin{align*}
+\lambda(F) - \lambda^*(E)\leq \lambda \left( \bigcap_{m\in \N}\bigcup_{n\in \N} I_n^m \right) - \lambda^*(E)=0\\
+\implies \lambda^*(E)&=\lambda(F).
+\end{align*}
+
+
+\item Let $G\subseteq (F\setminus E)$ be such that $G=\bigcup_{n\in \N} J_n$ where $J_n$ are Borel sets. Note that since $G$ is a Borel set we have
+\begin{align*}
+\lambda(G)=\lambda^*(G).
+\end{align*}
+We then have
+\begin{align*}
+\lambda^*(F\setminus E)&=0
+\end{align*}
+which, since $G\subseteq F\setminus E$, means
+\begin{align*}
+\lambda^*(G)=0
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5.} \quad
+Suppose that $A\subset \R$ is a Lebesgue nonmeasurable set and $0<\lambda^*(A)<\infty$. Prove that $\lambda(E)<\lambda^*(A)$ for any Lebesgue measurable set $E\subset A$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First, note that $\lambda^*(E)=\lambda(E)$ since $E$ is measurable. Now, monotonicity of $\lambda^*$ implies the following:
+\begin{align*}
+\lambda^*(E)\leq \lambda^*(A).
+\end{align*}
+Now, by the Caratheodory condition, we can do the following:
+\begin{align*}
+\lambda^*(A)=\lambda^*(E\cap A)+\lambda^*(E^c\cap A).
+\end{align*}
+Then suppose for a contradiction that we in fact have $\lambda^*(E)=\lambda^*(A)$.  This means that
+\begin{align*}
+0&=\lambda^*(E)-\lambda^*(A)\\
+\iff 0&= \lambda^*(E)-\lambda^*(E\cap A)-\lambda^*(E^c \cap A)\\
+\iff 0&= \lambda^*(E^c\cap A), && \textrm{since $\lambda^*(E)=\lambda^*(E\cap A)$ because $E\subset A$}\\
+\iff A &&&\textrm{is measurable}.
+\end{align*}
+But this is a contradiction since we supposed that $A$ is non-measurable. Hence, we must have that $\lambda(E)<\lambda^*(A)$ since the case for equality provides a contradiction.
+\end{proof}
+
+\pagebreak
+
+\end{document}
+
+
+

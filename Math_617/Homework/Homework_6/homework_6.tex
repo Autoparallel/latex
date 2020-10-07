@@ -1,0 +1,291 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 617, Homework 6}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color,xcolor}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sets}{\mathcal{S}}
+\newcommand{\Leb}{\mathcal{L}}
+
+
+\usepackage{amssymb}
+\usepackage{graphics}
+
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0in
+\topmargin=-0.50in
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+  \textsc{\large ColoState ~~ Spring 2018 ~~ MATH 617 ~~ Assignment 6}
+\end{center}
+
+\begin{center}
+  \textrm{Due Fri. 04/06/2018}
+\end{center}
+
+\vglue 0.10in
+
+\bigskip
+\noindent
+\textsc{Name:} \underline{Colin Roberts\hglue 1.5in} ~~
+\textsc{CSUID:} \underline{829773631\hglue 1.5in}
+
+\vskip 0.15in
+
+\bigskip
+\noindent
+(20 points) \textit{Problem 1}. \quad
+Read the textbook and summarize the construction and properties of the Lebesgue singular function:
+\begin{itemize}
+\item Is it an increasing function?
+\item Is it a strictly increasing function?
+\item Is it differentiable a.e. on $[0,1]$? If so, then what's the derivative?
+\item Is it an absolutely continuous function?
+\item What is $f(K)$ (the image of the standard Cantor set $K$)?
+\end{itemize}
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 2}. \quad
+Provide two examples on $[-1,1]^2$ such that for one example you can apply the Fubini Theorem, and for the other you cannot apply the theorem. Justify your conclusion.
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 3}. \quad
+Let $f$ be a nonnegative real-valued Lebesgue measurable function defined on $\R$. For $t\geq 0$, define $F(t)=\lambda \{x\in \R ~\colon~ f(x)\geq t\}$. Prove that
+\[
+\int_{[0,+\infty)}F(t)d\lambda(t) = \int_\R f(x)d\lambda (x).
+\]
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 4}. \quad
+Assume $(X,\Sets,\mu)$ is a measure space and $\mu(X)<\infty$. Let $f$ be a measurable function and $1\leq p < q <\infty$. Prove that if $f\in L_q$, then $f\in L_p$ and
+\[
+\left( \frac{1}{\mu(X)}\int_X |f|^p d\mu\right)^{1/p} \leq \left(\frac{1}{\mu(X)}\int_X |f|^q d\mu\right)^{1/q}.
+\]
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 5}. \quad
+Let $(f_n)_{n\in \N}$ be a sequence of functions in $L_p$ $(1\leq p < \infty)$, which converges almost everywhere to $f\in L_p$. Prove that $\|f_n-f\|_p$ converges to $0$ if and only if $\|f_n\|_p$ converges to $\|f\|_p$. (\emph{Hint: Use the Minkowski inequality and LDCT.})
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} \quad
+Read the textbook and summarize the construction and properties of the Lebesgue singular function:
+\begin{itemize}
+\item Is it an increasing function?
+\item Is it a strictly increasing function?
+\item Is it differentiable a.e. on $[0,1]$? If so, then what's the derivative?
+\item Is it an absolutely continuous function?
+\item What is $f(K)$ (the image of the standard Cantor set $K$)?
+\end{itemize}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{itemize}
+\item Yes, the function is increasing. For $x,y \in K$ and $x<y$, we have that $f(x)<f(y)$.  Also, if either $x$ or $y$ is not in $K$ but $x<y$ we still have $f(x)<f(y)$.
+\item No, it is not strictly increasing as there are portions of the function, i.e. from $x\in \left(\frac{1}{3}, \frac{2}{3}\right)$ where the function is constant. Moreover, $f$ is constant on each of the removed intervals from $[0,1]$ that are taken away to give the cantor set. $f$ is thus constant everywhere but on the cantor set itself.
+\item On any of the removed intervals, $f$ is a constant function.  This means that $f'(x)=0$ on these removed intervals.  But, note that $K$ is a null set which means that $f$ is constant almost everywhere, and hence $f'(x)=0$ almost everywhere.
+\item $f$ is in fact not absolutely continuous (which came as a shock to me).  The proof comes straight from the definition and is done directly.
+\item $f(K)=[0,1]$.  We know this since $f(x)$ takes the ternary representation of an element in the cantor set to the decimal expansion of that element.  Since all possible ternary representations are accounted for, we will have all possible decimal expansions for numbers in $[0,1]$.
+\end{itemize}
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} \quad
+Provide two examples on $[-1,1]^2$ such that for one example you can apply the Fubini Theorem, and for the other you cannot apply the theorem. Justify your conclusion.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}
+First, consider a working example with $f\colon [-1,1]\times [-1,1] \to \R$ with the standard lebesgue measure for $\R^2$.  Define $f(x,y)=(x+1)(y+1)=xy+x+y+1$.  Note that this function is nonnegative and is lebesgue measurable since it is continuous.  We then have (i) since for a fixed $x_0$, $f(x_0,y)$ is continuous and lebesgue measurable on $[-1,1]$ as well as for fixed $y_0$ we have that $f(x,y_0)$ is continuous and lebesgue measurable on $[-1,1]$.  Now, the functions taking $y\mapsto \int_{[-1,1]} f(x,y)d\lambda(x)$ and $x\mapsto \int_{[-1,1]} f(x,y)d\lambda (y)$ are continuous and hence lebesgue measurable functions on $[-1,1]$ which we can see by
+\begin{align*}
+\int_{[-1,1]} f(x,y)d\lambda (x) &= \int_{-1}^1 xy+x+y+1 dx\\
+&= 2y+2,
+\end{align*}
+and
+\begin{align*}
+\int_{[-1,1]} f(x,y)d\lambda(y)&= \int_{-1}^1 xy+x+y+1 dy\\
+&= 2x+2.
+\end{align*}
+Finally, we must show that
+\begin{align*}
+\int_{[-1,1]}\left( \int_{[-1,1]} f(x,y) d\lambda(y)\right) d\lambda(x)&=\int_{[-1,1]}\left( \int_{[-1,1]} f(x,y) d\lambda(x)\right) d\lambda(y)\\
+&= \int_{[-1,1]\times [-1,1]}f(x,y) d (\lambda\times \lambda)(x,y).
+\end{align*}
+For the equality, we have
+\begin{align*}
+\int_{[-1,1]}\left( \int_{[-1,1]} f(x,y) d\lambda(y)\right) d\lambda(x)&= \int_{-1}^1 \int_{-1}^1 xy+x+y+1 dxdy\\
+&= \int_{-1}^1 2y+2 dy\\
+&=4,
+\end{align*}
+and
+\begin{align*}
+\int_{[-1,1]}\left( \int_{[-1,1]} f(x,y) d\lambda(x)\right) d\lambda(y)&= \int_{-1}^1 \int_{-1}^1 xy+x+y+1 dydx\\
+&= \int_{-1}^1 2x+2 dx\\
+&=4.
+\end{align*}
+So the equality holds.
+
+For a non-example, consider the function $f(x,y)=\frac{y-x}{(2-x-y)^3}$.  We then consider
+\begin{align*}
+\int_{[-1,1]} \left( \int_{[-1,1]} \frac{y-x}{(2-x-y)^3} d\lambda(x)\right) d\lambda(y)& = \int_{[-1,1]} \frac{-2}{(y-3)^2} d \lambda(y)\\
+&= \frac{-1}{2}.
+\end{align*}
+Then, swapping the order of integration, we find
+\begin{align*}
+\int_{[-1,1]} \left( \int_{[-1,1]} \frac{y-x}{(2-x-y)^3} d\lambda(y)\right) d\lambda(x)& = \int_{[-1,1]} \frac{2}{(x-3)^2} d \lambda(y)\\
+&= \frac{1}{2}.
+\end{align*}
+This was not a valid example since $f(x,y)$ is not nonnegative on $[-1,1]\times [-1,1]$.
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} \quad
+Let $f$ be a nonnegative real-valued Lebesgue measurable function defined on $\R$. For $t\geq 0$, define $F(t)=\lambda \{x\in \R ~\colon~ f(x)\geq t\}$. Prove that
+\[
+\int_{[0,+\infty)}F(t)d\lambda(t) = \int_\R f(x)d\lambda (x).
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $E\coloneqq \{x\in \R ~\colon ~ f(x)\geq t\}$ and note that
+\[
+F(t)=\lambda(E)=\int_\R \chi_E d\lambda(x).
+\]
+Then we have that
+\begin{align*}
+\int_{[0,+\infty]}F(t)dt&=\int_{[0,+\infty)} \left( \int_\R \chi_E d\lambda(x)\right)d\lambda(t)\\
+&= \int_\R \left( \int_{[0,+\infty)} \chi_E d\lambda(t)\right)d\lambda(x),
+\end{align*}
+where we are able to swap the orders of integration by Fubini's theorem since $\chi_E$ is nonnegative and is $\mathcal{L}\otimes \mathcal{L}$ (where $\mathcal{L}$ are the lebesgue measurable sets) measurable. Clearly $\chi_E$ is nonnegative, but to see that it is $\mathcal{L}\otimes \mathcal{L}$ measurable, just note that $\chi_E^{-1}(F)$ of any set $F$ containing $0$ and $1$ is $\R\times [0,\infty)$, any set $F$ not containing both $0$ and $1$ is $\emptyset \times \emptyset$. Then for any set $F$ containing just $0$ and not $1$, $\chi_E(F)=E^c$ and any set $F$ just containing $1$ and not $0$ is $\chi_E(F)=E$. Hence, all these possible preimages of measurable sets are measurable.  Now, from above we note that
+\begin{align*}
+\int_{[0,+\infty)}\chi_E d\lambda(t)=f(x),
+\end{align*}
+since for a fixed $x$, we have that $\int_{[0,+\infty)}\chi_E d\lambda(t)=f(x)-0$. Using this fact, and the above work, we have
+\begin{align*}
+\int_{[0,+\infty]}F(t)dt&=\int_\R f(x) d\lambda(x).
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4.} \quad
+Assume $(X,\Sets,\mu)$ is a measure space and $\mu(X)<\infty$. Let $f$ be a measurable function and $1\leq p < q <\infty$. Prove that if $f\in L_q$, then $f\in L_p$ and
+\[
+\left( \frac{1}{\mu(X)}\int_X |f|^p d\mu\right)^{1/p} \leq \left(\frac{1}{\mu(X)}\int_X |f|^q d\mu\right)^{1/q}.
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}
+Let's rewrite H\"{o}lder's inequality in the following way: Let $r>1$ and $s>1$ be such that $1/r+1/s=1$.  Then for $h\in L_r(\mu)$ and $g\in L_s(\mu)$ we have
+\[
+\int |hg|d\mu \leq \left( \int |f|^r d\mu\right)^{1/r}\left( \int |g|^s d\mu \right)^{1/s}.
+\]
+In this case, we will define $r=q/p$ and $s=q/(q-p)$, $h=f^p$ and $g=1$ noting that $f^p\in L_r(\mu)$ and $g\in \L_s (\mu)$ since $\mu(X)<\infty$.  Now, we apply H\"{o}lder's
+\begin{align*}
+\int |f|^p d\mu &\leq \left( \int |f^p|^{q/p}\right)^{p/q} \left( \int |1|^{\frac{q}{q-p}} \right)^{\frac{q-p}{q}}\\
+\iff \left( \int |f|^p d\mu \right)^{1/p} & \leq \left( \int |f|^q\right)^{1/q}(\mu(x))^{\frac{1}{q}-\frac{1}{p}}\\
+\iff \left( \frac{1}{\mu(X)}\int_X |f|^p d\mu\right)^{1/p} &\leq \left(\frac{1}{\mu(X)}\int_X |f|^q d\mu\right)^{1/q}.
+\end{align*}
+This also shows that $f\in L_p$ since $\|f\|_q<\infty$ so $\|f\|_p<\infty$ as well by the above inequality.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5.} \quad
+Let $(f_n)_{n\in \N}$ be a sequence of functions in $L_p$ $(1\leq p < \infty)$, which converges almost everywhere to $f\in L_p$. Prove that $\|f_n-f\|_p$ converges to $0$ if and only if $\|f_n\|_p$ converges to $\|f\|_p$. (\emph{Hint: Use the Minkowski inequality and LDCT.})
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the forward direction, note that $L_p$ is a metric space which gives us the triangle inequality and hence the reverse triangle inequality
+\begin{align*}
+\left| \|f_n\|_p - \|f\|_p\right| \leq \|f_n-f\|_p.
+\end{align*}
+Now, since $\|f_n-f\|_p \to 0$, we have that $ \left| \|f_n\|_p - \|f\|_p \right| \to 0$ which means that $\|f_n\|_p \to \|f\|_p$.
+
+For the converse, we have that $|f_n-f|^p\leq 2^{p-1}(|f_n|^p+|f|^p)$ by lemma 8.4.4.  Then we also have that $|f_n-f|^p \to 0$ almost everywhere and $g_n\coloneqq 2^{p-1}(|f_n|^p+|f|^p)\to 2^p|f|^p$ where $\int |f|^p d\mu<+\infty$.  Then using the generalized Lebesgue dominated convergece theorem (exercise 5.4.13), we get that
+\[
+\lim_{n\to \infty} \int |f_n-f|^p d\mu = 0.
+\]
+\end{proof}
+
+\pagebreak
+
+\end{document}
+
+
+

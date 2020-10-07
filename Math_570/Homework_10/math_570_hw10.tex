@@ -1,0 +1,183 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 10}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\obj}{\ensuremath{\mathrm{Obj}}}
+\newcommand{\im}{\ensuremath{\mathrm{im}}}
+\newcommand{\Id}{\ensuremath{\mathrm{Id}}}
+
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.}  Let $X$ be the abstract simplicial complex
+\[
+\{\{0\},\{1\},\{2\},\{3\},\{4\},\{5\},\{0,1\},\{0,2\},\{0,3\},\{0,4\},\{1,2\},\{3,4\}\}.
+\]
+\begin{enumerate}[(a)]
+\item Draw the geometric realization of $X$.
+\item Compute the simplicial homology group $H_0(X)$.
+\item Compute the simplicial homology group $H_1(X)$.
+\item Compute the simplicial homology group $H_2(X)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For now I'm noting that $Z_p(X)=\ker(\partial_p)$, $B_p(X)=\im(\partial_{p+1})$, and $H_p(X)=Z_p(X)/B_p(X)$. Also we define $\partial_p \colon C_p(X) \to C_{p-1}(X)$ by
+\[
+\partial_p([x_0,\dots,x_p])=\sum_{i=0}^p (-1)^i [x_0,\dots,\hat{x_i},\dots,x_p].
+\]
+\begin{enumerate}[(a)]
+\item We have $X$:
+\vspace*{5cm}
+
+\item Now $H_0(X)=Z_0(X)/B_0(X)=\ker(\partial_0)/\im(\partial_1)$, so we find $Z_0(X)$ and $B_0(X)$.  First we have $C_1(X)=\{a[0,1]+b[0,2]+c[0,3]+d[0,4]+e[1,2]+f[3,4]~\vert~ a,b,c,d,e,f\in \Z\}$ and $C_0(X)=\{a[0]+b[1]+c[2]+d[3]+e[4]+g[5]~\vert~ a,b,c,d,e,f\in \Z\}$. Then 
+\begin{align*}
+B_0(X)&=\im(\partial_1)\\
+&=\{a([1]-[0])+b([2]-[0])+c([3]-[0])+d([4]-[0])+e([2]-[1])+f([4]-[3])\\
+&~\vert~ a,b,c,d,e,f\in \Z\}\\
+&=\{a([1]-[0])+b([2]-[0])+c([3]-[0])+d([4]-[0])~\vert~ a,b,c,d\in \Z\}\cong \Z^4.
+\end{align*}
+Notice that $e([2]-[1])$ and $f([4]-[3])$  are $\Z$ linear combinations of the other three. 
+
+Now $\partial_0 = 0$ so we have that $Z_0(X)=\ker(\partial_0)=C_0(X)\cong \Z^6$. Then we have $H_0(X)=\Z^6/\Z^4=\Z^2$. This tells us that there are two connected components. 
+
+\item Now $H_1(X)=Z_1(X)/B_1(X)=\ker(\partial_1)/\im(\partial_2)$ and we have $C_2(X)=0$ and $C_1(X)=\{a[0,1]+b[0,2]+c[0,3]+d[0,4]+e[1,2]+f[3,4]~\vert~a,b,c,d,e,f\in \Z\}$. Note that $B_1(X)=\im(\partial_2)=\langle e\rangle$, as the trivial group. Now from above we have $\im(\partial_1)\cong \Z^3$ and since $C_1(X)\cong \Z^5$ we have $Z_1(X)=\ker(\partial_1)\cong \Z^2$. So it follows $H_1(X)\cong \Z^2$.
+
+\item We have no 2-simplices, so $H_2(X)=\langle e \rangle$.
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $X$ be the simplicial complex which is the boundary of a tetrahedron. That is, $X$ has 4 vertices (say labeled 0,1,2,3), all ${{4}\choose{2}}=6$ possible edges, all ${{4}\choose{3}} =4$ possible 2-simplices, and no tetrahedra.
+\begin{enumerate}[(a)]
+\item Draw the geometric realization of $X$.
+\item Compute the simplicial homology group $H_1(X)$. What group is $Z_1(X)$ isomorphic to?
+\item Compute the simplicial homology group $H_2(X)$. 
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+\begin{enumerate}[(a)]
+\item We have $X$:
+\vspace*{5cm}
+
+\item Now $H_1(X)=Z_1(X)/B_1(X)=\ker(\partial_1)/\im(\partial_2)$ and we have $C_2(X)=\{a[0,1,2]+b[0,1,3]+c[0,2,3]+d[1,2,3]~\vert~ a,b,c,d\in \Z\}$ and $C_1(X)=\{a[0,1]+b[0,2]+c[0,3]+d[1,2]+e[1,3]+f[2,3]~\vert~a,b,c,d,e,f\in \Z\}$. Now 
+\begin{align*}
+B_1(X)&=\im(\partial_2)\\
+&=\{a([1,2]-[0,2]+[0,1])+b([1,3]-[0,3]+[0,1])+c([2,3]-[0,3]+[0,2])+\\
+&d([2,3]-[1,3]+[1,2])~\vert~ a,b,c,d \in \Z\}
+\end{align*}
+From the extra work below, we have $\im(\partial_1)\cong \Z^3$ and since $C_1(X)\cong \Z^6$ we have $Z_1(X)=\ker(\partial_1)\cong \Z^3$. This can be seen by letting the ordered basis vectors be $\{[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]\}$ and augmenting a matrix (really the matrix for $\partial_2$) as follows:
+\begin{align*}
+\begin{bmatrix}
+1 & 1 & 0 & 0\\
+-1 & 0 & 1 & 0\\
+0 & -1 & -1 & 0\\
+1 & 0 & 0 & 1\\
+0 & 1 & 0 & -1\\
+0 & 0 & 1 & 1
+\end{bmatrix} ~~\textrm{ which reduces to }~~ 
+\begin{bmatrix}
+1 & 0 & 0 & 1\\
+0 & 1 & 0 & -1\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}.
+\end{align*}
+This above row reduction shows that we have 3 linearly independent vectors, which shows that $Z_1(X)\cong \Z^3$. So it follows $H_1(X)\cong \Z^3/\Z^3\cong \langle 3 \rangle$, the trivial group. 
+
+\item We have $C_2(X)=\{a[0,1,2]+b[0,1,3]+c[0,2,3]+d[1,2,3]~\vert~ a,b,c,d\in \Z\}$. $H_2(X)=Z_2(X)/B_2(X)=\ker(\partial_2)/\im(\partial_3)$, and we have that $\im(\partial_3)=0$ since there are no 3-simplices. Then $\ker(\partial_2)=\Z$ since $\im(\partial_2)=\Z^3$. Thus we have $H_2(X)\cong \Z$.
+
+\item \emph{Extra work:} We have $C_1(X)=\{a[0,1]+b[0,2]+c[0,3]+d[1,2]+e[1,3]+f[2,3]~\vert~ a,b,c,d,e,f\in \Z\}$ and $C_0(X)=\{a[0]+b[1]+c[2]+d[3]~\vert~ a,b,c,d,e,f\in \Z\}$. Then 
+\begin{align*}
+B_0(X)&=\im(\partial_1)\\
+&=\{a([1]-[0])+b([2]-[0])+c([3]-[0])+d([2]-[1])+e([3]-[1])+f([3]-[2])\\
+&~\vert~ a,b,c,d,e,f\in \Z\}\\
+&=\{a([1]-[0])+b([2]-[0])+c([3]-[0])~\vert~ a,b,c\in \Z\}\cong \Z^3.
+\end{align*}
+Notice that $d([2]-[1])$ and $e([3]-[1])$  are $\Z$ linear combinations of the other three. 
+
+Now $\partial_0 = 0$ so we have that $Z_0(X)=\ker(\partial_0)=C_0(X)\cong \Z^4$. Then we have $H_0(X)=\Z^4/\Z^3=\Z$. This registers the one connected component.
+
+\end{enumerate}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Choose any old homework or exam problem, or a portion thereof. Clearly state both the problem and the homework/exam number. Write out a solution that is as clear as possible, with no extraneous steps.
+
+\noindent\textbf{Problem 2. Homework 8:} Let $S^1$ be the unit circle and let $C=S^1\times [-1,1]$ be a cylinder. Prove that $S^1\cong C$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Define the maps $f\colon S^1\to C$ and $g \colon C \to S^1$ with $f(x)=(x,0)$ and $g(x,s)=x$.  Then we show that $f\circ g \simeq \Id_{C}$ and $g\circ f \simeq \Id_{S^1}$. Clearly we have $g\circ f = \Id_{S^1}$ which shows $g\circ f \simeq \Id_{S^1}$. Now we have $H\colon C\times I \to C$ defined by $H((x,s),t)=(x,st)$ is continuous and satisfies $H((x,s),0)=f(x)$ and $H((x,s),1)=\Id_{C}(x,s)$ which shows that $f\circ g \simeq \Id_{C}$. Hence, $S^1\simeq C$.
+\end{proof}
+
+\pagebreak
+
+
+
+
+
+
+\end{document}
+

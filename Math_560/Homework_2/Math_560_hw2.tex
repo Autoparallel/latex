@@ -1,0 +1,450 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 2}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} The singular value decomposition of a real $m\times n$ matrix is written
+\[
+A=U\Sigma V^T
+\] 
+where $U^T U = I_{m\times m}$, $V^T V=I_{n\times n}$ and $\Sigma_{m\times n}$ has zero entries aside from the $n\times n$ block diagonal with entries $(\sigma_1,...,\sigma_r)$. We will assume, without loss of generality, that $m\geq n$. 
+
+\begin{enumerate}[(a)]
+\item Show exactly the structure of $\Sigma$ as a matrix, populating this matrix with the $r$ non-zero singular values.
+\item Show that the left singular vectors can be found by solving an $m\times m$ eigenvector problem. Explicitly construct this problem.
+\item Show that the right singular vectors can be found by solving an $n\times n$ eigenvector problem.  Explicitly construct this problem.
+\item Show that these eigenvector problems are for symmetric matrices in each case.
+\item Show that the left singular vectors associated with non-zero singular values may be computed in terms of $A,\Sigma$ and $V$. Write down the formula.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[Part (a)]
+\[
+\Sigma = 
+\kbordermatrix{&1 &2 &\cdots & n-1 & n\\
+1 & \sigma_1 & & & \\
+2 & & \ddots & & & \\
+\vdots & & & \sigma_r &\\
+m-1 & & & & 0 \\
+m & & & & & \ddots
+}
+\]
+With $m$ rows $n$ columns and the off diagonals all zero.
+\end{solution}
+
+\begin{solution}[Part (b)]
+\begin{align*}
+A&=U\Sigma V^T\\
+AA^T&= U\Sigma V^T (V \Sigma^T U^T)\\
+AA^T&=U(\Sigma \Sigma^T)U^T
+\end{align*}
+Which is an $m\times m$ eigenvalue problem. It gives us the following,
+\begin{align*}
+AV_i=\sigma_i U_i
+\end{align*}
+Where the $V_i$ and $U_i$ are the $i^{th}$ columns of the matrices. with $U_i$ being the left singular vectors and $V_i$ being the right singular vectors.
+\end{solution}
+
+\begin{solution}[Part (c)]
+\begin{align*}
+A&=U\Sigma V^T\\
+A^TA&= (V\Sigma^T U^T) (U \Sigma V^T)\\
+A^TA&=V(\Sigma^T \Sigma)V^T
+\end{align*}
+Which is an $n\times n$ eigenvalue problem. It gives us the following,
+\begin{align*}
+A^T U_i=\sigma_i V_i
+\end{align*}
+Where the $V_i$ and $U_i$ are the $i^{th}$ column vectors with $U_i$ being the left singular vectors and $V_i$ being the right singular vectors.
+\end{solution}
+
+\begin{solution}[Part (d)]
+Since $U^T U = I_{m \times m}$ and $V^T V = I_{n \times n}$ then we have that $U$ and $V$ are symmetric matrices.
+\end{solution}
+
+\begin{solution}[Part (e)]
+\begin{align*}
+A&=U\Sigma V^T\\
+AV &= U \Sigma\\
+\frac{1}{\det(\Sigma)}\Sigma AV&=U
+\end{align*}
+Which allows us to find $U$ in terms of $A, \Sigma$ and $V$.
+\end{solution}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} This problem concerns finding bases for the four fundamental subspaces in terms of the SVD of a matrix.
+\begin{enumerate}[(a)]
+\item Reconstruct the argument in class to find a basis for $\mathcal{R}(A)$. What is the column rank?
+\item Reconstruct the argument in class to find a basis for $\mathcal{R}(A^T)$. What is the row rank?
+\item Find a basis for $\mathcal{N}(A)$. Prove that is is a basis. What is the dimension of the null space?
+\item Find a basis for $\mathcal{N}(A^T)$. Prove that this is a basis. What is the dimension of the left null space?
+\end{enumerate} 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[Part (a)]
+The column rank is $r$. Since we have a basis $\{v_1,...,v_n\}$ for $\mathbb{R}^n$ and $\{Av_1,...,Av_n\}$ forms the range.  But $Av_i$ for $i=r,...n$ is zero. Thus our basis for the range is $\{u_1,...,u_r\}$.
+\end{solution}
+
+\begin{solution}[Part (b)]
+The column rank is $r$. Since we have a basis $\{u_1,...,u_m\}$ for $\mathbb{R}^m$ and $\{A^T u_1,...,A^T u_m\}$ forms the range.  But $Av_i$ for $i=r,...m$ is zero. Thus our basis for the range is $\{v_1,...,v_r\}$.
+\end{solution}
+
+\begin{solution}[Part (c)]
+The $\dim\mathcal{N}(A)=n-r$. Then with a basis $\{v_1,...v_n\}$ for $\mathbb{R}^n$ we have that $\{v_{r+1},...,v_{n}\}$ is the basis for $\mathcal{N}(A)$ by the argument in part (a).
+\end{solution}
+
+\begin{solution}[Part (d)]
+The $\dim\mathcal{N}(A)=m-r$. Then with a basis $\{u_1,...u_m\}$ for $\mathbb{R}^m$ we have that $\{u_{r+1},...,v_{m}\}$ is the basis for $\mathcal{N}(A^T)$ by the argument in part (b).
+\end{solution}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 1.6 Problem 35.} Let $W$ be a subspace of a finite-dimensional vector space $V$, and consider the basis $\{u_1,u_2,...,u_k\}$ for $W$. Let $\{u_1,...,u_k,u_{k+1}, ..., u_n\}$ be an extension of this basis to a basis for $V$.
+\begin{enumerate}[(a)]
+\item Prove that $\{u_{k+1}+W,u_{k+2}+W,...,u_n+W\}$ is a basis for $V/W$.
+\item Derive a formula relating $\dim(V)$, $\dim(W)$, and $\dim(V/W)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+Consider the following,
+\[
+a_{k+1}(u_{k+1}+W)+...+a_n(u_n+W)=0+W.
+\]
+Which implies $a_{k+1}u_{k+1}+...+a_n u_n=0$. But these vectors linearly independent, thus we would have that each $a_i$ is 0. Finally, consider $x+W \in V/W$ be arbitrary and we have that $x=a_1 u_1+...+a_n u_n$ so that $x+W=(a_1 u_1 + ... + a_n u_n)+W=(a_{k+1}u_{k+1}...a_n u_n + W$. Thus any arbitrary element is in the span of these linearly independent vectors.  So we have $\{u_{k+1}+W,u_{k+2}+W,...,u_n+W\}$ is a basis.
+\end{proof}
+
+\begin{proof}[Part (b)]
+We have that $\dim(V)=n$, $\dim(W)=k$ and we know that $V/W=\textrm{span}\{u_{k+1}+W,...,u_n+W\}$ Thus we have that
+\[
+\dim(V/W)=\dim(V)-\dim(W).
+\]
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 3.}  $T\colon \mathbb{R}^2 \to \mathbb{R}^3$ defined by $T(a_1,a_2)=(a_1+a_2,0,2a_1-a_2)$. Prove that $T$ is linear and find bases for both $\mathcal{N}(T)$ and $\mathcal{R}(T)$. The compute the nullity and rank of $T$, and verify the dimension theorem. Finally, use the appropriate theorems in this section to determine whether $T$ is injective or surjective.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider
+\begin{align*}
+T(a(x_1,x_2)+(y_1,y_2))&=T(ax_1+y_1,ax_2+y_2)\\
+&=(ax_1+x_2+y_1+y_2,0,2ax_1+2y_1-2ax_2-y_2)\\
+&=(a(x_1+x_2)+(y_1+y_2),0,a(2x_1-x_2)+(2y_1-y_2))\\
+&=aT(x_1,x_2)+T(y_1,y_2)
+\end{align*}
+So $T$ is linear. To find the basis for $\mathcal{N}(T)$ we find what elements are mapped to the zero vector. Thus we need to satisfy 
+\begin{align*}
+a_1+a_2&=0\\
+2a_1-a_2=0
+\end{align*}
+Which implies that $a_1=a_2=0$. So the basis for $\mathcal{N}(T)$ is $\{0\}$. A basis for $\mathcal{R}(T)$ is given by $\{(1,0,0),(0,0,1)\}$. $\textrm{nullity}(T)=0$, $\textrm{rank}(T)=2$ and we have $\dim(V)=2=\textrm{nullity}(T)+\textrm{rank}(T)=0+2$.  Since $\textrm{nullity}(T)=0$ we have that $T$ is injective.  But since $\dim(\mathbb{R}^3)>\textrm{rank}(T)$ we have that $T$ is not surjective.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 4.} $T\colon M_{2\times 3}(F) \to M_{2\times 2}(F)$ defined by 
+\[T
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}
+\end{bmatrix}
+=
+\begin{bmatrix}
+2a_{11}-a_{12} & a_{13}+2a_{12}\\
+0 & 0
+\end{bmatrix}
+.\] Prove that $T$ is linear and find bases for both $\mathcal{N}(T)$ and $\mathcal{R}(T)$. The compute the nullity and rank of $T$, and verify the dimension theorem. Finally, use the appropriate theorems in this section to determine whether $T$ is injective or surjective.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+To show that $T$ is linear, we want to show $T(aA+B)=aT(A)+T(B)$.  So we have,
+\begin{align*}
+T(aA+B)&=T\left(
+\begin{bmatrix}
+aA_{11}+B_{11} & aA_{12}+B_{12} & aA_{13}+B_{13}\\
+aA_{21}+B_{21} & aA_{22}+B_{22} & aA_{23}+B_{23}
+\end{bmatrix}
+\right)\\
+&=
+\begin{bmatrix}
+2aA_{11}+B_{12}-aA_{12}-B_{12} & aA_{13}+B_{13}+2aA_{12}+2B_{12}\\
+0 & 0
+\end{bmatrix}\\
+&=a
+\begin{bmatrix}
+2A_{11}-A_{12} & A_{13}+2A_{12}\\
+0 & 0
+\end{bmatrix}+
+\begin{bmatrix}
+B_{12}-B_{12} & B_{13}+2B_{12}\\
+0 & 0
+\end{bmatrix}\\
+&=aT(A)+T(B)
+\end{align*}
+So $T$ is linear.  A basis for $\mathcal{N}(T)$ is given by \[\left\{
+\begin{bmatrix}
+0 & 0 & 0\\
+1 & 0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 1 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 0 & 1
+\end{bmatrix},
+\begin{bmatrix}
+2 & 1 & -2\\
+0 & 0 & 0
+\end{bmatrix}
+\right\}
+\]
+A basis for $\mathcal{R}(T)$ is given by
+\[\left\{
+\begin{bmatrix}
+1 & 0\\
+0 & 0
+\end{bmatrix},
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
+\right\}
+\]
+Then we have $\textrm{nullity}(T)=4$ and $\textrm{rank}(T)=2$.  And $\dim(M_{2\times 3}(\mathbb{F}))=6=\textrm{nullity}(T)+\textrm{rank}(T)=4+2$.  $T$ is not injective since $\textrm{nullity}(T)\neq 0$ and not surjective since $\textrm{rank}(T)<\dim(M_{2\times 2}(\mathbb{F}))$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 11.} Prove that there exists a linear transformation $T\colon \mathbb{R}^2 \to \mathbb{R}^3$ such that $T(1,1)=(1,0,2)$ and $T(2,3)=(1,-1,4)$. What is $T(8,11)$?
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+\begin{align*}
+(8,11)&=a(1,1)+b(2,3)\\
+\implies a=2&,b=3
+\end{align*}
+Thus we have
+\begin{align*}
+T(8,11)&=2T(1,1)+3T(2,3)\\
+&=2(1,0,2)+3(1,-1,4)\\
+&=(5,-3,16)
+\end{align*}
+\end{solution}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 15.} Recall the definition of $P(\mathbb{R})$ on page 10. Define
+\[T\colon P(\mathbb{R})\to P(\mathbb{R}) \textrm{~ by ~} T(f(x))=\int_0^x f(t)dt.
+\]
+Prove that $T$ is linear and injective, but not surjective.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+To show that $T$ is linear we show that $T(af(x)+g(x))=aT(f(x))+T(g(x))$. So
+\begin{align*}
+T(af(x)+g(x))&=\int_0^x(af(t)+g(t)dt\\
+&=a\int_0^xf(t)dt+\int_0^x g(t)dt
+&=aT(f(x))+T(g(x))
+\end{align*}
+by properties of integrals. 
+
+Suppose that $f(x)=a_0+a_1x+...+a_nx^n\in \mathcal{N}(T)$. Thus
+\begin{align*}
+T(f(x))&=\int_0^x (a_0+...+a_nx^n)dt\\
+&=a_0 \int_0^x 1 dt + ... + a_n \int_0^x x^n dt
+\end{align*}
+Thus since no integrand evaluates to $0$, we have that $a_i=0$ $\forall i$. So $\mathcal{N}(T)=\{0\}$. So $T$ is injective.
+
+Consider $c\in P(\mathbb{R})$. Then let $f(x)=a_0+a_1x+...+a_nx^n \in P(\mathbb{R})$ Thus
+\begin{align*}
+c=T(f(x))&=\int_0^x (a_0+...+a_nx^n)dt\\
+&=a_0 \int_0^x 1 dt + ... + a_n \int_0^x x^n dt\\
+c&=a_0x+...+a_nx^{n+1}
+\end{align*}
+Which has no solution.  Thus $T$ is not surjective since there exists an element of $P(\mathbb{R})$ not in $\mathcal{R}(T)$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 17.} Let $V$ and $W$ be finite-dimensional vector spaces and $T\colon V \to W$ be linear.
+\begin{enumerate}[(a)]
+\item Prove that if $\dim(V)<\dim(W)$, then $T$ cannot be surjective.
+\item Prove that if $\dim(V)>\dim(W)$, then $T$ cannot be injective.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+We have that
+\[
+\dim(W)>\dim(V)\geq \textrm{rank}(T)
+\]
+Since $\textrm{rank}(T)$ is less than $\dim(W)$, $T$ is not surjective.
+\end{proof}
+
+\begin{proof}[Part (b)]
+We have that
+\[
+\textrm{rank}(T)\leq \dim(W)<\dim(V)
+\]
+So we have
+\[
+\dim(V)-\textrm{rank}(T)>0
+\]
+Which means that $\textrm{nullity}(T)>0$ by the dimension theorem. This means that $T$ is not injective.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 35.} Let $V$ be a finite-dimensional vector space and $T\colon V \to V$ be linear.
+\begin{enumerate}[(a)]
+\item Suppose that $V=\mathcal{R}(T)+\mathcal{N}(T)$. Prove that $V=\mathcal{R}(T)\oplus \mathcal{N}(T)$.
+\item Suppose that $\mathcal{R}(T)\cap \mathcal{N}(T)=\{0\}$. Prove that $V=\mathcal{R}(T)\oplus \mathcal{N}(T)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+Suppose that $V=\mathcal{R}+\mathcal{N}(T)$ and that we have $v\in \mathcal{R}(T)\cap \mathcal{N}(T)$.  Then we have $T(v)=0$ since $v\in \mathcal{N}(T)$, which means that $v=0$ since $v\in \mathcal{R}(T)$. Thus $\mathcal{R}(T)\cap\mathcal{N}(T)=\{0\}$ and thus $V=\mathcal{R}(T)\oplus \mathcal{N}(T)$.
+\end{proof}
+
+\begin{proof}[Part (b)]
+Suppose that $\mathcal{R}(T)\cap \mathcal{N}(T)=\{0\}$. Suppose we have $v\in V$ so that $T(v)\notin \mathcal{R}(T)+\mathcal{N}(T)$. Thus we know that $T(v)\neq 0$ since $0\in \mathcal{R}(T)+\mathcal{N}(T)$. But then if $T(v)\neq 0$ then $T(v)\in \mathcal{R}(T)$ and we contradict $T(v)\notin \mathcal{R}(T)+\mathcal{N}(T)$. So $V=\mathcal{N}(T)\oplus \mathcal{R}(T)$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{\S 2.1 Problem 40.} Let $V$ be a vector space and $W$ be a subspace of $V$. Define the mapping $\eta \colon V \to V/W$ by $\eta(v)=v+W$ for $v\in V$.
+\begin{enumerate}[(a)]
+\item Prove that $\eta$ is a linear transformation from $V$ onto $V/W$ and that $\mathcal{N}(\eta)=W$.
+\item Suppose that $V$ is finite-dimensional. Use (a) and the dimension theorem to derive a formula relating $\dim(V)$, $\dim(W)$, and $\dim(V/W)$.
+\item Read the proof of the dimension theorem.  Compare the method of solving (b) with the method of deriving the same result as outlined in Exercise 35 of Section 1.6.
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+Let $u,v\in V$ and $a\in \mathbb{F}$. Then
+\begin{align*}
+\eta(av+u)&=(av+u)+W\\
+&=(av+W)+(u+W)\\
+&=a(v+W)+(u+W)\\
+&=a\eta(v)+\eta(u)
+\end{align*}
+So $\eta$ is linear. Then let $v+W\in V/W$ be arbitrary and note that $\eta(v)=v+W$ for $v\in V$ and thus $\eta$ is surjective.
+\end{proof}
+
+\begin{proof}[Part (b)]
+We have
+\begin{align*}
+\dim(V)&=\dim(\mathcal{R}(\eta))+\dim(\mathcal{N}(\eta))\\
+&=\dim(V/W)+\dim(W) &\textrm{since $\eta$ is onto}\\
+\implies \dim(V/W)&=\dim(V)-\dim(W)
+\end{align*}
+\end{proof}
+
+\begin{solution}[Part (c)]
+(b) uses an onto linear transformation to allow us to utilize the dimension theorem. But Ex. 35 of \S 1.6 uses an argument which involves constructing bases for $\mathcal{R}(T)$ and $\mathcal{N}(T)$.
+\end{solution}
+
+\pagebreak
+
+
+
+\end{document}
+

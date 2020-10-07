@@ -1,0 +1,126 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 2}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} A metric space is called \emph{separable} if it contains a countable dense subset.  A collection $\{V_\alpha\}$ of open subsets of a metric space $X$ is called a \emph{base} of $X$ if, for all $x\in X$ and every open set $G\subseteq X$ with $x\in G$ there exists $\alpha$ so that $x\in V_\alpha\subseteq G$.
+
+\noindent Prove that every separable metric space has a \emph{countable} base.  
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $X$ be separable and $E=\{x_i\}_{i\in \mathbb{N}}\subseteq X$ be a countable dense subset. Then consider $B=\{N_r(x_i) \vert r\in \mathbb{Q} \textrm{~~ and ~~} x_i\in E\}$ and note that $B$ is countable.  Let $x\in G \subseteq X$ with $G$ open.  Since $E$ is dense, $x\in E$ or $x$ is a limit point of $E$. If this arbitrary $x\in E$ then $B$ is a countable base for $X$ since there exists a rational $r>0$ so that $N_r(x)\subseteq G$.  Note that $N_r(X)\in B$ since $x\in E$ and $r$ is rational.  Otherwise we said that $x$ is a limit point of $E$.  If that is the case, then every neighborhood of $x$ contains infinitely many points of $E$. Since $G$ is open, $\exists N_\delta(x)\subseteq G$ with $\delta$ rational and $N_\delta(x)$ also contains infinitely many points of $E$. Now choose a point $x_i \in E$ with $d(x_i,x)<\frac{delta}{4}$, then $x\in N_{\delta/3}$ and $N_{\delta/3}(x_i)\subseteq G$. Thus $B$ is a countable base.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Suppose $(X,d)$ is a metric space in which every infinite subset has a limit point.  Prove that $(X,d)$ is separable.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Fix a $\delta >0$ and pick an $x_1\in X$. Then we choose $F=x_1,...,x_j\in X$ and try to choose $x_{j+1}$ so that $d(x_i,x_{j+1})\geq \delta$ for $i=1,...,j$. Suppose for a contradiction that we can create $F$ with infinitely many points by the construction above, then for any $x\in X$ we have that $d(x,x_i)<\frac{\delta}{2}$ for some $x_i$. Using the triangle inequality we have that $d(x,x_i)\leq d(x_j,x_i)+d(x,x_i)$ which means that $d(x,x_j)\geq d(x_j,x_i)-d(x_i,x)\geq \frac{\delta}{2}$ for any $j\neq i$. Thus $x$ cannot be a limit point of $F$ since if we choose a neighborhood $N_{\delta/2}(x)$ it only contains finitely many points of $F$.
+
+Now we can choose $\delta=\frac{1}{n}$ and create finite sets $F_n=\{x_i \in X \vert d(x_i,x_j)\geq \frac{1}{n} \forall i\neq j\}$.  Then consider the union $U=\cup_{n=1}^\infty F_n$ which is is a countable set.  Let $x\in X$ and fix $\epsilon >0$.  If $x\in U$ then $U$ is clearly dense.  However, if $x\notin U$ then we have that $\exists N\in \mathbb{N}$ so that $\frac{1}{N}<\epsilon$. Then let $y\in U$ with $y\neq x$ be a point satisfying $d(x,y)<\frac{1}{N}<\epsilon$, which must exist for some set $F_n$ with $n\geq N$.  
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Prove that every compact metric space $K$ has a countable base, and that $K$ is therefore separable.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $K$ be compact and let $B_n=\{N_{1/n}(x_1),...,N_{1/n}(x_{m_n}) \vert n \textrm{ is a fixed natural and } x_i\in K\}$ be a finite open cover of $K$. Then note that $\mathcal{B}=\{B_n\}_{n\in \mathbb{N}}$ is a countable cover of $K$ since each $B_n$ is a finite open cover. To be clear, $x_{m_n}$ is always some finite integer.  Then let $x\in G \subseteq X$ with $G$ open. Since $\mathcal{B}$ contains covers of $K$, $x\in N_{1/n}(x_i)$ for some $x_{i_n}$ and $n$ which satisfies $x\in N_{1/n}(x_{i_n})\subseteq G$ since we can make $1/n$ arbitrarily small and we still have a cover of $K$.  And thus $\mathcal{B}$ is a countable base for $K$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Let $X$ be a metric space in which every infinite subset has a limit point in $X$. Prove that $X$ is compact.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} 
+Let $X$ be a metric space in which every infinite subset has a limit point. By Ex. 2.23 and 2.24 we know that $X$ has a countable base. Thus every open cover of $X$ has a countable subcover $\{G_n\}_{n\in \mathbb{N}}$. If no finite subcollection of $\{G_n\}_{n\in \mathbb{N}}$ covers $X$, then $F_n = X\setminus (G_1\cup ... \cup G_n)$ is nonempty for each $n$ but $\cap_{n\in \mathbb{N}}F_n$ is empty. Let $E=\{x_i\in F_i \vert i \in \mathbb{N}\}$. For a contradiction, suppose $E$ has a limit point $x$, thus $\forall \epsilon >0$, $N_\epsilon(X)\cap E$ contains infinitely many points of $E$. But since $\{G_n\}_{n\in \mathbb{N}}$ is a base, we have $N_\epsilon (x)\subseteq G_i$ for some $i$. But $G_i\cap E$ can only possibly contain $x_1,..., x_i$ so we have that $N_\epsilon(x)$ contains only finitely many points.  Thus $x$ was not a limit point of $E$ which contradicts our original statement.  Thus $X$ must be compact.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} Let $l^1$ be the set of sequences $\vec{x}=\{x_n\}$ of real numbers such that $\sum_{n=1}^\infty |x_n|<\infty$. Define $d(\vec{x},\vec{y})=\sum_{n=1}^\infty |x_n-y_n|$, which is a metric on $l^1$. Let $\vec{z}\in l^1$ be a fixed sequence of positive numbers, and prove that
+\[
+E_{\vec{z}}\coloneqq \{\vec{x}\in l^1 \colon |x_n|\leq z_n \textrm{~ for all ~} n\}
+\]
+is compact.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $S\subseteq E_{\vec{z}}$ be infinite. Now consider the set $S_{|x|} = \{\sum_{n=1}^\infty |x_{\alpha_n}| \colon x_{\alpha}\in S\}$.  Consider $\sup S_{|x|}$ which is some $x_\alpha$. Then suppose that this $\sup$ is not a limit point of the set. Then we have that $\exists r_\alpha >0$ so that for every $|x_\beta| \in S$ we have that $|x_\alpha|-|x_\beta|>r_\alpha$.  Suppose this carries on infinitely, and thus there exists $r=\inf_{\alpha}(r_\alpha)$ then note that for even a countable collection $|x_{\alpha_i}|,|x_{\beta_i}|$ we have that $\sum_{i=1}^{\infty} |x_{\alpha_i}|-|x_{\beta_i}>\sum_{i=1}^{\infty}r$. But this contradicts $x_\alpha \in E_{\vec{z}}$ since every element of $E_{\vec{z}}$ are absolutely convergent series and subtracting two absolutely convergent series should be bounded. Thus we have that $S_{|x|}$ was not infinite, or we have that for some $|x_\alpha|$ that for all $epsilon>0$ we have $N_{\epsilon}|x_\alpha|\cap S_{|x|}$ is infinite.  Thus we have that $S_{|x|}$ must contain a limit point.  I claim that this means $S$ must also have a limit point.
+\end{proof}
+
+\pagebreak
+
+
+
+\end{document}
+

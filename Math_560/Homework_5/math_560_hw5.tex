@@ -1,0 +1,702 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 5}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1. (\S 4.3 Problem 6)} Use Cramer's rule to solve the given system of linear equations.
+\begin{align*}
+x_1-x_2+4x_3&=-2\\
+-8x_1+3x_2+x_3&=0\\
+2x_1-x_2+x_3&=6
+\end{align*}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+Cramer's rule states that $x_k = \frac{\det(M_k)}{\det(A)}$.  In this case we have
+\[
+\det(A)=\det\left(\begin{bmatrix}
+1 & -1 & 4\\
+-8 & 3 & 1\\
+2 & -1 & 1
+\end{bmatrix}\right)=2
+\]
+So we have
+\begin{align*}
+x_1&=\frac{\det(M_1)}{\det(A)}=\frac{1}{2}\det\left(\begin{bmatrix}
+-2 & -1 & 4\\
+0 & 3 & 1\\
+6 & -1 & 1
+\end{bmatrix}\right)=-43\\
+x_2&=\frac{\det(M_2)}{\det(A)}=\frac{1}{2}\det\left(\begin{bmatrix}
+1 & -2 & 4\\
+-8 & 0 & 1\\
+2 & 6 & 1
+\end{bmatrix}\right)=-109\\
+x_3&=\frac{\det(M_3)}{\det(A)}=\frac{1}{2}\det\left(\begin{bmatrix}
+1 & -1 & 2\\
+-8 & 3 & 0\\
+2 & -1 & 6
+\end{bmatrix}\right)=-17.
+\end{align*}
+So $x_1=-43$, $x_2=-109$, and $x_3=-17$.
+\end{solution}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 4.3 Problem 18)} Complete the proof of Theorem 4.7 by showing that if $A$ is an elementary matrix of type 2 or type 3, then $\det(AB)=\det(A)\cdot \det(B)$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For type 2, we have that $A$ is a diagonal matrix with one in each entry except for the row/column we wish to scale.  So 
+\begin{align*}
+A=\begin{bmatrix}
+1 & & &\\
+& \ddots & &\\
+& & 1 & \\
+& & & \lambda & &\\
+& & & & 1 &\\
+& & & & & \ddots &\\
+& & & & & & 1
+\end{bmatrix}
+\end{align*}
+with $\lambda$ in the $k$th diagonal entry. It's worth noting that left multiplication of $B$ by $A$ will scale the $k$th row of $B$ and right multiplication will scale the $k$th column.  Regardless, we have that $\det(A)=\lambda$.  So we have that $\det(AB)=\lambda \det(B)=\det(A)\det(B)$ by theorem 4.3.
+
+For $A$ a type 3 elementary matrix, theorem 4.6 tells us that $\det(AB)=\det(B)$.  Note that $\det(A)=1$ and we have that, $\det(AB)=\det(A)\det(B)$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 4.3 Problem 21.)} Prove that if $M\in \mathbf{M}_{n\times n}(\mathbb{F})$ can be written in the form 
+\[
+M=
+\begin{bmatrix}
+A & B\\
+0 & C
+\end{bmatrix}
+\]
+where $A$ and $C$ are square matrices, then $\det(M)=\det(A)\cdot \det(C)$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider first 
+\begin{align*}
+M=\begin{bmatrix}
+A  & 0\\
+0 & C
+\end{bmatrix}
+=
+\begin{bmatrix}
+A & 0\\
+0 & I_{q\times q}
+\end{bmatrix}
+\begin{bmatrix}
+I_{p\times p} & 0\\
+0 & B
+\end{bmatrix},
+\end{align*}
+where $p+q=n$.  Then we have that
+\begin{align*}
+\begin{bmatrix}
+A & 0\\
+0 & I_{q\times q}
+\end{bmatrix}=
+E_1 E_2 \cdots E_r I_{n\times n}
+\end{align*}
+and
+\begin{align*}
+\begin{bmatrix}
+I_{p\times p} & 0\\
+0 & B
+\end{bmatrix}=
+E_1' E_2' \cdots E_l' I_{n\times n}
+\end{align*}
+where $E_i, E_j'$ are elementary $n\times n$ matrices.  The above work shows that $\det(M)=\det(E_1\cdots E_r E_1' \cdots E_l' I_{n\times n}^2)=\det(E_1\cdots E_r) \det(E_1' \cdots E_l')=\det(A)\det(B)$.  Finally, note that we can generate 
+\begin{align*}
+M=\begin{bmatrix}
+A & B\\
+0 & C
+\end{bmatrix}
+\end{align*}
+by using $n\times n$ type 3 elementary matrices. To show this we have
+\begin{align*}
+\begin{bmatrix}
+I_{p\times p} & C\\
+0 & I_{q \times q}
+\end{bmatrix}=
+E_1'' E_2'' \cdots E_t'' I_{n\times n}
+\end{align*}
+where $E_i''$ are type 3 matrices.  By combining the above work with this, we get that 
+\[\det(M)=\det(E_1\cdots E_r E_1' \cdots E_l'E_1'' \cdots E_t'' I_{n\times n}^3)=\det(A)\det(B)
+\] 
+since the determinant is not affected by type 3 matrices.\\
+
+\noindent Note that \emph{Problem 4.} of this assignment is a repeat and I don't have another unique proof to show, so I'd use this one.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 5.1 (Problem 3. (a),(c))}  For each of the following matrices $A\in \mathbf{M}_{n\times n}(\mathbb{F})$,
+\begin{enumerate}[(i)]
+\item Determine all the eigenvalues of $A$.
+\item For each eigenvalue $\lambda$ of $A$, find the set of eigenvectors corresponding to $\lambda$.
+\item If possible, find a basis for $\mathbb{F}^n$ consisting of eigenvectors of $A$.
+\item If successful in finding such a basis, determine an invertible matrix $Q$ and a diagonal matrix $D$ such that $Q^{-1}AQ=D$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[Part (a)] For matrix 
+\[A=\begin{bmatrix}
+1 & 2 \\
+3 & 2 
+\end{bmatrix}
+\]
+with coefficients in $\mathbb{R}$. 
+\begin{enumerate}[i)]
+\item We get the characteristic polynomial $(1-\lambda)(2-\lambda)-6=\lambda^2-3\lambda-4=(\lambda+1)(\lambda-4)$ so we have eigenvalues $\lambda_1=-1$ and $\lambda_2=4$.
+
+\item 
+\begin{align*}
+\begin{bmatrix}
+1 & 2\\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+=\begin{bmatrix}
+-x_1\\
+-x_2
+\end{bmatrix}
+\end{align*}
+Which yields equations
+\begin{align*}
+x_1+2x_2&=-x_1\\
+3x_1+2x_2&=-x_2
+\end{align*}
+Which tells us that $x_2=-x_1$.  So the eigenvector corresponding to $\lambda_1$ is $\begin{bmatrix}
+1\\
+-1\end{bmatrix}$.
+
+\begin{align*}
+\begin{bmatrix}
+1 & 2\\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+=\begin{bmatrix}
+4x_1\\
+4x_2
+\end{bmatrix}
+\end{align*}
+Which yields equations
+\begin{align*}
+x_1+2x_2&=4x_1\\
+3x_1+2x_2&=4x_2
+\end{align*}
+Which tells us that $x_2=\frac{3}{2}x_1$.  So the eigenvector corresponding to $\lambda_1$ is $\begin{bmatrix}
+1\\
+\frac{3}{2}\end{bmatrix}$.
+
+\item The basis is $\left\{\begin{bmatrix} 1 \\ -1\end{bmatrix},\begin{bmatrix} 1 \\ \frac{3}{2} \end{bmatrix}\right\}$. 
+
+\item We want $Q^{-1}AQ=D$ with $D$ diagonal.  So we have
+\begin{align*}
+\begin{bmatrix}
+Q_{11} & Q_{12}\\
+Q_{21} & Q_{22}
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=\begin{bmatrix}
+1\\
+-1
+\end{bmatrix}
+\end{align*}
+and
+\begin{align*}
+\begin{bmatrix}
+Q_{11} & Q_{12}\\
+Q_{21} & Q_{22}
+\end{bmatrix}
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=\begin{bmatrix}
+1\\
+\frac{3}{2}
+\end{bmatrix}.
+\end{align*}
+Which tells us that 
+\begin{align*}
+Q=\begin{bmatrix}
+1 & 1\\
+-1 & \frac{3}{2}
+\end{bmatrix} \textrm{~~~ and ~~~}
+Q^{-1}=\frac{1}{5}\begin{bmatrix}
+3 & -2\\
+2 & 2
+\end{bmatrix}.
+\end{align*}
+So then,
+\begin{align*}
+Q^{-1}AQ=
+\frac{1}{5}\begin{bmatrix}
+3 & -2\\
+2 & 2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2\\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1\\
+-1 & \frac{3}{2}
+\end{bmatrix}=
+\begin{bmatrix}
+-1 & 0\\
+0 & 4
+\end{bmatrix}
+\end{align*}
+
+\end{enumerate}
+\end{solution}
+
+\begin{solution}[Part (c)] For matrix
+\[A=\begin{bmatrix}
+i & 1\\
+2 & -i
+\end{bmatrix}
+\]
+with coefficients in $\mathbb{C}$.
+
+\begin{enumerate}[i)]
+\item We get the characteristic polynomial $(i-\lambda)(-i-\lambda)-2=\lambda^2-1=(\lambda+1)(\lambda-1)$ so we have eigenvalues $\lambda_1=1$ and $\lambda_2=-1$.
+
+\item 
+\begin{align*}
+\begin{bmatrix}
+i & 1\\
+2 & -i
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+=\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+\end{align*}
+Which yields equations
+\begin{align*}
+ix_1+x_2&=x_1\\
+2x_1-ix_2&=x_2
+\end{align*}
+Which tells us that $x_2=(1-i)x_1$.  So the eigenvector corresponding to $\lambda_1$ is $\begin{bmatrix}
+1\\
+1-i\end{bmatrix}$.
+
+\begin{align*}
+\begin{bmatrix}
+i & 1\\
+2 & -i
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+=\begin{bmatrix}
+-x_1\\
+-x_2
+\end{bmatrix}
+\end{align*}
+Which yields equations
+\begin{align*}
+ix_1+x_2&=-x_1\\
+2x_1-ix_2&=-x_2
+\end{align*}
+Which tells us that $x_2=(-1-i)x_1$.  So the eigenvector corresponding to $\lambda_1$ is $\begin{bmatrix}
+1\\
+-1-i \end{bmatrix}$.
+
+\item The basis is $\left\{\begin{bmatrix} 1 \\ 1-i\end{bmatrix},\begin{bmatrix} 1 \\ -1-i \end{bmatrix}\right\}$. 
+
+\item We want $Q^{-1}AQ=D$ with $D$ diagonal.  So we have
+\begin{align*}
+\begin{bmatrix}
+Q_{11} & Q_{12}\\
+Q_{21} & Q_{22}
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=\begin{bmatrix}
+1\\
+1-i
+\end{bmatrix}
+\end{align*}
+and
+\begin{align*}
+\begin{bmatrix}
+Q_{11} & Q_{12}\\
+Q_{21} & Q_{22}
+\end{bmatrix}
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=\begin{bmatrix}
+1\\
+-1-i
+\end{bmatrix}.
+\end{align*}
+Which tells us that 
+\begin{align*}
+Q=\begin{bmatrix}
+1 & 1\\
+1-i & 1-i
+\end{bmatrix} \textrm{~~~ and ~~~}
+Q^{-1}=\frac{1}{2}\begin{bmatrix}
+1+i & 1\\
+1-i & -1
+\end{bmatrix}.
+\end{align*}
+So then,
+\begin{align*}
+Q^{-1}AQ=
+\frac{1}{2}\begin{bmatrix}
+1+1 & 1\\
+1-i & -1
+\end{bmatrix}
+\begin{bmatrix}
+i & 1\\
+2 & -i
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1\\
+1-i & -1-i
+\end{bmatrix}=
+\begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}
+\end{align*}
+
+\end{enumerate}
+\end{solution}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 5.1 Problem 4. (e))} For each linear operator $T$ on $V$, find the eigenvalues of $T$ and an ordered basis $\beta$ for $V$ such that $[T]_\beta$ is a diagonal matrix.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (e)]
+We have
+\begin{align*}
+T(a_0+a_1x+a_2x^2)&=x(a_1+2a_2x)+x(a_0+2a_1+4a_2)+(a_0+3a_1+9a_2)\\
+&= (a_0+3a_1+9a_2)+x(a_0+3a_1+4a_2)+x^2(2a_2).
+\end{align*}
+Let $\alpha=\{1,x,x^2\}$. Then in this basis we have
+\begin{align*}
+[T]_\alpha x = 
+\begin{bmatrix}
+T_{11} & T_{12} & T_{13}\\
+T_{21} & T_{22} & T_{23}\\
+T_{31} & T_{32} & T_{33}
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=
+\begin{bmatrix}
+a_0+3a_1+9a_2\\
+a_0+3a_1+4a_2\\
+2a_2
+\end{bmatrix}.
+\end{align*}
+Thus
+\begin{align*}
+[T]_\alpha = \begin{bmatrix}
+1 & 3 & 9\\
+1 & 3 & 4\\
+0 & 0 & 2
+\end{bmatrix}
+\end{align*}
+The characteristic polynomial is $(1-\lambda)(3-\lambda)(2-\lambda)-3(2-\lambda)=-\lambda(\lambda-4)(\lambda-2)$.  Thus we get $\lambda_1=0,\lambda_2=2,$ and $\lambda_3=4$.  So
+\begin{align*}
+\begin{bmatrix}
+1 & 3 & 9\\
+1 & 3 & 4\\
+0 & 0 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}.
+\end{align*}
+This yields equations
+\begin{align*}
+x_1+3x_2+9x_3&=0\\
+x_1+3x_2+4x_3&=0\\
+2x_3&=0.
+\end{align*}
+Which tells us $x_1=-3$, $x_2=1$, and $x_3=0$.  Next we get
+\begin{align*}
+\begin{bmatrix}
+1 & 3 & 9\\
+1 & 3 & 4\\
+0 & 0 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=
+\begin{bmatrix}
+2x_1\\
+2x_2\\
+2x_3
+\end{bmatrix}.
+\end{align*}
+This yields equations
+\begin{align*}
+x_1+3x_2+9x_3&=2x_1\\
+x_1+3x_2+4x_3&=2x_2\\
+2x_3&=2x_3.
+\end{align*}
+Which tells us that $x_1=-3$, $x_2=-13$, and $x_3=4$. Finally we get
+\begin{align*}
+\begin{bmatrix}
+1 & 3 & 9\\
+1 & 3 & 4\\
+0 & 0 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=
+\begin{bmatrix}
+4x_1\\
+4x_2\\
+4x_3
+\end{bmatrix}.
+\end{align*}
+This yields equations
+\begin{align*}
+x_1+3x_2+9x_3&=4x_1\\
+x_1+3x_2+4x_3&=4x_2\\
+2x_3&=4x_3.
+\end{align*}
+Which tells us that $x_1=1$, $x_2=1$, and $x_3=0$.  So our basis of eigenvectors is $\beta=\left\{\begin{bmatrix} -3\\1\\0\end{bmatrix},\begin{bmatrix} -3\\-13\\4 \end{bmatrix}, \begin{bmatrix} 1\\ 1\\ 0\end{bmatrix}\right\}$.  So in this basis, $T$ is diagonal. Specifically,
+\begin{align*}
+[T]_\beta = \begin{bmatrix}
+0 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 4
+\end{bmatrix}.
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7. (\S 5.1 Problem 7.)} Let $T$ be a linear operator on a finite-dimensional vector space $V$. We define the \textbf{determinant} of $T$, denoted $\det(T)$, as follows: Choose any ordered basis $\beta$ for $V$, and define $\det(T)=\det([T]_\beta)$.
+\begin{enumerate}[(a)]
+\item Prove that the preceding definition is independent of the choice of an ordered basis for $V$.  That is, prove that if $\beta$ and $\gamma$ are two ordered bases for $V$, then $\det([T]_\beta)=\det([T]_\gamma)$.
+\item Prove that $T$ is invertible if and only if $\det(T)\neq 0$.
+\item Prove that if $T$ is invertible, then $\det(T^{-1})=(\det(T))^{-1}$.
+\item Prove that if $U$ is also a linear operator on $V$, then $\det(TU)=\det(T)\cdot \det(U)$. 
+\item Prove that $\det(T-\lambda I_V)=\det([T]_\beta - \lambda I)$ for any scalar $\lambda$ and any ordered basis $\beta$ for $V$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+Since $\det(T)=\det([T]_\beta)$ for any ordered basis $\beta$. It is that $\det(T)=\det([T]_\gamma)$ for another ordered basis.  Thus $\det([T]_\beta)=\det([T]_\gamma)$.
+\end{proof}
+
+\begin{proof}[Part (b)]
+First suppose that $T$ is invertible.  Thus $TT^{-1}=I$.  Then, $\det(TT^{-1})=\det(T)\det(T^{-1})=\det(I)=1$.  Thus if this is satisfied, we have that $\det(T)\neq 0$.  For the converse, suppose for a contradiction that $\det(T)=0$ but $T$ is invertible.  Since $\det(T)=0$ there is at least one row of $[T]_\beta$ for any basis $\beta$ is a linear combination of the other rows.  This means that for some $x\neq 0$ we have that $[T]_\beta x = 0$.  Thus $[T]_\beta$ is not injective and thus not invertible.  
+\end{proof}
+
+\begin{proof}[Part (c)]
+We have that $1=\det(I)=\det(TT^{-1})=\det(T)\det(T^{-1})$.  Thus $\det(T^{-1})=\det(T)^{-1}$.
+\end{proof}
+
+\begin{proof}[Part (d)]
+We have that $U$ can be created by multiplying elementary matrices of all three distinct types.  Since we showed that for all three types elementary matrices $E$ that $\det(ET)=\det(E)\det(T)$ we have that $U=E_1 \cdots E_m$ for $E_i$ an elementary matrix of type 1,2, or 3 and thus $\det(UT)=\det(E_1 \cdots E_m)\det(T)=\det(U)\det(T)$.
+\end{proof}
+
+\begin{proof}[Part (e)]
+We have $\det(T-\lambda I_V)=\det([T-\lambda I_V]_\beta)=\det([T]-\lambda [I]_\beta)=\det([T]_\beta-\lambda I)$ since $I$ is the same no matter which basis.  
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 8. (\S 5.1 Problem 9.)} Prove that the eigenvalues of an upper triangular matrix $M$ are the diagonal entries of $M$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We can do this by cofactor expansion.  Let $M$ be upper triangular $n\times n$ matrix, then
+\begin{align*}
+\det(M)&=\sum_{j=1}^n (-1)^{1+j} M_{1j}\det(\tilde{M}_{1j})\\
+&=M_{11}\det(\tilde{M}_{11})
+\end{align*}
+Since the only nonzero entry in the first column is $M_{11}$. It's convenient to rename $\tilde{M}_{11}=M^{(1)}$. The superscript in $M^{(q)}$ tells us that we're looking at a sub-matrix of $M$ with the first $q$ rows and columns removed. Then, we have
+\begin{align*}
+\det(M)&=M_{11} \sum_{j=1}^{n-1} (-1)^{1+j} M_{1j}^{(1)}\det(\tilde{M}_{1j}^{(1)})\\
+&= M_{11} M_{11}^{(1)} \det(\tilde{M}_{11}^{(1)})\\
+&=M_{11} M_{22} \det(\tilde{M}_{11}^{(1)}).
+\end{align*}
+It's worth showing one more iteration before jumping to the final step.  Next we have
+\begin{align*}
+\det(M)&=M_{11} M_{22} \sum_{j=1}^{n-2} (-1)^{1+j} M_{1j}^{(2)}\det(\tilde{M}_{1j}^{(2)})\\
+&= M_{11} M_{22} M_{11}^{(2)} \det(\tilde{M}_{11}^{(2)})\\
+&=M_{11} M_{22} M_{33} \det(\tilde{M}_{11}^{(2)}).
+\end{align*}
+Then finally,
+\begin{align*}
+\det(M)&=M_{11} \cdots M_{(n-2)(n-2)} \sum_{j=1}^{2} (-1)^{1+j} M_{1j}^{(n-2)}\det(\tilde{M}_{1j}^{(n-2)})\\
+&= M_{11} \cdots M_{(n-2)(n-2)} M_{11}^{(n-1)} \det(\tilde{M}_{11}^{(n-2)})\\
+&=M_{11} \cdots M_{(n-2)(n-2)} M_{(n-1)(n-1)} M_{nn}.
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 9. (\S 5.1 Problem 14.)} For any square matrix $A$, prove that $A$ and $A^t$ have the same characteristic polynomial (and hence the same eigenvalues).
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+By theorem 4.9 we have that $\det(A)=\det(A^t)$. Since we get the characteristic polynomial by subtracting $\lambda$ from the diagonal entries and the diagonal entries do not change from transposing a matrix, it must be the case that the characteristic polynomial for $A$ and $A^t$ are the same. To show this another way, $\det(A-\lambda I)=\det((A-\lambda I)^t)$ so the characteristic polynomials are equivalent.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 10. (\S 5.1 Problem 24.)} Use Exercise 21(a) to prove Theorem 5.3.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+Theorem 5.3 states: Let $A\in \mathbf{M}_{n\times n} (\mathbb{F})$.
+\begin{enumerate}[(a)]
+\item The characteristic polynomial of $A$ is a polynomial of degree $n$ with leading coefficient $(-1)^n$.
+\item $A$ has at most $n$ distinct eigenvalues.
+\end{enumerate}
+Then note that Exercise 21(a) tells us that $f(t)=(A_{11}-t)(A_{22}-t)\cdots (A_nn-t)+q(t)$ with $f(t)=(-1)^n t^n +a_{n-1}t^{n-1}+...+a_1t+a_0$. 
+
+\begin{proof}[Part (a)]
+If we multiply out $f(t)$ we have that $f(t)=(-t)\cdots(-t) + g(t)=(-1)^n t^n +g(t)$ for some polynomial $g(t)$ which has degree at most $n-1$.  So the characteristic polynomial is degree $n$ with leading coefficient $(-1)^n$.
+\end{proof}
+
+\begin{proof}[Part (b)]
+Since the characteristic polynomial is a polynomial of degree $n$, by the fundamental theorem of algebra there are at most $n$ distinct roots for the polynomial over $\mathbb{C}$.
+\end{proof}
+
+\pagebreak
+
+\end{document}
+

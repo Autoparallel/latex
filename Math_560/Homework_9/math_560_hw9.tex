@@ -1,0 +1,626 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 9}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1. (\S 6.3 Problem 20. (a))} For the following sets of data that follows, use the least squares approximation to find the best fits with both (i) a linear function and (ii) a quadratic function. Compute the error $E$ in both cases.
+\[
+\{(-3,9),(-2,6),(0,2),(1,1)\}
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item First, for the linear function, we have 
+\begin{align*}
+A=\begin{bmatrix}
+-3 & 1\\
+-2 & 1\\
+0 & 1\\
+1 & 1
+\end{bmatrix}
+&&\textrm{and} &&
+y=\begin{bmatrix}
+9\\
+6\\
+2\\
+1
+\end{bmatrix}.
+\end{align*}
+It follows that
+\begin{align*}
+A^* A = \begin{bmatrix}
+-3 & -2 & 0 & 1\\
+1 & 1 & 1 &1
+\end{bmatrix}
+\begin{bmatrix}
+-3 & 1\\
+-2 & 1\\
+0 & 1\\
+1 & 1
+\end{bmatrix}=
+\begin{bmatrix}
+14 & -4\\
+-4 & 4
+\end{bmatrix}
+\end{align*}
+and
+\begin{align*}
+(A^*A)^{-1}=
+\frac{1}{20}\begin{bmatrix}
+2 & 2\\
+2 & 7
+\end{bmatrix}.
+\end{align*}
+Then we get that
+\begin{align*}
+\begin{bmatrix}
+c\\
+d
+\end{bmatrix}=x_0=\frac{1}{20}\begin{bmatrix}2 & 2\\ 2 & 7 \end{bmatrix} \begin{bmatrix}-3 & -2 & 0 & 1\\
+1 & 1 & 1 &1\end{bmatrix} \begin{bmatrix}
+9\\
+6\\
+2\\
+1
+\end{bmatrix}
+=\begin{bmatrix}
+-2\\
+\frac{5}{2}
+\end{bmatrix}.
+\end{align*}
+So the line $y=-2t+\frac{5}{2}$ is the line of best fit. The error 
+\begin{align*}
+E=\|Ax_0-y\|^2=\left\| \begin{bmatrix}
+-3 & 1\\
+-2 & 1\\
+0 & 1\\
+1 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+-2\\
+\frac{5}{2}
+\end{bmatrix}
+-\begin{bmatrix}
+9\\
+6\\
+2\\
+1
+\end{bmatrix}\right\|^2= 1.
+\end{align*}
+
+\item For the quadratic function we have,
+\begin{align*}
+A=\begin{bmatrix}
+(-3)^2 & -3 & 1\\
+(-2)^2 & -2 & 1\\
+0^2 & 0 & 1\\
+1^2 & 0 & 1\\
+\end{bmatrix}
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 6.4 Problem 17 (a)-(d) Read (e) and (f).)} Let $T$ and $U$ be self-adjoint linear operators on an $n$-dimensional inner product space $V$, and let $A=[T]_\beta$, where $\beta$ is an orthonormal basis for $V$. Prove the following results.
+\begin{enumerate}[(a)]
+\item $T$ is positive definite [semidefinite] if and only if all of its eigenvalues are positive [nonnegative].
+\item $T$ is positive definite if and only if 
+\[
+\sum_{i,j}A_{ij}a_j \overline{a_i} > 0 \textrm{~ for all nonzero $n$-tuples $(a_1,a_2,\dots,a_n)$.}
+\]
+\item $T$ is positive semidefinite if and only if $A=B^*B$ for some square matrix $B$.
+\item If $T$ and $U$ are positive semidefinite operators such that $T^2=U^2$, then $T=U$.
+\item If $T$ and $U$ are positive definite operators such that $TU=UT$, then $TU$ is positive definite.
+\item $T$ is positive definite [semidefinite] if and only if $A$ is positive definite [semidefinite].
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+
+\begin{enumerate}[(a)]
+\item First, suppose that $T$ is positive definite [semidefinite] but that some eigenvalue is negative [non-positive].  Of course, we can say that the eigenvalues are real since $T$ is self adjoint and that the orthornormal basis $\beta$ consists of eigenvectors.  Now we have $x=a_1 v_1 + \cdots + a_n v_n$ with $v_i \in \beta$ and not all $a_i=0$. Then with $A=[T]_\beta$
+\begin{align*}
+\langle A x,x \rangle &= \langle \lambda_1 a_1 v_1 + \cdots \lambda_n a_n v_n , a_1 v_1 + \cdots + a_n v_n \rangle\\
+\iff&= \lambda_1 |a_1|^2 + \cdots + \lambda_n |a_n|^2 > 0 &&\textrm{if $T$ is positive definite}\\
+\iff&=  \lambda_1 |a_1|^2 + \cdots + \lambda_n |a_n|^2 \geq 0 &&\textrm{if $T$ is positive semidefinite}.
+\end{align*}
+Now the last two statements imply that $\lambda_1,\dots \lambda_n\>0$ if $T$ is positive definite and $\lambda_1,\dots,\lambda_n\geq 0$ if $T$ is positive semidefinite. 
+
+Using the same $x$, we show the converse by noticing $[T]_\beta x=\lambda_1 a_1 v_1 + \cdots \lambda_n a_n v_n$ with $\lambda_i >0$ $[\lambda_i\geq 0]$. Now
+\begin{align*}
+\langle A x,x\rangle &= \lambda_1 a_1^2 +\cdots +\lambda_n a_n^2 >0 && \textrm{if $\lambda_i >0$}\\
+&= \lambda_1 a_1^2 +\cdots +\lambda_n a_n^2 \geq0 && \textrm{if $\lambda_i \geq0$}.
+\end{align*}
+It follows that $T$ is positive definite [semidefinite] if all of its eigenvalues are positive [nonnegative].
+
+\item Let $x=a_1 v_1+\cdots + a_n v_n$ with $v_i\in \beta$.  Then note that $\sum_{i,j} A_{ij} a_j \overline{a_i} = \langle Ax,x \rangle$. Now if $\sum_{i,j} A_{ij} a_j \overline{a_i}>0$ then $\langle Ax,x \rangle >0$ and $A=[T]_\beta$ is positive definite. Analogously, if $\langle Ax,x \rangle >0$ then $\sum_{i,j} A_{ij} a_j \overline{a_i}>0$. 
+
+\item Suppose $T$ is positive semidefinite and thus since $T$ is also self adjoint we have that $Av_i=\lambda_i v_i$ with $\lambda_i\geq0$.  Now define $B$ so that $Bv_i=\sqrt{\lambda_i}v_i$. It follows that we have for $x=a_1 v_1 + \cdots + a_n v_n$ we have\begin{align*}
+\langle B^* Bx, x \rangle &= \langle Bx, Bx \rangle\\
+&= \lambda_1 |a_1|^2 + \cdots + \lambda_n |a_n|^2\\
+&= \langle Ax,x \rangle.
+\end{align*} 
+Hence, $A=B^*B$.
+
+For the converse, if $A=B^*B$, then for the same $x$, 
+\begin{align*}
+\langle Ax,x \rangle &= \langle B^*Bx,x\rangle \\
+& = \langle Bx,Bx \rangle\\
+&= \|Bx\|^2 \geq 0.
+\end{align*}
+Hence $A$ is positive semidefinite.
+
+\item Suppose $T$ and $U$ are positive semidefinite and satisfy $T^2=U^2$.  Then we have that $T=B^*B$ and $U=C^*C$ by (c). It then follows for $x=a_1 v_1+ \cdots + a_n v_n$ with $v_i \in \beta$,
+\begin{align*}
+\langle T^2 x,x \rangle &= \langle U^2 x, x \rangle \\
+\iff\langle (B^*B)^2x,x\rangle &= \langle (C^*C)^2x,x\rangle\\
+\iff\langle B^*Bx,(B^*B)^*x \rangle &= \langle C^*Cx,(C^*C)^*x\rangle\\
+\iff\langle B^*Bx,B^*Bx\rangle &= \langle C^*Cx,C^*Cx \rangle\\
+\iff \|Tx\|^2&=\|Ux\|^2.
+\end{align*}
+Since $T$ and $U$ are positive semidefinite, it must be that $Tx=Ux$ since for the last equality the only other possibility is $Tx=-Ux$, which contradicts $T$ and $U$ being positive semidefinite. Hence, $T=U$.
+\end{enumerate}
+
+\end{proof}
+
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 6.5  Problem 14.)} Prove that if $A$ and $B$ are unitarily equivalent matrices, then $A$ is positive definite [semidefinite] if and only if $B$ is positive definite [semidefinite].
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose $A$ and $B$ are unitarily equivalent matrices, which means we can write $A=U^*BU$ for $U$ a unitary matrix.  Then, suppose that $A$ is positive definite [semidefinite].  It follows for $x\in V$ that
+\begin{align*}
+0&< \langle Ax,x \rangle &&\textrm{if $A$ is positive definite}\\
+\textrm{or~~} 0&\leq \langle Ax,x \rangle &&\textrm{if $A$ is positive semidefinite}
+\end{align*}
+and
+\begin{align*}
+\langle Ax,x \rangle &= \langle U^* B Ux,x\rangle\\
+&= \langle BUx,Ux\rangle.
+\end{align*}
+Note that $Ux\neq 0 \in V$ and specifically $\|Ux\|=\|x\|$. Denote $x'=Ux$ and we have that $\langle Bx',x' \rangle > 0$ if $A$ is positive definite and $\langle Bx',x' \rangle \geq 0$ if $A$ is positive semidefinite.  Thus we have shown $B$ is positive definite [semidefinite if $A$ is positive definite [semidefinite]. 
+
+For the converse, we suppose that $B$ is positive definite [semidefinite] and repeat the above proof with $B=U'^* A U'$ with $U'=U^*$.  It is exactly analogous. 
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (\S 6.5  Problem 21.)} Let $A$ and $B$ be $n\times n$ matrixes that are unitarily equivalent.
+\begin{enumerate}[(a)]
+\item Prove that $\tr(A^*A)=\tr(B^*B)$.
+\item Use (a) to prove that
+\[
+\sum_{i,j=1}^n |A_{ij}|^2 = \sum_{i,j=1}^n |B_{ij}|^2.
+\]
+\item Use (b) to show that the matrices
+\begin{align*}
+\begin{bmatrix}
+1 & 2\\
+2 & i
+\end{bmatrix}
+&& \textrm{and} &&
+\begin{bmatrix}
+i & 4\\
+1 & 1
+\end{bmatrix}
+\end{align*}
+are \emph{not} unitarily equivalent.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item Suppose that $A$ and $B$ are unitarily equivalent and specifically we have $A=U^*BU$.  We have 
+\[A^*A=(U^*BU)^*(U^*BU)=U^*B^*UU^*BU=U^*B^*B^*U.
+\]
+Finally, by properties of the trace we have
+\begin{align*}
+\tr(A^*A)=\tr(U^*B^*BU)=\tr(U^*UB^*B)=\tr(B^*B).
+\end{align*}
+
+\item We have
+\begin{align*}
+\tr(A^*A)=\sum_{i=1}^n (A^*A)_{ii}=\sum_{i,k=1}^n (A^*_{ik})(A_{ki})=\sum_{i,j=1}^n |A_{ij}|^2.
+\end{align*}
+Then we apply (a) and we find
+\begin{align*}
+\sum_{i,j=1}^n |A_{ij}|^2 = \sum_{i,j=1}^n |B_{ij}|^2.
+\end{align*}
+
+
+\item We have for the first matrix
+\begin{align*}
+a=|1|^2+|2|^2+|2|^2+|i|^2=10.
+\end{align*}
+For the second matrix we have
+\begin{align*}
+b=|i|^2+|4|^2+|1|^2+|1|^2=19.
+\end{align*}
+Thus the two matrices are \emph{not} unitarily equivalent.
+
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 6.6 Problem 2.)} Let $V=\R^2$, $W=\mathrm{span}(\{(1,2)\})$, and $\beta$ be the standard ordered basis for $V$. Compute $[T]_\beta$, where $T$ is the orthogonal projection of $V$ on $W$. Do the same for $V=\R^3$ and $W=\mathrm{span}(\{(1,0,1)\})$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+With $\beta$ the standard basis we find $[T]_\beta$ by projecting the standard vectors onto $W=\mathrm{span}(\{(1,2)\})$. So we have
+\begin{align*}
+\frac{(1,0)\cdot (1,2)}{\|(1,2)\|^2}(1,2)&=\left(\frac{1}{5},\frac{2}{5}\right)\\
+\frac{(0,1)\cdot (1,2)}{\|(1,2)\|^2}(1,2)&=\left(\frac{2}{5},\frac{4}{5}\right)\\.
+\end{align*}
+This tells us that
+\begin{align*}
+[T]_\beta=\begin{bmatrix}
+\frac{1}{5} & \frac{2}{5}\\
+\frac{2}{5} & \frac{4}{5}
+\end{bmatrix},
+\end{align*}
+where the left column is the first projection and the right column is the second.
+
+Now with $W=\mathrm{span}(\{(1,0,1)\})$, we have
+\begin{align*}
+\frac{(1,0,0)\cdot (1,0,1)}{\|(1,0,1)\|^2}(1,0,1)&=\left(\frac{1}{2},0,\frac{1}{2}\right)\\
+\frac{(0,1,0)\cdot (1,0,1)}{\|(1,0,1)\|^2}(1,0,1)&=\left(0,0,0\right)\\
+\frac{(0,0,1)\cdot (1,0,1)}{\|(1,0,1)\|^2}(1,0,1)&=\left(\frac{1}{2},0,\frac{1}{2}\right).
+\end{align*}
+And we have that
+\begin{align*}
+[T]_\beta=\begin{bmatrix}
+\frac{1}{2} & 0 &\frac{1}{2}\\
+0 & 0 & 0\\
+\frac{1}{2} & 0 &\frac{1}{2}
+\end{bmatrix}.
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 6.6 Problem 3 (b).)} For the following matrix $A$
+\begin{enumerate}[(1)]
+\item Verify that $L_A$ possesses a spectral decomposition.
+\item For each eigenvalue of $L_A$, explicitly define the orthogonal projection on the corresponding eigenspace.
+\item Verify your results using the spectral theorem.
+\end{enumerate}
+\[
+A=\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix}.
+\]
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(i)]
+\item First we find the eigenvalues which are solutions to $\lambda^2+1=0$.  Namely, $\lambda_1=i$ and $\lambda_2=-i$.  Then we have that the eigenvectors are $v_1 = (i,1)$ and $v_2 = (-i,1)$. This yields
+\begin{align*}
+\frac{(1,0)\cdot (i,1)}{\|(i,1)\|^2}(i,1)&=\frac{i}{2}(i,1)\\
+\frac{(0,1)\cdot (i,1)}{\|(i,1)\|^2}(i,1)&=\frac{1}{2}(i,1),
+\end{align*}
+implying that
+\begin{align*}
+T_1=\frac{1}{2}\begin{bmatrix}
+-1 & i\\
+i & 1
+\end{bmatrix}.
+\end{align*}
+Similarly,
+\begin{align*}
+\frac{(1,0)\cdot (-i,1)}{\|(i,1)\|^2}(-i,1)&=\frac{-i}{2}(-i,1)\\
+\frac{(0,1)\cdot (-i,1)}{\|(i,1)\|^2}(-i,1)&=\frac{1}{2}(-i,1),
+\end{align*}
+giving
+\begin{align*}
+T_2=\frac{1}{2}\begin{bmatrix}
+-1 & -i\\
+i & 1
+\end{bmatrix}.
+\end{align*}
+Now we verify that
+\begin{align*}
+A=\lambda_1 T_1 + \lambda_2 T_2 = \frac{1}{2}\left(i \begin{bmatrix}
+-1 & i\\
+-i & 1
+\end{bmatrix} -i \begin{bmatrix}
+-1 & -i\\
+i & 1
+\end{bmatrix}\right)=\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix}.
+\end{align*}
+Hence we have shown that $L_A$ has a spectral decomposition. 
+\item We have $T_1$ and $T_2$ above for $\lambda_1$ and $\lambda_2$ respectively.
+
+\item To verify we notice that $E_{\lambda_1}\oplus E_{\lambda_2}=V$, and that $E_{\lambda_1}=E_{\lambda_2}^\perp$ (showing (a) and (b)).  Now $T_1 T_2= 0$, $T_1^2=T_1$, and $T_2^2=T_2$ since $T_i$ is a projection matrix, which shows (c).  Finally, for (d) we have $I=T_1 + T_2$ and we showed (e) in part (i) of this proof.  So we have verified the spectral theorem.
+
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7. (\S 6.7 Problem 2 (a),(b).)} Let $T\colon V\to W$ be a linear transformation of rank $r$, where $V$ and $W$ are finite-dimensional inner product spaces. In each of the following, find orthonormal bases $\{v_1,v_2,\dots,v_n\}$ for $V$ and $\{u_1,u_2,\dots,u_m\}$ for $W$, and the nonzero singular values $\sigma_1\geq \sigma_2 \geq \cdots \geq \sigma_r$ of $T$ such that $T(v_i)=\sigma_i u_i$ for $1\leq i \leq r$.
+\begin{enumerate}[(a)]
+\item $T\colon \R^2 \to \R^3$ defined by $T(x_1,x_2)=(x_1,x_1+x_2,x_1-x_2)$.
+\item $T\colon P_2(R)\to P_1(R)$, where $T(f(x))=f''(x)$, and the inner products are defined as in Example 1.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+\begin{enumerate}[(a)]
+\item We can let the matrix $A=[T]_\beta$ with $\beta$ the standard basis. Then 
+\begin{align*}
+A=\begin{bmatrix}
+1 & 0\\
+1 & 1\\
+1 & -1\\
+\end{bmatrix}.
+\end{align*}
+We know that the eigenvectors of $A^*A$ will generate a basis for $W$.  We have
+\begin{align*}
+A^*A=
+\begin{bmatrix}
+3 & 0\\
+0 & 2
+\end{bmatrix}.
+\end{align*}
+This implies that the eigenvectors corresponding to $A^*A$ are $v_1=(1,0)$ and $v_2=(0,1)$. So we then let
+\begin{align*}
+V^*=\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}.
+\end{align*}
+Now
+\begin{align*}
+AA^*= \begin{bmatrix}
+1 & 1 & 1\\
+1 & 2 & 0\\
+1 & 0 & 2
+\end{bmatrix}, 
+\end{align*}
+which has eigenvalues $\lambda_1=3$, $\lambda_2=2$, and $\lambda_3=0$ with corresponding normalized eigenvectors $u_1=\frac{1}{\sqrt{3}}(1,1,1)$, $u_2=\frac{1}{\sqrt{2}}(0,-1,1)$, and $u_3=\frac{1}{\sqrt{6}}(-2,1,1)$. It follows that
+\begin{align*}
+U=\begin{bmatrix}
+0 & \frac{1}{\sqrt{3}} & \frac{-2}{\sqrt{6}}\\
+\frac{-1}{\sqrt{2}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{6}}\\
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{6}}
+\end{bmatrix}.
+\end{align*}
+Now we note that $\sigma_1=\sqrt{2}$ and $\sigma_2=\sqrt{3}$ and check this by confirming $Av_1=(1,1,1)=\sigma_1 u_1$ and $Av_2=(0,1,-1)=\sigma_2 u_2$.  
+
+\item Again, let $A=[T]_\beta$ with $\beta$ the standard basis.  Now we have
+\begin{align*}
+A=\begin{bmatrix}
+0 & 0 & 0\\
+0 & 0 & 2
+\end{bmatrix}.
+\end{align*}
+So we get that
+\begin{align*}
+A^*A=
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 4
+\end{bmatrix},
+\end{align*}
+which has eigenvalues $\lambda_1=0$, $\lambda_2=0$, and $\lambda_3=4$ corresponding to eigenvectors $v_1'=(1,0,0)$, $v_2'=(0,1,0)$, and $v_3'=(0,0,1)$. So we write
+\begin{align*}
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}. 
+\end{align*}
+Next we have
+\begin{align*}
+AA^*=
+\begin{bmatrix}
+0 & 0\\
+0 & 4
+\end{bmatrix},
+\end{align*}
+which has eigenvalues $\lambda_1=0$ and $\lambda_2=4$ corresponding to eigenvectors $u_1'=(1,0)$ and $u_2'=(0,1)$. Then we write
+\begin{align*}
+U=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}.
+\end{align*}
+Now, translating these vectors to the corresponding vectors for $P_3(\R)$ and $P_2(\R)$ we find
+\begin{align*}
+v_1&=\sqrt{\frac{5}{8}}(3x^2-1)\\
+v_2&=\sqrt{\frac{3}{2}}x\\
+v_3&=\frac{1}{\sqrt{2}} &&\textrm{and}\\
+u_1&=\sqrt{\frac{3}{2}}x\\
+u_2&=\frac{1}{\sqrt{2}}.
+\end{align*}
+We verify by noting that $\sigma_1=4$ and $T(v_1)=\sigma_1 u_1$ and else $T(v_2)=T(v_3)=0$.
+\end{enumerate}
+
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 8. (\S 6.7 Problem 4 (a).)} Find a polar decomposition for the following matrices.
+\begin{enumerate}[(a)]
+\item $\begin{bmatrix}
+1 & 1\\
+2 & -2
+\end{bmatrix}.$
+
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First we find the eigenvectors of $A^*A$. We have
+\begin{align*}
+A^*A= \begin{bmatrix}
+5 & -3\\
+3 & 5
+\end{bmatrix},
+\end{align*}
+which has eigenvalues $\lambda_1=8$ and $\lambda_2=2$ with corresponding eigenvectors $v_1=\frac{1}{\sqrt{2}}(-1,1)$ and $v_2=\frac{1}{\sqrt{2}}(1,1)$. So $\sigma_1=\sqrt{8}$ and $\sigma_2=\sqrt{2}$ and
+\begin{align*}
+V=\frac{1}{\sqrt{2}}\begin{bmatrix}
+-1 & 1\\
+1 & 1
+\end{bmatrix}.
+\end{align*}
+Then 
+\begin{align*}
+u_1&= \frac{1}{\sigma_1} A v_1 = \frac{1}{4}\begin{bmatrix}
+1 & 1\\
+2 & -2
+\end{bmatrix}
+\begin{bmatrix}
+-1\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix}\\
+u_2&= \frac{1}{\sigma_2} A v_2 = \frac{1}{2}\begin{bmatrix}
+1 & 1\\
+2 & -2
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}=
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix},
+\end{align*}
+and 
+\begin{align*}
+U&=\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}.
+\end{align*}
+So we have
+\begin{align*}
+W&=UV^* =\frac{1}{\sqrt{2}}\begin{bmatrix}
+-1 & 1\\
+1 & 1
+\end{bmatrix},\\
+P&=V\Sigma V^* = \frac{1}{2}
+\begin{bmatrix}
+\frac{3}{2\sqrt{2}} & \frac{1}{2\sqrt{2}}\\
+\frac{1}{2\sqrt{2}} & \frac{3}{2\sqrt{2}}
+\end{bmatrix}.
+\end{align*}
+Of course, this is for $A=WP$.
+\end{proof}
+
+\pagebreak
+
+
+
+\end{document}
+

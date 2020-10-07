@@ -1,0 +1,412 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 12}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\usepackage{amssymb}
+\usepackage{graphics}
+
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0in
+\topmargin=-0.50in
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+  \textsc{\large ColoState ~~ Spring 2018 ~~ MATH 617 ~~ Assignment 2}
+\end{center}
+
+\begin{center}
+  \textrm{Due Wed. 02/14/2018}
+\end{center}
+
+\vglue 0.10in
+
+\bigskip
+\noindent
+\textsc{Name:} \underline{Colin Roberts\hglue 1.5in} ~~
+\textsc{CSUID:} \underline{829773631\hglue 1.5in}
+
+\vskip 0.15in
+
+\bigskip
+\noindent
+(20 points) \textit{Problem 1}. \quad
+Let $ f_n(x) $ be a sequence of Riemann integrable functions on $ [a,b] $
+and $ f_n(x) $ converges uniformly on $ [a,b] $ to $ f(x) $.
+Prove that $ f(x) $ is also Riemann integrable and
+$ \displaystyle \lim_{n \to \infty} \int_a^b f_n(x)dx = \int_a^b f(x) dx $.
+
+\bigskip
+\bigskip
+\noindent
+(15 points) \textit{Problem 2}. \quad
+Let $ A = \mathbb{Q} \cap [0,1] $.
+If $ \{ I_n \} $ is a finite collection of open intervals covering $ A $,
+then $ \sum_{n} \lambda(I_n) \geq 1 $.
+
+\bigskip
+\bigskip
+\noindent
+(15 points) \textit{Problem 3}. \quad
+Check whether this ``easier proof" for $ \mu(A) \le \mu^*(A) $
+(Textbook Prop.3.7.4(iv)) is correct.
+Provide a correct proof if this one is incorrect.
+
+\smallskip
+\textit{
+Since $ A \subseteq X $,
+the definition of $ \mu^* $ as an infimum implies that
+there exist $ A_n \in \mathcal{A} (n \in \mathbb{N}) $
+such that $ A \subseteq \bigcup_{n=1}^\infty A_n $
+and $ \sum_{n=1}^\infty \mu(A_n) < \mu^*(A) + \varepsilon $.}
+
+\textit{
+By the monotonicity and countable subadditivity of $ \mu $ as a measure,
+we have
+$$
+  \mu(A) \le \mu(\bigcup_{n=1}^\infty A_n)
+  \le \sum_{n=1}^\infty \mu(A_n)
+  < \mu^*(A) + \varepsilon.
+$$
+So for any $ \varepsilon>0 $, we have
+$$
+  \mu(A) < \mu^*(A) + \varepsilon.
+$$
+Letting $ \varepsilon \to 0 $ yields
+$$
+  \mu(A) \le \mu^*(A).
+$$
+}
+
+\bigskip
+\bigskip
+\noindent
+(20 points) \textit{Problem 4}. \quad
+Textbook (p.69) Exercise 3.6.9.
+
+\bigskip
+\bigskip
+\noindent
+(15 points) \textit{Problem 5}. \quad
+Let $ \mathcal{A} $ be an algebra of subsets of a nonempty set $ X $
+and $ \langle \mu_n \rangle_{n \in \mathbb{N}} $
+be a sequence of measures on $ \mathcal{A} $.
+Assume $ \mu_n(X)<+\infty, \forall n \in \mathbb{N} $.
+For any $ A \in \mathcal{A} $, define
+$$
+  \mu(A) = \sum_{n=1}^\infty \frac{1}{3^n} \mu_n(A).
+$$
+Prove that $ \mu $ is a measure on $ \mathcal{A} $.
+
+\bigskip
+\bigskip
+\noindent
+(15 points) \textit{Problem 6}. \quad
+Assume $ \mu $ is a measure defined on an algebra $ \mathcal{A} $
+consisting of subsets of a fixed nonempty set $ X $.
+Let $ \mu^* $ be the outer measure induced by $ \mu $
+and $ \mathcal{S}^* $ be obtained through the Caratheodory condition.
+Prove that $ \mu^* $ is countably additive on $ \mathcal{S}^* $.
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} \quad
+Let $ f_n(x) $ be a sequence of Riemann integrable functions on $ [a,b] $
+and $ f_n(x) $ converges uniformly on $ [a,b] $ to $ f(x) $.
+Prove that $ f(x) $ is also Riemann integrable and
+$ \displaystyle \lim_{n \to \infty} \int_a^b f_n(x)dx = \int_a^b f(x) dx $.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+To see that $f$ is Riemann integrable, fix $\epsilon>0$.  Let $0<\eta$, $0<\delta$, and $0<\eta+\delta<\epsilon$. Note that $f_n \to f$ uniformly implies that $\exists N \in \N ~ \colon ~ n\geq N ~ \implies ~ |f_n(x)-f(x)|<\frac{\delta}{2(b-a)} ~ \forall x$.  Let $P_m$ be a regular partition of $[a,b]$ into $m$ segments.  Letting $M_{i,n}=\sup_{x\in [x_i,x_{i+1}]}(f_n(x))$ and $m_{i,n}=\inf_{x\in [x_i,x_{i+1}]}(f_n(x))$, we then have $\forall n ~ \exists m \in \N$ such that 
+\begin{align*}
+U(P_m,f_n)-L(P_m,f_n)&<\eta\\
+\iff \sum_{i=1}^m (M_{i,n}-m_{i,n})(x_{i+1}-x_i)&< \eta.
+\end{align*}
+Note that uniform convergence implies that $\frac{\delta}{b-a}+M_{i,n}-m_{i,n}> M_i-m_i$ where $M_i=\sup_{x \in [x_i,x_{i+1}]}(f(x))$ and $m_i=\inf_{x\in [x_i,x_{i+1}]}(f(x))$. Hence we have
+\begin{align*}
+U(P_m,f)-L(P_m,f)&=\sum_{i=1}^m (M_i-m_i)(x_{i+1}-x_i)\\
+&< \left(\frac{\delta}{b-a}+M_{i,n}-m_{i,n}\right)(x_{i+1}-x_i)\\
+&= \delta+\eta < \epsilon.
+\end{align*}
+Hence $f$ is Riemann integrable. To see that this shows $\int_a^b f_n dx \to \int_a^b fdx$, note that the previous work shows that 
+\begin{align*}
+\lim_{m\to \infty,n\to \infty}|(U(P_m,f_n)-L(P,f_n))-(U(P_m,f)-L(P_m,f))|=0.
+\end{align*}
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} \quad
+Let $ A = \mathbb{Q} \cap [0,1] $.
+If $ \{ I_n \} $ is a finite collection of open intervals covering $ A $,
+then $ \sum_{n} \lambda(I_n) \geq 1 $.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\noindent \emph{Note: I will let $\overline{I}$ denote the closure of the open interval $I$.}
+
+\begin{proof}
+First suppose that we have a finite covering of $A$ with a single interval $I$.  Then to contain all points in $A$, we must have that $I\supseteq [0,1]$ and hence
+\begin{align*}
+\lambda(I)\geq 1.
+\end{align*}
+Assume this is true up to a covering with $n-1$ intervals and suppose there exists a covering with $n$ intervals so that 
+\begin{align*}
+\sum_{k=1}^n \lambda(I_k) < 1.
+\end{align*}
+By density of the rationals and by the fact that $\lambda(\{x\})=0$, we have that for some $i,j\in \{1,\dots,n\}$ that $\overline{I_i}\cap \overline{I_j} = \{x\}$.  It must be that $I_i\cup \{x\} \cup I_j=I_{0}$ is an open interval and hence we can create a new covering by removing $I_i$ and $I_j$ from the original covering $\{I_k\}_{k=1,\dots,n}$ and replacing with the interval $I_0$. However, this new collection is then a covering of $A$ using $n-1$ sets, which contradicts our supposition.  Hence, by induction, we must have that $\sum_{i=1}^n \lambda(I_n)\geq 1$ for any collection of open intervals covering $A$.  
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} \quad
+Check whether this ``easier proof" for $ \mu(A) \le \mu^*(A) $
+(Textbook Prop.3.7.4(iv)) is correct.
+Provide a correct proof if this one is incorrect.
+
+\smallskip
+\textit{
+Since $ A \subseteq X $,
+the definition of $ \mu^* $ as an infimum implies that
+there exist $ A_n \in \mathcal{A} (n \in \mathbb{N}) $
+such that $ A \subseteq \bigcup_{n=1}^\infty A_n $
+and $ \sum_{n=1}^\infty \mu(A_n) < \mu^*(A) + \varepsilon $.}
+
+\textit{
+By the monotonicity and countable subadditivity of $ \mu $ as a measure,
+we have
+$$
+  \mu(A) \le \mu(\bigcup_{n=1}^\infty A_n)
+  \le \sum_{n=1}^\infty \mu(A_n)
+  < \mu^*(A) + \varepsilon.
+$$
+So for any $ \varepsilon>0 $, we have
+$$
+  \mu(A) < \mu^*(A) + \varepsilon.
+$$
+Letting $ \varepsilon \to 0 $ yields
+$$
+  \mu(A) \le \mu^*(A).
+$$
+}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+One mistake is that we must require that each $A_i$ is mutally disjoint from any other $A_j$ for $i\neq j$. We must also check the case for when $\mu^*(A)=+\infty$.  In this case we surely have that $\mu^*(A)\geq \mu(A)$. Also, in order to apply monotonicity we must instead consider
+\[
+\bigcup_{n=1}^\infty (A_n \cap A)
+\]
+as opposed to $\bigcup_{n=1}^\infty (A_n)$ since $\bigcup_{n=1}^\infty (A_n)\supseteq A$ and thus could contain more than just $A$.
+
+Also it should be that we let $\epsilon>0$ be arbitrary in the beginning and then noting this fact instead of where the proof lets $\epsilon \to 0$ would work. I think letting $\epsilon \to 0$ is a fine way of saying it though!
+\end{solution}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4.} \quad
+Let $X =\N$, the set of natural numbers. For every finite set $A \subseteq X$, let $\# A$ denote the number of elements in $A$. Define for $A\subseteq X$, 
+\[
+\mu_n (A) \coloneqq \frac{\# \{m~\colon~ 1 < m < n,m \in A\}}{n}.
+\]
+Show that $\mu_n$ is countably additive for every $n$ on $P(X)$. In a sense, $\mu_n$ is the proportion of integers between 1 to $n$ which are in $A$. Let $\mathcal{C} = \{A \subseteq X ~\colon~ \lim_{n\to \infty} \mu_n (A) \quad\textrm{exists}\}$. Show that $\mathcal{C}$ is closed under taking complements, finite disjoint unions and proper differences. Is it an algebra?
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\noindent \emph{Note: I will let $|\cdot |$ denote the cardinality of a set and I will use $\coprod$ as the notation for disjoint union.}
+
+\begin{proof}
+To see that $\mu_n$ is countably additive, let $\{A_m\}_{m\in \N}$ be a collection of disjoint sets from $P(X)$. Then we want to show that
+\[
+\mu_n\left(\coprod_{m\in \N} A_m\right)=\sum_{m\in \N} \mu_n(A_m).
+\]    
+Now we have
+\begin{align*}
+\mu_n\left(\coprod_{m\in \N} A_m \right)&=\mu_n\left(\coprod_{m\in \N} (A_m\cap \{1,\dots,n\})\right).
+\end{align*}
+Note that since the $A_m$ are disjoint there are sets $A_{m_i}$ with $i=1,dots,n$ so that $A_{m_i}\cap \{1,\dots,n\}$ is possibly nonempty (there may be no sets that interesect $\{1,\dots,n\}$ or at most $n$). This means that we have
+\begin{align*}
+\mu_n\left(\coprod_{m\in \N} (A_m\cap \{1,\dots,n\})\right)&= \mu_n\left(\coprod_{i=1}^n (A_{m_i}\cap \{1,\dots,n\})\right)\\
+&= \sum_{i=1}^n \frac{1}{n} \left| A_{m_i}\cap \{1,\dots,n\}\right| ,
+\end{align*}
+which holds since the cardinality of the finite union of disjoint sets is additive. Then
+\begin{align*}
+\sum_{i=1}^n \frac{1}{n} \left| A_{m_i}\cap \{1,\dots,n\}\right|&=\sum_{m\in \N}\frac{1}{n}\left| A_m \cap \{1,\dots,n\}\right|,
+\end{align*}
+which holds since all the other sets than the $A_{m_i}$ have an empty intersection and hence the intersections of these sets has a cardinality of $0$. Finally,
+\begin{align*}
+\sum_{m\in \N}\frac{1}{n}\left| A_m \cap \{1,\dots,n\}\right|&=\sum_{m\in \N}\mu_n (A_m),
+\end{align*}
+which shows the countable additivity.
+
+Now, let $A\in \mathcal{C}$.  Let $\lim_{n\to \infty}\mu_n(A)=L$ and note that $L\in [0,1]$.  Then we have
+\begin{align*}
+1&=\lim_{n\to \infty}\mu_n (X)\\
+&=\lim_{n\to \infty} (\mu_n(A)+\mu_n(A^c)) && \textrm{by the countable (and hence finite) additivity of $\mu_n$}\\
+&=L+\lim_{n\to \infty} \mu_n(A^c)\\
+\implies \lim_{n\to \infty} \mu_n(A^c)&=1-L.
+\end{align*}
+The limit existing shows $A^c\in \mathcal{C}$.
+
+To see that finite disjoint unions are in $\mathcal{C}$ it suffices to show that the union of two disjoint sets are in $\mathcal{C}$.  Let $A,B\in \mathcal{C}$ so that $A\cap B=\emptyset$.  Then letting $\lim_{n\to \infty} \mu_n(A)=L_A$ and $\lim_{n\to \infty} \mu_n(B)=L_B$ we have 
+\begin{align*}
+\lim_{n\to \infty} \mu_n (A\coprod B) &= \lim_{n\to \infty} (\mu_n(A)+\mu_n(B)) &&\textrm{by the countable (and hence finite) additivity of $\mu_n$}\\
+&= \lim_{n\to \infty} \mu_n(A)+\lim_{n\to \infty} \mu_n(B)\\
+&= L_A+L_B.
+\end{align*}
+Thus the finite disjoint union of two sets is in $\mathcal{C}$. 
+
+Finally, let $A,B\in \mathcal{C}$ be such that $B\subset A$ (proper subset). We wish to show that $A\setminus B \in \mathcal{C}$.  To see this, we let $\lim_{n\to \infty} \mu_n(A)=L_A$ and $\lim_{n\to \infty} \mu_n(B)=L_B$ and we have
+\begin{align*}
+\lim_{n\to \infty} \mu_n(A)&=\lim_{n\to \infty} \mu_n ((A\setminus B)\cup B)\\
+&= \lim_{n\to \infty}\mu_n(A\setminus B)+\lim_{n\to \infty} \mu_n(B) &&\textrm{by countable additivity}\\
+\iff L_A-L_B&= \lim_{n\to \infty} \mu_n(A\setminus B).
+\end{align*}
+Thus the proper differences are in $\mathcal{C}$.  
+
+Lastly, I do think that $\mathcal{C}$ is an algebra.  But I've found proving this or finding a counter example is extremely hard!!!
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5.} \quad
+ Let $ \mathcal{A} $ be an algebra of subsets of a nonempty set $ X $
+and $ \langle \mu_n \rangle_{n \in \mathbb{N}} $
+be a sequence of measures on $ \mathcal{A} $.
+Assume $ \mu_n(X)<+\infty, \forall n \in \mathbb{N} $.
+For any $ A \in \mathcal{A} $, define
+$$
+  \mu(A) = \sum_{n=1}^\infty \frac{1}{3^n} \mu_n(A).
+$$
+Prove that $ \mu $ is a measure on $ \mathcal{A} $.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+
+\begin{proof}
+In order to show that $\mu$ is a measure, we must show that $\mu(\emptyset)=0$ and that $\mu$ is countably additive.  Note that $\mathcal{A}$ is an algebra, and hence $\emptyset\in \mathcal{A}$ and since each $\mu_n$ is a measure we have that $\mu_n(\emptyset)=0$ for every $n\in \N$.  Thus
+\begin{align*}
+\mu(\emptyset)&=\sum_{i=1}^\infty \frac{1}{3^n}\mu_n(\emptyset)\\
+&= 0,
+\end{align*}
+since each term in the series is identically $0$. To see that $\mu$ is countably additive, let $\{A_m\}_{m\in \N}$ be a countable and disjoint collection of subsets of $\mathcal{A}$ which exists due to the fact $\mathcal{A}$ is an algebra. Note, if $\mathcal{A}$ is not infinite, then $\mu$ is vacuously countably additive.  We want to show that
+\begin{align*}
+\mu\left( \coprod_{m\in \N} A_m\right) = \sum_{m\in \N}^\infty \mu(A_m).
+\end{align*}
+Note that each $\mu_n$ is a measure and is countably additive which allows us to do the following:
+\begin{align*}
+\mu \left( \coprod_{m\in \N} A_m \right) &= \sum_{n\in \N} \frac{1}{3^n} \mu_n \left( \coprod_{m \in \N} A_m\right)\\
+&=\sum_{m\in \N}\sum_{n\in \N} \frac{1}{3^n} \mu_n(A_m)\\
+&= \sum_{m\in \N} \mu(A_m).
+\end{align*}
+Note the last equality and the ability to swap the summations is due to the fact that $\mu_n(A_m)<\infty$ for all $n,m$.
+
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 6.} \quad
+Assume $ \mu $ is a measure defined on an algebra $ \mathcal{A} $
+consisting of subsets of a fixed nonempty set $ X $.
+Let $ \mu^* $ be the outer measure induced by $ \mu $
+and $ \mathcal{S}^* $ be obtained through the Caratheodory condition.
+Prove that $ \mu^* $ is countably additive on $ \mathcal{S}^* $.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First note that we have $\mu^*$ is countably subadditive.  Hence, it suffices to show for an arbitrary countable collection of disjoint disjoint subsets $\{A_n\}_{n\in \N}$ of $\mathcal{S}^*$ that
+\[
+\mu^*\left( \coprod_{n\in \N} A_n \right) \geq \sum_{n\in \N}\mu^* (A_n).
+\]
+Then we have
+\begin{align*}
+\mu^*\left( \coprod_{n\in \N} A_n \right) &= \mu^*(A_1)+\mu^*(A_1^c)\\
+&= \mu^*(A_1)+\mu^*(A_1^c \cap A_2)+\mu^*(A_1^c\cap A_2^c)\\
+&~\vdots\\
+&= \sum_{i=1}^n \mu^* (A_i)+\mu^* \left( \bigcap_{i=1}^n A_i^c \right)\\
+&= \sum_{i=1}^n \mu^*(A_i) + \mu^*\left(\left( \coprod_{i=1}^n A_i \right)^c \right).
+\end{align*}
+Now we let $n\to \infty$ we we find
+\begin{align*}
+\mu^*\left( \coprod_{n\in \N} A_n \right) &\geq \sum_{i=1}^\infty \mu^*(A_i) + \mu^*\left( \left( \coprod{i=1}^\infty A_i\right)^c \right)\\
+&= \sum_{i=1}^\infty \mu^*(A_i).
+\end{align*}
+Thus we have that $\mu^*$ is countably additive on $\mathcal{S}^*$.
+
+\emph{Note: I did see this solution in the text.  But I digested it and tried to simplify it some.}
+\end{proof}
+
+\pagebreak
+
+
+
+\end{document}
+
+
+

@@ -1,0 +1,446 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 7}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1. (\S 6.1 Problem 6.)} Complete the proof of Theorem 6.1.   It is as follows:
+
+\noindent Let $V$ be an inner product space.  Then for $x,y,z \in V$ and $c\in \mathbb{F}$, the following statements are true.
+\begin{enumerate}[(a)]
+\item $\langle x,y+z\rangle = \langle x,y \rangle + \langle x,z\rangle$.
+\item $\langle x,cy\rangle = \bar{c}\langle x,y \rangle.$
+\item $\langle x,0\rangle = \langle 0, x \rangle = 0$.
+\item $\langle x,x \rangle =0$ if and only if $x=0$.
+\item If $\langle x,y \rangle = \langle x,z \rangle$ for all $x\in V$, then $y=z$.
+\end{enumerate}
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+We have 
+\begin{align*}
+\langle x,y+z \rangle &= \overline{\langle y+z,x \rangle}\\
+&= \overline{\langle y,x \rangle}+\overline{\langle z,x \rangle}\\
+&=\langle x,y \rangle + \langle x,z \rangle.
+\end{align*}
+\end{proof}
+
+\begin{proof}[b]
+We have
+\begin{align*}
+\langle x,cy \rangle &= \overline{\langle cy,x \rangle}\\
+&=\overline{c} \overline{\langle y,x \rangle}\\
+&=\overline{c} \langle x,y \rangle.
+\end{align*}
+\end{proof}
+
+\begin{proof}[c]
+Let $v\in V$ then
+\begin{align*}
+\langle x,0v \rangle &= \overline{0} \langle x,v \rangle\\
+&=0.
+\end{align*}
+Similarly
+\begin{align*}
+\langle x,0v \rangle &= \overline{ \langle 0v,x \rangle}\\
+\implies &=0 \textrm{~~~ from above}.
+\end{align*}
+Note that $0v=0$ and we are done.
+\end{proof}
+
+\begin{proof}[d]
+The converse direction is immediate: Let $x=0$ then $\langle 0,0 \rangle =0$.  For the forward direction let $\langle x,x\rangle =0$.  Then we have that $\langle x,x \rangle >0$ if $x\neq 0$ by definition.  Thus if $\langle x,x \rangle =0$ we necessarily have $x=0$.
+
+\end{proof}
+
+\begin{proof}[e]
+Suppose that $\langle x,y \rangle = \langle x,z \rangle$ for every $x \in V$.  Then for any $x$
+\begin{align*}
+\langle x,y-z \rangle &= \langle x,y \rangle - \langle x,z \rangle\\
+&= \langle x,z \rangle - \langle x,z \rangle\\
+&= 0.
+\end{align*} 
+So $y-z=0$ which means that $y=z$.
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 6.1 Problem 7.)} Complete the proof of Theorem 6.2. It is as follows:
+
+\noindent Let $V$ be an inner product space over $\mathbb{F}$. Then for all $x,y\in V$ and $c\in \F$, the following statements are true.
+\begin{enumerate}[(a)]
+\item $\|cx\|=|c|\cdot \|x\|$.
+\item $\|x\|=0$ if and only if $x=0$. In any case, $\|x\|\geq 0$.
+\item (Cauchy-Schwarz Inequality) $|\langle x,y \rangle\leq \|x\|\cdot \|y\|$.
+\item (Triangle Inequality) $\|x+y\| \leq \|x\|+\|y\|$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+\begin{align*}
+\langle cx,cx \rangle &= c\overline{c} \langle x,x \rangle &&\textrm{by definition}\\
+\implies \|cx\|^2 &= |c|^2 \|x\|^2\\
+\implies \|cx\|&= |c|\|x\|.
+\end{align*}
+\end{proof}
+
+\begin{proof}[b]
+Suppose that $\|x\|=0$. Then $\sqrt{\langle x,x \rangle} = 0$.  By Theorem 6.2 we have that $x=0$.  If $x=0$ then $\langle x,x\rangle =0$. Otherwise, by definition of an inner product space we have that if $x\neq 0$ then $\langle x,x \rangle >0$ which implies that $\|x\|>0$ if $x$ is nonzero.  So in any case, $\|x\|\geq 0$.
+\end{proof}
+
+\noindent Note that the proof for (c) and (d) are given in the text.
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 6.1  Problem 9.)} Let $\beta$ be a basis for a finite-dimensional inner product space.
+\begin{enumerate}[(a)]
+\item Prove that if $\langle x,z \rangle = 0$ for all $z\in \beta$, then $x=0$.
+\item Prove that if $\langle x,z \rangle = \langle y,z \rangle$ for all $z\in \beta$, then $x=y$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Suppose that $\langle x,z_j \rangle =0$ for all $z_j \in \beta$.  Then since $x\in V$ we can write $x=\sum_{i=1}^n \alpha_i z_i$. Then we have for $z_j \in \beta$
+\begin{align*}
+0=\langle x,z_j \rangle &= \left\langle \sum_{i=1}^n \alpha_i z_i , z_j \right\rangle\\
+&= \sum_{i=1}^n \alpha_i \langle z_i, z_j \rangle
+\end{align*}
+which means $x=0$.
+\end{proof}
+
+\begin{proof}[b]
+Consider then $\langle x-y , z \rangle =0$.  This means $x-y=0$ by (a) and thus $x=y$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (\S 6.1 Problem 10.)}  Let $V$ be an inner product space, and suppose that $x$ and $y$ are orthogonal vectors in $V$. Prove that $\|x+y\|^2 = \|x\|^2 + \|y\|^2$. Deduce the Pythagorean theorem in $\R^2$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We have
+\begin{align*}
+\|x+y\|^2 &= \langle x+y,x+y \rangle +2 \langle x,y \rangle \langle y,y\rangle\\
+&=\langle x+y,x+y \rangle + \langle y,y\rangle && \textrm{since $x$ and $y$ are orthogonal}\\
+&=\|x\|+\|y\|.
+\end{align*}
+
+Then in $\R^2$ we have $a e_1$ and $b e_2$ in $\R^2$ as the sides of the triangle and $c= a e_1 + b e_2$ as the hypotenuse.   Then 
+\begin{align*}
+\|c\|^2&=\|a e_1 + b e_2 \| = \|a\|^2 + \|b\|^2.
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 6.1 Problem 12.)} Let $\{v_1,v_2,...,v_k\}$ be an orthogonal set in $V$, and let $a_1,a_2,...,a_k$ be scalars. Prove that
+\[
+\left\|\sum_{i=1}^k a_i v_i \right\|^2 = \sum_{i=1}^k |a_i|^2 \|v_i\|^2.
+\]
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We have
+\begin{align*}
+\left\|\sum_{i=1}^k a_i v_i \right\|^2&= \left\langle \sum_{i=1}^k a_i v_i, \sum_{i=1}^k a_i v_i \right\rangle\\
+&= \left\langle a_1 v_1, \sum_{i=1}^k a_i v_i \right\rangle\\
+&= \langle a_1 v_1, a_1 v_1 \rangle + \cdots + \langle a_k v_k, a_k, a_k v_k \rangle && \textrm{because of orthonormality}\\
+&= \sum_{i=1}^k |a_i|^2 \|v_i\|^2
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 6.1 Problem 26.)} Let $\|\cdot \|$ be a norm on a vector space $V$, and define, for each ordered pair of vectors, the scalar $d(x,y)=\|x-y\|$, called the distance between $x$ and $y$. Prove the following results for all $x,y,z \in V$.
+\begin{enumerate}[(a)]
+\item $d(x,y)\geq 0$.
+\item $d(x,y)=d(y,x)$.
+\item $d(x,y)\leq d(x,z)+d(z,y)$.
+\item $d(x,x)=0$.
+\item $d(x,y)\neq 0$ if $x\neq y$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+$d(x,y)=\|x-y\|\geq 0$ by properties of the norm.
+\end{proof}
+
+\begin{proof}[b]
+$d(x,y)=\|x-y\|=\|y-x\|=d(y,x)$ again by properties of the norm.
+\end{proof}
+
+\begin{proof}[c]
+We use our favorite analysis trick.
+\begin{align*}
+d(x,y)&=\|x-y\|\\
+&= \|x-z+z-y\|\\
+&\leq \|x-z\|+\|z-y\|\\
+&=d(x,y)+d(z,y)
+\end{align*}
+\end{proof}
+
+\begin{proof}[d]
+$d(x,x)=\|x-x\|=0$.
+\end{proof}
+
+\begin{proof}[e]
+$d(x,y)=\|x-y\|>0$ means that $x-y$ is nonzero and thus $x\neq y$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7. (\S 6.2 Problem 2 (a),(j).)} Apply the Gram-Schmidt process to the given subset $S$ of the inner product space $V$ to obtain an orthogonal basis for $\mathrm{span}(S)$. Then normalize the vectors in this basis to obtain an orthonormal basis $\beta$ for $\mathrm{span}(S)$, and compute the Fourier coefficients of the given vector relative to $\beta$. Finally, use Theorem 6.5 to verify your result.\\
+
+(a) $V=\R^3$, $S=\{(1,0,1),(0,1,1),(1,3,3)\}$, and $x=(1,1,2)$.\\
+\indent (j) $V=\mathbb{C}^4$, $S=\{(1,i,2-i,-1),(2+3i,3i,1-i,2i),(-1+7i,6+10i,11-4i,3+4i)\}$, and $x=(-2+yi,6+9i,9-3i,4+4i)$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+We begin by letting $v_1=w_1$.  Then
+\begin{align*}
+v_2 &= w_2 -\frac{\langle w_2,v_1 \rangle}{\langle v_1, v_1 \rangle} v_1\\
+&= \left(-\frac{1}{2},1,\frac{1}{2}\right).
+\end{align*}
+Then
+\begin{align*}
+v_3 &= w_3 -\frac{\langle w_3 , v_2 \rangle}{\langle v_1, v_1 \rangle} v_1 -\frac{\langle w_3, v_2 \rangle}{\langle v_2,v_2 \rangle} v_2\\
+&= \left( \frac{1}{3},\frac{1}{3},\frac{-1}{3} \right).
+\end{align*}
+Then we normalize and get
+\begin{align*}
+\frac{v_1}{\|v_1\|}&= \left( \frac{1}{\sqrt{2}},0,\frac{1}{\sqrt{2}} \right)\\
+\frac{v_2}{\|v_2\|}&= \left( \frac{-1}{\sqrt{6}},\frac{4}{\sqrt{6}},\frac{1}{\sqrt{6}} \right)\\
+\frac{v_3}{\|v_3\|}&= \left( \frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}} \right).
+\end{align*}
+For the first way of finding coefficients we have
+\begin{align*}
+f_1 \frac{v_1}{\|v_1\|} + f_2 \frac{v_2}{\|v_2\|} + f_3 \frac{v_1}{\|v_1\|} = x
+\end{align*}
+which yields 
+\begin{align*}
+f_1 &= \frac{3}{\sqrt{2}}\\
+f_2 &= \frac{3}{\sqrt{6}}\\
+f_3 &= 0.
+\end{align*}
+This matches up with Theorem 6.5
+\begin{align*}
+f_1 &= \left\rangle x, \frac{v_1}{\|v_1\|} \right\rangle = \frac{3}{\sqrt{2}}\\
+f_2 &= \left\rangle x, \frac{v_2}{\|v_2\|} \right\rangle = \frac{3}{\sqrt{6}}\\
+f_3 &= \left\rangle x, \frac{v_3}{\|v_3\|} \right\rangle = 0
+\end{align*}
+\end{proof}
+
+
+\begin{proof}[b]
+We begin by letting $v_1=w_1$.  Then
+\begin{align*}
+\frac{v_2}{\|v_2\|} &= w_2 -\frac{\langle w_2,v_1 \rangle}{\langle v_1, v_1 \rangle} v_1\\
+&= \left(\frac{1}{2^{3/2}},\frac{i}{2^{3/2}},\frac{2-i}{2^{3/2}},\frac{1}{2^{3/2}}\right).
+\end{align*}
+Then
+\begin{align*}
+\frac{v_3}{\|v_3\|} &= w_3 -\frac{\langle w_3 , v_2 \rangle}{\langle v_1, v_1\rangle} v_1 -\frac{\langle w_3, v_2 \rangle}{\langle v_2,v_2 \rangle} v_2\\
+&= \left( \frac{3i+1}{2\sqrt{5}},\frac{i}{\sqrt{5}},\frac{-1}{2\sqrt{5}}, \frac{2i+1}{2\sqrt{5}} \right).
+\end{align*}
+Then
+\begin{align*}
+\frac{v_4}{\|v_4\|} &= w_4 -\frac{\langle w_4 , v_2 \rangle}{\langle v_1, v_1 \rangle} v_1 -\frac{\langle w_3, v_2 \rangle}{\langle v_2,v_2 \rangle} v_2 -\frac{ \langle w_4,v_3 \rangle}{\langle v_3,v_3 \rangle}v_3\\
+&= \left( \frac{i-7}{2\sqrt{35}},\frac{i+3}{\sqrt{35}},\frac{5}{2\sqrt{35}}, \frac{5}{2\sqrt{35}} \right).
+\end{align*}
+For the first way of finding coefficients we have
+\begin{align*}
+f_1 \frac{v_1}{\|v_1\|} + f_2 \frac{v_2}{\|v_2\|} + f_3 \frac{v_1}{\|v_1\|} = x
+\end{align*}
+which yields 
+\begin{align*}
+f_1 &= 6\sqrt{2}\\
+f_2 &= 4\sqrt{5}\\
+f_3 &= 2\\
+f_4 &= 2\sqrt{35}
+\end{align*}
+This matches up with Theorem 6.5
+\begin{align*}
+f_1 &= \left\langle x, \frac{v_1}{\|v_1\|} \right\rangle = 6\sqrt{2}\\
+f_2 &= \left\langle x, \frac{v_2}{\|v_2\|} \right\rangle = 4\sqrt{5}\\
+f_3 &= \left\langle x, \frac{v_3}{\|v_3\|} \right\rangle = 2\\
+f_4 &= \left\langle x, \frac{v_4}{\|v_4\|} \right\rangle = 2\sqrt{35}.
+\end{align*}
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 8. (\S 6.2 Problem 11.)} Let $A$ be an $n\times n$ matrix with complex entries. Prove that $AA^*=I$ if and only if the rows of $A$ form an orthonormal basis for $\mathbb{C}^n$.
+
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First assume that $AA^*=I$. Then have that $AA^*$ is found by taking the inner products of the row vectors of $A$ and the column vectors of $A^*$.  But the column vectors of $A^*$ are exactly the conjugate of the row vectors of $A$.  i.e., we have 
+\[
+(AA^*)_{ij}=\langle v_i, v_j \rangle
+\]
+which means that the above must be equal to $1$ when $i=j$ and $0$ when $i\neq j$.  Which means that the rows of $A$ are orthonormal.
+
+If we assume the rows are orthonormal and use the above identity, then we have that $AA^* = I$.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 9. (\S 6.2 Problem 16.)} 
+\begin{enumerate}[(a)]
+\item \emph{Bessel's Inequality.} Let $V$ be an inner product space, and let $S=\{v_1,v_2,...,v_n\}$ be an orthonormal subset of $V$. Prove that for any $x\in V$ we have 
+\[
+\|x\|^2 \geq \sum_{i=1}^n |\langle x,v_i\rangle |^2.
+\]
+\emph{Hint:} Apply Theorem 6.6 to $x\in V$ and $W=\mathrm{span}(S)$. Then use Exercise 10 of Section 6.1.
+
+\item In the context of (a), prove that Bessel's inequality is an equality if and only if $x\in \mathrm{span}(S)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Let $x=u+w$ with $w\in \mathrm{span}(S)$ and $u \in W^\perp$. Then we have
+$\|x\|^2 = \|u+w\|^2 \geq \|w\|^2 = \sum_{i=1}^n |\langle x,v_i \rangle |^2$.  
+\end{proof}
+
+\begin{proof}[b]
+It follows from above that if $\|x\|$ is in $\mathrm{span}(S)$ we have equality.
+\end{proof}
+
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 10. (\S 6.2 Problem 19.)} In each of the following parts, find the orthogonal projection of the given vector on the given subspace $W$ of the inner product space $V$.
+\begin{enumerate}[(a)]
+\item $V=\R^2$, $u=(2.6)$, and $W=\{(x,y) ~\vert~ y=4x\}$.
+\item $V=\R^3$, $u=(2,1,3)$, and $W=\{(x,y,z) ~\vert~ x+3y-2z=0 \}$.
+\item $V=P(\R)$ with the inner product $\langle f(x),g(x) \rangle = \int_0^1 f(t)g(t)dt$, $h(x)=4+3x-2x^2$, and $W=P_1(\R)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Note $(1,4)$ spans $W$ and we normalize to get $\frac{(1,4)}{\sqrt{17}}$.  Then the orthogonal projection is
+\[
+\left\langle u, \frac{(1,4)}{\sqrt{17}} \right\rangle \frac{(1,4)}{\sqrt{17}} = \frac{26 (1,4)}{17}.
+\]
+\end{proof}
+
+\begin{proof}[b]
+Note $\frac{(2,0,1)}{\sqrt{5}}$ and $\frac{(-3,1,0)}{\sqrt{10}}$ span $W$ and are normalized.  Then the orthogonal projection is
+\[
+\left\langle u, \frac{(2,0,1)}{\sqrt{5}}\right\rangle \frac{(2,0,1)}{\sqrt{5}} + \left\langle  u,\frac{(-3,1,0)}{\sqrt{10}} \right\rangle \frac{(-3,1,0)}{\sqrt{10}} = \frac{7}{5}(2,0,1)+\frac{-1}{2}(-3,1,0)=\left(\frac{43}{10}, \frac{-1}{2}, \frac{7}{5} \right).
+\]
+\end{proof}
+
+\begin{proof}[c]
+Note $1$, $\frac{1}{\sqrt{3}} (2x-1)$ spans $W$ and is normalized.  Then the orthogonal projection is
+\[
+\langle h,1\rangle + \left\langle \frac{1}{\sqrt{3}} (2x-1)\right\rangle \frac{1}{\sqrt{3}} (2x-1)= \frac{1}{9}(x+1).
+\]
+\end{proof}
+
+\pagebreak
+
+\end{document}
+

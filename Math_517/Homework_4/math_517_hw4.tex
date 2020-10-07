@@ -1,0 +1,174 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 4}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 3.10)} Suppose that the coefficients of the power series $\sum a_n z^n$ are integers, infinitely many of which are nonzero. Prove that the radius of convergence of the power series is at most $1$. 
+ 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose we have that $R>1$. Then we can have $|z|>1$. Then since infinitely many terms of $a_n$ are nonzero we have that for infinitely many terms $|a_n z^n|>1$ since the smallest nonzero integer is $1$.  But this means that $\sum a_n z^n$ does not converge.  It is possible to have convergence with $|z|\leq 1$ if we have $\sum a_n$ converges.  So the radius of convergence is at most 1.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (Rudin 3.23)} Suppose $\{p_n\}$ and $\{q_n\}$ are Cauchy sequences in a metric space $X$. Show that the sequence $\{d(p_n,q_n)\}$ converges. (Note that this new sequence lives in $\mathbb{R}$.) 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Fix $\epsilon>0$. Since $\{p_n\}$ is Cauchy we have for $n,m>N_1\in \mathbb{N}$ that $d(p_n,p_m)<\frac{\epsilon}{2}$.  Similarly for $\{q_n\}$ we have $n,m>N_2$ so that $d(p_n,p_m)<\frac{\epsilon}{2}$.  Let $N=\max(N_1,N_2)$ and for $n,m>N$ we have
+\begin{align*}
+|d(p_n,q_n)-d(p_m,q_m)|&=|d(p_n,q_n)-d(q_n,p_m)+d(q_n,p_m)-d(p_m,q_m)|\\
+&\le |d(p_n,p_m)+d(q_m,q_n)| &\textrm{since } d(x,y)\le d(x,z)+d(y,z)\\
+&<\epsilon
+\end{align*}
+Thus $\{d(p_n,q_n)\}\in \mathbb{R}$ is also Cauchy, and since $\mathbb{R}$ is complete, we have that $\{d(p_n,q_n)\}$ converges.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (Rudin 3.24)} Let $X$ be a metric space.
+\begin{enumerate}[(a)]
+\item Call two Cauchy sequences $\{p_n\}, \{q_n\}$ in $X$ \emph{equivalent} if
+\[
+\lim_{n\to \infty} d(p_n,q_n)=0
+\]
+Prove that this is an equivalence relation.
+\item Let $X^*$ be the set of all equivalence classes from (a). If $P\in X^*$ has representative $\{p_n\}$ and $Q\in X^*$ has representative $\{q_n\}$, define
+\[
+\Delta(P,Q)=\lim_{n\to \infty} d(p_n,q_n),
+\]
+which exists by the previous exercise. Show that $\Delta(P,Q)$ is independent of the choice of representatives for the equivalence classes $P$ and $Q$, so it is a well-defined distance on $X^*$.
+\item Prove that the metric space $(X^*,\Delta)$ is complete (i.e., every Cauchy sequence in $X^*$ converges).
+\item For each $p\in X$, there is a Cauchy sequence all of whose terms are $p$; let $P_p$ be the equivalence class of this sequence. Prove that 
+\[
+\Delta(P_p,P_q)=d(p,q)
+\]
+for each $p,q\in X$. In other words, the map $\phi \colon X \to X^*$ is an \emph{isometry} onto its image (an isometry is a distance-preserving map).
+\item Prove that $\phi(X)$ is dense in $X^*$, and that $\phi(X)=X^*$ if $X$ is complete. From (d), we can identify $X$ and $\phi(X)$, and se we see $X$ as densely embedded in the complete metric space $X^*$. $X^*$ is called the \emph{completion} of $X$.
+\end{enumerate}
+[\emph{Remark:} To formally construct $\mathbb{R}$, we can simply define $\mathbb{R}=\mathbb{Q}^*$, the completion of the metric space $\mathbb{Q}$ with respect to the metric $d(x,y)=|x-y|$. As mentioned in class, completing $\mathbb{Q}$ with respect to the $p$-adic metric $d_p$ produces the field $\mathbb{Q}_p$ of $p$-adic numbers.]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+First we have that $\{p_n\}\sim \{p_n\}$ since $d(p_n,p_n)=0$ for every $n$.  Next, let $\{q_n\}$ be a sequence so that $\{p_n\}\sim \{q_n\}$. Then $\lim_{n\to \infty}d(p_n,q_n)=\lim_{n\to \infty}d(q_n,p_n)=0$ and thus $\{q_n\}\sim \{p_n\}$.  Finally let $\{r_n\}$ be a sequence so we have $\{p_n\}\sim \{q_n\}$ and $\{q_n\}\sim \{r_n\}$. Then $d(p_n,r_n)\le d(p_n,q_n)+d(q_n,r_n)$ and $\lim_{n\to \infty}(d(p_n,q_n)+d(p_n,r_n))=0$ and thus $\lim_{n\to \infty}d(p_n,r_n)=0$.  Thus $\{p_n\}\sim \{r_n\}$.
+\end{proof}
+
+\begin{proof}[Part (b)]
+Consider different representatives $\{p_n'\}$ and $\{q_n'\}$ for $P$ and $Q$ respectively. Then
+\begin{align*}
+\lim_{n\to \infty}(d(p_n',q_n)-d(q_n,q_n'))&\le \lim_{n\to \infty}d(p_n',q_n')\le \lim_{n\to \infty}(d(p_n',p_n)+d(p_n,q_n'))\\
+\iff \lim_{n\to \infty}d(p_n',q_n.)&\le \lim_{n\to \infty}d(p_n',q_n')\le \lim_{n\to\infty}d(p_n,q_n')\\
+\iff \lim_{n \to \infty}(d(q_n,p_n)-d(p_n,p_n'))&\le \lim_{n\to\infty}d(p_n',q_n')\le \lim_{n\to \infty}(d(p_n,q_n)+d(q_n,q_n'))\\
+\iff \lim_{n\to\infty}d(p_n,q_n)&\le \lim_{n\to \infty} d(p_n',q_n')\le \lim_{n\to\infty}d(p_n,q_n)
+\end{align*}
+So we have that $\lim_{n\to \infty}d(p_n,q_n)=\lim_{n\to\infty}d(p_n',q_n')$.
+\end{proof}
+
+\begin{proof}[Part (c)]
+Let $\{P_i\}$ be a Cauchy sequence in $X^*$ where $\{P_i\}$ is a representative of the equivalence class of a sequence $\{p_{i_j}\}\in X$. Since $\{P_i\}$ is Cauchy, $\forall \epsilon >0$ we have that for $n,m>N\in\mathbb{N}$ that
+\[
+\Delta(P_n,P_m)<\epsilon.
+\]
+Then consider $\Delta(P_i,\hat{0})$ where $\hat{0}$ is the equivalence class of sequences converging to zero. Then we have that this is a sequence of real numbers and note
+\[
+\Delta(P_n,\hat{0})-\Delta(P_m,\hat{0})\leq \Delta(P_n,P_m)<\epsilon.
+\]
+Thus we have that $\{\Delta(P_i,\hat{0})\}$ is a Cauchy sequence in $\mathbb{R}$ and so it must converge to a limit $|L|\in \mathbb{R}$. It's also worth noting that $L$ can be less than $0$ but $\{\Delta(P_i,\hat{0})\}\geq 0$ and thus can't converge to a negative value. Now consider $\hat{L}$ which is the equivalence class of sequences converging to $L$ and we have that
+\begin{align*}
+\Delta(P_n,\hat{L})&\leq \Delta(P_n,P_m)+\Delta(P_m,\hat{L})\\
+&< \epsilon + \Delta(P_m,\hat{L})\\
+&=\epsilon + 2|L| &\textrm{if the sign of $\hat{L}$ is incorrect}.\\
+\end{align*}
+But if that is the case then if we had $-\hat{L}$ then 
+\begin{align*}
+\Delta(P_n,\hat{L})&\leq \Delta(P_n,P_m)+\Delta(P_m,\hat{L})\\
+&< \epsilon + \Delta(P_m,-\hat{L})\\
+&=\epsilon.
+\end{align*}
+Thus either $\pm |\hat{L}|$ is the limit for $\{P_i\}$ and we have that $X^*$ is complete.
+\end{proof}
+
+\begin{proof}[Part (d)]
+We have that $P_p$ can be represented by $\{p_n\}$ which is a constant sequence with $p_n=p$ for every $n$.  Similarly we have $P_q$ is represented by $\{q_n\}$ with $q_n=q$ for every $n$.  Thus $\Delta(P_p,P_q)=\lim_{n\to \infty}d(p_n,q_n)=d(p,q)$. 
+\end{proof}
+
+\begin{proof}[Part (e)]
+Let $\phi(X)\subseteq X$ and suppose we have a point $P$ in $X^*$. Fix $\epsilon>0$. Then for some $Q\in X^*$ we have that $\{q_i\}$ is a representative of $Q$ and we also have that $\{p_i\}$ is a representative for $P$. Then we let $q_i=p_i+\frac{\epsilon}{2}$ and note that $\Delta(P,Q)=\lim_{i\to \infty}d(p_i,q_i)<\epsilon$.   Note, these choices of $P$ and $Q$ are allowed since $X^*$ contains a equivalence classes of sequences that converge to any real number.  Since $P$ was arbitrary and the representative for $P$ and $Q$ does not matter, we have that $P$ was a limit point of $X^*$.  Thus $\phi(X)$ is dense in $X^*$.
+
+Finally, let $X$ be complete.  So we have that every Cauchy sequence in $X$ converges in $X$.  Since $\phi(X)$ contains all Cauchy sequences in $X$, $\phi(X)$ must contain all of its limit points.  For example, let $P$ be a limit point of $\phi(X)$ then $P$ is represented by a Cauchy sequence in $\{p\}\in X$ and $\phi(\{p\})=P$ and we have that $P\in \phi(X)$. And thus since $\phi(X)$ is dense in $X^*$ and contains all of its limit points, necessarily $\phi(X)=X^*$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (Rudin 4.16)} For $x\in \mathbb{R}$, let $\lfloor x \rfloor$ be the floor function; i.e., $\lfloor x \rfloor$ is the largest integer less than or equal to $x$. Let $(x)\coloneq x - \lfloor x \rfloor$ be the fractional part of $x$. For which $x$ is $\lfloor x \rfloor$ continuous? For which $x$ is $(x)$ continuous?
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution} 
+For $x\in(n,n+1)$ with $n\in \mathbb{N}$, we have that $\lfloor x  \rfloor$ is continuous.  It is also the case that for $x\in(n,n+1)$ that $(x)$ is continuous.
+\end{solution}
+
+\pagebreak
+
+
+\end{document}
+

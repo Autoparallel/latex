@@ -1,0 +1,271 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 617, Final Exam}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color,xcolor}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sets}{\mathcal{S}}
+\newcommand{\Leb}{\mathcal{L}}
+
+
+\usepackage{amssymb}
+\usepackage{graphics}
+
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0in
+\topmargin=-0.50in
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+  \textsc{\large ColoState ~~ Spring 2018 ~~ MATH 617 ~~ Final.PartII}
+\end{center}
+
+\begin{center}
+  \textrm{Tue. 05/08/2018}
+\end{center}
+
+\vglue 0.10in
+
+\bigskip
+\noindent
+\textsc{Name:} \underline{Colin Roberts\hglue 1.5in} ~~
+\textsc{CSUID:} \underline{829773631\hglue 1.5in}
+
+\vskip 0.10in
+\noindent
+\textit{% {\bf No} textbook, homework, notes, or any other references should be used.
+Work independently.
+Please write down all {\bf necessary} steps,
+partial credit will be given if deserved. 
+}
+
+\large
+
+\bigskip
+\bigskip
+\noindent
+(20 points)
+\textit{Problem 3}.
+\quad
+Let $ E $ be a subset of $ [0,1] $.  
+Prove that $ E $ is Lebesgue measurable if and only if 
+$$
+  \lambda^*(E) = \mbox{sup}\{ \lambda(F): F \;\mbox{is closed and}\; F \subseteq E \}.
+$$
+
+\bigskip
+\bigskip
+\noindent
+(20 points)
+\textit{Problem 4}.
+\quad
+Let $ \lambda $ be the Lebesgue measure on the real line.
+Consider a Lebesgue measurable subset $ E $ of $ [0,1] $
+with the following property: 
+$$
+  \lambda(E \cap [a,b]) \ge c (b-a)
+  \qquad
+  \forall [a,b] \subseteq [0,1],
+$$
+where $ c>0 $ is a constant.  
+Show that $ \lambda(E)=1 $.
+
+\bigskip
+\bigskip
+\noindent
+(20 points)
+\textit{Problem 5}.
+\quad
+Prove or provide a counterexample for the following statement:
+If $ f $ is absolutely continuous on $ [a,b] $,
+$ g $ is continuous on $ [a,b] $,
+and $ f'=g $ almost everywhere on $ [a,b] $,
+then $ f'=g $ everywhere on $ [a,b] $.
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} \quad
+Let $E$ be a subset of $[0,1]$. Prove that $E$ is Lebesgue measurable if and only if
+\[
+\lambda^*(E)=\sup\{\lambda(F)~\colon~ F ~\textrm{is closed and}~ F\subseteq E\}.
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+This is an equivalent statement for the outer regularity of the Lebesgue measure.  For the forward direction, we suppose that $E\subseteq [0,1]$ is Lebesgue measurable.  Now, if $E$ is empty, then the statement is vacuously true since the $\emptyset$ contains no subsets. Specifically,
+\[
+0=\lambda^*(\emptyset)=\lambda^*(E)=\sup\{ \lambda(F) ~\colon~ F ~\textrm{is closed and}~ F\subseteq E\}.
+\]
+For $E$ nonempty, note that by Theorem 4.2.2. there exists $F_n\subseteq E$ such that $F_n$ is closed and
+\[
+\lambda^*(E\setminus F_n ) < \frac{1}{n}.
+\] 
+Note that $E\setminus F_n$ is Lebesgue measurable as well (since $F_n$ is a closed subset of $\R$) which means that
+\[
+\lambda^*(E\setminus F_n)=\lambda(E\setminus F_n),
+\]
+since the Lebesgue measurable sets are a $\sigma$-algebra. Then,
+\begin{align*}
+\lambda^*(E\setminus F_n)=\lambda^*(E\setminus F_n)&<\frac{1}{n}\\
+\implies \lambda^*(E)-\frac{1}{n}&< \lambda^*(F_n).
+\end{align*}
+Taking $n\to \infty$ is equivalent to taking $\sup\{ \lambda(F) ~\colon~ F \textrm{~closed and~} F\subseteq E\}$, and we find that
+\[
+\lambda^*(E)\leq \sup\{ \lambda(F) ~\colon~ F \textrm{~closed and~} F\subseteq E\}.
+\]
+To see that $\lambda^*(E) \geq \sup\{ \lambda(F) ~\colon~ F \textrm{~closed and~} F\subseteq E\}$ just note that since for any closed (and hence Lebesgue measurable) $F\subseteq E$ we have that
+\begin{align*}
+\lambda^*(E)=\lambda(E)&\geq \lambda(F)\\
+\implies  \lambda^*(E)&\geq \sup\{ \lambda(F) ~\colon~ F \textrm{~closed and~} F\subseteq E\}.
+\end{align*}
+Thus we have that 
+\[
+\lambda^*(E)=\sup\{ \lambda(F) ~\colon~ F \textrm{~closed and~} F\subseteq E\}.
+\]
+
+Now, for the converse, we suppose that
+\[
+\lambda^*(E)=\sup\{ \lambda(F) ~\colon~ F \textrm{~closed and~} F\subseteq E\}
+\]
+and show that $E$ is Lebesgue measurable. The above statement implies that for any $\epsilon>0$ we have some closed $F_\epsilon\subseteq E$ such that
+\[
+\lambda^*(E)-\lambda(F_\epsilon)<\epsilon.
+\]
+Then, since $F_\epsilon$ is Lebesgue measureable and $E$ is Lebesgue outer measurable we have that 
+\begin{align*}
+\lambda^*(E)-\lambda(F_\epsilon)=\lambda^*(E)-\lambda^*(F_\epsilon)= \lambda^*(E\setminus F_\epsilon)<\epsilon.
+\end{align*}
+Thus, by Theorem 4.2.2., we have that $E$ must be Lebesgue measurable.
+
+
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} \quad
+Let $\lambda$ be the Lebesgue measure on the real line. Consider a Lebesgue measurable subset $E$ of $[0,1]$ with the following property:
+\[
+\lambda(E\cap [a,b]) \geq c (b-a) \quad \forall [a,b] \subseteq [0,1],
+\]
+where $c>0$ is a constant. Show that $\lambda(E)=1$.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+
+\begin{proof}
+Define 
+\[
+f(x)=\int_a^x \chi_E d\lambda(t)
+\]
+and note that $f$ is differentiable almost everywhere. By our supposition, we then have that
+\[
+f'(x)=\lim_{h\to 0} \frac{1}{h}\int_x^{x+h} \chi_E d\lambda(t) \geq \lim_{h\to 0} \frac{ch}{h}=c>0
+\]
+almost everywhere.  Then, since we defined $f$ as the integral of $\chi_E$, $f'(x)=\chi_E(x)$ almost everywhere. Since we also showed $f'(x)>0$ almost everywhere, it must be that $f'(x)=1$ almost everywhere.  In particular, this means that $\chi_E(x)=1$ almost everywhere and so over $[a,b]$ the set in which $\chi_E(x)=0$ must be a null set. Ultimately, this means that $\lambda(E)=1$.
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5.} \quad
+Prove or provide a counterexample for the following statement:
+If $ f $ is absolutely continuous on $ [a,b] $,
+$ g $ is continuous on $ [a,b] $,
+and $ f'=g $ almost everywhere on $ [a,b] $,
+then $ f'=g $ everywhere on $ [a,b] $.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Define
+\[
+f(x)=\int_a^x g(t)d\lambda(t)
+\]
+and note that by this definition, $f'(x)=g(x)$ almost everywhere.  Now, since $g$ is continuous, for any $x_0\in (a,b)$ we have that for $h>0$ and some $z\in [x_0,x_0+h]\subseteq (a,b)$ (equivalently a $\tilde{z}\in [x_0-h,x_0]$) that
+\begin{align*}
+g(z)=\frac{1}{h} \int_{x_0}^{x_0+h} g(t)d\lambda(t),
+\end{align*}
+and equivalently
+\[
+g(\tilde{z})=\frac{1}{h}\int_{x_0-h}^{x_0} g(t)d\lambda(t).
+\]
+(Note that the above fact is critical for showing the remaining calculations.) Then, taking the limit as $h\to 0$ we have
+\begin{align*}
+f'(x_0)&=\frac{f(x_0+h)-f(x_0)}{h}\\
+&=\lim\frac{1}{h}\int_{x_0}^{x_0+h} g(t)d\lambda(t)\\
+&= g(x_0),
+\end{align*}
+and
+\begin{align*}
+f'(x_0)&=\frac{f(x_0-h)-f(x_0)}{h}\\
+&=\lim\frac{1}{h}\int_{x_0}^{x_0-h} g(t)d\lambda(t)\\
+&= g(x_0),
+\end{align*}
+which shows the limits from both sides agree and, since $x_0 \in (a,b)$ was arbitrary, that $f'(x)=g(x)$ everywhere in $(a,b)$. To see that $f'(x)=g(x)$ for $x=a$, just take $x_0=a$ above and $h>0$ that
+\begin{align*}
+f'(a)&=\frac{f(a+h)-f(a)}{h}\\
+&=\lim\frac{1}{h}\int_{a}^{a+h} g(t)d\lambda(t)\\
+&= g(a).
+\end{align*}
+and for $[b-h,b]$ with $h>0$, letting $h\to 0$ we have
+\[
+f'(b)=g(b).
+\]
+Thus, $f'(x)=g(x)$ for all $x\in [a,b]$.
+\end{proof}
+
+\pagebreak
+
+
+
+
+\end{document}
+
+
+

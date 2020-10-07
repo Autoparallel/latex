@@ -1,0 +1,157 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 1}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} Let $E$ be a nonempty subset of an ordered set. Assume $\alpha$ is a lower bound for $E$ and $\beta$ is an upper bound. Show that $\alpha\leq \beta$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $\alpha$ is a lower bound, necessarily $\alpha \leq x$ $\forall x \in E$ and similarly $\beta\geq x$ $\forall x\in E$ since $E$ is non-empty and ordered. Thus we have 
+\begin{align*}
+\alpha &\leq x \leq \beta\\
+\implies \alpha &\leq \beta
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} If $x\in \mathbb{C}$, show that there exists $r\geq 0$ and $w\in \mathbb{C}$ with $\|w\|=1$ so that $z=rw$. Are $r$ and $w$ uniquely determined by $z$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $r=|z|$ and then we have that $w=\frac{z}{r}=\frac{z}{|z|}$ so that $|w|=1$. Then we have $wr=\frac{z}{r}r=z$.  But note that $z$ does not uniquely define $r$ and $w$ since $|-z|=|z|$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Let $x,y\in \mathbb{R}^n$. Show that
+\[
+\|x+y\|^2+\|x-y\|^2=2\|x\|^2+2\|y\|^2.
+\]
+What does this mean geometrically as a statement about parallelograms?
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+\begin{align*}
+|x+y|^2+|x-y|^2&=(x+y)\cdot(x+y)+(x-y)\cdot (x-y)\\
+&=x\cdot x + 2x\cdot y + y\cdot y + x\cdot x -2x\cdot y + y\cdot y\\
+&=2x\cdot x +2y\cdot y\\
+&=2|x|^2+2|y|^2
+\end{align*}
+This statement relates the length of the diagonals of the parallelograms to the side lengths.
+\end{solution}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Let $X$ be an infinite set with the trivial metric.
+\begin{enumerate}[(a)]
+\item Prove that $d$ is a metric $X$.
+\item What are the open sets of $X$?
+\item What are the closed sets?
+\item What are the compact sets?
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a] 
+First note that $\d(p,q)=0$ if and only if $p=q$ for $p,q\in X$. With $p\neq q \in X$ we have $\d(p,q)=1>0$. Second, if $p=q$ then $\d(p,q)=0=\d(q,p)$. With $p\neq q$, $\d(p,q)=1$ and by the trivial metric $\d(q,p)=1$ since $p\neq q$.  Finally let $p=q$ then for $p,q \in X$ we have $\d(p,q)=0\leq \d(p,r)+\d(r,q)\leq 2$ with $0\leq \d(p,r)+d(r,q)$ if $r=q=p$ else $\d(p,r)+\d(r,q)=2$ if $r\neq q = p$.  If $p\neq q$ and $p,q,r\in X$ then $\d(p,q)=1\leq \d(p,r)+\d(r,q)\leq 2$ with $1=\d(p,r)+\d(r,q)$ if $r=q$ or $r=p$ and $\d(p,r)+\d(r,q)=2$ if $r\neq q$ and $r\neq p$.
+\end{proof}
+
+
+\begin{solution}[b]
+\item The open sets of $X$ are any subset.  We can separate any singleton from the others with an open ball of radius $r<1$ due to the trivial metric and we can make any subset from a union of the singletons. 
+\end{solution}
+\begin{solution}[c]
+The closed sets are all sets by the properties of compliments of open sets.
+\end{solution}
+\begin{solution}[d]
+The compact sets are any finite set.  Since any finite set will have a finite open subcover and an infinite set won't if we choose the open sets that form an open cover to be singletons.
+\end{solution}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} Consider $\mathbb{Q}$ as a metric space with $\d(x,y)=|x-y|$. Let
+\[
+E=\{x\in \mathbb{Q} \vert 2 < x^2 <3\}
+\]
+Show that $E$ is both open and closed in $\mathbb{Q}$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[E is open]
+Let $x\in E$ so that $2.5\leq x^2 <3$ and fix $r>0$.  Then let $\frac{\delta}{2}=x^2+3$ with $\delta\in \mathbb{Q}$ and $\delta<r$. Then $|x^2-3|=|3-\frac{\delta}{2}-3|=\frac{\delta}{2}<\frac{r}{2}<r$. Then note that $N_{3-\frac{\delta}{2}}(x)\subseteq E$ and is open in $E$.  Again let $x\in E$ so that $2<x^2\leq 2.5\in E$ and fix $r>0$.  Then let $\frac{\delta}{2}=x^2+2$ with $\delta\in \mathbb{Q}$ and $\delta<r$. Then $|x^2-2|=|2-\frac{\delta}{2}-2|=\frac{\delta}{2}<\frac{r}{2}<r$. Then note that $N_{2-\frac{\delta}{2}}(X)\subseteq E$ and is open in $E$. So every point in $E$ has an open neighborhood about that point contained in $E$.
+\end{proof}
+
+\begin{proof}[E is closed]
+To show $E$ is closed, suppose there exists a limit point $x$ of $E$ such that $x^2<2$ or $x^2>3$.  Then $\forall r>0$ we have that $N_r(x^2)\cap E\neq\emptyset$.  Suppose $x^2>3$ then let $|x^2-3|=\delta$, then let $r<\frac{\delta}{2}$ and note that $N_r(x^2)\cap E = \emptyset$.  Finally, suppose that $x^2<2$ then let $|x^2-2|=\delta$, then let $r<\frac{\delta}{2}$ and note that $N_r(x^2)\cap E = \emptyset$.
+\end{proof}
+
+\pagebreak
+
+
+
+\end{document}
+

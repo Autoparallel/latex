@@ -9,89 +9,90 @@
 
 \begin{center}
    \textsc{\large MATH 271, Worksheet 3}\\
-   \textsc{Second Order Equations and Boundary Value Problems}
+   \textsc{First order autonomous and linear equations. Chemical kinetics.}
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-Consider the following differential equation
-\[
-x''+x=0.
-\]
+    Let's revisit Newton's law of cooling and describe the equilibria of the system. 
 \begin{enumerate}[(a)]
-    \item Find the general solution to this equation.
-    \item Does the solution grow or decay over time? 
-    \item What is $\lim_{t\to \infty}x(t)$?
-\end{enumerate}
-
-\end{problem}
-
-\begin{problem}
-Next, consider a related equation
-\[
-x''+x=t.
-\]
-that has an additional linear external force.
-\begin{enumerate}[(a)]
-    \item What is the solution to the homogenous equation?
-    \item Find the particular integral with the given forcing term.
-    \item What is the specific solution to this equation?
-    \item Does the solution grow or decay over time?
-    \item What is $\lim_{t\to \infty}x(t)$?
+    \item Is the system autonomous? Explain.
+    \item Draw a phase line for the system.
+    \item Can you explain why the value you find for the equilibrium makes sense? Is this equilibrium be stable? Does this make sense? Explain.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Consider now the equation
-\[
-x''+x=F(t)
-\]
-where the external force is $F(t)=\cos(t)$.
-\begin{enumerate}[(a)]
-    \item Find the particular integral with the given forcing term.
-    \item What is the specific solution to this equation?
-    \item What is $\lim_{t\to \infty}$? What does this mean about the growth or decay of the solution over time?
-\end{enumerate}
+Are the following ODEs separable, autonomous, linear, nonlinear, or none of the above? Keep in mind that some may satisfy more than one property!
+    \begin{enumerate}[(a)]
+        \item $x' = \sin(tx)$.
+        \item $x' = \sin(x)$.
+        \item $x' = t^2 x$.
+        \item $e^t x' + tx = e^{-k t} \cos(\omega t).$
+    \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Write down a second order linear differential equation that oscillates and also decays over time.
+For the following problems, show that the equation is linear by writing the equation in a recognizable form.
+    \begin{enumerate}[(a)]
+        \item $\frac{x'}{x} = t$.
+        \item $2xx'+x^2=xt$.
+        \item $\tan(t) x' + \sin(t) x = \ln(t).$
+    \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Consider the boundary value problem
-\[
-x''=g
-\]
-with boundary values $x(0)=0$, $x\left(-\frac{2}{g}\right)=0$ and $g=-9.8[m/s^2]$.  We can think of this as solving the \emph{inverse problem} of one that we have seen in a homework. Specifically, think of this as knowing where a ball is launched and knowing where it lands and trying to find the speed it must have been thrown at.  Another interpretation is the shape of a rod bending due to gravity. We call this \emph{Poisson's equation}.
-\begin{enumerate}[(a)]
-    \item Find the general solution. If you already know it from the homework, just write it down.
-    \item Use the boundary values above to find the particular solution.
-    \item Is the solution unique? 
-\end{enumerate}
+    For the above linear equations, determine the integrating factor (even if you cannot compute the integral) and determine the solution $x(t)$ (again, even if you cannot compute the integral).
 \end{problem}
 
 \begin{problem}
-Consider the \emph{time independent Sch\"odinger equation} for a \emph{free particle} constrained inside of a 1-dimensional box of length $L$. That is, we have the equation
-\[
--\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi(x)=E\psi(x)
-\]
-on the unit interval $[0,L]$.
-\begin{enumerate}[(a)]
-    \item Find the general solution to this equation with no constraint.
-    \item Given the constraint, we have the boundary values $\psi(0)=\psi(L)=0$. What are the general solutions given this constraint?
-    \item Show that the sum of two solution $\psi_1(x)$ and $\psi_2(x)$ is also a solution. When we have a particle whose state (or \emph{wavefunction}) $\psi$ is a sum of general solutions, we say that $\psi$ is in a \emph{superposition state.}
-    \item The wavefunction is not really a physically meaningful quantity.  However, if we consider a region $[a,b]$ in the box $[0,L]$ the quantity
+    Find the solution to the equation $x'+x=t^2$.
+\end{problem}
+
+\begin{problem}
+    Consider the dissociation chemical reaction
     \[
-    P([a,b])=\int_a^b |\psi(x)|^2dx
+        AB \to A + B.
     \]
-    \emph{is} meaningful. This expression tells us the \emph{probability} that a particle will be observed in the region $[a,b]$.  Take your general solutions you found in (b) (with the constraint) and solve for the constants that give you
-    \[
-    \int_0^L |\psi(x)|^2dx=1.
-    \]
-    We call this \emph{normalization} and we must do so for each state so that we can interpret the integral $P([a,b])$ as a probability.
-\end{enumerate}
+    Write down an equation for each species $A$, $B$, and $AB$.  Find a solution.
 \end{problem}
+
+\begin{problem}
+    Compare and contrast the equations for the above reaction and the synthesis reaction
+    \[
+        A+B \to AB.
+    \]
+    \emph{Hint: maybe this is a bit of an odd way to think, but is one just the reversal in time of the other?}
+\end{problem}
+
+\begin{problem}
+    Photosynthesis is an extremely important chemical reaction where plants convert carbon dioxide and water into glucose and oxygen. That is,
+    \[
+        6CO_2 + 6H_2O \to 6C_6 H_{12} O_6 + 6 O_2.
+    \]
+    \begin{enumerate}[(a)]
+        \item Write down the equations that describe the above equation.
+        \item Do we have any techniques to solve this type of equation (yet)?
+        \item The reaction also depends on the intensity of light.  How can we implement this into the equation?
+    \end{enumerate}   
+\end{problem}
+
+\begin{problem}
+Everybody loves combustion. It keeps us warm and it looks cool on the 4$^\textrm{th}$ of July!  Anyhow, combustion of propane in your grill at home is given by the equation
+    \[
+        C_3 H_8 + 5O_2 \to 4H_2O + 3CO_2 + \textrm{Energy}.
+    \]
+    \begin{enumerate}[(a)]
+        \item Write down the equations describing the above reaction (not including the energy term).
+        \item If a specific amount of energy is given off by each reaction (in this case, $2043\textrm{kJ}$ of energy per mole), include an equation for the total energy created if we begin with $1\textrm{kg}$ of propane in an abundance of oxygen.
+        \item Can you give some analogy to how much energy this is so that we may understand the usefulness a bit more? E.g., how many hot dogs could I cook on the 4$^\textrm{th}$ of July?
+    \end{enumerate}
+
+\end{problem}
+
+
+
+
 
 
 \end{document}

@@ -1,0 +1,187 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 7}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 7.3)} Give an example of sequences $\{f_n\}$, $\{g_n\}$ of uniformly converging functions on some set $E$ so that $\{f_n g_n \}$ does not converge uniformly on $E$.
+ 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $f_n,g_n \colon \R \to \R$ with each defined by $f_n (x) = x$ and $g_n(x)=\frac{1}{n}$.  Then $f_n(x) \to f(x)=x$ and $g_n(x)\to g(x)=0$ both converge uniformly yet $f_ng_n = \frac{x}{n}$ does not.
+
+First, fix $\epsilon>0$ then we have that $\forall n \in \mathbb{N}$ and any $x\in \mathbb{R}$
+\[
+|f_n(x)-f(x)|=|x-x|=0<\epsilon.
+\]
+So we've shown $f_n$ converges uniformly.
+
+Next, fix $\epsilon>0$ and $\forall n>N\geq \frac{1}{\epsilon}$ with $n,N\in \mathbb{N}$ we have for every $x$,
+\begin{align*}
+\left|g_n(x)-g(x)\right| &= \left| \frac{1}{n} \right|\\
+&<\epsilon.
+\end{align*}
+So we've shown that $g_n$ also converges uniformly.
+
+Note that $f_n g_n$ converges to the $0$ function pointwise.  To see this, fix $x$ and $\epsilon>0$ then let $N\in \mathbb{N}$ be such that $N\geq \frac{|x|}{\epsilon}$. Then for $n>N$ we have
+\begin{align*}
+|(f_n g_n)(x)-0|&=\left| \frac{x}{n} \right|\\
+&<\epsilon.
+\end{align*}
+
+Finally, suppose that $f_n g_n$ converges uniformly to the $0$ function.  So for any $x$, we have for $\exists N \in \mathbb{N}$ such that $\forall n>N$ we have $|(f_n g_n)(x)-0|<\epsilon$. However
+\begin{align*}
+|(f_n g_n)(x) - 0| &= \left|\frac{x}{n}\right|\\
+\end{align*}
+and we can choose $x\in \R$ so that $\frac{x}{n}>M$ for any positive real $M$. Which means that $|(f_n g_n)(x)-0|>\epsilon$, which contradicts the supposition that $f_n g_n$ converges uniformly.
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (Rudin 7.7)} Define $f_n (x) = \frac{x}{1+nx^2}$ for each $n=1,2,...$.
+\begin{enumerate}[(a)]
+\item Show that $\{f_n\}$ converges uniformly to a function $f$ on $\R$.
+\item Show that $f'(x)=\lim_{n\to \infty} f_n '(x)$ for all $x\neq 0$, but that this fails when $x=0$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+We will show that this function converges to $f(x)=0$.  Fix $\epsilon>0$ and let $N\in \mathbb{N}$ be such that $N>\frac{1}{\epsilon}$.  Then we have two cases.  First if $|x|<1$, then for $n>N$ we have
+\begin{align*}
+|f_n(x) - 0| &= \left|\frac{x}{1+nx^2}\right|\\
+&< \left| \frac{1}{1+nx^2} \right|\\
+&=\left| \frac{1}{x^2} \frac{1}{\frac{1}{x^2}+n} \right|\\
+&< \left| \frac{1}{\frac{1}{x^2}+n} \right|\\
+&< \left| \frac{1}{1+n} \right| < \epsilon.
+\end{align*}
+If $|x|\geq1$, then for $n>N$ we have
+\begin{align*}
+|f_n(x)-0| &=\left|\frac{x}{1+nx^2}\right|\\
+& \leq \left| \frac{x}{1+nx} \right|\\
+&< \left| \frac{x}{nx} \right|\\
+&= \left| \frac{1}{n} \right| < \epsilon.
+\end{align*}
+Thus $\{f_n\}$ converges uniformly to $f(x)=0$ on $\R$. It's worth noting that $N$ did not depend on the value of $x$.  The two cases were just easiest to show by breaking them up.
+\end{proof}
+
+\begin{proof}[b]
+We have that $f_n'(x)=\frac{1-nx^2}{(1+nx^2)^2}$. We showed above that $f_n(x) \to f(x)=0$ by part (a), and thus $f'=0$ since $f$ is a constant function. Then for $x\neq 0$ we have
+\begin{align*}
+\lim_{n\to \infty} |f_n'(x)-0|&=\lim_{n\to \infty} \left| \frac{1-nx^2}{(1+nx^2)^2} \right|\\
+&<\lim_{n\to \infty}\left| \frac{1-nx^2}{1+2nx^2+n^2x^4} \right|\\
+&<\lim_{n\to \infty}\left| \frac{1-nx^2}{n^2x^4} \right|\\
+&=\lim_{n\to \infty}\left| \frac{1}{n^2} \frac{\frac{1}{n^2} - \frac{x^2}{n}}{x^4} \right|\\
+&=\lim_{n\to \infty} \frac{1}{n^2} \left| \frac{\frac{1}{n^2} -\frac{x^2}{n}}{x^4} \right|=0
+\end{align*}
+For $x=0$ we have $f_n'(0)=1$ for every $n$ and thus this does not converge to zero.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Prove that every uniformly convergent sequence of bounded real-valued functions is uniformly bounded (i.e., there exists $M>0$ so that $|f_n(x)|<M$ for all $n$ and all $x$.)
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $f_n$ be a sequence of bounded real-valued functions on a domain $X$ and this sequence of functions converges uniformly. Thus we have that $|f_n(x)|<M_n$ for every $n$ and for any $x\in X$. Also for any $\epsilon>0$ we have that $\exists N \in \mathbb{N}$ such that for $n>m\geq N$ and any $x$ we have
+\begin{align*}
+|f_n(x)-f_m(x)|&<\epsilon\\
+\iff |f_n(x)|&<\epsilon + |f_m(x)| && \textrm{since $|f_n(x)|-|f_m(x)|<|f_n(x)-f_m(x)|$}\\
+\iff |f_n(x)|&<\epsilon + M_m\\
+\iff M_n &\leq M_m && \textrm{since $\epsilon>0$ was arbitrary}.
+\end{align*}
+This means that for any $n>m$ we have $M_n\leq M_m$.  Then consider the finite set of $M_i$ for $i=1,..., m$ and note that $\max(\{M_1,...,M_m\})=M$ exists and is finite.  Then we have that for any $n$ and all $x$, $|f_n(x)|<M$ by how we constructed this $M$.  
+\end{proof}
+
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} A family $\mathcal{F}$ of (real- or complex-valued) functions on a set $E$ in a metric space $X$ is \emph{equicontinuous} on $E$ if for every $\epsilon>0$ there exists $\delta>0$ so that
+\[
+|f(x)-f(y)|<\epsilon
+\]
+whenever $d(x,y)<\delta$, $x,y\in E$, and $f\in \mathcal{F}$.
+
+\noindent Give an example of an equicontinuous sequence $\{f_n\}$ of functions on some metric space that converges pointwise but not uniformly.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider the sequence of functions $f_n = \frac{x}{n}$ defined on all of $\R$. Then note that this is an equicontinuous sequence of functions.  To see this, fix $\epsilon>0$ and let $0<\delta<\epsilon$.  Then we have for any $n$ and $|x-y|<\delta$
+\begin{align*}
+|f_n(x)-f_n(y)|&=\left| \frac{x}{n}-\frac{y}{n} \right|\\
+&= \left| \frac{x-y}{n} \right|\\
+&< |x-y|<\epsilon.
+\end{align*}
+Thus we have that this sequence is in fact equicontinuous.  Note that in Problem 1 I showed that this sequence converges pointwise but not uniformly.  The proof would be the same, so I'll omit that here.
+\end{proof}
+
+
+\pagebreak
+
+
+
+\end{document}
+
+
+

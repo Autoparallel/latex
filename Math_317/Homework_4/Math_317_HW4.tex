@@ -1,0 +1,246 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 317, Homework 4}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Let $f \colon \mathbb{R} \setminus \{5\} \to \mathbb{R}$ by $f(x) = x \cos \frac{1}{x-5}-5 \cos \frac{1}{x-5}$.  Show that $\lim _{x\to 5} f(x)=0$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Fix $\epsilon >0$ and let $\delta = \epsilon$.  Then for $x\in \mathbb{R}\setminus\{5\}$ and $0<|x-5|<\delta$ we have,
+\begin{align*}
+|f(x)-0|&=\left|x\cos\left(\frac{1}{x-5}\right) -5\cos \left(\frac{1}{x-5}\right)\right|\\
+&=\left|(x-5)\cos\left(\frac{1}{x-5}\right)\right|\\
+&\leq |x-5||1|\\
+&\leq|x-5|\\
+&< \delta = \epsilon
+\end{align*}
+Thus $f$ has a limit $0$ at $x=5$. 
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $f\colon (a,\infty) \to \mathbb{R}$ for some $a>0$, and let $g \colon (0,\frac{1}{a}) \to \mathbb{R}$ be defined by $g(x)=f(\frac{1}{x})$. Prove that $f$ has a limit point at $\infty $ if and only if $g$ has a limit at $0$. 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the forward direction, suppose that $f$ has a limit $L$ at $\infty$.  Fix $\epsilon > 0$, then $\exists P >0$ such that if $x > \max\{P,a\}$ then $\left| f(x)-L\right| < \epsilon$.  With the same $\epsilon$, fix $\delta > \frac{1}{P}$ and for $x\in (a,\infty)$ and $0<|x-0|< \delta$ we have,
+\begin{align*}
+|g(x)-L|&= \left| f\left(\textstyle{\frac{1}{x}}\right) - L\right|\\
+\end{align*}
+But if we have $0<|x-0|<\frac{1}{P}$, then
+\begin{align*}
+&\leq \left| f(P)-L \right|\\
+&< \epsilon
+\end{align*}
+Thus we have that $g(x)$ has a limit at $x=0$.
+\end{proof}
+
+Next, suppose that $g(x)$ has a limit $L$ at $x=0$.  Fix $\epsilon >0$, then $\exists \delta >0$ such that if $0<|x-0|<\delta$ we have $|g(x)-L|<\epsilon$.  Keep the same $\epsilon$, if $f(x)$ has a limit at $\infty$ then $\exists P>0$ such that if $x > \max\{P,a\}$ we have $|f(x)-L|<\epsilon$. Let $P>\frac{1}{\delta}$, then we have,
+\begin{align*}
+|f(x)-L| &= \left| g\left(\textstyle{\frac{1}{x}} \right) -L\right|\\
+&\leq \left| g\left(\frac{1}{P}\right)-L\right|\\
+&< \epsilon
+\end{align*}
+Since $\frac{1}{P}<\delta$, we know $f(x)$ has a limit at $\infty$.  
+\noindent Thus we know that $f(x)$ has a limit at $\infty$ iff $f\left(\textstyle{\frac{1}{x}}\right)$ has a limit at $0$.
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Give an example of a function $f \colon (0,1) \to \mathbb{R}$ which has a limit at every point of $(0,1)$ except at $x=\frac{1}{2}$.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First let's show that $f$ does not have a limit $L\in \mathbb{R}$ at $x=\frac{1}{2}$. Fix $\epsilon = \frac{1}{4} + |L|$.  Then $\forall \delta > 0$ and for $x\in D$, $|x-\frac{1}{2}|<\delta$ we have,
+\begin{align*}
+|f(x)-L| &= \left| \frac{1}{x-\frac{1}{2}} -L\right|\\
+&\leq \left| \frac{1}{x-\frac{1}{2}} \right| + |L|
+\end{align*}
+Notice, $\left|\frac{1}{x-\frac{1}{2}}\right|$ is minimized if $\left|x-\frac{1}{2}\right|$ is maximized. Thus if we let $x=1,0$ we have $\left|1-\frac{1}{2}\right| = \left|0-\frac{1}{2}\right| = 1/2$.  Since $x \in (0,1)$, we have,
+\begin{align*}
+\left| \frac{1}{x-\frac{1}{2}} \right| + |L| &< \frac{1}{2}+|L|\\
+&>\epsilon
+\end{align*}
+
+Now we must show that all other points $x \in (0,1)\setminus \left\{\frac{1}{2}\right\}$ have defined limits. In fact, the limit at each point other than $x=\frac{1}{2}$ is the function evaluated at that point. More specifically,  $\lim_{x\to x_0}f(x)=f(x_0)$ ~ $\forall x_0 \in (0,1)\setminus \left\{\frac{1}{2}\right\}$. Fix $\epsilon >0$. Then let $\delta < \frac{\epsilon |x-x_0+2xx_0|}{2}$ and let $x,x_0 \in (0,1)\setminus \left\{\frac{1}{2}\right\}$ be such that $0<|x-x_0|<\delta$. Then,
+\begin{align*}
+|f(x)-f(x_0)|&=\left| \frac{1}{x-\frac{1}{2}} - \frac{1}{x_0-\frac{1}{2}}\right|\\
+&= \left| \frac{\left(x_0-\frac{1}{2}\right)-\left(x-\frac{1}{2}\right)}{\left(x-\frac{1}{2}\right)\left(x_0-\frac{1}{2}\right)}\right|\\
+&=\left| \frac{2(x-x_0)}{x-x_0+xx_0}\right|\\
+&< \frac{2\delta}{|x-x_0+2xx_0|}\\
+&<\epsilon
+\end{align*} 
+Thus we know a limit exists $\forall x \in (0,1)\setminus \left\{\frac{1}{2}\right\}$.  
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Let $f \colon D \to \mathbb{R}$ with $x_0$ an accumulation point of $D$, and suppose that $f$ has a limit at $x_0$. Prove \emph{from the definition of the limit} that this limit is unique.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose that $\lim_{x\to x_0} f(x) = L_1$ and $\lim_{x\to x_0}f(x)=L_2$ where $L_1 \neq L_2$.  Since we have the first limit, $\forall \epsilon >0$, $\exists \delta_1 >0$ such that if $0<|x-x_0|<\delta_1$ and $x\in D$ we have $|f(x)-L_1|<\epsilon$. Fix $\epsilon = |L_1 - L_2|$, then $\exists \delta_2 > 0$ such that if $0<|x-x_0|<\delta_2$ we have, $|f(x)-L_2|<\epsilon$. Pick $\delta = \min\{\delta_1,\delta_2\}$ and we have,
+\begin{align*}
+|f(x)-L_2|&=|f(x)-L_1+L_1-L_2|\\
+&\leq |f(x)-L_1|+|L_1-L_2|\\
+&<\epsilon + \epsilon = 2\epsilon
+\end{align*}
+Which is a contradiction since.  Thus $L_1=L_2$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} Define $f \colon (0,1) \to \mathbb{R}$ by $f(x) = \frac{x^3 + 6x^2 +x}{x^2 -6x}$. Determine whether or not $f$ has a limit at $0$ and prove your claim.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First, let's do some algebra and reduce the fraction (all joking aside, I used \emph{FullSimplify} in \emph{Mathematica}). 
+\begin{align*}
+f(x)&=\frac{x^3-6x^2+x}{x^2-6x}\\
+&= \frac{1+6x^4}{x-6}
+\end{align*} 
+From here, it is fairly easy to see that plugging in $0$ is possible, and gives us the result $\frac{-1}{6}$.  Thus, I guess the limit must be that. Fix $\epsilon$ and let $\delta = \frac{9}{\epsilon}$ and for $x\in (0,1)$ and $0<|x-0|<\delta$ we have,
+\begin{align*}
+\left|f(x)-\left(\frac{1}{6}\right)\right| &\leq \left| \frac{1+6}{x-6}\right| + \left|\frac{1}{6}\right|\\
+&=\left|\frac{7}{x-6}\right|+\frac{1}{6}\\
+&\leq \frac{7}{|x|+|6|}+\frac{1}{6}\\
+&= \frac{7}{x+6} + \frac{\frac{x}{6}+1}{x+6}\\
+&= \frac{8+\frac{x}{6}}{x+6}\\
+&\leq \frac{9}{x}\\
+&<\epsilon
+\end{align*}
+So the limit at $0$ exists and is equal to $\frac{-1}{6}$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6.} Suppose $f,g,h \colon D \to \mathbb{R}$ with $x_0$ an accumulation point of $D$.  Suppose further that $f(x) \leq g(x) \leq h(x)$ for all $x\in D$ and that $f$ and $h$ both have limits at $x_0$ with $\lim_{x \to x_0} f(x) = \lim_{x \to x_0} h(x)$.
+
+\begin{enumerate}[(i)]
+\item
+Prove that $g$ has a limit at $x_0$.
+\item
+Prove that $lim_{x \to x_0} f(x) = \lim_{x \to x_0} g(x)=\lim_{x \to x_0} h(x)$. 
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We will do (i) and (ii) in just one cohesive proof.  Suppose that we have $f(x)\leq g(x) \leq h(x)$ $\forall x \in D$.  Also we have $\lim_{x \to x_0} f(x) = \lim_{x \to x_0} h(x) = L$.  Fix $\epsilon > 0$, then $\exists \delta_1 >0$ such that $\forall x \in D$ where $0<|x-x_0|<\delta_1$ we have $|f(x)-L|<\epsilon$.  With the same $\epsilon$, $\exists \delta_2 >0$ such that $\forall x \in D$ where $0< |x-x_0|<\delta_2$ we have $|h(x)-L|<\epsilon$.  Let $\delta = \min\{\delta_1,\delta_2\}$, then we have,
+\begin{align*}
+|g(x)-L|<\epsilon &\iff -\epsilon < g(x) - L < \epsilon\\
+&\iff -\epsilon + L < g(x) < \epsilon + L 
+\end{align*}
+But since we have chosen $0<|x-x_0|<\delta$ and since $\forall x \in D$ we have $f(x)\leq g(x) \leq h(x)$. Thus we have,
+\begin{align*}
+-\epsilon + L < f(x) \leq g(x) \leq h(x) < \epsilon + L
+\end{align*}
+Thus $\lim_{x\to x_0}g(x)=\lim_{x \to x_0} f(x) = \lim_{x \to x_0} h(x) = L$.  
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7.} Assume that $f \colon \mathbb{R} \to \mathbb{R}$ is such that $f(x+y) = f(x)f(y)$ for every $x,y \in \mathbb{R}$, and suppose that $f$ has a limit as $0$.  
+\begin{enumerate}[(i)]
+\item
+Prove that $f$ has a limit at every point in $\mathbb{R}$.
+\item
+Prove that $f(x) = 0$ for all $x \in \mathbb{R}$ or $\lim_{x \to 0} f(x) =0$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since we know that $f(x+y)=f(x)f(y)$ ~ $\forall x,y \in \mathbb{R}$ we know that $f(0)=f(x-x)=f(x)f(-x)$.  Since $x$ is arbitrary, $f$ must be defined for all $x \in mathbb{R}$ and thus the limit at any point is $f(x)$.  Thus we have (i).  Next, suppose that $f(0)=L\neq 1$ and $L\neq 0$, then fix $\epsilon >0$ then $\exists \delta>0$ such that $\forall x \in \mathbb{R}$ where $|x|<\delta$ we have $|f(x)-1|<\epsilon$ since the limit is defined as the function evaluated at the point. But this means,
+\begin{align*}
+|f(x)-L|&=|f(x+0)-L|\\
+&=|f(x)f(0)-L|\\
+&=\left|f(x)-\frac{L}{f(0)}\right|\\
+\implies & \frac{L}{f(0)}=L
+\end{align*}
+But since $L\neq 1$ and $L\neq 0$ this is a contradiction.  Thus either $L=1$ or $L=0$.
+
+If $f(0)\neq 1$ then we have $L=\frac{1}{f(0)}=\frac{1}{0}$ which is not possible.  However, if we allow $f(0)=0$ and thus $\lim_{x \to 0} f(x) = 0$, we have,
+\begin{align*}
+|f(x)-0|&=|f(x)|\\
+&=|f(x+0)|\\
+&=|f(x)f(0)|\\
+&=0<\epsilon
+\end{align*}
+Thus if $f(0)\neq 1$ then $f(x)=0$ for all $x \in \mathbb{R}$.
+
+If we have $f(0) \neq 0$ then we must have $f(0)=1$ or we contradict the statement that $L=1$ or $L=0$.  Thus we know that $f(x)=f(x)f(0)=0$ for all $x\in \mathbb{R}$ or $\lim_{x \to 0} f(x) = 1$.
+\end{proof}
+
+\end{document}

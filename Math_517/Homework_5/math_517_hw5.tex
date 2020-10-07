@@ -1,0 +1,172 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 5}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 4.6)} Let $E\subseteq \mathbb{R}$ be compact and suppose that $f\colon E\to \mathbb{R}$. Define the \emph{graph} of $f$ by
+\[
+G_f \coloneqq \{(x,f(x))\vert x\in E\}\subseteq \mathbb{R}^2
+\]
+Prove that $f$ is continuous if and only if $G_f$ is compact.
+ 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We can say that $G_f=(E,f(E))$.  For the forward direction, note that $E$ and $f(E)$ are compact since we are assuming $E$ is compact and $f$ continuous.  Since $E$ is compact and $\mathbb{R}$ is a metric space, $E$ is sequentially compact so that for any infinite sequence $\{x_i\}\in E$ we have that $\{x_{i_j}\}\to (x,f(x))$ is a convergent subsequence.  Then note since $f$ is continuous, $\{f(x_{i_j})\}$ is also convergent.  If we consider $\{(x_{i_j},f(x_{i_j}))\}$ we have that this cartesian product of sequences converges in $(E,f(E))$ and so $(E,f(E))$ is sequentially compact and therefore compact since it is a subset of $\mathbb{R^2}$. 
+
+For the reverse direction, suppose that $G_f$ is compact. Thus $G_f$ is also sequentially compact.  Let $\{(x_i,f(x_i))\}$ be a sequence in $G_f$ and note that we have a convergent subseqence $\{(x_{i_j},f(x_{i_j}))\}\to (x,f(x))$.  Since $\{(x_i,f(x_i))\}$ was an arbitrary sequence, $\{(x_{i_j},f(x_{i_j}))\}$ was an arbitrary sequence converging to $(x,f(x))$.  Thus since we also have $\lim_{j\to \infty} x_{i_j}=x$ and $\lim_{j \to \infty} f(x_{i_j})=f(x)$, we know that $f$ is continuous.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $E\subseteq X$, where $X$ is a metric space, let $Y$ be a complete metric space, and let $f\colon E \to Y$ be uniformly continuous. Prove that $f$ has a continuous extension to $\bar{E}$.
+
+\noindent (In particular, when $E$ is dense in $X$, this gives a continuous extension to all of $X$, which is a generalization of Rudin Problem 4.13.)
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $\{x_i\}$ be an arbitrary sequence in $E$ converging to $x\in \bar{E}$.  Then we have that $f(x_i)$ defined for all $x_i$ since $f$ is uniformly continuous on $E$.  By uniform continuity of $f$, if we fix $\epsilon>0$ there is a corresponding $\delta>0$ so that for $p,q\in E$ and $d_x(p,q)<\delta$ we have $d_y(f(p),f(q))<\epsilon$.  Since $\{x_i\}\to x$, we know that $\{x_i\}$ is Cauchy, and for $m,n>N\in \mathbb{N}$ we have that $d_x(x_m,x_n)<\delta$ and thus $d_y(f(x_m),f(x_n))<\epsilon$.  This implies that $\{f(x_i)\}$ is also a Cauchy sequence, and thus by completeness of $Y$ we have that $\{f(x_i)\}$ converges to $y\in Y$.  Now, define $g(x)=f(x)$ for $x\in E$ and $g(x)=y$ for $x\in \bar{E}\setminus E$ (i.e., each $x\in \bar{E}\setminus E$ corresponds to a $y\in Y$ where $g(x)=y$).  Obviously if $E=\bar{E}$ then $g(x)$ was a continuous extension since $f$ itself was continuous.  Otherwise, let $\{x_i\}\to x\in \bar{E}\setminus E$ be an arbitrary sequence and each $x_i\in E$.  Then we have $\lim_{i\to \infty}|g(x_i)-y|=0$ and thus $g(x)$ is continuous on $\bar{E}$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (Rudin 4.18)} Every rational $x$ can be written uniquely in the form $x=m/n$ where $m$ and $n$ are relatively prime, $n>0$, and we choose $n=1$ when $x=0$. Define \emph{Thomae's function}
+\begin{align*}
+f(x)=
+\begin{cases}
+0 & \textrm{if } x \textrm{ is irrational}\\
+\frac{1}{n} & \textrm{if } x \textrm{ is rational}
+\end{cases}
+\end{align*}
+Show that $f$ is continuous at every irrational number, and that $f$ has a simple discontinuity at every rational number.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+To show that $f$ is continuous at each irrational number $x'$, we note that $x'=P+x$ for $P\in \mathbb{Z}$ and $x \in (0,1)$ irrational. Hence it suffices to show that $f$ is continuous at each irrational $x\in (0,1)$.  Consider let $\delta_N >0$ so that $(x-\delta_N,x+\delta_N)\subseteq (0,1)$.  Suppose, for a contradiction, that there does not exist an $N\in \mathbb{N}$ so that every rational $q$ can be written as $q=\frac{Q}{M}$ for a natural number $M>N$.  Since there are infinitely many rationals in $(x-\delta_N,x+\delta_N)$, there are infinitely many rationals written as $q'=\frac{Q'}{M'}\in (x-\delta_N,x+\delta_N)$ for $M'\leq N$.  But if this is the case, then some rational $q'>1$ since there are only finitely many natural numbers $1,...M'$ for the denominator and thus we have $q'\notin (x-\delta_N,x+\delta_N)$, which contradicts $q'\in (x-\delta_N,x+\delta_N)$.  Thus every rational in $(x-\delta_N,x+\delta_N)$ will have a denominator greater than $N$.  Then fix $\epsilon>0$ and let $N>\frac{1}{\epsilon}$.  Then, for $y\in (x-\delta_N,x+\delta_N)$ we have $|y-x|<\delta_N$ that $|f(y)-f(x)|=|f(y)|\leq |\frac{1}{N}|<\epsilon$.
+
+To show that $f$ has a simple discontinuity at every rational, it suffices to consider a sequence of irrational numbers $\{x_i\}\to q\in \mathbb{Q}$.  Then note that $f(q)=\frac{1}{N}$ for some $N$ yet $f(x_i)=0$ for each $i$.  Thus $\{f(x_i)\}$ does not converge to $\frac{1}{N}$.  Hence, since $q$ was an arbitrary rational, we have that $f$ has a simple discontinuity at every rational.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (Rudin 4.23)} $f\colon (a,b) \to \mathbb{R}$ is \emph{convex} if
+\[
+f(\lambda x + (1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)
+\]
+whenever $a<x$, $y<b$ and $0<\lambda<1$.
+\begin{enumerate}[(a)]
+\item Prove that every convex function is continuous.
+\item Prove that every increasing convex function of a convex function is convex (e.g., $e^f$ is convex $f$ is.)
+\item If $f$ is convex and $a<s<t<u<b$, show that
+\[
+\frac{f(t)-f(s)}{t-s}\le \frac{f(u)-f(s)}{u-s}\le \frac{f(u)-f(t)}{u-t}
+\]
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+Consider an arbitrary sequence $\{\lambda_i\}\to 1$ for $\lambda_i \in (0,1)$.  Then we have that $x_i=\lambda_i x + (1-\lambda_i)y$ for $x,y\in (a,b)$.  Note that $x_i \in (a,b)$ for each $i$ and that $\{x_i\}\to x$ is an arbitrary convergent sequence.  Also, we know that $|x-y|=\pm (x-y)$ for either $+$ or $-$.
+\begin{align*}
+0\leq \lim_{i\to \infty} |f(x_i)-f(x)|&=\pm (f(x_i)-f(x))\\
+&\leq \pm (\lim_{i\to \infty} f(\lambda_i x + (1-\lambda_i)y)-f(x))\\
+&\leq \pm (\lim_{i\to \infty} \lambda_i f(x)+(1-\lambda_i)f(y)-f(x))\\
+&=\pm (f(x)-f(x))\\
+&=0.
+\end{align*}
+Hence, $f$ is continuous.
+\end{proof}
+
+\begin{proof}[Part (b)]
+Let $g$ be continuous and defined on the range of $f$ which we let be convex.  Then for $x,y\in (a,b)$ and $\lambda\in (0,1)$
+\begin{align*}
+f(\lambda x + (1-\lambda)y)&\leq \lambda f(x) +(1-\lambda) f(y)\\
+\implies g(f(\lambda x + (1-\lambda)y)&\leq g(\lambda f(x))+g((1-\lambda)f(y)) \textrm{~~~~~ since $g$ increasing}\\
+\implies &\leq \lambda g(f(x))+(1-\lambda) g(f(y)) \textrm{~~~~~ since $g$ is convex}
+\end{align*}
+Thus $g\circ f$ is convex.
+\end{proof}
+
+\begin{proof}[Part (c)]
+First let $\lambda = \frac{t-s}{u-s}$ and then $1-\lambda=\frac{u-t}{u-s}$.  Then we also know that $\lambda u + (1-\lambda)s=\frac{u(t-s)+s(u-t)}{u-s}=t$.  Then
+\begin{align*}
+f(\lambda u + (1-\lambda)s)&=f(t)\\
+\implies f(t)&\leq \lambda f(u)+(1-\lambda)f(s)\\
+\implies f(t)-f(s)&\leq \lambda (f(u)-f(s))\\
+\frac{f(t)-f(s)}{t-s}&\leq \frac{f(u)-f(s)}{u-s}.
+\end{align*}
+Finally we get
+\begin{align*}
+0&\leq \lambda f(u)+(1-\lambda)f(s)-f(t)\\
+-(1-\lambda)f(s) &\leq \lambda f(u)-f(t)\\
+(1-\lambda)f(u)-(1-\lambda)f(s)&\leq f(u)-f(t)\\
+\implies \frac{f(u)-f(s)}{u-s}&\leq \frac{f(u)-f(t)}{u-t}.
+\end{align*}
+Thus
+\begin{align*}
+\frac{f(t)-f(s)}{t-s} \leq \frac{f(u)-f(s)}{u-s}&\leq \frac{f(u)-f(t)}{u-t}
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+\end{document}
+

@@ -1,0 +1,150 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 6}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.}  Two paths $f,g\colon I \to X$ in space $X$ are \emph{path-homotopic}, denoted $f\sim g$, if they are homotopy equivalent relative $\{0,1\}\subseteq I$. A \emph{reparametrization} of a path $f\colon I\to X$ is a path of the form $f\circ \varphi$ for some continuous map $\varphi \colon I\to I$ fixing $0$ and $1$. Prove Lemma 7.9 in our book: any reparametrization of a path $f$ is path-homotopic to $f$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $\varphi$ fixes $\{0,1\}$ then we have that $f\circ \varphi(0)=f(0)$ and $f\circ \varphi (1)=f(1)$.  Consider the straight line homotopy $H\colon I \times I \to I$ given by which deforms $\varphi$ to $Id_I$.  Then we have that $f\circ H(x,t)$ is a homotopy between $f$ and $f\circ \varphi$ relative $\{0,1\}$ since $f\circ H(x,0)=f(x)$ and $f\circ H(x,1)=f\circ \varphi(x)$.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $f,g\colon I\to X$ be two paths from $p$ to $q$ in space $X$. Draw a picture to show that if $f\sim g$, then $f\cdot \bar{g} \sim c_p$, where $c_p$ is the constant path at $p$.\\
+\noindent \emph{Remark: If you draw a nice picture, you don't need to write down any sentences or math equations. I recommend trying to draw a homotopy $H\colon I\times I \to X$ in the domain $I\times I$ instead of trying to draw it in the codomain $X$.}\\
+\noindent \emph{Remark: Instead of drawing a picture you could alternatively give an explicit definition of such a homotopy using math equations.}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $f\sim g$ relative $\{p,q\}$ (endpoints) we have that $\bar{f} \sim \bar{g}$ relative $f\{p,q\}$ via a homotopy $F$. This means we could perform this homotopy $F$ twice as fast, and then use the fact that we have a homotopy $H$ for $f\cdot \bar{f}\sim c_p$.  This homotopy is in our text and given by the proof for Theorem 7.11 (b).  It is as follows:
+\begin{align*}
+H(s,t)=\begin{cases}
+f(2s), &0\leq s \leq t/2;\\
+f(t), &t/2\leq s \leq 1-t/2;\\
+f(2-2s), &1-t/2\leq s \leq 1.
+\end{cases}
+\end{align*}
+
+\noindent A picture is as follows: In the domain,
+\vspace*{4cm}
+
+\noindent and in the codomain,
+
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} If topological space $X$ is path-connected and $\pi_1(X)$ is trivial, then we say that $X$ is \emph{simply connected}. Prove that if $X\subseteq \mathbb{R}^n$ is convex, then $X$ is simply connected.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} If $X\subseteq \mathbb{R}^n$  is convex.  Thus for any two points $x,y \in X$, we have that there exists a straight line path between $x$ and $y$.  So a convex subset $X$ of $\mathbb{R}^n$ is path-connected.  Let $f\colon I \to X$ be a loop in $X$ based at $p$.  Then, since each point is connected by a straight line, we have a straight line homotopy from $f$ to $Id$.  Since $f$ was an arbitrary loop, we have that $\pi_1 (X)$ is trivial.  Since $X$ is path-connected and $\pi_1 (X)$ is trivial, $X$ is simply connected.
+\end{proof}
+
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Choose any old homework or exam problem, or a portion thereof. Clearly state both the problem and the homework/exam number. Write out a solution that is as clear as possible, with no extraneous steps.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\noindent I will redo Problem 2 off of Homework 4.  The category stuff is the most new to me, and I want to make sure I get it nailed down.
+
+\noindent\textbf{Homework 4 Problem 2:} Let $(X_\alpha)_{\alpha \in A}$ be a family of topological spaces, and equip $\coprod_{\alpha \in A} X_\alpha$ with the disjoint union topology. Prove that $\coprod_{\alpha \in A} X_\alpha$ is the coproduct of $(X_\alpha)_{\alpha \in A}$ in the category of topological spaces as follows.
+\begin{enumerate}[(a)]
+\item Define the maps $\iota_\alpha \colon X_\alpha \to \coprod_{\alpha \in A} X_\alpha$.
+\item Prove that $(\coprod_{\alpha \in A} X_\alpha, (\iota_\alpha))$ satisfies the necessary universal property.
+\end{enumerate}
+
+\begin{solution}[a]
+Note that $\coprod_{\alpha \in A} X_\alpha = \{(x,\alpha)~\vert ~ \alpha \in A~ \textrm{and}~ x\in X_\alpha\}$.  We define $\iota X_\alpha \to \coprod_{\alpha \in A} X_\alpha$ by $\iota_\alpha (x)= (x,\alpha)$. 
+\end{solution}
+
+\begin{proof}[b]
+This diagram will be useful:
+
+\centering
+\begin{tikzcd}
+\coprod_{\alpha \in A} X_\alpha &  \\
+W \arrow[u, "f", dashed] & X_\alpha \arrow[lu, "\iota_\alpha"'] \arrow[l, "f_\alpha"]
+\end{tikzcd}
+
+Let $W$ be any topological space with morphisms $f_\alpha \colon X_\alpha \to W$ for each $\alpha \in A$.  Then define $f \colon W \to \coprod_{\alpha \in A} X_\alpha$ by $f(x,\alpha)=f_\alpha (x)$.  Note that $f$ is a morphism since $f^{-1}$ restricted to any $X_\alpha$ is just $f_\alpha$. So $f$ pulls open sets back to open sets in the disjoint union topology.  It then follows that we have that the diagram above commutes, i.e., $f(\iota_\alpha (x))=f_\alpha (x)= (x,\alpha)$.  Finally, we have that $f$ was unique since if we had another distinct map $g\colon W \to \coprod_{\alpha \in A} X_\alpha$ with $g(x,\alpha) \neq f(x,\alpha)$ then $g(\iota_\alpha(x))\neq f_\alpha(x)$ and the diagram would not commute.
+\end{proof}
+
+
+\pagebreak
+
+
+
+\end{document}
+

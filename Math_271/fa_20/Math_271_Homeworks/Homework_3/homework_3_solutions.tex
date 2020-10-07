@@ -4,14 +4,141 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 
 \begin{center}
    \textsc{\large MATH 271, Homework 3, \emph{Solutions}}\\
-   \textsc{Due September 20$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
+
+\begin{problem}
+Write down the equations for each of the reactants and products for the following reactions.
+\begin{enumerate}[(a)]
+    \item $A + 3B + C \xrightarrow{k} 2D+2E$.
+    \item $A \xrightarrow{k_1} B + C \xrightarrow{k_2} D$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item We have the equations
+    \begin{align*}
+        [A]' &= -k[A][B]^3[C]\\
+        [B]' &= -3k[A][B]^3[C]\\
+        [C]' &= -k[A][B]^3[C]\\
+        [D]' &= 2k[A][B]^3[C]\\
+        [E]' &= 2k[A][B]^3[C].
+    \end{align*}
+    \item The equations are
+    \begin{align*}
+        [A]' &= -k_1[A]\\
+        [B]' &= k_1[A] - k_2 [B][C]\\
+        [C]' &= k_1[A] - k_2 [B][C]\\
+        [D]' &= k_2[B][C].
+    \end{align*}
+\end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Consider the following reaction
+\[
+A \xrightarrow{k_1} B \xrightarrow{k_2} C.
+\]
+For the following parts, use the link: \url{https://www.desmos.com/calculator/srrpeadlou}.
+\begin{enumerate}[(a)]
+    \item Compare and contrast the reactions that take place given the three different scenarios for initial conditions. Explain why what the graph displays makes sense and include your graphs.
+    \begin{itemize}
+        \item $[A]_0 = 1$, $[B]_0=0$, and $[C]_0 =0$.
+        \item $[A]_0 = 0$, $[B]_0=1$, and $[C]_0 =0$.
+        \item $[A]_0 = 0$, $[B]_0=0$, and $[C]_0 =1$.
+    \end{itemize}
+    \item For the initial conditions $[A]_0 = 1$, $[B]_0=0$, and $[C]_0 =0$, explain what happens when you let
+    \begin{itemize}
+        \item $k_1=0$ and $k_2=1$,
+        \item $k_1=1$ and $k_2=0$.
+    \end{itemize}
+    Include plots for these cases as well.
+    \item Consider the initial conditions $[A]_0 = 1$, $[B]_0=0$, and $[C]_0 =0$ and rate constants $k_1=1$ and $k_2=2$. Then, choose initial conditions of your own and compare your plots with the other initial conditions. Why do yours behave the way they do? Include your plots.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item Here are the graphs for the given initial conditions.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{a01b00c00.png}
+            \caption{Curves for $[A]_0=1$, $[B]_0=0$, and $[C]_0=0$.}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{a00b01c00.png}
+            \caption{Curves for $[A]_0=0$, $[B]_0=1$, and $[C]_0=0$.}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{a00b00c01.png}
+            \caption{Curves for $[A]_0=0$, $[B]_0=0$, and $[C]_0=1$.}
+        \end{subfigure}
+    \end{figure}
+    
+    Let's now think about these graphs.
+    \begin{itemize}
+            \item The first sees exponential decay of species $A$ and initially a quick growth of species $B$.  But, as species $B$ reacts and creates species $C$, we start to see a plateau and then decline in the concentration of species $B$.  Ultimately, the concentration of species $C$ seems to grow consistently.  In the beginning, the concentration of species $C$ increases more slowly since there is less of $B$ to react, and it grows more slowly towards the end of the reaction for a similar reason.
+            \item Now, species $A$ has no role in the reaction.  We simply see exponential decay of species $B$ as it produces $C$.
+            \item There is no reaction taking place since we have removed $A$ and $B$ from the system entirely.  All we have left is the stable species $C$.
+    \end{itemize}
+
+    \item Here are the graphs for the different $k$ values.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{k10k21.png}
+            \caption{Curves for $k_1=0$ and $k_2=1$ with initial concentrations $[A]_0=1$, $[B]_0=0$, and $[C]_0=0$. }
+        \end{subfigure}
+        \hspace*{2cm}
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{k11k20.png}
+            \caption{Curves for $k_1=1$ and $k_2=0$ with initial concentrations $[A]_0=1$, $[B]_0=0$, and $[C]_0=0$. }
+        \end{subfigure}
+    \end{figure}
+    
+    Let's now think about these graphs.
+    \begin{itemize}
+            \item Here, if $k_1=0$, then the first reaction never takes place.  So, none of species $A$ can react to form species $B$.  Since there is no initial concentration for $B$ or $C$, there are never any of these products produced.  We simply see $[A]$ remain constant. This is similar to what we see in the third case in the previous part of this problem.
+            \item By taking $k_2=0$ we have essentially removed the second reaction.  Now, $A$ converts to $B$ and $B$ never converts to $C$.  Thus, we see exponential decay of $A$ which produces $B$.  This is similar to what we see in the second case in the previous part of this problem.
+    \end{itemize}
+
+    \item Plots for (c) below.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{k11k22.png}
+            \caption{Curves for $k_1=1$ and $k_2=2$ with initial concentrations $[A]_0=1$, $[B]_0=0$, and $[C]_0=0$. }
+        \end{subfigure}
+        \hspace*{2cm}
+        \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{k11k22_other.png}
+            \caption{Curves for $k_1=1$ and $k_2=0$ with initial concentrations $[A]_0=0.5$, $[B]_0=0.3$, and $[C]_0=0.1$. }
+        \end{subfigure}
+    \end{figure}
+
+    I chose these other initial conditions because we never see an increase in the amount of species $B$.  To me, this is a bit interesting.  The rate of reaction $k_2$ being larger means that we do not always see a build up of species $B$.  
+\end{enumerate}
+\end{solution}
+
+\newpage
 
 \begin{problem}
 Consider the second order chemical reaction given by
@@ -28,35 +155,36 @@ A+B \xrightarrow{k} \textrm{Products}.
 \begin{enumerate}[(a)]
     \item The system of equations we will get is
     \begin{align*}
-        -\frac{dA}{dt}&=kAB\\
-        -\frac{dB}{dt}&=kAB.
+        \frac{d[A]}{dt}&=-k[A][B]\\
+        \frac{d[B]}{dt}&=-k[A][B].
     \end{align*}
-    \item Now, let $A=A_0-x$ and $B=A_0-x$ and, since $A_0$ and $B_0$ are constant, we get the equation for $A$,
+    \item Now, let $[A]=[A]_0-x$ and $[B]=[A]_0-x$ and, since $[A]_0$ and $[B]_0$ are constant, we get the equation for $[A]$,
     \begin{align*}
-        -\frac{dx}{dt}&=k(A_0-x)(B_0-x).
+        -\frac{dx}{dt}&=k([A]_0-x)([B]_0-x).
     \end{align*}
-    It turns out $B$ has the same equation.
+    It turns out $[B]$ has the same equation (which you should double check yourself).
     \item This is a separable equation, so we can find the solution by
     \begin{align*}
-        -\frac{dx}{dt}&=k(A_0-x)(B_0-x)\\
-        \int \frac{dx}{(A_0-x)(B_0-x)}&=-k\int dt.
+        -\frac{dx}{dt}&=k([A]_0-x)([B]_0-x)\\
+        \int \frac{dx}{([A]_0-x)([B]_0-x)}&=-k\int dt.
     \end{align*}
     Here, we can use the partial fraction decomposition to get
     \[
-    \frac{1}{A_0-B_0}\log\left( \frac{x-A_0}{x-B_0}\right)=-kt+C.
+    \frac{1}{[A]_0-[B]_0}\ln\left( \frac{x-[A]_0}{x-[B]_0}\right)=-kt+C.
     \]
     Then we can find
     \[
-    \frac{x-A_0}{x-B_0}=e^{-kt+C}
+    \frac{x-[A]_0}{x-[B]_0}=e^{-kt+C}
     \]
     With $x(0)=0$ we have
     \[
-    \frac{-A_0}{-B_0}=e^{-kt}e^C
+    \frac{-[A]_0}{-[B]_0}=e^{-kt}e^C
     \]
-    and so $e^C=\frac{A_0}{B_0}$. We can rewrite this in terms of $A$ and $B$ as
+    and so $e^C=\frac{[A]_0}{[B]_0}$. We can rewrite this in terms of $[A]$ and $[B]$ as
     \[
-    \frac{A}{B}=\frac{A_0}{B_0}e^{-kt}.
+    \frac{[A]}{[B]}=\frac{[A]_0}{[B]_0}e^{-kt}.
     \]
+    This is as simplified as I would take the expression. What we can see here is that the ratio of $[A]$ to $[B]$ will change exponentially over time.
 \end{enumerate}
 \end{solution}
 

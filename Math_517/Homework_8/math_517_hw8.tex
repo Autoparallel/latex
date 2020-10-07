@@ -1,0 +1,280 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 8}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 8.1)} Define 
+\[
+f(x)\coloneq \begin{cases}
+e^{-1/x^2} & x\neq 0,\\
+0 & x=0.
+\end{cases}
+\] 
+Prove that $f$ is infinitely differentiable at $x=0$ and that $f^{(n)}(0)=0$ for $n=1,2,\dots$. In particular, this means that the Taylor series for $f$ is the $0$ function, even though $f$ is very much nonconstant.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We will show this by induction. For the base case, we show that $f$ is differentiable at $x=0$ and specifically that $f'(0)=0$.  Consider then
+
+\begin{align*}
+f'(0)&=\lim_{h\to 0} \frac{e^{-1/h^2} - 0}{h}\\
+&= \lim_{h\to 0} \frac{\frac{1}{h}}{\frac{1}{e^{-1/h^2}}}\\
+&= \lim_{h\to 0} \frac{\frac{-1}{h^2}}{\frac{-2e^{1/h^2}}{h^3}} && \textrm{via L'Hopitals rule}\\
+&= \lim_{h\to 0} \frac{h}{2e^{1/h^2}}\\
+&= 0.
+\end{align*}
+Note that we have $\lim_{h\to 0} h^k e^{-1/h^2}=0$ for all integer values of $k$.  If $k\in \mathbb{Z}$ and $k\geq 0$ then
+\begin{align*}
+\lim_{h\to 0} h^k e^{-1/h^2}=0.
+\end{align*}
+When $k<0$ then we show this using L'Hopitals rules as before and put $h^k$ in the denominator with positive power $p=-k$.  So
+\begin{align*}
+\lim_{h\to 0} \frac{e^{-1/h^2}}{h^p}&= \lim_{h\to 0} \frac{\frac{1}{h^p}}{\frac{1}{e^{-1/h^2}}}\\
+&= \lim_{h\to 0} \frac{\frac{-p}{h^{p+1}}}{\frac{-2e^{-1/h^2}}{h^3}} && \textrm{via L'Hoptials}\\
+&= \lim_{h\to 0} \frac{\frac{p}{2h^{p-2}}}{\frac{1}{e^{-1/h^2}}}\\
+&\vdots && \textrm{repeat L'Hopitals rule}\\
+&= \lim_{h\to 0} Ch^r e^{-1/h^2}=0 && \textrm{by repeated L'Hopitals rule, $r\geq 0$ and $C$ is a constant.}
+\end{align*}
+
+Next, assume that $f^{(n-1)}(0)=0$.  Then we wish to show that $f^{(n)}(0)=0$.  Consider
+\begin{align*}
+f'(x)&=\frac{2e^{-1/x^2}}{x^3}\\
+f''(x)&=\frac{e^{-1/x^2}(4-6x^2)}{x^6}\\
+f^{(3)}(x)&= \frac{4e^{-1/x^2}(6x^4-9x^2+2)}{x^9}\\
+&\vdots &&\textrm{continue this process}\\
+f^{(n)}(x)&= \frac{e^{-1/x^2}P_1(x)}{x^{3n}}.
+\end{align*}
+Note that $P_1(x)$ is a polynomial in $x$ with degree less than $3n$.  Thus
+\begin{align*}
+\lim_{x\to 0} f^{(n)}(x) = 0,
+\end{align*}
+by what we showed above.  Thus, by induction, we have that $f$ is infinitely differentiable at $x=0$.
+
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (Rudin 8.6)} Suppose $f(x)f(y)=f(x+y)$ for all $x,y\in \R$.
+\begin{enumerate}[(a)]
+\item Assuming $f$ is differentiable and not the zero function, prove that $f(x)=e^{cx}$ for some constant $c$.
+\item Prove the same thing, but now only assuming that $f$ is continuous and not the zero function. (Of course this implies (a), but you should give the easy proof of (a) first.)
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Suppose $f$ is differentiable and not the zero function and that $f(x)f(y)=f(x+y)$.  It then follows that $f(0)=1$ since we have $f(x)=f(x+0)=f(x)f(0)$.  Next, consider
+\begin{align*}
+f'(x)&=\lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
+&= \lim_{h\to 0} \frac{f(x)f(h)-f(x)}{h}\\
+&= f(x) \lim_{h\to 0} \frac{f(h)-1}{h}\\
+&= cf(x) &&\textrm{since $f$ is differentiable, $f'(0)$ exists and we say $f'(0)=c$.}
+\end{align*}
+The last statement shows that $f$ is also analytic on all of $\R$ since the derivative $f'$ at any point $x$ is $cf(x)$. Then to see that this shows $f(x)=e^{cx}$ we just observe that the Taylor series centered at $x=0$ for $f$ is
+\begin{align*}
+f(x)=\sum_{n=0}^\infty \frac{(cx)^n}{n!}=e^{cx}.
+\end{align*}
+
+\end{proof}
+
+\begin{proof}[b]
+Anything from (a) I'll take as I need without reproving them.  Also note that $f(x)>0$ for every $x\in \mathbb{R}$.  To see this, note that $f$ is a real valued function and we have 
+\begin{align*}
+f(x)&=f\left( \frac{x}{2} +\frac{x}{2}\right)\\
+&= f\left( \frac{x}{2}\right) f\left( \frac{x}{2}\right)\\
+&=f\left( \frac{x}{2}\right)^2 \geq 0.
+\end{align*}
+To see that $f(x)\neq 0$ for any $x$, suppose that for some $x_0$ we have $f(x_0)=0$. Then for any other $x\in \R$ we have $x=x_0+y$ for some $y$ and then $f(x)=f(x_0+y)=f(x_0)f(y)=0$.  Thus $f$ is the zero function, which is a contradiction of our original supposition. So it follows $f(x)>0$ for every $x$.
+
+Now define $g(x)=\log(f(x))$ for every $x$.  By assumption $g(x)$ is continuous for every $x$ and is defined since $f(x)>0$.  Note that $\log(f(x+y))=\log(f(x))+\log(f(y))$.  Now, referencing Homework 6 Question 2(b) here, we have the following:
+
+First, let $g(1)=c$. Then note $g(0)=g(0+0)=2g(0)$ which implies $g(0)=0$. Next we have that $g(0)=g(x-x)=g(x)+g(-x)=0$ which implies $g(x)=-g(-x)$ for any $x$.  Then let $q\neq 0 \in \mathbb{Q}$. Then $q=\frac{m}{n}$ with $m,n\in \mathbb{Z}$. It follows that
+\[g(q)=g\left(\frac{m}{n}\right)=g\left(\frac{1}{n}+...+\frac{1}{n}\right)=g\left(\frac{1}{n}\right)+...+g\left(\frac{1}{n}\right)=mg\left(\frac{1}{n}\right),
+\]
+and it follows that if $q=1$ then $q=\frac{n}{n}$ so
+\begin{align*}
+g(1)&=ng\left(\frac{1}{n}\right)\\
+\implies \frac{1}{n}f(1)&=g\left(\frac{1}{n}\right).
+\end{align*}
+It follows that for any $q\in Q$ $g(q)=cq$. In other words, $g$ is a linear function if the inputs are rational (including $q=0$).  So now let $\{x_i\}$ be a sequence of rationals converging to a real number $x$, then by continuity of $f$ we have that $\lim_{i\to \infty} f(x_i)$ converges to $g(x)$. So we have
+\begin{align*}
+g(x)&=\lim_{i\to \infty} g(x_i)\\
+&= \lim_{i\to \infty} c x_i\\
+&=cx.
+\end{align*}
+So $g(x)=cx$, which is linear for all reals.  Thus $g(x)=\log(f(x))$ is differentiable, which specifically means that $f(x)$ is differentiable.  It follows from (a) that $f(x)=e^{cx}$.
+
+
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (Rudin 8.9)} 
+\begin{enumerate}[(a)]
+\item Let $S_N = 1+\frac{1}{2}+\cdots + \frac{1}{N}$ be the $N$th partial sum of the harmonic series. Prove that
+\[
+\lim_{N\to \infty} (S_N-\log N)
+\]
+exists. (\emph{Hint:} $\log (N+1)-\log(N)=\int_N^{N+1} \frac{1}{t} dt$.) 
+
+(The limit is defined to be the Euler-Mascheroni constant, denoted $\gamma$, which is approximately $0.5772\dots$. Whether $\gamma$ is irrational is an open question.
+
+\item Approximately how large must $m$ be so that $S_{10^m}>100$?
+
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+We will show that the sequence $S_n - \log_n$ is bounded and monotonic.  First, consider $1$ as an upper bound and $0$ as a lower bound.  To show this, just consider an arbitrary $N\in \N$ and then
+\begin{align*}
+S_n-\log n &= 1+\frac{1}{2}+\cdots + \frac{1}{N} - \int_{1}^N \frac{1}{t} dt\\
+&= 1+\frac{1}{2}+\cdots + \frac{1}{N} - \int_{N-1}^N \frac{1}{t}dt - \cdots - \int_{1}^2 \frac{1}{t} dt\\
+&\leq 1+\frac{1}{2}+ \cdots + \frac{1}{N} -\frac{1}{N}-\frac{1}{N-1}-\cdots - \frac{1}{2} && \textrm{since $\int_{m}^{m+1} \frac{1}{t} dt \geq \frac{1}{n+1}$}\\
+&=1.
+\end{align*}
+Which is achieved when $N=1$. Then it follows similarly that $0$ is a lower bound by
+\begin{align*}
+S_n-\log n &= 1+\frac{1}{2}+\cdots + \frac{1}{N} - \int_{1}^N \frac{1}{t} dt\\
+&= 1+\frac{1}{2}+\cdots + \frac{1}{N} - \int_{N-1}^N \frac{1}{t}dt - \cdots - \int_{1}^2 \frac{1}{t} dt\\
+&\geq 1+\frac{1}{2}+ \cdots + \frac{1}{N} -\frac{1}{N-1}-\frac{1}{N-2}-\cdots - 1 && \textrm{since $\int_{m}^{m+1} \frac{1}{t} dt \leq \frac{1}{m}$}\\
+&=\frac{1}{N}\geq 0. 
+\end{align*}
+Finally we need to show that this sequence is monotonic.  So consider an arbitrary $m\in \N$ and consider
+\begin{align*}
+(s_{m+1}-\log(m+1))-(s_m-\log m)&= (s_{m+1}-s_m)-(\log(m+1)-\log m)\\
+&=\frac{1}{m+1}-\int_m^{m+1} \frac{1}{t} dt\\
+&\leq \frac{1}{m+1}-\frac{1}{m+1} && \textrm{since $\int_{m}^{m+1} \frac{1}{t} dt \geq \frac{1}{m+1}$}\\
+&=0.
+\end{align*}
+\end{proof}
+
+\begin{proof}[b]
+It seems that $\log N$ is a good approximation for $S_N$.  Thus if $S_{N}>100$ we must satisfy that $\log(N)=100$ which means $N=e^{100}$  Then we set $N=10^m$ and $m=\log_{10} N = \log_{10} e^{100}=\frac{100}{\log{10}}$. 
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (Rudin 8.14)} If $f(x)=(\pi-|x|)^2$ on $[-\pi,\pi]$, prove that
+\[
+f(x)=\frac{\pi^2}{3} + \sum_{n=1}^\infty \frac{4}{n^2} \cos nx
+\]
+and conclude that
+\begin{align*}
+\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6} \textrm{~~and~~} \sum_{n=1}^\infty \frac{1}{n^4} = \frac{\pi^4}{90}.
+\end{align*}
+(\emph{Hint:} Feel free to use Theorem 8.14, even though we didn't discuss it in class, and standard facts about integration.)
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+I'm going to use the $\sin$ and $\cos$ version for finding the Fourier series. So we can find the fourier coefficients $a_n$ and $b_n$ for $n\geq 1$ by the following:
+\begin{align*}
+a_n &= \frac{1}{\pi} \int_{-\pi}^\pi f(x)\sin nx dx\\
+&= 0 &&\textrm{since $f(x)$ is even and $\sin x$ is odd},\\
+b_n &=\frac{1}{\pi} \int_{-\pi}^\pi f(x)\cos nx dx\\
+&=\frac{2}{\pi} \int_{0}^\pi (\pi-x)^2 \cos nx dx &&\textrm{since $f(x)$ and $\cos nx$ are even}\\
+&=\frac{4}{n^2}.
+\end{align*}
+For $a_0$ we have
+\begin{align*}
+a_0 &= \frac{1}{\pi}\int_{-\pi}^\pi f(x) \sin 0 dx\\
+&= \frac{1}{\pi} \int_{-\pi}^\pi (\pi-|x|)^2 dx\\
+&= \frac{1}{\pi} \int_{0}^\pi (\pi-x)^2 dx\\
+&= \frac{2\pi^2}{3}.
+\end{align*}
+Fix $x=0$ and consider any $t\in [-pi,pi]$.  Then with $M=2\pi$ we have
+\begin{align*}
+|f(t)-f(0)|&=|(\pi-|t|)^2-(\pi-|0|)^2|\\
+&= |\pi^2 - 2\pi |t| +|t|^2 -\pi^2|\\
+&=|t|\cdot||t|-2\pi|\\
+&\leq 2\pi |t|=M|t|
+\end{align*}
+Thus we satisfy Theorem $8.14$. This implies that $f(x)=\sum_{-\infty}^\infty c_m e^{imx}$ on $[-\pi,\pi]$.  It then follows that
+\begin{align*}
+f(x)= \frac{\pi^2}{3} + \sum_{n=1}^\infty \frac{4}{n^2} \cos nx.
+\end{align*}
+Then we have
+\begin{align*}
+f(0)=\pi^2=&\frac{\pi^2}{3}+4\sum_{n=1}^\infty \frac{1}{n^2}\\
+\implies \frac{\pi^2}{6}&= \sum_{n=1}^\infty \frac{1}{n^2}. 
+\end{align*}
+Then from Theorem 8.16 (Perseval's theorem) we have
+\begin{align*}
+\frac{1}{\pi} \int_{\pi}^\pi |f(x)|^2 dx &= \frac{2\pi^4}{9}+16\sum_{n=\infty}^\infty \frac{1}{n^4}.
+\end{align*}
+Finding that $\int_{\pi}^\pi |f(x)|^2 dx = \frac{2\pi^4}{5}$ we have
+\begin{align*}
+\frac{\frac{2\pi^4}{5}-\frac{2\pi^4}{9}}{16}= \frac{\pi^4}{90} =\sum_{n=1}^\infty \frac{1}{n^4}.
+\end{align*}
+\end{proof}
+
+
+\pagebreak
+
+
+
+\end{document}
+
+
+

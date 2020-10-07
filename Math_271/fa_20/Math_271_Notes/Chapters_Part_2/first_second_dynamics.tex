@@ -10,7 +10,7 @@
         
         \section{Ordinary Differential Equations}
         
-        The first stop on the study of differential equations are the Ordinary Differential Equations \index{ordinary differential equation} (ODEs).  ODEs are equations that involve a single variable $t$ that we usually think of as time, a function $x(t)$, and derivatives of the function $x'(t)$, $x''(t)$, $x'''(t)$, up to $n$ derivatives $x^{(n)}(t)$.  We will not worry ourselves with the higher order equations yet.
+        The first stop on the study of differential equations are the Ordinary Differential Equations \index{ordinary differential equation} (ODEs).  ODEs are equations that involve a single independent variable $t$ that we usually think of as time, a function (or dependent variable) $x(t)$, and derivatives of the function $x'(t)$, $x''(t)$, $x'''(t)$, up to $n$ derivatives $x^{(n)}(t)$.  We will not worry ourselves with the higher order equations yet.
         
         Unlike previous problems where we solve for a variable, or compute derivatives, we wish to find a function that satisfies the differential equation.  So, our aim is to find $x(t)$ given our understanding of how $x$ changes over time.
         
@@ -48,6 +48,19 @@
         \begin{exercise}
         Write your own function $p(t,x)$.
         \end{exercise}
+
+        If we let the right hand side be given by $f(t)$, we arrive at the most fundamental example of a differential equation. In fact, this is an equation that you have not only already seen, but it is one that you know how to solve.  Indeed, consider the expression
+        \[
+            x'(t) = f(t)
+        \]
+        Here we see that we know the derivative of some function $x(t)$ is given by another function of $t$.  If the desire is to determine an expression for $x(t)$, then we can solve these equations simply through integration. That is,
+        \[
+            x(t) = \int f(t) dt.
+        \]
+        Thus, $x(t)$ is simply the antiderivative of $f(t)$ in this case.  Notice, that we will have a constant of integration in this expression.
+
+        However, not all differential equations come out this nicely. The techniques needed to solve more complicated expressions are going to be developed in the succeeding sections.  Our attempts will be to classify the types of equations and find methods to find solutions for those types of equations. In general, we will stick to the most nicely behaved equations that appear throughout the natural world. 
+
         
         \begin{df}{Order of an ODE}{order}
         The \boldgreen{order} \index{order!differential equation} of an ODE is the highest derivative that appears in the ODE.
@@ -287,7 +300,7 @@
         The reason why we study these differential systems is to make predictions and models.  Given that, our predictions must be sensible. This means if we are given a differential equation and initial data, there should only be one particular solution.  This is known as \boldgreen{determinism}.     Not all systems are deterministic.  But it turns out the non-deterministic systems are either problematic as models or just very hard to deal with. When solving an ODE, we often call a particular solution a \boldgreen{trajectory}.
         
         \section{Separable Equations}
-        The nicest possible ODEs come from equations that are \emph{separable}\index{separable differential equation}.  What this means is that, for example, we have a first order equation like
+        The nicest possible ODEs come from equations that are \emph{separable}\index{separable!differential equation}.  What this means is that, for example, we have a first order equation like
         \[
         x'=f(t)g(x).
         \]
@@ -307,6 +320,33 @@
         \int \frac{dx}{g(x)} = \int f(t)dt,
         \]
         and we will have an equation where we can isolate $x$
+
+        The nicest separable equations are those which we can integrate directly.  Recall that the ODE
+        \[ 
+            x'(t) =f(t)
+        \]
+        can be solved directly via integration.  That is,
+        \[
+            x'(t) = \int f(t)dt.
+        \]
+        Thus, the problem of finding an antiderivative in a first semester calculus course is just one example of a differential equation.  Let's see an example of this.
+        
+\begin{ex}{Antiderivative}{antiderivative}
+    Consider the equation
+    \[
+        x'(t) = \sin(t).
+    \]
+    This equation is separable since the right hand side is only a function of $t$. That is, $g(x)=1$ and $f(t)=\sin(t)$.  Thus, if we follow the separation method, we have
+    \begin{align*}
+        \frac{dx}{dt} &= \sin(t)\\
+        dx &= \sin(t) dt\\
+        \int dx &= \int \sin(t) dt\\
+        x&= -\cos(t) + c.
+    \end{align*}
+    This solution we have found is indeed just the antiderivative of $\sin(t)$. Notice that we also pick up an unknown constant of integration. This constant could be determined if we were given an initial condition.     
+\end{ex}
+
+Antiderivatives are then the easiest possible differential equations since finding their solution amounts to just taking an indefinite integral.  But, separable equations in general will have the same basic technique but with an added $g(x)$ appearing.  The next example will show how you can handle the additional inclusion of the dependent variable $x$ on the right hand side.
         
         \begin{ex}{Separable ODE}{separable}
         Consider the following ODE where we are trying to find $x(t)$ that solves
@@ -411,17 +451,6 @@
             This $x$ is our general solution to the original problem.
         \end{ex}
         
-        \newpage
-        
-        In physical systems that conserve some quantity in time (typically energy), we will see that the differential equations assume a certain form.  This form is of an \emph{autonomous} differential equation.
-        
-        \begin{df}{Autonomous ODE}{autonomous_ode}
-            A first order differential equation is \boldgreen{autonomous}\index{autonomous differential equation} if it can assume the form
-            \[
-            x'=f(x).
-            \]
-        \end{df}
-        \noindent A first order autonomous equation is also separable. So there is not much more here to say.  They do show up quite often.
         
         Another way that symmetry can help us is more from a modelling perspective. For example, it is possible to make more clever measurements of your system! This is a much needed tool for someone keen on doing experiments. For now, do your best to follow the logic of the following substitution.  This is an example of how one can view a problem in a new way and make it easier.  We should all love symmetry like this! 
         
@@ -487,6 +516,132 @@
         u''=-u.
         \]
         \end{exercise}
+        
+        \section{Qualitative analysis for first order equations}
+        
+            We have found that we are able to solve a specific type of ordinary differential equation.  Of course, this is a great option when we are able to do so. But, not every equation will be nice or even possible to solve by hand.  Take for example, the equation
+            \[
+            x'=\sin(tx).
+            \]
+            This equation is not separable and we will not develop a method for solving this type of equation in the future. However, we can attempt to understand what a solution to this equation may look like even if we do not arrive at a specific function as a solution. This idea falls into the category of \boldgreen{qualitative analysis}\index{qualitative analysis} since we are not getting an exact numerical answer but rather a reasonable guess to a solution that seeks to be qualitatively accurate.
+            
+            
+            The first method we will develop here is to plot the \boldgreen{slope field} \index{slope field} of the system.  Specifically, at each point in the $tx$-plane we plot a small segment of a line with a slope given by the value of $x'$ at that point $(t,x)$.  This is perhaps most easily seen with an example with a problem we've already solved.
+            
+            \begin{ex}{Slope field for exponential growth}{slope_field_exp_growth}
+                Let us consider the exponential growth equation given by
+                \[
+                x'=x.
+                \]
+                We know that the general solution to this equation is
+                \[
+                x=Ae^x,
+                \]
+                and the particular solution is found when we specify an initial condition. For sake of example, let $x(0)=1$ so that $A=1$ and hence our particular solution is
+                \[
+                x(t)=e^t.
+                \]
+                
+                Now, we can plot the slope field by plotting small line segments with slopes equal to the value of $x'$ at each point $(t,x)$ in the $tx$-plane. This gives us
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=.6\textwidth]{Figures_Part_1/slope_field_exp_growth.png}
+                    \caption{Slope field is plotted in red with the particular solution $x(t)$ plotted as the black curve.}
+                \end{figure}
+                
+                The take home idea is that the solution curve will have a slope that is equal to the slope field at each point $(t,x)$. In the above picture, you can see that the curve then follows the slope field that we plotted. To do this yourself, you would pick an initial value which would specify where you start along the vertical axis, and you would draw a curve that follows the slope field.
+            \end{ex}
+            
+            To practice this yourself, let us return to the earlier example with the equation
+            \[
+            x'=\sin(tx).
+            \]
+            If we plot the slope field, we get the following figure.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures_Part_1/slope_field_nonlinear.png}
+            \end{figure}
+            Begin with the initial condition that $x(0)=1$, and attempt to draw your best guess to the solution from this slope field.
+            
+            We will revisit this idea later and in more detail when we talk about curves in higher dimensions.  In a more general sense, what we are doing here is allowing our curve to follow a \emph{vector field}.  In other words, these solutions are truly the flow of a vector field.  This is analogous to how a light particle is blown around in a wind -- it flows along the direction of the wind current.
+            
+          
+            
+            \subsection{Autonomous equations}
+                
+                In physical systems that conserve some quantity in time (typically energy), we will see that the differential equations assume a certain form.  This form is of an \emph{autonomous} differential equation. In fact, this is another type of symmetry that can arise in a differential equation.
+                
+                \begin{df}{Autonomous ODE}{autonomous_ode}
+                    A first order differential equation is \boldgreen{autonomous}\index{autonomous!differential equation} if it can assume the form
+                    \[
+                    x'=f(x).
+                    \]
+                \end{df}
+                \noindent A first order autonomous equation is also separable. So there is not much more here to say as far as finding solutions. However, we can also analyze the systems in a qualitative way.  This is beneficial when the right hand side function $f(x)$ is something that we aren't able to integrate analytically.
+                
+                When we are given a first order autonomous equation, we can make a plot of the system in the \boldgreen{phase line}\index{line!phase}. That is, we can make a plot of $f(x)$ in the $x'x$-plane.  The reason why we do this is to seek out the following.
+                
+                \begin{df}{Equilibria}{equilibria}
+                    The \boldgreen{equilibria}\index{equilibria} of an autonomous differential equation is the set of points $x$ where the derivative $x'=0$. That is, these are the points where the system no longer changes over time.
+                \end{df}
+                
+                Surprisingly, using the phase line will allow us to analyze the behavior of a function without having to arrive at a solution. Again, this is a type of qualitative analysis. We will seek to determine the equilibria of a system since these are points of interest. For systems that are evolving over time, knowing about the equilibria can tell us about the long time behavior of a system.
+                
+                Take for example the exponential growth equation:
+                \[
+                x'=x,
+                \]
+                and note that if we have the initial condition $x(0)=0$, then the particular solution to this initial value problem is $x(t)=0$.  So, the system stays at the same point for all possible times.  There is no evolution happening!
+                
+                Now, how could we have deduced this qualitatively? Well, if we plot the graph of the function $f(x)=x$ in the $x'x$-plane, we notice that $f(x)=0$ when $x=0$.  It is exactly when $f(x)=0$ that we have $x'=0$ and thus there can no longer be motion for the system! Let's take a look at a more complicated example.
+
+                
+                
+                \begin{ex}{Phase line for an autonomous equation}{phase_line_autonomous}
+                Let's consider the equation
+                \[
+                x' = -\left(x-\frac{1}{2}\right)^2+\frac{1}{4}.
+                \]
+                This equation is indeed autonomous. However, finding a general solution analytically is rather difficult (but it is possible).  Rather, what we can do is plot the graph of $f(x)=-\left(x-\frac{1}{2}\right)^2+\frac{1}{4}$ in the $x'x$-plane as follows.
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=.6\textwidth]{Figures_Part_1/for_phase_line.png}
+                \end{figure}
+                What we can do next is mark along the $x$ axis where the function is zero as these are the equilibrium of the system. For this system, the set of equilibria is $x=0$ and $x=-1$. Now, how do we know what happens over time? If we pick any value of $x$, we can know the value for $x'$ since we can plug in the value of $x$ into the autonomous equation.  This leads us to the phase line below.
+                
+                \begin{centering}
+                \begin{tikzpicture}[thick, scale=3]
+                
+                    \DrawHorizontalPhaseLine[$x$]{-1,0,1,2}{0.25,0.5,0.75}{-0.25,-0.5,-0.75,1.25,1.5,1.75}
+                    \draw [domain=-0.5:1.5,smooth,variable=\x,red] plot (\x,{-1*(\x-0.5)*(\x-0.5)+.25});
+                \end{tikzpicture}
+                \end{centering}
+                
+                Here, I plot $f(x)$ again and we take note of the equilibria at $x=0$ and $x=1$. But, we can also see where $f(x)>0$. For this $f$, the $x$ values in the interval $(0,1)$ lead to $f(x)>0$.  So, we draw arrows pointing in the positive $x$ direction. Similarly, $f(x)<0$ when $x<0$ and $x>1$, so we draw arrows pointing to the negative $x$ direction in that case.
+                
+                These arrows tell us which direction our solution will move over time.  For example, if I take $x(0)=\frac{1}{2}$, then as I let $t\to \infty$, $x(t)\to 1$ since the arrows point towards the equilibrium at $x=1$.  If I instead took $x(0)=\frac{3}{2}$ then the arrows will dictate that our solution $x(t)$ approaches the equilibrium $x=1$ as $t\to\infty$ as well.  In this case, we say that the equilibrium $x=1$ is \boldgreen{stable}\index{stable!equilibria}.  The last region of interest could be studied by choosing the initial condition $x(0)=\frac{-1}{2}$.  Notice here that as $t\to \infty$ we have $x(t)\to -\infty$.  This leads us to conclude that the equilibrium $x=0$ is \boldgreen{unstable}\index{unstable!equilibria} since any initial condition around this equilibrium moves \emph{away} from this equilibrium.  
+                \end{ex}
+                
+                The prototypical example to keep in mind is a rigid swinging pendulum.  There, we can note that a pendulum hanging straight down is a stable equilibrium state. Over time, if we start swinging a pendulum, the pendulum will ultimately come to rest at the bottom.  We can remark that this is much like the $x=1$ case in the example system.  Likewise, the pendulum could also rest perfectly in an upright position, but any small movement would cause the pendulum to swing and move away from that equilibrium position.  This means that the top resting position is unstable. See the following figure.
+                
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=.5\textwidth]{Figures_Part_1/pendulum.png}
+                    \caption{The two equilibria for a rigid pendulum.}
+                \end{figure}
+                
+                This type of qualitative analysis is important.  To get a feel for it yourself, you may want to consider analyzing the system
+                \[
+                x' = \sin(x).
+                \]
+                \begin{exercise} Do the following exercises for the above system $x'=\sin(x)$.
+                \begin{enumerate}[(a)]
+                    \item Draw the phase line for this system.
+                    \item Find all (infinitely many) equilibria.  
+                    \item Classify which equilibria are stable and which are unstable.
+                \end{enumerate}
+                \end{exercise}
+        
         
         \section{First Order Linear Differential Equations}
         
@@ -598,6 +753,12 @@
         2H_2 + O_2 \leftrightarrows 2H_2O
         \]
         since real reactions have an equilibrium.  The amount of back and forth in a reaction also depends on parameters like temperature, pressure, or concentration.
+
+        In thinking about these equations, one should consider how the rate of change of the reactants relates to the rate of change of the products.  Likewise, the coefficients before a molecule describe how number of molecules that may be required to create a reaction or are produced from that reaction.  For example, the creation of water requires two hydrogen molucules ($2H_2$) and just one oxygen molecule ($1O_2$).  This means that we should expect to be using up twice as many molecules of hydrogen per second when we compare it to the rate of change of oxygen.  Likewise, for every reaction that takes place, we produce two water molecules ($2H_2O$), and as such, we expect that the number of water molecules will be created at the same rate that we are using up hydrogen.
+
+        \begin{question}
+            Write down another chemical reaction of your choice.  Before continuing on with this section, think about how the rates of the products and reactants will be related to each other. Can you see why we are studying this with differential equations?
+        \end{question}
         
         For now, let us assume we are looking at the original model which can we written as a sum of $m$ reactants $R_i$ each with an amount $r_i$ that give us an amount $p_i$ of $n$ different products $P_j$. That is, we have a reaction
         \begin{align*}
@@ -607,22 +768,28 @@
         \[
         \sum_{i=1}^m r_iR_i = \sum_{j=1}^n p_jP_j.
         \]
-        The second is just a mathematically succinct way of representing the quantitites in the reaction. We will call the $r_i$ and $p_j$ the \boldgreen{stoichiometric variables}. We often write the equation above in the following form:
+        The second is just a mathematically succinct way of representing the quantitites in the reaction. We will call the $r_i$ and $p_j$ the \boldgreen{stoichiometric variables}.  These amounts $r_i$ represent how many of the $i^\textrm{th}$ reactants we need to create a single reaction and the $p_j$ represent how many of the $j^\textrm{th}$ products are produced given a single reaction has occured. 
+
+        We often write the equation above in the following form:
         \begin{equation}
         0=\sum_{j=1}^n p_j P_j - \sum_{i=1}^m r_iR_i. \label{eq:stoich}
         \end{equation}
+        Later, we refer to this equation and it has been numbered so that we keep track of it as we derive an expression for the rate of change for each of the reactants and products.
         
-        Suppose we start with an initial amount of substance $A$, $N_{A0}$. Then we say that the amount of species $A$ at time $t$ is $N_{A}$.  The amount of reaction observed is given by the \boldgreen{extent of reaction} $\xi$ defined by
+        Suppose we start with an initial amount of substance $A$, $N_A(0)$. Then we say that the number of molecules of species $A$ at time $t$ is $N_{A}(t)$. Note that $N_A$ may represent either a reactant or a product and we let $a$ be the amount of species $A$ necessary for the reaction to take place.  That is, if $A$ is a reactant, $a$ is the number of molecules of species $A$ required to form a reaction and if $A$ is a product then $a$ is the number of $A$ produced by the reaction. In the case that $A$ is a reactant, we will have $a<0$ and if $A$ is a product then $a>0$. The amount of reaction observed is given by the \boldgreen{extent of reaction} $\xi$ defined by
         \[
-        N_A = N_{A0}+a\xi.
+        N_A(t) = N_A(0)+a\xi.
         \]
-        Note that $a$ will be negative for products as the number of products decreases over time. To see this, see \ref{eq:stoich} which states that the total number of species has to be conserved. Then the \boldgreen{rate of conversion} is 
+        Here, $\xi$ is some positive number that represents how much reaction has taken place.  We will be using this variable later to relate different species involved in the reaction. 
+
+        In \ref{eq:stoich}, we can see that the total number of species has to be conserved. That is, our reaction is never losing any of the individual atoms in any way.  Using this assumption, we have that the \boldgreen{rate of conversion} of reactants to products is 
         \begin{align*}
             \rho &= \frac{d\xi}{dt}\\
             &= \frac{1}{a}\frac{dN_a}{dt}.
         \end{align*}
+        In other words, if we know how fast one species is changing, then we know how fast the others must be changing as well.  Remember, the reaction is very strict.  We always require the correct number of reactants to produce the given set of products.  These rates must be related to one another.
         
-        More often than not, we care about concentrations of chemicals as opposed to amount. So we let
+        In the case that we care about concentrations of chemicals as opposed to the amount of molecules we let
         \[
         [A]=\frac{N_A}{V}
         \]
@@ -630,15 +797,15 @@
         \[
         v=\frac{\rho}{V}=\frac{1}{a}\frac{d[A]}{dt}.
         \]
-        Now, for a reaction 
+        Now, for a general reaction given by
         \[
         r_1R_1 + r_2R_2 + \cdots + r_mR_m \to p_1 P_1 + p_2P_2 +\cdots p_n P_n,
         \]
-        we must have that the concentrations must change with matching rates so that
+        we must have that the concentrations of each species must change with matching rates.  We can write this mathematically by
         \[
         v=-\frac{1}{r_i}\frac{d[R_i]}{dt}=\frac{1}{p_j}\frac{d[P_j]}{dt},
         \]
-        for every product $P_j$ and reactant $R_i$.
+        for every product $P_j$ and reactant $R_i$. Note that since reactants are utilized to create products, their rate of conversion is negative since their concentration must decrease.  Similarly, products have a positive rate of conversion since they are being created by the reaction process.
         
         \begin{ex}{$H_2$ and $O_2$ to $H_2O$}{water}
         If we are wishing to model
@@ -651,16 +818,47 @@
         \end{align*}
         \end{ex}
         
-        From experiment one can determine that
+        At this point, we do not have enough data to create an equation that makes predictions for us. Indeed, we have the related rate expressions for each species, but we do not know what the rate of conversion $v$ itself is. However, we can determine $v$ from experimentation in a lab.  There, we find that
         \[
-        v=k[R_1]^{\alpha_1}[R_2]^{\alpha_2}\cdots
+        v=k[R_1]^{r_1}[R_2]^{r_2}\cdots
         \]
-        which allows us to complete our model.  We call $k$ the \boldgreen{rate constant} of the reaction and the numbers $\alpha_i$ dtermine that \boldgreen{order of the reaction}. We say that $\alpha_i$ is the order with respect to the reactant $R_i$. For example, we may have
+        which allows us to complete our model. This expression here should make some sense.  If we have the reaction
+        \[
+            2H_2 + O_2 \to 2H_2 O,
+        \]
+        then we would have $v=k[H_2]^2 [O_2]$ which is describing the likelihood of two hydrogen molecules coming into close contact with a single oxygen molecule.  In this expression, we call $k$ the \boldgreen{rate constant} of the reaction and note that we have $k>0$. The numbers $r_i$ determine that \boldgreen{order of the reaction}. We say that $r_i$ is the order with respect to the reactant $R_i$. For example, we may have
         \begin{itemize}
             \item First order: $R \to \textrm{Products}$;
-            \item Second order: $2R \to \textrm{Products}$;\\
+            \item Second order: $2R \to \textrm{Products}$;
             \item Second order: $R_1+R_2 \to \textrm{Products}$.
         \end{itemize}
+        Thus, one can realize the order of the reaction by the expression
+        \[
+            \textrm{Order} = \sum_{i=1}^m r_i.
+        \]
+        That is, the order of the reaction is the total number of molecules of reactants required to create a single reaction.
+
+        \begin{ex}{Creation of water}{creation_of_water}
+            Consider the chemical reaction
+            \[
+                2H_2 + O_2 \to 2H_2 O.
+            \]
+            This is a third order reaction since we require three reactant molecules to create products. The reaction rate is then
+            \[
+                v=k[H_2]^2 [O_2].
+            \]
+            To find equations for rate of change the concentrations, we use the other expression for $v$ found in Example \ref{ex:water}. Thus we have the equations
+            \begin{align*}
+                \frac{d[H_2]}{dt} &= -2 k [H_2]^2 [O_2]\\
+                \frac{d[O_2]}{dt} &= -k[H_2]^2[O_2]\\
+                \frac{d[H_2O]}{dt} &= +2k [H_2]^2[O_2].
+            \end{align*}
+            In the expression above, we would need to find an numerical value for the rate constant $k$. Once we have that, we then need to handle the fact that the concentrations are \emph{coupled}. That is, for example, the rate of change of $[H_2]$ depends on the current amount of $[O_2]$.  We will revisit this concept later. Lastly, we would need to know the initial concentrations of each species and we could determine a particular solution from there!
+        \end{ex}
+
+        This formulation of chemical kinetics is powerful.  It will give us a method to write down the rate of reaction for even the most complicated of chemical reactions.  Whether we can solve these by hand is a different question, but nonetheless we can create a differential equation just from the structure of the reaction! The important constant in the expression is the rate constant $k$.  This is a quantity that a chemist would measure in a lab by seeing how long a reaction takes to complete.  Once this is determined for multiple reactions, we can then use this information to investigate more complicated kinetics.
+
+        The rest of this section is devoted to working through some example problems.  Along the way, you may want to find reactions that fit the description provided.  Look up the rate constant for those reactions and see if you can then take the general problems and apply them to your specific reaction. If done properly, this would be able to tell you how quickly you would expect the reaction to happen.
         
         \begin{ex}{First Order Reaction}{first_order_react}
         Consider a reaction
@@ -714,7 +912,7 @@
         \]
         and it follows that
         \[
-        \frac{d[b]}{dt}=k_1[A]-k_2[B].
+        \frac{d[B]}{dt}=k_1[A]-k_2[B].
         \]
         Then, at time $t=0$ we have initial concentrations $[A]_0$, $[B]_0=0$, and $[C]_0$ so that we are only starting with species $A$. Later on, at time $t$, we have $[A]=[A]-x$ and $[B]=y$ which means that we have $[C]=x-y$.  Note that $[C]$ is created by $A\to B$ and from $B\to C$ so we must subtract off the concentration of $B$ that has not converted to species $C$ yet. This gives us the equations
         \begin{equation}
@@ -786,6 +984,17 @@
     \end{subfigure}
 
         \end{figure}
+
+        If instead, we wished to have arbitrary initial concentrations, we would let $[B]_0$ and $[C]_0$ be the initial concentrations for $[B]$ and $[C]$ respectively.  This would give us the equations
+        \begin{align*}
+            [A]&=[A]_0e^{-k_1t}\\
+            [B]&=\begin{cases}
+                \frac{[A]_0k_1}{k_2-k_1}e^{-k_1t}+\left( -\frac{[A]_0k_1}{k_2-k_1}+[B]_0\right)e^{-k_2t} & k_1\neq k_2\\
+                [A]_0k_1te^{-k_1t}+[B]_0e^{-k_2t} & k_1=k_2.
+            \end{cases}\\
+            [C]&=([A]_0-[A])+([B]_0-[B])+[C]_0.
+        \end{align*}
+        You should verify these that these new particular solutions are correct.
         \end{ex}
         
         \begin{exercise}
@@ -798,7 +1007,11 @@
         \[
         F=ma=mx''
         \]
-        we often see differential equations that are second order.  The question is then, how can we solve these?  
+        we often see differential equations that are second order.  The question is then, how can we solve these?  Also, recall that in general, a second order equation can be written of the form
+        \[
+            x'' = f(t,x,x').
+        \]
+        We will immediately seek out special types of second order equations for which we can solve as we noticed we had to do this for the first order equations.
         
         There are a two main forms of second order equations we will consider, but there are more out there. Let's define the class of equations we will stick with.
         
@@ -841,19 +1054,27 @@
         This leads us to the following.
         
         \begin{prop}{Solutions to Linear Constant Coefficient Second Order ODE}{solutions_hom_constant}
-        Given the differential equation
+        Consider the differential equation
         \[
-        x''+bx'+cx=0
+        x''+bx'+cx=0.
         \]
-        with roots of the characteristic polynomial
+        Then the corresponding characteristic polynomial is
         \[
         \lambda^2+b\lambda +c
         \]
-        equal to $\lambda_1$ and $\lambda_2$, we have the general solution:
+        and we let the solutions of this equation be equal to $\lambda_1$ and $\lambda_2$. Then, 
+        \begin{itemize}
+                \item If $\lambda_1 \neq \lambda_2$, we have the general solution
         \[
-        x(t)=C_1 e^{\lambda_1t}+C_2e^{\lambda_2t}
+        x(t)=C_1 e^{\lambda_1t}+C_2e^{\lambda_2t},
         \]
         where $C_1,C_2,\lambda_1,\lambda_2 \in \C$.
+            \item If $\lambda_1=\lambda_2$, we have the general solution
+        \[
+            x(t) = C_1 e^{\lambda_1 t} + C_2 t e^{\lambda_1 t},
+        \]
+        where $C_1, C_2, \lambda_1 \in \C$.
+        \end{itemize}
         \end{prop}
         
         \begin{question}
@@ -1016,28 +1237,28 @@
                     \includegraphics[width=.7\textwidth]{Figures_Part_2/l=-1.png}
                 \end{figure}
             \end{itemize}
-            \item \textbf{Case 2:} Consider the case where the roots to the characteristic polynomial are complex valued.  That happens when we have $b^2-4c$ since then we will have a square root of a negative number appear with the quadratic formula. In this case, if we have a root $\lambda$, then $\lambda^*$ is \underline{always} the other root (take a look at the quadratic formula, and see if you can see why this is the case).  Thus, we can put $\lambda=a+bi$ and then have another root $\lambda^*=a-bi$. This gives us the general solution
+            \item \textbf{Case 2:} Consider the case where the roots to the characteristic polynomial are complex valued.  That happens when we have $b^2-4c$ since then we will have a square root of a negative number appear with the quadratic formula. In this case, if we have a root $\lambda$, then $\lambda^*$ is \underline{always} the other root (take a look at the quadratic formula, and see if you can see why this is the case).  Thus, we can put $\lambda=\alpha+\beta i$ and then have another root $\lambda^*=\alpha-\beta i$. This gives us the general solution
             \begin{align*}
                 x(t)&= C_1 e^{\lambda t}+C_2 e^{\lambda^* t}\\
-                &= C_1 e^{at}e^{ibt}+C_2e^{at}e^{-ibt}\\
-                &= e^{at}\left( C_1 e^{ibt}+C_2 e^{-ibt}\right).
+                &= C_1 e^{\alpha t}e^{i\beta t}+C_2e^{\alpha t}e^{-i\beta t}\\
+                &= e^{\alpha t}\left( C_1 e^{i\beta t}+C_2 e^{-i\beta t}\right).
             \end{align*}
             Here, we must have that $C_1$ and $C_2$ are complex numbers.  We can also rewrite this general solution as
             \[
-            x(t)= e^{at}(C_1 \cos(bt)+C_2\sin(bt)).
+            x(t)= e^{\alpha t}(C_1 \cos(\beta t)+C_2\sin(\beta t)).
             \]
             
-            Here we can take $a=1$ and $b=5$ with $C_1=C_2=1$ and plot the solution in the $xt$-plane to see:
+            Here we can take $\alpha = 1$ and $\beta =5$ with $C_1=C_2=1$ and plot the solution in the $xt$-plane to see:
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=.7\textwidth]{Figures_Part_2/a=1-b=5.png}
             \end{figure}
-            We could also take the case with $a=0$, $b=5$, and $C_1=C_2=1$ and plot:
+            We could also take the case with $\alpha=0$, $\beta=5$, and $C_1=C_2=1$ and plot:
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=.7\textwidth]{Figures_Part_2/a=0-b=5.png}
             \end{figure}
-            Lastly, we could plot with $a=-1$, $b=5$ and $C_1=C_2=1$ to see:
+            Lastly, we could plot with $\alpha=-1$, $\beta =5$ and $C_1=C_2=1$ to see:
                         \begin{figure}[H]
                 \centering
                 \includegraphics[width=.7\textwidth]{Figures_Part_2/a=-1-b=5.png}
@@ -1051,11 +1272,11 @@
         \begin{exercise}
         Show that the two general solutions
         \[
-        x(t)=e^{at}(C_1 e^{ibt}+C_2e^{-ibt})
+        x(t)=e^{\alpha t}(C_1 e^{i\beta t}+C_2e^{-i\beta t})
         \]
         and 
         \[
-        x(t)=e^{at}(C_1 \cos(bt)+C_2\sin(bt))
+        x(t)=e^{\alpha t}(C_1 \cos(\beta t)+C_2\sin(\beta t))
         \]
         are equivalent using Euler's formula.
         \end{exercise}
@@ -1070,7 +1291,7 @@
         \[
         x_h''+bx_h'+cx_h=0
         \]
-        to find a solution $x_h(t)$.  We refer to this as the \boldgreen{homogeneous solution}\index{homogeneous solution}. It does not, however, solve the equation on its own. We then need another function which we call the \boldgreen{particular integral}\index{particular integral} and denote by $x_p(t)$. This function is given by an ansatz based on what the forcing term is.  In this case, $x_p(t)$ solves the inhomogeneous equation
+        to find a solution $x_h(t)$.  This homogeneous solution can be understood as describing the dynamics of the system when undergoing no external forces. For example, if I have a mass on a spring, the system will oscillate even if I supply no external forces to it. We refer to this as the \boldgreen{homogeneous solution}\index{homogeneous solution}. It does not, however, solve the equation on its own. We then need another function which we call the \boldgreen{particular integral}\index{particular integral} and denote by $x_p(t)$. This function is given by an ansatz based on what the forcing term is.  This particular integral is essentially modeling the response that a system will have when it interacts with an external force.  In this case, $x_p(t)$ solves the inhomogeneous equation
         \[
         x_p''+bx_p'+cx_p=F(t)
         \]
@@ -1078,7 +1299,9 @@
         \[
         x=x_h+x_p.
         \]
-        How do we know that this is a solution? We can check by taking
+        This means that the dynamics for a system come down to a combination (or superposition) two different parts.  First, the system itself has its own behavior whether acted on by a force or not.  This is the $x_h$ term.  Then, if I act on the system with an external force, the system will have a reaction to that force and we see this reaction as the solution $x_p$.  In total, the system will then behave in an additive way.  The dynamics we see simply come from adding together the system behavior along with the system response.  
+
+        How do we know that this $x=x_h+x_p$ is a solution? We can check by taking
         \begin{align*}
             x''+bx'+cx&=(x_h+x_p)''+b(x_h+x_p)'+c(x_h+x_p)\\
             &= \underbrace{(x_h''+bx_h'+cx_h)}_{=0}+\underbrace{(x_p''+bx_p'+cx_p)}_{=F(t)}\\

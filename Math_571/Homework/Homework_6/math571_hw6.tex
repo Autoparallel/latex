@@ -1,0 +1,148 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 571, Homework 6}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} 
+Hatcher Exercise 17 on page 80: Given a group $G$ and a normal subgroup $N$, show that there exists a normal covering space $\tilde{X}\to X$ with $\pi_1(X)\cong G$, $\pi_1(\tilde{X})\cong N$, and deck transformation group $G(\tilde{X})\cong G/N$.
+
+
+\begin{proof}
+Note that we can construct a space $X$ as a CW-complex so that $\pi_1(X)\cong G$. We construct $X$ with a single 0-cell, a 1-cell for each generator with endpoints identified with the 0-cell, and finally by gluing in a 2-cell along the proper 1-cells for each relation in the group presentation. Then the classification theorem states that there exists a covering space $\tilde{X}$ for each subgroup of $\pi_1(X)$, and hence we specifically have an $\tilde{X}$ so that $\pi_1(\tilde{X})\cong N \subseteq G$. We also know that $\tilde{X}$ is a normal covering space since $\pi_1(\tilde{X})$ is a normal subgroup of $\pi_1(X)$. This then yields the desired deck transformation group $G(\tilde{X}) \cong G/N \cong \pi_1(X)/\pi_1(\tilde{X})$ since $\pi_1(\tilde{X})$ is normal.  
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 2.} Hatcher Exercise 4 on page 131: Compute the 0-, 1-, 2-, and 3-dimensional simplicial homology groups of the ``triangular parachute" obtained from $\Delta^2$ by identifying its three vertices to a single point.
+
+\begin{proof}
+Denote this triangular parachute space as $X$ and label our single vertex as $v$, the three edges as $a,b$ and $c$, and the single face as $f$.  See the drawing below.
+\vspace*{4cm}\\
+
+Now we have that $\Delta_0(X) \cong \Z$, $\Delta_1(X) \cong \Z^2$, $\Delta_2(X) \cong \Z$, $\Delta_3(X)\cong 0$, and $\Delta_4(X) \cong 0$.  We then have
+\begin{align*}
+\partial_0 (\Delta_0(X)) \cong 0 &\implies \ker \partial_0 \cong \Z ~~~ \im \partial_0 \cong 0.
+\end{align*}
+Now we also get
+\begin{align*}
+\partial_1 (\Delta_1(X)) \cong 0,
+\end{align*}
+since each edge is mapped to the identity since, for example, $a\mapsto v-v = 0$. This then implies
+\begin{align*}
+\ker \partial_1 \cong \Z^3 ~~~ \im \partial_1 \cong 0.
+\end{align*}
+Next, we have
+\begin{align*}
+\partial_2 (\Delta_2(X))=a-b+c, 
+\end{align*}
+which tells us specifically that
+\begin{align*}
+\ker \partial_2 \cong 0 ~~~ \im \partial_2 \cong \Z.
+\end{align*}
+More easily, we finally see that
+\begin{align*}
+\ker \partial_3 \cong 0 ~&~~ \im \partial_3 \cong 0 ~~\textrm{and}\\
+\ker \partial_4 \cong 0 ~&~~ \im \partial_4 \cong 0.
+\end{align*}
+We then compute the homology groups per usual.  So we have
+\begin{align*}
+H_0^\Delta (X) &\cong Z\\
+H_1^\Delta(X) &\cong \Z^2\\
+H_2^\Delta(X) &\cong 0\\
+H_3^\Delta(X) &\cong 0.
+\end{align*}
+This shows we have a single connected components, two 1-dimensional holes, and no 2- (or higher) dimensional holes.
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 3.} Hatcher Exercise 5 on page 131: Compute the 0-, 1-, and 2-dimensional simplicial homology groups of the Klein bottle using the $\Delta$-complex structure on page 102.
+
+\begin{proof}
+We first write down the chain groups:
+\begin{align*}
+\Delta_0(X) &\cong \Z\\
+\Delta_1(X) &\cong \Z^3\\
+\Delta_2(X) &\cong \Z^2\\
+\Delta_3(X) &\cong 0.
+\end{align*}
+Investigating each boundary map, we find for $\partial_0$ that
+\begin{align*}
+v \mapsto 0.
+\end{align*}
+For $\partial_1$,
+\begin{align*}
+a\mapsto v-v &= 0\\
+b\mapsto v-v &= 0\\
+c\mapsto v-v &= 0.
+\end{align*}
+For $\partial_2$,
+\begin{align*}
+U&\mapsto b-c+a\\
+L&\mapsto a-b+c.
+\end{align*}
+Finally, for $\partial_3$, there are no 3-simplicies so $\im \partial_3 \cong \ker \partial_3 \cong 0$. We then compute homology,
+\begin{align*}
+H_0^\Delta(X) &\cong \Z,\\
+H_1^\Delta(X) &\cong Z\oplus \Z/2\Z,
+\end{align*}
+since for $\im \partial_1$ we have a basis $\{a,b,c\}$ and for $\ker \partial_2$ we have a basis $\{b-c+a,a-b+c\}$ which can be rewritten as $\{b-c+a,2c\}$. When we take $H_1^\Delta(X) \cong \im \partial_1 / \ker \partial_2$ we mod out a copy of $\Z$ for the element $b-c+a$ and we get a single $\Z/2\Z$ term since $2c$ is an identity in $H_1^\Delta(X)$.  The other copy of $\Z$ left was from $\ker \partial_1$. Finally
+\begin{align*}
+H_2^\Delta(X) \cong 0.
+\end{align*}
+\end{proof}
+
+
+
+
+
+\end{document}
+
+
+

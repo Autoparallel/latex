@@ -1,0 +1,350 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 10}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1. (\S 6.7 Problem 5. (c))} Find an explicit formula for the following.
+
+$T^\dagger(a+bx+cx^2)$, where $T$ is the linear transformation given by $T\colon P_2(\R)\to P_1(\R)$, where $T(f(x))=f''(x)$, and the inner product is $\langle g,h \rangle =\int_{-1}^1 g(t)h(t)dt$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+From the previous homework we have for the matrix $A=[T]_\beta$ with the basis $\beta=\left\{ \sqrt{\frac{1}{2}}, \sqrt{\frac{3}{2}}x, \sqrt{\frac{5}{8}}(3x^2-1)\right\}$,
+\begin{align*}
+U&= 
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}\\
+V&=
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}\\
+\Sigma &=
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 2 & 0
+\end{bmatrix}.
+\end{align*}
+From this we have that 
+\begin{align*}
+\Sigma^\dagger &=
+\begin{bmatrix}
+0 & 0\\
+0 & 1/2\\
+0 & 0
+\end{bmatrix}.
+\end{align*}
+Then $A^\dagger$ is given by
+\begin{align*}
+A^\dagger &= V\Sigma^\dagger U^*\\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0\\
+0 & 1/2\\
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0\\
+0 & 1\\
+\end{bmatrix}
+&=
+\begin{bmatrix}
+0 & 0\\
+0 & 1/2\\
+0 & 1/2
+\end{bmatrix}.
+\end{align*}
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 6.7 Problem 6. (c))} Use the results of Exercise 3 to find the pseudoinverse of the following matrix:
+\[
+A=\begin{bmatrix}
+1 & 1\\
+0 & 1\\
+1 & 0\\
+1 & 1
+\end{bmatrix}.
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We find
+\begin{align*}
+A^*A&= 
+\begin{bmatrix}
+2 & 1 & 1 & 2\\
+1 & 1 & 0 & 1\\
+1 & 0 & 1 & 1\\
+2 & 1 & 1 & 2
+\end{bmatrix}.
+\end{align*}
+This matrix has eigenvalues $\lambda_1=5$, $\lambda_2=1$, $\lambda_3=\lambda_4=0$, with corresponding eigenvectors $v_1=(2,1,1,2)$, $v_2=(0,-1,1,0)$, $v_3=(-1,0,0,1)$, $v_4=(-1,1,1,0)$.  This gives us
+\begin{align*}
+V&=
+\begin{bmatrix}
+2 & 0 & -1 & -1\\
+1 & -1 & 0 & 1\\
+1 & 1 & 0 & 1\\
+2 & 0 & 1 & 0
+\end{bmatrix}.
+\end{align*}
+Next we find 
+\begin{align*}
+A^*A&=
+\begin{bmatrix}
+3 & 2\\
+2 & 3
+\end{bmatrix},
+\end{align*}
+which has eigenvalues $\lambda_1= 5$ and $\lambda_2=1$ with corresponding eigenvectors $u_1=(1,1)$ and $u_2=(-1,1)$. This gives
+\begin{align*}
+U&=
+\begin{bmatrix}
+1 & -1\\
+1 & 1
+\end{bmatrix}.
+\end{align*}
+It follows that 
+\begin{align*}
+\Sigma&=\begin{bmatrix}
+\sqrt{5} & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{bmatrix}, \\
+\Sigma^\dagger &=\begin{bmatrix}
+1/\sqrt{5} & 0\\
+0 & 1\\
+0 & 0\\
+0 & 0
+\end{bmatrix}.
+\end{align*}
+Now 
+\begin{align*}
+A^\dagger&= V\Sigma^\dagger U^*\\
+&=
+\begin{bmatrix}
+-1+2/\sqrt{5} & -1 - 2/\sqrt{5}\\
+1/\sqrt{5} & -1/\sqrt{5}\\
+1/\sqrt{5} & -1/\sqrt{5}\\
+1+2/\sqrt{5} & 1-2/sqrt{5}
+\end{bmatrix}.
+\end{align*}
+\end{proof}
+
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 6.7  Problem 9. (a))} Let $V$ and $W$ be finite-dimensional inner product spaces over $\mathbb{F}$, and suppose that $\{v_1,v_2,\dots,v_n\}$ and $\{u_1,u_2,\dots,u_m\}$ are orthonormal bases for $V$ and $W$, respectively. Let $T\colon V\to W$ be a linear transformation of rank $r$, and suppose that $\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r >0$ are such that
+\[
+T(v_i)=\begin{cases}
+\sigma_i u_i & 1\leq i \leq r\\
+0 & r<i.
+\end{cases}
+\]
+Prove that $\{u_1,u_2,\dots,u_m\}$ is a set of eigenvectors of $TT^*$ with corresponding eigenvalues $\lambda_1,\lambda_2,\dots,\lambda_m$, where
+\[
+\lambda_i =\begin{cases}
+\sigma_i^2 & 1\leq i \leq r\\
+0 & r<i.
+\end{cases}
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Choose any basis $\beta$ and denote $A=[T]_\beta$. Then we have $A=[U\Sigma V^*]_\beta$ via the SVD. It follows that
+\begin{align*}
+AA^* &= [(U \Sigma V^*)(V\Sigma^* U^*)]_\beta\\
+&= [U \Sigma \Sigma^* U^*]_\beta.
+\end{align*}
+Let $[\Sigma \Sigma^*]_\beta=D$ with $D$ diagonal with entries $\sigma_i^2=\lambda_i$ for the $i$th diagonal element. Now notice that we have
+\begin{align*}
+(AA^*)[U]_\beta&=D[U]_\beta &&\textrm{since $U$ is unitary, and $D$ is diagonal}\\
+\implies (AA^*)[u_i]_\beta &= \lambda_i [u_i]_\beta &&\textrm{by taking the $i$th columns of $[U]_\beta$ to be $[u_i]_\beta$}.
+\end{align*}
+Hence we have that $TT^*(u_i)=\lambda u_i$.
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (\S 6.7  Problem 13.)} Prove that if $A$ is a positive semidefinite matrix, then the singular values of $A$ are the same as the eigenvalues of $A$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $A$ is positive definite we can write $A=BB^*$. Now $B=U\Sigma V^*$ via the SVD. By the previous problem, we then have 
+\begin{align*}
+BB^* = U\Sigma \Sigma^* U^*.
+\end{align*}
+We then have that $A=U\Sigma^2 U^{-1}$ by above as a singular value decomposition for $A$ with singular values $\sigma_i^2$. This is also an eigenvalue decomposition with eigenvalues $\sigma_i^2$.   
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 6.7 Problem 14.)} Prove that if $A$ is a positive definite matrix and $A=U\Sigma V^*$ is a singular value decomposition of $A$, then $U=V$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+If $A$ is positive definite then $A$ is also positive semidefinite. By the previous problem we found the singular values of $A$ are the same as the eigenvalues of $A$. It follows that the singular value decomposition $A=U\Sigma V^*$ is equivalent to $A=PDP^{-1}$ which means that $\Sigma = D$ and hence $V^*=P^{-1}=U^{-1}$. Specifically we have that $V=U$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 6.7 Problem 15.)} Let $A$ be a square matrix with a polar decomposition $A=WP$. 
+\begin{enumerate}[(a)]
+\item Prove that $A$ is normal if and only if $WP^2=P^2W$.
+\item Use (a) to prove that $A$ is normal if and only if $WP=PW$.
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+
+\item First note that $P^2=V\Sigma^2 V^*$, $P^*P=V\Sigma^* \Sigma V^*$ and $PP^*=V\Sigma \Sigma^* V^*$. But we have that $\Sigma^2=\Sigma^* \Sigma= \Sigma \Sigma^*$. Thus $P^2=P^*P=PP^*$.  Then
+\begin{align*}
+AA^*&=A^*A\\
+\iff WPP^*W^*&=P^*P\\
+\iff WP^2&=P^2W.
+\end{align*}
+Hence we have that $A$ is normal if and only if $WP^2=P^2W$.
+
+\item Using (a) we have
+\begin{align*}
+P^2&=WP^2W*=(WPW^*)^2\\
+\iff P&=WPW^*\\
+\iff PW&=WP.
+\end{align*}
+
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7. (\S 6.7 Problem 21.)} Let $V$ and $W$ be finite-dimensional inner product spaces, and let $T\colon V \to W$ be linear. Prove the following results.
+\begin{enumerate}[(a)]
+\item $TT^\dagger T = T$.
+\item $T^\dagger TT^\dagger=T^\dagger$.
+\item Both $T^\dagger T$ and $TT^\dagger$ are self-adjoint.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For each part we will let $A=[T]_\beta$ for some basis $\beta$ and let $A=U\Sigma V^*$ by SVD.
+\begin{enumerate}[(a)]
+\item We have 
+\begin{align*}
+AA^\dagger A&= (U\Sigma V^*)(V\Sigma^\dagger U^*)(U\Sigma V^*)\\
+&= U\Sigma \Sigma^\dagger \Sigma V^*\\
+&= U\Sigma V^*=A.
+\end{align*}
+\item We have
+\begin{align*}
+A^\dagger A A^\dagger &= (V\Sigma^\dagger U^*)(U\Sigma V^*)(V\Sigma^\dagger U^*)\\
+&= V\Sigma^\dagger \Sigma \Sigma^\dagger U^*\\
+&= V\Sigma^\dagger U^*=A^\dagger
+\end{align*}
+\item We have
+\begin{align*}
+(A^\dagger A)^*&=(V\Sigma^\dagger \Sigma V^*)^*= (VV^*)^*=A^\dagger A &&\textrm{and}\\
+(AA^\dagger)^* &=(U\Sigma \Sigma U^*)^*=(UU^*)=AA^\dagger.
+\end{align*}
+So both are self adjoint.
+\end{enumerate}
+
+\end{proof}
+
+\pagebreak
+
+\end{document}
+

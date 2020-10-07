@@ -1,0 +1,169 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 571, Homework 9}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} 
+Consider the CW-complex strucutre on real projective space $\R P^n$ that has a single $k$-cell for each $0\leq k\leq n$. Using this CW structure, compiute the cellular homology of $\R P^n$.
+
+\noindent \emph{Remark: Some intermediate steps look different for the case of $n$ odd versus $n$ even.}
+
+\noindent \emph{Remark: I encourage you to try things on your own, potentially get very stuck, and then consult Example 2.42 on page 144 of Hatcher! And if you have questions on Example 2.42, definitely come talk to me.}
+
+
+\begin{proof}
+Given this CW-complex structure on $\R P^n$, we need to find the degree of the composition map
+\[
+S^{k-1}\xrightarrow{\varphi} \R P^{k-1} \xrightarrow{q} \R P^{k-1}/\R P^{k-2} = S^{k-1}.
+\]
+This $\varphi$ is the 2-sheeting covering projection, and $q$ a quotient map.  We have that $q\varphi$ is a homeomorphism when restricted to each component of $S^{k-1} - S^{k-2}$.  These homeomorphisms are obtained by precomposing with the antipodal map of $S^{k-1}$ which has degree $(-1)^k$ which gives that $\deg q \varphi = \deg \id + \deg (-\id)=1+(-1)^k$.  This means that $d_k$ is multiplication by $0$ or multiplication by $2$ depending on the parity of $k$.  Then we have
+\begin{align*}
+0\rightarrow \Z \xrightarrow{2} \Z \xrightarrow{0} \cdots \xrightarrow{2} \Z \xrightarrow{0} \Z \xrightarrow{2} \Z \xrightarrow{0} \Z \rightarrow 0 && \textrm{if $n$ is even}\\
+0\rightarrow \Z \xrightarrow{0} \Z \xrightarrow{2} \cdots \xrightarrow{2} \Z \xrightarrow{0} \Z \xrightarrow{2} \Z \xrightarrow{0} \Z \rightarrow 0 && \textrm{if $n$ is odd.}
+\end{align*}
+Then, computing homology gives that
+\[
+H_p(\R P^n) = 
+\begin{cases}
+\Z, & p=0, \textrm{ and } p=n \textrm{ if $n$ odd};\\
+\Z/2\Z, & \textrm{$p$ odd and $0<p<n$};\\ 
+0, & \textrm{otherwise}.
+\end{cases}.
+\]
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 2.} 
+Compute the homology of $\R P^n$ with $\Z/2\Z$ coefficients (compute $H_i(\R P^n; \Z / 2\Z)$ for all $i\geq 0$). Use the definition of homology with coefficients, not Corollary 3A.6.
+
+\begin{proof}
+Doing this with $\Z / 2\Z$ coefficients, we get
+\begin{align*}
+0\rightarrow \Z/2\Z \xrightarrow{2} \Z/2\Z \xrightarrow{0} \cdots \xrightarrow{2} \Z/2\Z \xrightarrow{0} \Z/2\Z \xrightarrow{2} \Z/2\Z \xrightarrow{0} \Z/2\Z \rightarrow 0 && \textrm{if $n$ is even}\\
+0\rightarrow \Z/2\Z \xrightarrow{0} \Z/2\Z \xrightarrow{2} \cdots \xrightarrow{2} \Z/2\Z \xrightarrow{0} \Z/2\Z \xrightarrow{2} \Z/2\Z \xrightarrow{0} \Z/2\Z \rightarrow 0 && \textrm{if $n$ is odd.}
+\end{align*}
+Then notice that the multiplication by $2$ maps elements in $\Z/2\Z$ to $0$, so each kernel will be $\Z/2\Z$ for $p=0,1,\dots,n$ and the image will be $0$.  Hence we have
+\[
+H_p(\R P^n;\Z/2\Z)=
+\begin{cases}
+\Z/2\Z,& p=0,1,\dots,n;\\
+0, &\textrm{otherwise}.
+\end{cases}
+\]
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 3.} 
+Compute the homology of $\R P^n$ with $\Z/3\Z$ coefficients (compute $H_i(\R P^n; \Z / 3\Z)$ for all $i\geq 0$). Use the definition of homology with coefficients, not Corollary 3A.6.
+
+\begin{proof}
+Now we get the following
+\begin{align*}
+0\rightarrow \Z/3\Z \xrightarrow{2} \Z/3\Z \xrightarrow{0} \cdots \xrightarrow{2} \Z/3\Z \xrightarrow{0} \Z/3\Z \xrightarrow{2} \Z/3\Z \xrightarrow{0} \Z/3\Z \rightarrow 0 && \textrm{if $n$ is even}\\
+0\rightarrow \Z/3\Z \xrightarrow{0} \Z/3\Z \xrightarrow{2} \cdots \xrightarrow{2} \Z/3\Z \xrightarrow{0} \Z/3\Z \xrightarrow{2} \Z/3\Z \xrightarrow{0} \Z/3\Z \rightarrow 0 && \textrm{if $n$ is odd.}
+\end{align*}
+Note, that multiplication by 2 on $\Z/3\Z$ is an isomorphism by sending $0\mapsto 0$, $1\mapsto 2$, and $2\mapsto 1$.  For $p=0$, take a look at
+\begin{align*}
+\cdots \xrightarrow{2} \Z/3\Z \xrightarrow{0} \Z/3\Z \rightarrow 0,
+\end{align*}
+and we see that $H_0(\R P^n; \Z/3\Z)=(\Z/3\Z)/0=\Z/3\Z$.  For $p=n$, take a look at
+\begin{align*}
+0 \rightarrow \Z/3\Z \xrightarrow{2} \Z/3\Z \rightarrow \Z/3\Z && \textrm{if $n$ is even}\\
+0 \rightarrow \Z/3\Z \xrightarrow{0} \Z/3\Z \rightarrow \Z/3\Z && \textrm{if $n$ is odd}
+\end{align*}
+which tells us that for $n$ odd we have $H_n(\R P^n;\Z/3\Z)= \Z/3\Z$ and for $n$ even we have $H_n(\R P^n;\Z/3\Z)=0$.  For $0<p<n$ we find that $H_p(\R P^n;\Z/3\Z)=0$ since when $\ker d_p = \Z/3\Z$ then $\im d_{p-1} = \Z/3\Z$ and else $\ker d_p = 0$.  Hence we have
+\[
+H_p(\R P^n;\Z/3\Z)=
+\begin{cases}
+\Z/3\Z,& p=0, \textrm{ and $p=n$ if $n$ is odd};\\
+0, &\textrm{otherwise}.
+\end{cases}
+\]
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 4.} 
+Derive your answers to \#2 and \#3 by applying Corollary 3A.6 to your answer from \#1.
+
+\begin{proof}
+From Problem 1 we have
+\[
+H_p(\R P^n) = 
+\begin{cases}
+\Z, & p=0, \textrm{ and } p=n \textrm{ if $n$ odd};\\
+\Z/2\Z, & \textrm{$p$ odd and $0<p<n$};\\ 
+0, & \textrm{otherwise}.
+\end{cases}
+\]
+Now, we can apply corollary 3A.6 and we find
+\[
+H_p(\R P^n;\Z/2\Z)=
+\begin{cases}
+\Z/2\Z,& p=0,1,\dots,n;\\
+0, &\textrm{otherwise}.
+\end{cases}
+\]
+Also,
+\[
+H_p(\R P^n;\Z/3\Z)=
+\begin{cases}
+\Z/3\Z,& p=0, \textrm{ and $p=n$ if $n$ is odd};\\
+0, &\textrm{otherwise}.
+\end{cases}
+\]
+\end{proof}
+
+\end{document}
+
+
+

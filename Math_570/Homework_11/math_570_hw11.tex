@@ -1,0 +1,140 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 11}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\obj}{\ensuremath{\mathrm{Obj}}}
+\newcommand{\im}{\ensuremath{\mathrm{im}}}
+\newcommand{\Id}{\ensuremath{\mathrm{Id}}}
+\newcommand{\RP}{\ensuremath{\mathbb{RP}}}
+
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} ~
+\begin{enumerate}[(a)]
+\item Let $X$ and $Y$ be topological spaces with $f\colon X\to Y$ continuous. Suppose $p_n\in X$ is a sequence of points converging to $p\in X$. Prove that $f(p_n)$ converges to $f(p)$.
+\item The following is related to pages 344--345 of our book. A sequence of abelian groups and group homomorphisms $\ldots \to G_{p+1} \xrightarrow{\alpha_{p+1}}G_p \xrightarrow{\alpha_p} G_{p-1} \to \ldots$ is \emph{exact} if $\im(\alpha_{p+1}) = \ker(\alpha_p)$ for each $p$. A 5-term exact sequence of the form
+\[0\to A\xrightarrow{\alpha} B\xrightarrow{\beta} C\to 0\]
+is called a \emph{short exact sequence}. Here the abelian groups ``$0$" on either end are the trivial group. Prove in a short exact sequence that $\alpha$ is injective, that $\beta$ is surjective, and that there is a group isomorphism $C\cong B/\alpha(A)$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item Suppose $f(p_n)$ does not converge to $f(p)$. Then there exists an open neighborhood $N_f(f(p))$ such that $N_f(f(p))\cap f(p_n)=\emptyset$. Note that $f^{-1}(N(f(p)))=N(p)$ is an open neighborhood containing $p$, and thus $N(p)\cap p_n \neq \emptyset$. This is a contradiction since we would necessarily have that $f(N(p))\subseteq N(f(p))$ contains points of $f(p_n)$, yet we supposed the contrary. Thus, $f(p_n)$ converges to $f(p)$.
+
+\item Denote $e_X$ as the identity element of which ever group $X$. Then, define $\varphi\colon 0\to A$ and note that the exact sequence implies that $\ker(\alpha)=\im(\varphi)=e_A$. Then this means that $e_A$ is the only element in $A$ such that $\alpha$ maps to $e_B$. This implies injectivity of $\alpha$. Hence $\alpha$ is injective.  Similarly define $\psi \colon C \to 0$ and note that $\im(\beta)=\ker(\psi)=C$. Since $\im(\beta)=C$ we have that $\beta$ is surjective. Note that the first isomorphism theorem implies that $C\cong B/\alpha(A)$ since $\alpha(A)=\ker(\beta)$.
+
+\end{enumerate}
+
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} In class on Monday 11/13 we will show that a continuous map $f\colon X\to Y$ produces a homomorphsim of singular homology groups $f_*\colon H_p(X)\to H_p(Y)$, and furthermore that this produces a $p$-dimensional singular homology functor $H_p\colon \mathrm{Top}\to \mathrm{Ab}$ from the category of topological spaces to the category of abelian groups (Proposition~13.2). If $A\subseteq X$ is a retract of $X$, then prove that one can have an injective group homomorphism $H_p(A)\to H_p(X)$ and a surjective group homomorphism $H_p(X)\to H_p(A)$. 
+
+\emph{Remark: This is essentially Corollary~13.4 in our book.}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Note that for a retract we have $r\colon X \to A$ is such that $r\vert_A = \Id_A$ and $\iota \colon A \to X$ is such that $r\circ \iota = \Id_A$. Then $r_* \colon H_p(X)\to H_p(A)$ and $\iota_* \colon H_p(A)\to H_p(X)$, and since $H_p$ is a functor, we have that $r_*$ and $\iota_*$ are group homomorphisms.  Now fix $a_1,a_2 \in H_p(A)$ and consider
+\begin{align*}
+\iota_* (a_1) &= \iota_* (a_2)\\
+ \iota_* (a_1) \iota_*(a_2^{-1})&=e_{H_p(X)}\\
+\iff r_* (\iota_* (a_1 a_2^{-1}))&=r_* (e_{H_p(X)})\\
+a_1 a_2^{-1}&=e_{H_p(A)}\\
+a_1&=a_2.
+\end{align*}
+So $\iota_*$ is an injective group homomorphism. Now consider any $a\in H_p(A)$. Then
+\begin{align*}
+a&=r_*\circ \iota_* (a)\\
+a&=r_* (\iota_*(a)),
+\end{align*}
+which shows that we have an element $x=\iota_*(a)\in H_p(X)$ so that $r_*(x)=a$. Thus $r_*$ is a surjective group homomorphism.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.}  Let $n\ge 0$ be an integer. The Brouwer fixed point theorem states that every continuous map $f\colon\overline{B^n}\to\overline{B^n}$ has a fixed point, i.e.\ a point $x\in \overline{B^n}$ with $f(x)=x$. Prove the Brouwer fixed point theorem, as follows.
+\begin{enumerate}[(a)]
+\item Suppose for a contradiction that a continuous map $f\colon\overline{B^n}\to\overline{B^n}$ has no fixed points. Use $f$ to define a continuous retract $g\colon \overline{B^n}\to S^{n-1}$. If you like you can define this map precisely with English words and a picture (instead of a formula). You do not need to prove that your map $g$ is continuous.
+\item Use the facts $H_{n-1}(\overline{B^n})=0$ and $H_{n-1}(S^{n-1})\cong \Z$ (which we'll prove later) to derive a contradiction.
+\end{enumerate}
+
+\emph{Remark: See problems 13-7 and 8-6 in our book if you like. The proof outline in 8-6 (for $n=2$ only) is slightly different; note that the book's map $\phi\colon \overline{B^2}\to S^{1}$ need not be a retract. You could also use this proof outline if you so choose.}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+\begin{enumerate}[(a)]
+\item Suppose for a contradiction that we have a continuous map $f\colon \overline{B^n} \to \overline{B^{n}}$ with no fixed points, i.e. each $f(x)=y\in \overline{B^n}$ with $y\neq x$. Specifically this means that we have for any $f(x)$, a unique line from $f(x)$ to a point $f(x')\in \partial \overline{B^n}=S^{n-1}$. Let $g\colon f(\overline{B^n})\to S^{n-1}$ be the continuous function taking any point $f(x)\in B^n$ to $\partial \overline{B^n}$. This $g\circ f$ is then a retract from $\overline{B^n}$ to $S^{n-1}$.
+
+\item We have that $f_* \colon H_{n-1}(\overline{B^n}) \to H_{n-1}(S^{n-1})$ is surjective by Problem 2. However, there does not exist a surjective group homomorphism from $0$ to $\Z$ which shows that $f_*$ was not a retract. Thus, by this contradiction, we must have that $f$ had at least one fixed point. 
+\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+
+
+\end{document}
+

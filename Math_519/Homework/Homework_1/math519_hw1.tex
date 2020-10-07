@@ -1,0 +1,202 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 519, Homework 1}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{hyperref}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\id}{\mathrm{Id}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} Use the CREs to show that $f(z)=e^{-y} \sin x -ie^{-y} \cos x$ is entire.
+
+\begin{proof}
+We must show that $f(z)=f(x,y)=u(x,y)+iv(x,y)$ from above satisfies $u_x=v_y$ and $u_y=-v_x$ for all $z\in \C$.  We have
+\begin{align*}
+u_x&=e^{-y}\cos x\\
+u_y&=-e^{-y}\sin x\\
+v_x&=e^{-y}\sin x\\
+v_y&=e^{-y}\cos x.
+\end{align*}
+This shows that $u_x=v_y$ and $u_y=-v_x$, and thus $f$ is entire.
+\end{proof}
+
+\vspace*{1cm}
+
+
+\noindent\textbf{Problem 2.} Where are the Cauchy-Riemann equations satisfied for $g(z)=z\Im (z)$?
+
+\begin{proof}
+First we write this in terms of $x$ and $y$ so we get
+\begin{align*}
+g(z)&=z\Im (z)\\
+\implies g(x,y)&=(x+iy)(y)\\
+&=x^2+iy^2.
+\end{align*}
+This gives us that
+\begin{align*}
+u(x,y)&= x^2\\
+v(x,y)&= y^2.
+\end{align*}
+Then, taking the partial derivatives,
+\begin{align*}
+u_x &= 2x\\
+u_y &= 0\\
+v_x &= 0\\
+v_y &= 2y.
+\end{align*}
+Then, asserting that $u_x=v_y$ and $u_y=-v_x$, we find that we must have $x=y$.  Thus the CREs are satisfied only when $x=y$.
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 3. S\&S 1.1.} Describe geometrically the sets of points $z$ in the complex plane defined by the following relations:
+\begin{enumerate}[(a)]
+\item $|z-z_1|=|z-z_2|$ where $z_1,z_2 \in \C$.
+\item $1/z=\overline{z}$.
+\item $\Re(z)=3$.
+\item $\Re(z)>c$, (resp., $\geq c$) where $c\in \R$.
+\item $\Re(az+b)>0$ where $a,b\in \C$.
+\item $|z|=\Re(z)+1$.
+\item $\Im (z) = c$ with $c\in \R$.
+\end{enumerate}
+
+
+\begin{proof}~
+\begin{enumerate}[(a)]
+\item This is the set of points that are equidistant from $z_1$ and $z_2$.  In fact, the set is a line of points that passes through the midpoint of the two points $z_1$ and $z_2$.  The line will have slope that is orthogonal to the line between $z_1$ and $z_2$.
+\item This is the unit circle.
+\item This is the vertical line that passes through $3$ on the real axis.
+\item This is all complex numbers that are to the right of the vertical line passing through $c$ on the real line, but not including the line passing through $c$ itself (except when we allow for $\geq c$).
+\item Note that $az+b$ is an affine translation of the complex plane.  $b$ moves the origin, and $a$ scales and rotates the plane.  Now, since we just want the real part of this to be positive, we just need the real part of $az$ and $b$ to both be positive.  Then the way $a$ affects the set of points $z$ that satisfy $\Re(az+b)$ is a bit more complicated.  But what will happen is we will end up with an open half plane that is rotated by the argument of $a$ (i.e., $a=re^{i\theta}$ and $\arg(a)=\theta$) and translated by $b$.
+\item Here we have that $z=x+iy$ and that
+\begin{align*}
+|z|^2&=(x+1)^2\\
+\implies x^2+y^2&=x^2+2x+1\\
+\implies y^2&=2x+1.
+\end{align*}
+This is a parabola.
+\item This is a horizontal line that is $c$ units above the real axis.
+\end{enumerate}
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 4. S\&S 1.3.} With $\omega = se^{i\varphi}$, where $s\geq 0$ and $\varphi \in \R$, solve the equation $z^n = \omega$ in $\C$ where $n$ is a natural number. How many solutions are there?
+
+
+\begin{proof}
+There are $n$ unique solutions.  We note that if $z=\sqrt[n]{s} e^{i\varphi/n}$ then $z^n=\omega$.  However, we also have that $z=\sqrt[n]{s}e^{i\left( \frac{\varphi}{n}+\frac{2\pi i k}{n} \right)}$ for $k=0,1,\dots,n-1$ are solutions (with the $k=0$ being the first case I mentioned). 
+\end{proof}
+
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 5. S\&S 1.10.} Show that
+\[
+4 \frac{\partial}{\partial z} \frac{\partial}{\partial \overline{z}} = 4 \frac{\partial}{\partial \overline{z}} \frac{\partial}{\partial z} = \Delta,
+\]
+where $\Delta$ is the \textbf{Laplacian}
+\[
+\Delta = \frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}.
+\]
+
+\begin{proof}
+We have that 
+\begin{align*}
+\frac{\partial}{\partial z} &= \frac{1}{2} \left( \frac{\partial}{\partial x} + \frac{1}{i} \frac{\partial}{\partial y} \right)\\
+\frac{\partial}{\partial \overline{z}} &= \frac{1}{2} \left( \frac{\partial}{\partial x} - \frac{1}{i} \frac{\partial}{\partial y} \right).
+\end{align*}
+Then we have
+\begin{align*}
+4 \frac{\partial}{\partial z} \frac{\partial}{\partial \overline{z}} &= 4 \frac{1}{4} \left(\frac{\partial}{\partial x} + \frac{1}{i} \frac{\partial}{\partial y} \right)\left( \frac{\partial}{\partial x} - \frac{1}{i} \frac{\partial}{\partial y} \right)\\
+&= \frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\\
+&= \Delta\\
+&= 4 \frac{\partial}{\partial \overline{z}} \frac{\partial}{\partial z}.
+\end{align*}
+Note the last equality is due to commutivity.  
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 6. S\&S 1.11.} Use Exercise 10 to prove that if $f$ is holomorphic in the open set $\Omega$, then the real and imaginary parts of $f$ are \textbf{harmonic}; that is, their Laplacian is zero.
+
+
+\begin{proof}
+If $f$ is holomorphic on $\Omega$, then for $z_0\in \Omega$, $\frac{\partial f}{\partial \overline{z}} (z_0)=0$. Thus $\Delta =0$ since $\frac{\partial}{\partial \overline{z}} =0$.
+\end{proof}
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 7. S\&S 1.13ab.} Suppose that $f$ is holomorphic in an open set $\Omega$. Prove that in any one of the following cases:
+\begin{enumerate}[(a)]
+\item $\Re(f)$ is constant;
+\item $\Im(f)$ is constant;
+\end{enumerate}
+one can conclude that $f$ is constant.
+
+\begin{proof}
+Use the CREs.  We have $f(x,y)=u(x,y)+iv(x,y)$.  If $\Re(f)$ is constant, then $v_x=v_y=0$ and hence $u_x=u_y=0$ and thus $f$ is constant. The proof for (b) is analogous.
+\end{proof}
+
+
+\vspace*{1cm}
+
+\noindent\textbf{Problem 8. S\&S 1.24.} Let $\gamma$ be a smooth curve in $\C$ parametrized by $z(t)\colon [a,b] \to \C$. Let $\gamma^-$ denote the curve with the same image as $\gamma$ but with the reverse orientation. Prove that for any continuous function $f$ on $\gamma$
+\[
+\int_\gamma f(z) dz = -\int_\gamma f(z)dz.
+\]
+
+
+\begin{proof}
+We have
+\begin{align*}
+\int_\gamma f(z)dz &= \int_a^b f(z(t))z'(t)dt\\
+&= \int_{a}^{b} f(z(b+a-t))(-z'(b+a-t))dt\\
+&= -\int_{a}^{b} f(z(b+a-t))z'(b+a-t)dt\\
+&= -\int_{\gamma^-} f(z)dz.
+\end{align*}
+\end{proof}
+
+\end{document}
+
+
+

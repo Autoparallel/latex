@@ -1,0 +1,179 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 3}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 3.8)} If $\sum a_n$ converges and if $\{b_n\}$ is monotonic and bounded, prove that $\sum a_n b_n$ converges.
+ 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $\sum a_n$ converges we know that the partial sums $A_N$ form a bounded sequence.  Since $\{b_n\}$ is bounded and monotonic we have that $\{b_n\}\to L$.  Then if $\{b_n\}$ is nondecreasing we have that $\lim_{n\to \infty} L-b_n=0$.  Call the sequence $\{c_n\}=\{L-b_n\}$, and note that $\sum a_n c_n = \sum a_n b_n - b\sum a_n$ so we have that $\sum a_n b_n$ converges.  Otherwise $\{b_n\}$ is nonincreasing so $\lim_{n\to \infty} b_n-L=0$ and we can call $\{d_n\}=\{b_n-L\}$.  Now we have $\sum a_n d_n = L \sum a_n -\sum a_n b_n$. So $\sum a_n b_n$ also converges.  
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (Rudin 3.16)} Fix $\alpha>0$. Choose $x_1 > \sqrt{\alpha}$ and recursively define the sequence $\{x_n\}$ by
+\[
+x_{n+1}=\frac{1}{2}\left( x_n + \frac{\alpha}{x_n}\right)
+\]
+\begin{enumerate}[(a)]
+\item Prove that $\{x_n\}$ decreases monotonically and that $\lim x_n = \sqrt{\alpha}$. 
+\item Let $\epsilon_n=x_n-\sqrt{\alpha}$ be the error in approximating $\sqrt{\alpha}$ by $x_n$, and show that \[\epsilon_{n+1}=\frac{e_n^2}{2x_n}<\frac{\epsilon_n^2}{2\sqrt{\alpha}}\]
+Conclude that, with $\beta = 2\sqrt{\alpha}$ \[\epsilon_{n+1}<\beta\left( \frac{\epsilon_1}{\beta}\right)^{2n}\]
+\item Part (b) shows that this is an excellent method of approximating square roots. As an example, show that for $\alpha=3$ and $x_1=2$, then $\frac{\epsilon_1}{\beta}<\frac{1}{10}$, and hence
+\[
+\epsilon_5 < 4 \times 10^{-16} \textrm{ and } \epsilon_6<4\times 10^{-32}
+\]
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+We will prove monotonicity by induction.  So for the base case, consider 
+\begin{align*}
+x_2&=\frac{1}{2}\left( x_1 + \frac{\alpha}{x_1}\right)\\
+&= \frac{x_1}{2}\left(1+\frac{\alpha}{x_1^2}\right)\\
+&<\frac{x_1}{2}(1+1)&\textrm{since $x_1^2>\alpha$}\\
+&=x_1
+\end{align*}
+Now assume this is true for $i=1,...,n-1$. Then we have to show $x_n<x_{n-1}$. So, assume that $x_n\geq x_{n-1}$ so thus we have that
+\begin{align*}
+x_{i+1}&\leq x_n\leq x_{i}\\
+\iff \frac{x_i+\alpha}{2}&\leq \frac{x_{n-1}+\alpha}{2}\leq \frac{x_{i-1}+\alpha}{2}
+\end{align*}
+Which contradicts $x_{n-1}<x_{n-2}$, since $x_{n-1}<x_{n-2}<...<x_{i+1}<x_{i}$. Thus we have $x_n$ is decreasing. 
+
+To find $\lim_{n\to \infty}x_n$ show that $\lim_{n\to \infty}x_n=\lim_{n\to \infty}x_{n+1}=L$ So we have
+\begin{align*}
+L&=\frac{1}{2}\left(L+\frac{\alpha}{L}\right)\\
+\frac{L}{2}&=\frac{\alpha}{2L}\\
+L^2&=\alpha\\
+L&=\pm \sqrt{\alpha}
+\end{align*}
+We can show that $+\sqrt{\alpha}$ is a lower bound for our sequence $\{x_n\}$ by supposing that for some $x_{n}\leq \sqrt{\alpha}$ and we have that $x_{n+1}\leq x_n$. But, instead, we have that
+\begin{align*}
+x_{n+1}&=\frac{1}{2}\left(x_n+\frac{\alpha}{x_n}\right)\\
+&>\frac{x_n}{2}\left(1+1\right)\\
+&=x_n
+\end{align*}
+Which contradicts that $x_n$ is decreasing.  Thus we have that $\sqrt{\alpha}$ is a lower bound, thus we can choose the positive root from above, and we are done.
+\end{proof}
+
+\begin{solution}[Part (b)]
+We have
+\begin{align*}
+\epsilon_{n+1}&=x_{n+1}-\sqrt{\alpha}\\
+&=\frac{x_n^2+\alpha}{2x_n}-\sqrt{\alpha}\\
+&=\frac{(\epsilon_n+\sqrt{\alpha})^2}{2x_n}-\sqrt{\alpha}\\
+&=\frac{\epsilon_n+2\epsilon\sqrt{\alpha}+2\alpha}{2x_n}-\sqrt{\alpha}\\
+&=\frac{\epsilon_n^2}{2x_n}+\frac{\epsilon_n\sqrt{\alpha}+\alpha}{\epsilon_n+\sqrt{\alpha}}-\sqrt{\alpha}\\
+&=\frac{\epsilon_n^2}{2x_n}+\sqrt{\alpha}-\sqrt{\alpha}\\
+&=\frac{\epsilon_n^2}{2x_n}\\
+&<\frac{\epsilon_n^2}{2\sqrt{\alpha}} &\textrm{since $x_n>\sqrt{\alpha}$}
+\end{align*}
+Then let $\beta=2\sqrt{\alpha}$ and we have that 
+\begin{align*}
+\frac{\epsilon_{n+1}}{\beta}&<\epsilon_n^2\\
+&<\frac{\epsilon_{n-1}^2}{\beta}\\
+&<\left(\frac{\epsilon_{n-2}^2}{\beta}\right)^2\\
+&<\left(\left(\frac{\epsilon_{n-3}^2}{\beta^2}\right)^2\right)^2\\
+&\vdots\\
+&<\left(\frac{\epsilon_1}{\beta}\right)^{2n}\\
+\implies \epsilon_{n+1}&<\beta\left(\frac{\epsilon_1}{\beta}\right)^{2n}
+\end{align*}
+\end{solution}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (Rudin 3.20)} Suppose that $\{p_n\}$ is a Cauchy sequence in a metric space $X$, and some subsequence $\{p_n\}$ converges to a point $p\in X$. Prove that the full sequence $\{p_n\}$ converges to $p$. (\emph{Note:} We are not assuming $X$ is compact or $\mathbb{R}^k$, so you can't immediately say that $\{p_n\}$ is Cauchy and therefore it converges.) 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Since $\{p_n\}$ converges we have that for $N_1\in \mathbb{N}$ that $|p_{n_k}-p|<\frac{\epsilon}{2}$ for $n_k>N_1$.  Then since $\{p_n\}$ is Cauchy we have that $|p_n-p_m|<\frac{\epsilon}{2}$ for $n>N_2\in \mathbb{N}$.  Then take $N=\max(\{N_1,N-2\})$ and we have that for $n,n_k>N$
+\begin{align*}
+|p_{n_k}-p|&=|p_{n_k}-p_n+p_n-p|\\
+&\leq |p_{n_k}-p_n|+|p_n-p|\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{align*}
+Which shows that $\{p_n\}\to p$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Let $\{a_n\}$ be a sequence of real numbers satisfying $\lim \inf |a_n| =0$. Prove that there exists a subsequence $\{a_{n_k}\}$ so that $\sum_{k=1}^\infty a_{n_k}$ converges.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof} 
+Since $\lim\inf |a_n|=0$ we have that some subsequence $\{a_{n_k}\}$ converges to $0$.  Fix $\epsilon>0$ and, specifically, choose $a_{n_k}<\frac{\epsilon}{2^k}$ so that
+\begin{align*}
+\left|\sum_{k=n}^m a_k\right|&=\left|\sum_{k=n}^m \frac{\epsilon}{2^k}\right|\\
+&<\epsilon
+\end{align*}
+So we have that $\sum_{k=1}^\infty a_{n_k}$ converges since we have shown that the series is Cauchy.
+\end{proof}
+
+\pagebreak
+
+
+
+
+
+\end{document}
+

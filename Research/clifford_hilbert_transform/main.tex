@@ -1,0 +1,510 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{environments}
+
+% package for todo 
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\setuptodonotes{size=\scriptsize,backgroundcolor=red!15!white} 
+
+\usepackage{showkeys} %show cites and refs
+
+%hspace before small will move the keywords around
+% \providecommand{\keywords}[1]
+% {
+%     \hspace*{0pt}\small	
+%   \textbf{\textit{Keywords--}} #1
+% }
+
+\title{DN map and Clifford-Hilbert transform}
+% \renewcommand{\maketitlehookb}{\centering Solving Problems in Applied Mathematics\\
+% Colorado State University}
+\author{Colin Roberts}
+% \date{October 21$^\textrm{st}$ 2019}
+
+
+\begin{document}
+
+ \begin{titlingpage}
+     \maketitle
+     \vfill
+     \begin{abstract}
+        \textcolor{red}{TODO}
+     \end{abstract}
+ \end{titlingpage}
+
+\section{Introduction}
+
+The the investigation of the Calder\'on problem and associated Dirichlet-to-Neumann operator, Belishev and Sharafutdinov introduce a Hilbert transform on differential forms. The Hilbert transform is an operator used in signal analysis and allows one to transform a real harmonic function into its harmonic conjugate.  That is, a harmonic function plus its Hilbert transform are harmonic via the Cauchy-Riemann equations. Likewise, Belishev and Sharafutdinov's Hilbert transform allows one to construct harmonic differential forms that are conjugate via generalized Cauchy-Riemann equations.  As in the complex plane, satisfying these generalized Cauchy-Riemann equations is equivalent to being in the kernel of a specific differential operator.  In the complex plane, this is the Wirtinger derivative and on a Riemannian manifold this is the Dirac operator $d-\delta$.
+
+Functions in the kernel of the Wirtinger derivative are the holomorphic functions whereas the functions in the kernel of the Dirac operator are referred to as monogenic in the world of Clifford analysis. Along with this, the algebraic structure of Clifford algebras is a way to generalize the algebraic structure one finds in the complex setting or in the setting of Hamilton's quaternions.  Thus, Clifford analysis is a convenient setting in which to propose generalizations of complex analysis. Indeed, many classic theorems of complex analysis are then readily generalized to spaces of higher dimensions.  Moreover, most of Clifford analysis is signature independent, and hence finds its place as a suitable object to study Lorentzian spacetime as well.
+
+In $\C$, one has use of the Cauchy integral which allows one to define a holomorphic function in a Jordan domain from values on the boundary.  Likewise, a form of the Cauchy integral is well defined on Clifford algebra valued functions for smooth domains with boundary in $\R^n$ and the Cauchy integral of Dirichlet data returns a monogenic paravector. In this paper we investigate the relationship between the conjugate harmonic forms found via the Hilbert transform proposed by Belishev and Sharafutdinov and the paravectors found by the Clifford-Cauchy integral.  In particular, given the Cauchy integral, there is a well defined notion of the Hilbert transform on multivector fields and we show that this Hilbert transform is equivalent to the transform of Belishev and Sharafutdinov.
+
+Moreover, this gives a direct relationship to the Dirichlet-to-Neumann operator.  In Belishev and Sharafutdinov show that the Hilbert transform acts as a sort of ``rotation operator" on the Cauchy data along the boundary. Likewise, the Hilbert transform on multivectors performs the same operation.  Indeed, this shows that the Dirichlet-to-Neumann operator is equivalent to knowledge of the Hilbert transform on regions in $\R^n$.
+ 
+\section{Preliminaries}
+Consider the space of Clifford fields on $\Omega$, $\cliffordfields$. In $\R^n$, take the standard orthonormal Cartesian coordinates $x^i$ and the corresponding global tangent vector field basis $e_i$. This space has a Clifford multiplication defined by the requirements $e_i e_j = -\delta_{ij}$ and $e_i e_j = -e_j e_i$.  Thus, the Clifford product of any two vectors $\alpha$ and $\beta$ leads to
+ \[
+ \alpha \beta = -\alpha \cdot \beta + \alpha \wedge \beta,
+ \]
+ where $\cdot$ is the usual Euclidean inner product and $\wedge$ is the exterior product. 
+
+The space of Clifford fields comes with a natural notion of a derivative called the \emph{Dirac operator} which is written in coordinates as
+ \[
+ D = \sum_{k=1}^n e_k \frac{\partial}{\partial x^k}.
+ \]
+ Notice that $D$ itself is a 1-vector and adopts the multiplication seen above. $D$ acts as the gradient on scalar fields and splits into a divergence and curl operator when acting on vector fields. That is, given a vector field $\alpha = \alpha_j e_j \in \R^3$, we have
+\begin{align*}
+\proj{0}{D\alpha} &= -\sum_{k=1}^3  \frac{\partial \alpha_k}{\partial x^k} = -\textrm{div}(\alpha),
+\end{align*}
+and
+\begin{align*}
+\proj{2}{D\alpha} &=  e_1 e_2 \left(\frac{\partial \alpha_2}{\partial x^1} - \frac{\partial \alpha_1}{\partial x^2}\right) + e_1 e_3 \left(\frac{\partial \alpha_3}{\partial x^1} - \frac{\partial \alpha_1}{\partial x^3}\right) + e_2 e_3 \left(\frac{\partial \alpha_3}{\partial x^2} - \frac{\partial \alpha_2}{\partial x^3}\right),
+\end{align*}
+ and if we identify the bivectors $e_i e_j$ with the unique right-handed orthogonal vector, $e_k$, (e.g., $e_1 e_2$ is identified with $e_3$) this reduces to the typical curl operator in $\R^3$.
+
+In general, this derivative can act on any homogeneous $k$-vector $A_k$ by
+ \[
+ D A_k = \proj{k-1}{DA_k} + \proj{k+1}{DA_k},
+ \]
+ which realizes a grade raising and lowering part of the derivative.  This allows us to define
+ \[
+ -\delta A_k = \proj{k-1}{DA_k}, \qquad d A_k = \proj{k+1}{DA_k},
+ \]
+ which are the \emph{codifferential} and \emph{exterior derivative}. Note that the inclusion of the minus for the codifferential is due to the requirement $dx^idx^j = -\delta^{ij}$. Note that the Laplace operator $\Delta$ is factored by $D$ and 
+ \[
+ -D^2 = -(d-\delta)^2 = d\delta + \delta d = \Delta.
+ \]
+ 
+ \begin{definition}
+    A multivector $M \in \cliffordfields$ is \emph{monogenic} if $M \in \ker (D)$. 
+ \end{definition}
+ 
+\noindent Note that a monogenic field is also harmonic since $D^2=\Delta$ and its components are harmonic as well. The latter is an extremely important fact.
+
+\section{Clifford analysis}
+
+\subsection{Complex analysis}
+
+\subsubsection{Cauchy integral formula and boundary value problems}
+The analysis of the complex numbers $\C$ leads to many strong theorems that are particularly useful in the setting of boundary value problems.  Take for example, a holomorphic function $f=u+iv$ defined on the interior simply connected region $\Omega$ with boundary $\partial \Omega$, then $f$ is completely determined by its (Dirichlet) boundary values $\phi$ given on $\partial \Omega$.  That is, let $\partial \Omega$ be the boundary we have the Cauchy integral formula
+\[
+f(z) = \frac{1}{2\pi i} \int_{\partial \Omega} \frac{\phi(\zeta)}{\zeta - z} d\zeta,
+\]
+and the boundary trace of $f(z)=\phi(z)$ leaves $f(z)$ continuous on the closure of the region $\overline{\Omega}$. The essence of this remarkable fact is that we have access to a one-to-one correspondence between Dirichlet data and a holomorphic function.
+
+It is not surprising that this analysis can be done with Neumann boundary data.  That is, if instead one was supplied with the outward normal derivative along the boundary, $E^\perp= \left.\frac{\partial f}{\partial \nu} \right\vert_{\partial \Omega}$, then (up to a constant) one can determine a unique holomorphic function in $\Omega$.  Specifically, we have
+\[
+f(z) = c - \frac{1}{2\pi i} \int_{\partial \Omega} E^\perp(\zeta) \frac{\log(1-z\overline{\zeta})}{\zeta} d\zeta,
+\]
+is the intended holomorphic function on $\Omega$.  Note here that we only know $f(z)$ up to the constant $c$, and if we assume we know the value for $f(z)$ anywhere on $\overline{\Omega}$, then we are able to determine $c$.
+
+Therefore, we have that knowledge of either the Dirichlet or Neumann data is enough to explicitly produce an (essentially) unique holomorphic function.  Indeed, knowledge of Cauchy data (the Dirichlet and Neumann data) provides a means to construct a unique holomorphic function with the corresponding Cauchy data on the boundary.  In fact, knowledge of the Dirichlet data suffices, and knowledge of the Neumann data and a single value of the Dirichlet data also suffices. This means the Cauchy boundary data is more than enough information to construct unique functions.
+
+\subsubsection{Holomorphic functions and Cauchy-Riemann equations}
+The previous paragraphs gave a means of building a holomorphic function via knowledge of a continuous function.  However, holomorphicity is defined in other ways.  For example, letting $f=u+iv$, we have that $f$ is holomorphic if the real part $u$ and the imaginary part $v$ satisfy the Cauchy-Riemann equations
+\[
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \qquad \textrm{and} \qquad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}.
+\]
+These equations, however, arise from the condition that
+\begin{equation}
+\label{eq:kernel_wirtinger}
+\frac{\partial}{\partial\overline{z}} f = 0,
+\end{equation}
+where $\frac{\partial}{\partial \overline{z}} = \frac{1}{2} \left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)$ is the Wirtinger derivative.
+
+The condition in Equation \ref{eq:kernel_wirtinger} is rather special.  It says that a complex function $f$ is holomorphic if $f$ is in the kernel of some specific differential operator.  The converse is also true.  Moreover, the facts here lead directly to the fact that
+\[
+\Delta u = 0 \qquad \textrm{and} \Delta v = 0,
+\]
+where $\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}$ is the Laplace operator.  Thus, a holomorphic function $f$ has components that are harmonic.  Hence, we say that the functions $u$ and $v$ are \emph{conjugate harmonic functions}. 
+
+One may also be inclined to remark that holomorphic functions admit a power series representation.  While true, we will find that this fact does not generalize where the stated facts will.  In the higher dimensional analogs, the loss of a power series representation is essentially due to the lack of commutivity of the algebraic structure.
+
+\subsubsection{Harmonic functions and the Hilbert transform}
+To this end, one would like to consider the case of finding solutions to the Laplace equation
+\[
+\Delta u = 0 \quad \textrm{in $\Omega$},
+\]
+when given Dirichlet or Neumann boundary values. Above, one sees that a holomorphic function is uniquely determined by  Dirichlet data, and is determined up to a constant by the Neumann data.  Also, the holomorphic function given by the Cauchy integral has harmonic components.  The question now to relate the boundary behavior of the harmonic conjugates $u$ and $v$ to the known boundary behavior of the holomorphic function $f$. In the case for the Calder\'on problem, we would like to reverse this process.
+
+The Cauchy integral gives rise to a boundary operator known as the \emph{Hilbert transform} $H$ which is well known in the field of signal processing.  In particular, $H$ acts nicely on holomorphic functions.  To this end, let $f=u+iv$ be holomorphic given by the Cauchy integral of the Dirichlet data $\phi = \mu+i\nu$, let $x\in \Omega$, and $\xi \in \partial \Omega$, then the Hilbert transform is defined by
+\[
+H_{\partial}[\mu](\xi) = \lim_{z \to \xi} v(z) = \nu(\xi),
+\]
+and we refer to this above limit as the \emph{non-tangential boundary limit}. Thus, the boundary Hilbert transform retrieves the imaginary part of the boundary data from knowledge of the real part and one can extend this transform to all of $\overline{\Omega}$ and find $H[u]=v$ in the interior. This means that the Hilbert transform is the operator that inputs a harmonic function $u$ in $\Omega$ and outputs the conjugate harmonic function $v$ such that $f=u+iv$ is holomorphic.
+
+ 
+\subsubsection{The Dirichlet-to-Neumann operator}
+Let $\Omega \in \R^2$ be a simply connected region and consider the Dirichlet boundary value problem 
+\[
+\label{eq:dirichlet_problem_r2}
+\begin{cases} \Delta u = 0 & \textrm{ in $\Omega$} \\  u\vert_{\partial \Omega} = \phi. \end{cases}.
+\]
+In this case, we take the solution $u \colon \Omega \to \R$ and boundary data $\phi \colon \partial \Omega \to \R$ to both be real valued functions.  Identifying $\R^2$ with $\C$, we can determine the harmonic conjugate of $u$ as the Hilbert transform $H[u]=v$ and thus create a holomorphic function $f=u+iv$.  Then, we have the non-tangential boundary values
+\[
+\lim_{x \to \xi} f = \phi(\xi) + H_{\partial}[\phi](\xi).
+\]
+
+Let us now consider the case where $\Omega$ is an unknown region in $\R^2$ and we have knowledge of the Cauchy boundary data.  The question is whether we can determine $\Omega$ from this information and relate the Cauchy data to the Hilbert transform. This is a specific instance of the Calder\'on problem for surfaces isometrically embedded into $\R^2$. In this scenario, we are given an operator $\Lambda$ known as the \emph{Dirichlet-to-Neumann} (DN) operator that inputs (sufficiently smooth) Dirichlet data $\phi = u\vert_{\partial \phi}$ for the boundary value problem in Equation \ref{eq:dirichlet_problem_r2} and outputs the corresponding Neumann data $E^\perp = \left.\frac{\partial u}{\partial \nu}\right\vert_{\partial \Omega}$.  This data allows us to uniquely construct a unique holomorphic $f$ through the Cauchy integral formula. Without access to the interior of $\Omega$, we are forced to work only along the boundary, but in principal one can construct $f$ simply from assuming the existence of the interior via the Cauchy integral though we may never know the values of $f$ explicitly.  This is not shocking, as in the statement of the Calder\'on problem we have never assumed knowledge of the values for $u$ either.
+
+The remarkable fact is that we can determine more boundary data and also gain access to the Hilbert transform on the boundary through only the DN operator. A priori, one has $\phi$ and $E^\perp$ and it is possible to compute the boundary gradient of $\phi$ given by $E^\parallel = \frac{\partial \phi}{\partial \tau}$, where $\tau$ is a unit tangent vector field on $\partial \Omega$.  
+
+For example, let $\partial \Omega$ be the unit circle and let $u(x,y)=x^2-y^2$. Then $u(x,y)=x^2-y^2$ and likewise we have the Dirichlet data $\phi(x,y)=x^2-y^2$. Then, $\nabla u(x,y) = 2x e_1 - 2y e_2$ and so $E^\perp = \nu \cdot (2x e_1 -2y e_2)$ is the Neumann data. The Cauchy integral of $\phi + H_{\partial}[\phi]$ then yields a holomorphic $f=u+iv$ where $v$ is the harmonic conjugate to $u$ given by $H[u]$.  Thus, if we are able to retrieve the boundary Hilbert transform $H_\partial$ from the DN operator, then we can construct a holomorphic function which contains the the harmonic conjugate and thus we gain knowledge of the interior Hilbert transform. 
+
+The realization is as follows.  We must define $H_\partial$ in such a way that $H_\partial [\phi]$ is the imaginary part of the boundary values of a holomorphic function. In the example case, we'd enjoy if
+\[
+H[\phi] = H[x^2-y^2] = 2xy.
+\]
+Now, note $\grad \phi = 2xe_1 - 2ye_2$.  Counterclockwise rotation by $\pi/2$ (i.e., multiplication by $i$), yields
+\[
+i \grad \phi =2ye_1 + 2xe_2.
+\]
+Then, the primitive to this field is is
+\[
+\nabla^{-1} i \grad \phi = 2xy + c,
+\]
+where $c$ is the constant of integration. In other words, $H_\partial = \nabla^{-1} \circ \Lambda$.  \textcolor{red}{This is indeed the operator Belishev defines in the 2D paper. Mention that.} Indeed, the Cauchy integral of $\phi + H[\phi]$ then yields $f=x^2-y^2 + 2ixy$ and hence $v=2ixy$ is the harmonic conjugate to $u=x^2-y^2$.
+
+This problem, however, is not of interest as knowledge of the boundary $\partial \Omega$ for a simply connected region of $\R^2$ determines $\Omega$.  But, it is nice to see that the Cauchy integral of $\phi=1$ returns the indicator function for $\Omega$ and that $H[1]=1$.  This information can lead us to more interesting problems.  For example when the interest lies in determining the coefficients of a related differential operator.  
+
+
+\subsubsection{Isotropic media}
+\todo[inline]{When we have the Hilber transform, can we recover the symbol of $\Delta_g$? This would lead to finding $g$.}
+
+Consider the second order differential operator given by 
+\[
+\nabla \cdot (\gamma \nabla),
+\]
+where $\gamma$ is a positive scalar function.  The Calder\'on problem then asks, given the Dirichlet to Neumann operator on $\Omega$, can one determine $\gamma$? Specifically, we are working with the boundary value problem
+\[
+\label{eq:dirichlet_problem_isotropic}
+\begin{cases} \nabla \cdot (\gamma \nabla u)  = 0 & \textrm{ in $\Omega$} \\  u\vert_{\partial \Omega} = \phi \end{cases}.
+\]
+Defining $H_\partial = \nabla^{-1} \circ \Lambda$ as before, does this link together two conjugate functions? Does that give us a method to determine $\gamma$?
+
+Indeed, take $H_\partial[\phi]$ and and let $f$ be the Cauchy integral of $\phi+H_\partial[\phi]$.  While it is clear that $f$ is holomorphic, there is no clear relationship requiring the components of $f=\alpha+\beta i$ to satisfy this boundary value problem.  What then is the difference between the function $u$ that satisfies Equation \ref{eq:dirichlet_problem_isotropic} and the real part of $f$, $\alpha$.  
+
+Without determining $\gamma$, one in principal has that $\nabla$-closed functions lie in the kernel of the differential operator in the above equation.  Clearly, 
+
+
+
+\subsubsection{Anisotropic media}
+
+
+\subsection{Generalizations}
+
+
+Generalizing the approach 
+
+
+
+
+
+Let $\Omega$ be a smooth region in $\R^n$ with boundary $\partial \Omega$, interior $\Omega^+$ and exterior $\Omega^- = \R^n \setminus \Omega$. We consider the following Dirichlet boundary value problem
+\begin{equation}
+\label{eq:dirichlet_problem}
+\begin{cases} \Delta u^\phi = 0 & \textrm{ in $\Omega$} \\  \iota^*( u) = \phi. \end{cases}.
+\end{equation}
+For the Calder\'on problem, the manifold $\Omega$ is unknown and one seeks to determine as much as possible about $\Omega$ from measurements along the boundary.  Due to the relationship between the EIT and Calder\'on problem, we use the notation $\phi$ for the Dirichlet boundary values since $\phi$ should be thought of as the prescribed voltage along the boundary. In this case, we imagine that $\Omega$ is constructed from an isotropic and homogeneous material leading to a constant conductivity.
+
+In correspondence with the EIT problem, we note that $E=du$ is the electric field. Hence, for any given solution to the Dirichlet problem, there is the corresponding Neumann data $E^\perp=\iota^*(\star d u)$. As with $\phi$, the notation $E^\perp$ is used as the Neumann data measured in the EIT problem corresponds to the electric field flux through the boundary. The set of both boundary conditions $(\phi, E^\perp)$ is the \emph{Cauchy data} and the \emph{Dirichlet-to-Neumann (DN) map} $\Lambda$ is defined such that $\Lambda \phi = \iota^*(\star d u^\phi)$. Note that this map $\Lambda$ is often referred to as the \emph{scalar} DN map as $\Lambda \colon C\ell_0^*(\partial \Omega) \to C\ell_{n-1}^*(\partial \Omega)$ inputs a scalar Dirichlet condition. An extension of the DN map to forms can be found in \cite{belishev_dirichlet_2008, sharafutdinov_complete_2013}. The solution to this homogeneous and isotropic version of the Calder\'on problem is then to recover $\Omega$ up to isometry from complete knowledge of the DN map $\Lambda$. 
+
+\subsection{Relating the DN map to the Hilbert transform on forms}
+\todo[inline]{Use \cite{belishev_dirichlet_2008} Cor. 3.4 to make all of this rigorous.}
+In \cite{belishev_dirichlet_2008}, Theorem 5.1 implies that if we have a solution $u^\phi$ to the Dirichlet problem and
+\begin{equation}
+\label{eq:conjugate_requirement}
+\left( \Lambda + (-1)^{n}d\Lambda^{-1}d\right)\phi = 0, 
+\end{equation}
+then there exists a \emph{conjugate} $\epsilon^\psi \in \cliffordkforms{n-2}$ with boundary trace $\psi = \iota^* \epsilon$ and $\epsilon$ is also coclosed in that $\delta \epsilon=0$. 
+
+
+\textcolor{red}{This should also be mentioning that $T$ is only an operator on exact forms (or traces of harmonic functions).  So, $T$ is a rotation operator only for these forms.  I think this could then be explained quite nicely in that sense. Equation 2.1 is handy. The sum there may be interesting to look at as we may have a cause where the Neumann harmonics aren't an issue.}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQAdD-HegPQBUXALb0cACwDGTYAAkAvn2BgAtOXkAKLgHlhMAOb0AlCHml0mXPkIpypYtTpNW7Zny5pxWAARcsYETEpGQU+AAYtDl0DY1NzEAxsPAIiMIpHBhY2RE5uCF5BQIlpRjlFCJ09QxMzCyTrVNIwjOdskABRdw40egAnJkYYRl9uMBHRYpl2xXJInt68JhHo6ri6qxSUMmaaTJccouDS6aVVdTm+xeHKmKMuMB9OjxhetFNHGCh9eCJQADNehBhEg7CAcBAkGQwfQsIx2OIIBAANYgXatdh+fL8ARrEAAoFIAAsNHBSAAzDQAEYwMBQJAqMlpJxZdgAFVRIEY9GpjAACpZkjYQL0sPpxDhcfjgYgKWCIYhiSBqbSkEy9m1WUo1PIOVyefz6pthaLxZLAdLQaTEGr0Qc8gUBCM4Lxet46TQ9UMDRshSKxRLanjzZCSfKbSy7QAZejCSlQehmgmIKFW2Xq9jupU0unWwNSomh1UkmFwnII5HveRAA
+\begin{tikzcd}
+E^\parallel \in \mathcal{E}^1(\partial \Omega) \arrow[rr, "T^{-1}"'] &                                                                                            & \mathcal{E}^{n-1}(\partial \Omega)\ni E^\perp \arrow[ll, "T"', bend right] \arrow[d, hook] \\
+\iota^*\mathcal{H}^0(\Omega) \arrow[rr, "\Lambda"] \arrow[u, "d"]    &                                                                                            & \iota^*\mathcal{H}^{n-1}(\Omega)                                                           \\
+                                                                     & u^\phi \in\mathcal{H}^0(\Omega) \arrow[lu, "\iota^*", hook] \arrow[ru, "\iota^* \star d"'] &                                                                                           
+\end{tikzcd}
+\]
+\textcolor{red}{The above diagram shows what's happening. By Cor. 3.4, it should be that $\star du^\phi \in \mathcal{E}^{n-1}(\partial \Omega)$ since we can find a representation that way. This is nice}
+
+
+Similarly, in \cite{belishev_dirichlet_2008}, the authors claim the representation of the \emph{Hilbert transform} as the map
+\[
+T= d\Lambda^{-1}.
+\]
+Specifically, this map is defined on exact boundary ($n$-1)-forms to yield boundary 1-forms. Given this definition, it's worth understanding the meaning behind this statement in Equation \ref{eq:conjugate_requirement}. We should now consider the statement as a map on the boundary values of the electric field by
+\begin{align*}
+    (\Lambda + (-1)^n d\Lambda^{-1} d)\iota^*(u^\phi) &= E^\perp + (-1)^n T \iota^*(E)\\
+\implies ~ E^{\perp} = (-1)^{n-1} T E^\parallel,
+\end{align*}
+where we let $\iota^*(E)=E^\parallel$ be components of $E$ tangential to $\partial \Omega$. In other words, up to a sign, the operator $T$ maps tangential components of the electric field $E^\parallel$ to the orthogonal components $E^\perp$. This leads to
+\[
+T \circ \iota^* = \iota^* \circ \star.
+\]
+Which means we can realize the commutative diagram
+\[
+\begin{tikzcd}
+\iota^*(u^\phi) \arrow[d, "d"'] \arrow[r, "\Lambda"] & \iota^*(\star d u^\phi) \\
+\iota^*(du^\phi) \arrow[ru, "T"']                    &                        
+\end{tikzcd}
+\]
+which leads us to $\Lambda = T\circ d$. Another perspective is to begin with the Neumann data $E^\perp=\iota^*(\star du)$ to which $\Lambda^{-1}E^\perp = \phi$ and hence we put $d\Lambda^{-1}E^\perp=d\phi = E^\parallel$ is the (boundary) gradient of the potential $\phi$.
+
+\begin{remark}
+    It seems the Hilbert transform is somehow measuring the lack of commutivity between $\iota^* \circ \star$ versus $\star \circ \iota^*$.
+\end{remark}
+
+This leads to extending definition to let $T$ be the map satisfying the above diagram. That is, $T\circ \iota^* \coloneqq \iota^* \circ \star$.
+
+\begin{proposition}
+    The inverse $T^{-1}=(-1)^{n-1}T$.
+\end{proposition}
+\begin{proof}
+    The proof follows immediately from the properties of the Hodge star. Letting $T$ satisfy $T\circ \iota^* = \iota^* \circ \star$ we have
+    \[
+        T^2 \circ \iota^* = \iota^* \circ \star^2 = (-1)^{n-1} \iota^*.
+    \]
+\end{proof}
+
+\subsection{Monogenic fields from the Hilbert transform}
+
+\textcolor{red}{Here I'm just giving the essential proof from BV in the construction of conjugate forms on $\Omega$.}
+
+\begin{lemma}
+\label{lem:conjugates}
+Suppose that $\phi$ satisfies \ref{eq:conjugate_requirement}, then the form
+\[
+f = u^\phi + \star \epsilon^\psi
+\]
+is monogenic.
+\end{lemma}
+\begin{proof}
+Indeed, take
+\begin{align*}
+Df &= (d-\delta)(u^\phi + \star \epsilon^\psi)\\
+&= du^\phi +\delta u^\phi + d\star \epsilon^\psi - \delta \star \epsilon^\psi.
+\end{align*}
+Note that $\delta u^\phi = 0$ since $u^\phi$ is a 0-form and $d\star \epsilon = 0$ since $\epsilon$ is coclosed. Thus,
+\[
+Df = du^\phi - \star d \star \star \epsilon.
+\]
+Since $\epsilon \in \cliffordkforms{n-2}$, 
+\[
+\star \star \epsilon = (-1)^{(n-2)(n-(n-2))}=(-1)^{2(n-2)}=1.
+\]
+Thus,
+\[
+Df = du^\phi - \star d \epsilon,
+\]
+and by Theorem 5.1 in \cite{belishev_dirichlet_2008} we have
+\[
+d u^\phi = \star d \epsilon^\psi,
+\]
+which shows $Df=0$.
+\end{proof}
+
+Thus, Lemma \ref{lem:conjugates} allows us to construct a monogenic form $f$ given the Dirichlet data satisfies Equation \ref{eq:conjugate_requirement}. It's worth noting as well that $f$ is the sum of a scalar $u^\phi$ and 2-form $\star \epsilon^\psi$. 
+
+
+\subsection{Hilbert transform}
+
+In \cite{brackx_hilbert_2008}, the authors describe a generalized version of the Cauchy integral and the Hilbert transform for Clifford valued functions defined on regions in $\R^n$.  Before we define these, take note of the vector valued function
+\[
+E(x) = \frac{-x}{|x|^n}. 
+\]
+This function $E(x)$ is the fundamental solution to the Dirac equation. That is,
+\[
+DE(x)=\delta_x, 
+\]
+where $\delta_x$ the Dirac delta centered at the point $x$. The existence of this function leads to a generalization of the Cauchy integral in $\C$. Similarly, it is a well known fact that the fundamental solution to the Laplace equation $\Delta u =0$ in $\R^n$ is given by
+\[
+G(x) = \begin{cases} -\frac{1}{2\pi} \ln|x| & n=2, \\ \frac{1}{n(n-2)a_n} \frac{1}{|x|^{n-2}}. \end{cases}
+\]
+
+Indeed, let $\phi$ be a $C^\infty$-smooth function on $\partial \Omega$, then the \emph{Cauchy integral} is defined for $x\in \R^n \setminus \partial \Omega$ by 
+\[
+\cauchyintegral{\phi}(x) = \frac{1}{a_n} \int_{\partial \Omega} \frac{x-\zeta}{|x-\zeta|^n}\nu(\zeta) \phi(\zeta) dS(\zeta),
+\]
+where $a_n$ is the surface area of of the unit $n$-ball, $\nu(\zeta)$ is the outward normal on $\partial \Omega$ at $\zeta$ and $dS(\zeta)$ is the hypersurface volume element at $\zeta$. It's important to note that the Cauchy integral is monogenic in $\Omega+$ and $\Omega^-$.
+
+It is interesting to determine the boundary behavior of the Cauchy integral.  We take $\xi \in \partial \Omega$ and consider for $x \in \Omega^+$
+\[
+\lim_{x \to \xi} \cauchyintegral{\phi}(x).
+\]
+It is shown in \cite{brackx_hilbert_2008} that
+\[
+\lim_{x \to \xi} \cauchyintegral{\phi}(x) = \frac{1}{2} \phi(\xi) + \lim_{r \to 0+} \int_{\partial \Omega_r} E(\zeta-\xi)\nu(\zeta)dS(\zeta)\phi(\zeta).
+\]
+where we define $\partial \Omega_r = \{\zeta \in \partial \Omega ~\vert~ d(\zeta,\xi)<r\}$.  This leads to the following definition.
+
+
+\todo[inline]{$\iota^*$ should only pullback to the tangential components. However, $\iota^* \star$ should pull back to the Hilbert transform? So this definition relating the pullback of the Cauchy integral to the Hilbert transform is not correct. There should be nice relationship between $\iota^*$ and the limit definition they use.}
+\begin{definition}
+The \emph{Hilbert transform} $\hilberttransform{\phi}(\xi)$ for $\xi \in \partial \Omega$ is given by
+\[
+\hilberttransform{\phi}(\xi) = \lim_{r \to 0+} \int_{\partial \Omega_r} E(\zeta-\xi)\nu(\zeta)dS(\zeta)\phi(\zeta) = \frac{2}{a_m} \textrm{Pv} \int_{\partial \Omega} E(\zeta-\xi)\nu(\zeta)dS(\zeta)\phi(\zeta)
+\]
+where Pv represents the Cauchy principal value.
+\end{definition}
+
+This leads to writing
+\begin{equation}
+\label{eq:cauchy_boundary_values}
+\iota^*(\cauchyintegral{\phi})=\frac{1}{2}\phi + \hilberttransform{\phi}.
+\end{equation}
+Given that $\phi$ is a scalar function, it follows that the definition of the Hilbert transform of $\phi$ is comprised of a scalar and bivector.  In special cases, the Hilbert transform necessarily has no scalar component.
+
+
+\begin{theorem}
+    The correspondence $\hilberttransform{\cdot} = T$ on exact boundary forms is valid. 
+\end{theorem}
+\begin{proof}
+     The claim is that we have the equality $\hilberttransform{E^\parallel} = E^\perp$ and moreover that $\hilberttransform{E^\perp} = E^\parallel$. 
+
+    The Hilbert transform is given by
+    \begin{align*}
+        \hilberttransform{E^\parallel}(\xi) &= \frac{2}{a_n} \textrm{Pv} \int_{\partial \Omega} \frac{(\xi-\zeta)}{|\xi-\zeta|^n} \nu(\zeta)  \iota^*(du^\phi)(\zeta) dS(\zeta)\\
+        &= \frac{2}{a_n} \textrm{Pv} \int_{\partial \Omega} \frac{(\xi-\zeta)}{|\xi-\zeta|^n} \nu(\zeta) \wedge E^{\parallel}(\zeta) dS(\zeta),
+    \end{align*}
+    since $\nu \cdot E^{\parallel} = 0$. 
+
+    Now, note that $E=du^\phi$ and as such, $E$ is monogenic.  Hence, we can write $E = \cauchyintegral{h}$ for some multivector field $h$. Now, $\iota^* \cauchyintegral{h}= \frac{1}{2}E^\parallel + \hilberttransform{h}$.  However, $\iota^*(E)=E^\parallel$ and so
+    \[
+        E^\parallel = \frac{1}{2} h + \hilberttransform{h}
+    \]
+    We also have
+    \[
+        E = du^\phi = d \proj{0}{\cauchyintegral{\phi}}
+    \]
+    and so
+    \[
+        E^\parallel = \iota^* ( d \proj{0}{\cauchyintegral{\phi}})
+    \]
+    and likewise
+    \[
+        E^\perp = T \iota^* (d\proj{0}{\cauchyintegral{\phi}})
+    \]
+    Hence we must now show
+    \[
+        \iota^* \left(\star d\proj{0}{\cauchyintegral{\phi}}\right) = \frac{2}{a_n} \textrm{Pv} \int_{\partial \Omega} \frac{\xi-\zeta}{|\xi-\zeta|^n} (\nu(\zeta) \wedge d\phi(\zeta)) dS(\zeta)
+    \]
+\end{proof}
+
+
+\todo[inline]{It appears that in \cite{noauthor_clifford_nodate-1}, that the proposition right before 8.7 implies exactly what we want. However, it's not quite strong enough}
+
+\textcolor{red}{Question: How does the Hilbert transform operate on the trace of harmonic functions? In the case that we have $\phi=1$, then clearly $u^\phi =1$ and $H[1]=1$.}
+
+\begin{proposition}
+If $\phi$ is the Dirichlet boundary values for a harmonic function $u^\phi$, then 
+\[
+H[\phi] = \frac{1}{2}\phi + \iota^* \proj{2}{\cauchyintegral{\phi}}.
+\]
+\end{proposition}
+
+\begin{theorem}
+    Let $f=u^\phi + \star \epsilon^\psi$ be the form from Lemma \ref{lem:conjugates}.  Then,
+    \[
+    f = \cauchyintegral{\phi},
+    \]
+\end{theorem}
+\begin{proof}
+    It is clear that the Cauchy integral of a scalar field $\phi$ returns a (0+2)-vector. Indeed, just note the Clifford product $(x-\zeta)\nu(\zeta)$ splits as
+    \[
+        (x-\zeta)\nu(\zeta) = \proj{0}{(x-\zeta)\nu(\zeta)} + \proj{2}{(x-\zeta)\nu(\zeta)}.
+    \]
+    Thus, we can put
+    \[
+        \cauchyintegral{\phi} = \proj{0}{\cauchyintegral{\phi}} + \proj{2}{\cauchyintegral{\phi}}.
+    \]
+    Note that we have linearity with the pullback $\iota^*$ over different grade elements
+    \[
+        \iota^*(2\cauchyintegral{\phi})= \iota^*(\proj{0}{2\cauchyintegral{\phi}}) + \iota^*(\proj{2}{2\cauchyintegral{\phi}}).
+    \]
+    By Equation \ref{cauchy_boundary_values} and \ref{lem:hilbert_transform_is_bivector} we can note that $\iota^*(\proj{0}{2\cauchyintegral{\phi}})=\phi$.  Since $\cauchyintegral{\phi}$ is monogenic, and thus the components of $\cauchyintegral{\phi}$ are harmonic thus we now have
+    \[
+        \begin{cases} \Delta \proj{0}{2\cauchyintegral{\phi}} = 0 & \textrm{in $\Omega^+$} \\ \iota^*(\proj{0}{2\cauchyintegral{\phi}}=\phi &\textrm{on $\partial \Omega$} \end{cases}.
+    \]
+    Since the Laplace equation has unique solutions, it must be that $\proj{0}{2\cauchyintegral{\phi}}=u^\phi$.  \todo[inline]{The rest of this proof is where I need to double check what I'm doing is legit. }
+
+    We put
+    \[
+        2\cauchyintegral{\phi} = u + \proj{2}{2\cauchyintegral{\phi}}
+    \]
+    and note that since $2\cauchyintegral{\phi}$ is monogenic we have
+    \[
+        D(2\cauchyintegral{\phi}) =0
+    \]
+    leads to the equations
+    \[
+    du^\phi = \delta \proj{2}{2\cauchyintegral{\phi}}, \qquad d\proj{2}{2\cauchyintegral{\phi}} =0.
+    \]
+    Which, \textcolor{red}{(in some sense by Lemma 2.1 or BV Theorem 5.1)}, lead to 
+    \[
+        \proj{2}{2\cauchyintegral{\phi}} = \star \epsilon^\psi.
+    \]
+    \todo[inline]{Is the above equality really only determined up to some bivector that is both closed and coclosed? That's my concern. $\star \epsilon^\psi$ is also harmonic and maybe we can just use uniqueness there.}
+    Thus, we have
+    \[
+        f=2\cauchyintegral{\phi}.
+    \]
+\end{proof}
+
+\begin{question}
+For some given Dirichlet data satisfying Equation \ref{conjugate_requirement}, the DN map then allows us to construct a monogenic (0+2)-vector which is equal to the Cauchy integral of the that Dirichlet data.  Now, the question remains in whether knowing this Cauchy integral could lead to determining $\Omega$.
+\end{question}
+
+
+
+\newpage
+
+\todo[inline]{Come back and put in some good examples and more explanation. I also want to explore the hardy spaces stuff since this can weaken our assumptions of $C^\infty$.}
+\section{Hardy Spaces}
+
+Section 5 of \cite{brackx_hilbert_2008} is perhaps a much cleaner way to do all of this.
+
+\section{Example}
+
+Consider the function $u(x,y)=x^2-y^2$ defined on the unit disk in $\R^2$. Then note that $\Delta u(x,y) = 0$.  Letting $I=e_1e_2$, note as well that by the CREs, there is the bivector $v(x,y)=2xyI$ conjugate to $u$ such that
+\[
+f = u+v,
+\]
+is monogenic. The (usual complex) Cauchy integral formula would imply
+\[
+f(a) = -\frac{I}{2\pi} \int_{S^1} \frac{f(z)}{z-a}dz.
+\]
+Letting $S^1$ be parameterized by $e^{It}$ for $t\in [0,2\pi]$, we have
+\begin{align*}
+    f(x+Iy) &= -\frac{I}{2\pi} \int_0^{2\pi} \frac{f(e^{It})}{e^{It}-(x+Iy)} I e^{It}dt\\
+    &= \frac{1}{2\pi} \int_0^{2\pi} \frac{\cos^2(t)-\sin^2(t)+2I\cos(t)\sin(t)}{e^{It}-(x+Iy)}(\cos(t)+I\sin(t))dt\\
+    &= \frac{1}{2\pi} \left(\int_0^{2\pi} \frac{\cos(3t)}{e^{It}-(x+Iy)}dt + \int_0^{2\pi} \frac{I\sin(3t)}{e^{It}-(x+Iy)}dt\right)\\
+    &= \frac{-1+(x+Iy)^6}{4(x+Iy)^4}+\frac{1+(x+Iy)^6}{4(x+Iy)^4}\\
+    &= \frac{1}{2} x^2-y^2 + 2Ixy.
+\end{align*}
+\textcolor{red}{This is off by a factor of two.}
+
+If instead we consider the Cauchy integral of $u$, then
+\begin{align*}
+\cauchyintegral{u} &= -\frac{I}{2\pi} \int_0^{2\pi} \frac{u(e^{It})}{e^{It}-(x+Iy)} I e^{It}dt\\
+&= \frac{1}{2\pi} \int_0^{2\pi} \frac{\cos^2(t)-\sin^2(t)}{e^{It}-(x+Iy)} (\cos(t)+I\sin(t))dt\\
+&= \frac{1}{4\pi} \left(\int_0^{2\pi} \frac{\cos(t)+\cos(3t)}{e^{It}-(x+Iy)}dt + I \int_0^{2\pi} \frac{\sin(t)\cos(2t)}{e^{It}-(x+Iy)}dt\right)
+\end{align*}
+
+
+
+
+
+\bibliographystyle{siam}
+\bibliography{clifford_hilbert_transform}
+
+
+
+
+
+\end{document}

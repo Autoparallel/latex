@@ -1,0 +1,143 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 9}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{ragged2e}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\obj}{\ensuremath{\mathrm{Obj}}}
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.}  Describe the homomorphism $f_* \colon \pi_1 (S^1,1)\to \pi_1 (S^1,f(1))$, i.e., $f_* \colon \Z \to \Z$, induced by the following maps $f\colon S^1 \to S^1$, where we're thinking of the circle in complex coordinates $(S^1=\{e^{i\theta} \in \mathbb{C} ~\vert~ 0 \leq \theta < 2\pi\})$. Your answer should be a definition of of $f_* (m)\in \Z$ for each input $m\in \Z$. You do not need to justify your answer.
+\begin{enumerate}[(a)]
+\item $f(e^{i\theta})=e^{i\theta}$.
+\item $f(e^{i\theta})=e^{-i\theta}$.
+\item $f(e^{i\theta})=\begin{cases}
+e^{i\theta} & \textrm{if $0\leq \theta \leq \pi$},\\
+e^{i(2\pi - \theta)} & \textrm{if $\pi \leq \theta \leq 2\pi$.}
+\end{cases}$
+\item $f(e^{i\theta})=e^{in\theta}$, for some fixed $n\in \Z$.
+\item $f(e^{i\theta})=e^{i(\theta+\pi)}$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{enumerate}[(a)]
+\item This induces $f_*(m)=m$.
+\item This induces $f_*(m)=-m$.
+\item This induces $f_*(m)=0$.
+\item This induces $f_*(m)=nm$.
+\item This induces $f_*(m)=m$.
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Draw or define an abstract simplicial complex whose geometric realization is homeomorphic to
+\begin{enumerate}[(a)]
+\item a torus,
+\item a Klein bottle, and
+\item a projective plane.
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{enumerate}[(a)]
+\item Torus \vspace*{5.5cm}
+\item Klein Bottle \vspace*{5.5cm}
+\item Projective Plane ($\mathbb{RP}^2$)
+\end{enumerate}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Construct a connected graph $X$ (i.e. a connected $1$-dimensional CW complex $X$) and continuous maps $f,g \colon X \to X$ such that $f\circ g = \mathrm{Id}_X$ but $f$ and $g$ do not induce isomorphisms on $pi_1(X)$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $X$ be a topological space and define $X$ by picking $p\in S^1$ and taking $X =\coprod_{i\in \mathbb{N}} S^1 / \{p\}$, so $X$ is a countable wedge sum of circles (identified at a single vertex $p$).  Then consider $f\colon X \to X$ that maps the $i$th loop to the $(i-1)$th loop.  We have that $\pi_1 (X,p) = \langle a_1, a_2, \dots \rangle$ is the free group with $\N$ amount of generators (i.e., $a_i$ for $i\in \N$). Then define $f\colon X \to X$ that maps the $i$th loop to the $(i-1)$th loop and the first loop to the point $p$ and $g\colon X \to X$ that maps the $i$th loop to the $(i+1)$th loop.  Then $f_*(a_i)=(a_{i+1})$ and $g_*(a_i)=(a_{i-1})$ if $i\geq 2$ and $g(a_1)=p$.  Then we have that niether $f$ or $g$ induce isomorphisms on $\pi_1 (X,p)$ since $f$ is not surjective and $g$ is not injective. Yet, $f\circ g$ induces the identity on $\pi_1 (X,p)$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Let $f\colon X\to Y$ be a continuous injective function with $X$ compact and $Y$ Hausdorff. Prove that $X$ and $f(X)$ are homeomorphic.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+Here are two proofs.  The second is shorter and clearer. (Thanks to: Brenden and Tanner)
+
+\begin{proof}
+Since $f$ is injective we have that $f$ is a bijection between $X$ and $f(X)$.  Thus, we just need to show that $f^{-1}$ is continuous.  So, let $U\in X$ be open and then consider $f(U)\in Y$.  Since $f$ is injective, any $x\in U$ is mapped to a unique point $f(x)=y \in f(X)$.  Since $Y$ Hausdorff, we have that there exist disjoint neighborhoods about $y$ and any $p\in f(X)\setminus f(U)$. Note that $X$ compact and $f$ continuous implies that $f(X)$ is also compact. Let $N_p (y)$ be an open set containing $y$ such that it is disjoint from the open set $V_p \in f(X)\setminus f(U)$ containing the point $p$.  Note then that this collection $\{V_p\}_{p\in f(X)\setminus f(U)}$ with the subspace topology (meaning each $V_p=O_p \cap f(X)\setminus f(U)$ for some $O_p$ open in $X$) is a cover of $f(X)\setminus f(U)$ and has a finite subcover given by the collection $\{V_{p_i}\}_{i=1,\dots, n}$ since $f(X)$ is compact. Finally we have that $\cap_{i=1}^n N_{p_i}$ is an open  set containing $y$ in $f(U)$ disjoint from $f(X)\setminus f(U)$ and this implies that $f(U)$ is open in $f(X)$. Thus, $X$ and $f(X)$ are homeomorphic.
+\end{proof}
+
+\begin{proof}
+Since \(f\) maps onto \(f(X)\) it suffices to show that \(f\) is a closed map. Let \(C \subseteq X\) be closed. Then since \(X\) is compact, \(C\) is compact. By continuity, \(f(C) \subseteq f(X)\) is compact. Since \(Y\) is Hausdorff, \(f(X)\) is Hausdorff. Since compact subsets of Hausdorff spaces are closed, it follows that \(f(C)\) is closed in \(f(X)\). Therefore \(f\) is a closed map, which shows that \(X \cong f(X)\).
+\end{proof}
+
+
+
+\pagebreak
+
+
+
+\end{document}
+

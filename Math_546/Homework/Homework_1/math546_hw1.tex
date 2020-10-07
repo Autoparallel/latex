@@ -1,0 +1,122 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 12}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\usepackage{color}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} Give an example of an equicontinuous sequence of functions that converges pointwise but not
+uniformly.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Consider the sequence of functions $f_n = \frac{x}{n}$ defined on all of $\R$. Then note that this is an equicontinuous sequence of functions.  To see this, fix $\epsilon>0$ and let $0<\delta<\epsilon$.  Then we have for any $n$ and $|x-y|<\delta$
+\begin{align*}
+|f_n(x)-f_n(y)|&=\left| \frac{x}{n}-\frac{y}{n} \right|\\
+&= \left| \frac{x-y}{n} \right|\\
+&< |x-y|<\epsilon.
+\end{align*}
+Thus we have that this sequence is in fact equicontinuous.
+
+To see that $f_n$ converges pointwise, fix $x$ and $\epsilon>0$ then let $N\in \N$ be such that $N\geq \frac{|x|}{\epsilon}$. Then for $n>N$ we have
+\begin{align*}
+|f_n(x)-0|&=\left| \frac{x}{n}\right|\\
+&<\epsilon.
+\end{align*}
+
+Now, for a contradiction, suppose that $f_n$ does in fact converge uniformly.  Then $\exists N\in \N$ such that for $n>N$ we have 
+\[
+|f_n(x)-0|<1,
+\]
+for all $x\in \R$. However, $f_n(n)=1$ and we have a contradiction.  Thus, $f_n$ does not converge uniformly.  We then have that $f_n$ is an equicontinuous sequence of functions converging pointwise but not uniformly.
+\end{proof}
+
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (Rudin 7.15) } Suppose $f\colon  \R \to \R$ is continuous and we define $f_n(t)=f(nt)$ for each $n=1,2,\dots$. If $\{f_n\}$ is equicontinuous on $[0,1]$, what can you conclude about $f$?
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+We claim that $f$ is a constant function on $[0,\infty)$.
+\begin{proof}
+Suppose that $f$ is not a constant function.  So we have that for some $x, y\in [0,\infty)$ that $f(x)\neq f(y)$.  Let us then say that $|f(x)-f(y)|=\epsilon$.  Now, notice that we have for sufficiently large $n$ that $x/n,y/n\in [0,1]$.  
+\begin{align*}
+|f(x)-f(y)|&=|f_n(x/n)-f_n(y/n)|=\epsilon.
+\end{align*}
+So now notice that $|x/n-y/n|\to 0$ as $n\to \infty$, and this means that $\{f_n\}$ was not equicontinuous on $[0,1]$.  This contradiction shows that $f$ is in fact constant on $[0,\infty)$.
+
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3. (Rudin 7.16) } Suppose $\{f_n\}$ is an equicontinuous sequence of functions on a compact set $K$. Show that $\{f_n\}$ converges pointwise on $K$ if and only if it converges uniformly on $K$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the forward direction, we have that $\{f_n\}$ converges to $f$ pointwise.  Fix $\epsilon >0$ and fix a $\delta>0$ so that we have $|f_n(p)-f_n(q)|<\epsilon/3$ for $|p-q|<\delta$, which we can do by equicontinuity.  Note that by compactness of $K$, we have that for finitely many $x_i$ for $i=1,...,M$ that $\cup_{i=1}^M N_\delta (x_i)\supseteq K$.  Then by pointwise convergence, we can also find an $N\in \N$ sufficiently large so that for some $x_i\in K$ and $n,m>N$ we have $|f_n(x_i)-f_m(x_i)|<\epsilon/3$.  Then for an arbitrary $x\in K$ we have that $x\in N_\delta (x_i)$ for some $i$. It then follows that
+\begin{align*}
+|f_n(x)-f_m(x)|&\leq |f_m(x)-f_m(x_i)|+|f_m(x_i)-f_n(x_i)|+|f_n(x_i)-f_n(x)|\\
+&\leq \epsilon/3+\epsilon/3 +\epsilon/3 = \epsilon.
+\end{align*}
+
+
+\noindent For the converse, this is trivial, as uniform continuity is strictly stronger than pointwise.
+\end{proof}
+
+
+
+\end{document}
+
+
+

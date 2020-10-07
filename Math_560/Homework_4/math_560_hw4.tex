@@ -1,0 +1,301 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 560, Homework 4}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1. (\S 2.3 Problem 12)} Let $V,W$, and $Z$ be vector spaces, and let $T\colon V\to W$ and $U\colon W \to Z$ be linear.
+\begin{enumerate}[(a)]
+\item Prove that if $UT$ is injective, then $T$ is injective. Must $U$ also be injective?
+\item Prove that if $UT$ is surjective, then $U$ is surjective. Must $T$ also be surjective?
+\item Prove that if $U$ and $T$ are bijective, then $UT$ is also.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+Suppose that $UT$ is injective. Then for distinct $v_1,v_2\in V$ we have $UT(v_1)=z_1$ and $UT(v_2)=z_2$ where $z_1\neq z_2$.  This means we also have $U(w_1)=z_1$ and $U(w_2)=z_2$ with $w_1,w_2\in W$ with $w_1\neq w_2$ else otherwise we'd have that $z_1=z_2$.  Thus we have that $T$ is injective.  Also, we must have that $U$ is injective.
+\end{proof}
+
+\begin{proof}[Part (b)]
+Suppose that $UT$ is surjective.  Then for any $z\in Z$ we have that $\exists v\in V$ so that $UT(v)=z$. Then $T(v)=w\in W$ and that $U(w)=z$. Since $z$ was arbitrary, $U$ is surjective.  Also, $T$ need not be surjective.  
+\end{proof}
+
+\begin{proof}[Part (c)]
+Suppose that $U$ and $T$ are bijective.  Then if we have $v_1,v_2\in V$ distinct we also have $T(v_1)=w_1$ and $T(v_2)=w_2$ with $w_1\neq w_2$ by the surjectivity and injectivity of $T$.  Similarly we also have $U(w_1)=z_1$ and $U(w_2)=z_2$ with $z_1\neq z_2$ by the injectivity and surjectivity of $U$. Thus $UT(v_1)=z_1$ and $UT(v_2)=z_2$ with arbitrary $z_1$ and $z_2$ and we conclude that $UT$ is bijective.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2. (\S 2.3 Problem 17)} Let $V$ be a vector space. Determine all linear transformations $T\colon V \to V$ such that $T=T^2$. \emph{Hint:} Note that $x=T(x)+(x-T(x))$ for every $x$ in $V$, and show that $V=\{y \vert T(y)=y\}\oplus \mathcal{N}(T)$ (see the exercises of \S 1.3).
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For every $x\in V$ we have that $x=T(x)+(x-T(x))$.  $T(x)\in \mathcal{R}(T)$ and since $T(x-T(x))=T(x)-T^2(x)=T(x)-T(x)=0$ we have that $x-T(x)\in \mathcal{N}(T)$.  So $V=\mathcal{R}(T)+\mathcal{N}(T)$ so we know that for linear operators we have $V=\{x\vert T(x)=x\}\oplus \mathcal{N}(T)$. (This is from an exercise earlier in the book.)  
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3. (\S 2.4 Problem 13.)} Let $\sim$ mean ``is isomorphic to." Prove that $\sim$ is an equivalence relation on the class of vector spaces over $\mathbb{F}$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $V,W,Z$ be vector spaces over $\mathbb{F}$. Let $\sim$ mean "is isomorphic to." Then
+\begin{itemize}
+\item We have $V\sim V$ verified by letting the identity map be the isomorphism.
+\item Suppose we have $V\sim W$. Then there exists an isomorphism $T\colon V \to W$ and thus $T^{-1}\colon W\to V$ is also an isomorphism.  Thus $W \sim V$.
+\item Let $V\sim W$ and $W\sim Z$ by $T\colon V\to W$ and $U\colon W\to Z$.  Then $UT$ is bijective since compositions of bijections are bijective.  Thus we have $UT\colon V\to Z$ is an isomorphism and $V\sim Z$.
+\end{itemize}
+So $\sim$ is an equivalence relation.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4. (\S 2.4 Problem 16.)}  Let $B$ be an $n\times n$ invertible matrix. Define $\Phi \colon M_{n\times n}(\mathbb{F})\to M_{n\times n}(\mathbb{F})$ by $\Phi(A)=B^{-1}AB$. Prove that $\Phi$ is an isomorphism.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+To show $\Phi$ is an isomorphism we will show that it is invertible.  Consider $\Phi^{-1}$ defined by $\Phi^{-1}(A)=BAB^{-1}$.  Then $\Phi^{-1}(\Phi(A))=\Phi^{-1}(B^{-1}AB)=BB^{-1}ABB^{-1}=A$.  Thus $\Phi$ is an isormorphism.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5. (\S 2.4 (Problem 17.)} Let $V$ and $W$ be finite-dimensional vector spaces and $T\colon V\to W$ be an isomorphism. Let $V_0$ be a subspace of $V$.
+\begin{enumerate}[(a)]
+\item Prove that $T(V_0)$ is a subspace of $W$.
+\item Prove that $\dim(V_0)=\dim(T(V_0)).$
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)] We show three properties that prove $T(V_0)$ is a subspace of $W$.
+\begin{itemize}
+\item Since $V_0$ is a subspace, $0\in V_0$ and we have $T(0)=0$ and so $0\in T(V_0)$.
+\item Let $u,w \in V_0$, then $u+w\in V_0$. Then $T(u+w)=T(u)+T(w)$ and since $T(u+w)\in T(V_0)$ then $T(u)+T(w)\in T(V_0$. Since $u,w$ were arbitrary, we have that $T(V_0)$ is closed under addition.
+\item Let $u\in V_0$ and $a\in \mathbb{F}$ then, $au\in V_0$ so $T(au)=aT(u)$. We then have $T(au)\in T(V_0)$ and thus $aT(u)\in T(V_0$ so $T(V_0)$ is closed under scalar multiplication.
+Thus $T(V_0)$ is a subspace of $W$.
+\end{itemize}
+\end{proof}
+
+\begin{proof}[Part (b)]
+By the dimension theorem $\dim(V_0)=\dim(\mathcal{R}(T))+\dim(\mathcal{N}(T))$.  Since $T$ is an isomorphism it is thus injective and $\mathcal{N}(T)=\{0\}$. Thus $\dim(V_0)=\dim(\mathcal{R}(T))=\dim(T(V_0))$.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6. (\S 2.4 Problem 24.)} Let $T\colon V\to Z$ be a linear transformation of a vector space $V$ onto a vector space $Z$. Define the mapping
+\[
+\bar{T}\colon V/\mathcal{N}(T) \to Z \textrm{~~ by ~~} \bar{T}(v+\mathcal{N}(T))=T(v)
+\]
+for any coset $v+\mathcal{N}(T)$ in $V/\mathcal{N}(T)$.
+\begin{enumerate}[(a)]
+\item Prove that $\bar{T}$ is well-defined; that is, prove that if $v+\mathcal{N}(T)=v'+\mathcal{N}(T)$, then $T(v)=T(v')$.
+\item Prove that $\bar{T}$ is linear.
+\item Prove that $\bar{T}$ is an isomorphism.
+\item Prove that the diagram shown in Figure 2.3 commutes; that is, prove that $T=\bar{T}_\eta$.\\
+
+\centering
+\begin{tikzcd}
+V \arrow[d, "\eta"', dashed] \arrow[r, "T", dashed] & Z \\
+V/\mathcal{N}(T) \arrow[ru, "\bar{T}"', dashed] & 
+\end{tikzcd}
+
+
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+We have
+\begin{align*}
+v+\mathcal{N}(T)&=v'+\mathcal{N}(T)\\
+\bar{T}(v+\mathcal{N}(T))&=\bar{T}(v'+\mathcal{N}(T))\\
+T(v)&=T(v').
+\end{align*}
+So $\bar{T}$ is well defined.
+\end{proof}
+
+\begin{proof}[Part (b)]
+We have for $u+\mathcal{N}(T),v+\mathcal{N}(T)\in V/\mathcal{N}(T)$ and $a\in \mathbb{F}$
+\begin{align*}
+\bar{T}((u+\mathcal{N}(T))+a(v+\mathcal{N}(T)))&=\bar{T}(u+av+\mathcal{N}(T)\\
+&=T(u+av)\\
+&=T(u)+aT(v)\\
+&=\bar{T}(u+\mathcal{N}(T))+\bar{T}(v+\mathcal{N}(T)).
+\end{align*}
+So $\bar{T}$ is linear.
+\end{proof}
+
+\begin{proof}[Part (c)]
+To show $\bar{T}$ is an isomorphism we define $\bar{T}^{-1}$ by $\bar{T}^{-1}(v)=v+\mathcal{N}(T)$.  Then for any $v+\mathcal{N}(T)\in V/\mathcal{N}(T)$ we have $\bar{T}^{-1}\bar{T}(v+\mathcal{N}(T))=\bar{T}^{-1}(v)=v+\mathcal{N}(T)$. Since the inverse exists, $\bar{T}$ is an isomorphism.
+\end{proof}
+
+\begin{proof}[Part (d)]
+We have for $v\in V$
+\begin{align*}
+\bar{T}\eta(v)&=\bar{T}(v+\mathcal{N}(T))\\
+&=T(v).
+\end{align*}
+So the diagram commutes.
+\end{proof}
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7. (\S 2.5 Problem 8.)} Prove the following generalization of Theorem 2.23. Let $T\colon V\to W$ be a linear transformation from a finite-dimensional vector space $V$ to a finite-dimensional vector space $W$. Let $\beta$ and $\beta'$ be ordered bases for $V$, and let $\gamma$ and $\gamma'$ be ordered bases for $W$. Then $[T]_{\beta'}^{\gamma'} = P^{-1}[T]_\beta^\gamma Q$, where $Q$ is the matrix that changes $\beta'$-coordinates into $\beta$-coordinates and $P$ is the matrix that changes $\gamma'$-coordinates into $\gamma$-coordinates.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Take $v\in V$ and we have
+\begin{align*}
+[T]_{\beta'}^{\gamma'}[v]_{\beta'}&=[Tv]_{\gamma'};
+\end{align*}
+as well as
+\begin{align*}
+P^{-1}[T]_\beta^\gamma Q [v]_{\beta'}&=P[T]_\beta^\gamma [v]_\beta\\
+&=P^{-1}[Tv]_\gamma\\
+&=[Tv]_{\gamma'}
+\end{align*}
+Thus we have $[T]_{\beta'}^{\gamma'}=P^{-1}[T]_\beta^\gamma Q$.  
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 8. (\S 2.5 Problem 9.)} Prove that ``is similar to" is an equivalence relation on $M_{n\times n}(\mathbb{F})$. 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We show $\sim$ meaning, ``is similar to" is an equivalence relation by satisfying the three requirements.
+\begin{itemize}
+\item $A\sim A$ via $A=I^{-1}AI=I^{-1}A=A$.  
+\item Let $A\sim B$ and thus we have $A=Q^{-1}BQ$ which implies that $QAQ^{-1}=B$.  Then let $Q^{-1}=S$ and then $B=S^{-1}AS$ which means $B\sim A$.
+\item Let $A\sim B$ and $B\sim C$ then $A=Q^{-1}BQ$ and $B=S^{-1}CS$.  So then we have $A=S^{-1}Q^{-1}CQS$ and then let $P=QS$ and thus $A=P^{-1}CP$ so that $A\sim C$.
+\end{itemize}
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 9. (\S 2.5 Problem 11.)} Let $V$ be a finite-dimensional vector space with ordered bases $\alpha,\beta,$ and $\gamma$.
+\begin{enumerate}[(a)]
+\item Prove that if $Q$ and $R$ are the change of coordinate matrices that change $\alpha$-coordinates into $\beta$-coordinates and $\beta$-coordinates into $\gamma$-coordinates, respectively, then $RQ$ is the change of coordinate matrix that changes $\alpha$-coordinates into $\gamma$-coordinates.
+\item Prove that if $Q$ changes $\alpha$-coordinates into $\beta$-coordinates, then $Q^{-1}$ changes $\beta$-coordinates into $\alpha$-coordinates.
+\end{enumerate}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (a)]
+We have that $Q[v]_\alpha=[v]_\beta$ and that $R[v]_\beta=[v]_\gamma$. Then $RQ[v]_\alpha=R[v]_\beta=[v]_\gamma$.
+\end{proof}
+
+\begin{proof}[Part (b)]
+Take $Q[v]_\alpha=[v]_\beta$ and then $I[v]_\alpha=Q^{-1}Q[v]_\alpha=Q^{-1}[v]_\beta=[v]_\alpha$.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 10. (\S 2.5 Problem 13.)} Let $V$ be a finite dimensional vector space over a field $\mathbb{F}$, and let $\beta=\{x_1,x_2,...,x_n\}$ be an ordered basis for $V$. Let $Q$ be an $n\times n$ invertible matrix with entries from $\mathbb{F}$. Define
+\[
+x_j'=\sum_{i=1}^n Q_{ij}x_i \textrm{~~~ for } 1\le j \le n,
+\]
+and set $\beta'=\{x_1',x_2',...,x_n'\}$. Prove that $\beta'$ is a basis for $V$ and hence that $Q$ is the change of coordinate matrix changing $\beta'$-coordinates into $\beta$-coordinates.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We have that $\beta'=\{x_1',...,x_n'\}$ with each $x_j'$ defined by $\sum Q_{ij}x_i=x_j'$.  Since $Q$ is invertible, we have that $Q$ is an isomorphism and thus is bijective.  Since $Q$ is bijective, it must be injective and surjective and thus $x_j'$ are linearly independent and span $V$.  Thus $\beta'$ is a basis for $V$.
+\end{proof}
+
+\pagebreak
+
+\end{document}
+

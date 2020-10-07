@@ -1,0 +1,176 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 317, Homework 5}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Define $f \colon (0,1) \to \mathbb{R}$ by $f(x) = \frac{1}{\sqrt{x}}-\sqrt{\frac{x+1}{x}}$.  Can some $\widehat{f}(0)$ be defined to make $\widehat{f}:[0,1) \to \mathbb{R}$ continuous at $0$? Justify.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Yes this is possible.  Define,
+	\[ \hat{f}(x)= \begin{cases}
+			0 &\textrm{ if } x=0\\
+			f(x) &\textrm{ if } x \in (0,1)
+	\end{cases}\]
+We can show this by proving that $\lim_{x \to 0} f(x)=0$ which can easily be done using L'h\^opital's rule.  
+\begin{align*}
+\lim_{x \to 0}f(x) &= \lim_{x \to 0} \frac{1-\sqrt{x+1}}{\sqrt{x}}\\
+&=\lim_{x \to 0} \frac{\mathrm{d/dx}(1-\sqrt{x+1})}{\mathrm{d/dx}\sqrt{x}} \textrm{~~~By L'h\^opital's rule}\\
+&=\lim_{x \to 0}  \frac{\frac{1}{2}(x+1)^{-1/2}}{\frac{1}{2}x^{-1/2}}\\
+&= \lim_{x \to 0} \frac{\sqrt{x}}{\sqrt{x+1}}\\
+&=0
+\end{align*}
+Thus we have that $\hat{f}$ is continuous at $0$.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Suppose $f \colon \mathbb{R} \to \mathbb{R}$ is continuous and that $f(r) = r^2$ for all $r \in \mathbb{Q}$.  Determine $f(\sqrt(2))$ and justify your conclusion.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+	I predict that $f(\sqrt{2})=2$.  Since $f$ is continuous over $\mathbb{R}$ and we know $f(r)=r^2$ $\forall r\in \mathbb{Q}$, if the limit as $r \to \sqrt{2}$ exists and is equal to $2$ we are done.  Fix $\epsilon >0$ and let $0<\delta < -\sqrt{2}+\sqrt{2+\epsilon}$.  Then we have,
+	\begin{align*}
+		|f(r)-2|&=|r^2-2|\\
+		&= |r-\sqrt{2}||r+\sqrt{2}|\\
+		&\leq |r-\sqrt{2}| |(r-\sqrt{2})+2 \sqrt{2}|\\
+		&< \delta(\delta + 2\sqrt{2})\\
+		&<(-\sqrt{2}+\sqrt{2+\epsilon})(-\sqrt{2}+\sqrt{2+\epsilon}+2\sqrt{2})\\
+		&=\epsilon
+	\end{align*}
+	Thus we know that $f(\sqrt{2})=2$.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Give an example of a function $f \colon \mathbb{R} \to \mathbb{R}$ that is continuous and bounded but not uniformly continuous.  Prove your claim.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Let $f(x)=\cos\left(x^2\right)$.  Here $f \colon \mathbb{R} \to [-1,1]$ is bounded and continuous.  If $f$ is uniformly continuous then $\forall \epsilon >0$ ~ $\exists \delta >0$ such that if $x,y \in \mathbb{R}$ and $|x-y|<\delta$ we have $|f(x)-f(y)|<\epsilon$.  Define the sequences $\left\{ x_n \right\} = \sqrt{n\pi}$, $\left\{ y_n \right\} = \sqrt{n \pi + \pi}$.  We have shown in class that $\lim_{x \to \infty} \sqrt{x-x_0} -\sqrt{x}=0$ thus $|x_n - y_n|<\delta$ ~$\forall n\in \mathbb{N}$ sufficiently large and thus we should have that $|f(x_n) - f(y_n)|<\epsilon$.  Fix $\epsilon <2$ then $\forall n \in \mathbb{N}$, ~$|f(x_n)-f(y_n)|=|\cos{n \pi}-\cos{(n \pi +\pi)}|=2$ which contradicts $|f(x_n) - f(y_n)|<\epsilon$ for some $n \in \mathbb{N}$.  Thus $f$ is not uniformly continuous.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} Let $E \subseteq \mathbb{R}$ be compact and nonempty. Prove that $\sup E \in E$ and $\inf E \in E$.   
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+	Since $E \subseteq \mathbb{R}$ is compact, it must also be closed and bounded.  Thus both $\sup E$ and $\inf E$ exist.  Suppose, for a contradiction, that $\sup E \notin E$.  Since $E$ is closed, it contains all of its limit points.  But since $\sup E \notin E$ ~ $\exists \epsilon >0$ such that $Q = (\sup E - \epsilon, \sup E + \epsilon)$, a neighborhood of $\sup E$ does not contain any points in $E$.  But, by definition of the supremum, $\forall \epsilon >0$ ~ $\exists e \in E$ such that $\sup E -\epsilon < e <\sup E$. Since $Q\cap E = \emptyset$, this contradicts the definition of the supremum and $\sup E \in E$.
+
+	The proof for $\inf E \in E$ is remarkably similar.  Suppose, for a contradiction, that $\inf E \notin E$.  Since $E$ is closed, it contains all of its limit points.  But since $\inf E \notin E$ ~ $\exists \epsilon >0$ such that $Q=(\inf E -\epsilon, \inf E + \epsilon)$, a neighborhod of $\inf E$ does not contain any points in $E$.  But, by definition of the infemum, $\forall \epsilon >0$ ~ $\exists e \in E$ such that $\inf E + \epsilon >e>\inf E$.  Since $Q \cap E = \emptyset$, this contradicts the definition of the infemum and $\inf E \in E$. 
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} Suppose that $f \colon [a,b] \to [a,b]$ is continuous.  Prove that there is at least one fixed point in $[a,b]$ (that is, there exists at least one $x \in [a,b]$ such that $f(x)=x$).
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+	Define $g(x)=f(x)-x$.  Suppose that $f(x)\neq x$ ~ $\forall x \in [a,b]$.  Thus, $g(x)\neq 0$ over the domain as well.  Now consider $g(a)=f(a)-a$.  The result of \emph{Problem 4} tells us that since $a$ is the smallest member of $[a,b]$ and $[a,b]$ is compact, $a=\inf\{[a,b]\}$. Thus, since $f(a)\neq a$, $g(a)=f(a)-a>0$ since $\mathrm{im}f([a,b])=[a,b]$. It is not possible that $f(x)<a$ for any $x\in [a,b]$ since $a$ is the smallest member of the image set.  Now, since $g(x)$ is defined by the addition of two continuous functions $f$ and $x$ on a connected domain, we have that the intermediate value theorem holds.  Thus if $g(x)<x$ for some $x$, then $\exists y \in [a,b]$ such that $g(y)=0$.  Thus it must be that $g(x)>x$ ~ $\forall x \in [a,b]$.  But we also have that $g(b)=f(b)-b$.  Again \emph{Problem 4} states that $b$ is the supremum of the domain and image of $f$ and since $f(b)\neq b$ ~ $f(b)<b$.  But this is a contradiction as we said that $g(x)>0$ for every $x$, and by the mean value theorem if $g(b)<0$, ~$\exists y \in [a,b]$ such that $g(y)=0$.  And thus for some $y$, $f(y)=y$ and this contradicts our supposition.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6.} Let $f \colon [-4,0] \to \mathbb{R}$ by $f(x)=\frac{2x^2 - 18}{x+3}$ for$x \neq -3$ and $f(-3) = -12$. Show that $f$ is continuous at $-3$. 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+	We want to show that $f$ is continuous at $-3$ given $f(-3)=-12$.  Fix $\epsilon > 0$ and let $\delta < \frac{\epsilon}{2}$.  Then for $x \in [-4,0]$ and $|x-(-3)|<\delta$ we have,
+	\begin{align*}
+		|f(x)-f(-12)|&=\left| \frac{2x^2 -18}{x+3} +12 \right|\\
+		&= |2(x-3)+12|\\
+		&= 2|x+3|\\
+		&<2 \delta\\
+		&< \epsilon
+	\end{align*} 
+	Thus $f$ is continuous at $-3$.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7.} Let $f,g \colon D \to \mathbb{R}$ be uniformly continuous. Prove that $f+g \colon D \to \mathbb{R}$ is uniformly continuous.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+	Since $f$ is uniformly continuous, fix $\epsilon >0$ and $\exists \delta_1 >0$ such that for $x,y \in D$ where $|x-y|<\delta_1$ we have $|f(x)-f(y)|<\frac{\epsilon}{2}$.  With the same $\epsilon$, $\exists \delta_2$ such that if $|x-y|<\delta_2$ we have $|g(x)-g(y)|<\frac{\epsilon}{2}$.  Thus if we let $\delta = \min \{\delta_1,\delta_2\}$ then we have,
+	\begin{align*}
+		|(f+g)(x)-(f+g)(y)|&=|f(x)-f(y)+g(x)-g(y)|\\
+		&\leq |f(x)-f(y)|+|g(x)-g(y)|\\
+		&<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+	\end{align*}
+	Thus we have that $f+g$ is also uniformly continuous.
+\end{proof}
+
+\end{document}
+

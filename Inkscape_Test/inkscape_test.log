@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  24 AUG 2020 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  6 OCT 2020 19:41
 entering extended mode
 **./inkscape_test.tex
 (inkscape_test.tex
@@ -292,13 +292,12 @@ pdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) (projected_pf_decision_tree.pdf_tex
-<projected_pf_decision_tree.pdf, id=1, page=1, 557.75945pt x 183.17009pt>
-File: projected_pf_decision_tree.pdf Graphic file (type pdf)
-<use projected_pf_decision_tree.pdf, page 1>
-Package pdftex.def Info: projected_pf_decision_tree.pdf , page1 used on input l
-ine 56.
-(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
+) (omega_axial.pdf_tex
+<omega_axial.pdf, id=1, page=1, 615.6191pt x 405.90868pt>
+File: omega_axial.pdf Graphic file (type pdf)
+<use omega_axial.pdf, page 1>
+Package pdftex.def Info: omega_axial.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
@@ -310,53 +309,55 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<projected_pf_decision_tree.pdf, id=2, page=2, 557.75945pt x 183.17009pt>
-File: projected_pf_decision_tree.pdf Graphic file (type pdf)
-<use projected_pf_decision_tree.pdf, page 2>
-Package pdftex.def Info: projected_pf_decision_tree.pdf , page2 used on input l
-ine 59.
-(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
-<projected_pf_decision_tree.pdf, id=3, page=3, 557.75945pt x 183.17009pt>
-File: projected_pf_decision_tree.pdf Graphic file (type pdf)
-<use projected_pf_decision_tree.pdf, page 3>
-Package pdftex.def Info: projected_pf_decision_tree.pdf , page3 used on input l
-ine 61.
-(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
-<projected_pf_decision_tree.pdf, id=4, page=4, 557.75945pt x 183.17009pt>
-File: projected_pf_decision_tree.pdf Graphic file (type pdf)
-<use projected_pf_decision_tree.pdf, page 4>
-Package pdftex.def Info: projected_pf_decision_tree.pdf , page4 used on input l
-ine 66.
-(pdftex.def)             Requested size: 557.75946pt x 183.17242pt.
+<omega_axial.pdf, id=2, page=2, 615.6191pt x 405.90868pt>
+File: omega_axial.pdf Graphic file (type pdf)
+<use omega_axial.pdf, page 2>
+Package pdftex.def Info: omega_axial.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
+<omega_axial.pdf, id=3, page=3, 615.6191pt x 405.90868pt>
+File: omega_axial.pdf Graphic file (type pdf)
+<use omega_axial.pdf, page 3>
+Package pdftex.def Info: omega_axial.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
+<omega_axial.pdf, id=4, page=4, 615.6191pt x 405.90868pt>
+File: omega_axial.pdf Graphic file (type pdf)
+<use omega_axial.pdf, page 4>
+Package pdftex.def Info: omega_axial.pdf , page4 used on input line 63.
+(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
 ) [1
 
-{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./projected
-_pf_decision_tree.pdf> <./projected_pf_decision_tree.pdf
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./omega_axi
+al.pdf> <./omega_axial.pdf
 
-pdfTeX warning: pdflatex.exe (file ./projected_pf_decision_tree.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
-> <./projected_pf_decision_tree.pdf
+pdfTeX warning: pdflatex.exe (file ./omega_axial.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./omega_axial.pdf
 
-pdfTeX warning: pdflatex.exe (file ./projected_pf_decision_tree.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
-> <./projected_pf_decision_tree.pdf
+pdfTeX warning: pdflatex.exe (file ./omega_axial.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./omega_axial.pdf
 
-pdfTeX warning: pdflatex.exe (file ./projected_pf_decision_tree.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex.exe (file ./omega_axial.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
 >] (inkscape_test.aux) ) 
 Here is how much of TeX's memory you used:
  4416 strings out of 481556
- 65882 string characters out of 2913869
- 329522 words of memory out of 3000000
+ 65597 string characters out of 2913869
+ 327522 words of memory out of 3000000
  19588 multiletter control sequences out of 15000+200000
  537296 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,44p,322b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,17n,44p,290b,380s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on inkscape_test.pdf (1 page, 16210 bytes).
+/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
+ers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb>
+Output written on inkscape_test.pdf (1 page, 56175 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

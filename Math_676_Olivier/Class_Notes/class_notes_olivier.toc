@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Physics Prerequisites}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Waves}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Position and Momentum Operators}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Wave Packets in 1D}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Dispersive Propagation}{5}{subsection.1.4}
+\contentsline {section}{\numberline {2}References}{7}{section.2}

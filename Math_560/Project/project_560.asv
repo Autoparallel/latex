@@ -1,0 +1,46 @@
+%Colin Roberts
+%Math 560
+%Cats, Dogs, and the SVD.
+
+
+% Store these 64x64 pix Cat & Dog pictures in vectors inside C & D
+C = Y(:,1:99);
+D = Y(:,100:end);
+
+
+% Problem 1
+%Calculate the left singular Cat vectors
+leftsquare_cat = C*transpose(C);
+
+[V_c,D_c]=eig(leftsquare_cat);
+first_lsv_cat = reshape(V_c(:,1),64,64);
+%Display the first singular vector
+imagesc(first_lsv_cat)
+
+
+% Problem 2
+%Create a w_cat vector and w_perp_cat
+w_cat = zeros(4096,1);
+w_perp_cat = zeros(4096,1);
+%Make a for loop to calculate each part of the w_cat vector
+for i=1:100
+    for j=1:4096
+        inner_product_j = first_lsv_cat(j,1)*D(j,i);
+    end
+    w_cat(:,1) = inner_product_i*D(:,i);
+end
+%almost surely I've done this wrong ^^
+%okay whatever
+
+%calculate w_perp by w_perp = c-w
+
+
+
+% Problem 3
+
+
+% Problem 4
+
+
+% Problem 5
+

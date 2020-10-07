@@ -1,0 +1,376 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{heuristica}
+\author{Colin Roberts}
+\title{Final Week Worksheet}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+ \usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions to problems: 1,3,5,6,8,13
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Let $V$ be a four dimensional vector space with bases $e_1,e_2,e_3,e_4$, and $W$ a three dimensional vector space with basis $f_1,f_2,f_3$. Let $T : V \longrightarrow W$ be the linear transformation defined by:
+\[
+T(e_1)=f_1+2f_3 \textrm{~~~} T(e_2)=2f_2+f_3 \textrm{~~~} T(e_3)=3f_1+4f_2 \textrm{~~~} T(e_4)=f_1+f_3
+\]
+Write a matrix representing the linear transformation
+\[
+\Lambda^2(T): \Lambda^2(V) \rightarrow \Lambda^2(W)
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}
+If we have the basis vectors for both $V$ and $W$ then we can construct the basis elements of $\Lambda^2(V)$ and $\Lambda^2(W)$ naturally by
+\[
+\Lambda^2(V)= < e_1\wedge e_2, e_1 \wedge e_3, e_1 \wedge e_4, e_2 \wedge e_3, e_2 \wedge e_4, e_3 \wedge e_4>
+\]
+\[
+\Lambda^2(W)= < f_1\wedge f_2, f_1 \wedge f_3, f_2 \wedge f_3>
+\]
+Next we look at how $\Lambda^2(T)$ acts on the basis elements of $\Lambda^2(V)$ by exploiting how $T$ acts on the basis vectors of $V$.
+\[
+\Lambda^2(T): \Lambda^2(V) \rightarrow \Lambda^2(W)
+\]
+\[
+\Rightarrow e_i \wedge e_j \mapsto Te_i \wedge Te_j
+\]
+Thus,
+\begin{center}
+\begin{tabular}{cccc}
+$\Lambda^2(T)(e_1 \wedge e_2) =$ & $2f_1 \wedge f_2 $ &$+  f_1 \wedge f_3$ &$-4f_2 \wedge f_3$\\
+
+$\Lambda^2(T)(e_1 \wedge e_3) =$ &  $4f_1 \wedge f_2 $ &$- 6f_1 \wedge f_3$&$ -8f_2 \wedge f_3$\\
+
+%3
+$\Lambda^2(T)(e_1 \wedge e_4) =$ & $~$&$-f_1 \wedge f_3$ &$~$\\
+
+%4
+$\Lambda^2(T)(e_2 \wedge e_3) =$&$ -6f_1 \wedge f_2$&$ - 3f_1 \wedge f_3$&$ - 4f_2 \wedge f_3$\\
+
+%5
+$\Lambda^2(T)(e_2 \wedge e_4) =$&$ -2f_1 \wedge f_2$&$ - f_1 \wedge f_3$&$ + 2f_2 \wedge f_3$\\
+
+%6
+$\Lambda^2(T)(e_3 \wedge e_4) =$&$ -4f_1 \wedge f_2$&$ + 3f_1 \wedge f_3$&$ + 4f_2 \wedge f_3$\\
+\end{tabular}
+\end{center}
+Thus our matrix (written in the order presented above) is
+\[
+  M(\Lambda^2(T)) = \kbordermatrix{
+    & e_1 \wedge e_2 & e_1 \wedge e_3 & e_1 \wedge e_4 & e_2 \wedge e_3 & e_2 \wedge e_4 & e_3 \wedge e_4 \\
+    f_1 \wedge f_2 & 2 & 4 & 0 & -6 & -2 & -4\\
+    f_1 \wedge f_3 & 1 & -6 & -1 & -3 & -1 & 3\\
+    f_2 \wedge f_3 & -4 & -8 & 0 & -4 & 2 & 4\\
+  }
+\]
+\end{solution}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3.} If $V$ is a $k$-vector space of dimension $n$, prove that $\Lambda^n(V)\cong k$, and $\Lambda^m(V)=0$ for $m>n$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+We want to show that there exists an isomorphism between $\Lambda^n(V)$ and the field $k$. In order to construct $\Lambda^n(V)$ we have to define the the basis elements.  
+
+First, let $e_1,...,e_n$ be the basis vectors of $V$.  We then need the basis element(s) for the $n$-th alternating product.  Since dim$(V)=n$ and dim$(\Lambda^m(V))= {n \choose m}$ we know that the dimension of $\Lambda^n(V)$ is ${n \choose n}=1$. Thus we know that 
+\[
+\textrm{dim}(\Lambda^n(V))=\textrm{dim}(k)
+\]
+If we can show that there is a surjective map from $\Lambda^n(V)$ to $k$ then we know there exists an isomorphism between the two as well. If we define $\phi: \Lambda^n(V) \rightarrow k$ by a natural choice,
+\[
+\phi(e_1 \wedge ... \wedge e_n)=1
+\]
+Then we see that the vector space is spanned by linear combinations of the vector.  For $a \in k$,
+\[
+\phi(a(e_1 \wedge ... \wedge e_n))=a\phi(e_1 \wedge ... \wedge e_n) = a
+\]
+Since $a$ can be any element in $k$, we know that $k$ is spanned.
+\end{proof}
+
+\begin{proof}
+Now if $m>n$ we want to show that $\Lambda^m(V)=0$. Since $V$ is $n$ dimensional we must create new vectors by linear combinations of the $n$ basis vectors.  Let the basis of $V$ be $e_1,...,e_n$, and let the $(n+1)$-th vector be represented by $v=\sum_{i=1}^{n}\alpha^i e_i$. If we let $m = n+1$ then we can write the $(n+1)$-th alternating product
+\[
+\Lambda^{n+1}(V)=e_1 \wedge ... \wedge e_n \wedge v 
+\]
+\[
+=e_1 \wedge ... \wedge \left(\sum_{i=1}^{n}\alpha^i e_i\right)
+\]
+\[
+=e_1 \wedge ... \wedge \alpha^1 e_1 + ... + e_1 \wedge ... \wedge \alpha^n e_n
+\]
+\[
+=\alpha^1(e_1 \wedge ... \wedge e_1) + ... + \alpha^n(e_1 \wedge ... \wedge e_n \wedge e_n)
+\]
+\[
+=\alpha^1(0)+...+\alpha^n(0)
+\]
+\[=0
+\]
+Since $\Lambda^{n+1}(V)=0$ we then know that any $m>n$ will be $0$ as well since $n+1$ is the smallest dimension greater than $n$.  Any new vectors in the $(n+2)$-th alternating product will be linear combinations of the basis vectors and will thus have components that will cause the alternating product to be zero as in statement above.  Not only that, but, consider
+\[v_1=\sum_i^n \alpha^i e_i=v
+\]
+\[
+v_2=\sum_i^n \beta^i e_i
+\]
+\[
+\Rightarrow \Lambda^{n+2}(V)= e_1 \wedge ... \wedge e_n \wedge v_1 \wedge v_2
+\]
+\[
+=(e_1 \wedge ... \wedge e_n \wedge v) \wedge v_2
+\]
+\[
+=(0)\wedge v_2
+\]
+\[
+=0
+\]
+Thus, this shows inductively why any $m>n$ will give us $0$.
+\end{proof}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 5.} Compute the determinant of the following linear transformations:
+\begin{itemize}
+  \item  $T$ defined by $T(e_1) = e_1 +2e_2, \textrm{~} T(e_2) = 3e_1 + e_3, \textrm{~} T(e_3) = 5e_2 - e_3$;
+  \item  $F$ defined by $F(x,y,z) = (x +3z,2x-y,y+7z)$;
+  \item $U$ represented by the matrix
+  \[
+  M(U)=
+  \begin{bmatrix}
+  2 & 1 & 0\\
+  0 & 1 & -2\\
+  3 & 0 & 3\\
+  \end{bmatrix}
+  \]
+\end{itemize}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[First Part]
+Define the vector space $V$ to be the Span$(e_1,e_2,e_3)$. We know that $T(e_1)=e_1+e_2$, $T(e_2)=3e_1+e_3$, $T(e_3)=5e_2-e_3$.  This tells us how $T$ acts on the basis vectors, thus we can look at the map $\Lambda^3(T)$ acting on the vector $e_1 \wedge e_2 \wedge e_3$ which forms the basis for $\Lambda^3(V)$.
+\[
+\Lambda^3(T)(e_1 \wedge e_2 \wedge e_3) = T(e_1) \wedge T(e_2) \wedge T(e_3)
+\] 
+\[
+=(e_1 + e_2) \wedge (3e_1 + e_3) \wedge (5e_2 - e_3)
+\] 
+\[
+=e_1 \wedge e_3 \wedge (5e_2) + e_2 \wedge (3e_1) \wedge (-e_3)
+\]
+\[
+=-5e_1 \wedge e_2 \wedge e_3 + 3e_1 \wedge e_2 \wedge e_3
+\]
+\[
+=-2e_1 \wedge e_2 \wedge e_3
+\]
+Thus the determinant of this transformation is det$(T)=-2$.  We can also verify this using the $3x3$ matrix determinant trick learned in Linear Algebra I.
+\[
+  M(T)=
+  \begin{bmatrix}
+  1 & 3 & 0\\
+  1 & 0 & 5\\
+  0 & 1 & -1\\
+  \end{bmatrix} 
+\]
+\[
+\textrm{det}(M(T))=(1\cdot 0 \cdot (-1))+(3 \cdot 5 \cdot 0) + (0 \cdot 1 \cdot 1) - (0 \cdot 0 \cdot 0) - (1 \cdot 5 \cdot 1) - (-1 \cdot 1 \cdot 3)
+\]
+\[
+=-5+3
+\]
+\[
+=-2
+\]
+\end{solution}
+
+\begin{solution}[Second Part]
+Define the vector space $U$ to be the Span$[(1,0,0),(0,1,0),(0,0,1)]$. $F$ is defined to act on a vector $(x,y,z)$ thus we know how each individual basis vector of $U$ is mapped. So, $F(1,0,0)=(1,2,0)$, $F(0,1,0)=(0,-1,1)$, and $F(0,0,1)=(3,0,7)$.  Now we can see how $\Lambda^3(F)$ acts on the basis vector of $\Lambda^3(U)$, $(1,0,0) \wedge (0,1,0) \wedge (0,0,1)$.
+\[
+\Lambda^3(F)[(1,0,0) \wedge (0,1,0) \wedge (0,0,1)]=F(1,0,0) \wedge F(0,1,0) \wedge F(0,0,1)
+\]
+\[
+=(1,2,0) \wedge (0,-1,1) \wedge (3,0,7)
+\]
+\[
+=(1,0,0) \wedge (0,-1,0) \wedge (0,0,7) + (0,2,0) \wedge (0,0,1) \wedge (3,0,0)
+\]
+\[
+=-7(1,0,0) \wedge (0,1,0) \wedge (0,0,1) + 6(1,0,0) \wedge (0,1,0) \wedge (0,0,1)
+\]
+\[
+=-1(1,0,0)\wedge (0,1,0) \wedge (0,0,1)
+\]
+Thus the determinant of $F$ is det$(F)=-1$.
+
+\end{solution}
+
+\begin{solution}[Third Part]
+Consider the vector space $W =$Span$(e_1,e_2,e_3)$ where $e_1=(1,0,0)$, $e_2=(0,1,0)$, and $e_3=(0,0,1)$.  We can then see how $U$ acts on the basis vectors.  We find that $U(e_1)=2e_1+3e_3$, $U(e_2)=e_1+e_2$, and $U(e_3)=-2e_2+3e_3$.  So now we see how $\Lambda^3(U)$ acts on the basis vector of $\Lambda^3(W)$, $e_1 \wedge e_2 \wedge e_3$.  
+\[
+\Lambda^3(U)(e_1 \wedge e_2 \wedge e_3)=U(e_1) \wedge U(e_2) \wedge U(e_3)
+\]
+\[
+=(2e_1+3e_3) \wedge (e_1 + e_2) \wedge (-2e_2+3e_3)
+\]
+\[
+=(2e_1) \wedge e_2 \wedge (3e_3) + 3e_3 \wedge e_1 \wedge (-2e_2)
+\]
+\[
+=6e_1 \wedge e_2 \wedge e_3 - 6e_1 \wedge e_2 \wedge e_3
+\]
+\[
+=0
+\]
+So the determinant of $U$ is det$(U)=0$, which is expected as the third column of $M(U)$ is a linear combination of the first two columns $(C_1-2C_2=C_3)$.  Thus, $U$ is non-invertible and the determinant should be zero.
+\end{solution}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent \textbf{Problem 6.} Show that the determinant of the identity function $Id. : V \rightarrow V$ is equal to $1$.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+\begin{solution}
+Let $V$ be a finite dimensional vector space with dimension $n$.  Thus we can say that $V$ is spanned by the basis $e_1,...,e_n$.  Then, by definition, for $\forall v \in V$, $Id.(v)=1 \cdot v = v$.  Thus, $Id.(e_i)=1 \cdot e_i = e_i$.  Next, consider $\Lambda^n(V)$ which is spanned by the vector $e_1 \wedge ... \wedge e_n$, we can look at $\Lambda^n(Id.)$ and how it operates on this vector in order to find the determinant.
+\[
+\Lambda^n(Id.)(e_1 \wedge ... \wedge e_n)= Id.(e_1) \wedge ... \wedge Id.(e_n)
+\]
+\[
+=(1 \cdot e_1) \wedge ... \wedge (1\cdot e_n)
+\]
+\[
+=1 \cdot (e_1 \wedge ... \wedge e_n)
+\]
+Thus the determinant of $Id.$ is indeed equal to $1$.
+\end{solution}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent \textbf{Problem 8.} Prove that if $V$ is an $n$-dimensional vector space and $T \in \mathcal{L}(V), \lambda \in k$:
+\[
+\textrm{det}(\lambda T) = \lambda^n \textrm{det}(T)
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+\begin{proof}
+First lets define a basis $e_1,...,e_n$ for $V$ and let the basis vector for $\Lambda^n(V)$ be $e_1 \wedge ... \wedge e_n$.  Then we find the determinant of $\lambda T$ by looking at the constant term created by map $\Lambda^n(\lambda T):\Lambda^n(V) \rightarrow \Lambda^n(V)$.  
+\[
+\Lambda^n(\lambda T)(e_1 \wedge ... \wedge e_n) = (\lambda T)(e_1) \wedge ... \wedge (\lambda T)(e_n)
+\]
+\[
+=\lambda T(e_1) \wedge ... \wedge \lambda T(e_n)
+\]
+\[
+=\lambda^n (T(e_1) \wedge ... \wedge T(e_n))
+\]
+\[
+=\lambda^n \textrm{det}(T) (e_1 \wedge ... \wedge e_n)
+\]
+Thus det$(\lambda T)=\lambda^n$det$(T)$.
+\end{proof}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 13%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 13.} Let $A=[a_i^j]$ be an upper (or lower) triangular matrix.  Prove that the determinant of $A$ is the product of the diagonal entries
+\[
+\textrm{det}(A)=\prod_i a_i^i
+\]
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+\begin{proof}
+Let $V$ be an $n$-dimensional vector space with a basis $e_1,...,e_n$. Define $A: V\rightarrow V$ to be an upper triangular matrix with respect to the basis $e_1,...,e_n$.  Thus,
+\[
+A(e_1)=a_1^1e_1
+\]
+\[
+A(e_2)=a_2^1e_1 + a_2^2e_2
+\]
+\[
+A(e_2)=a_3^1e_1 + a_3^2e_2 +a_3^3e_3
+\]
+\[
+\vdots
+\]
+\[
+A(e_{n-1})=A(e_2)=a_{n-1}^1e_1 +...+ a_{n-1}^{n-1}e_{n-1}
+\]
+\[
+A(e_n)=a_n^1e_1 + ... + a_{n-1}^{n-1}e_{n-1} + a_n^ne_n
+\]
+Now consider $\Lambda^n(A):\Lambda^n(V)\rightarrow \Lambda^n(V)$, where the basis vector of $\Lambda^n(V)=e_1 \wedge ... \wedge e_n$.  We can then see how $\Lambda^n(A)$ acts on this vector.
+\[
+\Lambda^n(A)(e_1 \wedge ... \wedge e_n)=A(e_1) \wedge ... \wedge A(e_n)
+\]
+\[
+=a_1^1e_1 \wedge (a_2^1e_1 + a_2^2e_2) \wedge ... \wedge (a_n^1e_1+...+a_n^ne_n)
+\]
+Notice: The first "slot" (with $a_1^1e_1$) has only one option of vector to pick.  Thus $e_1$ must be in the first "slot".  Next, if we look at the next "slot" there are only two vectors ($a_2^1e_1, a_2^2e_2$) that can be chosen.  But, since the first slot already has $e_1$ taken, we are \textbf{forced} to pick $a_2^2e_2$ as the element in the second "slot".  I will show this more formally,
+\[
+a_1^1e_1 \wedge (a_2^1e_1 + a_2^2e_2) \wedge ... \wedge (a_n^1e_1+...+a_n^ne_n)
+\] 
+\[
+=a_1^1e_1 \wedge a_2^1e_1 \wedge ... \wedge (a_n^1e_1+...+a_n^ne_n) + a_1^1e_1 \wedge a_2^2e_2 \wedge ... \wedge (a_n^1e_1+...+a_n^ne_n)
+\]
+\[
+=0+(a_1^1 a_2^2)(e_1 \wedge e_2 \wedge (a_3^1e_1 + a_3^2e_2 + a_3^3e_3)\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))
+\]
+\[
+=(a_1^1 a_2^2)(e_1 \wedge e_2 \wedge (a_3^1e_1 + a_3^2e_2 + a_3^3e_3)\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))
+\]
+Now we can see that this pattern continues on.  The first two "slots" are chosen now, and the third will be uniquely determined by that.
+\begin{multline*}
+=(a_1^1 a_2^2)(e_1 \wedge e_2 \wedge (a_3^1e_1)\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))+(a_1^1 a_2^2)(e_1 \wedge e_2 \wedge (a_3^2e_2)\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))\\+
+(a_1^1 a_2^2)(e_1 \wedge e_2 \wedge (a_3^3e_3)\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))
+\end{multline*}
+
+\[
+=0+0+(a_1^1 a_2^2 a_3^3)(e_1 \wedge e_2 \wedge e_3\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))
+\]
+\[
+=(a_1^1 a_2^2 a_3^3)(e_1 \wedge e_2 \wedge e_3\wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))
+\]
+Now the pattern is very obvious.  the $k+1$-th "slot" consists of the vectors $e_1,...,e_{k+1}$ but the $k$-th "slot" has the vectors $e_1,...e_k$.  This means the $(k+1)$-th slot must contain \textbf{only} $a_{k+1}^{k+1}e_{k+1}$, or it contains a previous vector and is then zero (as shown above with $k=2,3$). Thus we continue to see,
+\[
+\prod_i^k a_i^i (e_1 \wedge e_2 \wedge ... \wedge e_k \wedge (a_{k+1}^{1}e_1+...+a_{k+1}^{k+1}e_{k+1}) \wedge ... \wedge (a_n^1e_1+...+a_n^ne_n))
+\]
+\[
+\Rightarrow = \prod_i^n a_i^i (e_1 \wedge ... \wedge e_n)
+\]
+Thus, the determinant is det$(A)= \left(\prod_{i}^n\right) a_i^i$.
+\end{proof}
+\pagebreak
+
+\end{document}

@@ -1,0 +1,186 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 517, Homework 6}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1. (Rudin 5.14)} Let $f\colon (a,b)\to \mathbb{R}$ be differentiable.
+\begin{enumerate}[(a)]
+\item Show that $f$ is convex if and only if $f'$ is monotone increasing.
+\item If $f''$ exists on all of $(a,b)$, show that $f$ is convex if and only if $f''(x)\geq 0$ for all $x\in (a,b)$.
+\end{enumerate} 
+ 
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+For the forward direction we let $f\colon (a,b) \to \R$ be differentiable and convex.  Then for $a<s<t<u<v<w<b$ we have
+\begin{align*}
+\frac{f(t)-f(s)}{t-s}&\leq \frac{f(u)-f(t)}{u-t} \leq \frac{f(v)-f(u)}{v-u}\leq \frac{f(w)-f(v)}{w-v}\\
+\end{align*}
+Then if we let $t \to s^+$ and $v\to w^-$ we have
+\begin{align*}
+f'(s)=\lim_{t \to s^+} \frac{f(t)-f(s)}{t-s} & \leq \lim_{v\to w^-} \frac{f(w)-f(v)}{w-v}\\
+\implies f'(s)&\leq f'(w).
+\end{align*}
+Thus we have that $f'$ is monotone increasing.
+
+\noindent For the converse, suppose that $f'$ is monotone increasing.  Then for $x<y<z \in (a,b)$ we have $f'(x)\leq f'(y) \leq f'(z)$. By the mean value theorem we have $x< c<y$ and $y<d<z$ so that $f'(c)=\frac{f(y)-f(x)}{y-x}$ and $f'(d)=\frac{f(z)-f(y)}{z-y}$.  By assumption, $f'(c)\leq f'(d)$ which means that
+\[
+\frac{f(y)-f(x)}{y-x}\leq \frac{f(z)-f(y)}{z-y}.
+\]
+Then necessarily $y=\lambda x +(1-\lambda)z$ for $\lambda \in (0,1)$. So we have
+\begin{align*}
+\frac{f(\lambda x + (1-\lambda)z)-f(x)}{(\lambda x + (1-\lambda)z)-x} &\leq \frac{f(z)-f(\lambda x + (1-\lambda)z)}{z-(\lambda x + (1-\lambda)z)}
+\\
+\iff \lambda(z-x)(f(\lambda x + (1-\lambda)z)-f(x)) &\leq (1-\lambda)(z-x) (f(z)-f(\lambda x + (1-\lambda)z))\\
+\iff f(\lambda x + (1-\lambda)z) &\leq \lambda f(x) + (1-\lambda)f(z)
+\end{align*}
+Hence, $f$ is convex.
+\end{proof}
+
+\begin{proof}[b]
+For the  forward direction, suppose that $f$ is convex. Thus for $x<y\in (a,b)$ we have $f'(x)<f'(y)$. Then note that $y=x+h$ for $h>0$ and thus
+\begin{align*}
+0&\leq f'(y)-f'(x)\\
+\implies 0&\leq f'(x+h)-f'(x)\\
+\implies 0&\leq \frac{f'(x+h)-f'(x)}{h}\\
+\implies 0&\leq \lim_{h\to 0}\frac{f'(x+h)-f'(x)}{h}=f''(x).
+\end{align*}
+So $f''(x)\geq 0$ for any $x\in (a,b)$. We know the last implication is true since the limit must exist by the fact $f''$ exists for every $x\in \R$ and since the set $[0,\infty)$ is closed.
+
+\noindent The converse is immediate by Theorem 5.11.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Assume $f\colon \mathbb{R}-\mathbb{R}$ is continuous and satisfies $f(x+y)=f(x)+f(y)$ for all $x,y\in \mathbb{R}$. 
+\begin{enumerate}[(a)]
+\item Prove that if $f$ is differentiable, then $f'$ is constant.
+\item Prove that $f$ is differentiable by showing $f(x)=cx$ for some $c\in \mathbb{R}$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a] Let $x,y\in \R$ be arbitrary disctinct elements and $y\neq 0$.  Then,
+\begin{align*}
+f'(x+y)&=\lim_{h\to 0} \frac{f(x+y+h)-f(x+y)}{h}\\
+&=\lim_{h\to 0} \frac{f(x+h)+f(y)-f(x)-f(y)}{h}=f'(x)\\
+\end{align*}
+Since $f'(x+y)=f'(x)$ and $x+y\neq x$ we have that $f'$ must be constant.
+\end{proof}
+
+\begin{proof}[b]
+First, let $f(1)=c$ and $q=\neq 0 \in \mathbb{Q}$. Then $q=\frac{m}{n}$ with $m,n\in \mathbb{Z}$. It follows that
+\[f(q)=f\left(\frac{m}{n}\right)=f\left(\frac{1}{n}+...+\frac{1}{n}\right)=f\left(\frac{1}{n}\right)+...+f\left(\frac{1}{n}\right)=mf\left(\frac{1}{n}\right),
+\]
+and it follows that if $q=1$ then $q=\frac{n}{n}$ so
+\begin{align*}
+f(1)&=nf\left(\frac{1}{n}\right)\\
+\implies \frac{1}{n}f(1)&=f\left(\frac{1}{n}\right).
+\end{align*}
+It follows that for any $q\in Q$ $f(q)=cq$. In other words, $f$ is a linear function if the inputs are rational (including $q=0$).  So now let $\{x_i\}$ be a sequence of rationals converging to a real number $x$, then by continuity of $f$ we have that $\lim_{i\to \infty} f(x_i)$ converges to $f(x)$. So we have
+\begin{align*}
+f(x)&=\lim_{i\to \infty} f(x_i)\\
+&= \lim_{i\to \infty} c x_i\\
+&=cx.
+\end{align*}
+So $f(x)=cx$, which is linear for all reals.  Thus $f$ is differentiable.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Let $a,h\in \mathbb{R}$ with $h>0$. Suppose $f$ is twice differentiable on $[a-h,a+h]$ so that $f''$ is continuous at $a$.
+\begin{enumerate}[(a)]
+\item If $f'(a)=0$ and $f''(a)<0$, show that $f$ has a strict local maximum at $a$; i.e., $f(x)<a$ for all $x$ in a neighborhood of $a$. (\emph{Hint:} Use Taylor's theorem)
+\item Is the assumption that $f''$ is continuous at $a$ necessary? Justify your answer with a proof or counterexample.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a] 
+\noindent Since $f''(a)<0$ we have that for some $\epsilon>0$ that any $p\in (a-\epsilon,a+\epsilon)$ satisfies $f''(p)<0$.  Then let $\delta=\min(h,\epsilon)$ and let $x\neq a \in (a-\delta,a+\delta)$, then for $y$ between $a$ and $x$ we have 
+\begin{align*}
+f(x)&=P(x)+\frac{f''(y)}{2!}(x-a)^2\\
+&=(f(a)+f'(a)(x-a))+\frac{f''(y)}{2}(x-a)^2.
+\end{align*}
+So then we have
+\begin{align*}
+f(x)-\frac{f''(y)}{2}(x-a)^2&=f(a)+f'(a)(x-a).
+\end{align*}
+But we have that $\frac{f''(y)}{2}(x-a)^2<0$ and thus
+\begin{align*}
+f(x)<f(a).
+\end{align*}
+Hence we have a strict local max at $f(a)$.
+\end{proof}
+
+\begin{proof}[b]
+We can show that $f''$ need be continuous at $x=a$. We have that $f''(a)=\lim_{t\to a} \frac{f'(t)-f'(a)}{t-a}=\lim_{t\to a}\frac{f'(t)}{t-a}<0$.  Then for some $r >0$ and for some $\delta>0$ we have that $d(t,a)<\delta$ implies that $\frac{f'(t)}{t-a}<-r$. Then for a $p$ such that $d(p,a)<\delta$ we want to show that for all $\epsilon>0$ that
+\begin{align*}
+|f''(p)-f''(a)|&<\epsilon\\
+\iff \lim_{h\to 0} \left| \frac{f'(p+h)-f'(p)-f'(a+h)}{h}\right|&<\epsilon,
+\end{align*}
+which would show that $f''$ is continuous at $x=a$.  Note that $\lim_{h\to 0} f'(p+h)-f(a+h)=f'(p)-f'(a)$ which can be made as small as we would like by continuity of $f'$ and choice of $\delta$.  Then we are left with showing $f'(p)$ can be as small as we would like, but $f'(a)=0$ and $f'$ continuous would allow us to do this.  The last check would be that dividing by $h$ would not destroy this result. I.e.,
+\begin{align*}
+\iff \left| \frac{f'(p)}{h} \right|<\epsilon.
+\end{align*}
+I believe with a smart choice of $\delta$ we can show that this is indeed less than $\epsilon$.  
+
+\end{proof}
+
+
+\pagebreak
+
+
+
+\end{document}
+

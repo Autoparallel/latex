@@ -1,0 +1,138 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 570, Homework 3}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+%\usepackage{kbordermatrix}
+\usepackage{mathtools}
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape:}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1.} Let $X$ be a topological space and let $A\subseteq X$ be a subset.
+\begin{itemize}
+\item The \emph{interior of $A$ in $X$}, denoted by $\Int{A}$, is the largest open set in $X$ contained inside of $A$:
+\[ \Int{A}=\cup\{U\subseteq X~|~U\subseteq A\mbox{ and }U\mbox{ is open in }X\}. \]
+\item The \emph{boundary of $A$ in $X$} is $\partial A=\overline{A}\cap\overline{X\setminus A}$ (this is equivalent to the slightly different definition on page 24 of our book).
+\end{itemize}
+\begin{enumerate}
+\item Prove that a point $x\in X$ is in $\partial A$ if and only if every neighborhood of $x$ contains both a point of $A$ and a point of $X\setminus A$.
+\item Prove that $A$ is open in $X$ if and only if $A$ contains none of its boundary points, i.e.\ $A\cap\partial A=\emptyset$.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[Part (1)]
+For the forward direction, let $x\in \partial A$. Thus we have $x\in \bar{A}\cap \bar{X\setminus A}$. Which means $x\in \bar{A}$ and $x\in \bar{X\setminus A}$. By (4) on our last homework we have that all neighborhoods of $x$, $N_x$, necessarily satisfy $N_x\cap A\neq \emptyset$ and $N_x\cap X\setminus A \neq \emptyset$.
+
+For the reverse direction, if for all neighborhoods of a point $x$, $N_x$, we have $N_x\cap A\neq \emptyset$ and $N_x\cap X\setminus A\neq \emptyset$, then we have $x\in \bar{A}$ and $x\in \bar{X\setminus A}$. Thus $x\in \bar{A}\cap \bar{X\setminus A}$.
+\end{proof}
+
+\begin{proof}[Part (2)]
+For the forward direction, let $A\subseteq X$ be open. Suppose that $x\in \partial A$ and $x\in A$. But for all neighborhoods of the point $x$, $N_x$, $N_x\cap X\setminus A\neq \emptyset$ since $x\in \partial A$. Thus we contradict $A$ being open.
+
+For the reverse direction, suppose $A\cap \partial A=\emptyset$. Let $x\in A$ and consider an arbitrary neighborhood of $x$, $N_x$. If $N_x\subseteq A$ we have that $A$ is open and we are done. Otherwise if $N_x\cap X\setminus A \neq \emptyset$ then also $N_x \cap A \neq \emptyset$ since we said $x\in A$. But this implies that $x\in \partial A$. Thus $N_x \subseteq A$ and we have that $A$ is open.
+\end{proof}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Let $X$ be a topological space and let $S\subseteq X$. Prove that the subspace topology on $S$ is indeed a topology (i.e.\ satisfies the definition on page 20 of our book).
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the first requirement we have that $S$ is an element since $S\cap X=S$. Also we have $\emptyset = S\cap \emptyset$ so the subset contains $S$ and $\emptyset$.
+
+For the second requirement, let $U_1,...,U_n\subseteq S$, then each $U_i=S\cap V_i$ for $V_i\in X$. Then $U_1\cap U_2 \cap ... \cap U_n=(S\cap V_1)\cap (S\cap V_2) \cap ... \cap (S\cap V_n)=S\cap (\cap_{i=1}^n V_i)$. Since $\cap_{i=1}^n V_i \subseteq X$ is open in $X$ then we have that $S\cap (\cap_{i=1}^n V_i)$ is open in $S$.
+
+Finally let $\{U_\alpha\}_{\alpha \in A}$ be an arbitrary collection of open sets of $S$. Again we have that $U_\alpha=S\cap V_\alpha$. Then, $\cup_{\alpha\in A}U_\alpha = \cup_{\alpha\in A}(S\cap V_\alpha)=S\cap (\cup_{\alpha \in A} V_\alpha)$. And we have that $\cup_{\alpha \in A} V_\alpha$ is open in $X$, so $S\cap (\cup_{\alpha\in A} V_\alpha)$ is open in $S$. 
+\end{proof}
+
+
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Read and understand Proposition~2.44 and its proof in our book, which describes when a collection $\cB$ of subsets of a set $X$ is a valid basis for some topology on $X$. Now, suppose that $X_1,\ldots,X_n$ are topological spaces. Use Proposition~2.44 to prove that the basis $\cB=\{U_1\times\ldots\times U_n~|~U_i\mbox{ is open in }X_i\mbox{ for all }i\}$ is indeed a valied basis for some topology on $X_1\times\ldots\times X_n$ (called the \emph{product topology}).
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+For the first requirement let $\mathcal{B}=\{U_1\times ... \times U_n \vert U_i \textrm{ is open in } X_i \forall i\}$. Let $\mathcal{B}_i=\{U_i \subseteq X_i \vert U_i \textrm{ is open in } X_i\}$, then we have that $X_i=\cup{U_i \in \mathcal{B}_i} U_i$ and thus we have $\cup{U_1\in \mathcal{B}_1}U_1 \times ... \cup_{U_n\in \mathcal{B}_n}U_n=X_1\times ...\times X_n$. 
+
+Let $A=A_1\times A_2 \times ... \times A_n \in \mathcal{B}$  and $B=B_1\times B_2 \times ... \times B_n \in \mathcal{B}$ then $A\cap B = (A_1\cap B_1)\times ... \times (A_n \cap B_n)$. Then we have that there exists $C_i \subseteq A_i\cap B_i$ for $i=1,...,n$ since we contain every open set for each $X_i$ in $\mathcal{B}$. Thus we have $C\subseteq A\cap B$ given by $C=C_1\times ... \times C_n$.
+\end{proof}
+
+\pagebreak
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.}  The above images are of a 2D surface which is a 2-holed torus. On the left the holes appear to be linked, but on the right they do not. However, there is a way to bend and stretch this shape in $\R^3$ to get from the surface on the left to the one on the right (imagine the shape is made of a very flexible rubber or play-doh which you are allowed to bend or stretch but not tear). Draw a deformation (a sequence of pictures) showing how to do this.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+
+\end{proof}
+
+
+\pagebreak
+
+
+
+\end{document}
+

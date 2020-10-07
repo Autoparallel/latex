@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  20 MAY 2020 10:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  27 SEP 2020 20:23
 entering extended mode
 **./worksheet_5.tex
 (worksheet_5.tex
@@ -960,8 +960,7 @@ d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count311
 \l__pdf_internal_box=\box127
-)
-No file worksheet_5.aux.
+) (worksheet_5.aux)
 \openout1 = `worksheet_5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1065,33 +1064,31 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 {C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 (worksheet_5.aux) ) 
 Here is how much of TeX's memory you used:
- 28684 strings out of 481556
- 733893 string characters out of 2913869
- 1069545 words of memory out of 3000000
+ 28686 strings out of 481556
+ 734032 string characters out of 2913869
+ 1068545 words of memory out of 3000000
  43398 multiletter control sequences out of 15000+200000
  539703 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,102p,735b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 75i,6n,102p,735b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Colin/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Use
-rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6
+rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
 .pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:
-/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on worksheet_5.pdf (2 pages, 149865 bytes).
+nts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C
+:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on worksheet_5.pdf (2 pages, 128462 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

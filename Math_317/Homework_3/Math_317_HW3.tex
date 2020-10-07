@@ -1,0 +1,490 @@
+\documentclass[leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{heuristica}
+\usepackage{enumerate}
+\author{Colin Roberts}
+\title{MATH 317, Homework 3}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage[thmmarks, amsmath, thref]{ntheorem}
+\usepackage{kbordermatrix}
+\usepackage{mathtools}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{lemma}{Lemma}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem{solution}{Solution}
+\theoremseparator{. ---}
+\theoremsymbol{\mbox{\texttt{;o)}}}
+\newtheorem{varsol}{Solution (variant)}
+
+\begin{document}
+\maketitle
+\begin{large}
+\begin{center}
+Solutions
+\end{center}
+\end{large}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\textbf{Problem 1.} Prove that every Cauchy sequence is bounded.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+Suppose that $(x_n)$ is Cauchy.  Then we can fix $\epsilon > 0$ and $\exists N \in \mathbb{N}$ such that $\forall n,m \geq N$, 
+\begin{align*}
+|x_n - x_m|<\epsilon
+\end{align*}
+For a contradiction, suppose that $(x_n)$ is unbounded.  It follows that the subsequence of $(x_n)$ where $n \geq N$ is unbounded as well.  Thus in this subsequence there $\exists k \in \mathbb{N}$ with $k>N$ where $\forall M>0$, $|x_k| >M$. Hence, if we let $M=|x_m|+\epsilon$ then $\exists |x_n| >M$ which implies that, given these choices,
+\[
+|x_n-x_m|\leq |x_n|-|x_m| > M-|x_m|=\epsilon
+\]
+This is a contradiction to $(x_n)$ being Cauchy. Thus the sequence must be bounded.
+\end{proof}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 2.} Prove that the set $\left\{1+\frac{(-1)^n}{n} \mid n \in \mathbb{N}\right\}$ has exactly one accumulation point.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+First, let's show that $1$ is an accumulation point.  If $1$ is an accumulation point then $\forall \epsilon>0$, the neighborhood $Q=(1-\epsilon,1+\epsilon)$ contains at least one other point that is not $1$. Now, fix $\epsilon>0$ and let $N\in \mathbb{N}$ be such that $N> \frac{1}{\epsilon-1}$. Then $\forall n\geq N$,
+\begin{align*}
+\left| 1+ \frac{(-1)^n}{n}\right|&\leq |1|+\left|\frac{(-1)^n}{n}\right|\\
+&= 1+\frac{1}{n}\\
+&\leq 1 + \frac{1}{N}\\
+&< 1 + \frac{1}{\frac{1}{\epsilon-1}}\\
+&=\epsilon
+\end{align*}
+Thus we know there exists another point in any open neighborhood around $1$ and $1$ is an accumulation point.
+
+Next, we must show that there exists no other accumulation point.  Suppose, for a contradiction, that there exists another accumulation point $x\neq 1$. Then $\forall \epsilon >0$ we have for at least one $N \in \mathbb{N}$, $x-\epsilon < 1 + \frac{(-1)^N}{N} < x+\epsilon$. Fix $\epsilon>|x-1|>0$, and we have  
+\begin{align*}
+x-\epsilon &< 1 + \frac{(-1)^N}{N} < x+\epsilon\\
+\epsilon &< \left(1 + \frac{(-1)^N}{N}\right) -x< \epsilon\\
+\implies &\left|\left(1+\frac{(-1)^N}{N}\right)-x\right|<\epsilon\\
+\implies &\left|x-\left(1+\frac{(-1)^N}{N}\right)\right|<\epsilon
+\end{align*}
+Thus,
+\begin{align*}
+\left|x-1+\frac{(-1)^N}{N}\right|&\leq |x-1|+\left|\frac{(-1)^N}{N}\right|\\
+&=\epsilon + \frac{1}{N}>\epsilon
+\end{align*}
+Since we have the quantity being greater than $\epsilon$, this is a contradiction.  Thus if $(x_n)$ is Cauchy it must also be bounded.
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 3.} Prove the following:
+
+\begin{align*}
+\textrm{(a) ~~}\lim_{n \to \infty} \frac{(-1)^n}{n} &=0			&		\textrm{(b) ~~}\lim_{n \to \infty} \frac{1}{n^{1/3}}  &=0\\
+\textrm{(c) ~~}\lim_{n \to \infty} \frac{2n-1}{3n+2} &=\frac{2}{3}			&		\textrm{(d) ~~}\lim_{n \to \infty} \frac{n+6}{n^2-6}  &=0
+\end{align*}
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+If $\lim_{n\to \infty} \frac{(-1)^n}{n}=0$, then $\forall \epsilon > 0$ $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $\left|\frac{(-1)^n}{n}-0\right|< \epsilon$.  Fix $\epsilon > 0$ and let $N > \frac{1}{\epsilon}$.  Then we have,
+\begin{align*}
+\left|\frac{(-1)^n}{n} - 0\right| &= \left|\frac{(-1)^n}{n}\right|\\
+&=\frac{1}{n}\\
+&\leq \frac{1}{N}\\
+&< \epsilon
+\end{align*}
+Thus $0$ is the limit.
+\end{proof}
+
+\begin{proof}[b]
+If $\lim_{n\to \infty} \frac{1}{n^{1/3}}=0$, then $\forall \epsilon > 0$ $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $\left|\frac{1}{n^{1/3}}-0\right|< \epsilon$.  Fix $\epsilon > 0$ and let $N > \frac{1}{\epsilon ^3}$.  Then we have,
+\begin{align*}
+\left|\frac{1}{n^{1/3}}-0\right| &= \frac{1}{n^{1/3}}\\
+&\leq \frac{1}{N^{1/3}}\\
+&< \epsilon
+\end{align*}
+Thus $0$ is the limit.
+\end{proof}
+
+\begin{proof}[c]
+First let's show that $\lim_{n \to \infty} \frac{1}{n} = 0$.  If this is true, then $\forall \epsilon > 0$ $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $\left| \frac{1}{n} - 0\right| < \epsilon$.  Fix $\epsilon >0$ and let $N = \frac{1}{\epsilon}$.  Then,
+\begin{align*}
+\left| \frac{1}{n} - 0 \right| &= \left| \frac{1}{n} \right|\\
+&= \frac{1}{n}\\
+&\leq \frac{1}{N}\\
+&< \epsilon
+\end{align*}
+So $\lim_{n \to \infty} \frac{1}{n} = 0$. Now consider the sequence given in (c),
+\begin{align*}
+\frac{2n-1}{3n+2}&=\frac{2-1/n}{3+2/n}\\
+&=\frac{2-(1/n)}{3+2(1/n)}
+\end{align*}
+If we let $n \to \infty$ then we have,
+\begin{align*}
+\frac{2-(0)}{3+2(0)} &= \frac{2}{3}
+\end{align*}
+\end{proof}
+
+\begin{proof}[d]
+Since we already know that $\frac{1}{n} \to 0$ we have,
+\begin{align*}
+\frac{n+6}{n^2-6} &= \frac{n(1+6/n)}{n^2(1-6/n^2)}\\
+&=\frac{1+6(1/n)}{n(1-6(1/n)(1/n))}
+\end{align*}
+and as $n \to \infty$,
+\begin{align*}
+\frac{1}{n}\frac{1+6(1/n)}{1-6(1/n)(1/n)} &\to (0)\frac{1+6(0)}{1-6(0)(0)}\\
+&= 0
+\end{align*}
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 4.} 
+
+\begin{enumerate}[(a)]
+\item
+Consider three sequences $(a_n)$, $(b_n)$, and $(s_n)$ such that $a_n \leq s_n \leq b_n$ for all $n\in \mathbb{N}$ and $\lim_{n \to \infty} a_n= \lim_{n \to \infty} b_n = s$. Prove $\lim_{n \to \infty} s_n = s$. This is called the ``Squeeze lemma."
+\item
+Suppose $(s_n)$ and $(t_n)$ are sequences such that $|s_n| \leq t_n$ for all $n \in \mathbb{N}$ and $\lim_{n \to \infty} t_n =0$. Prove $\lim_{n \to \infty} s_n = 0$. 
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+Fix $\epsilon >0$.  Then $\exists N_1 \in \mathbb{N}$ such that $\forall n \geq N_1$ we have,
+\begin{align}
+|a_n - s|&< \epsilon
+\end{align}
+Also, $\exists N_2 \in \mathbb{N}$ such that $\forall n \geq N_2$ we have,
+\begin{align}
+|b_n -s|&<\epsilon
+\end{align}
+Define $N = \max(N_1,N_2)$.  Thus both expressions (\emph{Eqn. 1} and \emph{Eqn. 2}) hold $\forall n \geq N$. Next, notice that these conditions imply that,
+\begin{align}
+\epsilon < a_n -s \leq b_n -s < \epsilon
+\end{align}
+Also notice that,
+\begin{align*}
+&a_n \leq s_n \leq b_n \\
+\implies &a_n-s \leq s_n -s \leq b_n -s
+\end{align*}
+Inserting this back into the earlier expression (\emph{Eqn. 3}), we have that
+\begin{align*}
+&\epsilon < a_n -s \leq s_n -s \leq b_n -s < \epsilon\\
+\implies &|s_n-s|<\epsilon
+\end{align*}
+Thus the sequence $(s_n)$ converges to $s$.
+\end{proof}
+
+\begin{proof}[b]
+Since $t_n \to 0$, $\forall \epsilon > 0$ $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $|t_n - 0| < \epsilon $.  Then we have,
+\[
+||s_n|-0| \leq |t_n-0| < \epsilon
+\]
+But,
+\begin{align*}
+||s_n|-0|=||s_n||=|s_n|=|s_n-0|
+\end{align*}
+Thus,
+\begin{align*}
+|s_n-0|\leq |t_n-0| < \epsilon
+\end{align*}
+Thus $\lim_{n \to \infty} s_n = 0$
+\end{proof}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 5.} Let
+\[
+a_n = 
+\begin{cases}
+\frac{1}{n}, & \text{if } 51 \text{ does not divide } n\\
+1, & \text{if } 51 \text{ does divide } n
+\end{cases}
+\]
+Prove that $(a_n)$ does not converge.
+
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}
+If $(a_n)$ converges, then we know $(a_n)$ is also Cauchy.  Thus, $\forall \epsilon >0$ $\exists N \in \mathbb{N}$ such that $\forall n,m \geq N$, $|a_m - a_n| < \epsilon$. Here, fix $\epsilon = \frac{48}{50}$ and let $n=51N-1$ and $m=n+1$. Thus,
+\begin{align*}
+|a_m-a_n| &= \left|51N-\frac{1}{51N-1}\right|\\
+& = \left|1-\frac{1}{51N-1}\right|\\
+&=1-\frac{1}{51N-1}
+\end{align*}
+But since $N \in \mathbb{N}$, $N \geq 1$ by definition and we have $\frac{1}{51N-1}\leq \frac{1}{51-1}= \frac{1}{50}$. Thus,
+\begin{align*}
+1-\frac{1}{51N-1}\geq 1-\frac{1}{50} = \frac{49}{50} > \frac{48}{50} = \epsilon
+\end{align*}
+Thus $(a_n)$ is certainly not Cauchy.  Since $(a_n)$ is not Cauchy, it must not converge.
+\end{proof}
+
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 6.} Consider the following sequences, defined as follows:
+\begin{align*}
+a_n &= (-1)^n , &		b_n &= \sin \frac{n \pi}{4} &		c_n &= n^2 &		d_n &= \frac{6n+4}{7n-3}
+\end{align*}
+
+\begin{enumerate}[(a)]
+\item
+For each sequence, give an example of a monotone subsequence.
+\item
+For each subsequence you gave, determine if it converges or diverges. If it converges, find the limit. If it diverges, does it diverge to $\infty$, $-\infty$, or niether?
+\item
+Repeat part (b) for the original sequences.
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{solution}[a]
+A valid subsequence for $a_n$ would be $n \to 2k$ for $k \in \mathbb{N}$.  The sequence is,
+\[
+a_{2k} = \left\{1,1,1,1,...\right\}
+\]
+Since by definition a constant sequence is monotonic.
+
+A valid subsequence for $b_n$ would be $n \to 4k$ for $k \in \mathbb{N}$. The sequence is,
+\[
+b_{4k} = \{0,0,0,0,...\}
+\]
+By the same logic as before.
+
+A valid subsequence for $c_n$ would be the sequence itself. But rather I'll restrict to $k = 1$.  This sequence looks like,
+\[
+c_1 = \{1,1,1,1,...\}
+\]
+Which is again constant and monotone.
+
+A valid subsequence for $d_n$ would also be the sequence itself, but again I'll restrict $k=1$. This sequence looks like,
+\[
+d_n = \left\{\frac{5}{2},\frac{5}{2},\frac{5}{2},\frac{5}{2},...\right\}
+\]
+Again same logic, so this is monotone.
+
+It is totally a hack to abuse sequences like this.  I also considered finite sequences, but we hadn't talked about finite sequences.
+\end{solution}
+
+\begin{solution}[b]
+Let's start with the first subsequence: $(a_{2k})$.  Notice, I have made my life easy here. $(a_{2k})$ is constant and thus $\mathrm{im}((a_{2k}))={1}$.  We can show that the sequence $\{1,1,1,1,...\}$ is Cauchy.  Fix $\epsilon >0$.  Since $\forall k \in \mathbb{N}$, $a_{2k}=1$ we know that for any $p,q \in \mathbb{N}$, $|a_{2p} - a_{2q}|=|1-1|=0<\epsilon$.  Since this subsequence is Cauchy it is also convergent.
+
+\vspace{5mm}
+
+Note: This methodology is going to be repeated virtually word for word in the next $3$ examples
+
+\vspace{5mm}
+
+Next consider the sequence $(b_{4k})$.  Since the sequence is constant, $\forall k \in \mathbb{N}$ we have $b_{4k} = 0$.  Fix $\epsilon >0$.  Again, using the fact the sequence is constant, we have $\forall p,q \in \mathbb{N}$, $|b_{4p}-b_{4q}| = |0-0| = 0 < \epsilon$.
+
+\vspace{5mm}
+
+Next consider the sequence $(c_{1})$. Since the sequence is constant, and in fact defined by the same element, we can do a similar trick.  Fix $\epsilon >0$.  Again, using the fact the sequence is constant and consists only of $c_1$, we have $|c_1-c_1| = |1-1| = 0 < \epsilon$.
+
+\vspace{5mm}
+
+Next consider the sequence $(d_{1})$. Since the sequence is constant, and in fact defined by the same element, we can copy the previous trick.  Fix $\epsilon >0$.  Again, using the fact the sequence is constant and consists only of $d_1$, we have $|d_1-d_1| = |\frac{5}{2}-\frac{5}{2}| = 0 < \epsilon$.
+\end{solution}
+
+\begin{solution}[c] 
+~
+\vspace{5mm}
+
+\begin{proof}[$a_n$]
+Suppose that the sequence $(a_n)$ converges to the value $L$.  Then fix $\epsilon > 1 + |L| > 0$.  Then $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $|(-1)^n-L|<\epsilon$. But,
+\begin{align*}
+\left|(-1)^n-L\right| &\leq |(-1)^n| + |-L|\\
+&= 1+|L|>\epsilon
+\end{align*}
+This contradicts the necessary statement that $|(-1)^n-L|<\epsilon$ and thus $(a_n)$ does not converge to any value since $L$ was arbitrary.
+\end{proof}
+
+\vspace{5mm}
+
+\begin{proof}[$b_n$]
+Suppose that the sequence $(b_n)$ converges to the value $L$.  Then fix $\epsilon > |L| > 0$.  Then $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $\left|\sin\left(\frac{n\pi}{4}\right)-L\right|<\epsilon$. But,
+\begin{align*}
+\left|\sin\left(\frac{n\pi}{4}\right)-L\right| \leq \left|\sin\left(\frac{n\pi}{4}\right)\right| + |-L|\\
+\end{align*}
+Notice, $\mathrm{Im}((b_n))=\left\{-1,-\frac{\sqrt{2}}{2},0,\frac{\sqrt{2}}{2},1\right\}$.  Thus, $\left|\sin\left(\frac{n\pi}{4}\right)\right|=0$ is the smallest value in the set.  Substituting in $0$,
+\begin{align*}
+|0| + |-L| &= |L| > \epsilon
+\end{align*}
+Since the smallest value possible does not satisfy the $\epsilon$ chosen we have a contradiction. All other values will give a larger answer than something already larger than $\epsilon$.  Because $L$ was arbitrary, $(b_n)$ does not converge to any value.
+\end{proof}
+
+\vspace{5mm}
+
+\begin{proof}[$c_n$]
+The sequence $(c_n)$ diverges to $+\infty$.  We can show this by fixing $M>0$.  Then $\exists N \in \mathbb{N}$ such that $\forall n \geq N$, $a_n>M$.  If we choose $N^2> M$ then we have,
+\begin{align*}
+a_n=n^2\geq N^2 > M
+\end{align*}
+So $(c_n)$ diverges to $\infty$.
+\end{proof}
+
+\begin{proof}[$d_n$]
+The sequence $(d_n)$ converges to $\frac{6}{7}$. Here I will use the fact that $\lim_{n \to \infty} \frac{1}{n} = 0$ and the arithmetic operations of sequences.  
+\begin{align*}
+d_n = \frac{6n+4}{7n-3}\\
+&=\frac{6+4(1/n)}{7-3(1/n)}
+\end{align*}
+Now,
+\begin{align*}
+\lim_{n \to \infty} d_n &= \lim_{n \to \infty} \frac{6+4(1/n)}{7-3(1/n)}\\
+&=\frac{6+4(0)}{7-3(0)}\\
+&=\frac{6}{7}
+\end{align*}
+\end{proof}
+Showing that $(d_n) \to \frac{6}{7}$.
+
+\end{solution}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%PROBLEM 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{Problem 7.} 
+\begin{enumerate}[(a)]
+\item
+Let $(s_n)$ be a sequence such that
+\[
+|s_{n+1}-s_n|<2^{-n} \text{ ~~~~} \forall n \in \mathbb{N}
+\] 
+Prove $(s_n)$ is a Cauchy sequence and hence a convergent sequence.
+\item
+Is the results in (a) true if we only assume $|s_{n+1} - s_n| < \frac{1}{n}$ for all $n \in \mathbb{N}$
+\end{enumerate}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\begin{proof}[a]
+To make this a bit nicer, let me first show a \emph{Lemma} involving a summation of inverse powers of two.  
+\begin{lemma}
+Consider, for $n,i \in \mathbb{N}$,
+\[
+\sum_{i=1}^{n} \frac{1}{2^i}
+\]
+After a close look at the first few terms, a pattern begins to form.  I took the guess that the sum evaluates to $\frac{2^p-1}{2^p}$.  Let's prove it using induction.
+
+\vspace{5mm}
+
+\emph{Base}: For $n=1$ we have, 
+\begin{align*}
+\sum_{i=1}^{1} \frac{1}{2^i} &= \frac{1}{2} = \frac{2-1}{2}
+\end{align*}
+which is true.
+
+\vspace{5mm}
+
+Next, assume the statement is true for $n$.  
+
+\vspace{5mm}
+
+\emph{Induction}: We want to show that $\sum_{i=1}^{n+1} \frac{1}{2^i} = \frac{2^{n+1}-1}{2^{n+1}}$. Start with the sum,
+\begin{align*}
+\sum_{i=1}^{n+1} \frac{1}{2^i} &= \frac{1}{2^{n+1}}+\sum_{i=1}^{n} \frac{1}{2^i}\\
+&= \frac{1}{2^{n+1}} + \frac{2^{n-1}}{2^n}\\
+&= \frac{1}{2^{n+1}} + \frac{2(2^n-1)}{2^{n+1}}\\
+&= \frac{2^{n+1}-1}{2^{n+1} }
+\end{align*}
+Thus we have proven the statement about the summation.
+\end{lemma}
+
+\vspace{5mm}
+
+We have $(s_n)$ defined to be such that,
+\[
+|s_{n+1}-s_n|<2^{-n}
+\] 
+Fix $\epsilon > 2^{-(N-1)}\frac{2^p-1}{2^p} > 0$.  Then $\exists N \in \mathbb{N}$ such that $\forall n, m \geq N$, $|s_m -s_m|<\epsilon$.  Without loss of generality, let $m$ be arbitrarily larger than $n$ by letting $m=n+p$ for any $p \in \mathbb{N}$. Thus,
+\begin{align*}
+|s_m - s_n| &= |s_{n+p} - s_n|\\
+&= |s_{n+p}-s_{n+p-1}+s_{n+p-1}-s_{n}|\\
+&\leq |s_{n+p}-s_{n+p-1}|+|s_{n+p-1}-s_{n}|\\
+&< 2^{-n+p-1} + |s_{n+p-1}-s_{n}|\\
+&= 2^{-n+p-1} + |s_{n+p-1}-s_{n+p-2}+s_{n+p-1}-s_{n}|\\
+&\leq 2^{-(n+p-1)} + |s_{n+p-1}-s_{n+p-2}|+|s_{n+p-1}-s_{n}|\\
+&< 2^{-(n+p-1)}+2^{-(n+p-2)}+|s_{n+p-1}-s_{n}|
+\end{align*}
+We can continue in this fashion, and ultimately,
+\begin{align*}
+|s_m-s_n| &< 2^{-(n+p-1)}+2^{-(n+p-2)} + ... + 2^{-(n+1)}+2^{-n}\\
+&= 2^{-(n-1)} \left( 2^{-p} + 2^{-(p-1)}+... + 2^{-2} + 2^{-1} \right)
+\end{align*}
+But by the \emph{Lemma} above, $ 0< 2^{-p} + 2^{-(p-1)}+... + 2^{-2} + 2^{-1} < 1$.  In fact, it is equal to $\frac{2^p-1}{2^p}$.  Thus,
+\begin{align*}
+|s_m-s_n| &< 2^{-(n-1)} \left( 2^{-p} + 2^{-(p-1)}+... + 2^{-2} + 2^{-1} \right)\\
+&= 2^{-(n-1)}\frac{2^p-1}{2^p}\\
+&\leq 2^{-(N-1)}\frac{2^p-1}{2^p}\\
+&<\epsilon
+\end{align*}
+Thus we know the sequence is Cauchy.
+
+Notice: The value of $N$ needed also depends on how much larger $m$ is than $n$.  This is why $p$ shows up in the definition.  In my mind this just dictates how we choose $N$.  I believe I could rid of $p$ entirely by letting epsilon be defined in terms of $N$ differently.  
+
+\end{proof}
+
+\begin{proof}[b]
+Here we again want to show that this sequence is Cauchy.  Thus, $\forall \epsilon >0$ $\exists N \in \mathbb{N}$ such that $\forall n,m \geq N$, $|s_m-s_n|<\epsilon$.  Without loss of generality, let $m=n+p$ where $p\in \mathbb{N}$ and fix $\epsilon > 1+\frac{p}{N}$.  Thus we have,
+\begin{align*}
+|s_m-s_n|&=|s_{n+p}-s_n|\\
+&= |s_{n+p}-s_{n+p-1}+s_{n+p-1}-s_n|\\
+&\leq |s_{n+p}-s_{n+p-1}|+|s_{n+p-1}-s_n|\\
+&< \frac{1}{n+p-1} + |s_{n+p-1}-s_{n+p-2}+s_{n+p-2}-s_n|\\
+&\leq \frac{1}{n+p-1} + |s_{n+p-1}-s_{n+p-2}|+|s_{n+p-2}-s_n|\\
+&<\frac{1}{n+p-1} + \frac{1}{n+p-2} + |s_{n+p-2}-s_{n+p-3}+s_{n+p-3}-s_n|
+\end{align*}
+If we continue in this fashion,
+\begin{align*}
+&<\frac{1}{n+p-1} + \frac{1}{n+p-2} + ... + \frac{1}{n+1} + \frac{1}{n}\\
+&\leq \frac{n+p}{n}\\
+&=1+\frac{p}{n}\\
+&<1+\frac{p}{N}\\
+&<\epsilon
+\end{align*}
+Thus the sequence is in fact Cauchy.
+\end{proof}
+
+\end{document}
