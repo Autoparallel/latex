@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  15 OCT 2020 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  15 OCT 2020 09:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -3066,23 +3066,23 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 476.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 474.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 476.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 474.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 476.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 474.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <7> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 476.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 474.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 476.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 474.
 
 [58
 
@@ -3104,7 +3104,7 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
 <figures/decision_tree.png, id=495, 557.1283pt x 181.52191pt>
 File: figures/decision_tree.png Graphic file (type png)
 <use figures/decision_tree.png>
-Package pdftex.def Info: figures/decision_tree.png  used on input line 501.
+Package pdftex.def Info: figures/decision_tree.png  used on input line 499.
 (pdftex.def)             Requested size: 375.24408pt x 122.25887pt.
  [66
 
@@ -3119,681 +3119,677 @@ Package pdftex.def Info: figures/decision_tree.png  used on input line 501.
 
 ] [71
 
-]
-<figures/L96_F3.5N100.png, id=534, 562.1pt x 421.575pt>
-File: figures/L96_F3.5N100.png Graphic file (type png)
-<use figures/L96_F3.5N100.png>
-Package pdftex.def Info: figures/L96_F3.5N100.png  used on input line 545.
-(pdftex.def)             Requested size: 187.62204pt x 140.71548pt.
- [72
-
- <./figures/L96_F3.5N100.png>]
-<figures/l96_pod10.png, id=541, 513.92pt x 385.44pt>
-File: figures/l96_pod10.png Graphic file (type png)
-<use figures/l96_pod10.png>
-Package pdftex.def Info: figures/l96_pod10.png  used on input line 569.
-(pdftex.def)             Requested size: 183.87166pt x 137.90549pt.
-<figures/l96_pod30.png, id=542, 513.92pt x 385.44pt>
-File: figures/l96_pod30.png Graphic file (type png)
-<use figures/l96_pod30.png>
-Package pdftex.def Info: figures/l96_pod30.png  used on input line 569.
-(pdftex.def)             Requested size: 183.87166pt x 137.90549pt.
- [73
-
- <./figures/l96_pod10.png> <./figures/l96_pod30.png>] [74
+] [72
 
 ]
-<baratropic-0.png, id=557, 788.9475pt x 411.5375pt>
+<baratropic-0.png, id=541, 788.9475pt x 411.5375pt>
 File: baratropic-0.png Graphic file (type png)
 <use baratropic-0.png>
-Package pdftex.def Info: baratropic-0.png  used on input line 598.
+Package pdftex.def Info: baratropic-0.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-0.png> <a0,fr0>
-<baratropic-1.png, id=568, 788.9475pt x 411.5375pt>
+<baratropic-1.png, id=552, 788.9475pt x 411.5375pt>
 File: baratropic-1.png Graphic file (type png)
 <use baratropic-1.png>
-Package pdftex.def Info: baratropic-1.png  used on input line 598.
+Package pdftex.def Info: baratropic-1.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-1.png> <a0,fr1>
-<baratropic-2.png, id=579, 788.9475pt x 411.5375pt>
+<baratropic-2.png, id=563, 788.9475pt x 411.5375pt>
 File: baratropic-2.png Graphic file (type png)
 <use baratropic-2.png>
-Package pdftex.def Info: baratropic-2.png  used on input line 598.
+Package pdftex.def Info: baratropic-2.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-2.png> <a0,fr2>
-<baratropic-3.png, id=590, 788.9475pt x 411.5375pt>
+<baratropic-3.png, id=574, 788.9475pt x 411.5375pt>
 File: baratropic-3.png Graphic file (type png)
 <use baratropic-3.png>
-Package pdftex.def Info: baratropic-3.png  used on input line 598.
+Package pdftex.def Info: baratropic-3.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-3.png>
-<a0,fr3>
-<baratropic-4.png, id=601, 788.9475pt x 411.5375pt>
+ <./baratropic-3.png> <a0,fr3>
+<baratropic-4.png, id=585, 788.9475pt x 411.5375pt>
 File: baratropic-4.png Graphic file (type png)
 <use baratropic-4.png>
-Package pdftex.def Info: baratropic-4.png  used on input line 598.
+Package pdftex.def Info: baratropic-4.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-4.png> <a0,fr4>
-<baratropic-5.png, id=612, 788.9475pt x 411.5375pt>
+<baratropic-5.png, id=596, 788.9475pt x 411.5375pt>
 File: baratropic-5.png Graphic file (type png)
 <use baratropic-5.png>
-Package pdftex.def Info: baratropic-5.png  used on input line 598.
+Package pdftex.def Info: baratropic-5.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-5.png> <a0,fr5>
-<baratropic-6.png, id=623, 788.9475pt x 411.5375pt>
+<baratropic-6.png, id=607, 788.9475pt x 411.5375pt>
 File: baratropic-6.png Graphic file (type png)
 <use baratropic-6.png>
-Package pdftex.def Info: baratropic-6.png  used on input line 598.
+Package pdftex.def Info: baratropic-6.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-6.png> <a0,fr6>
-<baratropic-7.png, id=634, 788.9475pt x 411.5375pt>
+ <./baratropic-6.png>
+<a0,fr6>
+<baratropic-7.png, id=618, 788.9475pt x 411.5375pt>
 File: baratropic-7.png Graphic file (type png)
 <use baratropic-7.png>
-Package pdftex.def Info: baratropic-7.png  used on input line 598.
+Package pdftex.def Info: baratropic-7.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-7.png> <a0,fr7>
-<baratropic-8.png, id=645, 788.9475pt x 411.5375pt>
+<baratropic-8.png, id=629, 788.9475pt x 411.5375pt>
 File: baratropic-8.png Graphic file (type png)
 <use baratropic-8.png>
-Package pdftex.def Info: baratropic-8.png  used on input line 598.
+Package pdftex.def Info: baratropic-8.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-8.png>
-<a0,fr8>
-<baratropic-9.png, id=656, 788.9475pt x 411.5375pt>
+ <./baratropic-8.png> <a0,fr8>
+<baratropic-9.png, id=640, 788.9475pt x 411.5375pt>
 File: baratropic-9.png Graphic file (type png)
 <use baratropic-9.png>
-Package pdftex.def Info: baratropic-9.png  used on input line 598.
+Package pdftex.def Info: baratropic-9.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-9.png> <a0,fr9>
-<baratropic-10.png, id=667, 788.9475pt x 411.5375pt>
+<baratropic-10.png, id=651, 788.9475pt x 411.5375pt>
 File: baratropic-10.png Graphic file (type png)
 <use baratropic-10.png>
-Package pdftex.def Info: baratropic-10.png  used on input line 598.
+Package pdftex.def Info: baratropic-10.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-10.png> <a0,fr10>
-<baratropic-11.png, id=678, 788.9475pt x 411.5375pt>
+<baratropic-11.png, id=662, 788.9475pt x 411.5375pt>
 File: baratropic-11.png Graphic file (type png)
 <use baratropic-11.png>
-Package pdftex.def Info: baratropic-11.png  used on input line 598.
+Package pdftex.def Info: baratropic-11.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-11.png> <a0,fr11>
-<baratropic-12.png, id=689, 788.9475pt x 411.5375pt>
+ <./baratropic-11.png>
+<a0,fr11>
+<baratropic-12.png, id=673, 788.9475pt x 411.5375pt>
 File: baratropic-12.png Graphic file (type png)
 <use baratropic-12.png>
-Package pdftex.def Info: baratropic-12.png  used on input line 598.
+Package pdftex.def Info: baratropic-12.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-12.png> <a0,fr12>
-<baratropic-13.png, id=700, 788.9475pt x 411.5375pt>
+<baratropic-13.png, id=684, 788.9475pt x 411.5375pt>
 File: baratropic-13.png Graphic file (type png)
 <use baratropic-13.png>
-Package pdftex.def Info: baratropic-13.png  used on input line 598.
+Package pdftex.def Info: baratropic-13.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-13.png>
-<a0,fr13>
-<baratropic-14.png, id=711, 788.9475pt x 411.5375pt>
+ <./baratropic-13.png> <a0,fr13>
+<baratropic-14.png, id=695, 788.9475pt x 411.5375pt>
 File: baratropic-14.png Graphic file (type png)
 <use baratropic-14.png>
-Package pdftex.def Info: baratropic-14.png  used on input line 598.
+Package pdftex.def Info: baratropic-14.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-14.png> <a0,fr14>
-<baratropic-15.png, id=722, 788.9475pt x 411.5375pt>
+<baratropic-15.png, id=706, 788.9475pt x 411.5375pt>
 File: baratropic-15.png Graphic file (type png)
 <use baratropic-15.png>
-Package pdftex.def Info: baratropic-15.png  used on input line 598.
+Package pdftex.def Info: baratropic-15.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-15.png> <a0,fr15>
-<baratropic-16.png, id=733, 788.9475pt x 411.5375pt>
+<baratropic-16.png, id=717, 788.9475pt x 411.5375pt>
 File: baratropic-16.png Graphic file (type png)
 <use baratropic-16.png>
-Package pdftex.def Info: baratropic-16.png  used on input line 598.
+Package pdftex.def Info: baratropic-16.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-16.png> <a0,fr16>
-<baratropic-17.png, id=744, 788.9475pt x 411.5375pt>
+<baratropic-17.png, id=728, 788.9475pt x 411.5375pt>
 File: baratropic-17.png Graphic file (type png)
 <use baratropic-17.png>
-Package pdftex.def Info: baratropic-17.png  used on input line 598.
+Package pdftex.def Info: baratropic-17.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-17.png> <a0,fr17>
-<baratropic-18.png, id=755, 788.9475pt x 411.5375pt>
+<baratropic-18.png, id=739, 788.9475pt x 411.5375pt>
 File: baratropic-18.png Graphic file (type png)
 <use baratropic-18.png>
-Package pdftex.def Info: baratropic-18.png  used on input line 598.
+Package pdftex.def Info: baratropic-18.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-18.png> <a0,fr18>
-<baratropic-19.png, id=766, 788.9475pt x 411.5375pt>
+<baratropic-19.png, id=750, 788.9475pt x 411.5375pt>
 File: baratropic-19.png Graphic file (type png)
 <use baratropic-19.png>
-Package pdftex.def Info: baratropic-19.png  used on input line 598.
+Package pdftex.def Info: baratropic-19.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-19.png> <a0,fr19>
-<baratropic-20.png, id=777, 788.9475pt x 411.5375pt>
+<baratropic-20.png, id=761, 788.9475pt x 411.5375pt>
 File: baratropic-20.png Graphic file (type png)
 <use baratropic-20.png>
-Package pdftex.def Info: baratropic-20.png  used on input line 598.
+Package pdftex.def Info: baratropic-20.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-20.png> <a0,fr20>
-<baratropic-21.png, id=788, 788.9475pt x 411.5375pt>
+<baratropic-21.png, id=772, 788.9475pt x 411.5375pt>
 File: baratropic-21.png Graphic file (type png)
 <use baratropic-21.png>
-Package pdftex.def Info: baratropic-21.png  used on input line 598.
+Package pdftex.def Info: baratropic-21.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-21.png> <a0,fr21>
-<baratropic-22.png, id=799, 788.9475pt x 411.5375pt>
+<baratropic-22.png, id=783, 788.9475pt x 411.5375pt>
 File: baratropic-22.png Graphic file (type png)
 <use baratropic-22.png>
-Package pdftex.def Info: baratropic-22.png  used on input line 598.
+Package pdftex.def Info: baratropic-22.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-22.png> <a0,fr22>
-<baratropic-23.png, id=810, 788.9475pt x 411.5375pt>
+<baratropic-23.png, id=794, 788.9475pt x 411.5375pt>
 File: baratropic-23.png Graphic file (type png)
 <use baratropic-23.png>
-Package pdftex.def Info: baratropic-23.png  used on input line 598.
+Package pdftex.def Info: baratropic-23.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-23.png> <a0,fr23>
-<baratropic-24.png, id=821, 788.9475pt x 411.5375pt>
+<baratropic-24.png, id=805, 788.9475pt x 411.5375pt>
 File: baratropic-24.png Graphic file (type png)
 <use baratropic-24.png>
-Package pdftex.def Info: baratropic-24.png  used on input line 598.
+Package pdftex.def Info: baratropic-24.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-24.png> <a0,fr24>
-<baratropic-25.png, id=832, 788.9475pt x 411.5375pt>
+<baratropic-25.png, id=816, 788.9475pt x 411.5375pt>
 File: baratropic-25.png Graphic file (type png)
 <use baratropic-25.png>
-Package pdftex.def Info: baratropic-25.png  used on input line 598.
+Package pdftex.def Info: baratropic-25.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-25.png> <a0,fr25>
-<baratropic-26.png, id=843, 788.9475pt x 411.5375pt>
+<baratropic-26.png, id=827, 788.9475pt x 411.5375pt>
 File: baratropic-26.png Graphic file (type png)
 <use baratropic-26.png>
-Package pdftex.def Info: baratropic-26.png  used on input line 598.
+Package pdftex.def Info: baratropic-26.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-26.png> <a0,fr26>
-<baratropic-27.png, id=854, 788.9475pt x 411.5375pt>
+<baratropic-27.png, id=838, 788.9475pt x 411.5375pt>
 File: baratropic-27.png Graphic file (type png)
 <use baratropic-27.png>
-Package pdftex.def Info: baratropic-27.png  used on input line 598.
+Package pdftex.def Info: baratropic-27.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-27.png> <a0,fr27>
-<baratropic-28.png, id=865, 788.9475pt x 411.5375pt>
+<baratropic-28.png, id=849, 788.9475pt x 411.5375pt>
 File: baratropic-28.png Graphic file (type png)
 <use baratropic-28.png>
-Package pdftex.def Info: baratropic-28.png  used on input line 598.
+Package pdftex.def Info: baratropic-28.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-28.png> <a0,fr28>
-<baratropic-29.png, id=876, 788.9475pt x 411.5375pt>
+ <./baratropic-28.png>
+<a0,fr28>
+<baratropic-29.png, id=860, 788.9475pt x 411.5375pt>
 File: baratropic-29.png Graphic file (type png)
 <use baratropic-29.png>
-Package pdftex.def Info: baratropic-29.png  used on input line 598.
+Package pdftex.def Info: baratropic-29.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-29.png> <a0,fr29>
-<baratropic-30.png, id=887, 788.9475pt x 411.5375pt>
+<baratropic-30.png, id=871, 788.9475pt x 411.5375pt>
 File: baratropic-30.png Graphic file (type png)
 <use baratropic-30.png>
-Package pdftex.def Info: baratropic-30.png  used on input line 598.
+Package pdftex.def Info: baratropic-30.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-30.png>
-<a0,fr30>
-<baratropic-31.png, id=898, 788.9475pt x 411.5375pt>
+ <./baratropic-30.png> <a0,fr30>
+<baratropic-31.png, id=882, 788.9475pt x 411.5375pt>
 File: baratropic-31.png Graphic file (type png)
 <use baratropic-31.png>
-Package pdftex.def Info: baratropic-31.png  used on input line 598.
+Package pdftex.def Info: baratropic-31.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-31.png> <a0,fr31>
-<baratropic-32.png, id=909, 788.9475pt x 411.5375pt>
+<baratropic-32.png, id=893, 788.9475pt x 411.5375pt>
 File: baratropic-32.png Graphic file (type png)
 <use baratropic-32.png>
-Package pdftex.def Info: baratropic-32.png  used on input line 598.
+Package pdftex.def Info: baratropic-32.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-32.png> <a0,fr32>
-<baratropic-33.png, id=920, 788.9475pt x 411.5375pt>
+<baratropic-33.png, id=904, 788.9475pt x 411.5375pt>
 File: baratropic-33.png Graphic file (type png)
 <use baratropic-33.png>
-Package pdftex.def Info: baratropic-33.png  used on input line 598.
+Package pdftex.def Info: baratropic-33.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-33.png> <a0,fr33>
-<baratropic-34.png, id=931, 788.9475pt x 411.5375pt>
+<baratropic-34.png, id=915, 788.9475pt x 411.5375pt>
 File: baratropic-34.png Graphic file (type png)
 <use baratropic-34.png>
-Package pdftex.def Info: baratropic-34.png  used on input line 598.
+Package pdftex.def Info: baratropic-34.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-34.png> <a0,fr34>
-<baratropic-35.png, id=942, 788.9475pt x 411.5375pt>
+<baratropic-35.png, id=926, 788.9475pt x 411.5375pt>
 File: baratropic-35.png Graphic file (type png)
 <use baratropic-35.png>
-Package pdftex.def Info: baratropic-35.png  used on input line 598.
+Package pdftex.def Info: baratropic-35.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-35.png> <a0,fr35>
-<baratropic-36.png, id=953, 788.9475pt x 411.5375pt>
+<baratropic-36.png, id=937, 788.9475pt x 411.5375pt>
 File: baratropic-36.png Graphic file (type png)
 <use baratropic-36.png>
-Package pdftex.def Info: baratropic-36.png  used on input line 598.
+Package pdftex.def Info: baratropic-36.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-36.png> <a0,fr36>
-<baratropic-37.png, id=964, 788.9475pt x 411.5375pt>
+<baratropic-37.png, id=948, 788.9475pt x 411.5375pt>
 File: baratropic-37.png Graphic file (type png)
 <use baratropic-37.png>
-Package pdftex.def Info: baratropic-37.png  used on input line 598.
+Package pdftex.def Info: baratropic-37.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-37.png> <a0,fr37>
-<baratropic-38.png, id=975, 788.9475pt x 411.5375pt>
+<baratropic-38.png, id=959, 788.9475pt x 411.5375pt>
 File: baratropic-38.png Graphic file (type png)
 <use baratropic-38.png>
-Package pdftex.def Info: baratropic-38.png  used on input line 598.
+Package pdftex.def Info: baratropic-38.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-38.png> <a0,fr38>
-<baratropic-39.png, id=986, 788.9475pt x 411.5375pt>
+<baratropic-39.png, id=970, 788.9475pt x 411.5375pt>
 File: baratropic-39.png Graphic file (type png)
 <use baratropic-39.png>
-Package pdftex.def Info: baratropic-39.png  used on input line 598.
+Package pdftex.def Info: baratropic-39.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-39.png> <a0,fr39>
-<baratropic-40.png, id=997, 788.9475pt x 411.5375pt>
+<baratropic-40.png, id=981, 788.9475pt x 411.5375pt>
 File: baratropic-40.png Graphic file (type png)
 <use baratropic-40.png>
-Package pdftex.def Info: baratropic-40.png  used on input line 598.
+Package pdftex.def Info: baratropic-40.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-40.png> <a0,fr40>
-<baratropic-41.png, id=1008, 788.9475pt x 411.5375pt>
+<baratropic-41.png, id=992, 788.9475pt x 411.5375pt>
 File: baratropic-41.png Graphic file (type png)
 <use baratropic-41.png>
-Package pdftex.def Info: baratropic-41.png  used on input line 598.
+Package pdftex.def Info: baratropic-41.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-41.png> <a0,fr41>
-<baratropic-42.png, id=1019, 788.9475pt x 411.5375pt>
+<baratropic-42.png, id=1003, 788.9475pt x 411.5375pt>
 File: baratropic-42.png Graphic file (type png)
 <use baratropic-42.png>
-Package pdftex.def Info: baratropic-42.png  used on input line 598.
+Package pdftex.def Info: baratropic-42.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-42.png> <a0,fr42>
-<baratropic-43.png, id=1030, 788.9475pt x 411.5375pt>
+<baratropic-43.png, id=1014, 788.9475pt x 411.5375pt>
 File: baratropic-43.png Graphic file (type png)
 <use baratropic-43.png>
-Package pdftex.def Info: baratropic-43.png  used on input line 598.
+Package pdftex.def Info: baratropic-43.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-43.png> <a0,fr43>
-<baratropic-44.png, id=1041, 788.9475pt x 411.5375pt>
+<baratropic-44.png, id=1025, 788.9475pt x 411.5375pt>
 File: baratropic-44.png Graphic file (type png)
 <use baratropic-44.png>
-Package pdftex.def Info: baratropic-44.png  used on input line 598.
+Package pdftex.def Info: baratropic-44.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-44.png> <a0,fr44>
-<baratropic-45.png, id=1052, 788.9475pt x 411.5375pt>
+<baratropic-45.png, id=1036, 788.9475pt x 411.5375pt>
 File: baratropic-45.png Graphic file (type png)
 <use baratropic-45.png>
-Package pdftex.def Info: baratropic-45.png  used on input line 598.
+Package pdftex.def Info: baratropic-45.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-45.png> <a0,fr45>
-<baratropic-46.png, id=1063, 788.9475pt x 411.5375pt>
+ <./baratropic-45.png>
+<a0,fr45>
+<baratropic-46.png, id=1047, 788.9475pt x 411.5375pt>
 File: baratropic-46.png Graphic file (type png)
 <use baratropic-46.png>
-Package pdftex.def Info: baratropic-46.png  used on input line 598.
+Package pdftex.def Info: baratropic-46.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-46.png> <a0,fr46>
-<baratropic-47.png, id=1074, 788.9475pt x 411.5375pt>
+<baratropic-47.png, id=1058, 788.9475pt x 411.5375pt>
 File: baratropic-47.png Graphic file (type png)
 <use baratropic-47.png>
-Package pdftex.def Info: baratropic-47.png  used on input line 598.
+Package pdftex.def Info: baratropic-47.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-47.png>
-<a0,fr47>
-<baratropic-48.png, id=1085, 788.9475pt x 411.5375pt>
+ <./baratropic-47.png> <a0,fr47>
+<baratropic-48.png, id=1069, 788.9475pt x 411.5375pt>
 File: baratropic-48.png Graphic file (type png)
 <use baratropic-48.png>
-Package pdftex.def Info: baratropic-48.png  used on input line 598.
+Package pdftex.def Info: baratropic-48.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-48.png> <a0,fr48>
-<baratropic-49.png, id=1096, 788.9475pt x 411.5375pt>
+<baratropic-49.png, id=1080, 788.9475pt x 411.5375pt>
 File: baratropic-49.png Graphic file (type png)
 <use baratropic-49.png>
-Package pdftex.def Info: baratropic-49.png  used on input line 598.
+Package pdftex.def Info: baratropic-49.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-49.png> <a0,fr49>
-<baratropic-50.png, id=1107, 788.9475pt x 411.5375pt>
+<baratropic-50.png, id=1091, 788.9475pt x 411.5375pt>
 File: baratropic-50.png Graphic file (type png)
 <use baratropic-50.png>
-Package pdftex.def Info: baratropic-50.png  used on input line 598.
+Package pdftex.def Info: baratropic-50.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-50.png> <a0,fr50>
-<baratropic-51.png, id=1118, 788.9475pt x 411.5375pt>
+<baratropic-51.png, id=1102, 788.9475pt x 411.5375pt>
 File: baratropic-51.png Graphic file (type png)
 <use baratropic-51.png>
-Package pdftex.def Info: baratropic-51.png  used on input line 598.
+Package pdftex.def Info: baratropic-51.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-51.png> <a0,fr51>
-<baratropic-52.png, id=1129, 788.9475pt x 411.5375pt>
+<baratropic-52.png, id=1113, 788.9475pt x 411.5375pt>
 File: baratropic-52.png Graphic file (type png)
 <use baratropic-52.png>
-Package pdftex.def Info: baratropic-52.png  used on input line 598.
+Package pdftex.def Info: baratropic-52.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-52.png> <a0,fr52>
-<baratropic-53.png, id=1140, 788.9475pt x 411.5375pt>
+<baratropic-53.png, id=1124, 788.9475pt x 411.5375pt>
 File: baratropic-53.png Graphic file (type png)
 <use baratropic-53.png>
-Package pdftex.def Info: baratropic-53.png  used on input line 598.
+Package pdftex.def Info: baratropic-53.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-53.png> <a0,fr53>
-<baratropic-54.png, id=1151, 788.9475pt x 411.5375pt>
+<baratropic-54.png, id=1135, 788.9475pt x 411.5375pt>
 File: baratropic-54.png Graphic file (type png)
 <use baratropic-54.png>
-Package pdftex.def Info: baratropic-54.png  used on input line 598.
+Package pdftex.def Info: baratropic-54.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-54.png> <a0,fr54>
-<baratropic-55.png, id=1162, 788.9475pt x 411.5375pt>
+<baratropic-55.png, id=1146, 788.9475pt x 411.5375pt>
 File: baratropic-55.png Graphic file (type png)
 <use baratropic-55.png>
-Package pdftex.def Info: baratropic-55.png  used on input line 598.
+Package pdftex.def Info: baratropic-55.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-55.png> <a0,fr55>
-<baratropic-56.png, id=1173, 788.9475pt x 411.5375pt>
+<baratropic-56.png, id=1157, 788.9475pt x 411.5375pt>
 File: baratropic-56.png Graphic file (type png)
 <use baratropic-56.png>
-Package pdftex.def Info: baratropic-56.png  used on input line 598.
+Package pdftex.def Info: baratropic-56.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-56.png> <a0,fr56>
-<baratropic-57.png, id=1184, 788.9475pt x 411.5375pt>
+<baratropic-57.png, id=1168, 788.9475pt x 411.5375pt>
 File: baratropic-57.png Graphic file (type png)
 <use baratropic-57.png>
-Package pdftex.def Info: baratropic-57.png  used on input line 598.
+Package pdftex.def Info: baratropic-57.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-57.png> <a0,fr57>
-<baratropic-58.png, id=1195, 788.9475pt x 411.5375pt>
+<baratropic-58.png, id=1179, 788.9475pt x 411.5375pt>
 File: baratropic-58.png Graphic file (type png)
 <use baratropic-58.png>
-Package pdftex.def Info: baratropic-58.png  used on input line 598.
+Package pdftex.def Info: baratropic-58.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-58.png> <a0,fr58>
-<baratropic-59.png, id=1206, 788.9475pt x 411.5375pt>
+<baratropic-59.png, id=1190, 788.9475pt x 411.5375pt>
 File: baratropic-59.png Graphic file (type png)
 <use baratropic-59.png>
-Package pdftex.def Info: baratropic-59.png  used on input line 598.
+Package pdftex.def Info: baratropic-59.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-59.png> <a0,fr59>
-<baratropic-60.png, id=1217, 788.9475pt x 411.5375pt>
+<baratropic-60.png, id=1201, 788.9475pt x 411.5375pt>
 File: baratropic-60.png Graphic file (type png)
 <use baratropic-60.png>
-Package pdftex.def Info: baratropic-60.png  used on input line 598.
+Package pdftex.def Info: baratropic-60.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-60.png> <a0,fr60>
-<baratropic-61.png, id=1228, 788.9475pt x 411.5375pt>
+<baratropic-61.png, id=1212, 788.9475pt x 411.5375pt>
 File: baratropic-61.png Graphic file (type png)
 <use baratropic-61.png>
-Package pdftex.def Info: baratropic-61.png  used on input line 598.
+Package pdftex.def Info: baratropic-61.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-61.png> <a0,fr61>
-<baratropic-62.png, id=1239, 788.9475pt x 411.5375pt>
+<baratropic-62.png, id=1223, 788.9475pt x 411.5375pt>
 File: baratropic-62.png Graphic file (type png)
 <use baratropic-62.png>
-Package pdftex.def Info: baratropic-62.png  used on input line 598.
+Package pdftex.def Info: baratropic-62.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-62.png> <a0,fr62>
-<baratropic-63.png, id=1250, 788.9475pt x 411.5375pt>
+ <./baratropic-62.png>
+<a0,fr62>
+<baratropic-63.png, id=1234, 788.9475pt x 411.5375pt>
 File: baratropic-63.png Graphic file (type png)
 <use baratropic-63.png>
-Package pdftex.def Info: baratropic-63.png  used on input line 598.
+Package pdftex.def Info: baratropic-63.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-63.png> <a0,fr63>
-<baratropic-64.png, id=1261, 788.9475pt x 411.5375pt>
+<baratropic-64.png, id=1245, 788.9475pt x 411.5375pt>
 File: baratropic-64.png Graphic file (type png)
 <use baratropic-64.png>
-Package pdftex.def Info: baratropic-64.png  used on input line 598.
+Package pdftex.def Info: baratropic-64.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-64.png>
-<a0,fr64>
-<baratropic-65.png, id=1272, 788.9475pt x 411.5375pt>
+ <./baratropic-64.png> <a0,fr64>
+<baratropic-65.png, id=1256, 788.9475pt x 411.5375pt>
 File: baratropic-65.png Graphic file (type png)
 <use baratropic-65.png>
-Package pdftex.def Info: baratropic-65.png  used on input line 598.
+Package pdftex.def Info: baratropic-65.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-65.png> <a0,fr65>
-<baratropic-66.png, id=1283, 788.9475pt x 411.5375pt>
+<baratropic-66.png, id=1267, 788.9475pt x 411.5375pt>
 File: baratropic-66.png Graphic file (type png)
 <use baratropic-66.png>
-Package pdftex.def Info: baratropic-66.png  used on input line 598.
+Package pdftex.def Info: baratropic-66.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-66.png> <a0,fr66>
-<baratropic-67.png, id=1294, 788.9475pt x 411.5375pt>
+<baratropic-67.png, id=1278, 788.9475pt x 411.5375pt>
 File: baratropic-67.png Graphic file (type png)
 <use baratropic-67.png>
-Package pdftex.def Info: baratropic-67.png  used on input line 598.
+Package pdftex.def Info: baratropic-67.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-67.png> <a0,fr67>
-<baratropic-68.png, id=1305, 788.9475pt x 411.5375pt>
+<baratropic-68.png, id=1289, 788.9475pt x 411.5375pt>
 File: baratropic-68.png Graphic file (type png)
 <use baratropic-68.png>
-Package pdftex.def Info: baratropic-68.png  used on input line 598.
+Package pdftex.def Info: baratropic-68.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-68.png> <a0,fr68>
-<baratropic-69.png, id=1316, 788.9475pt x 411.5375pt>
+<baratropic-69.png, id=1300, 788.9475pt x 411.5375pt>
 File: baratropic-69.png Graphic file (type png)
 <use baratropic-69.png>
-Package pdftex.def Info: baratropic-69.png  used on input line 598.
+Package pdftex.def Info: baratropic-69.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-69.png> <a0,fr69>
-<baratropic-70.png, id=1327, 788.9475pt x 411.5375pt>
+<baratropic-70.png, id=1311, 788.9475pt x 411.5375pt>
 File: baratropic-70.png Graphic file (type png)
 <use baratropic-70.png>
-Package pdftex.def Info: baratropic-70.png  used on input line 598.
+Package pdftex.def Info: baratropic-70.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-70.png> <a0,fr70>
-<baratropic-71.png, id=1338, 788.9475pt x 411.5375pt>
+<baratropic-71.png, id=1322, 788.9475pt x 411.5375pt>
 File: baratropic-71.png Graphic file (type png)
 <use baratropic-71.png>
-Package pdftex.def Info: baratropic-71.png  used on input line 598.
+Package pdftex.def Info: baratropic-71.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-71.png> <a0,fr71>
-<baratropic-72.png, id=1349, 788.9475pt x 411.5375pt>
+<baratropic-72.png, id=1333, 788.9475pt x 411.5375pt>
 File: baratropic-72.png Graphic file (type png)
 <use baratropic-72.png>
-Package pdftex.def Info: baratropic-72.png  used on input line 598.
+Package pdftex.def Info: baratropic-72.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-72.png> <a0,fr72>
-<baratropic-73.png, id=1360, 788.9475pt x 411.5375pt>
+<baratropic-73.png, id=1344, 788.9475pt x 411.5375pt>
 File: baratropic-73.png Graphic file (type png)
 <use baratropic-73.png>
-Package pdftex.def Info: baratropic-73.png  used on input line 598.
+Package pdftex.def Info: baratropic-73.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-73.png> <a0,fr73>
-<baratropic-74.png, id=1371, 788.9475pt x 411.5375pt>
+<baratropic-74.png, id=1355, 788.9475pt x 411.5375pt>
 File: baratropic-74.png Graphic file (type png)
 <use baratropic-74.png>
-Package pdftex.def Info: baratropic-74.png  used on input line 598.
+Package pdftex.def Info: baratropic-74.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-74.png> <a0,fr74>
-<baratropic-75.png, id=1382, 788.9475pt x 411.5375pt>
+<baratropic-75.png, id=1366, 788.9475pt x 411.5375pt>
 File: baratropic-75.png Graphic file (type png)
 <use baratropic-75.png>
-Package pdftex.def Info: baratropic-75.png  used on input line 598.
+Package pdftex.def Info: baratropic-75.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-75.png> <a0,fr75>
-<baratropic-76.png, id=1393, 788.9475pt x 411.5375pt>
+<baratropic-76.png, id=1377, 788.9475pt x 411.5375pt>
 File: baratropic-76.png Graphic file (type png)
 <use baratropic-76.png>
-Package pdftex.def Info: baratropic-76.png  used on input line 598.
+Package pdftex.def Info: baratropic-76.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-76.png> <a0,fr76>
-<baratropic-77.png, id=1404, 788.9475pt x 411.5375pt>
+<baratropic-77.png, id=1388, 788.9475pt x 411.5375pt>
 File: baratropic-77.png Graphic file (type png)
 <use baratropic-77.png>
-Package pdftex.def Info: baratropic-77.png  used on input line 598.
+Package pdftex.def Info: baratropic-77.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-77.png> <a0,fr77>
-<baratropic-78.png, id=1415, 788.9475pt x 411.5375pt>
+<baratropic-78.png, id=1399, 788.9475pt x 411.5375pt>
 File: baratropic-78.png Graphic file (type png)
 <use baratropic-78.png>
-Package pdftex.def Info: baratropic-78.png  used on input line 598.
+Package pdftex.def Info: baratropic-78.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-78.png> <a0,fr78>
-<baratropic-79.png, id=1426, 788.9475pt x 411.5375pt>
+<baratropic-79.png, id=1410, 788.9475pt x 411.5375pt>
 File: baratropic-79.png Graphic file (type png)
 <use baratropic-79.png>
-Package pdftex.def Info: baratropic-79.png  used on input line 598.
+Package pdftex.def Info: baratropic-79.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-79.png> <a0,fr79>
-<baratropic-80.png, id=1437, 788.9475pt x 411.5375pt>
+ <./baratropic-79.png>
+<a0,fr79>
+<baratropic-80.png, id=1421, 788.9475pt x 411.5375pt>
 File: baratropic-80.png Graphic file (type png)
 <use baratropic-80.png>
-Package pdftex.def Info: baratropic-80.png  used on input line 598.
+Package pdftex.def Info: baratropic-80.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-80.png> <a0,fr80>
-<baratropic-81.png, id=1448, 788.9475pt x 411.5375pt>
+<baratropic-81.png, id=1432, 788.9475pt x 411.5375pt>
 File: baratropic-81.png Graphic file (type png)
 <use baratropic-81.png>
-Package pdftex.def Info: baratropic-81.png  used on input line 598.
+Package pdftex.def Info: baratropic-81.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-81.png>
-<a0,fr81>
-<baratropic-82.png, id=1459, 788.9475pt x 411.5375pt>
+ <./baratropic-81.png> <a0,fr81>
+<baratropic-82.png, id=1443, 788.9475pt x 411.5375pt>
 File: baratropic-82.png Graphic file (type png)
 <use baratropic-82.png>
-Package pdftex.def Info: baratropic-82.png  used on input line 598.
+Package pdftex.def Info: baratropic-82.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-82.png> <a0,fr82>
-<baratropic-83.png, id=1470, 788.9475pt x 411.5375pt>
+<baratropic-83.png, id=1454, 788.9475pt x 411.5375pt>
 File: baratropic-83.png Graphic file (type png)
 <use baratropic-83.png>
-Package pdftex.def Info: baratropic-83.png  used on input line 598.
+Package pdftex.def Info: baratropic-83.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-83.png> <a0,fr83>
-<baratropic-84.png, id=1481, 788.9475pt x 411.5375pt>
+<baratropic-84.png, id=1465, 788.9475pt x 411.5375pt>
 File: baratropic-84.png Graphic file (type png)
 <use baratropic-84.png>
-Package pdftex.def Info: baratropic-84.png  used on input line 598.
+Package pdftex.def Info: baratropic-84.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-84.png> <a0,fr84>
-<baratropic-85.png, id=1492, 788.9475pt x 411.5375pt>
+<baratropic-85.png, id=1476, 788.9475pt x 411.5375pt>
 File: baratropic-85.png Graphic file (type png)
 <use baratropic-85.png>
-Package pdftex.def Info: baratropic-85.png  used on input line 598.
+Package pdftex.def Info: baratropic-85.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-85.png> <a0,fr85>
-<baratropic-86.png, id=1503, 788.9475pt x 411.5375pt>
+<baratropic-86.png, id=1487, 788.9475pt x 411.5375pt>
 File: baratropic-86.png Graphic file (type png)
 <use baratropic-86.png>
-Package pdftex.def Info: baratropic-86.png  used on input line 598.
+Package pdftex.def Info: baratropic-86.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-86.png> <a0,fr86>
-<baratropic-87.png, id=1514, 788.9475pt x 411.5375pt>
+<baratropic-87.png, id=1498, 788.9475pt x 411.5375pt>
 File: baratropic-87.png Graphic file (type png)
 <use baratropic-87.png>
-Package pdftex.def Info: baratropic-87.png  used on input line 598.
+Package pdftex.def Info: baratropic-87.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-87.png> <a0,fr87>
-<baratropic-88.png, id=1525, 788.9475pt x 411.5375pt>
+<baratropic-88.png, id=1509, 788.9475pt x 411.5375pt>
 File: baratropic-88.png Graphic file (type png)
 <use baratropic-88.png>
-Package pdftex.def Info: baratropic-88.png  used on input line 598.
+Package pdftex.def Info: baratropic-88.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-88.png> <a0,fr88>
-<baratropic-89.png, id=1536, 788.9475pt x 411.5375pt>
+<baratropic-89.png, id=1520, 788.9475pt x 411.5375pt>
 File: baratropic-89.png Graphic file (type png)
 <use baratropic-89.png>
-Package pdftex.def Info: baratropic-89.png  used on input line 598.
+Package pdftex.def Info: baratropic-89.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-89.png> <a0,fr89>
-<baratropic-90.png, id=1547, 788.9475pt x 411.5375pt>
+<baratropic-90.png, id=1531, 788.9475pt x 411.5375pt>
 File: baratropic-90.png Graphic file (type png)
 <use baratropic-90.png>
-Package pdftex.def Info: baratropic-90.png  used on input line 598.
+Package pdftex.def Info: baratropic-90.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-90.png> <a0,fr90>
-<baratropic-91.png, id=1558, 788.9475pt x 411.5375pt>
+<baratropic-91.png, id=1542, 788.9475pt x 411.5375pt>
 File: baratropic-91.png Graphic file (type png)
 <use baratropic-91.png>
-Package pdftex.def Info: baratropic-91.png  used on input line 598.
+Package pdftex.def Info: baratropic-91.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-91.png> <a0,fr91>
-<baratropic-92.png, id=1569, 788.9475pt x 411.5375pt>
+<baratropic-92.png, id=1553, 788.9475pt x 411.5375pt>
 File: baratropic-92.png Graphic file (type png)
 <use baratropic-92.png>
-Package pdftex.def Info: baratropic-92.png  used on input line 598.
+Package pdftex.def Info: baratropic-92.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-92.png> <a0,fr92>
-<baratropic-93.png, id=1580, 788.9475pt x 411.5375pt>
+<baratropic-93.png, id=1564, 788.9475pt x 411.5375pt>
 File: baratropic-93.png Graphic file (type png)
 <use baratropic-93.png>
-Package pdftex.def Info: baratropic-93.png  used on input line 598.
+Package pdftex.def Info: baratropic-93.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-93.png> <a0,fr93>
-<baratropic-94.png, id=1591, 788.9475pt x 411.5375pt>
+<baratropic-94.png, id=1575, 788.9475pt x 411.5375pt>
 File: baratropic-94.png Graphic file (type png)
 <use baratropic-94.png>
-Package pdftex.def Info: baratropic-94.png  used on input line 598.
+Package pdftex.def Info: baratropic-94.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-94.png> <a0,fr94>
-<baratropic-95.png, id=1602, 788.9475pt x 411.5375pt>
+<baratropic-95.png, id=1586, 788.9475pt x 411.5375pt>
 File: baratropic-95.png Graphic file (type png)
 <use baratropic-95.png>
-Package pdftex.def Info: baratropic-95.png  used on input line 598.
+Package pdftex.def Info: baratropic-95.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
  <./baratropic-95.png> <a0,fr95>
-<baratropic-96.png, id=1613, 788.9475pt x 411.5375pt>
+<baratropic-96.png, id=1597, 788.9475pt x 411.5375pt>
 File: baratropic-96.png Graphic file (type png)
 <use baratropic-96.png>
-Package pdftex.def Info: baratropic-96.png  used on input line 598.
+Package pdftex.def Info: baratropic-96.png  used on input line 552.
 (pdftex.def)             Requested size: 788.94556pt x 411.5365pt.
- <./baratropic-96.png> <a0,fr96> [75
+ <./baratropic-96.png>
+<a0,fr96> [73
 
-] [76
+] [74
 
 ]
-<figures/swe_truth.png, id=1640, 513.92pt x 244.915pt>
+<figures/swe_truth.png, id=1625, 513.92pt x 244.915pt>
 File: figures/swe_truth.png Graphic file (type png)
 <use figures/swe_truth.png>
-Package pdftex.def Info: figures/swe_truth.png  used on input line 639.
+Package pdftex.def Info: figures/swe_truth.png  used on input line 592.
 (pdftex.def)             Requested size: 183.87166pt x 87.62744pt.
-<figures/swe_pod10.png, id=1641, 513.92pt x 244.915pt>
+<figures/swe_pod10.png, id=1626, 513.92pt x 244.915pt>
 File: figures/swe_pod10.png Graphic file (type png)
 <use figures/swe_pod10.png>
-Package pdftex.def Info: figures/swe_pod10.png  used on input line 639.
+Package pdftex.def Info: figures/swe_pod10.png  used on input line 592.
 (pdftex.def)             Requested size: 183.87166pt x 87.62744pt.
- [77
+ [75
 
  <./figures/swe_truth.png> <./figures/swe_pod10.png>]
-<figures/SWE_physical_proj_DMD_inth1000.png, id=1648, 1138.2525pt x 563.706pt>
+<figures/l96_pod10.png, id=1633, 513.92pt x 385.44pt>
+File: figures/l96_pod10.png Graphic file (type png)
+<use figures/l96_pod10.png>
+Package pdftex.def Info: figures/l96_pod10.png  used on input line 618.
+(pdftex.def)             Requested size: 183.87166pt x 137.90549pt.
+<figures/l96_pod30.png, id=1634, 513.92pt x 385.44pt>
+File: figures/l96_pod30.png Graphic file (type png)
+<use figures/l96_pod30.png>
+Package pdftex.def Info: figures/l96_pod30.png  used on input line 618.
+(pdftex.def)             Requested size: 183.87166pt x 137.90549pt.
+
+Overfull \vbox (0.29478pt too high) detected at line 618
+ []
+
+[76
+
+ <./figures/l96_pod10.png> <./figures/l96_pod30.png>]
+<figures/SWE_physical_proj_DMD_inth1000.png, id=1641, 1138.2525pt x 563.706pt>
 File: figures/SWE_physical_proj_DMD_inth1000.png Graphic file (type png)
 <use figures/SWE_physical_proj_DMD_inth1000.png>
 Package pdftex.def Info: figures/SWE_physical_proj_DMD_inth1000.png  used on in
-put line 651.
+put line 630.
 (pdftex.def)             Requested size: 337.71738pt x 167.24658pt.
 
-Overfull \vbox (1.95584pt too high) detected at line 651
+Overfull \vbox (1.95584pt too high) detected at line 630
  []
 
-[78
+[77
 
  <./figures/SWE_physical_proj_DMD_inth1000.png>]
-<figures/SWE_physical_proj_DMDPOD_inth1000.png, id=1655, 1132.4709pt x 560.0925
+<figures/SWE_physical_proj_DMDPOD_inth1000.png, id=1648, 1132.4709pt x 560.0925
 pt>
 File: figures/SWE_physical_proj_DMDPOD_inth1000.png Graphic file (type png)
 <use figures/SWE_physical_proj_DMDPOD_inth1000.png>
 Package pdftex.def Info: figures/SWE_physical_proj_DMDPOD_inth1000.png  used on
- input line 663.
+ input line 642.
 (pdftex.def)             Requested size: 337.71738pt x 167.02911pt.
 
-Overfull \vbox (1.73837pt too high) detected at line 663
+Overfull \vbox (1.73837pt too high) detected at line 642
  []
 
-[79
+[78
 
- <./figures/SWE_physical_proj_DMDPOD_inth1000.png>] [80
+ <./figures/SWE_physical_proj_DMDPOD_inth1000.png>] [79
 
 ]
-<figures/mcrn.png, id=1669, 513.92pt x 303.1325pt>
+<figures/mcrn.png, id=1662, 513.92pt x 303.1325pt>
 File: figures/mcrn.png Graphic file (type png)
 <use figures/mcrn.png>
-Package pdftex.def Info: figures/mcrn.png  used on input line 700.
+Package pdftex.def Info: figures/mcrn.png  used on input line 679.
 (pdftex.def)             Requested size: 112.57436pt x 66.39795pt.
-<figures/aim.jpg, id=1670, 106.89937pt x 65.74562pt>
+<figures/aim.jpg, id=1663, 106.89937pt x 65.74562pt>
 File: figures/aim.jpg Graphic file (type jpg)
 <use figures/aim.jpg>
-Package pdftex.def Info: figures/aim.jpg  used on input line 700.
+Package pdftex.def Info: figures/aim.jpg  used on input line 679.
 (pdftex.def)             Requested size: 131.3377pt x 80.78134pt.
-<figures/nsf.png, id=1671, 510.90875pt x 513.92pt>
+<figures/nsf.png, id=1664, 510.90875pt x 513.92pt>
 File: figures/nsf.png Graphic file (type png)
 <use figures/nsf.png>
-Package pdftex.def Info: figures/nsf.png  used on input line 700.
+Package pdftex.def Info: figures/nsf.png  used on input line 679.
 (pdftex.def)             Requested size: 112.57436pt x 113.23526pt.
- [81
+ [80
 
  <./figures/mcrn.png> <./figures/aim.jpg> <./figures/nsf.png>]
 \tf@nav=\write9
@@ -3805,19 +3801,19 @@ Package pdftex.def Info: figures/nsf.png  used on input line 700.
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 681.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 681.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 702.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 681.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 681.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53264 strings out of 481556
- 1217156 string characters out of 2913869
- 1639711 words of memory out of 3000000
- 67063 multiletter control sequences out of 15000+200000
+ 53254 strings out of 481556
+ 1216966 string characters out of 2913869
+ 1639246 words of memory out of 3000000
+ 67056 multiletter control sequences out of 15000+200000
  679348 words of font info for 197 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,13n,119p,773b,946s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3855,9 +3851,9 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Colin
 lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Users
 /Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on main.pdf (81 pages, 4335463 bytes).
+Output written on main.pdf (80 pages, 4274103 bytes).
 PDF statistics:
- 1805 PDF objects out of 2073 (max. 8388607)
- 163 named destinations out of 1000 (max. 500000)
- 35363 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1797 PDF objects out of 2073 (max. 8388607)
+ 161 named destinations out of 1000 (max. 500000)
+ 35358 words of extra memory for PDF output out of 35830 (max. 10000000)
 

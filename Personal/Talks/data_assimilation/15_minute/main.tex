@@ -342,7 +342,7 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
     \pause
         \item Bayes' theorem generates the \boldgreen{posterior} $\prob(\state_1|\observation_1)$.
     \pause
-        \item \boldgreen{Reweight} by $w^\ell_{2} \propto w_{1}^\ell \prob(\observation_1 | \state_1^\ell ) \propto \exp[(\observation_1 - \obsop \state_1) \observationcovariance^{-1} (\observation_1 - \obsop \state_1)]$ and require $\sum_{\ell = 1}^L w^\ell_{1} = 1.$
+        \item \boldgreen{Reweight} by $w^\ell_{1} \propto w_{0}^\ell \prob(\observation_1 | \state_1^\ell ) \propto w_0^\ell \exp[(\observation_1 - \obsop \state_1) \observationcovariance^{-1} (\observation_1 - \obsop \state_1)]$ and require $\sum_{\ell = 1}^L w^\ell_{1} = 1.$
     \pause
         \item Repeat steps 3-6 until we reach $T$.
     \end{enumerate}
@@ -458,18 +458,16 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
     \pause
         \item We compute the model and data projection matrices $\boldsymbol{\Pi}_t^m = \boldsymbol{V}_t \boldsymbol{V}_t^\dagger$ and $\boldsymbol{\Pi}_t^d = \boldsymbol{U}_t \boldsymbol{U}_t^\dagger$.
     \pause
-        \item Project the model:
+        \item Project the model: $\projectedstate_{t+1} = \boldsymbol{V}_{t+1}^\dagger \modelf_t(\boldsymbol{V}_t \projectedstate_t) + \boldsymbol{\sigma}_t^q$
         \begin{itemize}
-            \item $\projectedstate=\boldsymbol{V}_{t+1}^\dagger \state_t$.
-            \item $\boldsymbol{G}_t(\projectedstate_t) = \boldsymbol{V}_{t+1}^\dagger \modelf_t(\boldsymbol{V}_t \projectedstate_t)$
+            \item $\projectedstate_t=\boldsymbol{V}_{t+1}^\dagger \state_t$.
             \item $\modelcovariance^q_t = \boldsymbol{V}_{t+1}^\dagger \modelcovariance_t \boldsymbol{V}_{t+1}$
         \end{itemize}
     \pause
-        \item Project the data:
+        \item Project the data: $\boldsymbol{u}_t=\boldsymbol{H}^q_t \projectedstate_t^{\textrm{truth}} + \boldsymbol{r}^q_t$
         \begin{itemize}
-            \item $\projectedstate=\boldsymbol{V}_{t+1}^\dagger \state_t$.
-            \item $\boldsymbol{G}_t(\projectedstate_t) = \boldsymbol{V}_{t+1}^\dagger \modelf_t(\boldsymbol{V}_t \projectedstate_t)$
-            \item $\modelcovariance^q_t = \boldsymbol{V}_{t+1}^\dagger \modelcovariance_t \boldsymbol{V}_{t+1}$
+            \item $\boldsymbol{H}^q_t = \boldsymbol{U}_t^\dagger \boldsymbol{H}^\dagger \boldsymbol{H} \boldsymbol{V}_t$
+            \item $\observationcovariance^q_t = \boldsymbol{U}_{t+1}^\dagger \boldsymbol{H}^+ \observationcovariance_t (\boldsymbol{H}^+)^\dagger \boldsymbol{U}_{t}$
         \end{itemize}
 \end{enumerate}
 \vfill
@@ -526,50 +524,6 @@ Our method of measuring error is the RMSE
 \vfill
 \end{frame}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Lorenz 96}
-\vfill
-\begin{itemize}
-    \item ODE describing meteorological quantities along lines of latitude.
-    \item A staple comparison for other assimilation schemes.
-    \item We ran with $M=100$ and $F=3.5$. Truth below. 
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.5\textwidth]{figures/L96_F3.5N100.png}
-\end{figure}
-\vfill
-\end{frame}
-
-\begin{frame}{Results}
-\vfill
-\begin{columns}
-    \begin{column}{.49\textwidth}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/l96_pod10.png}
-\caption{POD reduction to $M^q=10$.}
-\end{figure}
-\vfill
-\end{column}
-
- \begin{column}{.49\textwidth}
-\vfill
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/l96_pod30.png}
-\caption{POD reduction to $M^q=30$.}
-\end{figure}
- \end{column}
-\end{columns}
-\vfill
-\end{frame}
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Shallow water equations}
@@ -607,7 +561,6 @@ Our method of measuring error is the RMSE
 
 For every run we have
     \begin{itemize}
-        \item Total particles $L=20$.
         \item Observation time is every 60 seconds
         \item Covariances: $\modelcovariance = I$, $\observationcovariance = 0.01I$.
     \end{itemize}
@@ -632,6 +585,32 @@ For every run we have
 \centering
 \includegraphics[width=\textwidth]{figures/swe_pod10.png}
 \caption{POD projection with $M^q=D^q=10$ run for shallow water equations.}
+\end{figure}
+ \end{column}
+\end{columns}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Results}
+\vfill
+\begin{columns}
+    \begin{column}{.49\textwidth}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/l96_pod10.png}
+\caption{POD reduction to $M^q=10$ with $L=200$.}
+\end{figure}
+\vfill
+\end{column}
+
+ \begin{column}{.49\textwidth}
+\vfill
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/l96_pod30.png}
+\caption{POD reduction to $M^q=30$ with $L=200$.}
 \end{figure}
  \end{column}
 \end{columns}
