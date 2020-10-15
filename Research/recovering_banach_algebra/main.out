@@ -7,11 +7,15 @@
 \BOOKMARK [2][-]{subsection.4.1}{Directional derivative and gradient}{section.4}% 7
 \BOOKMARK [2][-]{subsection.4.2}{Differential forms}{section.4}% 8
 \BOOKMARK [2][-]{subsection.4.3}{Riemannian manifolds}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Dirichlet to Neumann Operator and Hilbert Transform}{}% 10
-\BOOKMARK [1][-]{section.6}{Algebras of monogenic fields}{}% 11
-\BOOKMARK [2][-]{subsection.6.1}{Cauchy and Poisson integrals}{section.6}% 12
-\BOOKMARK [2][-]{subsection.6.2}{Generating axial monogenics}{section.6}% 13
-\BOOKMARK [2][-]{subsection.6.3}{Other}{section.6}% 14
-\BOOKMARK [1][-]{section.7}{Relation to the BC Method}{}% 15
-\BOOKMARK [1][-]{section.8}{Conclusion}{}% 16
-\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 17
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Geometric algebra structure}{subsection.4.3}% 10
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Differential operators}{subsection.4.3}% 11
+\BOOKMARK [1][-]{section.5}{Gelfand representation}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Axial monogenic fields}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Dirichlet to Neumann Operator and Hilbert Transform}{}% 14
+\BOOKMARK [1][-]{section.7}{Other}{}% 15
+\BOOKMARK [2][-]{subsection.7.1}{Cauchy and Poisson integrals}{section.7}% 16
+\BOOKMARK [2][-]{subsection.7.2}{Generating axial monogenics}{section.7}% 17
+\BOOKMARK [1][-]{section.8}{Radon transform and integral geometry}{}% 18
+\BOOKMARK [1][-]{section.9}{Relation to the BC Method}{}% 19
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 20
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 21
