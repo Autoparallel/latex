@@ -113,6 +113,8 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \newcommand{\weights}{\boldsymbol{w}}
 \newcommand{\prob}{\operatorname{p}}
 \newcommand{\snapshot}{\boldsymbol{X}}
+\newcommand{\projectedstate}{\boldsymbol{v}}
+\newcommand{\projecteddata}{\boldsymbol{u}}
 
 
 \author{Colin Roberts}
@@ -154,7 +156,7 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
  \begin{column}{.49\textwidth}
         \begin{figure}[h]
             \centering
-            \includegraphics[width=40mm]{figures/gome_data.png}
+            \includegraphics[width=\columnwidth]{figures/gome_data.png}
             \caption{GOME, TM3-DAM data.}
         \end{figure}
  \end{column}
@@ -175,8 +177,7 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
  \begin{column}{.49\textwidth}
         \begin{figure}[h]
             \centering
-            \vspace*{3.5mm}
-            \includegraphics[width=40mm]{figures/gome_data.png}
+            \includegraphics[width=\columnwidth]{figures/gome_data_filled.png}
             \caption{GOME, TM3-DAM data.}
         \end{figure}
  \end{column}
@@ -199,8 +200,8 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
  \begin{column}{.49\textwidth}
         \begin{figure}[h]
             \centering
-            \vspace*{3.5mm}
-            \includegraphics[width=40mm]{figures/hurricane_prediction.png}
+            \vspace*{-2cm}
+            \includegraphics[width=\columnwidth]{figures/hurricane_prediction.png}
             \caption{NOAA hurricane Dorian projection.}
         \end{figure}
  \end{column}
@@ -211,25 +212,114 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Goal}
-    high dimensional nonlinear systems such as SWE
+\vfill
+\begin{itemize}
+    \pause
+    \item We want to be able to work with high dimensional nonlinear systems.
+    \pause
+    \item Capture non-Gaussian posterior distributions with our assimilation.
+    \pause
+    \item Particle filter technique accomplishes both these goals.
+\end{itemize}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Problem}
+\vfill
+
+\begin{columns}
+    \begin{column}{.49\textwidth}
+\begin{itemize}
+    \item As we increase resolution for models, they grow exponentially in dimension.
+    \item Particle filters degenerate when the dimension is too high. This is the \boldgreen{curse of dimensionality}.
+\end{itemize}
+    \end{column}
+
+ \begin{column}{.49\textwidth}
+        \begin{figure}[h]
+            \centering
+            \vspace*{-2cm}
+            \includegraphics[width=35mm]{figures/mesh_refinement.png}
+        \end{figure}
+ \end{column}
+\end{columns}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Key idea}
+\vfill
+We must reduce the dimensionality of our model or observations, but keep enough information to make accurate predictions.\\
+
+\pause Given a high dimensional problem, we can use \boldgreen{dimension reduction} techniques to mitigate the curse of dimensionality. E.g.,
+\begin{itemize}
+    \item \boldgreen{Assimilation in the Unstable Subspace} (AUS).
+    \item \boldgreen{Proper Orthogonal Decomposition} (POD).
+    \item \boldgreen{Dynamic Mode Decomposition} (DMD).
+\end{itemize}
+\pause \textbf{\underline{Ex:}} Even with a model dimension over 38,000, we see success using these methods with particle filters.
+\vfill 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Bonus}
+\vfill
+    POD and DMD capture \boldgreen{coherent structures} in the model.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{figures/coherent_structure.jpg}
+    \end{figure}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{frame}{Related works}
-    mention what others have tried ans why we're doing something different
+\vfill
+\begin{itemize}
+    \pause
+    \item Local particle filters in Poterjoy’s A localized particle filter for high-dimensional nonlinear systems (2016).
+        \begin{itemize}
+            \item Reduce the contribution of distant observations to mitigate issues with high dimensionality.
+        \end{itemize}
+    \pause
+    \item AUS methods.
+        \begin{itemize} 
+            \item 4DVAR, and Ensemble Kalman Filter work with a reduced physical model.
+        \end{itemize}
+    \pause
+    \item Van Vleck and Maclean in Particle filters for data assimilation based on reduced order data models (2019).
+        \begin{itemize}
+            \item Use AUS projection to reduce the dimensionality of the data.
+        \end{itemize}
+    \pause
+    \item Our method will allow us to work with reduced physical and data models.
+        \begin{itemize}
+            \item Using AUS/POD/DMD.
+        \end{itemize}
+\end{itemize}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Model and data}
 \vfill
+    \pause
 We take a temporally discretized system with $t=0,1,2,\dots, T$. 
     \begin{itemize}
+    \pause
         \item State: $\state_t \in \R^M$.
+    \pause
         \item Model: $\state_{t+1} = \modelf_t(\state_t) + \modelerror_t$ with $\modelerror_t \sim \mathcal{N}(0,\modelcovariance)$.
+    \pause
         \item Observation: $\observation_t \in \R^D$.
+    \pause
         \item Observation operator: $\observation_t = \obsop \state_t^{\textrm{truth}} + \observationerror_t$ with $\observationerror \sim \mathcal{N}(0,\observationcovariance)$ and $\obsop\colon \R^M \to \R^D$.
     \end{itemize}
 \vfill
@@ -240,15 +330,22 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
 \begin{frame}{Particle filter}
 \vfill
 \textbf{\underline{Algorithm:}}
-    \begin{itemize}
+    \begin{enumerate}[1.]
+    \pause
         \item Start with $L$ \boldgreen{particles} which are drawn around initial condition $\state_0$.
-        \item Each particle $\ell$ starts with equal weighting $\weights^\ell_0$
+    \pause
+        \item Each particle $\ell$ starts with equal weighting $w^\ell_0$
+    \pause
         \item Step each particle forward in time using $\modelf_0$ to get $\state_1$. 
+    \pause
         \item Obtain the observation $\observation_1$ and generate a prior $\prob(\observation_1 | \state_1)$.
+    \pause
         \item Bayes' theorem generates the \boldgreen{posterior} $\prob(\state_1|\observation_1)$.
-        \item \boldgreen{Reweight} by $\weights^\ell_{2} \propto \weights_{1}^\ell \prob(\observation_1 | \state_1^\ell ) \propto \exp[(\observation_1 - \obsop \state_1) \observationcovariance^{-1} (\observation_1 - \obsop \state_1)]$ and require $\sum_{\ell = 1}^L \weights^\ell_{1} = 1.$
-        \item Repeat for the next time steps.
-    \end{itemize}
+    \pause
+        \item \boldgreen{Reweight} by $w^\ell_{1} \propto w_{0}^\ell \prob(\observation_1 | \state_1^\ell ) \propto w_0^\ell \exp[(\observation_1 - \obsop \state_1) \observationcovariance^{-1} (\observation_1 - \obsop \state_1)]$ and require $\sum_{\ell = 1}^L w^\ell_{1} = 1.$
+    \pause
+        \item Repeat steps 3-6 until we reach $T$.
+    \end{enumerate}
 \vfill
 \end{frame}
 
@@ -281,7 +378,9 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
 \begin{frame}{Resampling}
 \vfill
 \begin{itemize}
-    \item At each time step, we also check the number of effective particles by $N_{\textrm{eff}} = \frac{1}{\sum_{\ell =1}^L (\weights_t^\ell)^2}$.
+    \pause
+    \item At each time step, we also check the number of effective particles by $N_{\textrm{eff}} = \frac{1}{\sum_{\ell =1}^L (w_t^\ell)^2}$.
+    \pause
     \item If $N_{\textrm{eff}}$ drops below a threshold, we \boldgreen{resample} new particles with a Gaussian around the particle mean or latest observation.
 \end{itemize}
 \vfill
@@ -290,84 +389,148 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Discussion}
-\vfill
-    \textbf{\underline{Why PF?}} 
-    \begin{itemize}
-        \item PF is effective for nonlinear problems.
-        \item PF captures non-Gaussian posteriors.
-    \end{itemize}
-
-\hl{Other filtering methods can't accomplish both of these.}
-\vspace*{.25cm}
-    \textbf{\underline{Why NOT PF?}}
-    \begin{itemize}
-        \item Weight degeneration in high dimensional applications.
-        \item Need $L\propto \exp(MD)$ particles to avoid weight degeneration.
-    \end{itemize}
-\vfill
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}{Dimension reduction}
+\vfill
+    \pause
     \textbf{\underline{Mitigating the curse of high dimensionality:}}
+    \pause
     \begin{itemize}
         \item Determine \boldgreen{dynamically significant} basis elements. 
+    \pause
         \item These are basis elements capture large scale flow patterns and coherent structures over time.
+    \pause
         \item Project our problem onto these basis elements to reduce the dimensionality.
     \end{itemize}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Reduction methods}
+\vfill
     \begin{itemize}
+    \pause
         \item Assimilation in the Unstable Subspace (AUS) 
         \begin{itemize}
             \item Time dependent basis elements.
             \item More computationally challenging.
         \end{itemize}
+    \pause
         \item Proper Orthogonal Decomposition (POD) 
         \begin{itemize}
             \item Simple and cheap to implement.
         \end{itemize}
+    \pause
         \item Dynamic Mode Decomposition (DMD) 
         \begin{itemize}
             \item More flexibility in choosing dynamically significant elements than POD.
             \item Needs more knowledge of the dynamics we are capturing.
         \end{itemize}
     \end{itemize}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Intuition}
+\begin{frame}{Idea}
+\vfill
     \begin{enumerate}[1.]
+    \pause
         \item Run the model and make observations up to time $T$.
+    \pause
         \item Build snapshot matrix $\snapshot = \begin{pmatrix} \vert & \vert & \cdots & \vert \\ \state_1 & \state_2 & \cdots & \state_T \\ \vert & \vert & \cdots & \vert\end{pmatrix}$.
-        \item Compute the singular value decomposition $\snapshot = \boldsymbol{U \Sigma V}^\dagger$.
-        \item Choose the modes corresponding to the largest $q$ singular values.
+    \pause
+        \item Compute the singular value decomposition $\snapshot = \boldsymbol{\Phi \Sigma \Psi}^\dagger$.
+    \pause
+        \item Choose the $q$ largest singular values. 
+    \pause
+        \item Create a projection matrix $\boldsymbol{\Pi}_q = \boldsymbol{\Phi}_q \boldsymbol{\Phi}_q^\dagger$ that projects onto the modes corresponding to those $q$ singular values.
+    \pause
     \end{enumerate}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Aside}
+\vfill
+\pause
+        \textbf{\underline{DMD:}}
+        \begin{itemize}
+\pause
+            \item Let $\boldsymbol{X}_\tau$ be the snapshot up to time $\tau$.
+\pause
+            \item There exists an operator $\boldsymbol{A} \boldsymbol{X}_\tau =  \boldsymbol{X}_{\tau+1}$ called the \boldgreen{Koopman operator}.
+\pause
+            \item DMD modes are eigenvectors of $\boldsymbol{A}$.
+\pause
+            \item Eigenvalues are related to frequencies.
+        \end{itemize}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Aside}
+\vfill
+\pause
+    \textbf{\underline{Choosing snapshot windows:}}
+        \begin{itemize}
+        \pause
+        \item We took the snapshot $\boldsymbol{X}_T$ to generate modes before.
+        \pause
+        \item We could instead find different modes for different windows of time.
+        \pause
+        \item Ex: Break $0,\dots,T$ into $n$-equal segments and compute modes for those ranges of time.
+\end{itemize}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Projected data assimilation}
-    \begin{itemize}
-        \item We can now determine $M^q<M$ and $D^q<M$ significant modes for the model and data respectively.
-        \item We now perform DA on the dimensionally reduced problem by working solely with the coefficients of the dominant modes.
-        \item We must balance keeping enough modes to represent the dynamics, but dropping enough to have effective PF.
-    \end{itemize}
+\vfill
+    \begin{enumerate}
+    \pause
+        \item We compute the model and data projection matrices $\boldsymbol{\Pi}_t^m = \boldsymbol{V}_t \boldsymbol{V}_t^\dagger$ and $\boldsymbol{\Pi}_t^d = \boldsymbol{U}_t \boldsymbol{U}_t^\dagger$.
+    \pause
+        \item Project the model: $\projectedstate_{t+1} = \boldsymbol{V}_{t+1}^\dagger \modelf_t(\boldsymbol{V}_t \projectedstate_t) + \boldsymbol{\sigma}_t^q$
+        \begin{itemize}
+            \item $\projectedstate_t=\boldsymbol{V}_{t+1}^\dagger \state_t$.
+            \item $\modelcovariance^q_t = \boldsymbol{V}_{t+1}^\dagger \modelcovariance_t \boldsymbol{V}_{t+1}$
+        \end{itemize}
+    \pause
+        \item Project the data: $\boldsymbol{u}_t=\boldsymbol{H}^q_t \projectedstate_t^{\textrm{truth}} + \boldsymbol{r}^q_t$
+        \begin{itemize}
+            \item $\boldsymbol{H}^q_t = \boldsymbol{U}_t^\dagger \boldsymbol{H}^\dagger \boldsymbol{H} \boldsymbol{V}_t$
+            \item $\observationcovariance^q_t = \boldsymbol{U}_{t+1}^\dagger \boldsymbol{H}^+ \observationcovariance_t (\boldsymbol{H}^+)^\dagger \boldsymbol{U}_{t}$
+        \end{itemize}
+\end{enumerate}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Projected data assimilation}
+\vfill
+    \begin{itemize}
+    \pause
+        \item We can now determine $M^q<M$ and $D^q<D$ significant modes for the model and data respectively.
+    \pause
+        \item We now perform DA on the dimensionally reduced problem by working solely with the coefficients of the dominant modes.
+    \pause
+        \item We must balance keeping enough modes to represent the dynamics, but dropping enough to have effective PF.
+    \end{itemize}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Projection choices}
 \vfill
     \begin{figure}[H]
         \centering
-        \includegraphics[width=.7\textwidth]{figures/decision_tree.png}
+        \includegraphics[width=\textwidth]{figures/decision_tree.png}
     \end{figure}
 \vfill
 \end{frame}
@@ -377,8 +540,11 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
 \begin{frame}{What we're looking for}
 \vfill
     \begin{itemize}
+    \pause
         \item Capture coherent structures.
+    \pause
         \item Low Root Mean Square Error (RMSE) from particle mean to truth.
+    \pause
         \item Low resampling rate.
     \end{itemize}
 \vfill
@@ -390,85 +556,58 @@ We take a temporally discretized system with $t=0,1,2,\dots, T$.
 \vfill
 Our method of measuring error is the RMSE
 \[
-\textrm{RMSE} = \frac{(\state_t^{\textrm{truth}}-\mu_t)^\dagger \cdot (\state_t^{\textrm{truth}}-\mu_t)}{M}
+\textrm{RMSE} = \sqrt{\frac{(\state_t^{\textrm{truth}}-\boldsymbol{\mu}_t)^\dagger \cdot (\state_t^{\textrm{truth}}-\boldsymbol{\mu}_t)}{M}}
 \]
 \vfill
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Shallow water equations}
+\vfill
+    \textbf{\underline{Model of interest:}} Shallow water equations
+    \begin{align*}
+        \frac{\partial u}{\partial t} &= \left(-\frac{\partial u}{\partial y} + f\right) v - \frac{\partial}{\partial x} \left(\frac{1}{2} u^2 +gh\right) + \nu \Delta u - c_b u\\
+        \frac{\partial v}{\partial t} &= -\left(\frac{\partial v}{\partial x}+f\right) u - \frac{\partial}{\partial y} \left(\frac{1}{2} v^2 +gh\right) + \nu \Delta v - c_b v\\
+        \frac{\partial h}{\partial t} &= -\frac{\partial}{\partial x} ((h+\underline{h})u)-\frac{\partial}{\partial y} ((h+\underline{h})v).
+    \end{align*}
+
+    \begin{itemize}
+        \item $u(x,y,t)$ and $v(x,y,t)$ are velocity in the $x$ and $y$ directions respectively.
+        \item $h(x,y,t)$ is the height of the column of water at $(x,y)$ at time $t$.
+    \end{itemize}
+\vfill
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Lorenz 96}
-\begin{itemize}
-    \item ODE describing meteorological quantities along lines of latitude.
-    \item A staple comparison for other assimilation schemes.
-    \item We ran with $M=100$ and $F=3.5$. Truth below. 
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.5\textwidth]{figures/L96_F3.5N100.png}
-\end{figure}
+\begin{frame}{Truth}
+\vfill
+    Truth was given by barotropic instability \url{http://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/}
+\animategraphics[loop, width=.8\linewidth]{16}{baratropic-}{0}{96}
+\vfill
 \end{frame}
-
-\begin{frame}{Results}
-\begin{columns}
-    \begin{column}{.49\textwidth}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/l96_pod10.png}
-\caption{POD reduction to $M^q=10$.}
-\end{figure}
-    \end{column}
-
- \begin{column}{.49\textwidth}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/l96_pod30.png}
-\caption{POD reduction to $M^q=30$.}
-\end{figure}
- \end{column}
-\end{columns}
-\end{frame}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\begin{frame}{Shallow water equations}
-%    \textbf{\underline{Model of interest:}} Shallow water equations
-%    \begin{align*}
-%        \frac{\partial u}{\partial t} &= \left(-\frac{\partial u}{\partial y} + f\right) v - \frac{\partial}{\partial x} \left(\frac{1}{2} u^2 +gh\right) + \nu \Delta u - c_b u\\
-%        \frac{\partial v}{\partial t} &= -\left(\frac{\partial v}{\partial x}+f\right) u - \frac{\partial}{\partial y} \left(\frac{1}{2} v^2 +gh\right) + \nu \Delta v - c_b v\\
-%        \frac{\partial h}{\partial t} &= -\frac{\partial}{\partial x} ((h+\underline{h})u)-\frac{\partial}{\partial y} ((h+\underline{h})v).
-%    \end{align*}
-%
-%    \begin{itemize}
-%        \item $u(x,y,t)$ and $v(x,y,t)$ are velocity in the $x$ and $y$ directions respectively.
-%        \item $h(x,y,t)$ is the height of the column of water at $(x,y)$ at time $t$.
-%    \end{itemize}
-%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Shallow water equations}
+\vfill
     \begin{itemize}
-        \item PDE to solve for the height $h(x,y,t)$ of a column of water.
         \item Discretized $x$ and $y$ to get a grid of size $38,100$ (dimension of the problem).
-        \item Truth was given by barotropic instability \url{http://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/}
     \end{itemize}
 
 For every run we have
     \begin{itemize}
-        \item Total particles $L=20$.
         \item Observation time is every 60 seconds
         \item Covariances: $\modelcovariance = I$, $\observationcovariance = 0.01I$.
     \end{itemize}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Qualitative results}
+\vfill
     \begin{columns}
     \begin{column}{.49\textwidth}
 \begin{figure}[H]
@@ -482,25 +621,67 @@ For every run we have
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/swe_pod10.png}
-\caption{POD projection with $M^q=D^q=100$ run for shallow water equations.}
+\caption{POD projection with $M^q=D^q=10$ run for shallow water equations.}
 \end{figure}
  \end{column}
 \end{columns}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Results}
+\vfill
+\begin{columns}
+    \begin{column}{.49\textwidth}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/l96_pod10.png}
+\caption{POD reduction to $M^q=10$ with $L=200$.}
+\end{figure}
+\vfill
+\end{column}
+
+ \begin{column}{.49\textwidth}
+\vfill
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/l96_pod30.png}
+\caption{POD reduction to $M^q=30$ with $L=200$.}
+\end{figure}
+ \end{column}
+\end{columns}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Results}
+\vfill
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/SWE_physical_proj_DMD_inth1000.png}
-        \caption{Fixed $D^q = 10$ and varied $M^q$.  Observed every 1000th gridpoint every 60 seconds.}
+        \includegraphics[width=.9\textwidth]{figures/SWE_physical_proj_DMD_inth1000.png}
+        \caption{Fixed $D^q = 10$ and varied $M^q$ both with DMD.  Observed every 1000th gridpoint every 60 seconds.}
     \end{figure}
+\vfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Results}
+\vfill
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.9\textwidth]{figures/SWE_physical_proj_DMDPOD_inth1000.png}
+        \caption{Fixed $D^q = 10$ with POD and varied $M^q$ with DMD.  Observed every 1000th gridpoint every 60 seconds.}
+    \end{figure}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Collaborators}
+\vfill
     \begin{itemize}
         \item Aishah Albarakati, Clarkson University, U.S.;
         \item Rose Crocker, The University of Adelaide, Australia;
@@ -509,9 +690,11 @@ For every run we have
         \item Noah Marshall, University of British Colombia, Canada;
         \item Erik Van Vleck, University of Kansas, U.S.
     \end{itemize}
+\vfill
 \end{frame}
 
 \begin{frame}{Support and funding}
+\vfill
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.3\textwidth}
@@ -529,6 +712,7 @@ For every run we have
          \includegraphics[width=\textwidth]{figures/nsf.png}
      \end{subfigure}
 \end{figure}
+\vfill
 \end{frame}
 
 \end{document}
