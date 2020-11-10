@@ -1,0 +1,94 @@
+%% Stuff for riemannian manifolds with clifford structure
+\subsection{Riemannian manifolds}
+
+
+\subsubsection{Geometric algebra structure}
+\todo[inline]{Here we really just need to show a Riemannian manifold is locally a vector manifold then show integration on $M$ is well defined. Then show the general greens and stokes' theorems. }
+
+Given the natural invariance of the differential operator $\grad$, extending geometric calculus to non-Euclidean spaces follows readily.  For two other introductions to the topic, see \cite{schindler_geometric_2020} which we follow more closely and \url{https://math.uchicago.edu/~amathew/dirac.pdf} which is more general. In order to build a geometric algebra structure parameterized by smooth manifolds, we need a smoothly varying inner product defined on the tangent bundle  As such, we will be working with Riemannian manifolds.
+
+Let $(M,g)$ be an $n$-dimensional smooth, compact, and oriented Riemannian manifold with boundary $\partial M$.  Then at each point  $p\in M$, we have the tangent space $T_pM$ and the metric $g_p$ which can be combined to yield a geometric algebra structure. We can glue together the geometric algebras $\mathcal{G}(T_pM,g_p)$ the bundle
+\[
+\multivectorbundle \coloneqq \dot{\bigcup}_{p\in M} \mathcal{G} (T_pM,g_p),
+\]
+which we refer to as the \emph{geometric algebra bundle}.  We can then define the space of $C^\infty$-smooth sections of the geometric algebra bundle, $\multivectorfields$, and refer to its elements as the \emph{multivector fields} on $M$. The space of multivector fields then forms a both a $\mathbb{Z}$- and $\mathbb{Z}/2\mathbb{Z}$-graded $\R$-algebra with an inherited geometric multiplication from the pointwise product. The $\mathbb{Z}$-grading allows us to define the space of homogeneous $k$-vector fields which we denote by $\kvectorfields{k}$.  The $\mathbb{Z}/2\mathbb{Z}$-grading allows us to define the space of even (resp. odd) multivector fields denoted by $\evenfields$ (resp. $\oddfields$).
+
+Given the metric $g$, we have an isomorphism between $T^*M$ and $TM$ which extends to an isomorphism between the multivector fields and the corresponding differential forms $\mathcal{G}^*(M)$.  Indeed, this is entirely encapsulated by the musical isomorphisms $\sharp$ and $\flat$ seen in Subsection \ref{subsection:duality_and_pseudoscalars} when a choice of local coordinates is made. As before, it suffices to work with $\multivectorfields$ as one always has access to reciprocal elements. 
+
+\subsubsection{Differential operators}
+
+Locally, all $n$-dimensional manifolds take coordinates in $\R^n$ by $\phi \colon \openO \subset M \to \openU \subset \R^n$ with open sets $\openO$ and $\openU$. Then a point $p\in M$ corresponds to $\phi(p)=(x^1(p),\dots,x^n(p))=x \in \R^n$. We put $e_i = \frac{\partial}{\partial x^i}$ as a local vector field basis. We put $e_i(p)$ to denote a tangent vector $T_pM$ in local coordinates.   We also have the dual 1-forms $dx^1,\dots,dx^n$ which satisfy $dx^i(e_j) = \delta^i_j$.  We have shown that $dx^i = e_i\cdot e^j dx^j$ and hence we identify $e^i$ as the multivector equivalent to $dx^i$ as $e^i \cdot e_j = \delta^i_j$ as desired. This produces the line element seen in \ref{eq:line_element}. 
+
+One then extends the directional derivative $\nabla_\omega$ in $\R^n$ to the covariant derivative $\nabla_\omega$ that acts on multivector fields on $M$. We use the same notation, but the context will make the distinction clear. This is done in usual manner; start with the unique Levi-Civita connection on $M$ and form the coordinate independent covariant derivative on $M$. In \cite{schindler_geometric_2020} one will find the construction of $\nabla_\omega$ and a list of properties.  Following that, we have the gradient $\nabla$ given in local coordinates by $e^i \grad_{e_i}$ which decomposes into the $\grad \wedge$ and $\grad \cdot$.  Similarly, we define the Hodge-Laplacian $\Delta = \grad^2$. Using the terminology from differential forms, we have the following definition. 
+
+\begin{definition}
+Let $\alpha \in \kvectorfields{k}$, $\beta \in \kvectorfields{k+1}$, and $\gamma \in \kvectorfields{k-1}$.  Then
+\begin{itemize}
+    \item $\alpha$ is \emph{closed} if $\grad \wedge \alpha =0$.
+    \item $\alpha$ is \emph{exact} if $\alpha = \grad \wedge \gamma$ for some $\gamma$.
+    \item $\alpha$ is \emph{coclosed} if $\grad \cdot \alpha = 0$.
+    \item $\alpha$ is \emph{coexact} if $\alpha = \grad \cdot \beta$ for some $\beta$.
+    \item $\alpha$ is \emph{harmonic} if $\Delta \alpha =0$.
+\end{itemize}
+\end{definition}
+
+Geometric calculus includes another definition for multivectors that is a big motivation for those who study Clifford analysis.  
+
+\begin{definition}
+ Let $f \in \multivectorfields$. Then we say that $f$ is \emph{monogenic} if $f \in \ker(\grad)$.
+\end{definition}
+
+Monogenic fields are of utmost importance as they have many beautiful properties.  For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values.  This is the exact analog of the Cauchy integral formula in complex analysis.  More can be seen \textcolor{red}{include some sources.}
+
+
+\todo[inline]{go through this stuff and clean it up using the pseudoscalar definitions and what not above.  It will be much easier. Add stokes theorem in with directed measures. These will work for coordinate patches and I'll have to show it converges using a partition of unity.}
+
+\todo[inline]{Fix this remaining stuff. Intuition from this part can be spread through the multivector parts of this paper.}
+
+The metric also induces the Riemannian volume form $\mu \in \kvectorfields{n}$ on $M$ which is of top degree and hence a pseudoscalar as well as a inner product $\innerproduct{\cdot}{\cdot}$ on each fiber of $\kvectorfields{k}$. Let $\omega$ and $\eta$ be homogeneous Clifford fields, then the \emph{Hodge star} operator is then defined to be the unique operator $\star \colon \kvectorfields{k} \to \kvectorfields{n-k}$ satisfying
+\[
+\omega_p \wedge \star \eta_p = \innerproduct{\omega_p}{\eta_p} \mu_p,
+\]
+at any point $p \in M$ and for any $\omega,\eta \in \kvectorfields{k}$.  Note that this extends to all of $M$ as
+\[
+\kforminnerproduct{\omega}{\eta} = \int_M \omega \wedge \star \eta.
+\]
+
+For example, let $M$ be a submanifold of $\R^3$ with the Euclidean inner product.  Thus, $\mu$ is the standard volume form inherited from $\R^3$. Then, $M$ has a global orthonormal coordinates $x^1$, $x^2$, and $x^3$ which induce the orthonormal set of basis 1-forms  $dx^1$, $dx^2$, and $dx^3$. One should think of 1-forms and vectors on $M$ as being equivalent. Of course, this is made rigorous by the isomorphism given by the Riesz representation theorem with the given inner product. \textcolor{red}{maybe this is worth showing.} With these coordinates, the Hodge star on 1-forms is given explicitly by
+\[
+\star dx^1 = dx^2 \wedge dx^3, \quad \star dx^2 = dx^3 \wedge dx^1, \quad \star dx^3 = dx^1 \wedge dx^2.
+\]
+We can see that for 1-forms on $M$, the Hodge star outputs a 2-form that represents an oriented plane element that is perpendicular to the original 1-form. This plane element is also scaled by the magnitude equal to that of the original 1-form due to the linearity in the original definition.  Working this way allows us to recover the same notion of an inner product of vectors in $\R^3$ but with 1-forms instead.  Indeed, if we have the 1-forms
+\[
+\alpha = \alpha_1 dx^1 + \alpha_2 dx^2 + \alpha_3 dx^3, \qquad \beta = \beta_1 dx^1 + \beta_2 dx^2 + \beta_3 dx^3,
+\]
+then 
+\begin{align*}
+\alpha \wedge \star \beta = (\alpha_1 \beta_1 + \alpha_2 \beta_2 + \alpha_3 \beta_3)dx^1\wedge dx^2 \wedge dx^3.
+\end{align*}
+Note that the coefficient on $dx^1\wedge dx^2 \wedge dx^3$ is exactly the inner product if we utilized the $\sharp$ map on the 1-forms and applied the Euclidean inner product. That is, $\alpha^\sharp \cdot \beta^\sharp$.
+
+Since $M$ is a manifold with boundary $\partial M$, we have the map $\iota \colon \partial M \hookrightarrow M$ as the inclusion of the boundary into $M$.  This map induces the pullback $\iota^* \colon T^*M \to T^* \partial M$ on forms. Of particular interest will be pulling back 0- and $(n-1)$-forms to the boundary. For 0-forms $u$, $\iota^*(u)$ is simply the boundary values for a smooth function. In the case for a 1-form $\alpha$ on $M$, we have that $\star \alpha$ is a $(n-1)$-form everywhere perpendicular to $\alpha$.  Thus, the pullback $\iota^*( \star \alpha)$ is an $(n-1)$-form on the $(n-1)$-dimensional boundary manifold.  Indeed, since $\star \alpha$ is perpendicular to $\alpha$, $\iota^*( \star \alpha)$ represents the normal component of the 1-form $\alpha$ at the boundary $\partial M$. Letting $\mu_{\partial M}$ be the boundary volume form, the total flux of the field $\alpha$ through $\partial M$ is given by
+\begin{equation}
+\label{eq:flux}
+\int_\Sigma \iota^* (\star \alpha) 
+\end{equation}
+\textcolor{red}{This equation is not right and I should write it in terms of the multivectors first. This should be easy: Just project the multivector field into the subspace $T_\xi \partial M$. It would be
+\[
+(A_k(p) \cdot I_\partial(p))I_\partial^{-1}(p)
+\]
+}
+\todo[inline]{Define the outward normal vector first. Define a pullback for fields? Does the above not just do that? One could prove this maybe pulling back tensors then taking the necessary quotient. This is where clifford algebras may help.}
+Let $I_\Sigma$ be oriented pseudoscalar on $\Sigma$ then we can define the unit normal vector $\nu$ by requiring $\nu = (-1)^{n-1} I_\Sigma I^{-1}$.  Then the \emph{tangential component} of $A_k$ on $\partial M$ by $\tangent{A_k} = (A_k \rfloor I_\partial)\rfloor I_\partial^{-1}$ and the \emph{normal component} $\normal{A_k} = (A_k \rfloor \nu)\rfloor \nu$. These are exactly $\mathbf{t}$ and $\mathbf{n}$ from \cite{schwarz_hodge_1995}. For a vector field $a$ we arrive at
+\[
+(a \rfloor \nu)d\Sigma  = ((aI) \rfloor I_\Sigma) I_{\Sigma}^{-1} \cdot dX_{n-1}.
+\]
+Taking $\alpha = a\cdot dX_1$ to be the 1-form corresponding to a vector field $a$, if we then want to integrate to find the total flux of $a$ through $\Sigma$, we have
+\[
+\int_\Sigma a\cdot \nu d\Sigma = \int_\Sigma (aI)\cdot I_\Sigma d\Sigma = \int_\Sigma \iota^*(\star \alpha ).
+\]
+Intuitively, $aI$ takes the orthogonal complement of $a$ and we then project this onto $I_\Sigma$. Note both $I$ and $I_\Sigma$ is are unit pseudoscalars, and thus $(aI)\cdot  I_\Sigma$ measures the strength of $\normal{a}$ and the measure $d\Sigma$ takes into account the local geometry of $\Sigma$.  
+
+\todo[inline]{use projection from Chisolm eqn 94). }
+
+\textcolor{red}{We could also define $\nu$ such that $\nu \wedge I_\Sigma = I$ then $\nu\cdot(I_\Sigma I^{-1})=1$. We want whatever makes the above integral work though. In some sense, the direction of $\mu$ doesn't matter we just want it to behave nicely with the other pseudoscalars. I think the $(-1)^{n-1}$ just considers if we take $I_\Sigma \wedge \nu = I$. }

@@ -1,0 +1,79 @@
+Let $u^\phi \in \Omega^0(M)$ be a smooth 0-form (scalar function) that is a solution to the following Dirichlet boundary value problem
+\begin{equation}
+\label{eq:dirichlet_problem}
+\begin{cases} \Delta u^\phi = 0 & \textrm{ in $M$} \\  \iota^*( u) = \phi. \end{cases},
+\end{equation}
+where $\Delta$ refers to the Laplace-Beltrami operator on differential forms. For the Calder\'on problem, the manifold $M$ and metric $g$ are unknown and one seeks to determine as much as possible about $(M,g)$ from measurements on the boundary.  Due to the relationship between the EIT and Calder\'on problem, we use the notation $\phi$ for the Dirichlet boundary values since $\phi$ should be thought of as the prescribed voltage along the boundary. 
+
+For any given solution to the boundary value problem, there is the corresponding Neumann data $E=\iota^*(\star d u)$.  As with $\phi$, the notation $E$ is used as the Neumann data measured in the EIT problem corresponds to the electric field flux at the boundary. One attains the current $J$ by multiplying with $E$ by the boundary conductivity matrix. The set of both boundary conditions $(\phi, E)$ is the \emph{Cauchy data} and the \emph{Dirichlet-to-Neumann (DN) map} $\Lambda$ is defined such that $\Lambda \phi = E$ and in particular this yields $\iota^*(\star d u^\phi)= E$. Note that this map $\Lambda$ is often referred to as the \emph{scalar} DN map as $\Lambda \colon \Omega^0(\partial M) \to \Omega^{n-1}(\partial M)$ inputs a scalar Dirichlet condition. An extension of the DN map to forms can be found in \cite{belishev_dirichlet_2008,sharafutdinov_complete_2013}. The Calder\'on problem for Riemannian manifolds is then to recover the pair $(M,g)$ up to isometry from complete knowledge of the DN map $\Lambda$. 
+
+Denote by $\harmonicfunctions = \{u \in \Omega^0(M) ~\vert~ du=0\}$ the space of harmonic 0-forms on $M$.  From the DN map, one can define the \emph{Hilbert transform} $T\colon \iota^* \harmonicfunctions \to \iota^* \harmonicfunctions$.  This function acts on traces of harmonic forms by
+\[
+T \phi  = d\Lambda^{-1} \phi,
+\]
+and is defined in \cite{belishev_dirichlet_2008}. The authors show benefit to defining the Hilbert transform as it provides the ability to generate so called conjugate forms.  When the condition
+\begin{equation}
+\label{eq:conjugate_requirement}
+\left( \Lambda + (-1)^{n}d\Lambda^{-1}d\right)\phi = 0, 
+\end{equation}
+is met, then there exists a \emph{conjugate form} $\epsilon^\psi \in \Omega^{n-2}(M)$ with boundary trace $\psi = \iota^* \epsilon$ satisfying $Td\phi = d \psi$. As well, $\epsilon$ is also coclosed in that $\delta \epsilon=0$. 
+
+Now, there exists a 2-form $b^\psi$ such that $\star b^\psi = \epsilon$.  Using the isomorphism between forms and multivectors, we can let $U$ be the scalar field corresponding to $u^\phi$ and we can let $B$ be the bivector field corresponding to $b^\psi$.  We can add these to yield the paravector $F=U+B \in \multivectorfields$.   Recall that a multivector field is monogenic if $\grad F=0$.  Applying this to the paravector $F$ yields the equations
+\[
+\grad \wedge U = -\grad \cdot B \qquad \textrm{and} \qquad \grad \wedge B = 0.
+\]
+The conjugacy relation $du^\phi = \star d \epsilon^\psi$ is equivalent to having the multivector $F$ be monogenic.
+
+\begin{lemma}
+Given the forms $u^\phi$ and $b^\psi$ conjugate as above, the corresponding paravector field
+\[
+F = U + B
+\]
+is monogenic.
+\end{lemma}
+\begin{proof}
+Let $\star b^\psi = \epsilon$ and note that 
+\[
+d u = \star d \epsilon = \star d \star b^\psi.  
+\]
+Now, writing the multivector equivalent of the right hand side yields
+\begin{align*}
+(\grad \wedge B^\star )^\star &= [(\grad \cdot B^\dagger) I]^\star\\
+    &= [I^{-1} ((\grad \cdot B^\dagger) I)]^\dagger\\
+    &= ((\grad \cdot B^\dagger)I)^\dagger I\\
+    &= \grad \cdot B^\dagger && \textrm{since $\dagger$ of a vector is trivial}\\
+    &= -\grad \cdot B. && \textrm{since $\dagger$ of a bivector is -1}
+\end{align*}
+Thus, we have $\grad \wedge U + \grad \cdot B = 0$. Since $\epsilon$ is coclosed we have
+\begin{align*}
+0=\grad \cdot B^\star &= \grad \cdot (I^{-1} B)^\dagger \\
+    &= \grad \cdot (B^\dagger I)\\
+    &= (\grad \wedge B^\dagger) I\\
+    &= \grad \wedge B.
+\end{align*}
+Thus $\grad F =0$ and $F$ is monogenic.
+\end{proof}
+
+\subsection{Calderon problem in geometric calculus}
+
+Indeed, the above work invites one to rephrase the problem in terms of geometric calculus.  Instead, the classical problem is given as follows.
+
+\begin{question}
+Let $M$ be an unknown Riemannian manifold with unknown metric $g$ and with known boundary $\Sigma$.  Let $u^\phi \in \multivectorfields$ be a scalar field satisfying the Dirichlet problem
+\begin{equation}
+\label{eq:dirichlet_problem_multivector}
+\begin{cases} \Delta u^\phi = 0 & \textrm{ in $M$} \\  u\vert_\Sigma = \phi. \end{cases},
+\end{equation}
+Define the Dirichlet to Neumann map as
+\[
+\Lambda u^\phi = \projection{\nu}{\grad u^\phi},
+\]
+where $\nu$ is the normal to $\Sigma$ given by $I_\Sigma I$.  Can one recover $M$ and $g$ from knowledge of $\Sigma$ and $\Lambda$?
+\end{question}
+
+It is a well known fact that the inverse of the DN map is known up to a constant
+
+\todo[inline]{Add about the 2D problem and generating algebras?}
+
+\todo[inline]{We should start with the boundary algebra and show that we can generate algebras inside. Use the maximum principle. }
+

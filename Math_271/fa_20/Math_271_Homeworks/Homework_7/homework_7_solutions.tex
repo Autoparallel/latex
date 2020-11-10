@@ -4,6 +4,7 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\vhat}{\boldsymbol{\hat{v}}}
 
 \begin{document}
 
@@ -18,7 +19,7 @@ Let $S$ be the set of general solutions $x(t)$ to the following homogeneous line
 \[
 x''+f(t)x'+g(t)x=0.
 \]
-Show that this set $S$ is a vector space over the complex numbers by doing the following. Let $x(t),y(t) \in S$ be solutions to the above equation and let $\alpha, \beta \in \C$ be complex scalars.
+Show that this set $S$ is a vector space over the complex numbers by doing the following. Let $x(t),y(t),z(t) \in S$ be solutions to the above equation and let $\alpha, \beta \in \C$ be complex scalars.
 \begin{enumerate}[(a)]
     \item Write down the eight requirements for $S$ to be a vector space.  
     \item Identify the $\zerovec \in S$ and $1\in \C$. 
@@ -74,10 +75,10 @@ Show that this set $S$ is a vector space over the complex numbers by doing the f
     \[
     0'' + f(t)\cdot 0' + g(t) 0 = 0.
     \]
-    Then, we have $1\in \C$ that satisfies the necessary property to. In this case, 1 is literally the unit element we care about.  
+    Then, we have $1\in \C$ that satisfies the necessary property too. In this case, 1 is literally the unit element we care about.  
     
     \begin{remark} 
-        Not all vector spaces will have such obvious neutral elements, $\zerovec$, or unit elements $1$.  This is why we must be a bit careful at times.
+        Not all vector spaces will have such obvious neutral elements, $\zerovec$. Likewise, not all fields will have an obvious unit element $1$.  This is why we must be a bit careful at times.
     \end{remark}
     \item Now, the biggest requirement for a vector space is that linear combinations of vectors actually produce another vector. This is quite obvious in the plane $\R^2$ for example, but here, it is not necessarily obvious.  
     
@@ -209,29 +210,9 @@ Consider the following vectors in space $\R^3$
 \begin{enumerate}[(a)]
     \item Compute the dot product $\vecu\cdot \vecv$. 
     \item Compute the cross product $\vecu \times \vecv$.
-    \item \textbf{(Experimental)} Let us try this: Take
-    \begin{align*}
-        \vecu \vecv &= (1\xhat + 2\yhat + 3\zhat)(-2\xhat + 1\yhat -2\zhat).
-    \end{align*}
-    Distribute the above multiplication.
-    \item \textbf{(Experimental)} Now, in the above multiplication, adopt the following rules:
-    \begin{align*}
-        \xhat \xhat = \yhat \yhat = \zhat \zhat &= 1 &&&
-        \xhat \yhat &= - \yhat \xhat &&& \xhat \zhat &= - \zhat \xhat &&& \yhat \zhat &= -\zhat \yhat.
-    \end{align*}
-    Then, simplify the multiplication in part (c) to
-    \[
-    \vecu\vecv = \alpha + \beta_1 \yhat\zhat  \ + \beta_2 \zhat \xhat + \beta_3 \xhat \yhat. 
-    \]
-    That is, what are $\alpha$, $\beta_1$, $\beta_2$, and $\beta_3$?
-    \item \textbf{(Experimental)} If we perform one more step, we will notice something quite nice.  Note that the pairs of vectors above define a plane, and there is a unique vector perpendicular to that plane.  Using this fact, we can let 
-    \[
-    \yhat \zhat = \xhat \qquad \zhat \xhat = \yhat \qquad \xhat \yhat = \zhat.
-    \]
-    In other words, we can replace the two vectors above with their cross product, (i.e., $\yhat \zhat = \yhat \times \zhat = \xhat$.) Show that with these rules
-    \[
-    \vecu \vecv = \vecu\cdot \vecv + \vecu \times \vecv.
-    \]
+    \item Compute the lengths $\|\vecu\|$ and $\|\vecv\|$ using the dot product.
+    \item Compute the angle between vectors $\vecu$ and $\vecv$. 
+    \item Compute the projection of $\vecu$ in the direction of $\vecv$. 
 \end{enumerate}
 \end{problem}
 \begin{solution}~
@@ -245,86 +226,36 @@ Consider the following vectors in space $\R^3$
     \begin{align*}
         \vecu \times \vecv &= -7\xhat -4\yhat +5\zhat.
     \end{align*}
-    \item Note, I put experimental in these following parts as they are \underline{not} the traditional way of teaching these topics. However, I think this methodogology gives a more intuitive notion of vectors than the traditional dot and cross products.
-    
-    So we have
-    \begin{align*}
-        \vecu \vecv &= (1\xhat + 2\yhat +3\zhat)(-2\xhat +1\yhat -2\zhat)\\
-        &= -2\xhat\xhat + 1 \xhat \yhat - 2\xhat \zhat \\
-        &~ + -4\yhat \xhat + 2\yhat \yhat -4\yhat \zhat \\
-        &~ + -6\zhat \xhat +3\zhat \yhat -6\zhat \zhat.
-    \end{align*}
-    \item Now, we can use the rules to find that we get
-    \begin{align*}
-        \vecu\vecv &= (-2 +2 - 6) + (-4-3)\yhat \zhat + (-6+2)\zhat \xhat + (1+4)\xhat \yhat\\
-        &= -6  -7 \yhat \zhat - 4\zhat \xhat +5 \xhat \yhat.
-    \end{align*}
-    Hence, we have $\alpha = -6$, $\beta_1 = -7$, $\beta_2=-4$, $\beta_3 = 5$.
-    
-    Here we can imagine that there are units attached to the quantities $\xhat$, $\yhat$, and $\zhat$.  There is a scalar quantity which contains none of these unit vectors, and there are quantities which contain two (i.e., $\xhat\yhat$).  The quantities containing two unit vectors represent the plane given by the two vectors.
-    \item Now, we can identify a unit vector perpendicular to a plane in $\R^3$ that satisfies the right hand rule given by the cross product.  In which case, we replace the above ``multivectors" (i.e., $\xhat\yhat$) with the unique unit vector perpendicular to the two.  So we have
+    \item We compute the lengths using the dot product by
     \[
-    \vecu \vecv = -6 -7\xhat -4\yhat +5\zhat,
+        \|\vecu\| = \sqrt{\vecu \cdot \vecu} = \sqrt{1^2+2^2+3^2} = \sqrt{14}.
     \]
-    which is indeed giving us that
+    Likewise
     \[
-    \vecu \vecv = \vecu\cdot \vecv + \vecu \times \vecv.
+        \|\vecv\| = \sqrt{\vecv \cdot \vecv} = \sqrt{(-2)^2 + 1^2 (-2)^2} = \sqrt{9} = 3.
     \]
-\end{enumerate}
-
-\begin{remark}
-This all falls under the mathematics of \emph{geometric algebra} which is a more general way of understanding vectors.  It is rather useful, yet it is not quite mainstream.  Maybe one day it will be!
-\end{remark}
-
-\end{solution}
-
-\newpage
-\begin{problem}
-Consider the same vectors $\vecu,\vecv\in \R^3$ from Problem 4.  
-\begin{enumerate}[(a)]
-    \item Compute the lengths $\|\vecu\|$ and $\|\vecv\|$ using the dot product.
-    \item Compute the angle between vectors $\vecu$ and $\vecv$. \emph{Hint: Save some work and use results from Problem 4.}
-    \item Compute the projection of $\vecu$ in the direction of $\vecv$. \emph{Hint: Again, save yourself some time and use results from Problem 4.}
-\end{enumerate}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item Note that we have
+    \item We can find the angle $\theta$ between $\vecu$ and $\vecv$ with the information we already have.  Indeed, recall the formula
     \[
-    \|\vecu \| = \sqrt{ \vecu \cdot \vecu}
+        \vecu \cdot \vecv = \|\vecu \| \|\vecv\| \cos \theta.
     \]
-    and so we have
+    In the previous parts, we have computed $\vecu \cdot \vecv = -6$, $\|\vecu\|=\sqrt{14}$, and $\|\vecv\|=3$ so we now just have the following
     \[
-    \|\vecu \| = \sqrt{1^2+2^2+3^2} = \sqrt{14}.
+        -6 = 3\sqrt{14} \cos \theta.
     \]
-    Similarly,
+    Thus,
     \[
-    \|\vecv\| = \sqrt{(-2)^2+1^2+(-2)^2} = \sqrt{9}=3.
+        \theta = \arccos\left(\frac{-6}{3\sqrt{14}}\right) \approx 2.1347 ~\textrm{radians}.
     \]
-    \item Now, we found $\vecu\cdot \vecv = -6$ and we have
+    One could also use the fact that $\|\vecu \times \vecv\| = \|\vecu\| \|\vecv\| \sin \theta$ since we had already compute the cross product earlier. 
+    \item The projection of $\vecu$ in the direction of $\vecv$ is simply asking for how much of the vector $\vecu$ is in the direction of $\vecv$.  One can arrive at this purely through trigonometry, but we have the dot product at our disposal.  The normalized vector $\vhat$ points in the direction of $\vecv$ with length 1 and
     \[
-    \vecu \cdot \vecv = \|\vecu\|\|\vecv \| \cos \theta
+        \vhat = \frac{1}{\|\vecv\|} \vecv = \frac{1}{3} \vecv.
     \]
-    as well. Hence, it follows that
-    \begin{align*}
-        \theta &= \arccos\left(\frac{\vecu \cdot \vecv}{\|\vecu\|\|\vecv\|}\right)\\
-        &= \arccos\left(\frac{-6}{\sqrt{14}\cdot 3}\right)\\
-        &\approx  2.1347 \approx 122.3^\circ.
-    \end{align*}
-    \item To compute this projection of $\vecu$ onto the direction of $\vecv$, we must first normalize $\vecv$ to make $\boldsymbol{\hat{v}}$. We have
+    Then, the projection can be computed by
     \[
-    \boldsymbol{\hat{v}} = \frac{\vecv}{\|\vecv\|} = -\frac{2}{3}\xhat + \frac{1}{3}\yhat - \frac{2}{3}\zhat.
+        \vecu \cdot \vhat = \frac{1}{3} \vecu \cdot \vecv = -2.
     \]
-    Then we can compute the projection by
-    \begin{align*}
-        (\vecu \cdot \boldsymbol{\hat{v}})\boldsymbol{\hat{v}}&= \left((\xhat + 2\yhat + 3\zhat ) \cdot \left( -\frac{2}{3}\xhat + \frac{1}{3}\yhat - \frac{2}{3}\zhat\right)\right) \boldsymbol{\hat{v}} \\
-        &= 2\boldsymbol{\hat{v}}.
-    \end{align*}
-    You could also just compute
-    \[
-    \frac{\vecu \cdot \vecv}{\|\vecv\|^2}\vecv
-    \]
-    and get the same answer.
+    One should attempt to recover this notion by doing some trigonometry. 
 \end{enumerate}
 \end{solution}
 \end{document}

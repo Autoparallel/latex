@@ -165,8 +165,62 @@ with initial condition $f(0)=1$.
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item 
+    \item Using separation,
+    \begin{align*}
+        f'&=\frac{1}{1-x}f\\
+        \frac{1}{f}df&=\frac{1}{1-x}dx\\
+        \ln(f)&= -\ln(1-x)+C\\
+        f&= \frac{A}{1-x}.
+    \end{align*}
+    Then with $f(0)=1$, we have
+    \[
+    1=A,
+    \]
+    so the particular solution is
+    \[
+    f(x)=\frac{1}{1-x}.
+    \]
+    \item Note that $f(x)$ is the result of the geometric series so that
+    \[
+    \frac{1}{1-x}=\sum_{n=0}^\infty x^n.
+    \]
+
 \end{enumerate}
+\item Now, to solve this using a power series, we assume the ansatz that $f(x)$ takes the form
+\[
+f(x)=\sum_{n=0}^\infty a_nx^n.
+\]
+Then we also have
+\[
+f'(x)=\sum_{n=1}^\infty na_n x^{n-1},
+\]
+and we can plug both series into the original equation to get
+\begin{align*}
+    (x-1)\sum_{n=1}^\infty na_n x^{n-1} +  \sum_{n=0}^\infty a_nx^n = 0\\
+    \sum_{n=1}^\infty na_n x^{n}-\sum_{n=1}^\infty na_n x^{n-1} +  \sum_{n=0}^\infty a_nx^n = 0\\
+    \sum_{n=1}^\infty na_n x^{n}-\sum_{n=0}^\infty (n+1)a_{n+1} x^{n} +  \sum_{n=0}^\infty a_nx^n = 0,
+\end{align*}
+where we reindexed in the last line. To determine the coefficients $a_n$, we combine terms and extrude the first terms to get
+\begin{align*}
+    a_0- a_1 + \sum_{n=1}^\infty [na_n -(n+1)a_{n+1}+a_n]x^n =0.
+\end{align*}
+Hence we must have that $a_0 - a_1=0$ so $a_0=a_1$ and the other coefficients must be zero so
+\[
+0n a_n - (n+1)a_{n+1} + a_n = (n+1)(a_n-a_{n+1}), 
+\]
+which means that
+\[
+a_{n+1}= a_n
+\]
+Thus, all the coefficients are equal to one another and in particular $a_n=a_0$. Hence our general solution is
+\[
+f(x)=a_0 \sum_{n=0}^\infty x^n.
+\]
+If we require that $f(0)=1$, then $a_0=1$ and we have
+\[
+f(x)=\sum_{n=0}^\infty x^n,
+\]
+which is exactly what we found in (b).
 \end{solution}
 
 \newpage

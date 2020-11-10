@@ -9,7 +9,7 @@
 
 \begin{center}
    \textsc{\large MATH 271, Homework 9}\\
-   \textsc{Due November 15$^\textrm{th}$}
+   \textsc{Due November 13$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
@@ -39,6 +39,61 @@ Compute the following:
 \end{problem}
 
 \begin{problem}
+A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
+\[
+[T]= \begin{pmatrix}
+1& 2& 0\\
+2& 1& 2\\
+0& 2& 1
+\end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
+    \[
+    T(\xhat), \qquad
+    T(\yhat), \qquad 
+    T(\zhat)
+    \]
+    and relate these values to the columns of $[T]$.
+    \item Are the vectors $T(\xhat)$, $T(\yhat)$, and $T(\zhat)$ linearly independent? Do these vectors form a basis for $\R^3$?
+    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: the determinant of this matrix $[T]$ provides us this information.})
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider some linear transformation $T\colon \R^n \to \R^m$.  Let $\vecv_1, \dots, \vecv_k$ be vectors in $\operatorname{Null}(T)$.  
+\begin{enumerate}[(a)]
+    \item Show that the span of these vectors is also in the nullspace of $T$.
+    \item How many linearly independent vectors can be in the nullspace?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}~
+\begin{enumerate}[(a)]
+    \item Show that for any $2\times 2$-matrix that the sign of the determinant changes if either a row or column is swapped. \emph{Note: this is true for square matrices of any size}.
+    \item Show that for any $2\times 2$-matrix that multiplying a column by a constant scales the determinant by that constant as well. \emph{Note: this is true for square matrices of any size.}
+    \item Show that for any $2\times 2$-matrix that adding a scalar multiple one column to the other will not change the determinant. \emph{Note: this is true in broader generality. In fact, adding linear combinations of columns to another column will not change the determinant.}
+    \item Using these facts, argue why a square matrix with columns that are linearly dependent must have a determinant of zero.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the equation
+\[
+[A]\vecv = \zerovec,
+\]
+where
+\[
+[A] = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Are the columns of $[A]$ linearly independent or dependent? Explain.
+    \item What vector(s) $\vecv$ satisfy this equation? In other words, what is $\Null([A])$?
+    \item Using what you found above, what must $\det([A])$ be equal to? \emph{Hint: you do not need to compute the determinant!}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
 Compute the following determinants:
 \begin{enumerate}[(a)]
     \item
@@ -63,23 +118,9 @@ Compute the following determinants:
 
 \begin{problem}~
 \begin{enumerate}[(a)]
-    \item Show that for any $2\times 2$-matrix that the sign of the determinant changes if either a row or column is swapped. \emph{Note: this is true for square matrices of any size}.
-    \item Show that for any $2\times 2$-matrix that multiplying a column by a constant scales the determinant by that constant as well. \emph{Note: this is true for square matrices of any size.}
-    \item Show that for any $2\times 2$-matrix that adding a scalar multiple one column to the other will not change the determinant. \emph{Note: this is true in broader generality. In fact, adding linear combinations of columns to another column will not change the determinant.}
+    \item What does a zero determinant indicate about the solutions of a non-homogeneous system of linear equations? (Think geometrically!)
+    \item What does a zero determinant indicate about the solutions of a homogeneous system of linear equations? (Think geometrically!)
 \end{enumerate}
-
-\end{problem}
-
-\begin{problem}$\boldsymbol{~^*}$
-Using the facts above, argue that a square matrix with columns that are linearly dependent must have a determinant of zero.
-\end{problem}
-
-\begin{problem}
-What does a zero determinant indicate about the solutions of a non-homogeneous system of linear equations? (Think geometrically!)
-\end{problem}
-
-\begin{problem}
-What does a zero determinant indicate about the solutions of a homogeneous system of linear equations? (Think geometrically!)
 \end{problem}
 
 \begin{problem}
@@ -90,21 +131,6 @@ Given the matrices
 \begin{enumerate}[(a)]
     \item Compute $\tr([A])$ and $\tr([B])$.  
     \item Compute $\tr([A][B])$ and compare it to $\tr([B][A])$.
-\end{enumerate}
-\end{problem}
-
-\begin{problem}
-Consider the equation
-\[
-[A]\vecv = \zerovec,
-\]
-where
-\[
-[A] = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}.
-\]
-\begin{enumerate}[(a)]
-    \item What vector(s) $\vecv$ satisfy this equation? In other words, what is $\Null([A])$?
-    \item Using what you found above, what must $\det([A])$ be equal to? \emph{Hint: you do not need to compute the determinant!}
 \end{enumerate}
 \end{problem}
 

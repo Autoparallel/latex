@@ -123,14 +123,14 @@ It seems like the curvature of this cable is close to what we would expect.  How
 
 \section{A Particle in a 1-Dimensional Box}
 
-Now, let's enter into some quantum mechanics.  In essence, quantum mechanics is governed by the \emph{Schr\"odinger equation}.  Think of this equation as a quantum version of Newton's laws.  The equation describes the state of a particle which we denote by $\psi(x)$.  If we put $\psi(x)$, we are thinking of this particle as not evolving in time, but having this function describing its position nonetheless.  We call a function $\psi$ that solves Schr\"odinger's equation a \emph{wavefunction}.  The wavefunction is not quite physically meaningful in its own right.  However, it gives rise to a probability interpretation of the particle. We'll see that shortly.
+Now, let's enter into some quantum mechanics.  In essence, quantum mechanics is governed by the \emph{Schr\"odinger equation}.  Think of this equation as a quantum version of Newton's laws.  Right now, we have only considered ODEs, and as such we will consider a particular case of Sch\"odinger's equation which is independent of time. The \boldgreen{time independent Schr\"odinger  equation} describes a \boldgreen{stationary state} of a particle which we denote by $\psi(x)$.  If we put $\psi(x)$, we are thinking of this particle as not evolving in time, but having this function describing its position nonetheless.  In general, we call a function $\Psi(x,t)$ that solves time dependent version of Schr\"odinger's equation a \boldgreen{wavefunction}. Again, we will not approach the time dependent portion until we reach the sequel of this course.  A wavefunction is not quite physically meaningful in its own right.  However, it gives rise to a probability interpretation of the particle. We'll see that shortly.
 
 \begin{df}{Time Independent Schr\"odinger Equation}{time_ind_schro}
 The \boldgreen{one dimensional time independent Schr\"odinger equation} with \boldgreen{potential} $V(x)$ is given by the differential equation
 \[
-\left(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\right)\psi(x)=E\psi(x).
+\left(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\right)\Psi(x)=E\Psi(x).
 \]
-Here, $\psi$ is the \boldgreen{wavefunction}, $\hbar$ is a physical constant called \boldgreen{Planck's reduced constant}, $E$ is the energy, and $m$ is the mass of the particle. Note that $E$ is not fixed in this equation and is taken to be an unknown parameter (until we solve the equation). The quantity
+Here, $\Psi$ is the wavefunction and in this case we will only find that the allowed wavefunctions can only be stationary states. $\hbar$ is a physical constant called \boldgreen{Planck's reduced constant}, $E$ is the energy, and $m$ is the mass of what ever particle we are considering at the moment. Note that $E$ is not fixed in this equation and is taken to be an unknown parameter (until we solve the equation). The quantity
 \[
 -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)
 \]
@@ -144,13 +144,13 @@ V(x)=\begin{cases} 0 & \textrm{if } 0<x<L\\
 \]
 This gives rise to the boundary value problem
 \[
--\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}=E\psi
+-\frac{\hbar^2}{2m}\frac{d^2\Psi}{dx^2}=E\psi
 \]
-with boundary conditions $\psi(0)=0$ and $\psi(L)=0$. This should look much like the eigenfunction equation for the Laplacian we saw previously. These boundary conditions will seem more sensible when we get a better interpretation of the wavefunction $\psi$. If you'd like, you can essentially plug in $V(x)=\infty$ and see that the only possibility for a solution is that $\psi(x)=0$ (but this is a bit handwavy). 
+with boundary conditions $\Psi(0)=0$ and $\Psi(L)=0$. This should look much like the eigenfunction equation for the Laplacian we saw previously. These boundary conditions will seem more sensible when we get a better interpretation of the wavefunction $\Psi$. If you'd like, you can essentially plug in $V(x)=\infty$ and see that the only possibility for a solution is that $\Psi(x)=0$ (but this is a bit handwavy). 
 
 Now, let us solve this boundary value problem.  We have a second order linear differential equation with constant coefficients. In fact, it is also homogeneous as we can write 
 \[
-\frac{d^2\psi}{dx^2}+\frac{2mE}{\hbar^2}\psi =0.
+\frac{d^2\Psi}{dx^2}+\frac{2mE}{\hbar^2}\Psi =0.
 \]
 Now, to solve this, find roots $\lambda_1$ and $\lambda_2$ to the characteristic polynomial
 \[
@@ -163,20 +163,20 @@ We solve this by letting $\omega^2 = \frac{2mE}{\hbar^2}$ and putting
 \end{align*}
 so $\lambda_1=i\omega$ and $\lambda_2=\lambda_1^*$. This then gives us the general solution
 \[
-\psi(x)=C_1 e^{i\omega x}+C_2 e^{-i\omega x}.
+\Psi(x)=C_1 e^{i\omega x}+C_2 e^{-i\omega x}.
 \]
 Of course, it is also possible to write 
 \[
-\psi(x)=C_1\cos(\omega x)+C_2\sin(\omega x),
+\Psi(x)=C_1\cos(\omega x)+C_2\sin(\omega x),
 \]
-as this is just an equivalent way to write out the general solution. Now, we have our boundary conditions $\psi(0)=0$ and $\psi(L)=0$ as well.  Plugging these into our general solution gives us
+as this is just an equivalent way to write out the general solution. Now, we have our boundary conditions $\Psi(0)=0$ and $\Psi(L)=0$ as well.  Plugging these into our general solution gives us
 \begin{align*}
-    0=\psi(0)&=C_1 \cos(\omega \cdot 0)+C_2 \sin(\omega \cdot 0)\\
+    0=\Psi(0)&=C_1 \cos(\omega \cdot 0)+C_2 \sin(\omega \cdot 0)\\
     &= C_1,
 \end{align*}
 so $C_1=0$.  Next, we have
 \begin{align*}
-    0=\psi(L)&=C_2\sin(\omega \cdot L).
+    0=\Psi(L)&=C_2\sin(\omega \cdot L).
 \end{align*}
 Now, how are we to solve this equation? We must have that input to the sin function must be an integer $n=\dots,-2,-1,0,1,2,\dots$ copy of $\pi$ as $\sin(n\pi)=0$. Else, we force $C_2=0$ which gives us nothing!  So, we require
 \[
@@ -197,13 +197,13 @@ which when we solve for $E_n$ gives us
 \]
 What have we found? We have found that to each solution $\psi_n$ there corresponds an energy value $E_n$. We've also seen that there are infinitely many solutions but they correspond to \boldgreen{quantized} energy levels! We can disregard some of our solutions as well. In fact, we keep only $n=1,2,3,\dots$ as $n=0$ gives us $\psi_0(x)=0$ which is not a physical solution (we'll see more on this in just a bit).  Also, we have that $\psi_n(x)=-\psi_{-n}(x)$, so the negative values for $n$ are simply redundant.
 
-The interpretation of the $\psi_n$ is that they are the allowable \boldgreen{states} of the system. In this case, the system is the particle in a 1-dimensional box. In general, a \boldgreen{wavefunction} $\Psi$ will be a sum of these states. The wavefunction describes a \emph{probability} of a particle being at a position.  How so? Well, the following integral gives us the probability (a number $P\in [0,1]$) of a particle with a wavefunction $\Psi$ being the region $[a,b]$.  
+The interpretation of the $\psi_n$ is that they are the allowable \boldgreen{stationary states}\index{states!stationary} of the system. In this case, the system is the particle in a 1-dimensional box. In general, a \boldgreen{wavefunction}\index{wavefunction} $\Psi(x,t)$ will be a sum of these states, but with an added time dependence that we did not talk about here. The wavefunction describes a \boldgreen{probability} of a particle being at a position.  How so? Well, the following integral gives us the probability (a number $P\in [0,1]$) of a particle with a wavefunction $\Psi(x,t)$ being the region $[a,b]$.  
 \[
-P([a,b]=\int_a^b |\Psi(x)|^2 dx=\int_a^b \Psi^* \Psi dx,
+P([a,b]=\int_a^b |\Psi(x,t)|^2 dx=\int_a^b \Psi^* \Psi dx,
 \]
-where $|\Psi(x) |$ represents the modulus of the (possibly) complex wavefunction $\Psi(x)$. This interpretation of quantum mechanics is just another part of what makes the theory so different from classical theory! We can only make predictions in a probabalistic way! Truly, it's fascinating.
+where $|\Psi(x,t) |$ represents the modulus of the complex wavefunction $\Psi(x,t)$. This interpretation of quantum mechanics is just another part of what makes the theory so different from classical theory! We can only make predictions in a probabalistic way! Truly, it's fascinating. Keep in mind, we really can only do this for the initial profile $\Psi(x,0)$ since we have not introduced time dependence just yet.
 
-In order to have this integral give us a valid probability, we must \boldgreen{normalize} the states $\psi_n$ by requiring that
+In order to have this integral give us a valid probability at time $t=0$, we must \boldgreen{normalize} the stationary states $\psi_n(x)$ by requiring that
 \[
 \int_{-\infty}^\infty |C\psi_n(x)|^2dx=1.
 \]
@@ -213,20 +213,18 @@ We can compute this explicitly by finding $C$. So we have for the particle in a 
     &= C^2\int_{0}^L \sin^2\left(\frac{n\pi x}{L}\right)dx \qquad \textrm{since $\psi_n=0$ outside of $[0,L]$}\\
     &= C^2 \frac{L}{2}
 \end{align*}
-which gives us that the \boldgreen{normalization constant} $C=\sqrt{\frac{2}{L}}$ for any state $\psi_n$. So the normalized states of the system are then
+which gives us that the \boldgreen{normalization constant} $C=\sqrt{\frac{2}{L}}$ for any state $\psi_n$. So the normalized stationary states of the system are then
 \[
 \boxed{\psi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right).}
 \]
 
-Note now that this equation
+In general, one would hope to combine our states to create a more general wavefunction as
 \[
--\frac{\hbar^2}{2m}\frac{d^2 \psi}{dx^2}=E\psi
+\Psi(x) = \sum_{j=1}^\infty a_j \psi_j.
 \]
-is linear and thus a superposition of solutions is also a solution.  Thus we have that the general solution to this equation is given by
-\[
-\Psi(x) = \sum_{j=1}^\infty a_j \psi_j
-\]
-where the coefficients $a_j$ must satisfy another relationship. Before we get to this, let's take a look at one very important property of these states $\psi_n$.  Consider the \emph{inner product} between states $\psi_n$ and $\psi_m$ which tells us how much of each state ``points in the same direction"
+We refer to this $\Psi(x)$ as a superposition of states.  Without adding in time dependence, it is \textbf{not} true that a superposition of states solves the time independent Schr\"odinger equation! 
+
+Next, we can consider the \boldgreen{inner product}\index{inner product} between states $\psi_n$ and $\psi_m$ which tells us how much of each state ``points in the same direction"
 \[
 \langle \psi_n,\psi_m \rangle \coloneqq \int_{\infty}^\infty \psi_n^*(x) \psi_m(x) dx.
 \]
@@ -240,7 +238,7 @@ Sometimes we denote this by putting
 \[
 \langle \psi_n,\psi_m\rangle = \delta_{nm}
 \]
-and saying that the $\psi_n$ are \boldgreen{orthogonal}. In fact they are even \boldgreen{orthonormal} since
+and saying that the $\psi_n$ are \boldgreen{orthogonal}\index{orthogonal}. In fact they are even \boldgreen{orthonormal}\index{orthonormal} since
 \[
 \langle \psi_n,\psi_n\rangle = 1,
 \]
@@ -287,21 +285,21 @@ What do these states of the system look like? We can plot them for different val
 
 \noindent One may notice that as we allow for larger and larger $n$ values, the states seem to start to approach a uniform value on the region $[0,L]$. In fact, if we were to take the limit as $n\to \infty$, we would essentially have that $\psi_\infty(x) = \frac{1}{L}$ which would be equivalent to the case of a classic particle randomly placed in the box.
 
-It is possible to prepare this system in a \boldgreen{superposition} by, for example, considering the wavefunction
+When we add in time dependence, it is possible to prepare this system in a \boldgreen{superposition} by, for example, considering the wavefunction
 \[
-\Psi(x) = \frac{1}{\sqrt{2}}\left(\psi_1(x) + \psi_2(x)\right).
+\Psi(x,0) = \frac{1}{\sqrt{2}}\left(\psi_1(x) + \psi_2(x)\right).
 \]
-In fact, due to the orthonormality of the states and the linearity of the Hamiltonian for the 1-dimensional box, we can write a wavefunction $\Psi(x)$ as
+More generally, due to the orthonormality of the stationary states, we can write a wavefunction $\Psi(x,0)$ as
 \[
-\boxed{\Psi(x)=\sum_{j=1}^\infty a_j \psi_j(x) \qquad \textrm{where}\qquad \sum_{j=1}^\infty a_j^2 = 1.}
+\boxed{\Psi(x,0)=\sum_{j=1}^\infty a_j \psi_j(x) \qquad \textrm{where}\qquad \sum_{j=1}^\infty a_j^2 = 1.}
 \]
 
 \subsubsection{Summary of the 1-Dimensional Box}
 \begin{itemize}
     \item The equation for the 1-Dimensional box is the same as the eigenfunctions of the Laplacian equation shown before. That is, we have $V(x)=0$ and we allow for $x$ to be in the range $[0,L]$ and get the equation
     \begin{align*}
-        H\psi &= E \psi\\
-        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi = E \psi.
+        H\Psi &= E \Psi\\
+        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi = E \Psi.
     \end{align*}
     \item We solved this equation as a second order linear equation and used the boundary values to determine possible solutions.  It turns out that we get a quantized set of solutions $\psi_n$ each corresponding to an energy level $E_n$. These energy levels were given by $E_n = \frac{n^2 \hbar^2 \pi^2}{2mL}$ and so the energies increase proportionally to $n^2$. We can see a plot of energies here.
     \begin{figure}[H]
@@ -310,14 +308,16 @@ In fact, due to the orthonormality of the states and the linearity of the Hamilt
         \caption{Energy levels of the 1-dimensional box.}
     \end{figure}
     \item We normalized the solutions $\psi_n$ and found that they give rise to a probability function that describe the probability of a particle being in a region $[a,b]$. 
-    \item Namely, we can take a wavefunction
+    \item We can take an initial profile for a wavefunction as a superposition
     \[
-    \Psi(x)=\sum_{j=1}^\infty a_j \psi_j(x)
+    \Psi(x,0)=\sum_{j=1}^\infty a_j \psi_j(x)
     \]
-    where $\sum_{j=1}^\infty a_j^2 = 1$. If more than one $a_j\neq 0$, then this wavefunction describes a superposition state. We can then find the probability of a particle with wavefunction $\Psi$ being in the region $[a,b]$ by
+    where $\sum_{j=1}^\infty a_j^2 = 1$. If more than one $a_j\neq 0$, then this wavefunction describes a superposition state. 
+    \item We can then find the probability of a particle with wavefunction $\Psi(x,t)$ being in the region $[a,b]$ at time $t$ by
     \[
-    P([a,b])=\int_a^b |\Psi(x)|^2dx.
+    P([a,b])=\int_a^b |\Psi(x,t)|^2dx.
     \]
+    To do this to the full extent, we do need to add in time dependence which we do not consider at this moment! However, alluding to what we wrote for $\Psi(x,0)$, we can compute this probability for a superposition of states $\psi_n$ at time $t=0$.
     \item As we let $n\to \infty$, we recover the case of the classical particle.  We should expect this since we do not observe this odd quantum phenomenon on large scale!
 \end{itemize}
 
@@ -327,4 +327,8 @@ Look up common energies for something like throwing a baseball. Compare this to 
 \hbar \approx 1.0545718\cdot 10^{-34}[kg \cdot m^2 /s].
 \]
 \end{exercise}
+
+\begin{remark}
+    The time dependent aspect will be covered after we learn multivariate calculus in Math 272.  There we will find that superposition of time dependent states does indeed give us a solution to the time dependent version of the equation.  
+\end{remark}
 

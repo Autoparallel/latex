@@ -6,19 +6,59 @@
 \usepackage{morefloats}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{relsize}
+\usepackage{graphicx}
 
 \newcommand\scaleInNode[1][1]{\tikzset{execute at begin node={\normalsize\larger[#1]}}}
 
-\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
-\newcommand{\xhat}{\boldsymbol{\hat{x}}}
-\newcommand{\yhat}{\boldsymbol{\hat{y}}}
-\newcommand{\zhat}{\boldsymbol{\hat{z}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SYMBOLS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\modelupdate}{\mathbf{F}} % MODEL UPDATE FUNCTION
+\newcommand{\projectedmodelupdate}{\mathbf{G}} % PROJECTED MODEL UPDATE FUNCTION
+\newcommand{\state}{\mathbf{u}} % STATE VECTOR
+\newcommand{\projectedstate}{\mathbf{v}} % PROJECTED STATE VECTOR
+\newcommand{\stateprojector}{\mathbf{V}} % V matrix that projects the state
+\newcommand{\modelerror}{\boldsymbol{\omega}} % MODEL ERROR
+\newcommand{\modelerrorcovariance}{\mathbf{Q}}
+\newcommand{\observation}{\mathbf{y}} % OBSERVATION
+\newcommand{\observationprojector}{\mathbf{U}} % U matrix that projects the observation
+\newcommand{\projectedobservation}{\mathbf{u}} % PROJECTED OBSERVATION
+\newcommand{\observationerror}{\boldsymbol{\eta}} % OBSERVATION ERROR
+\newcommand{\observationerrorcovariance}{\mathbf{R}}
+\newcommand{\observationoperator}{\mathbf{H}}
+\newcommand{\timeindex}{t} % TIME INDEX
+\newcommand{\finaltime}{T}
+\newcommand{\particleindex}{\ell} % PARTICLE INDEX
+\newcommand{\totalparticles}{L}
+\newcommand{\modeldimension}{M} %Changed from N to M to see how it looks (EVV) PHYSICAL MODEL DIMENSION
+\newcommand{\datadimension}{D} %Changed from M to D to see how it looks (EVV) DATA MODEL DIMENSION
+\newcommand{\weight}{w}
+\newcommand{\projection}{\boldsymbol{\Pi}}
+\newcommand{\innovation}{\mathbf{I}}
+\newcommand{\identity}{\mathbf{1}}
+\newcommand{\leftsingularvectors}{\mathbf{\Phi}}
+\newcommand{\rightsingularvectors}{\mathbf{\Psi}}
+\newcommand{\singularvaluesmatrix}{\mathbf{\Sigma}}
+\newcommand{\snapshotmatrix}{\mathbf{U}}
+
+% OTHER SYMBOLS?
+\newcommand{\Kn}[0]{\mat{K}_n} %kalman gain
+\newcommand{\An}[0]{\mat{A}_n} %model linearzation
+\newcommand{\Pf}[0]{\mat{P}^f} %kalman forecast covariance
+\newcommand{\Pa}[0]{\mat{P}^a} %kalman analysis covariance
+\newcommand{\tPf}[0]{\tilde{\mat{P}}^f} %kalman forecast covariance
+\newcommand{\hPf}[0]{\hat{\mat{P}}^f} %kalman forecast covariance
+\newcommand{\tPa}[0]{\tilde{\mat{P}}^a} %kalman analysis covariance
+
+\newcommand{\Lc}[0]{\mat{L}}
+\newcommand{\Hdag}[0]{\mat{H}^\dagger}
+\newcommand{\T}[0]{\mat{T}}
 \begin{document}
 
 \begin{figure}[H]
 	\centering
 	%\def\svgwidth{\columnwidth}
-	\resizebox{\columnwidth}{!}{\input{omega_axial.pdf_tex}}
+	\resizebox{.6\columnwidth}{!}{\input{proj_process_diag.pdf_tex}}
 \end{figure}
 
 \end{document}

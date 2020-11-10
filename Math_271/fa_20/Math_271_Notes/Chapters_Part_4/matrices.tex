@@ -108,19 +108,26 @@
         
     \section{Matrix Representation of Linear Transformations}
         
-        The salient fact of linear transformations is how we can represent them.  As it turns out, any linear transformation $T\colon \R^n \to \R^m$ can be written like:
+        The salient fact of linear transformations is how we can represent them.  As it turns out, any linear transformation $A\colon \R^n \to \R^m$ can be understood by seeing how the vectors 
         \[
-        T\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}
-        = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \end{pmatrix},
+            \xhat_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \quad \xhat_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \dots\quad, \xhat_n = \begin{pmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix}.
         \]
-        where 
-        \begin{align*}
-            y_1 &= a_{11} x_1 + a_{12} x_2 + a_{13} x_3 + \cdots + a_{1n} x_n\\
-            y_2 &= a_{21} x_1 + a_{22} x_2 + a_{23} x_3 + \cdots + a_{2n} x_n\\
-            y_3 &= a_{31} x_1 + a_{32} x_2 + a_{33} x_3 + \cdots + a_{3n} x_n\\
-            \vdots\\
-            y_m &= a_{m1} x_1 + a_{m2} x_2 + a_{m3} x_3 + \cdots + a_{mn} x_n.
-        \end{align*}
+        This is due to the fact that $A$ is linear and any vector $\vecu \in \R^n$ can be written as
+        \[
+            \vecu = u_1 \xhat_1 + u_2 \xhat_2 + \cdots + u_n \xhat_n = \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \vdots \\ u_n \end{pmatrix}.
+        \]
+        Thus, we would have
+        \[
+            T(\vecu) = u_1 T(\xhat_1) + u_2 T(\xhat_2) + \cdots + u_n T(\xhat_n).
+        \]
+        Let us say that
+        \[
+            T(\xhat_1) = \boldsymbol{\vec{A}}_1, \quad T(\xhat_2) = \boldsymbol{\vec{A}}_2, \dots \quad, T(\xhat_n)=\boldsymbol{\vec{A}}_n,
+        \]
+        Then we can create a matrix representation for $A$, denoted by $[A]$, by taking the $j$th column of this matrix to be the output of $T(\xhat_j)$.  Specifically, this gives us
+        \[
+            [A] = \begin{pmatrix} \vert & \vert & \vert \\ \boldsymbol{\vec{A}}_1 & \boldsymbol{\vec{A}}_2 & \boldsymbol{\vec{A}}_3 \\ \vert & \vert & \vert \end{pmatrix}.
+        \]
         Hence, this arbitrary linear transformation is captured entirely by the \boldgreen{matrix} of numbers
         \[
         \begin{pmatrix}
@@ -128,15 +135,19 @@
         a_{21} & a_{22} & a_{23} & \cdots & a_{2n}\\
         a_{31} & a_{32} & a_{33} & \cdots & a_{3n}\\
         \vdots & \vdots & \vdots & & \vdots \\
-        a_{n1} & a_{n2} & a_{n3} & \cdots & a_{nm}
-        \end{pmatrix}
+        a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn}
+        \end{pmatrix},
+        \]
+        where we can think of the columns as
+        \[
+            \boldsymbol{\vec{A}}_1 = \begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \\ \vdots \\ a_{m1} \end{pmatrix}, \quad \boldsymbol{\vec{A}}_2 = \begin{pmatrix} a_{12} \\ a_{22} \\ a_{32} \\ \vdots \\ a_{m2} \end{pmatrix},\dots \quad \boldsymbol{\vec{A}}_n = \begin{pmatrix} a_{1n} \\ a_{2n} \\ a_{3n} \\ \vdots \\ a_{mn} \end{pmatrix}
         \]
         
         Now, our study moves to that of matrices since we have seen that matrices capture all that we need in order to describe linear transformations.  They aren't necessary to use, but they make computation and understanding a bit easier.  It turns out that we can also think of vectors as special cases of matrices, which makes the idea of studying matrices themselves all that much better. From here on out, we will restrict ourselves to matrix representations.  
         
-        Often, one may be handed a linear transformation $T\colon \R^n \to \R^m$ as above. When one wants to represent $T$ as a matrix, we may put
+        Often, one may be handed a linear transformation $A\colon \R^n \to \R^m$ as above. When one wants to represent $A$ as a matrix, we may put
         \[
-        [T]=        \begin{pmatrix}
+        [A]=        \begin{pmatrix}
         a_{11} & a_{12} & a_{13} & \cdots & a_{1n}\\
         a_{21} & a_{22} & a_{23} & \cdots & a_{2n}\\
         a_{31} & a_{32} & a_{33} & \cdots & a_{3n}\\
@@ -151,13 +162,13 @@
         
         We will call a matrix with $n$-rows and $m$-columns an \textbf{$n\times m$-matrix} (read: $n$ by $m$ matrix).  These take the form:
         \[[A]=
-        \begin{bmatrix}
+        \begin{pmatrix}
         a_{11} & a_{12} & a_{13} & \cdots & a_{1n}\\
         a_{21} & a_{22} & a_{23} & \cdots & a_{2n}\\
         a_{31} & a_{32} & a_{33} & \cdots & a_{3n}\\
         \vdots & \vdots & \vdots & & \vdots \\
         a_{n1} & a_{n2} & a_{n3} & \cdots & a_{nm}
-        \end{bmatrix}.
+        \end{pmatrix}.
         \]
         We use a capital letter in brackets to denote a matrix. Each entry of the matrix will be given by a lowercase letter with subscripts $a_{ij}$.  The subscripts will tell you which row and column the entry is located. For example, $a_{25}$ would be the entry in the 2$^\textrm{nd}$ row and $5^\textrm{th}$ column.
         
@@ -602,7 +613,7 @@
         \[
         [A]\vecx = \vecy
         \]
-        then we can think of the columns of $[A]$ as being 3-dimensional vectors. That is, we can put:
+        then we can think of the columns of $[A]$ as being 3-dimensional vectors. Remember, this was how we first introduced the matrix representation for a linear transformation! That is, we can put:
         \begin{align*}
             \begin{pmatrix} \vert & \vert & \vert \\ \boldsymbol{\vec{A}}_1 & \boldsymbol{\vec{A}}_2 & \boldsymbol{\vec{A}}_3 \\ \vert & \vert & \vert \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} &= \begin{pmatrix} y_1 \\ y_2 \\ y_3 \end{pmatrix},
         \end{align*}

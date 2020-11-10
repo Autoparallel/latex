@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{environments}
+% package for todo 
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\setuptodonotes{size=\scriptsize,backgroundcolor=red!15!white} 
+
+\usepackage{showkeys} %show cites and refs
+
+\title{Commutative Algebras of Multivectors from the Scalar Dirichlet-to-Neumann Operator}
+\author{Colin Roberts}
+
+
+
+\begin{document}
+
+ \begin{titlingpage}
+     \maketitle
+     \vfill
+     \begin{abstract}
+        \textcolor{red}{TODO}
+     \end{abstract}
+ \end{titlingpage}
+
+\section{Outline}
+\begin{enumerate}
+    \item Show that we can determine the metric on $M$ from axial monogenic paravectors at least in the case for $\R^3$ or something.
+    \item Recover a space of monogenic paravectors from $\Lambda$.
+    \item Show that this space of monogenic paravectors contains the axial subalgebras.
+    \item Use this fact to recover $g$ from $\Lambda$.
+\end{enumerate}
+
+\todo[inline]{Replace vector space $V$ with $\vectorspace$.}
+
+\section{Introduction}
+\input{introduction.tex}
+
+\section{Preliminaries}
+\input{preliminaries.tex}
+
+\section{Algebras of multivector fields}
+\input{algebras_of_multivector_fields.tex}
+
+\section{Gelfand theory}
+\input{gelfand_theory.tex}
+
+\section{Calder\'on problem}
+\input{calderon_problem.tex}
+
+
+% EXTRA STUFF BELOW
+\section{Further questions}
+\input{further_questions.tex}
+
+\section{Tomography on convex regions}
+
+
+\section{Other}
+
+
+
+Let $M\subset \R^3$ be a 
+
+\subsection{Generating axial monogenics}
+
+The following questions remain for a domain in $\R^3$.
+
+\begin{question}
+    For what boundary values $\varphi \in C_\infty(\Sigma)$ can we generate axial monogenics?
+\end{question}
+
+\begin{question}
+    Do these boundary values exhaust the whole axial algebra $\algebra{\omega}$?
+\end{question}
+
+Fix an axis $\omega$ which defines the blade $B = \omega I$ and thus defines the $B$-plane in $\R^3$.  Then, let $f=u+\beta B$ be an $\omega$-axial monogenic.  We can then determine the boundary values for $f$ on $\Sigma$ by orthogonal projection onto the $B$-plane.  That is, we care only about the components of $f$ perpendicular to the axis $\omega$ and hence we take for $\zeta \in \Sigma$
+\[
+\zeta^\perp = \omega \omega \wedge \zeta = (x\cdot B)B^{-1}.
+\]
+showing the relationship between projection onto a plane and being orthogonal to an axis in $\R^3$. Specifically, this means that the relationship $f(x)=f(x+t\omega)$ can be written as
+\[
+f(x)=f((x\cdot B)B^{-1}),
+\]
+in that we only care about the portion of $x$ along the plane given by $B$.  Thus, for $\xi \in \Sigma$ we have
+\[
+f(\xi) = f((\xi \cdot B)B^{-1}).
+\]
+
+\begin{figure}[H]
+	\centering
+	%\def\svgwidth{\columnwidth}
+	\resizebox{\columnwidth}{!}{\input{omega_axial.pdf_tex}}
+\end{figure}
+
+\textcolor{red}{So boundary values of axial monogenics are axial and...?.}
+
+\begin{example}
+    Consider the 3-dimensional example with $M=B_3$ and $\Sigma=S^2$.  Let $e_1,e_2,e_3$ be a global orthonormal basis and let $g_{ij}=\delta_{ij}$.  Then let $B=e_1 \wedge e_2$.  Then the paravector field $f(x^1,x^2,x^3)=x^1+x^2B$ is $e_3$-axial. Clearly we can see that $f(x^1,x^2,x^3+t)=f(x^1,x^2,x^3)$ for any $t$.  $f$ is also monogenic as one can show
+    \[
+        \grad f = e_1 + (e_2 \wedge e_3)I = e_1 - e_1 = 0.
+    \]
+    Indeed, this $f$ is none other than the complex function $f(z)=z$ with $B$ taking the role of the imaginary unit $i$. 
+
+    Let $x=x^1e_1 + x^2e_2 + x^3e_3$.  Then, 
+    \[
+        B (x\cdot B) = (e_1e_2)( x^1e_2 -x^2 e_1 ) = x^1 e_1 + x^2 e_2.
+    \] 
+    Thus, for $\xi \in S^2$, we have $f(\xi)=\xi^1 +\xi^2 B$.
+\end{example}
+
+\todo[inline]{If we consider now every $\omega$-axial monogenic can be written as a power series, if we can construct $z$ we should be done...?}
+
+It is clear that we can define a monogenic field $f=u+b$ via the Cauchy integral, but we then require $\nabla_\omega f = 0$.  Let $f=\cauchy[\varphi](x)$, then we must have
+\[
+\nabla_\omega \proj{0}{\cauchy[\varphi](x)} = 0 \qquad \textrm{and} \qquad \nabla_\omega \proj{2}{\cauchy[\varphi](x)}=0.
+\]
+The first condition yields
+\[
+0 = \int_\Sigma \frac{(\nu(\zeta)\cdot x) (\omega \cdot x)}{|x-\zeta|^2} \phi(\zeta) d\Sigma(\zeta).
+\]
+
+
+\begin{theorem}
+    For any $\omega \in Gr(1,3)$ we have that $\algebra{\omega}\subset \monogenics$. 
+\end{theorem}
+\begin{proof}
+    \textcolor{red}{This seems to be saying that we need boundary values in some hardy space or something. They defined this conjugacy thing as $G$.}
+    Fix a unit vector $\omega$.  We want to show that for any $f=u+b\in \algebra{\omega}$ that $\iota^* u=\phi$ satisfies \ref{eq:conjugacy_requirement}.  That is,
+    \[
+        G\phi = (\Lambda - d\Lambda^{-1}d) \phi = 0.
+    \]
+    Note that $\phi$ is the trace of a harmonic function, so this operator is well defined.  Note that the equation
+    \[
+        \Lambda \psi = d \phi
+    \]
+    has a solution
+\end{proof}
+
+\section{Radon transform and integral geometry}
+
+I feel like there is some way to go from projection onto subspaces as a map to grassmannians and reconstructing the manifold.  It's like a morse function type of thing.  Radon transforms also come to mind.
+
+\section{Relation to the BC Method}
+
+\textcolor{red}{Describe how this process can lead to the BC method in dimension $n=2$}
+
+
+\section{Conclusion}
+
+
+\appendix
+\section{Appendix}
+
+\todo[inline]{Put axial condition for cauchy integral and some other quick proofs in here.}
+
+\bibliographystyle{siam}
+\bibliography{calderon_problem}
+
+
+
+
+
+\end{document}

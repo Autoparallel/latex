@@ -686,7 +686,7 @@ We can continue this process to find, for example,
 \[
 f_2(x)=a_0(1-3x^2) \qquad \textrm{and} \qquad f_3(x) = a_1\left( x - \frac{5x^3}{3}\right).
 \]
-There is a polynomial for each $m$, but I have only listed a few here.
+There is a polynomial for each $m$, but I have only listed a few here. In general, these polynomials are known as the \boldgreen{Legendre polynomials} \index{polynomials!Legendre}
 
 \subsubsection{Orthogonality and Normalization}
 It turns out that the polynomials created from this process are \boldgreen{orthogonal} since
@@ -709,3 +709,125 @@ We can then say that this set of normalized polynomials is \boldgreen{orthonorma
 \int_{-1}^1 f_i(x)f_j(x)dx = \delta_{ij} = \begin{cases} 1 & \textrm{if $i=j$}\\ 0 & \textrm{if $i\neq j$}\end{cases}.
 \]
 It turns out to be orthonormal polynomials that are most useful for us.  These polynmomials correspond to states for a quantum system, and thus they should accurately represent a probability. Hence, the normalization.  The fact that the polynomials are also orthogonal is important in quantum mechanics as well, but it is a topic we will revisit in the sequel. In the next part of this text, we discuss linear algebra where we begin to explore the concepts of vectors in more generality.  In that sense, these polynomials are vectors in a vector space.  It's just that the vector space here is infinite dimensional, and is a bit harder to deal with than the finite dimensional case.
+
+\section{Quantum Harmonic Oscillator}
+
+The utility of power series for solving differential equations is becoming clear. We can now to use this technique to study an extremely important example in quantum mechanics.  Specifically, the \boldgreen{Quantum Harmonic Oscillator} \index{quantum!harmonic oscillator} (QHO).  As we did previously with the free particle in a 1-dimensional box, we will set up a boundary value problem with Schr\"odinger's equation as the underlying differential equation.  In this case, there will actually be no boundaries for our domain as we will imagine the particle is allowed to be anywhere along the real line $\R$.  That is, the particle could take on any position in the domain $(-\infty,\infty)$.  In order to make the system more interesting, we will now set the potential $V(x)$ to be nonzero.  Thus, this particle is no longer free as it is being constrained by some type of external force (which is the derivative of the potential).  
+
+We take $V(x)=\frac{1}{2}kx^2$ which is the same potential we have seen for a spring on a mass and it is found via Hooke's law.  Recall the Hamiltonian is then
+\[
+H = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x) = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2}kx^2.
+\]
+Recall as well that we write the independent Sch\"odinger equation as $H\Psi = E\Psi$ and for the QHO we have
+\begin{equation}
+\label{eq:qho}
+\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2}kx^2\right)\Psi(x) = E \Psi(x),
+\end{equation}
+where $\Psi(x)$ is the wavefunction. To simplify our notation, we will let $\omega = \sqrt{\frac{k}{m}}$ and the change of variables $y=\sqrt{\frac{m \omega}{\hbar}}x$.  Our equation then reads
+\[
+\left(-\frac{d^2}{dy^2} + y^2\right) \Psi(y) = \frac{2E}{\hbar \omega}\Psi(y).
+\]
+We can rearrange this equation as
+\[
+\frac{d^2 \Psi}{dy^2} + \left(\frac{2E}{\hbar \omega} - y^2\right)\Psi(y)=0.
+\]
+
+
+To start understanding the form of our solution, we look at the behavior of the solution for large $y$ values. As  $y$ gets large, the term $\frac{2E}{\hbar \omega}$ is negligible.  What we can now do falls under the name of \boldgreen{asymptotic analysis} \index{asympototic analysis}.  First, we can note that for larger $y$ values, we have
+\[
+\frac{2E}{\hbar \omega} - y^2 \approx -y^2.
+\]
+Thus we have the approximate equation
+\[
+\frac{d^2 \phi}{dy^2} - y^2 \phi = 0.
+\]
+If we then take $\phi(y)=Ae^{-\frac{y^2}{2}}$ then we can note
+\[
+\frac{d \phi}{d y} = y \phi.
+\]
+Likewise,
+\[
+\frac{d^2 \phi}{dy^2} = (-1 + y^2)\phi \approx y^2 \phi.
+\]
+This analysis leads us to an ansatz $\Psi(y)=f(y)\phi(y)$ for the QHO equation.  This technique is very similar to how we derived the integrating factor technique.  Often times we seek to deconstruct solutions, and asymptotic analysis is just one way of doing that. 
+
+Taking this ansatz, we can plug this into the QHO equation to yield a new differential equation for the function $f(y)$
+\[
+e^{-\frac{y^2}{2}} \left(\frac{d^2 f}{dy} - 2y \frac{df}{dy} + \left(\frac{2E}{\hbar \omega} -1\right) f\right) = 0.
+\]
+
+\begin{exercise}
+    Fill in the missing steps to arrive at the above equation.  That is, take the ansatz given and plug it into the QHO differential equation (Equation \ref{eq:qho}) and simplify until you reach this result.
+\end{exercise}
+
+Notice now that we can divide by $e^{-\frac{y^2}{2}}$ to get the equation
+\begin{equation}
+\label{eq:reduced_qho}
+\frac{d^2 f}{dy} - 2y \frac{df}{dy} + \left(\frac{2E}{\hbar \omega} -1\right) f = 0.
+\end{equation}
+With this equation, we can now assume a power series ansatz for $f(y)$ so that $f(y) = \sum_{n=0}^\infty a_n y^n$.  Taking the necessary derivatives of this power series and plugging into Equation \ref{eq:reduced_qho}, we arrive at
+\[
+\sum_{n=2}^\infty n(n-1) a_n y^{n-2} +\sum_{n=1}^\infty 2n a_n y^n + \left(\frac{2E}{\hbar \omega} -1 \right) \sum_{n=0}^\infty a_n y^n =0.
+\]
+Simplifying further, we get
+\[
+\sum_{n=0}^\infty \left[ (n+2)(n+1) a_{n+2} + \left(\frac{2E}{\hbar \omega} -1-2n\right)a_n \right]y^n = 0.
+\]
+
+\begin{exercise}
+    Work through the missing steps to achieve the simplified expression above.
+\end{exercise}
+
+Since all coefficients must be zero for the above equation to be true, we get the following relationship for the coefficients
+\[
+a_{n+2} = \frac{2n+1-\frac{2E}{\hbar \omega}}{(n+2)(n+1)}a_n.
+\]
+Though I will not show this here, we require that only finitely many of these $a_n$ terms be nonzero.  The reason why has to do with requiring that $\Psi(x)$ represent a valid wave function. In particular, we must have
+\[
+\int_{-\infty}^\infty \Psi^2(x) dx = 1.
+\]
+In order for these $a_n$ terms to eventually be zero, we need the numerator for the relationship for $a_{n+2}$ in terms of $a_n$ to be zero and so
+\[
+2n+1-\frac{2E}{\hbar \omega} =0,
+\]
+which leads to determining the energy eigenvalues
+\[
+\boxed{E=\left(n+\frac{1}{2}\right) \hbar \omega.}
+\]
+Amazingly, the energy eigenvalues grow linearly! So each state will have an energy level $\hbar \omega$ greater than the previous. 
+
+Going back to our original variable, this gives rise to the states
+\[
+\psi_n(x) = \left(\frac{m \omega}{\pi \hbar}\right)^{\frac{1}{2}} \frac{1}{\sqrt{2^n n!}} H_n\left(\left(\frac{m\omega}{\hbar}\right)^{\frac{1}{2}} x\right) e^{-\frac{m\omega x^2}{2\hbar}},
+\]
+where $H_n(x)$ are the \boldgreen{Hermite polynomials} \index{polynomials!Hermite}.  Specifically, we can write the Hermite polynomials as
+\[
+H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} \left(e^{-x^2}\right).
+\]
+So for every $n$, we have a state with a corresponding energy level. Using the Hermite polynomials, the first few are
+\begin{align*}
+    n&=0 & E&=\frac{\hbar \omega}{2} & \psi_0(x)&=a_0 e^{-\frac{m\omega x^2}{2\hbar}}\\
+    n&=1 & E&=\frac{3\hbar \omega}{2} & \psi_1(x)&=a_0 \left(2\sqrt{\frac{m \omega}{\hbar}}x\right)e^{-\frac{m\omega x^2}{2\hbar}}\\
+    n&=2 & E&=\frac{5\hbar \omega}{2} & \psi_2(x)&=a_0 \left(4\frac{m \omega}{\hbar}x^2-2\right)e^{-\frac{m\omega x^2}{2\hbar}}
+\end{align*}
+As with the particle in the box, we can determine $a_0$ via the normalization process by requiring 
+\[
+1=\int_{-\infty}^\infty \psi_n^2(x)dx,
+\]
+to get 
+\[
+a_0 = \left(\frac{m\omega}{\pi \hbar}\right)^{\frac{1}{4}}.
+\]
+Finally, it should again be recognized that the states $\psi_n(x)$ are mutually orthogonal when integrated together over the whole domain. Specifically, we have
+\[
+\int_{-\infty}^\infty \psi_m(x)\psi_n(x) = \delta_{mn}.
+\]
+
+\subsection{Quantum tunneling}
+One fundamental difference between the solutions to the QHO and the particle in a box is readily apparent.  Let us examine the ground state $\psi_0(x)$ in relation to the potential $V(x)$.  Briefly letting $m = k = \hbar = 1$, we can plot both to yield
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{Figures_Part_2/qho_ground_state.png}
+    \caption{Ground state and potential for the QHO.}
+\end{figure}
+For a classical particle with energy $E$, we can never observe the particle outside the region of $x$ where $\frac{1}{2}kx^2=E$. That is, we must always have the particle between $\left[ -\sqrt{\frac{2E}{k}}, \sqrt{\frac{2E}{k}}\right]$.  This is due to the fact that the particle does not have enough energy to move to any further out $x$ values. However, looking at the graph above, one sees that there is area under the curve outside the classically allowed region.  Indeed, there is even a nonzero area under the curve no matter how far out in $x$ values you look! What this means is that we could possibly observe that a particle passes through this potential energy barrier.  This phenomenon is known as \boldgreen{quantum tunneling} \index{quantum!tunneling}. This is yet another fascinatingly non-classical result we find when we study quantum mechanics.  It is deeply important!

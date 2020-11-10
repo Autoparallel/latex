@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  6 OCT 2020 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  29 OCT 2020 08:56
 entering extended mode
 **./inkscape_test.tex
 (inkscape_test.tex
@@ -257,20 +257,20 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 ) (inkscape_test.aux)
 \openout1 = `inkscape_test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
@@ -292,12 +292,12 @@ pdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) (omega_axial.pdf_tex
-<omega_axial.pdf, id=1, page=1, 615.6191pt x 405.90868pt>
-File: omega_axial.pdf Graphic file (type pdf)
-<use omega_axial.pdf, page 1>
-Package pdftex.def Info: omega_axial.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
+) (proj_process_diag.pdf_tex
+<proj_process_diag.pdf, id=1, page=1, 1422.67178pt x 1100.39328pt>
+File: proj_process_diag.pdf Graphic file (type pdf)
+<use proj_process_diag.pdf, page 1>
+Package pdftex.def Info: proj_process_diag.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 1422.67175pt x 1100.42416pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
@@ -308,56 +308,29 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<omega_axial.pdf, id=2, page=2, 615.6191pt x 405.90868pt>
-File: omega_axial.pdf Graphic file (type pdf)
-<use omega_axial.pdf, page 2>
-Package pdftex.def Info: omega_axial.pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
-<omega_axial.pdf, id=3, page=3, 615.6191pt x 405.90868pt>
-File: omega_axial.pdf Graphic file (type pdf)
-<use omega_axial.pdf, page 3>
-Package pdftex.def Info: omega_axial.pdf , page3 used on input line 61.
-(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
-<omega_axial.pdf, id=4, page=4, 615.6191pt x 405.90868pt>
-File: omega_axial.pdf Graphic file (type pdf)
-<use omega_axial.pdf, page 4>
-Package pdftex.def Info: omega_axial.pdf , page4 used on input line 63.
-(pdftex.def)             Requested size: 615.61913pt x 405.94484pt.
-) [1
+)) [1
 
-{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./omega_axi
-al.pdf> <./omega_axial.pdf
-
-pdfTeX warning: pdflatex.exe (file ./omega_axial.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./omega_axial.pdf
-
-pdfTeX warning: pdflatex.exe (file ./omega_axial.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./omega_axial.pdf
-
-pdfTeX warning: pdflatex.exe (file ./omega_axial.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
->] (inkscape_test.aux) ) 
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./proj_proc
+ess_diag.pdf>] (inkscape_test.aux) ) 
 Here is how much of TeX's memory you used:
- 4416 strings out of 481556
- 65597 string characters out of 2913869
- 327522 words of memory out of 3000000
- 19588 multiletter control sequences out of 15000+200000
- 537296 words of font info for 43 fonts, out of 3000000 for 9000
+ 4458 strings out of 481556
+ 65941 string characters out of 2913869
+ 332712 words of memory out of 3000000
+ 19621 multiletter control sequences out of 15000+200000
+ 540065 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,44p,290b,380s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
-ers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb>
-Output written on inkscape_test.pdf (1 page, 56175 bytes).
+ 41i,21n,44p,322b,449s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/U
+sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb>
+Output written on inkscape_test.pdf (1 page, 57968 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
+ 42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

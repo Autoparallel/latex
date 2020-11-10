@@ -53,8 +53,8 @@
     \put(0.65453556,0.37195776){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$ }}}%
     \put(0.14589302,0.82401395){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z$}}}%
     \put(0.86534615,0.03239403){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x$}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{Figures_Part_4/linear_transform_kernel.pdf}}%
-    \put(0.55753708,0.59212004){\color[rgb]{1,0,0}\transparent{0.98823529}\makebox(0,0)[lb]{\smash{$\vecv$}}}%
+    \put(0,0){\includegraphics[width=\unitlength]{Figures_Part_4/linear_transform_kernel.pdf}}%
+    \put(0.55753708,0.59212004){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{$\vecv$}}}%
     \put(0.58384387,0.23089272){\color[rgb]{0.51764706,0,1}\makebox(0,0)[lb]{\smash{$[T]\vecv$}}}%
   \end{picture}%
 \endgroup%

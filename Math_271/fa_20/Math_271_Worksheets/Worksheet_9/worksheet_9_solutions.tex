@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 9, \emph{Solutions}.}\\
+   \textsc{Linear independence, span, and bases for vectors. Matrix determinants and traces.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+hermitian matrices, real eigenvalueus
+\end{problem}
+
+\begin{problem}
+Rotation matrices
+\end{problem}
+
+\begin{problem}
+GL(n) SL(n)
+\end{problem}
+
+\begin{problem}
+phase space
+\end{problem}
+
+\begin{problem}
+Consider the linear transformations on $\R^3$ to $\R^3$ given by
+\begin{align*}
+    R_x(\theta) &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & -\sin \theta \\ 0 & \sin\theta & \cos \theta \end{pmatrix}\\
+    R_y(\theta) &= \begin{pmatrix} \cos \theta & 0 & \sin \theta \\ 0 & 1 & 0 \\ -\sin \theta & 0 & \cos \theta \end{pmatrix}\\
+    R_z(\theta) &= \begin{pmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta  & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+\end{align*}
+\textbf{Fact:} These matrices are generators for the \emph{group of rotations} $\SO(3)$ of $\R^3$.
+\begin{enumerate}[(a)]
+    \item Let $\theta = \pi/2$. Show that $R_x(\pi/2)$ rotates a vector counter clockwise by $\pi/2$ radians around the $x$-axis.
+    \item Show that the determinant of each of these matrices is 1 for any value of $\theta$.
+    \item Using properties of determinants, show that the determinant of a product of rotation matrices is also 1.
+    \item Explain geometrically why a rotation matrix must have a determinant of 1.
+    \item Show that $R_x(\theta)R_x(\theta)^\dagger = I$. This in fact true for any rotation matrix.
+\end{enumerate}
+\end{problem}
+
+\end{document}

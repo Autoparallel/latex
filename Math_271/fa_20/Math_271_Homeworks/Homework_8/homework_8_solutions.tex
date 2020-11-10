@@ -9,7 +9,6 @@
 
 \begin{center}
    \textsc{\large MATH 271, Homework 8, \emph{Solutions}}\\
-   \textsc{Due November 8$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
@@ -142,6 +141,88 @@ Which of the following are linear transformations? For those that are not, which
 
 \newpage
 \begin{problem}
+Consider the linear transformation $J \colon R^2 \to \R^2$ defined by 
+\[
+J(\xhat) = \yhat \qquad \textrm{and} \qquad J(\yhat) = -\xhat.
+\]
+This linear transformation is fundamental in understanding how we can reconstruct complex numbers using matrices.
+\begin{enumerate}[(a)]
+    \item Show that $J^2 = J\circ J= -1$.
+    \item Determine a matrix representation for $J$ and denote it by $[J]$.
+    \item Recall that we can represent a complex number as $z=x + iy$ and that we can represent $z$ as a vector in $\R^2$ as $\vec{\boldsymbol{\zeta}} = x\xhat + y\yhat$.  Show that $J \vec{\boldsymbol{\zeta}}$ corresponds to $iz$.
+    \item We can completely reconstruct a representation of $\C$ by using a matrix representation.  In particular, we can take
+    \[
+        [z] = x [I] + y [J].
+    \]
+    Show that we recover the complex addition and multiplication using this representation.
+    \item We can represent a unit complex number as $z=e^{i\theta}$.  Show that the representation described before leads to
+    \[
+        [z] = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix}.
+    \]
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]
+        \item Let $\vecv = v_1 \xhat + v_2 \yhat$ be some arbitrary vector in $\R^2$.  Then,
+        \begin{align*}
+            J^2(\vecv) = J(J(\vecv)) &= J(J(v_1 \xhat + v_2 \yhat))\\
+            &= J(v_1 J(\xhat) + v_2 J(\yhat))\\
+            &= J(v_1 \yhat - v_2 \xhat)\\
+            &= v_1 J(\yhat) - v_2J(\xhat)\\
+            &= -v_1 \xhat - v_2 \yhat\\
+            &= -\vecv.
+        \end{align*}
+        So, yes, $J^2$ acts like scaling by -1.
+        \item We determine a matrix for $J$ by using the definition of $J$ on $\xhat$ and $\yhat$. In particular,
+        \[
+            [J] = \begin{pmatrix} \vert & \vert \\ J(\xhat) & J(\yhat) \\ \vert & \vert \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}.
+        \]
+        One can check here that $[J]^2=-[I]$, where $[I]$ is the identity matrix. This confirms that $[J]$ satisfies the relationship we saw in $(a)$.
+        \item In the complex plane, we let $z=x+iy$ and we can note that
+        \[
+        iz = -y + ix.
+        \]
+        Now, we can think of $z$ as a vector in $\R^2$ by noticing that the vector $\vec{\boldsymbol{\zeta}} = x\xhat + y\yhat$ corresponds to the same exact point geometrically.  Then, if we apply $J$ we have
+        \[
+        J\vec{\boldsymbol{\zeta}} = -y\xhat + x \yhat,
+        \]
+        which is exactly how $z$ was transformed when we multiplied by $i$. Keep in mind that $i$ rotates a complex number $z$ by $\pi/2$ in the counterclockwise direction and $J$ does the same to vectors $\vec{\boldsymbol{\zeta}}$. To see this most fully, consider drawing a picture of both transformations.
+        \item In the complex plane, we can take two complex numbers $z_1 = x_1 + iy_1$ and $z_2 = x_2 + i y_2$. Then we have
+        \[
+        z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2) \qquad \textrm{and} \qquad z_1 z_2 = (x_1x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1).
+        \]
+        Notice that addition is componentwise and keep track of this result from the multiplication.
+
+        Now, we can consider two matrices $[z_1] = x_1 [I] + y_1 [J]$ and $[z_2] = x_2 [I] + y_2 [J]$ and see what we get through addition and multiplication. We have
+        \[
+        [z_1] + [z_2] = (x_1 + x_2)[I] + (y_1 + y_2)[J].
+        \]
+        This is due to how matrices add componentwise and we can see that this corresponds to the addition in $\C$. Next, we have
+        \begin{align*}
+        [z_1][z_2] &= (x_1 [I] + y_1 [J])(x_2 [I] + y_2[J]) \\
+        &= x_1 x_2 [I]^2 + y_1 x_2 [J][I] + x_1 y_2 [I][J] + y_1 y_2 [J]^2\\
+        &= x_1 x_2 [I] + y_1 x_2 [J] + x_1 y_2 [J] - y_1 y_2 [I]\\
+        &= (x_1 x_2 - y_1 y_2)[I] + (x_1 y_2 + x_2 y_1)[J].
+        \end{align*}
+        Note that I use the facts $[J][I]=[I][J]=[J]$, $[I]^2=[I]$, and from (a) we know $[J]^2=-[I]$.  If we take a look at the end result, we can see that this is the same multiplication result as $z_1 z_2$ in $\C$.
+
+        \item Using our knowledge from the previous problem, and Euler's formula, we know that we can take
+        \[
+        [e^{i\theta}] = \cos (\theta) [I] + \sin(\theta)[J].
+        \]
+        Writing out the matrices explicitly yields
+        \[
+        [e^{i\theta}] = \begin{pmatrix} \cos(\theta) & 0 \\ 0 & \cos(\theta) \end{pmatrix} + \begin{pmatrix} 0 & - \sin(\theta) \\ \sin(\theta) & 0 \end{pmatrix} = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix},
+        \]
+        as intended. 
+    \end{enumerate}
+\begin{remark}
+    If one goes to look up a rotation matrix for $\R^2$, you will find the matrix you found in (e).  So, this goes to show that complex arithmetic captures rotations nicely through Euler's formula. Moreover, the matrix representation for a complex number is faithful in describing all that we need.
+\end{remark}
+\end{solution}
+
+\newpage
+\begin{problem}
 Write down the matrix for the following linear transformation $T\colon \R^3 \to \R^3$:
 \[
 T\begin{pmatrix} x\\ y\\ z \end{pmatrix}
@@ -167,83 +248,39 @@ If we match the coefficients on the $x$, $y$, and $z$, we find that
 \]
 \end{solution}
 
+
 \newpage
 \begin{problem}
-A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
-\[
-[T]= \begin{pmatrix}
-1& 2& 0\\
-2& 1& 2\\
-0& 2& 1
-\end{pmatrix}.
-\]
-\begin{enumerate}[(a)]
-    \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
+    Take the following matrices:
     \[
-    T(\xhat), \qquad
-    T(\yhat), \qquad 
-    T(\zhat).
+        [A] = \begin{pmatrix} 4 & 3 & 10 & 2 \\ 1 & 1 & 0 & 9 \end{pmatrix},\quad [B] = \begin{pmatrix} 8 & 5 & 8 \\ 10 & 9 & 2 \\ 4 & 6 &3 \end{pmatrix}, \quad [C] = \begin{pmatrix} 0 & 0 & 9 \\ 7 & 9 & 9 \\ 1 & 9 & 9 \\ 3 & 3 & 1\end{pmatrix}
     \]
-    This gives a nice interpretation of matrix vector multiplication as linear combinations of the column vectors that make up a matrix.
-    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: the determinant of this matrix $[T]$ provides us this information.})
-\end{enumerate}
+    \begin{enumerate}[(a)]
+        \item Compute either $[A][C]$ or $[C][A]$ and state which multiplication is not possible.
+        \item Compute either $[B][C]$ or $[C][B]$ and state which multiplication is not possible.
+        \item Can you add any of these matrices?
+        \item Describe each matrix as linear transformation $T\colon \R^m \to \R^n$. What is $m$ and $n$ for each? How does this relate to the number of rows and columns?
+    \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item The point here is that we can understand the matrix $[T]$ and matrix multiplication better by seeing how the basis vectors are transformed. So we have
-    \begin{align*}
-        T(\xhat) &= \begin{pmatrix}
-1& 2& 0\\
-2& 1& 2\\
-0& 2& 1
-\end{pmatrix} \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\\
-&= \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix},
-    \end{align*}
-    which is just the first column of the matrix. Then we have
-    \begin{align*}
-                T(\yhat) &= \begin{pmatrix}
-1& 2& 0\\
-2& 1& 2\\
-0& 2& 1
-\end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\\
-&= \begin{pmatrix} 2 \\ 1 \\ 2 \end{pmatrix},
-    \end{align*}
-    which is just the second column of the matrix. Lastly we have
-    \begin{align*}
-                T(\zhat) &= \begin{pmatrix}
-1& 2& 0\\
-2& 1& 2\\
-0& 2& 1
-\end{pmatrix} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\\
-&= \begin{pmatrix} 0 \\ 2 \\ 1 \end{pmatrix},
-    \end{align*}
-    which is the last column of the matrix.
-    \item The three basis vectors 
+    \item The matrix $[A]$ is a $2\times 4$ matrix and matrix $[C]$ is a $4 \times 3$ matrix.  So we can compute $[A][C]$ but not $[C][A]$.  Given that, we also expect the output to be a $2 \times 3$ matrix. So, we have
     \[
-    \xhat = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \qquad \yhat = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \qquad \zhat =\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+    [A][C] = \begin{pmatrix} 4 & 3 & 10 & 2 \\ 1 & 1 & 0 & 9 \end{pmatrix}\begin{pmatrix} 0 & 0 & 9 \\ 7 & 9 & 9 \\ 1 & 9 & 9 \\ 3 & 3 & 1\end{pmatrix} = \begin{pmatrix} 37 & 123 & 155 \\ 34 & 36 & 27 \end{pmatrix}.
     \]
-    define the volume of the unit cube. That is, the parallelepiped generated by $\xhat$, $\yhat$, and $\zhat$ is the unit cube. Hence, if we know how these vectors are transformed, we just need to find the volume of the paralellepiped given by the transformed vectors $T(\xhat)$, $T(\yhat)$, and $T(\zhat)$.  Now, we can collect these vectors into a matrix,
-    \begin{align*}
-    \begin{pmatrix} \vert & \vert & \vert \\ T(\xhat) & T(\yhat) & T(\zhat) \\ \vert & \vert & \vert \end{pmatrix} &= \begin{pmatrix}  1& 2& 0\\
-2& 1& 2\\
-0& 2& 1\end{pmatrix},
-    \end{align*}
-    which is exactly $[T]$! This is what we realized in part (a)! Now, the determinant of the matrix gives us the signed volume of the parallelepiped generated by the three column vectors, and hence
+
+    \item $[B]$ is a $3 \times 3$ matrix so we can take $[C][B]$ but not $[B][C]$.  We get
     \[
-    \mathrm{Area}=|\det([T])|=|-7|=7.
+        [C][B] = \begin{pmatrix} 0 & 0 & 9 \\ 7 & 9 & 9 \\ 1 & 9 & 9 \\ 3 & 3 & 1\end{pmatrix} \begin{pmatrix} 8 & 5 & 8 \\ 10 & 9 & 2 \\ 4 & 6 &3 \end{pmatrix} = \begin{pmatrix} 36 & 54 & 27 \\ 182 & 170 & 101 \\ 134 & 140 & 53 \\ 58 & 48 & 33 \end{pmatrix}.
+    \]
+    \item We can always add a matrix to itself, so, for example $[A]+[A]$, $[B]+[B]$, and $[C]+[C]$ make sense. However, since the dimensions of $[A]$, $[B]$, and $[C]$ all differ, we cannot add in any other way.
+    \item The number of columns of a matrix denotes the input dimension $m$, and the number of rows denotes the output dimension $n$.  So
+    \[
+        A \colon \R^4 \to \R^2, \quad B \colon \R^3 \to \R^3, \quad C \colon \R^3 \to \R^4.
     \]
 \end{enumerate}
 \end{solution}
 
-\newpage
-\begin{problem}
-What does a zero determinant indjicate about the solutions of a non-homogeneous system of linear equations? (Think geometrically!)
-\end{problem}
-
-\newpage
-\begin{problem}
-What does a zero determinant indicate about the solutions of a homogeneous system of linear equations? (Think geometrically!)
-\end{problem}
 
 \newpage
 \begin{problem}
@@ -252,6 +289,25 @@ Solve the following equation.
 \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 2 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 6 \\ 8 \\ 11 \end{pmatrix}.
 \]
 \end{problem}
+\begin{solution}
+First, we create the augmented matrix
+\[
+\left(\begin{tabular}{ccc|c} 1 & 1 & 1 & 6 \\ 1 & 2 & 1 & 8 \\ 1 & 2 & 2 & 11 \end{tabular} \right).
+\]
+We can subtract R1 from both R2 and R3 to get
+\[
+\left(\begin{tabular}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & 1 & 0 & 2 \\ 0 & 1 & 1 & 5 \end{tabular} \right).
+\]
+Then subtract R3 from R1 to get
+\[
+\left(\begin{tabular}{ccc|c} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ 0 & 1 & 1 & 5 \end{tabular} \right).
+\]
+Finally, subtract R2 from R3 to get
+\[
+\left(\begin{tabular}{ccc|c} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & 3 \end{tabular} \right).
+\]
+This yields our result in the right most column in that $x=1$, $y=2$, and $z=3$. 
+\end{solution}
 
 
 

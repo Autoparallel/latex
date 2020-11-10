@@ -1,0 +1,179 @@
+\subsection{Topology from monogenics}
+
+\subsubsection{Cauchy and Poisson integrals}
+
+In regions of $\R^n$, one can define a Cauchy integral operator and Hilbert transform for multivector fields.  The details of these integral operators are laid out in \cite{brackx_hilbert_2008}. Note that the authors there take the opposite signature to $\mathcal{G}_n$ and define the gradient operator as $\underline{\partial} = e_j \nabla_{e_j}$.  Thus, we have $\grad = g^{ij} \underline{\partial}$.  Nonetheless, the fundamental solution to $\grad$ is a vector field given by
+\[
+E(x) = \frac{1}{a_m} \frac{x}{|x|^m},
+\]
+for $x\in \R^n$.  This is clear to see if we take $e_i$ to be a (local) orthonormal basis
+\begin{align*}
+\grad \wedge E &= \frac{1}{a_m}  \left( \frac{1}{|x|^n} \nabla_{e_i} x^j + x^j \nabla_{e_i} \frac{1}{|x|^n} \right) e^i \wedge e_j\\
+&= \left( \frac{1}{|x|^n} \delta_i^j -\frac{3x^ix^j}{|x|^{n+2}} \right) e^i \wedge e_j\\
+&= -\frac{3x^i x^j}{|x|^{n+2}} e^i \wedge e_j &&\textrm{since $e^i \wedge e_i=0$}\\
+&= 0 &&\textrm{since $e^j\wedge e_i = -e^i \wedge e_j$ for an orthonormal basis.}
+\end{align*}
+(see \url{https://math.stackexchange.com/questions/811248/wedge-product-between-nonorthogonal-basis-and-its-reciprocal-basis-in-geometric}. This is also clear since $E$ is a radial field and thus has no curl. Then, let $B_{\epsilon}$ be the $n$-ball of radius $\epsilon$ centered at the origin and we have
+\begin{align*}
+\int_{B_\epsilon} \grad \cdot Ed \Omega &= \int_{S_\epsilon} E \cdot \nu d\Sigma\\
+&=\frac{1}{a_n} \int_{S_\epsilon} \frac{x\cdot \frac{x}{|x|}}{|x|^n} d\Sigma\\
+&= \frac{1}{a_n} \int_{S_\epsilon} \frac{1}{\epsilon^{n-1}} d\Sigma\\
+&= \frac{1}{a_n} \int_{S_\epsilon} \frac{1}{\epsilon^{n-1}} \epsilon^{n-1} d\phi_1 d\phi_2 \cdots d\phi_{n-1}\\
+&= 1.
+\end{align*}
+
+Let $\partial M = \Sigma$ and define now the $\G_n$ valued inner product on multivector fields $f,g \in L_2(\Sigma)$
+\[
+\innerproduct{f}{g} = \int_{\partial M} f(\zeta)g(\zeta)d\Sigma(\zeta).
+\]
+We can then define the \emph{Cauchy kernel} for $x\in M$ and $\zeta \in \partial M$ using the fundamental solution $E$ as
+\[
+C(\zeta, x) = -\frac{1}{a_n} \nu(\zeta) E(x-\zeta)
+\]
+where $\nu(\zeta)$ is the outward normal vector to the hypersurface $\Sigma = \partial M$. Note the inclusion of the minus sign is due to the signature of the inner product $g$. The Cauchy integral for $\phi \in L_2(\partial M)$ is then
+\[
+\cauchy[\phi](x) = \innerproduct{C(\zeta,x)}{\phi(\zeta)} =\frac{1}{a_n} \int_{\Sigma} \frac{\zeta-x}{|x-\zeta|^n} \nu(\zeta) \phi(\zeta) d\Sigma(\zeta).
+\]
+The most important properties of the Cauchy integral is that $\cauchy[\phi]$ is monogenic in $M$ and for a scalar function $\phi$, $\cauchy[\phi]$ is a paravector.  Specifically,
+\begin{align*}
+\cauchy[\phi](x) &= \frac{1}{a_n} \int_{\Sigma} \frac{\zeta-x}{|x-\zeta|^n} \nu(\zeta) \phi(\zeta) d\Sigma(\zeta)\\
+&= \frac{1}{a_n} \left(\int_{\Sigma} \phi(\zeta) \frac{\zeta-x}{|x-\zeta|^n} \cdot \nu(\zeta) d\Sigma(\zeta) + \int_{\Sigma} \phi(\zeta) \frac{\zeta-x}{|x-\zeta|^n} \wedge \nu(\zeta) d\Sigma(\zeta)\right)
+\end{align*}
+
+Similarly, for the $n$-ball of radius $r$, $B_r \subset \R^n$, we have the \emph{Poisson kernel}
+\[
+P(\zeta,x) = \frac{1}{a_n}\frac{r^2-|x|^2}{r|x-\zeta|^n}.
+\]
+Notably, we have the Poisson integral
+\[
+\poisson[\phi](x) = \innerproduct{P(\zeta,x)}{\phi(\zeta)} = \frac{1}{a_n} \int_\Sigma \phi(\zeta) \frac{r^2-|x|^2}{r|x-\zeta|^n},
+\]
+which is harmonic on $B_r$ and extends continuously onto $\Sigma$. Briefly letting $g_{ij}=\delta_{ij}$, if we then consider the Cauchy integral over $\Sigma = \partial B_r = S_r$ then it is apparent that the Poisson integral deviates from the scalar part of the Cauchy integral as
+\[
+\proj{0}{\cauchy[\phi](x)} = \frac{1}{a_n} \int_\Sigma \phi(\zeta) \frac{r^2- x\cdot \xi}{r|x-\xi|^n} d\Sigma (\zeta).
+\]
+Sadly, this means that we do not have the boundary behavior of the Cauchy integral that we desire.  Namely, the $\iota^* \proj{0}{\cauchy[\phi](x)}\neq \phi$ in general. It is also worth noting that it is an open problem to determine a general form for the Poisson integral for other domains in $\R^n$. However, since $\cauchy[\phi](x)$ is monogenic, we have that the components are harmonic.
+
+\begin{itemize}
+    \item Prove that the Hilbert transforms are equivalent on traces of harmonic functions. Specifically, $Td\phi = d\psi$.  
+    \item Discuss hardy spaces as closure of $\monogenics$. 
+    \item $H^2=1$ on $L_2(\partial M)$ which should show we satisfy the theorem below.
+\end{itemize}
+
+One of the main theorems we prove is as follows.
+
+\begin{theorem}
+For any $\mu \in \characters$, there is a point $x^\mu \in \ball$ such that $\mu = \delta_{x^\mu}$. The map
+\[
+\gamma \colon \characters \to \ball, \quad \mu \mapsto x^\mu
+\]
+is a homeomorphism, so that $\characters \cong \ball$. The Gelfand transform
+\[
+\Gamma \colon \monogenics \to C(\characters; \spinalgebra), \quad (\Gamma f)(\mu) \coloneqq \mu(f), \quad \mu \in \characters,
+\]
+is an isometry onto its image, so that $\characters \cong \Gamma(\monogenics)$.
+\end{theorem}
+
+We prove this theorem in two main parts. 
+
+\begin{enumerate}[1.]
+    \item Construct a representation of monogenic $(0+2)$-vectors as power series of $B$-planar monogenics.
+    \item We constructively show a correspondence between $\mu \in \characters$ with $x^\mu \in \ball$.  
+\end{enumerate} 
+
+\subsubsection{Power series}
+\textcolor{red}{Define the cauchy kernel and celebrated cauchy integral formula because it is a nifty reason to use clifford algebra.}
+Here we prove the statment: \textcolor{red}{Actually, we replace this statement with a power series representation}
+\begin{lemma}
+We have that
+\[
+\overline{\Span \{ \algebra{B} ~\vert~ \omega \in \Grassmannian{2}{n} \}} = \monogenics.
+\]
+(Lemma 1 from B.V.) \textcolor{red}{I think this should be stated differently now. This is really like an module generated by algebras since we are multiplying the $B$-axials.}
+\end{lemma}
+\begin{proof}~
+For sake of simplicity, we let $e_1,\dots, e_n$ be an arbitrary basis for $\R^n$.  
+\begin{itemize}
+    \item Consider the function $z_{B_\sigma(j)}(x)=x_{\sigma(j)} - x_1 e^1 e_{\sigma(j)}$ for $\sigma \in \{2,\dots,n\}$ a permutation.  Note that $z_{B_\sigma(j)}$ is $B_{\sigma(j)}$-planar with $B_{\sigma(j)}=e^1 e_{\sigma(j)}$.  Moreover, $z_{B_\sigma(j)}$ is monogenic as
+    \[
+        \grad z_{B_\sigma(j)} = e_{\sigma(j)} - e_1 e^1 e_{\sigma(j)} = 0.
+    \]
+    We denote as well $B_{\sigma(j)} = e^1 e_{\sigma(j)}$.
+    \item Let $f \in \monogenics$.  Then by Theorem 4 in \cite{ryan_left_1986}, we have the monogenic polynomials
+    \[
+        P_{j_2 \dots j_n}(x) = \frac{1}{j!} \sum_{\textrm{permutations}}z_{B_\sigma(1)}(x) \cdots z_{B_\sigma(j)}(x),
+    \]
+    which generate $f$ as a power series as
+    \[
+        f(x) = \sum_{j=0}^\infty \left(\sum_{{j_2 \cdots j_n}_{j_2 + \cdots j_n = j}} P_{j_2 \cdots j_n} (x) a_{j_2 \cdots j_n}\right),
+    \]
+    where
+    \[
+        a_{j_2 \cdots j_n} = \frac{1}{\omega_n} \int_{\partial \Sigma} \nabla_{e_2}^{j_2} \cdots \nabla_{e_n}^{j_n} G(y) \nu(y) f(y) d \Sigma(y),
+    \]
+    where $G(y)$ is the Cauchy kernel.
+\end{itemize}
+\end{proof}
+
+In general, fix an orthonormal basis $e_1,\dots,e_n$ in $\R^n$ and we can define the functions $z_j^i = x^j - x^i e_i e_j$. Recall that for an orthonormal basis the reciprocal basis elements $e^i=e_i$. To further condense notation, we let $B_{ij}=e_i e_j$ be the 2-blade acting as the pseudoscalar for the $e_i e_j$-plane. In the same vein, the functions $z_j^i$ are very analogous to $z$ in $\C$ but rather in the $B_{ij}$ plane.  One can note
+\[
+z_j^i = x^j - x^i B_{ij} = x \cdot e_j - x\cdot e_i B_{ij} = e_j(\projection{e_j}{x} + \projection{e_i}{x}).
+\]
+
+
+
+
+\subsubsection{Correspondence}
+
+The functions $z_j^i$ play a crucial role in the above power series representation but they also play a key part in determining the behavior of the spin characters $\mu \in \characters$.  If we are able to deduce the action $\mu(z_j^i)$, then we can extend this to any monogenic $f$ via the power series representation. Note that for any $\mu \in \characters$ that $\mathbb{A}_B=\mu(\algebra{B})$ is a commutative subalgebra of $\mathfrak{spin}(n)$.  In particular, for a constant $c \in \algebra{B}$, $\mu(c)=c$ and so we retrieve $\mathbb{A}_B$ must be generated by scalars and the bivector $B$.  Thus, $\mathbb{A}_B$ is an isomorphic copy of $\mathfrak{spin}(2)$ as the algebra of the $B$-plane. \textcolor{red}{Note that $\mu$ will be constant on $2$-blades.}
+
+Working with the same orthonormal basis and applying $\mu$ yields
+\[
+\mu(z_j^i) = a_j^i + b_j^i B_{ij},
+\]
+for some constants $a_j^i$ and $b_j^i$.  The $z_j^i$ are not independent from one another.  In fact, we have two key relationships in that
+\begin{equation}
+\label{eq:z_reciprocal_relationship}
+z_j^i B_{ij}  = z_i^j.
+\end{equation}
+Similarly, we have
+\begin{equation}
+\label{eq:z_relationship}
+z_j^i = B_{jk} z_j^k B_{kj} - z_i^k B_{ij}.
+\end{equation}
+We simply compute the above,
+\begin{align*}
+B_{jk} z_j^k B_{kj} - z_i^k B_{ij} &= B_{jk} (x^j-x^k B_{kj}) B_{kj} - (x^i -x^k B_{ki}) B_{ij}\\
+    &= x^j -x^k B_{kj} -x^i B_{ij} +x^k B_{kj}\\
+    &= z_j^i.
+\end{align*}
+
+Thus, we can take $\mu$ of Equations \ref{eq:z_reciprocal_relationship} and \ref{eq:z_relationship}. First, 
+\[
+\mu(z_i^j) = \mu(z_j^i B_{ij}) = \mu(z_j^i) B_{ij}
+\]
+yields
+\[
+a_i^j - b_i^j B_{ij} = -b_j^i + a_j^i B_{ij}
+\]
+and so $a_i^j = b_j^i$ for all $i \neq j$. Next,
+\[
+\mu(z_j^i) = \mu(B_{jk} z_j^k B_{kj} - z_i^k B_{ij}) = B_{jk} \mu{z_j^k} B_{kj} - \mu(z_i^k) B_{ij}
+\]
+and so
+\[
+a_j^i + b_j^i B_{ij} = B_{jk} (a_j^k +b_j^k B_{kj}) B_{kj} - (a_i^k + b_i^k B_{ki}) B_{ij} = a_j^k - a_i^k B_{ij}
+\]
+yields $a_j^i = a_j^k$ and $a_i^k=-b_j^i$. In particular, for all $z_j^i$, we have the relationships
+\[
+a_i^j =- b_j^i, \quad a_j^i = a_j^k, \quad a_i^k =- b_j^i, \quad \textrm{for $i\neq j \neq k$.}
+\]
+More simply, we can note 
+\[
+a_i^\bullet = - b_\bullet^i ~\forall i \qquad \textrm{and} \qquad  a_j^\bullet = a_j^\bullet ~\forall j.
+\]
+Letting $\mu(z_j^i) = z_j^i(x_\mu)$ satisfies these requirements above since $z_j^i(x_\mu) = x_\mu^j - x_\mu^i B_{ij}$ for all $i\neq j$. 
+\textcolor{red}{Make the matrix argument and stuff then show that the point itself must also be in $\ball$.}
+
+
+
