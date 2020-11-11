@@ -113,7 +113,8 @@ which is the grade preserving anti-symmetric portion of the product $BB'$.
 
 As discussed, $C\ell(V,Q)$ is naturally a $\mathbb{Z}$-graded algebra but we also find that it carries a $\mathbb{Z}/2\mathbb{Z}$-grading as well. This additional grading can be realized by sorting $k$-vectors in $C\ell(V,Q)$ into the sets where $k$ is even or odd.  We say a $k$-vector is \emph{even} (resp. \emph{odd}) $k$ is even (resp. odd) and in general if a multivector $A$ is a sum of only even (resp. odd) grade elements we also refer to $A$ as even (resp. odd).  Taking note of the multiplication defined in \ref{eq:general_clifford_multiplication}, one can see that the multiplication of even multivectors with another even multivectors outputs an even multivector.  Thus, the even multivectors form closed subalgebra of $C\ell(V,Q)$ which we denote by $C\ell(V,Q)^+.
 
-\begin{example}~
+\begin{example}
+\label{ex:complex_representation}~
 \begin{itemize}
     \item Let $V=\R^2$ and let the quadratic form $Q$ be given by the Euclidean norm $Q(\cdot)=\|\cdot\|$.  Let $e_1$ and $e_2$ be the standard unit vectors and note that we have $1$ as the basis scalar, and $B_{12} = e_1\wedge e_2 = e_1e_2$ as the basis pseudoscalar.  Thus, a general multivector $m$ and $r$ can be written as
 \[
@@ -141,11 +142,11 @@ as a representation of the complex number $\zeta = x+ iy$ in $\G_n^{0+2}$.  Thus
     \[
         \C \cong \{\lambda + \beta B ~\vert~ \lambda,\beta \in C\ell(V,Q)^0,~ B \in C\ell(V,Q)^2,~ B^2=-1. \},
     \]
-   which shows that complex numbers arise as biparavectors. Given the standard basis $e_1,\dots,e_n$ we have copies of $\C$ for each of the ${ n \choose 2}$ unit bivectors $B_{jk}$ with $k=2,\dots,n$ and $j<k$. Note that $B_{jk}B_{jk}=-1$ and we have
+   which shows that complex numbers arise as biparavectors. Given the standard basis $e_1,\dots,e_n$ we have copies of $\C$ for each of the ${ n \choose 2}$ unit bivectors $B_{jk}$ with $k=2,\dots,n$ and $j<k$. Note that $B_{jk}B_{jk}=-1$ and we have the representation of $\C$ since
     \[
-        z = x + yB,
+        \zeta = x + yB,
     \]
-    behaves as expected with $B$ acting as the imaginary unit $i$.
+    behaves as a complex number $z=x+iy$.
 \end{itemize}
 \end{example}
 
@@ -173,7 +174,7 @@ In this case, this even subalgebra is extremely close to being a copy of the qua
 \]
 and noting that we then have $ijk=-1$ as well as $i^2=j^2=k^2=-1$. A more in depth explanation is provided in \cite{doran_geometric_2003}.
 
-Once again, quaternions arise naturally as biparavectors since we can put
+Once again, quaternions arise naturally as parabivectors since we can put
 \[
 q= \alpha + u_1B_{23} - u_2 B_{13} + u_3 B_{12},
 \]
@@ -216,6 +217,7 @@ and in particular
 This shows the duality between the inner and exterior products. The duality extends further to provide an isomorphism between the spaces of $k$-vectors and $(n-k)$-vectors. For any $k$-vector $A_k$, we can take $A_k I^{-1}=B_{n-k}$ to get the corresponding $(n-k)$-vector $B_{n-k}$. It is under this isomorphism one can see that all pseudovectors are $(n-1)$-blades. 
 
 \begin{example}
+\label{ex:cross_product}
 Consider $\spacealg$ with the standard orthonormal vector basis $e_1,\dots,e_n$ and Euclidean inner product.  Then, we can define the \emph{cross product} of two vectors $u$ and $v$ by
 \[
 u \times v = (u\wedge v)I^{-1}.
@@ -288,14 +290,14 @@ Fundamentally, $\spingroup$ acts on the even subalgebra $\G_n^+$. A \emph{spinor
     \[
        e^{\theta B_{12}} = \sum_{n=0}^\infty \frac{\theta B_{12}}{n!} = \cos(\theta)+B_{12}\sin(\theta),
     \]
-    where $\theta B_{12}$ is a general bivector in $\G_2$.  Hence, we arrive at $\operatorname{Spin}(2)\cong \operatorname{U}(1)$. Any element in $\C$ is also a scaled version of an element of the spin group $\operatorname{Spin}(2)$. Hence, we can use a spin representation for an element in $\C$ via $z=re^{\theta B_{12}} \in R\times \operatorname{Spin}(2)$.  This special case shows that biparavectors in $\G_2$ have a unique spin representation and they are spinors as well.
+    where $\theta B_{12}$ is a general bivector in $\G_2$.  Hence, we arrive at $\operatorname{Spin}(2)\cong \operatorname{U}(1)$. Any element in $\C$ is also a scaled version of an element of the spin group $\operatorname{Spin}(2)$. Hence, we can use a spin representation for an element in $\C$ via $z=re^{\theta B_{12}} \in R\times \operatorname{Spin}(2)$.  This special case shows that parabivectors in $\G_2$ have a unique spin representation and they are spinors as well.
 \end{example}
 
 \begin{example}
     Consider $\G_3$ and note that we have shown the spinors $\G_3^+$ are isomorphic to the quaternion $\quat$ algebra.  We also realize $\quat$ as scalar copies of elements of $\operatorname{Spin}(3) \cong \operatorname{Sp}(1)$.  That is to say that $\quat \cong \R \times \operatorname{Spin}(3)$. Indeed, since elements of $\G_3^+$ are simply biparavectors, the biparavectors once again admit a natural spin representation. Likewise, 
 \end{example}
 
-\subsubsection{Projection onto subspaces}
+\subsubsection{Projection and rejection}
 
 There is a direct relationship between unit $k$-blades and $k$-dimensional subspaces.  Indeed, each unit $k$-blade $B_k$ ($\|B_k\|=1$) corresponds to a $k$-dimensional subspace.  That is, each point in $\Grassmannian{k}{n}$ corresponds to a unit $k$-blade.  Since blades represent subspaces, they also give us a compact way of projecting multivectors into subspaces.  In general, given an multivector $A$ the projection onto the subspace spanned by $B_k$ is
 \begin{equation}
@@ -323,6 +325,8 @@ and more enlightening is to take a projection of a vector $v$ onto another vecto
 \]
 which is the expected result. 
 
+\todo[inline]{define rejection then go back and use it in the $B$-planar proofs}
+
 
 \subsection{Multivector fields}
 
@@ -343,29 +347,67 @@ We refer to smooth functions valued in the subalgebra $\Gamma$ as \emph{Clifford
 
 \subsubsection{Directional derivative and gradient}
 
-Note that $\R^n$ has global coordinates and thus we can choose a global vector basis $e_1,\dots,e_n$ and generate $\mathcal{G}_n$ from this basis.  Multiplication of fields is computed pointwise. The directional derivative $\nabla_\omega$ is defined in the usual sense, and we can develop the gradient as $\grad = \sum_{i} e^i \nabla_{e_i}$.  We will adopt the Einstein summation convention when needed (e.g., the repeated indices in $\grad = e^i \nabla_{e_i}$ indicates summation over $i$). Note then that $\omega \cdot \grad = \nabla_\omega$ defines the directional derivative via the gradient. The directional derivative is also grade preserving in that for a multivector $A$
+Note that $\R^n$ has global coordinates and thus we can choose a global constant vector field basis $e_1,\dots,e_n$ and generate $\mathcal{G}_n$ from this basis and note that we will adopt the Einstein summation convention when needed. With respect to these fields, we have the \emph{directional derivative} $\nabla_\omega$ with $\omega = \omega^i e_i$. The \emph{gradient} (or \emph{Dirac operator}) is defined as $\grad = \sum_{i} e^i \nabla_{e_i}$ and it acts a grade-1 element in the algebra.   Note then that $\omega \cdot \grad = \nabla_\omega$ defines the directional derivative via the gradient. The directional derivative is also grade preserving in that for a multivector $A$
 \[
 \nabla_\omega \proj{k}{A} = \proj{k}{\nabla_\omega A}.
 \]  
 
-This structure defined above is typically referred to as \emph{geometric calculus}.  The setting for geometric calculus extends the setting of differential forms and reduces some of the complexity with tensor computations.  The gradient operator acts on a homogeneous $k$-vector $A_k$ by
+This structure defined above is typically referred to as \emph{geometric calculus}.  The setting for geometric calculus extends the setting of differential forms and reduces some of the complexity with tensor computations.  Since $\grad$ is a grade-1 object, it acts on a homogeneous $k$-vector $A_k$ by
 \[
 \grad A_k = \proj{k-1}{\grad A_k} + \proj{k+1}{\grad A_k} \coloneqq \grad \cdot A_k + \grad \wedge A_k.
 \]
-Thus, the gradient splits into two operators $\grad \cdot$ and $\grad \wedge$.  Here, $\grad \wedge$ can be identified with the exterior derivative $d$ and $\grad \cdot$ can be identified with the codifferential $\delta$ on differential forms (see \cite{schindler_geometric_2020}). This of course means the standard properties that apply to $d$ and $\delta$ apply to $\grad \wedge$ and $\grad \cdot$. Namely, we have
+Thus, the gradient splits into two operators $\grad \cdot$ (or $\grad \lfloor$) and $\grad \wedge$.  Here, $\grad \wedge$ can be identified with the exterior derivative $d$ and $\grad \cdot$ can be identified with the codifferential $\delta$ on differential forms up to a sign (see \cite{schindler_geometric_2020} \textcolor{red}{There are more citations to use}). This of course means the standard properties that apply to $d$ and $\delta$ apply to $\grad \wedge$ and $\grad \cdot$. Namely, we have
 \begin{equation}
 \label{eq:differential_properties}
-(\grad \wedge)^2=0 \qquad (\grad \cdot)^2 = 0 
+(\grad \wedge)^2=0 \qquad (\grad \cdot)^2 = 0,
 \end{equation}
-and likewise $\delta = (-1)^{n(k-1)+1}\star \grad \wedge \star$ and thus 
-\begin{equation}
-\grad \cdot = (-1)^... \star \grad \wedge \star 
-\end{equation}
-when acting on a homogeneous $k$-vector. Indeed, this property follows from \ref{wedge_to_dot} and one can realize the $\pm$ term as arising from the commutivity properties of the unit pseudoscalar. Since \ref{eq:differential_properties} holds, the gradient operator gives rise to the grade preserving Laplace-Beltrami or Hodge-Laplacian operator
+when acting on a homogeneous $k$-vector. Since \ref{eq:differential_properties} holds, the gradient operator gives rise to the grade preserving \emph{Laplace-Beltrami operator}
 \[
 \Delta = \grad \grad = \grad \cdot \grad \wedge + \grad \wedge \grad \cdot,
 \]
-which is manifestly coordinate invariant by definition.  It also motivates the use of the physicist notation $\grad^2=\Delta$.
+which is manifestly coordinate invariant by definition.  It also motivates the use of the physicist notation $\grad^2=\Delta$, but we do not adopt this here.  We refer to multivector fields $f$ in the kernel of the Laplace-Beltrami operator \emph{harmonic}.
+
+\subsubsection{Monogenic fields}
+
+Geometric calculus includes another definition for multivectors that is a big motivation for those who study Clifford analysis. 
+\begin{definition}
+ Let $f \in \multivectorfields$. Then we say that $f$ is \emph{monogenic} if $f \in \ker(\grad)$.
+\end{definition}
+
+Monogenic fields are of utmost importance as they have many beautiful properties. One should find them as a suitable generalization of the notion of complex holomorphicity. For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values through a generalized Cauchy integral formula. For any even monogenic field, the each of the graded components of $f$ are harmonic.  
+
+We put $\monogenics(\Omega)$ to refer to the \emph{space of monogenic fields} on a region $\Omega$. As a subset, we also have the \emph{monogenic spinors} $\monogenics^+(\Omega)$. Though these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient.  Moreover, the monogenic spinors are invariant under multiplication from the Clifford group $\Gamma^+$ (realized as constant fields in $\Gamma^+(\Omega)$).
+
+\begin{lemma}
+\label{lem:clifford_invariant}
+The space of monogenic spinors $\monogenics^+(\Omega)$ is $\Gamma^+$ invariant.
+\end{lemma}
+\begin{proof}
+    It is clear that $B f$ is $\omega$-axial due to the grade preserving linearity of the covariant derivative.
+    
+    To see that $B f$ is monogenic, we take $B  f = B  u - \beta$.  Then,
+    \begin{align*}
+    \grad (Bf) = \grad (B u) - \grad \beta,
+    \end{align*}
+    where we have the graded components
+    \begin{align*}
+        \proj{1}{\grad (B f)} &= (\grad \cdot Bu)  - \grad \beta\\
+        \proj{3}{\grad (Bf)} &= (\grad \wedge B u).
+    \end{align*}
+    Note that
+    \begin{align*}
+    \grad \cdot (Bu) =  -\omega \times (\grad \wedge u)  =- \omega \times (\omega \times \grad\beta) = -\omega (\nabla_\omega \beta)+\grad \beta = \grad \beta
+    \end{align*}
+    by \ref{eq:axial_cauchy_riemann} and thus $\proj{1}{\grad (Bf)}=0$. 
+    
+    For the grade-3 component,
+    \begin{align*}
+        \grad \wedge (B u) &= \omega \cdot  (\grad \wedge B)II^{-1}u = I^{-1} \nabla_\omega u=0
+    \end{align*}
+    since $u$ is $\omega$-axial. Thus we have $\grad(B f)=0$ is monogenic.
+\end{proof}
+This lemma is classical in the theory of the Dirac operator \textcolor{red}{source? I think it may not be too hard to see.}.
+
 
 \subsection{Differential forms and integration}
 
