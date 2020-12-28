@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  8 NOV 2020 20:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  14 NOV 2020 06:22
 entering extended mode
 **./homework_9.tex
 (homework_9.tex
@@ -1231,7 +1231,7 @@ Package rerunfilecheck Info: File `homework_9.out' has not changed.
 Here is how much of TeX's memory you used:
  33012 strings out of 479799
  821606 string characters out of 2867787
- 1190929 words of memory out of 3000000
+ 1190928 words of memory out of 3000000
  49344 multiletter control sequences out of 15000+200000
  545737 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191

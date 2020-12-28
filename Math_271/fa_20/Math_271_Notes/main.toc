@@ -116,4 +116,4 @@
 \contentsline {section}{\numberline {8}The Eigen-Problem}{179}{section.9.8}%
 \contentsline {section}{\numberline {9}Diagonalization and Special Matrices}{186}{section.9.9}%
 \contentsline {subsection}{\numberline {9.1}Hermitian Matrices}{187}{subsection.9.9.1}%
-\contentsline {section}{\numberline {10}Groups and Symmetry}{190}{section.9.10}%
+\contentsline {section}{\numberline {10}Groups and Symmetry}{191}{section.9.10}%

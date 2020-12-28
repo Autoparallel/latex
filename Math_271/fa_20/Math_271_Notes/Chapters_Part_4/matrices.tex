@@ -1809,28 +1809,8 @@ From the previous example we saw that the determinant need not always be positiv
             When a matrix $[A]$ is similar to a diagonal matrix $[\Lambda]$ we say that $[A]$ is \boldgreen{diagonalizable}.
             
             \subsection{Hermitian Matrices}
-            Some types matrices have extra properties that make them worth studying on their own.  Specifically, when studying the physical world, we may want eigenvalues for a matrix to be real.  This isn't always, the case, but in quantum mechanics, for example, we will want energy eigenvalues to be real numbers.
-            
-            So begs the question as to what we need in order for a matrix to be guaranteed have real eigenvalues.  For now, we consider matrices with complex entries.  That is, take the matrix $[A]$ such that $a_{ij}\in \C$. Since real numbers are merely a subset of the complex numbers, everything done here works for the real case as well.  Given a matrix $[A]$, we define the  of $[A]$ \boldgreen{transpose} \index{matrix!transpose} to be the matrix $[A]^T$ whose entries are $a_{ji}$. That is, we swap rows with columns.  For example, we have
-            \[
-            [A] = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \qquad \implies \qquad [A]^T = \begin{pmatrix} a_{11} & a_{21} & a_{31} \\ a_{12} & a_{22} & a_{32} \\ a_{13} & a_{23} & a_{33} \end{pmatrix} 
-            \]
-            If we have that
-            \[
-            [A]=[A]^T
-            \]
-            we say that $[A]$ is \boldgreen{symmetric}\index{matrix!symmetric}. Related to the transpose is the notion of the \boldgreen{adjoint of $[A]$} which we denote by $[A]^\dagger$.  The entries in $[A]^\dagger$ are given by $a_{ji}^*$ which means we take the transpose of $[A]$ and then complex conjugate the entries. That is, we have
-            \[
-                [A] = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \qquad \implies \qquad [A]^\dagger = \begin{pmatrix} a_{11}^* & a_{21}^* & a_{31}^* \\ a_{12}^* & a_{22}^* & a_{32}^* \\ a_{13}^* & a_{23}^* & a_{33}^* \end{pmatrix}
-            \]
-            When a matrix $[A]$ is equal to its adjoint $[A]^\dagger$ we say that $[A]$ is \boldgreen{Hermitian}.  Hermitian and symmetric matrices play an important role in quantum mechanics due to the following theorem.  
-            
-            \begin{thm}{Hermitian Matrices Have Real Eigenvalues}{hermitian_real_eigen}
-                Let $[A]$ be an $n\times n$-matrix with complex entries. We have that $[A]$ is Hermitian if and only if $[A]$ is diagonalizable and has only real eigenvalues.
-            \end{thm}
-            
-            In fact, this is not the only result that is important.  There is something special about the eigenvectors for Hermitian matrices as well. But first we need a new definition.
-            
+            Some types matrices have extra properties that make them worth studying on their own.  Specifically, when studying the physical world, we may want eigenvalues for a matrix to be real.  This isn't always, the case, but in quantum mechanics, for example, we will want energy eigenvalues to be real numbers. This property we care about arises in the symmetries of the inner product.  We defined the dot product for the vector spaces $\R^n$, but we have a more general inner product for the vector spaces $\C^n$.
+    
             \begin{df}{Inner Product for Complex Vectors}{hermitian_inner_product}
                 Let $\vecu,\vecv \in \C^n$ be $n$-dimensional vectors with complex entries. We define the \boldgreen{Hermitian inner product} of $\vecu$ and $\vecv$ to be
                 \[
@@ -1838,7 +1818,7 @@ From the previous example we saw that the determinant need not always be positiv
                 \]
                 where $v_i^*$ is the complex conjugate of the component $v_i$.
             \end{df}
-            
+
             Take for example the vectors $\vecu,\vecv \in \C^2$ given by
             \[
             \vecu = \begin{pmatrix} 2i \\ 1+i \end{pmatrix} \qquad \textrm{and} \qquad \vecv = \begin{pmatrix} 1-i \\ 3 \end{pmatrix}.
@@ -1851,10 +1831,39 @@ From the previous example we saw that the determinant need not always be positiv
             &= 2i - 2 + 3 + 3i\\
             &=5i +1.
             \end{align*}
+
+            One can note that this gives back the dot product when the components of the vectors are purely real.  So, we are satisfied with taking this as our standard notion of an inner product. The symmetries of the inner product can be after defining the following.
+
+             \begin{df}{Adjoint of a linear transformation}{adjoint_of_operator}
+                Given a linear transformation $A \colon \C^n \to \C^m$, the \boldgreen{adjoint} to $A$ denoted by $A^\dagger$ is given by the transformation satisfying
+                \[
+                    \langle A\vecu,\vecv \rangle = \langle \vecu, A\vecv\rangle.
+                \]
+            \end{df}
             
-            \begin{remark}
-                In the case where vectors are real, the Hermitian inner product is equivalent to the standard inner product (i.e., the dot product). Also, when a matrix has real entries, then $[A]^T=[A]^\dagger$ and so a real symmetric matrix is also Hermitian.
-            \end{remark}
+            This definition alludes intuition just slightly at the moment and begs the question as to what does the adjoint mean for a matrix.  We let $[A]$ be the matrix representing the transformation $A$ above and we have that each component is complex ($a_{ij}\in \C$). It's worth noting that since real numbers are merely a subset of the complex numbers, everything done here works for the real case as well.  Given a matrix $[A]$, we define the  of $[A]$ \boldgreen{transpose} \index{matrix!transpose} to be the matrix $[A]^T$ whose entries are $a_{ji}$. That is, we swap rows with columns.  For example, we have
+            \[
+            [A] = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \qquad \implies \qquad [A]^T = \begin{pmatrix} a_{11} & a_{21} & a_{31} \\ a_{12} & a_{22} & a_{32} \\ a_{13} & a_{23} & a_{33} \end{pmatrix} 
+            \]
+            If we have that
+            \[
+            [A]=[A]^T
+            \]
+            we say that $[A]$ is \boldgreen{symmetric}\index{matrix!symmetric}. Similarly, we have that the entires in the adjoint $[A]^\dagger$ are given by $a_{ji}^*$ which means we take the transpose of $[A]$ and then complex conjugate the entries. That is, we have
+            \[
+                [A] = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \qquad \implies \qquad [A]^\dagger = \begin{pmatrix} a_{11}^* & a_{21}^* & a_{31}^* \\ a_{12}^* & a_{22}^* & a_{32}^* \\ a_{13}^* & a_{23}^* & a_{33}^* \end{pmatrix}
+            \]
+            When a matrix $[A]$ is equal to its adjoint $[A]^\dagger$ we say that $[A]$ is \boldgreen{Hermitian} or \boldgreen{self adjoint}.  More formally, a self adjoint linear transformation satisfies
+            \[
+                \langle A \vecu, \vecv \rangle = \langle \vecu,A\vecv \rangle.
+            \]
+            In the case that $A\colon \R^n \to \R^m$, this statement is true for symmetric matrices as real symmetric matrices are self adjoint!
+
+            Hermitian and symmetric matrices play an important role in physics and mathematics primarily due to their extremely nice spectral properties.  In particular we have the following.
+            
+            \begin{thm}{Hermitian Matrices Have Real Eigenvalues}{hermitian_real_eigen}
+                Let $[A]$ be an $n\times n$-matrix with complex entries. We have that $[A]$ is Hermitian if and only if $[A]$ is diagonalizable and has only real eigenvalues.
+            \end{thm}
             
             \begin{thm}{Orthogonal Eigenvectors for Different Eigenvalues}{eigenvec_orthog}
                 Let $[A]$ be Hermitian an $n\times n$-matrix with complex entries.  Then let $\evec_i$ and $\evec_j$ be eigenvectors corresponding to eigenvalues $\lambda_i$ and $\lambda_j$ such that $\lambda_i \neq \lambda_j$. Then we have that $\evec_i$ and $\evec_j$ are orthogonal (i.e., $\langle \evec_i, \evec_j\rangle=0$).

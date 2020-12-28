@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'POAR.pdf' (pdf, eps, ps)
+%% Accompanies image file 'linear_transform_kernel.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{340.15748031bp}%
+    \setlength{\unitlength}{287.84112645bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,10 +48,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.61363455)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{POAR.pdf}}%
-    \put(0.82455903,0.281633){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x=0,2\pi$ }}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{POAR.pdf}}%
-    \put(0.81231633,0.51938474){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$+x$}}}%
+  \begin{picture}(1,0.87839877)%
+    \put(0.87226583,-0.00875622){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.65453556,0.37195776){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$ }}}%
+    \put(0.14589302,0.82401395){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z$}}}%
+    \put(0.86534615,0.03239403){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x$}}}%
+    \put(0,0){\includegraphics[width=\unitlength]{linear_transform_kernel.pdf}}%
+    \put(0.55753708,0.59212004){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{$\vecv$}}}%
+    \put(0.58384387,0.23089272){\color[rgb]{0.51764706,0,1}\makebox(0,0)[lb]{\smash{$[A]\vecv$}}}%
   \end{picture}%
 \endgroup%

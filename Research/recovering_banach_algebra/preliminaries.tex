@@ -102,16 +102,16 @@ Using this notation, for a vector $\alpha$ we have
 so the $\cdot$ and $\lfloor$ notation coincide for left multiplication by vectors. If we are given two $k$-blades $A_k = \alpha_1 \wedge \cdots \wedge \alpha_k$ and $B_k = \beta_1 \wedge \cdots \wedge \beta_k$ we have 
 \begin{equation}
 \label{eq:dot_product}
-A_k \cdot B_k = \det(\alpha_i \cdot \beta_j )_{i,j=1}^k,
+A_k \cdot B_k^\dagger = \det(\alpha_i \cdot \beta_j )_{i,j=1}^k,
 \end{equation}
-which is equivalent to $A_k \rfloor B_k$ and $A_k \lfloor B_k$ through \ref{dot_equivalent_contraction} and this is extended to all $k$-vectors as is typically seen when constructing the inner product of $k$-vectors. If we are given two bivectors $B$ and $B'$, then we have another special multiplication
+which is equivalent to $A_k \rfloor B_k$ and $A_k \lfloor B_k$ through \ref{dot_equivalent_contraction} and this is extended to all $k$-vectors as is typically seen when constructing the inner product of $k$-vectors (see \cite{hestenes_clifford_1986}. If we are given two bivectors $B$ and $B'$, then we have another special multiplication
 \begin{equation}
 \label{eq:bivector_product}
 B\times B' \coloneqq \proj{2}{BB'} = \frac{1}{2} (BB' - B'B),
 \end{equation}
 which is the grade preserving anti-symmetric portion of the product $BB'$.
 
-As discussed, $C\ell(V,Q)$ is naturally a $\mathbb{Z}$-graded algebra but we also find that it carries a $\mathbb{Z}/2\mathbb{Z}$-grading as well. This additional grading can be realized by sorting $k$-vectors in $C\ell(V,Q)$ into the sets where $k$ is even or odd.  We say a $k$-vector is \emph{even} (resp. \emph{odd}) $k$ is even (resp. odd) and in general if a multivector $A$ is a sum of only even (resp. odd) grade elements we also refer to $A$ as even (resp. odd).  Taking note of the multiplication defined in \ref{eq:general_clifford_multiplication}, one can see that the multiplication of even multivectors with another even multivectors outputs an even multivector.  Thus, the even multivectors form closed subalgebra of $C\ell(V,Q)$ which we denote by $C\ell(V,Q)^+.
+As discussed, $C\ell(V,Q)$ is naturally a $\mathbb{Z}$-graded algebra but we also find that it carries a $\mathbb{Z}/2\mathbb{Z}$-grading as well. This additional grading can be realized by sorting $k$-vectors in $C\ell(V,Q)$ into the sets where $k$ is even or odd.  We say a $k$-vector is \emph{even} (resp. \emph{odd}) $k$ is even (resp. odd) and in general if a multivector $A$ is a sum of only even (resp. odd) grade elements we also refer to $A$ as even (resp. odd).  Taking note of the multiplication defined in \ref{eq:general_clifford_multiplication}, one can see that the multiplication of even multivectors with another even multivectors outputs an even multivector.  Thus, the even multivectors form closed subalgebra of $C\ell(V,Q)$ which we denote by $C\ell(V,Q)^+$.
 
 \begin{example}
 \label{ex:complex_representation}~
@@ -181,7 +181,21 @@ q= \alpha + u_1B_{23} - u_2 B_{13} + u_3 B_{12},
 and recover the necessary arithmetic seen in $\quat$.
 \end{example}
 
-In the case where $V$ has a (pseudo) inner $(\cdot,\cdot)$, we can induce a quadratic form $Q$ by $Q(v)=(v,v)$ and give rise to a Clifford algebra $C\ell(V,Q)$.  This is a special case and we refer to this type of Clifford algebra as a \emph{geometric algebra}. We generally put $\geometricalg$ and assume the inner product will be given alongside or will be clear from context.  For example, when $V=\R^n$ and we define $Q$ from the Euclidean inner product, we have $C\ell(V,Q)=\mathcal{G}(\R^n)$ and moreover we put $\mathcal{G}(\R^n)=\mathcal{G}_n$. For more information on the topic of geometric algebras see the classical text \cite{hestenes_clifford_1986} or the text \cite{doran_geometric_2003} which also provides a wide range of applications to physics problems. Both these sources include much of the other necessary preliminaries I cover in the remainder of this section. Finally, the paper \cite{chisolm_geometric_2012} proves many of the useful identities I claimed above.
+In the case where $V$ has a (pseudo) inner product $g$, we can induce a quadratic form $Q$ by $Q(v)=g(v,v)$ and give rise to a Clifford algebra $C\ell(V,Q)$.  This is a special case and we refer to this type of Clifford algebra as a \emph{geometric algebra}. We generally put $\geometricalg$ and assume the inner product will be given alongside or will be clear from context.  For example, when $V=\R^n$ and we define $Q$ from the Euclidean inner product, we have $C\ell(V,Q)=\mathcal{G}(\R^n)$ and moreover we put $\mathcal{G}(\R^n)=\mathcal{G}_n$. For more information on the topic of geometric algebras see the classical text \cite{hestenes_clifford_1986} or the text \cite{doran_geometric_2003} which also provides a wide range of applications to physics problems. Both these sources include much of the other necessary preliminaries I cover in the remainder of this section. Finally, the paper \cite{chisolm_geometric_2012} proves many of the useful identities I claimed above.
+
+\begin{example}
+\label{ex:spacetime_algebra}
+If instead we take $V=\R^4$ we take the vector basis $e_t,e_1,e_2,e_3$ with the pseudo inner products
+\[
+e_t \cdot e_t = -1 \qquad e_t \cdot \gamma_i =0 ~i=1,2,3, \quad e_i \cdot e_j =\delta_{ij}.
+\]
+For this basis, we can denote the matrix for this inner product $\eta =\operatorname{diag}(-+++)$ and define $Q$ from $\eta$. Then, we have for a vector $A = A_t e_t +A_1 e_1 + A_2 e_2 + A_3 e_3$ we have
+\[
+A\cdot A = -A_t^2 + \sum_{i=1}^3 A_i^2.
+\]
+\end{example}
+
+For the cases with pseudo inner products with $p$ vectors satisfying $e_i^2 = -1$ for $i=1,\dots, p$ and $q$ vectors satisfying $e_j^2=1$ for $q=p+1,\dots,p+q$, we will denote the algebras by $\G_{p,q}$.
 
 \subsubsection{Duality and pseudoscalars}
 \label{subsection:duality_and_pseudoscalars}
@@ -242,7 +256,7 @@ We refer to elements of the Clifford group as \emph{Clifford multivectors}. For 
 \label{eq:reverse_sign}
 A_k^\dagger = (-1)^{k(k-1)/2} A_k.
 \end{equation}
-One can then see that the inverse for the unit pseudoscalar is $I^{-1}=I^\dagger$ which is an identification I will often use. One can see that the inverse of an element of the Clifford group $A$ is the reverse of the corresponding product of reciprocal vectors since $A^{-1} = (v^1 \cdots v^k)^\dagger$. Note as well that elements $s \in \Gamma^+$ act as rotations on $A\in \G_n$ given the conjugate action
+One can then see that the inverse for the unit pseudoscalar is $I^{-1}=I^\dagger$ which is an identification I will often use. One can see that the multiplicative inverse of an element of the Clifford group $A$ is the reverse of the corresponding product of reciprocal vectors since $A_k^{-1} = (v^1 \cdots v^k)^\dagger$. Note as well that elements $s \in \Gamma^+$ act as rotations on $A\in \G_n$ given the conjugate action
 \[
 A \mapsto s A s^{-1}.
 \]
@@ -250,7 +264,7 @@ In fact, all nonzero vectors $v\in\Gamma$ define a reflection in the hyperplane 
 
 Following these realizations, one can see that the Clifford group contains important subgroups such as the orthogonal and special orthogonal groups as quotients
 \[
-\operatorname{O}(n) \cong \Gamma/\R \qquad \textrm{and} \qquad \operatorname{SO}(n) \cong \Gamma /\R.
+\operatorname{O}(n) \cong \Gamma/\R \qquad \textrm{and} \qquad \operatorname{SO}(n) \cong \Gamma^+ /\R.
 \]
 This motivatives the following definition.
 \begin{definition}
@@ -279,27 +293,28 @@ Moreover,
 \operatorname{Pin}(n) \cong \Gamma/\R^+ \qquad \textrm{and} \qquad \operatorname{Spin}(n) \cong \Gamma^+/\R^+.
 \]
 
-The spin group $\spingroup$ is a Lie group and its associated Lie algebra is denoted by $\spinalgebra$. In particular, the $\spinalgebra$ is isomorphic to the algebra of bivectors with the antisymmetric product $\times$.  Then, for any bivector $B$, we have an element in the spin group given by
+The spin group $\spingroup$ is a Lie group and its associated Lie algebra is denoted by $\spinalgebra$. In particular, the $\spinalgebra$ is isomorphic to the algebra of bivectors with the antisymmetric product $\times$ \todo[inline]{provide a citation.}.  Then, for any bivector $B$, we have an element in the spin group given by
 \[
 e^{B} = \sum_{j=0}^\infty \frac{B^n}{n!}.
 \]
-Fundamentally, $\spingroup$ acts on the even subalgebra $\G_n^+$. A \emph{spinor} $\psi$ is an element that transforms under a left action of an element of $\spingroup$ to produce another spinor.  In terms of geometric algebra, a spinor is simply an even multivector.  Of note are the two cases we have had as examples before. 
+Fundamentally, $\spingroup$ acts on the even subalgebra $\G_n^+$. A \emph{spinor} $\psi$ is an element that transforms under a left action of an element of $\spingroup$ to produce another spinor.  In terms of geometric algebra, a spinor is simply an even multivector (i.e., an element of $\G_n^+$).  Of note are the two cases we have had as examples before. 
 
 \begin{example}
+\label{ex:exponential_of_bivector}
     Consider $\G_2$ and note that we have shown the algebra of spinors $\G_2^+$ is isomorphic to the complex numbers $\C$.  Indeed, there is one unit 2-blade $B_{12}$ in $\G_2$ to form the spin algebra $\mathfrak{spin}(2) \cong \R$ and as a consequence all unit norm elements in $\G_2^+$ can be written as
     \[
        e^{\theta B_{12}} = \sum_{n=0}^\infty \frac{\theta B_{12}}{n!} = \cos(\theta)+B_{12}\sin(\theta),
     \]
-    where $\theta B_{12}$ is a general bivector in $\G_2$.  Hence, we arrive at $\operatorname{Spin}(2)\cong \operatorname{U}(1)$. Any element in $\C$ is also a scaled version of an element of the spin group $\operatorname{Spin}(2)$. Hence, we can use a spin representation for an element in $\C$ via $z=re^{\theta B_{12}} \in R\times \operatorname{Spin}(2)$.  This special case shows that parabivectors in $\G_2$ have a unique spin representation and they are spinors as well.
+    where $\theta B_{12}$ is a general bivector in $\G_2$.  Hence, we arrive at $\operatorname{Spin}(2)\cong \operatorname{U}(1)$. Any element in $\C$ is also a scaled version of an element of the spin group $\operatorname{Spin}(2)$. Hence, we can use a spin representation for an element in $\C$ via $z=re^{\theta B_{12}} \in \R\times \operatorname{Spin}(2)$.  This special case shows that parabivectors in $\G_2$ have a unique spin representation and they are spinors as well.
 \end{example}
 
 \begin{example}
-    Consider $\G_3$ and note that we have shown the spinors $\G_3^+$ are isomorphic to the quaternion $\quat$ algebra.  We also realize $\quat$ as scalar copies of elements of $\operatorname{Spin}(3) \cong \operatorname{Sp}(1)$.  That is to say that $\quat \cong \R \times \operatorname{Spin}(3)$. Indeed, since elements of $\G_3^+$ are simply biparavectors, the biparavectors once again admit a natural spin representation. Likewise, 
+    Consider $\G_3$ and note that we have shown the spinors $\G_3^+$ are isomorphic to the quaternion $\quat$ algebra.  We also realize $\quat$ as scalar copies of elements of $\operatorname{Spin}(3) \cong \operatorname{Sp}(1)$.  That is to say that $\quat \cong \R \times \operatorname{Spin}(3)$. Indeed, since elements of $\G_3^+$ are simply biparavectors, the biparavectors once again admit a natural spin representation. Likewise, \todo[inline]{finish this.}
 \end{example}
 
 \subsubsection{Projection and rejection}
 
-There is a direct relationship between unit $k$-blades and $k$-dimensional subspaces.  Indeed, each unit $k$-blade $B_k$ ($\|B_k\|=1$) corresponds to a $k$-dimensional subspace.  That is, each point in $\Grassmannian{k}{n}$ corresponds to a unit $k$-blade.  Since blades represent subspaces, they also give us a compact way of projecting multivectors into subspaces.  In general, given an multivector $A$ the projection onto the subspace spanned by $B_k$ is
+There is a direct relationship between unit $k$-blades and $k$-dimensional subspaces.  Indeed, each unit $k$-blade $B_k$ ($\|B_k\|=1$) corresponds to a $k$-dimensional subspace.  That is, each point in $\Grassmannian{k}{n}$ corresponds to a unit $k$-blade.  Since blades represent subspaces, they also give us a compact way of projecting multivectors into subspaces.  In general, given an multivector $A$ the \emph{projection} onto the subspace spanned by $B_k$ is
 \begin{equation}
 \label{eq:projection}
 \projection{B_k}{A} \coloneqq (A\rfloor B_k)B_k^{-1}.
@@ -325,29 +340,52 @@ and more enlightening is to take a projection of a vector $v$ onto another vecto
 \]
 which is the expected result. 
 
-\todo[inline]{define rejection then go back and use it in the $B$-planar proofs}
+A dual notion also exists.  We define the \emph{rejection} of a multivector from the subspace spanned by $B_k$ as
+\begin{equation}
+\label{eq:rejection}
+\rejection_{B_k}(A) = (A\wedge B_k)B_k^{-1}.
+\end{equation}
+In the case we have a vector $v$, we can note
+\begin{equation}
+\label{eq:projection+rejection_vector}
+\projection{B_k}{v} + \rejection_{B_k}(v) = v.
+\end{equation}
+
+To see this in action, we let $v=v^1 e_1 + v^2 e_2 + v^3 e_3$ and let $B_{12}=e_1 e_2$ and note
+\begin{align*}
+    \rejection_{B_{12}}(v) &= [(v^1 e_1 + v^2 e_2 + v^3 e_3)\wedge (e_1 e_2)]B_{12}^{-1}\\
+    &= v^3 e_3 e_1 e_2 e^2 e^1 \\
+    &= v^3 e_3.
+\end{align*}
+Both the notion of projection and rejection prove to be useful. For vectors $u$ and $v$, we can find
+\begin{equation}
+\label{eq:projection_rejection_vector}
+\projection{uI^{-1}}{v} = \rejection_u(v).
+\end{equation}
+
+\todo[inline]{Change the above equation slightly for the use in the Calderon section. Can we use rejection to simplify the $B$-planar proofs}
 
 
 \subsection{Multivector fields}
 
-We want to generalize the setting of geometric algebra to include a smooth structure. One can take the work above for $\mathcal{G}_n$ and consider a $C^{\infty}$-module structure as opposed to the $\R$-algebra structure in the proceeding section. For brevity, we utilize the same notation $\mathcal{G}_n$ for the $C^\infty$-module and $\R$-algebra as the structure will be clear from context. The multivectors themselves can be realized as constant multivector fields. This smooth setting simply makes the coefficients of the global basis blades given by $C^\infty$ functions as opposed to $\R$ scalars.  In this case, we refer to a generic element in the $C^{\infty}$-module $\mathcal{G}_n$ as a \emph{multivector field}. If we wish to specificy a domain $\Omega \subset \R^n$ for the multivector fields, we put
+We want to generalize the setting of geometric algebra to include a smooth structure. One can take the work above for $\mathcal{G}_n$ and consider a $C^{\infty}$-module structure as opposed to the $\R$-algebra structure in the proceeding section. For brevity, we put $\mathcal{G}_n(\R^n)$ for the $C^\infty$-module and $\G_n$ for the $\R$-algebra. The multivectors themselves can be realized as constant multivector fields so that $\G_n \subset \G_n(\R^n)$. This smooth setting simply makes the coefficients of the global basis blades given by $C^\infty$ functions as opposed to $\R$ scalars.  In this case, we refer to a generic element in the $C^{\infty}$-module $\mathcal{G}_n$ as a \emph{multivector field}. We take $\Omega \subset \R^n$ as a connected region in $\R^n$ for the entirety of this paper and we put
 \[
-\multivectorfieldson{\Omega} \coloneqq \{ f \colon \Omega \to \G_n ~\vert~ \textrm{$f$ is $C^\infty$-smooth}\},
+\G_n(\Omega) \coloneqq \{ f \colon \Omega \to \G_n ~\vert~ \textrm{$f$ is $C^\infty$-smooth}\},
 \]
 where smoothness is meant in terms of the $C^\infty$-module structure.
 
-Perhaps the $C^\infty$-module structure obfuscates the point slightly.  Instead, one should think of the fields in $\G_n$ as multivector valued functions on $\R^n$.  Taking this identification allows for an extended toolbox at our disposal.  In particular, points in $\R^n$ are uniquely identified with constant vector fields in $\G_n^1$ and one can consider endomorphisms living in $\G_n$ (acting on $\G_n^1$) as acting on the input of fields valued in $\G_n$ as well.  Thus, there is not only an algebraic structure on the fields themselves, but on the point in which the field is evaluated.  This is perhaps the key insight on why authors developed the so-called vector manifolds widely used in the geometric algebra landscape.
+Perhaps the $C^\infty$-module structure obfuscates the point slightly.  Instead, one should think of the fields in $\G_n(\Omega)$ as multivector valued functions on $\Omega \subset \R^n$.  Taking this identification allows for an extended toolbox at our disposal.  In particular, points in $\Omega$ are uniquely identified with constant vector fields in $\G_n^1$ and one can consider endomorphisms living in $\G_n$ (acting on $\G_n^1$) as acting on the input of fields in $\G_n(\Omega)$ as well.  Thus, there is not only an algebraic structure on the fields themselves, but on the point in which the field is evaluated.  This is perhaps the key insight on why authors developed the so-called vector manifolds widely used in the geometric algebra landscape.
 
 \begin{example}
-    Consider a multivector field $f$ valued in $\G_n$.  With $x\in \R^n$ be identified with the vector in $\G_n^k$ (really as a constant vector field), we output a multivector $f(x)$ at each point $x$.  One may be interested in the restriction of $f$ to a vector subspace of $\R^n$ which amounts to using projection on the input.  For example, perhaps we wish to know how $f$ behaves on the subspace generated by some $k$-blade.  As such, it suffices to then study $f(\projection{v}{x})$.  Likewise, we may want to study 
+    Consider a multivector field $f$ valued in $\G_n(\R^n)$.  With $x\in \R^n$ being identified with the vector in $\G_n^1$, we output a multivector $f(x) \in \G_n$ at each point $x$.  One may be interested in the restriction of $f$ to a vector subspace of $\R^n$ which amounts to using projection on the input.  For example, perhaps we wish to know how $f$ behaves on the subspace generated by some $k$-blade $A_k$.  As such, it suffices to then study $f(\projection{A_k}{x})$.  
 \end{example}
 
-We refer to smooth functions valued in the subalgebra $\Gamma$ as \emph{Clifford fields} and elements valued in $\Gamma^+$ as \emph{spinor fields}. Once again, we reuse the notation $\Gamma$ and $\Gamma^+$ to refer to the $C^\infty$-module counterpart. These fields will be shown to carry a Banach algebra structure. 
+We refer to smooth fields valued in $\G_n^+$ as \emph{spinor fields} and put $\G_n^+(\Omega)$ to refer to the $C^\infty$-module counterpart. These fields will be shown to carry a Banach algebra structure. 
 
 
 \subsubsection{Directional derivative and gradient}
 
-Note that $\R^n$ has global coordinates and thus we can choose a global constant vector field basis $e_1,\dots,e_n$ and generate $\mathcal{G}_n$ from this basis and note that we will adopt the Einstein summation convention when needed. With respect to these fields, we have the \emph{directional derivative} $\nabla_\omega$ with $\omega = \omega^i e_i$. The \emph{gradient} (or \emph{Dirac operator}) is defined as $\grad = \sum_{i} e^i \nabla_{e_i}$ and it acts a grade-1 element in the algebra.   Note then that $\omega \cdot \grad = \nabla_\omega$ defines the directional derivative via the gradient. The directional derivative is also grade preserving in that for a multivector $A$
+Note that $\R^n$ has global coordinates and thus we can choose a global constant vector field basis $e_1,\dots,e_n$ and we generate $\G_n$ from this basis. Note that we will adopt the Einstein summation convention when needed. With respect to these fields, we have the \emph{directional derivative} $\nabla_\omega$ with $\omega = \omega^i e_i$. The \emph{gradient} (or \emph{Dirac operator}) is defined as $\grad = \sum_{i} e^i \nabla_{e_i}$ and it acts a grade-1 element in the algebra.   Note then that $\omega \cdot \grad = \nabla_\omega$ defines the directional derivative via the gradient. The directional derivative is also grade preserving in that for a multivector $A$
 \[
 \nabla_\omega \proj{k}{A} = \proj{k}{\nabla_\omega A}.
 \]  
@@ -356,7 +394,7 @@ This structure defined above is typically referred to as \emph{geometric calculu
 \[
 \grad A_k = \proj{k-1}{\grad A_k} + \proj{k+1}{\grad A_k} \coloneqq \grad \cdot A_k + \grad \wedge A_k.
 \]
-Thus, the gradient splits into two operators $\grad \cdot$ (or $\grad \lfloor$) and $\grad \wedge$.  Here, $\grad \wedge$ can be identified with the exterior derivative $d$ and $\grad \cdot$ can be identified with the codifferential $\delta$ on differential forms up to a sign (see \cite{schindler_geometric_2020} \textcolor{red}{There are more citations to use}). This of course means the standard properties that apply to $d$ and $\delta$ apply to $\grad \wedge$ and $\grad \cdot$. Namely, we have
+Thus, the gradient splits into two operators $(\grad \cdot) \colon \G_n^k(\Omega) \to \G_n^{k-1}(\Omega)$ (or $\grad \lfloor$) and $(\grad \wedge) \colon \G_n^k \to \G_n^{k+1}$.  Here, $\grad \wedge$ can be identified with the exterior derivative $d$ and $\grad \cdot$ can be identified with the codifferential $\delta$ on differential forms up to a sign (see \cite{schindler_geometric_2020} \textcolor{red}{There are more citations to use}). This of course means the standard properties that apply to $d$ and $\delta$ apply to $\grad \wedge$ and $\grad \cdot$. Namely, we have
 \begin{equation}
 \label{eq:differential_properties}
 (\grad \wedge)^2=0 \qquad (\grad \cdot)^2 = 0,
@@ -371,65 +409,45 @@ which is manifestly coordinate invariant by definition.  It also motivates the u
 
 Geometric calculus includes another definition for multivectors that is a big motivation for those who study Clifford analysis. 
 \begin{definition}
- Let $f \in \multivectorfields$. Then we say that $f$ is \emph{monogenic} if $f \in \ker(\grad)$.
+ Let $f \in \G_n(\Omega)$. Then we say that $f$ is \emph{monogenic} if $f \in \ker(\grad)$.
 \end{definition}
 
+\todo[inline]{What monogenics are we really caring about here? Just the ones we can recover which are...}
 Monogenic fields are of utmost importance as they have many beautiful properties. One should find them as a suitable generalization of the notion of complex holomorphicity. For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values through a generalized Cauchy integral formula. For any even monogenic field, the each of the graded components of $f$ are harmonic.  
 
-We put $\monogenics(\Omega)$ to refer to the \emph{space of monogenic fields} on a region $\Omega$. As a subset, we also have the \emph{monogenic spinors} $\monogenics^+(\Omega)$. Though these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient.  Moreover, the monogenic spinors are invariant under multiplication from the Clifford group $\Gamma^+$ (realized as constant fields in $\Gamma^+(\Omega)$).
+We put 
+\[
+\monogenics(\Omega) \coloneqq \{f \in \G_n(\Omega) ~\vert~ \grad f =0\}
+\]
+to refer to elements of this set as \emph{monogenic fields} on $\Omega$. As a subset, we also have the \emph{monogenic spinors} $\monogenics^+(\Omega)$, which are simply the even monogenic fields and the \emph{monogenic parabivectors} $\monogenics^{0+2}(\Omega)$. Though these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient.  Moreover, the monogenic spinors are invariant under multiplication from the Clifford group $\Gamma^+$.
 
 \begin{lemma}
 \label{lem:clifford_invariant}
-The space of monogenic spinors $\monogenics^+(\Omega)$ is $\Gamma^+$ invariant.
+Let $s\in \spingroup$ then $\grad \circ s = s \circ \grad$.  In particular, the space of monogenic spinors $\monogenics^+(\Omega)$ is $\spingroup$ invariant.
 \end{lemma}
-\begin{proof}
-    It is clear that $B f$ is $\omega$-axial due to the grade preserving linearity of the covariant derivative.
-    
-    To see that $B f$ is monogenic, we take $B  f = B  u - \beta$.  Then,
-    \begin{align*}
-    \grad (Bf) = \grad (B u) - \grad \beta,
-    \end{align*}
-    where we have the graded components
-    \begin{align*}
-        \proj{1}{\grad (B f)} &= (\grad \cdot Bu)  - \grad \beta\\
-        \proj{3}{\grad (Bf)} &= (\grad \wedge B u).
-    \end{align*}
-    Note that
-    \begin{align*}
-    \grad \cdot (Bu) =  -\omega \times (\grad \wedge u)  =- \omega \times (\omega \times \grad\beta) = -\omega (\nabla_\omega \beta)+\grad \beta = \grad \beta
-    \end{align*}
-    by \ref{eq:axial_cauchy_riemann} and thus $\proj{1}{\grad (Bf)}=0$. 
-    
-    For the grade-3 component,
-    \begin{align*}
-        \grad \wedge (B u) &= \omega \cdot  (\grad \wedge B)II^{-1}u = I^{-1} \nabla_\omega u=0
-    \end{align*}
-    since $u$ is $\omega$-axial. Thus we have $\grad(B f)=0$ is monogenic.
-\end{proof}
-This lemma is classical in the theory of the Dirac operator \textcolor{red}{source? I think it may not be too hard to see.}.
-
+This lemma is classical in the theory of the Dirac operator, Clifford analysis, and harmonic analysis so we omit a proof.  One can see \cite{janssens_special_nodate} for example.
 
 \subsection{Differential forms and integration}
+\label{subsec:diff_forms}
 
-\todo[inline]{Introduce the directed measure and hodge duality. Then prove greens formula. Give an example of the 3-ball in spherical coordinates and surface integrals and stuff}
-Naturally, we would also like to be able to integrate multivectors.  In order to do so, we appeal to the language of differential forms and build a path from multivectors to forms. Given the coordinate system $x^i$ on $\R^n$, we form the basis of tangent vector fields $\partial_i = \frac{\partial}{\partial x^i}$ with the reciprocal 1-forms $dx^i$ which are gradients of the coordinate functions.  Thinking of 1-forms as linear functions on tangent vectors, we have $dx^i  \partial_j = \delta^i_j$.  The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product.  For example, we have $d\Sigma = e_i \wedge e_j dx^i dx^j$.  Then,we have $(e^j \wedge e^i)\cdot d\Sigma = dx^idx^j - dx^j dx^i$ which retains the antisymmetry of the differential forms. 
+\subsubsection{Directed measures and $k$-forms}
+Naturally, we would also like to be able to integrate multivectors.  In order to do so, we appeal to the language of differential forms and build a relationship between multivectors and forms. Forms have their appeal in global understanding via their properties through integration (e.g., Stokes' and Green's theorems).  What we build here provides us a way to carry out a full multivector treatment of boundary value problems.
 
-\todo[inline]{Is $dX_k$ really just a $k$-density? Good answers on stack exchange}
-In an $n$-dimensional space with a position dependent inner product $g$, we have the $n$-dimensional volume measure $d\Omega = \sqrt{|g|} dx^1\dots dx^n$. If we then define $dX_n = e^n \wedge \cdots \wedge e^1 dx^1 \dots dx^n$ we then find that $d\Omega = I^\dagger \cdot dX_n$ as
+Given the coordinate system $x^i$ on $\R^n$, we form the basis of tangent vector fields $\partial_i = \frac{\partial}{\partial x^i}$ with the reciprocal 1-forms $dx^i$ (a section of $T^*\Omega$) which are the differentials of the coordinate functions.  Thinking of 1-forms as linear functions on tangent vectors, we have $dx^i  (\partial_j) = \delta^i_j$.  The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product.  For example, we have the surface \emph{directed measure} $d\Sigma = e_i \wedge e_j dx^i dx^j$ and we can note that $(e^j \wedge e^i)\cdot d\Sigma = dx^idx^j - dx^j dx^i$ is antisymmetric and provides us a surface measure we can integrate; this is a differential form.
+
+In an $n$-dimensional space with a position dependent inner product $g$, we have the $n$-dimensional volume directed measure $d\Omega = \sqrt{|g|} dx^1\dots dx^n$. If we then define $dX_n = e^n \wedge \cdots \wedge e^1 dx^1 \dots dx^n$ we then find that
 \[
-I^\dagger \cdot dX_n = \sqrt{|g|} (e_n \wedge \cdots \wedge e_1) \cdot (e^n \wedge \cdots \wedge e^1) dx^1 \cdots dx^n.
+d\Omega = I^\dagger \cdot dX_n.
 \]
-Similarly, for $k<n$, we can define the $k$-dimensional volume measure as 
+Here $I$ is the pseudoscalar field defined on $\Omega$ with respect to $g$. Similarly, for $k<n$, we can define the $k$-dimensional volume measure as 
 \[
 dX_k = \frac{1}{k!}(e^{i_k}\wedge \cdots \wedge e^{i_1}) dx^{i_1} \cdots dx^{i_k}.
 \]
-We can now write a $k$-form $\alpha_k$ as $\alpha_k = A_k \cdot dX_k$. In this sense, a differential form is made up of two essential components namely the multivector field and the $k$-dimensional volume measure.  This decomposition is important when the underlying space has interesting topological or geometrical features. In $\R^n$, this distinction is less important. 
-
-For example, if we wish to write a 2-form $\alpha_2$ we take $dX_2 = \frac{1}{2!} e^j \wedge e^i dx^i dx^j$ and $A_2 = a_{ij} e_i \wedge e_j$ to yield
+We can now write a $k$-form $\alpha_k$ as $\alpha_k = A_k \cdot dX_k$. In this sense, a differential form is made up of two essential components namely the multivector field and the $k$-dimensional volume directed measure. For example, if we wish to write a 2-form $\alpha_2$ we take $dX_2 = \frac{1}{2!} e^j \wedge e^i dx^i dx^j$ and $A_2 = a_{ij} e_i \wedge e_j$ to yield
 \[
 \alpha_2 = A_2 \cdot dX_2 = \frac{a_{ij}}{2!} (e_i \wedge e_j) \cdot (e^j \wedge e^i) dx^i dx^j = \frac{a_{ij}}{2!} (dx^i dx^j - dx^j dx^i)
 \]
-Thus, we arrive at an isomorphism between $k$-forms and $k$-vectors as a contraction with the $k$-dimensional volume measure $dX_k$ since
+Thus, we arrive at an isomorphism between $k$-forms and $k$-vectors as a contraction with the $k$-dimensional volume directed measure $dX_k$ since
 \[
 \alpha_k = A_k \cdot dX_k.
 \]
@@ -440,6 +458,8 @@ a \cdot dX_1 = a^i e_i \cdot e^j dx^j = a^i dx^i,
 \end{equation}
 corresponds to the usual $\flat$ map on vector fields.
 
+
+\subsubsection{Exterior algebra}
 The exterior algebra of differential forms comes with an addition $+$ and exterior multiplication $\wedge$.  We note that the sum of two $k$-forms $\alpha_k$ and $\beta_k$ that $\alpha_k+\beta_k$ is also a $k$-form which we can see by letting $\alpha_k = A_k \cdot dX_k$ and $\beta_k = B_k \cdot dX_k$ and putting
 \[
 \alpha_k + \beta_k = (A_k \cdot dX_k)+(B_k \cdot dX_k) = (A_k + B_k) \cdot dX_k,
@@ -450,36 +470,63 @@ due to the linearity of $\cdot$.  If instead had an $s$ form $\beta_s$ then we h
 \]
 where $dX_{k+s}=0$ if $k+s>n$.  
 
-With differential forms one also has the exterior derivative $d$, the Hodge star $\star$, and the codifferential $\delta$.  Given we can write a differential $k$-form as $\alpha_k = A_k \wedge dX_k$, we wish to define $d$, $\star$, $\delta$ by their actions on the $k$-vector $A_k$.  In particular, we have
+
+\subsubsection{Exterior derivative}
+With differential forms one also has the exterior derivative $d$ giving rise to the calculus of forms.  Given we can write a differential $k$-form as $\alpha_k = A_k \wedge dX_k$,  In particular, we have
 \[
 d \alpha_k = (\grad \wedge A_k) \cdot dX_{k+1},
 \]
-which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalars, this returns the gradient as desired.  The Hodge star inputs a $k$-form and outputs a $(n-k)$-form and we define $\star$ so that for two $k$-forms $\alpha_k$ and $\beta_k$ we have $\alpha_k \wedge \star \beta_k  = (A_k\cdot B_k^\dagger)d\Omega$.  This is since
+which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalar fields, this returns the gradient as desired. 
+
+
+\subsubsection{Integration on submanifolds}
+
+Given a $k$-dimensional submanifold of $K \subset \Omega$ with a $k$-form $\alpha_k$ defined on $K$, we can integrate the $k$-form. Using the multivector equivalents leads us to the $k$-dimensional directed measure $dK$ for the submanifold $K$.  Given $K$ is a submanifold of $\Omega$, for any $x \in K$ we have tangent space $T_x K$ which corresponds to a tangent $k$-blade $I_K(x)$.  We put $I_K$ as the smooth $k$-blade field everywhere tangent to $K$. Then we have the directed volume measure on $K$ given by
 \[
-A_k \cdot B_k^\dagger = \langle A_{K}, B_{K} \rangle \sqrt{|g|},
+dK = I_K^\dagger \cdot dX_k.
 \]
-where $\langle A_{K}, B_{K} \rangle$ is the typical inner product on $k$-vectors extended through to exterior algebra. Thus, a coordinate expression for $\star$ acting on multivectors is given by $B_k^\star = (I^{-1} B_k)^\dagger$ so that $\star \beta = (I^{-1} B_k)^\dagger \cdot dX_{n-k}$.  Indeed, we have
+For a tangent $k$-vector field $A_k$ on $K$, we must have for any $x \in K$ that $f = \operatorname{P}_{I_K} \circ f$ so that these fields lie purely tangent to $K$. In particular, we can always put $A_k = A I_k^\dagger$ for a scalar field $A$. These fields can contract with the directed measure $dX_k$ to create a $k$-form on $K$ by $\alpha_k = A_k \cdot dX_k = A dK$ which can be integrated as
+\[
+\int_K \alpha = \int_K A dK.
+\]
+Hence, on $\Omega$ itself, we can integrate top forms $\omega = W I^\dagger$ for a scalar field $W$ by
+\[
+\int_\Omega \omega = \int_\Omega W d\Omega.
+\]
+
+There is also the normal space $N_x K$ that is everywhere orthogonal (with respect to $g$ on $\Omega$) to $T_x K$.  In particular, we have the normal $(n-k)$-blade field $\nu = I_K^\dagger I$. Note that for a unit $k$-blade $I_K$ we have $I_K^{-1}=I_K^\dagger$ and we see $I_K \nu = I$. Since $K$ is a submanifold of $\Omega$ we have the inclusion $\iota \colon K \to \Omega$ and the induced pullback on forms $\iota^*$ which is equivalent to the tangent projection operator $\tangent_K$ seen in \cite{schwarz_hodge_1995}. Given a $p$-form $\omega$ defined on $\Omega$, we have that $\tangent_K \omega = \omega \circ \operatorname{P}_{I_K}$. Specifically, $\omega = W \cdot dX_p$ we have 
+\[
+\iota^* \omega  = W \cdot (dX_p \circ \operatorname{P}_{I_K}) = \operatorname{P}_{I_K}(W) \cdot dX_p.
+\]
+The normal projection $\normal_K$ is then $\normal_K \omega = \omega - \tangent_K \omega$. 
+
+This is pertinent when we take the submanifold $\Sigma = \partial \Omega$. There, $I_\Sigma$ yields the directed measure
+\[
+d\Sigma \coloneqq I_\Sigma^\dagger \cdot dX_{n-1}.
+\]
+The normal space is 1-dimensional and $\nu$ is the unit normal vector to the boundary. The pullback coincides with projection into the tangent space given by $I_\Sigma$.  Then, for 1-forms $\alpha = \cdot dX_1$ it is apparent that $\tangent_\Sigma \alpha = \projection{I_\Sigma}{a} \cdot dX_1$ and $\normal_\Sigma \alpha = \rejection_{I_\Sigma}(a) \cdot dX_1$ by Equations \ref{eq:projection+rejection_vector} and \ref{eq:projection_rejection_vector}. One can then find the flux of a vector field through $\Sigma$ arises as an $(n-1)$-form $\projection{\nu}{a} I^{-1} \cdot dX_{n-1}$. Once again we see that the flux is determined both by the vector field $a$ and the local geometry of $\Sigma$ captured by $d\Sigma$ in the following way. Note that  $\nu^{-1}=\nu$ since $\|\nu\|=1$ everywhere on $\Sigma$ and so $\projection{\nu}{a} I^{-1}= a \cdot \nu \nu I^{-1} = a \cdot \nu I_\Sigma^\dagger$ which gives us the corresponding form $a \cdot \nu d\Sigma$ and the total flux of $a$ through $\Sigma$ is then
+\[
+\int_\Sigma (\projection{\nu}{a} I^{-1}) \cdot dX_{n-1} = \int_\Sigma a \cdot \nu d\Sigma.
+\]
+
+\subsubsection{$k$-form inner product}
+\todo[inline]{Show that this relates back to the spinor norm.}
+For smooth $k$-forms $\alpha_k = A_k \cdot dX_k$ and $\beta_k = B_k \cdot dX_k$, we have an inner product 
+\[
+\langle \alpha_k, \beta_k \rangle = \int_\Omega \alpha_k \wedge \star \beta_k 
+\]
+where $\star$ is the Hodge star. The Hodge star on $k$-forms inputs a $k$-form and outputs a a specific dual $(n-k)$-form so that we always have $\alpha_k \wedge \star \beta_k  = (A_k\cdot B_k^\dagger)d\Omega$ as we note Equation \ref{eq:dot_product}. Thus, we can realize how $\star$ acts on multivector representative. We let $\star \beta_k = B_k^\star \cdot dX_{n-k}$ by $B_k^\star = (I^{-1} B_k)^\dagger$.  Indeed, we have
 \begin{align*}
-    \alpha_k \wedge \star \beta_k &= (A_k^\dagger \wedge B_k^\star) \cdot dX_n\\
-    &= (A_k \wedge (I^{-1}B_k)^\dagger )\cdot dX_n\\
-    &= (A_k \wedge (B_k^\dagger I))\cdot dX_n\\
-    &= (A_k \cdot B_k^\dagger) I^{-1} \cdot dX_n\\
-    &= A_k \cdot B_k^\dagger d\Omega,
-\end{align*}
-since $I^{-1}=I^\dagger$ in spaces with $g$ positive definite.
-
-\todo[inline]{Cite Hestenes. Also I think this can be simplified using the Clifford conjugate in that $\delta$ is like the clifford conjugate of the codifferential or something. See \cite{francis_construction_2005}}
-
-Then, in the typical fashion we define the codifferential $\delta = (-1)^{n(k-1)+1} \star d \star$ when acting on $k$-forms.  Then,
-\begin{align*}
-    \delta \alpha_k &= (-1)^{n(k-1)+1} \star d \star \alpha_k \\
-    &= (-1)^{n(k-1)+1} \star d [(I^{-1} A_k)^\dagger  \cdot dX_{n-k}]\\
-    &= (-1)^{n(k-1)+1} \star [\grad \wedge (A_k^\dagger I)] \cdot dX_{n-k+1}\\
-    &= (-1)^{n(k-1)+1} \star [(\grad \cdot A_k^\dagger)I^{-1} ] \cdot dX_{n-k+1}\\
-    &= (-1)^{n(k-1)+1} \star [
+    \alpha_k \wedge \star \beta_k &= (A_k \wedge B_k^\star) \cdot dX_n\\
+    &= A_k \cdot B_k^\dagger d\Omega.
 \end{align*}
 
+\subsubsection{Stokes' and Green's theorem}
 
+For regions $\Omega$ with boundary $\Sigma$, we have a compact form of Stokes' theorem
+\[
+\int_\Omega d \omega = \int_\Sigma \tangent \omega,
+\]
+for sufficiently smooth $(n-1)$-forms $\omega$.
 
-
-
+\todo[inline]{More on integration and do Ohms law as an example of some of this stuff. Do all of hodge decomposition and stuff?}

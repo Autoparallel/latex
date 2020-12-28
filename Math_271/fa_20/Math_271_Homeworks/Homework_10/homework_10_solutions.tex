@@ -4,15 +4,63 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\vecx}{\boldsymbol{\vec{x}}}
+\newcommand{\vecy}{\boldsymbol{\vec{y}}}
 
 \begin{document}
 
 \begin{center}
    \textsc{\large MATH 271, Homework 10, \emph{Solutions}}\\
-   \textsc{Due November 22$^\textrm{nd}$}
 \end{center}
 \vspace{.5cm}
 
+\begin{problem}
+For each description below, construct a single $3\times 3$ transformation matrix.
+\begin{enumerate}[(a)]
+    \item A rotation by $\frac{\pi}{2}$ in the $yz$-plane.
+    \item A rotation by $\frac{\pi}{2}$ in the $xy$-plane, an interchange of the $x$ and $y$ coordinates.
+    \item A matrix which undoes everything in part (b).
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+First, note that these rotation matrices are in my notes as well as readily available online. Specifically, we have
+\[
+\Rot_{xy,\theta} = \begin{pmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta & 0 \\ 0 & 0 & 1 \end{pmatrix},
+\]
+and
+\[
+\Rot_{yz,\theta} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos \theta & -\sin \theta \\ 0 & \sin \theta & \cos \theta \end{pmatrix}.
+\]
+Can you derive what the matrix for rotating in the $xz$-plane would be?
+\begin{enumerate}[(a)]
+    \item Taking $\Rot_{yz,\theta}$ above with $\theta=\pi/2$, we get
+    \[
+    \Rot_{yz,\pi/2} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}.
+    \]
+    \item We first create the rotation matrix 
+    \[
+    \Rot_{xy,\pi/2} = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \]
+    Then, the matrix that exchanges $x$ and $y$ coordinates is
+    \[
+    [S]=\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \]
+    Thus the matrix for (b) is given by
+    \[
+    [S]\Rot_{xy,\pi/2} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \]
+    \item Now, note that in (b) we found the matrix simply reflects across the $yz$-plane by outputting negative the input $x$-value. Thus, the inverse for this matrix is in fact itself!
+\end{enumerate}
+\end{solution}
+\begin{remark}
+The matrix in (c) generates a group by multiplication. Specifically, this is the group with the elements
+\[
+\begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}, \quad \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix},
+\]
+which is called the \emph{cyclic group of order 2} and denoted by $C_2$. This group is the reflection symmetry group as reflecting across the same plane twice does nothing.
+\end{remark}
+
+\newpage
 \begin{problem}
 Consider the system of linear equations
 \begin{align*}
@@ -23,7 +71,7 @@ Consider the system of linear equations
 \begin{enumerate}[(a)]
     \item Write this system of equations as a matrix/vector equation
     \[
-    [A]\vecv=\boldsymbol{\vec{b}}.
+    [A]\vecx=\vecy
     \]
     \item Solve the system of equations by finding the inverse of the matrix $[A]$.
 \end{enumerate}
@@ -31,11 +79,11 @@ Consider the system of linear equations
 \begin{solution}
 Let
 \[
-\vecv = \begin{pmatrix} x \\ y \\ z \end{pmatrix} \qquad \textrm{and} \qquad \vecb =\begin{pmatrix} 4 \\ -2 \\ 8\end{pmatrix}
+\vecx = \begin{pmatrix} x \\ y \\ z \end{pmatrix} \qquad \textrm{and} \qquad \vecy =\begin{pmatrix} 4 \\ -2 \\ 8\end{pmatrix}
 \]
 Then we want a matrix $[A]$ such that we have
 \[
-[A]\vecv = \vecb,
+[A]\vecx = \vecy,
 \]
 which is given by the coefficients on the system above. That is,
 \[
@@ -124,84 +172,16 @@ which means the inverse matrix is
 \]
 Then to solve the equation we take
 \[
-\vecv = [A]^{-1}\vecb,
+\vecx = [A]^{-1}\vecy,
 \]
 and we get that
 \[
-\vecv = \begin{pmatrix} 4/3 \\ 2 \\ -5/3 \end{pmatrix}.
+\vecx = \begin{pmatrix} 4/3 \\ 2 \\ -5/3 \end{pmatrix}.
 \]
 \end{solution}
 \begin{remark}
 This is why computing the inverse is advantageous. It takes no more work to compute, but it makes the job easier if we had to compute the solution to many more equations.
 \end{remark}
-
-\newpage
-\begin{problem}
-Consider the matrix
-\[
-[A] = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}.
-\]
-\begin{enumerate}[(a)]
-    \item Find the eigenvalues and eigenvectors for this matrix.
-    \item Construct the matrix $[P]$ such that
-    \[
-    [\Lambda] = [P]^{-1}[A][P]
-    \]
-    from the eigenvectors you found. 
-    \item Find $[P]^{-1}$ and compute
-    \[
-    [P]^{-1}[A][P].
-    \]
-    Is this $[\Lambda]$ diagonal?
-\end{enumerate} 
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item First we find the eigenvalues by putting
-    \[
-    [A]-\lambda [I] = \begin{pmatrix} 1 - \lambda & 1 \\ 0 & 2-\lambda \end{pmatrix},
-    \]
-    and taking the determinant to get the characteristic polynomial
-    \[
-    \det([A]-\lambda[I])=(1-\lambda)(2-\lambda).
-    \]
-    Then we set the characteristic polynomial equal to zero and solve
-    \[
-    (1-\lambda)(2-\lambda)=0
-    \]
-    to get $\lambda_1 = 1$ and $\lambda_2=2$.  
-    
-    Then we can find the eigenvectors. First, we will find $\Null([A]-\lambda_1 [I])$ to get the eigenvector corresponding to $\lambda_1$. So we have
-    \[
-    [A]-1[I]= \begin{pmatrix} 0 & 1 \\ 0 & 1 \end{pmatrix},
-    \]
-    which means that $y=0$ and $x$ is free to be anything. Hence, we have that
-    \[
-    \evec_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
-    \]
-    by simply choosing $x=1$. Next, we consider the case for $\lambda_2 = 2$ and we have
-    \[
-    [A]-2[I] = \begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix},
-    \]
-    which means that $x=y$. Thus, we can choose $x=1$ which forces $y=1$ as well and we have
-    \[
-    \evec_2 = \begin{pmatrix} 1 \\ 1\end{pmatrix}.
-    \]
-    \item We have that
-    \[
-    [P]=\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}.
-    \]
-    \item Then we can compute $[P]^{-1}$ fairly easily to get
-    \[
-    [P]^{-1} = \begin{pmatrix} 1 & -1\\ 0  & 1 \end{pmatrix}.
-    \]
-    Then we can compute
-    \[
-    [P]^{-1}[A][P] = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}.
-    \]
-    So yes, $[\Lambda]$ is diagonal.
-\end{enumerate}
-\end{solution}
 
 \newpage
 \begin{problem}
@@ -296,97 +276,116 @@ Consider the matrix
 
 \newpage
 \begin{problem}
-For each description below, construct a single $3\times 3$ transformation matrix.
+Consider the matrix
+\[
+[A] = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}.
+\]
 \begin{enumerate}[(a)]
-    \item A rotation by $\frac{\pi}{2}$ in the $yz$-plane.
-    \item A rotation by $\frac{\pi}{2}$ in the $xy$-plane, an interchange of the $x$ and $y$ coordinates.
-    \item A matrix which undoes everything in part (b).
-\end{enumerate}
+    \item Find the eigenvalues and eigenvectors for this matrix.
+    \item Construct the matrix $[P]$ such that
+    \[
+    [\Lambda] = [P]^{-1}[A][P]
+    \]
+    from the eigenvectors you found. 
+    \item Find $[P]^{-1}$ and compute
+    \[
+    [P]^{-1}[A][P].
+    \]
+    Is this $[\Lambda]$ diagonal?
+\end{enumerate} 
 \end{problem}
 \begin{solution}~
-First, note that these rotation matrices are in my notes as well as readily available online. Specifically, we have
-\[
-\Rot_{xy,\theta} = \begin{pmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta & 0 \\ 0 & 0 & 1 \end{pmatrix},
-\]
-and
-\[
-\Rot_{yz,\theta} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos \theta & -\sin \theta \\ 0 & \sin \theta & \cos \theta \end{pmatrix}.
-\]
-Can you derive what the matrix for rotating in the $xz$-plane would be?
 \begin{enumerate}[(a)]
-    \item Taking $\Rot_{yz,\theta}$ above with $\theta=\pi/2$, we get
+    \item First we find the eigenvalues by putting
     \[
-    \Rot_{yz,\pi/2} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}.
+    [A]-\lambda [I] = \begin{pmatrix} 1 - \lambda & 1 \\ 0 & 2-\lambda \end{pmatrix},
     \]
-    \item We first create the rotation matrix 
+    and taking the determinant to get the characteristic polynomial
     \[
-    \Rot_{xy,\pi/2} = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    \det([A]-\lambda[I])=(1-\lambda)(2-\lambda).
     \]
-    Then, the matrix that exchanges $x$ and $y$ coordinates is
+    Then we set the characteristic polynomial equal to zero and solve
     \[
-    [S]=\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    (1-\lambda)(2-\lambda)=0
     \]
-    Thus the matrix for (b) is given by
+    to get $\lambda_1 = 1$ and $\lambda_2=2$.  
+    
+    Then we can find the eigenvectors. First, we will find $\Null([A]-\lambda_1 [I])$ to get the eigenvector corresponding to $\lambda_1$. So we have
     \[
-    [S]\Rot_{xy,\pi/2} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+    [A]-1[I]= \begin{pmatrix} 0 & 1 \\ 0 & 1 \end{pmatrix},
     \]
-    \item Now, note that in (b) we found the matrix simply reflects across the $yz$-plane by outputting negative the input $x$-value. Thus, the inverse for this matrix is in fact itself!
+    which means that $y=0$ and $x$ is free to be anything. Hence, we have that
+    \[
+    \evec_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
+    \]
+    by simply choosing $x=1$. Next, we consider the case for $\lambda_2 = 2$ and we have
+    \[
+    [A]-2[I] = \begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix},
+    \]
+    which means that $x=y$. Thus, we can choose $x=1$ which forces $y=1$ as well and we have
+    \[
+    \evec_2 = \begin{pmatrix} 1 \\ 1\end{pmatrix}.
+    \]
+    \item We have that
+    \[
+    [P]=\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}.
+    \]
+    \item Then we can compute $[P]^{-1}$ fairly easily to get
+    \[
+    [P]^{-1} = \begin{pmatrix} 1 & -1\\ 0  & 1 \end{pmatrix}.
+    \]
+    Then we can compute
+    \[
+    [P]^{-1}[A][P] = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}.
+    \]
+    So yes, $[\Lambda]$ is diagonal.
 \end{enumerate}
 \end{solution}
-\begin{remark}
-The matrix in (c) generates a group by multiplication. Specifically, this is the group with the elements
-\[
-\begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}, \quad \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix},
-\]
-which is called the \emph{cyclic group of order 2} and denoted by $C_2$. This group is the reflection symmetry group as reflecting across the same plane twice does nothing.
-\end{remark}
+
 
 \newpage
 \begin{problem}
-A matrix in the group of rotation matrices in $\R^2$ (i.e., $\mathrm{SO}(2)$) can be written as
-\[
-\Rot_\theta = \begin{pmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos \theta \end{pmatrix},
-\]
-for any choice of $\theta$. Another way to think about $\mathrm{SO}(2)$ is to consider it as the rotational symmetry group of the unit circle in the plane.
-
-Next, consider a cyclohexane $C_6H_{12}$ molecule:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.3\textwidth]{cyclohexane-500x500.png}
-    \end{figure}
-    \noindent This molecule also has rotational symmetry, but it is a smaller symmetry group than $\mathrm{SO}(2)$. We want to determine this rotational symmetry \emph{subgroup}.
+Let $A \colon \C^n \to \C^n$ be hermitian.  We prove the two theorems in the text.
 \begin{enumerate}[(a)]
-    \item This molecule looks much like a hexagon. Determine the external angles of a hexagon.
-    \item Note that if we rotate a hexagon (or cyclohexane) by an external angle, then this leaves the molecule invariant (i.e., it looks no different). Using the internal angle you found, write the rotation matrix for that angle and name this matrix $[g]$.
-    \item We can \emph{generate} this group $C_6$ from $[g]$ by repeatedly multiplying $[g]$ with itself.  Show that there are only six elements in this group $C_6$.
-    \item These are not all the symmetries of cyclohexane! Explain another symmetry operation that we could use that isn't captured by the rotations above.
+    \item Show that all eigenvalues of $A$ are real.
+    \item Show that eigenvectors corresponding to different eigenvalues are orthogonal with the hermitian inner product.
 \end{enumerate}
-If you're interested, look up the group $D_{12}$ which is the \emph{dihedral group of order 12}. Or, taking it further, look at \url{https://en.wikipedia.org/wiki/Cyclohexane_conformation}
 \end{problem}
 \begin{solution}~
-\begin{enumerate}[(a)]
-    \item The external angles of a hexagon are $\pi/3$ since the sum of the external angles must be $2\pi$ and there are six angles on a hexagon.
-    \item Then we have
+   \begin{enumerate}[(a)]
+    \item Let $\evec$ and $\lambda$ be an eigenvector/eigenvalue pair for the transformation $A$ (i.e., $A\evec = \lambda \evec$).  Then since $A$ is hermitian, we have
     \[
-    [g]=\begin{pmatrix} \sqrt{3}/2 & -1/2 \\ 1/2 & \sqrt{3}/2 \end{pmatrix}.
+    \langle A \evec, \evec \rangle = \langle \evec, A \evec \rangle.
     \]
-    \item Now, we can explicitly compute $[g]$, $[g]^2$, $[g]^3$, and so on, but remember that this is a rotation matrix.  Hence, for example, we have
+    The left hand side yields
     \[
-    \Rot_\theta \Rot_\varphi = \Rot_{\theta+\varphi}.
+    \langle A \evec, \evec \rangle =  \langle \lambda \evec,\evec\rangle = \lambda \langle  \evec,\evec\rangle,
     \]
-    Hence, we have
+    whereas the right hand side yields
     \[
-    [g]^2 = \Rot_{\pi/3},\quad [g]^3 = \Rot_{\pi/2}, \quad [g]^4 = \Rot_{2\pi/3}, \quad [g]^5 = \Rot_{5\pi/6}, \quad [g]^6 = \Rot_{2\pi}=[I].
+    \langle \evec, A \evec \rangle = \langle  \evec, \lambda \evec\rangle = \lambda^* \langle  \evec,\evec\rangle.
     \]
-    Indeed, this group does have six elements as there is no way to create any others. This group is known as the \emph{cyclic group of order 6} and we denote it by $C_6$.
-    \item The cyclohexane molecule also has reflectional symmetry. That is, we could pick up the molecule, and flip it over (across some axis) and place it back in the same spot. If we include this symmetry as well, we can then generate $D_{12}$. 
-\end{enumerate}
+    Thus, since the left hand side and the right hand side must be equal we have
+    \[
+        \lambda = \lambda^*.
+    \]
+    It must be that $\lambda \in \R$ since if $\lambda$ had a nonzero imaginary part, this would not hold. Hence, we have proven the statement.
+
+    \item Let $\evec_1$ and $\lambda_1$ be an eigenvector/eigenvalue pair and $\evec_2$ and $\lambda_2$ be another pair with $\lambda_1 \neq \lambda_2$. Then we can note that since $A$ is hermitian
+    \[
+    \langle A \evec_1 , \evec_2 \rangle = \langle \evec_1,A \evec_2 \rangle.
+    \]
+    The left hand side yields
+    \[
+    \langle A \evec_1 , \evec_2 \rangle = \lambda_1 \langle \evec_1, \evec_2 \rangle,
+    \]
+    and the right hand side
+    \[
+    \langle \evec_1,A \evec_2 \rangle = \lambda_2^* \langle \evec_1,\evec_2 \rangle.
+    \]
+    We know that $\lambda_1\neq \lambda_2$ and we also know that $\lambda_1,\lambda_2 \in \R$ by part (a), so it must be that $\langle \evec_1,\evec_2 \rangle =0$ for equality to be possible since it cannot be that $\lambda_1 = \lambda_2^*$.  Thus, the eigenvectors must be orthogonal.
+    \end{enumerate}
 \end{solution}
 
-\begin{remark}
-The groups $C_n$ and $D_{2n}$ always have this same relationship as the groups $\Orth(n)$ and $\SO(n)$. The idea of rotations and reflections are very related. In fact, reflections are more fundamental in that any rotation is a product of two reflections. This is exactly why we see this relationship.
-
-Also, $\Orth(n)$ and $\SO(n)$ give the reflection/rotation symmetries of $n$-dimensional space. However, we can see that some objects living in those spaces will have smaller symmetry groups. In this case, the group is even finite (order 6) as opposed to infinite!
-\end{remark}
 
 \end{document}

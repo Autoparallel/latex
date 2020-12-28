@@ -2,13 +2,11 @@
 
 \todo[inline]{Finish this section. I'm saying this here but it should go later on, but this should lead to the weak formulation for the laplace equation??? Does there exist an inner product instead of just a norm? }
 
-Letting $\Omega$ be a region in $\R^n$, recall that the space of monogenic fields $\monogenics(\Omega)$ is not an algebra. However, $\monogenics(\Omega)$ does contain algebras that are commutative Banach algebras. For example, we always have the following algebra.
-
-The Clifford fields are given as functions $s \colon \Omega \to \Gamma$ for which we say $s\in \Gamma(\Omega)$. This space $\Gamma(\Omega)$ has a norm induced from the spinor norm in the $L_2$ sense by
+Letting $\Omega$ be a region in $\R^n$, recall that the space of monogenic fields $\monogenics(\Omega)$ is not an algebra. However, $\monogenics(\Omega)$ does contain algebras that are commutative Banach algebras. To start, consider the algebra of spinor fields $\G_n^+(\Omega)$ which has a norm induced from the spinor norm in the $L_2$ sense by
 \[
 \spinnorm{s} = \int_\Omega ss^\dagger d\Omega
 \]
-This gives us a normed algebra of Clifford fields. One can see that we have the unit $1$ in this algebra. We also have for multivectors $s,r \in \Gamma(\Omega)$ (constant Clifford fields)
+This gives us a normed algebra of spinor fields. One can see that we also have the unit $1$ in this algebra. Spinors $s,r \in \G_n^+$ satisfy
 \[
 \|sr\| = \|s\|\|r\|
 \]
@@ -16,19 +14,15 @@ since
 \[
 \|sr\|^2 = (sr)(sr)^\dagger = srr^\dagger s^\dagger = s\|rr^\dagger\|^2 s^\dagger = \|s\|^2 \|r\|^2.
 \]
-It follows for non-constant $C^\infty$-fields $s$ and $r$
+It follows immediately that for the non-constant $C^\infty$-fields $s$ and $r$
 \[
 \spinnorm{sr} \leq \spinnorm{s}\spinnorm{r}.
 \]
-This shows the algebra is uniform. Identifying the constant fields in the algebra $\Gamma(\Omega)$ with $\R^{2^n}$ we see that the algebra is also complete. Thus we have shown that the space $\Gamma(\Omega)$ is a (noncommutative) Banach algebra. The subspace $\monogenics(\Omega)\cap \Gamma(\Omega)$ is thus a Banach algebra contained inside of $\monogenics(\Omega)$. There are more algebras to discover.
-
-\begin{remark}
-It is worth noting that while the constant elements in $\Gamma(\Omega)$ form a group, the elements in general do not.  That is to say that not every element in $\Gamma(\Omega)$ is invertible.  This not only expected since functions in general are not invertible, but this is also a nonissue as the algebra structure of the Clifford fields is what remains important.
-\end{remark}
+Identifying the constant fields in the algebra $\G_n^+(\Omega)$ with points in $\R^{2^{n-1}}$ (since $\dim(\G_n^+)=2^{n-1}$) we see that the algebra is also complete. Thus we have shown that the space $\G_n^+(\Omega)$ is a (noncommutative) Banach algebra. There are more algebras to discover.
 
 \subsubsection{Planar monogenic fields}
 
-Generically, if I take some multivector $A$ times a monogenic field $f$, $Af$ need not be monogenic. This is exactly why $\monogenics(\Omega)$ fails to be an algebra. But, there are certain types of monogenic fields in which this property is true. We describe a set of parabivectors that operate entirely on a plane given by a unit bivector $B$. These specific fields will be of great utility for the remainder of this paper.
+Generically, if I take some multivector $A$ times a monogenic field $f$, $Af$ need not be monogenic which is a reason why $\monogenics(\Omega)$ fails to be an algebra. But, there are certain types of monogenic fields in which this property is true. We describe a set of parabivectors that operate entirely on a plane given by a unit bivector $B$. These specific fields will be of great utility for the remainder of this paper.
 \begin{definition}
     Let $f$ be a parabivector and $B$ a unit $2$-blade. Then $f$ is a \emph{$B$-planar field} if $f = \operatorname{P}_B \circ f \circ \operatorname{P}_B$.
 \end{definition} 
@@ -37,7 +31,7 @@ We then refer to the \emph{$B$-planar monogenic fields} $f$ when $f$ is both $B$
     Let $f$ be a $B$-planar monogenic field, then:
 \begin{itemize}
     \item The directional derivatives in all directions other than in the $B$ plane are zero;
-    \item We have the representation $f=u+\beta B$ for a $u,\beta \in G_n^0$ and $B$ the given unit bivector.
+    \item We have the representation $f=u+\beta B$ for a $u,\beta \in G_n^0(\Omega)$ and $B$ the given unit bivector.
 \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -78,19 +72,19 @@ We let
 \[
 \algebra{B}(\Omega) = \{f ~\vert~ \textrm{$f$ is $B$-planar and monogenic}\}
 \]
-be the space of $B$-planar monogenic fields. For any $2$-blade $B$ in $\Grassmannian{2}{n}$, we have a copy of $\algebra{B}(\Omega)$. Multiplication of two $B$-planar fields $f=u_f+\beta_f B$ and $g=u_g+\beta_g B$ is given by
+be the space of $B$-planar monogenic fields. For any $2$-blade $B$ in $\Grassmannian{2}{n}$, we have a space $\algebra{B}(\Omega)$. Multiplication of two $B$-planar fields $f=u_f+\beta_f B$ and $g=u_g+\beta_g B$ is given by
 \begin{equation}
 \label{eq:axial_multiplication}
 fg = u_f u_g - \beta_f \beta_g + B (u_f b_g + u_g b_f) = gf.
 \end{equation}
 
-Another property mimics $\C$-holomorphicity.  Namely, scaling a holomorphic function by constant complex numbers remains holomorphic. We realize this for $B$-planar fields as $\operatorname{Spin}(2)$ invariance (really $\R \times \operatorname{Spin}(2)$ invariant).  This corollary follows from Lemma \ref{lem:clifford_invariant} since $\operatorname{Spin}(2)$ is a subgroup of $\Gamma^+$ 
+Another property mimics $\C$-holomorphicity.  Namely, scaling a holomorphic function by constant complex numbers remains holomorphic. We realize this for $B$-planar fields as $\operatorname{Spin}(2)$ invariance (really $\R \times \operatorname{Spin}(2)$ invariant).  The following corollary follows from Lemma \ref{lem:clifford_invariant} since $\R \times \operatorname{Spin}(2)$ is a subgroup of $\Gamma^+$ 
 \begin{corollary}
     \label{cor:mult_by_i_monogenic}
     Let $f=u+\beta B$ be an $B$-planar monogenic field and let $\zeta=x+yB$ for constant scalars $x$ and $y$. Then $\zeta f$ is a $B$-planar monogenic.
 \end{corollary}
 \begin{proof}
-    Note that $\zeta$ is in $\Gamma^+(\Omega)$, and utilize Lemma \ref{lem:clifford_invariant}.
+    Note that $\zeta$ admits the representation $\zeta = re^{\theta B}$ as seen in Example \ref{ex:exponential_of_bivector} for some $r,\theta \in \R$ with $r= \|\zeta\|$. If $\|\zeta\|=1$, then this corollary follows immediately from Lemma \ref{lem:clifford_invariant} as $\zeta \in \spingroup$. If $r\neq 1$, we note that the the corollary remains true given the $\R$-linearity of $\grad$.
 \end{proof}
 The point here is that we have now effectively found functions that can be scaled by $B$-planar constants $\zeta$ and remain monogenic. 
  
@@ -136,18 +130,19 @@ With the above, we show the space $\algebra{B}(\Omega)$ is closed under multipli
 \end{itemize}
 \end{proof}
 
-From the above work, we realize that for each $\algebra{B}(\Omega)$ we have a well defined multiplicative structure. But, we need to show that inverses also exist. Doing show realizes that $\algebra{B}(\Omega)$ sits inside of Clifford fields $\Gamma^+(\Omega)$. This is clear as any constant field $\zeta = x+yB$ is invertible. Thus we arrive at the following corollary.
+From the above work, we realize that for each $\algebra{B}(\Omega)$ we have a well defined multiplicative structure. This realizes that $\algebra{B}(\Omega)$ sits inside of the space of monogenic spinors $\monogenics^+(\Omega)$. We arrive at the following corollary.
 \begin{corollary}
-The space $\algebra{B}$ is a commutative unital Banach algebra.
+The space $\algebra{B}(\Omega)$ is a commutative unital Banach algebra.
 \end{corollary}
 \begin{proof}
-Let $f$ and $g$ be $B$-planar monogenic fields. It is clear that the sum $f+g$ is a $B$-planar monogenic by the linearity of $\grad$ and the projection. Since $fg=gf$ is $B$-planar and monogenic we find that each $\algebra{B}(\Omega)$ is an algebra. Since $\algebra{B}(\Omega)$ is a commutative subalgebra of $\Gamma(\Omega)$ (really of $\Gamma^+(\Omega)$), it is also a commutative Banach algebra.
+Let $f$ and $g$ be $B$-planar monogenic fields. It is clear that the sum $f+g$ is a $B$-planar monogenic by the linearity of $\grad$ and the projection. Since $fg=gf$ is $B$-planar and monogenic we find that each $\algebra{B}(\Omega)$ is an algebra. Since $\algebra{B}(\Omega)$ is a commutative subalgebra of $\G_n^+(\Omega)$, it is also a commutative Banach algebra. \textcolor{red}{Shorten a lot}
 \end{proof}
+
 
 \subsubsection{$\omega$-axial fields}
 The authors in \cite{belishev_algebraic_2019,belishev_algebras_2019} give a thorough treatment of an analogous story but with quaternion fields.  We show the relationship between the two stories in this section and we find them to be entirely equivalent. As in Example \ref{ex:quaternions}, we can see these quaternion fields as parabivector fields.  The authors work exclusively in 3-dimensions and quickly specialize to the fields which are $\omega$-axial due to their rich algebraic structure. There, $\omega$ is a purely imaginary unit quaternion. Their harmonic $\omega$-axial fields are equivalent to monogenic $B$-planar fields if we take the axis $\omega = BI^{-1}$. First, note we define $\omega$-axial in the same way.
 \begin{definition}
-    Let $A \in \G_3$ be a multivector field then $A$ is \emph{$\omega$-axial} if $A(x+t\omega) = A(x+t\omega)$.  
+    Let $A \in \G_3(\Omega)$ be a multivector field then $A$ is \emph{$\omega$-axial} if $A(x+t\omega) = A(x+t\omega)$.  
 \end{definition}
 
 This definition allows us to perfectly coincide the notions of $B$-planar monogenic fields with $\omega$-axial harmonic quaternion fields.
@@ -180,23 +175,29 @@ The $\omega$-axial fields do not generalize properly and this definition is sole
 
 \subsubsection{Spinor spectrum}
 
-This story no longer continues in higher dimensions and one can find the two and three dimensional cases to be happy accidents.  Instead, now we must deal fully with the situation at hand to dissect the relevant algebras. At our disposal are the algebras $\algebra{B}(\Omega)$ of $B$-planar monogenic fields. Take the case where the domain $\ball \subset \R^n$ is the unit $n$-ball and moreover let $\disk$ be the unit disk in $\C \cong \R^2$.  By Gelfand, the maximal ideal space of the commutative Banach algebra $\algebra{B}(\ball)$ is homeomorphic to the disk given the isomorphism mapping the blade $B \leftrightarrow i$ in the complex plane. Since the space $\monogenics$ is no longer an algebra or even commutative, we are at a loss to determine maximal ideals.  Instead, one can note that maximal ideals of a commutative Banach algebra correspond to the multiplicative linear functions.  Using this identification, we carry on and describe functionals on the monogenics.
+This story no longer continues in higher dimensions and one can find the two and three dimensional cases to be happy accidents.  Instead, now we must deal fully with the situation at hand to dissect the relevant algebras. At our disposal are the algebras $\algebra{B}(\Omega)$ of $B$-planar monogenic fields. Take the case where the domain $\ball \subset \R^n$ is the unit $n$-ball and moreover let $\disk$ be the unit disk in $\C \cong \R^2$.  By Gelfand, the maximal ideal space of the commutative Banach algebra $\algebra{B}(\ball)$ is homeomorphic to the disk given the isomorphism mapping the blade $B \leftrightarrow i$ in the complex plane. Since the space $\monogenics$ is no longer commutative let alone an algebra, we are at a loss to determine maximal ideals.  Instead, one can note that maximal ideals of a commutative Banach algebra correspond to the multiplicative linear functionals.  Using this identification, we carry on and describe functionals on the monogenic fields.
+
+\textcolor{red}{It's probably worth phrasing this as some kind of algebra morphism}
 
 \begin{definition}
     Define the \emph{spinor dual} $\dualmonogenics(\Omega)$ as
     \[
-        \dualmonogenics(\Omega) \coloneqq \{ l \in \mathcal{L}(\monogenics(\Omega); \Gamma^+) ~\vert~ l(sf) = sl(f), ~\forall f \in \monogenics, ~s \in \spinalgebra \}
+        \dualmonogenics(\Omega) \coloneqq \{ l \in \mathcal{L}(\monogenics^+(\Omega); \G_n^+) ~\vert~ l(sf) = sl(f), ~\forall f \in \monogenics(\Omega), ~s \in \G_n^+ \},
     \]
+    and refer to elements of $\dualmonogenics(\Omega)$ are \emph{spinor functionals}. \textcolor{red}{Maybe have $s\in \mathfrak{spin}(n)$ instead?}
 \end{definition}
-$\dualmonogenics(\Omega)$ are the spinor valued functionals or \emph{spin functionals}. Similarly, we have the definition for the spinor functionals that are multiplicative on the $B$-planar monogenics. In other words, spin characters are simply algebra homomorphisms from $\algebra{B}(\Omega)$ to $\Gamma^+$.
+Similarly, we will now define the spinor functionals that are multiplicative on the $B$-planar monogenics. In other words, spin characters are simply algebra homomorphisms from $\algebra{B}(\Omega)$ to $\G_n^+$.
 \begin{definition}
-    The \emph{spinor spectrum} is the set
+    The \emph{spinor spectrum} $\characters(\Omega)$ is the set
     \[
-        \characters(\Omega) \coloneqq \{ \mu \in \dualmonogenics(\Omega) ~\vert~ \mu(fg) = \mu(f)\mu(g),~ \forall f,g \in \algebra{B}, ~ B \in \Grassmannian{2}{n}\},
+        \characters(\Omega) \coloneqq \{ \mu \in \dualmonogenics(\Omega) ~\vert~ \mu(fg) = \mu(f)\mu(g),~ \forall f \in \algebra{B}(\Omega) \textrm{ and } \forall g \in \algebra{B'}, ~ B,B' \in \Grassmannian{2}{n}\},
     \]
-    and we refer to the elements as \emph{spin characters}.
+    and we refer to the elements as \emph{spinor characters}.
 \end{definition}
-
-In the case where $\Omega$ itself is 2-dimensional and compact, we realize $\Gamma^+$ is isomorphic to $\C$ and we find that these match the typical definition for characters $\mu\in \characters(\Omega)$.  These spin characters each amount to function evalation. Take $f\in \monogenics(\Omega)$ and note that $f \in \algebra{B}(\Omega)$ as well.  $f$ is then a holomorphic function when we identify $B \leftrightarrow i$ and as such the spin character $\mu$ acts by $\mu(f)=f(x_\mu)$ for some point $x_\mu \in \Omega$ showing the correspondence of points in $\Omega$ with spin characters in $\characters(\Omega)$. Hence, with the weak-$\ast$ topology, the space $\characters(\Omega)$ is homeomorphic to $\Omega$. 
+\textcolor{red}{Maybe we don't need multiplicative on different algebras somehow?}
+\begin{example}
+\textcolor{red}{Edit this}
+In the case where $\Omega$ itself is 2-dimensional and compact, we realize $\G_n^+$ is isomorphic to $\C$ and we find that these match the typical definition for characters $\mu\in \characters(\Omega)$.  These spin characters each amount to function evalation. Take $f\in \monogenics(\Omega)$ and note that $f \in \algebra{B}(\Omega)$ as well.  $f$ is then a holomorphic function when we identify $B \leftrightarrow i$ and as such the spin character $\mu$ acts by $\mu(f)=f(x_\mu)$ for some point $x_\mu \in \Omega$ showing the correspondence of points in $\Omega$ with spin characters in $\characters(\Omega)$. Hence, with the weak-$\ast$ topology, the space $\characters(\Omega)$ is homeomorphic to $\Omega$. 
+\end{example}
 
 \todo[inline]{There is the question now on what is the homeomorphism type of $\algebra{B}(\Omega)$ for an arbitrary $\Omega$ and for a given $B$. Use 2d Belishev somehow? Describe the weak-$\ast$ topology here to use later.} 

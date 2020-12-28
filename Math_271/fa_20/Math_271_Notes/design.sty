@@ -133,7 +133,7 @@
     text height=28cm,align=center,anchor=north east]
   at ($ (current page.north east) $)
   {\rotatebox{90}{\parbox{18cm}{%
-  \centering\textcolor{csu_dark_green}{\bfseries\scshape Part~ \thepart}}}};
+  \centering\textcolor{csu_dark_green}{\bfseries\scshape Chapter~ \thechapter}}}};
   \end{tikzpicture}}
 \fancyhead[RE]{\textcolor{csu_dark_green}\leftmark%
   \begin{tikzpicture}[overlay,remember picture]
@@ -141,7 +141,7 @@
     text height=28cm,align=center,anchor=north west]
   at ($ (current page.north west) $)
   {\rotatebox{90}{\parbox{18cm}{%
-    \centering\textcolor{csu_dark_green}{\bfseries\scshape Part~\thepart}}}};
+    \centering\textcolor{csu_dark_green}{\bfseries\scshape Chapter~\thechapter}}}};
   \end{tikzpicture}}
   % Add these to put sections/subsections in golden bar
   %\thechapter.\leftmark \hspace{2cm}\rightmark\hspace{2cm}\thesubsection~\subsectiontitle

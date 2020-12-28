@@ -9,7 +9,7 @@
 
 \begin{center}
    \textsc{\large MATH 271, Worksheet 9}\\
-   \textsc{Linear independence, span, and bases for vectors. Matrix determinants and traces.}
+   \textsc{Linear independence, span, and bases. Matrix determinants and traces.}
 \end{center}
 \vspace{.5cm}
 
@@ -74,7 +74,18 @@ which acts as a counter clockwise rotation by $\pi/2$ in the $xy$-plane.
 \end{problem}
 
 \begin{problem}
-Consider the vectors in $\R^3$, $\vecu=3\xhat - \yhat + 4\zhat$ and $\vecv=-\yhat - 2\zhat$.  Show that $\tr(\vecu \vecv^T) = \vecu^T \vecv$.
+Consider the matrices
+\[
+[A] = \begin{pmatrix} 0 & 3 \\ 2 & 0 \end{pmatrix}, \quad [B] = \begin{pmatrix} 3 & -1 \\ 1 & 2 \end{pmatrix}, \quad [C] = \begin{pmatrix} 3 & 2 \\ 3 & 2 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute the determinant of each matrix.
+    \item For each matrix, draw the vectors $\xhat$ and $\yhat$ and draw the transformed vectors (the matrix applied to $\xhat$ and $\yhat$). Explain how the matrices transform areas and relate this back to the determinant of the matrices.  Do this in a different plane for each matrix to avoid making this look messy.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the vectors in $\R^3$, $\vecu=3\xhat - \yhat + 4\zhat$ and $\vecv=-\yhat - 2\zhat$.  Show that $\tr(\vecu \vecv^\top) = \vecu^\top \vecv$.
 \end{problem}
 
 \begin{problem}
@@ -82,20 +93,7 @@ Prove the previous problem for two arbitrary vectors in $\R^n$.
 \end{problem}
 
 \begin{problem}
-Is it true that $\tr([A]^T)=\tr([A])$ for any matrix? Why or why not?
-\end{problem}
-
-\begin{problem}
-Consider the matrix 
-\[
-M = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.
-\]
-\begin{enumerate}[(a)]
-    \item Compute $\tr(M)$. 
-    \item Compute $M^{R_x}=R_x(\pi/2)MR_x(\pi/2)^\dagger$.
-    \item What is the trace of $M^{R_x}$?
-    \item Can you see why you have the answer in (c) from properties of the trace?
-\end{enumerate}
+Is it true that $\tr([A]^\top)=\tr([A])$ for any matrix? Why or why not?
 \end{problem}
 
 \begin{problem}
@@ -111,8 +109,23 @@ Consider the linear transformations on $\R^3$ to $\R^3$ given by
     \item Show that the determinant of each of these matrices is 1 for any value of $\theta$.
     \item Using properties of determinants, show that the determinant of a product of rotation matrices is also 1.
     \item Explain geometrically why a rotation matrix must have a determinant of 1.
-    \item Show that $R_x(\theta)R_x(\theta)^\dagger = I$. This in fact true for any rotation matrix.
+    \item Show that $R_x(\theta)R_x(\theta)^\top = I$. This in fact true for any rotation matrix.
 \end{enumerate}
 \end{problem}
+
+\begin{problem}
+Consider the matrix 
+\[
+M = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute $\tr(M)$. 
+    \item Compute $M^{R_x}=R_x(\pi/2)MR_x(\pi/2)^\top$.
+    \item What is the trace of $M^{R_x}$?
+    \item Can you see why you have the answer in (c) from properties of the trace?
+\end{enumerate}
+\end{problem}
+
+
 
 \end{document}
