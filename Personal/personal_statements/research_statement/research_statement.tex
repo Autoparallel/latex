@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+
+%\title{IMA Personal Statement}
+%\author{Colin Roberts}
+%\date{February 2019}
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles}
+\RequirePackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{pgf,tikz}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[percent]{overpic}
+\usepackage{caption}
+\usepackage{aligned-overset}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\noindent \textbf{Research statement:}\\
+
+The Electrical Impedence Tomography (EIT) or Calder\'on problem is one example of an inverse boundary value problem in physics \cite{feldman_calderproblem_nodate}. The problem was first posed by Alberto Calder\'on with specific interest in oil prospecting but we now see an interest in using this technique for medical imaging. It is unknown whether a solution to the smooth (i.e., $\Omega$ is $C^\infty$) version problem exists in dimensions $n>2$. Hence, it is clear that in the real world case of incomplete or noisy data and rough boundary that this problem presents a distinct challenge to imagers. In EIT, practicioners are given a bounded domain $\Omega$ of ohmic material free of charges and currents. They then supply an input voltage $\phi$ along the boundary and measure the current flux $j$ on the boundary. In theory, this provides one with access to $\partial \Omega$ as well as the voltage-to-current mapping $\Lambda \phi = j$ for any $\phi$ while in reality $\phi$ and $j$ are only known on a subset of $\partial \Omega$ and there is an associated noise with the map $\Lambda$. Let $\gamma$ be the unknown conductivity of $\Omega$, then given $\phi$ on $\partial \Omega$ we have the potential $u$ in $\Omega$ satisfying $\textrm{div} (\gamma ~\textrm{grad}(u))=0$. The Calder\'on problem is then to determine the conductivity matrix $\gamma$ from $\partial \Omega$ and $\Lambda$.
+
+Since it is unknown whether a solution to this problem exists even in the $C^\infty$ case, it is in my interest to use as many tools as possible in a ``top-down" approach as, for example, other researchers have found solutions for $n>2$ in the case where $\Omega$ is analytic. One approach to this problem is to instead relate the conductivity $\gamma$ to an intrinsic Riemannian metric $g$ on $\Omega$ (see \cite{uhlmann_inverse_2014}). Thus we have the forward boundary value problem
+\[
+\begin{cases} \Delta u = 0 & \textrm{in $\Omega$} \\ u = \phi & \textrm{on $\partial \Omega$} \end{cases},
+\]
+where $\Delta$ is the Laplace-Beltrami operator which depends implicitly on the metric $g$. Thinking of $\Omega$ as an $n$-dimensional Riemannian manifold, we then refer to $\Lambda$ as the \emph{Dirichlet-to-Neumann (DN) map}. For the EIT problem, the goal is to determine $g$ for the case $n=3$ and where $\Lambda$ inputs a scalar $\phi$ and outputs a boundary current flux 2-form $j$. One can then generalize this problem completely to the case of differential forms letting $\Lambda$ map boundary $k$-forms to boundary $(n-k-1)$-forms \cite{belishev_dirichlet_2008, sharafutdinov_complete_2013}. It is unknown whether knowledge of this extension of $\Lambda$ determines $g$.
+
+Algebraic techniques have been used in combination with differential forms in order to produce some results on this inverse problem. For example, $\Lambda$ can determine the Betti numbers of $\Omega$ \cite{belishev_dirichlet_2008} and in dimension $n=2$, $\Lambda$ determines $\Omega$ and $g$ up to conformal equivalence \cite{belishev_calderon_2003}. The case for $n=2$ is indeed special; $\Omega$ can be endowed with a complex structure and we can realize $u$ as the real part of a holomorphic function. From $\Lambda$ we can recover the algebra of holomorphic functions on $\Omega$ which by Gelfand theory allows us to determine $\Omega$ up to homeomorphism. In attempt to generalize this to 3-dimensions, authors have moved from complex holomorphic functions to harmonic quaternion fields \cite{belishev_algebras_2017}. However, it is not immediately obvious that the relevant Gelfand theory can be applied since the space of harmonic quaternion fields is no longer commutative let alone an algebra. But it has been shown that in special cases one can use these harmonic quaternion fields to determine specific domains up to homeomorphism in a generalization of Gelfand theory to noncommutative settings \cite{belishev_algebras_2019}.
+
+Complex numbers and quaternions are but a special cases of subalgebras of 2- and 3-dimensional geometric algebras. Let $V$ be a vector space of dimension $n$ and let $g$ be a (semi)definite inner product on $V$. Take $e_1,\dots,e_n$ to be an arbitrary basis and $g_{ij}$ be the coefficients of the inner product in that basis. The geometric algebra $\mathcal{G}(V,g)$ is a linear space of dimension $2^n$ and we define the multiplication of vectors by taking the products of the basis elements. In particular, we have the geometric multiplication (written as concatenation) given by
+\[
+e_i e_j = g_{ij} + e_i \wedge e_j,
+\]
+where $\wedge$ denotes the exterior product satisfying
+\[
+u \wedge v = -v\wedge u
+\]
+for all $u,v \in V$. Notice that the product of two vectors creates a scalar element and an element of grade 2 which we can refer to as a bivector. In general, there are ${n\choose k}$ grade $k$ elements inside each geometric algebra. The most general element in a geometric algebra is referred to as a \emph{multivector}.
+
+For sake of example, take $V=\R^2$ and $g_{ij}=\delta_{ij}$ and we have the basis elements
+\[
+1,\quad e_1,\quad e_2, \quad e_1 e_2,
+\]
+for the geometric algebra that we denote by $\mathcal{G}_2$. Extending the geometric multiplication to bivectors, we realize 
+\[
+(e_1 e_2)^2 = -1,
+\]
+and so the even subalgebra $\mathcal{G}_2^+$ spanned by $1$ and $e_1 e_2$ is isomorphic to $\C$. Indeed, one should think of the bivector $e_1 e_2$ as an element that rotates vectors by $\pi/2$ in the plane $\R^2$ as $i$ rotates a complex number $z$ by $\pi/2$ as well. To realize the quaternions, one can then take the even subalgebra $\mathcal{G}_3^+$ and note that the bivectors $e_1 e_2$, $e_3 e_1$, and $e_2 e_3$ rotate in the $xy$, $xz$, and $yz$ planes respectively. All of this is explained thoroughly in \cite{doran_geometric_2003, hestenes_clifford_1984} and various other articles. Finally, we are not limited to a positive definite $g$ and can assume any signature we'd like which allows us to neatly formulate spacetime dynamics as well.
+
+Let $\Omega$ be a region in $\R^n$, then we can consider \emph{multivector fields} $f\colon \Omega \to \mathcal{G}_n$. We then define the gradient $\nabla = \sum_{i=1}^n e_i \frac{\partial}{\partial x^i}$ which behaves as a vector with respect to the geometric multiplication. Indeed, $\nabla^2=\Delta$ is the Laplace-Beltrami operator defined on multivectors (as opposed to just $k$-forms). Of particular interest are the multivector fields $f$ in the kernel of $\nabla$ which we refer to as \emph{monogenic}. For an monogenic even multivector field, the components are harmonic (in the kernel of $\Delta$). For example, a monogenic even multivector field in $\mathcal{G}_2$ is in direct correspondence with a holomorphic complex valued function and a monogenic even multivector field in $\mathcal{G}_3$ corresponds to the harmonic quaternion fields referenced in \cite{belishev_algebras_2019} earlier. Monogenic fields are the focus of study in Clifford analysis which we can see as strictly a refinement of harmonic analysis as $\Delta = \nabla^2$.
+
+There are a few other bonuses of using geometric algebras: In $\C$, we have the Cauchy integral which determines a holomorphic function from function values on the boundary (Dirichlet data). Likewise, in $\mathcal{G}_n$, we have a generalization of this notion. Also in $\C$, we have the Hilbert transform which allows one to construct a conjugate function $v$ from a harmonic function $u$. In the same vein, given a harmonic multivector (satisfying some conditions in seen in \cite{belishev_dirichlet_2008}), we can construct a conjugate to this multivector as well. I have also come upon an open question in whether the Hilbert transform defined in \cite{belishev_dirichlet_2008} corresponds to that in \cite{brackx_hilbert_2008}.
+
+Electromagnetic theory is also greatly simplified using geometric algebras as the 4-vector potential $A$ satisfies the equation $\nabla A = J$, where $J$ is the 4-current. In absence of free charges and currents, this implies $A$ is monogenic as $J=0$.  Let $u$ be the scalar potential and $j$ the spatial current, then if we assume our region $\Omega$ is ohmic (satisfies Ohm's law $\nabla u = j$) then the multivector field $u+b$ where $b$ is the magnetic bivector field is monogenic. Hence, the conjugate field to the scalar potential is the magnetic field (which provides a physical interpretation to the work in \cite{belishev_dirichlet_2008}).
+
+The question remains in whether any of these tools help in solving the Calder\'on problem. At the very least, there is some incremental improvements that can be made. In particular, (I have almost shown) that one can generalize \cite{belishev_algebras_2019} to show that the space of monogenic fields determines the homeomorphism type of a region $\Omega \subset \R^n$. It remains to be shown that (in general) one can recover this space of monogenic fields from the DN map $\Lambda$. Though, it can be shown in special cases that this is possible. Hence, some of the work ahead has lead me to believe that $\Lambda$ can indeed determine $\Omega$ up to homeomorphism and it remains to consider how $g$ (or its conformal class) can be determined. Other questions remain as well.  This outlook may give interpretations to the operators defined in \cite{sharafutdinov_complete_2013} and may relate the electrostatic DN map to the magnetostatic DN map. This framework may also prove useful in other static elliptic inverse problems or even inverse problems that evolve over time. Those are the areas I am looking forward to exploring more.
+
+\bibliographystyle{siam}
+\bibliography{calderon_problem}
+
+\end{document}

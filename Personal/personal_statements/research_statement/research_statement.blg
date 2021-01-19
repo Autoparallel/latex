@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: research_statement.aux
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+The style file: siam.bst
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+Database file #1: calderon_problem.bib
+Warning--empty journal in brackx_hilbert_2008
+Warning--empty journal in feldman_calderproblem_nodate
+Warning--empty year in feldman_calderproblem_nodate
+You've used 10 entries,
+            2030 wiz_defined-function locations,
+            555 strings with 5414 characters,
+and the built_in function-call counts, 3266 in all, are:
+= -- 316
+> -- 123
+< -- 0
++ -- 52
+- -- 38
+* -- 242
+:= -- 505
+add.period$ -- 11
+call.type$ -- 10
+change.case$ -- 48
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 162
+empty$ -- 245
+format.name$ -- 38
+if$ -- 697
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 12
+newline$ -- 34
+num.names$ -- 20
+pop$ -- 47
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 138
+stack$ -- 0
+substring$ -- 219
+swap$ -- 68
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 36
+warning$ -- 3
+while$ -- 37
+width$ -- 12
+write$ -- 90
+(There were 3 warnings)
