@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  18 JAN 2021 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  20 JAN 2021 09:00
 entering extended mode
 **./homework_1.tex
 (homework_1.tex
@@ -1215,14 +1215,14 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 21.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 19.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 21.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 19.
 
 
-Overfull \hbox (16.41292pt too wide) in paragraph at lines 55--56
+Overfull \hbox (16.41292pt too wide) in paragraph at lines 53--54
 [][]\OT1/cmr/bx/n/12 Problem 4. []\OT1/cmr/m/n/12 Let us vi-su-al-ize vec-tor f
 ields us-ing Ge-oGe-bra (specif-i-cally []$\OT1/cmtt/m/n/12 https : / / www . g
 eogebra .
@@ -1238,7 +1238,7 @@ Package rerunfilecheck Info: File `homework_1.out' has not changed.
 Here is how much of TeX's memory you used:
  33021 strings out of 479799
  821681 string characters out of 2867787
- 1193032 words of memory out of 3000000
+ 1194032 words of memory out of 3000000
  49356 multiletter control sequences out of 15000+200000
  545906 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1261,7 +1261,7 @@ Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt12.pfb>
-Output written on homework_1.pdf (3 pages, 173157 bytes).
+Output written on homework_1.pdf (3 pages, 172886 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  30 named destinations out of 1000 (max. 500000)

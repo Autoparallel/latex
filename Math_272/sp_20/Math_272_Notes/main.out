@@ -81,9 +81,16 @@
 \BOOKMARK [2][-]{subsection.8.2.1}{Integration in Spherical Coordinates}{section.8.2}% 81
 \BOOKMARK [-1][-]{part.7}{VII Partial Differential Equations}{}% 82
 \BOOKMARK [0][-]{chapter.9}{Modelling}{part.7}% 83
-\BOOKMARK [1][-]{section.9.1}{Examples of PDE}{chapter.9}% 84
-\BOOKMARK [1][-]{section.9.2}{The Problem Statement}{chapter.9}% 85
-\BOOKMARK [1][-]{section.9.3}{The Heat Equation}{chapter.9}% 86
-\BOOKMARK [1][-]{section.9.4}{The Laplace Equation}{chapter.9}% 87
-\BOOKMARK [1][-]{section.9.5}{The Wave Equation}{chapter.9}% 88
-\BOOKMARK [0][-]{chapter.10}{Separation of Variables}{part.7}% 89
+\BOOKMARK [0][-]{chapter.10}{Systems of ODE}{part.7}% 84
+\BOOKMARK [1][-]{section.10.1}{Qualitative Analysis}{chapter.10}% 85
+\BOOKMARK [1][-]{section.10.2}{Linearity}{chapter.10}% 86
+\BOOKMARK [1][-]{section.10.3}{Higher Order ODE}{chapter.10}% 87
+\BOOKMARK [1][-]{section.10.4}{Linear Systems}{chapter.10}% 88
+\BOOKMARK [1][-]{section.10.5}{Linearization}{chapter.10}% 89
+\BOOKMARK [1][-]{section.10.6}{General Solutions to Second Order Linear Equations}{chapter.10}% 90
+\BOOKMARK [1][-]{section.10.7}{Examples of PDE}{chapter.10}% 91
+\BOOKMARK [1][-]{section.10.8}{The Problem Statement}{chapter.10}% 92
+\BOOKMARK [1][-]{section.10.9}{The Heat Equation}{chapter.10}% 93
+\BOOKMARK [1][-]{section.10.10}{The Laplace Equation}{chapter.10}% 94
+\BOOKMARK [1][-]{section.10.11}{The Wave Equation}{chapter.10}% 95
+\BOOKMARK [0][-]{chapter.11}{Separation of Variables}{part.7}% 96
