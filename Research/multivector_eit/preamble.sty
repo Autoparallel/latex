@@ -1,0 +1,201 @@
+\ProvidesPackage{preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titling} 
+\usepackage{blindtext} %stuff for title pages
+\usepackage{svg} %for images
+
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}[\hrule] %section styles
+
+
+\usepackage{geometry}
+\geometry{
+  top=1in,            
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=10ex,       
+  headsep=7ex,          
+  footskip=10ex
+}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{etoolbox}
+\makeatletter
+%\patchcmd{\f@nch@head}{\rlap}{\color{red}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{gray}\hrule}{}{}
+%\patchcmd{\f@nch@foot}{\rlap}{\color{green}\rlap}{}{}
+%\patchcmd{\footrule}{\hrule}{\color{green}\hrule}{}{}
+\makeatother
+%\rhead{\textcolor{gray}{Notes}}
+%\lhead{\textcolor{gray}{3D Calder\'on Problem}}
+\lfoot{\textcolor{gray}{Colin Roberts}}
+\rfoot{\textcolor{gray}{Colorado State University}}
+\cfoot{\textcolor{gray}{\thepage}}
+
+
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles}
+\RequirePackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{pgf,tikz}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[percent]{overpic}
+\usepackage{caption}
+\usepackage{aligned-overset}
+\usepackage{cleveref}
+%\captionsetup[figure]{labelformat=empty} %removes "Figure" from a caption on figures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\quat}{\mathbb{H}}
+
+% Special Commands
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+\newcommand{\multivectorbundle}{\mathcal{G}(M,g)}
+\newcommand{\multivectorfields}{\mathcal{G}(M)}
+\newcommand{\differentialforms}{\mathcal{G}^*(M)}
+\newcommand{\kvectorfields}[1]{\mathcal{G}^{#1}(M)}
+\newcommand{\evenfields}{\mathcal{G}^{[0]}(M)}
+\newcommand{\oddfields}{\mathcal{G}^{[1]}(M)}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\innerproduct}[2]{\left\langle #1, #2 \right\rangle_{L_2(\Sigma)}}
+\newcommand{\harmonicfunctions}{\mathcal{H}(M)}
+\newcommand{\algebra}[1]{\mathcal{A}_{#1}}
+\newcommand{\grad}{\boldsymbol{\nabla}}
+\newcommand{\dirac}{\boldsymbol{D}}
+\newcommand{\geometricalg}{\mathcal{G}(V)}
+\newcommand{\spacealg}{\mathcal{G}_3}
+\newcommand{\dual}[1]{\overset{$\star$}&{#1}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\cauchy}{\mathcal{C}}
+\newcommand{\poisson}{\mathcal{P}}
+\newcommand{\tangent}{\boldsymbol{t}}
+\newcommand{\normal}{\boldsymbol{n}}
+\newcommand{\openO}{\mathcal{O}}
+\newcommand{\openU}{\mathcal{U}}
+\newcommand{\characters}{\mathfrak{M}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\paravectors}{\mathcal{P}}
+\newcommand{\paravectorfields}{\mathcal{P}(M)}
+\newcommand{\monogenics}{\mathcal{M}}
+\newcommand{\dualmonogenics}{\mathcal{M}^\times}
+\newcommand{\Grassmannian}[2]{\operatorname{Gr}(#1,#2)}
+\newcommand{\spinalgebra}{\mathfrak{spin}(n)}
+\newcommand{\spingroup}{\operatorname{Spin}(n)}
+\newcommand{\ball}{\mathbb{B}}
+\newcommand{\disk}{\mathbb{D}}
+\newcommand{\projection}{\operatorname{P}}
+\newcommand{\vectorspace}{\mathbb{V}}
+\newcommand{\multivectorfieldson}[1]{\mathcal{G}(#1)}
+\newcommand{\biparavectorfieldson}[1]{\mathcal{G}_n(#1)^{0+2}}
+\newcommand{\spinnorm}[1]{\|#1\|_{L_2}}
+\newcommand{\rejection}{\operatorname{R}}
+\newcommand{\vectorpotential}{\mathbf{A}}
+\newcommand{\current}{\mathbf{J}}
+\newcommand{\magneticfield}{\mathbf{b}}
+\newcommand{\cross}{\boldsymbol{\times}}
+\newcommand{\blade}[1]{\boldsymbol{#1}}
+
+\makeatletter
+\DeclareFontFamily{OMX}{MnSymbolE}{}
+\DeclareSymbolFont{MnLargeSymbols}{OMX}{MnSymbolE}{m}{n}
+\SetSymbolFont{MnLargeSymbols}{bold}{OMX}{MnSymbolE}{b}{n}
+\DeclareFontShape{OMX}{MnSymbolE}{m}{n}{
+    <-6>  MnSymbolE5
+   <6-7>  MnSymbolE6
+   <7-8>  MnSymbolE7
+   <8-9>  MnSymbolE8
+   <9-10> MnSymbolE9
+  <10-12> MnSymbolE10
+  <12->   MnSymbolE12
+}{}
+\DeclareFontShape{OMX}{MnSymbolE}{b}{n}{
+    <-6>  MnSymbolE-Bold5
+   <6-7>  MnSymbolE-Bold6
+   <7-8>  MnSymbolE-Bold7
+   <8-9>  MnSymbolE-Bold8
+   <9-10> MnSymbolE-Bold9
+  <10-12> MnSymbolE-Bold10
+  <12->   MnSymbolE-Bold12
+}{}
+
+\let\llangle\@undefined
+\let\rrangle\@undefined
+\DeclareMathDelimiter{\llangle}{\mathopen}%
+                     {MnLargeSymbols}{'164}{MnLargeSymbols}{'164}
+\DeclareMathDelimiter{\rrangle}{\mathclose}%
+                     {MnLargeSymbols}{'171}{MnLargeSymbols}{'171}
+\makeatother
+
+\newcommand{\kforminnerproduct}[2]{\llangle #1, #2 \rrangle}
+
+\DeclarePairedDelimiter\angles{\langle}{\rangle}
+\newcommand{\proj}[2]{\angles*{#2}_{#1}}
+
+
+%\DeclarePairedDelimiter\parentheses{\lparen}{\rparen}
+%\newcommand{\grad}[1]{\operatorname{grad} \parentheses*{#1}}
+
+% Useful Symbols
+\newcommand{\alg}{\mathcal{A}(M)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%color effects
+\ProvidesPackage{design}
+\usepackage[most]{tcolorbox}
+
+\definecolor{ocre}{RGB}{198,184,77} %csu gold
+\definecolor{nice_blue}{RGB}{59,140,245} 
+
+\newcommand\boldblue[1]{\textcolor{nice_blue}{\emph{\textbf{#1}}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Indexing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{makeidx}
+
+%% Special Tikz commands
+
+\newcommand{\AxisRotator}[1][rotate=0]{%
+    \tikz [x=0.25cm,y=0.60cm,line width=.2ex,-stealth,#1] \draw (0,0) arc (-150:150:1 and 1);%
+}
