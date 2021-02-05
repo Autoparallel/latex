@@ -5,53 +5,47 @@ Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: siam.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: calderon_problem.bib
-Warning--I didn't find a database entry for "eq:conjugate_belishev"
-Warning--empty journal in brackx_hilbert_2008
-Warning--empty journal in feldman_calderproblem_nodate
-Warning--empty year in feldman_calderproblem_nodate
 Warning--empty journal in janssens_special_nodate
 Warning--empty year in janssens_special_nodate
-Warning--empty journal in salo_calderon_nodate
-Warning--empty year in salo_calderon_nodate
-You've used 18 entries,
+You've used 6 entries,
             2030 wiz_defined-function locations,
-            606 strings with 6725 characters,
-and the built_in function-call counts, 5497 in all, are:
-= -- 513
-> -- 212
+            535 strings with 4693 characters,
+and the built_in function-call counts, 1594 in all, are:
+= -- 138
+> -- 56
 < -- 0
-+ -- 87
-- -- 64
-* -- 407
-:= -- 871
-add.period$ -- 22
-call.type$ -- 18
-change.case$ -- 80
++ -- 22
+- -- 16
+* -- 113
+:= -- 267
+add.period$ -- 8
+call.type$ -- 6
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 283
-empty$ -- 430
-format.name$ -- 64
-if$ -- 1165
+cite$ -- 8
+duplicate$ -- 89
+empty$ -- 142
+format.name$ -- 16
+if$ -- 333
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 20
-newline$ -- 61
-num.names$ -- 39
-pop$ -- 82
+int.to.str$ -- 6
+missing$ -- 8
+newline$ -- 23
+num.names$ -- 14
+pop$ -- 30
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 19
 quote$ -- 0
-skip$ -- 216
+skip$ -- 55
 stack$ -- 0
-substring$ -- 326
-swap$ -- 107
+substring$ -- 68
+swap$ -- 26
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
-warning$ -- 7
-while$ -- 62
-width$ -- 20
-write$ -- 166
-(There were 8 warnings)
+type$ -- 20
+warning$ -- 2
+while$ -- 17
+width$ -- 7
+write$ -- 60
+(There were 2 warnings)

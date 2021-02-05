@@ -612,11 +612,15 @@
         \begin{ex}{Work Done on a Particle}{work_on_particle}
         The work done on a particle (or change in energy) is written as a line integral of this form.  
         
-        Take for example, $\forcevec(x,y)=\begin{pmatrix} 2x \\ 3y \end{pmatrix}$ and $\curvegamma(t)=\begin{pmatrix} t \\ t^2 \end{pmatrix}$ over the time $t=0$ to $t=1$.  Then
+        Take for example, $\forcevec(x,y)=\begin{pmatrix} 2x \\ 3y \end{pmatrix}$ and $\curvegamma(t)=\begin{pmatrix} t \\ t^2 \end{pmatrix}$ over the time $t=0$ to $t=1$.  Then we can note that 
+        \[
+            \tangentgamma(t) = \begin{pmatrix} 1 \\ 2t \end{pmatrix}.
+        \]
+        This yields,
         \begin{align*}
-        \int_{\curvegamma} \forcevec \cdot d\curvegamma &= \int_0^1 \forcevec(t,t^2)\cdot \begin{pmatrix} t \\ t^2 \end{pmatrix} dt\\
-        &= \int_0^1 \begin{pmatrix} 2t \\ 2t^2 \end{pmatrix} \cdot \begin{pmatrix} t \\ t^2 \end{pmatrix}dt\\
-        &=\int_0^1 2t^2+2t^4dt.
+        \int_{\curvegamma} \forcevec \cdot d\curvegamma &= \int_0^1 \forcevec(t,t^2)\cdot \begin{pmatrix} 1 \\ 2t \end{pmatrix} dt\\
+        &= \int_0^1 \begin{pmatrix} 2t \\ 2t^2 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2t \end{pmatrix}dt\\
+        &=\int_0^1 2t+4t^3dt.
         \end{align*}
         \end{ex}
         

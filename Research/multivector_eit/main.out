@@ -1,34 +1,15 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Clifford and geometric algebras}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Grading and multivectors}{subsection.2.1}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Duality and pseudoscalars}{subsection.2.1}% 5
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Blades and subspaces}{subsection.2.1}% 6
-\BOOKMARK [3][-]{subsubsection.2.1.4}{Projection and rejection}{subsection.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.2}{Multivector fields}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Directional derivative and gradient}{subsection.2.2}% 9
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Monogenic fields}{subsection.2.2}% 10
-\BOOKMARK [2][-]{subsection.2.3}{Differential forms}{section.2}% 11
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Exterior algebra and calculus}{subsection.2.3}% 12
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Integration on submanifolds}{subsection.2.3}% 13
-\BOOKMARK [3][-]{subsubsection.2.3.3}{k-form inner product}{subsection.2.3}% 14
-\BOOKMARK [3][-]{subsubsection.2.3.4}{Stokes' and Green's theorem}{subsection.2.3}% 15
-\BOOKMARK [1][-]{section.3}{Algebras of multivector fields}{}% 16
-\BOOKMARK [2][-]{subsection.3.1}{Banach algebras of Clifford fields}{section.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Planar monogenic fields}{subsection.3.1}% 18
-\BOOKMARK [3][-]{subsubsection.3.1.2}{-axial fields}{subsection.3.1}% 19
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Spinor spectrum}{subsection.3.1}% 20
-\BOOKMARK [1][-]{section.4}{Gelfand theory}{}% 21
-\BOOKMARK [2][-]{subsection.4.1}{Topology from monogenics}{section.4}% 22
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Power series}{subsection.4.1}% 23
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Correspondence}{subsection.4.1}% 24
-\BOOKMARK [2][-]{subsection.4.2}{Discussion}{section.4}% 25
-\BOOKMARK [1][-]{section.5}{Calder\363n problem}{}% 26
-\BOOKMARK [2][-]{subsection.5.1}{Electromagnetism}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.2}{Biot Savart Law}{section.5}% 28
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Discussion}{subsection.5.2}% 29
-\BOOKMARK [2][-]{subsection.5.3}{Generalization}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.4}{Inverse problem}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.5}{Recovering monogenic fields from }{section.5}% 32
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 33
-\BOOKMARK [1][-]{section.7}{Extras}{}% 34
+\BOOKMARK [1][-]{section.1}{Preliminaries}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Clifford and geometric algebras}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Multivectors and grading}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Reverse, inverses, and the Clifford and spin groups}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Duality and pseudoscalars}{subsection.1.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.1.4}{Blades and subspaces}{subsection.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.2}{Motivating example}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.3}{Multivector fields}{section.1}% 8
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Directional derivative and gradient}{subsection.1.3}% 9
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Monogenic fields}{subsection.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.4}{Differential forms}{section.1}% 11
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Exterior algebra and calculus}{subsection.1.4}% 12
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Integration on chains}{subsection.1.4}% 13
+\BOOKMARK [3][-]{subsubsection.1.4.3}{k-form inner product}{subsection.1.4}% 14
+\BOOKMARK [3][-]{subsubsection.1.4.4}{Stokes' and Green's theorem}{subsection.1.4}% 15

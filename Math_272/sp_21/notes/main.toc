@@ -26,14 +26,14 @@
 \contentsline {subsection}{\numberline {4.1}Composite Functions}{37}{subsection.2.4.1}%
 \contentsline {section}{\numberline {5}Integration of Vector Fields}{38}{section.2.5}%
 \contentsline {subsection}{\numberline {5.1}Line integrals of vector fields}{39}{subsection.2.5.1}%
-\contentsline {section}{\numberline {6}Flux and Surface Integrals}{39}{section.2.6}%
-\contentsline {subsection}{\numberline {6.1}Volume Integrals}{41}{subsection.2.6.1}%
+\contentsline {section}{\numberline {6}Flux and Surface Integrals}{40}{section.2.6}%
+\contentsline {subsection}{\numberline {6.1}Volume Integrals}{42}{subsection.2.6.1}%
 \contentsline {section}{\numberline {7}Potential Functions}{42}{section.2.7}%
 \contentsline {subsection}{\numberline {7.1}Integrating the Gradient}{43}{subsection.2.7.1}%
 \contentsline {subsection}{\numberline {7.2}Requirements for Potentials}{44}{subsection.2.7.2}%
 \contentsline {subsection}{\numberline {7.3}Properties of Fields with Potentials}{45}{subsection.2.7.3}%
-\contentsline {section}{\numberline {8}Integrals of Scalar Fields}{45}{section.2.8}%
-\contentsline {subsubsection}{One Dimensional Case}{46}{subsubsection*.28}%
+\contentsline {section}{\numberline {8}Integrals of Scalar Fields}{46}{section.2.8}%
+\contentsline {subsubsection}{One Dimensional Case}{47}{subsubsection*.28}%
 \contentsline {subsubsection}{Two Dimensional Case}{47}{subsubsection*.29}%
 \contentsline {subsubsection}{Three Dimensional Case}{48}{subsubsection*.30}%
 \contentsline {subsection}{\numberline {8.1}Line Integrals}{50}{subsection.2.8.1}%

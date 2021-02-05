@@ -1,39 +1,4 @@
-\begin{thebibliography}{10}
-
-\bibitem{belishev_dirichlet_2008}
-{\sc M.~Belishev and V.~Sharafutdinov}, {\em Dirichlet to {Neumann} operator on
-  differential forms}, Bulletin des Sciences Mathématiques, 132 (2008),
-  pp.~128--145.
-
-\bibitem{belishev_calderon_2003}
-{\sc M.~I. Belishev}, {\em The {Calderon} {Problem} for {Two}-{Dimensional}
-  {Manifolds} by the {BC}-{Method}}, SIAM Journal on Mathematical Analysis, 35
-  (2003), pp.~172--182.
-
-\bibitem{belishev_algebras_2017}
-{\sc M.~I. Belishev and A.~F. Vakulenko}, {\em On algebras of harmonic
-  quaternion fields in \$\{{\textbackslash}mathbb {R}\}{\textasciicircum}3\$},
-  arXiv:1710.00577 [math],  (2017).
-\newblock arXiv: 1710.00577.
-
-\bibitem{belishev_algebraic_2019}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em On algebraic and
-  uniqueness properties of 3d harmonic quaternion fields}, arXiv:1901.09201
-  [math],  (2019).
-\newblock arXiv: 1901.09201.
-
-\bibitem{belishev_algebras_2019}
-{\sc M.~I. Belishev and A.~F. Vakulenko}, {\em On algebras of harmonic
-  quaternion fields in \${\textbackslash}mathbb \{{R}\}{\textasciicircum}3\$},
-  St. Petersburg Mathematical Journal, 31 (2019), pp.~1--12.
-
-\bibitem{brackx_hilbert_2008}
-{\sc F.~Brackx and H.~D. Schepper}, {\em The {Hilbert} {Transform} on a
-  {Smooth} {Closed} {Hypersurface}},  (2008), p.~24.
-
-\bibitem{calderon_inverse_2006}
-{\sc A.~Calderón}, {\em On inverse boundary value problem}, Computational \&
-  Applied Mathematics - COMPUT APPL MATH, 25 (2006).
+\begin{thebibliography}{1}
 
 \bibitem{chisolm_geometric_2012}
 {\sc E.~Chisolm}, {\em Geometric {Algebra}}, arXiv:1205.5935 [math-ph],
@@ -44,10 +9,6 @@
 {\sc C.~Doran and A.~Lasenby}, {\em Geometric {Algebra} for {Physicists}},
   Cambridge University Press, 1~ed., May 2003.
 
-\bibitem{feldman_calderproblem_nodate}
-{\sc J.~Feldman, M.~Salo, and G.~Uhlmann}, {\em The {Calder}´on {Problem} —
-  {An} {Introduction} to {Inverse} {Problems}}, p.~317.
-
 \bibitem{hestenes_clifford_1986}
 {\sc D.~Hestenes}, {\em Clifford {Algebra} and the {Interpretation} of
   {Quantum} {Mechanics}}, in Clifford {Algebras} and {Their} {Applications} in
@@ -56,16 +17,6 @@
 
 \bibitem{janssens_special_nodate}
 {\sc T.~Janssens}, {\em Special functions in higher spin settings}, p.~192.
-
-\bibitem{ryan_clifford_2004}
-{\sc J.~Ryan}, {\em Clifford {Analysis}}, in Lectures on {Clifford}
-  ({Geometric}) {Algebras} and {Applications}, R.~Ablamowicz, W.~E. Baylis,
-  T.~Branson, P.~Lounesto, I.~Porteous, J.~Ryan, J.~M. Selig, G.~Sobczyk,
-  R.~Abłamowicz, and G.~Sobczyk, eds., Birkhäuser, Boston, MA, 2004,
-  pp.~53--89.
-
-\bibitem{salo_calderon_nodate}
-{\sc M.~Salo}, {\em The {Caldero}´n problem on {Riemannian} manifolds}, p.~97.
 
 \bibitem{schindler_geometric_2020}
 {\sc J.~C. Schindler}, {\em Geometric {Manifolds} {Part} {I}: {The}
@@ -77,14 +28,5 @@
 {\sc G.~Schwarz}, {\em Hodge {Decomposition} - {A} {Method} for {Solving}
   {Boundary} {Value} {Problems}}, Lecture {Notes} in {Mathematics},
   Springer-Verlag, Berlin Heidelberg, 1995.
-
-\bibitem{sharafutdinov_complete_2013}
-{\sc V.~Sharafutdinov and C.~Shonkwiler}, {\em The {Complete}
-  {Dirichlet}-to-{Neumann} {Map} for {Differential} {Forms}}, Journal of
-  Geometric Analysis, 23 (2013), pp.~2063--2080.
-
-\bibitem{uhlmann_inverse_2014}
-{\sc G.~Uhlmann}, {\em Inverse problems: seeing the unseen}, Bulletin of
-  Mathematical Sciences, 4 (2014), pp.~209--279.
 
 \end{thebibliography}
