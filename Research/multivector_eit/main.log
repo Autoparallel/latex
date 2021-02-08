@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  5 FEB 2021 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  8 FEB 2021 14:30
 entering extended mode
 **./main.tex
 (main.tex
@@ -1467,10 +1467,6 @@ r/tikz/libraries\tikzlibraryshadows.code.tex"
 File: tikzlibraryshadows.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 )
 \c@@todonotes@numberoftodonotes=\count381
-)
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\showkeys.sty
-"
-Package: showkeys 2014/10/28 v3.17 Show cite and label keys (DPC, MH)
 ) (main.aux)
 \openout1 = `main.aux'.
 
@@ -1625,50 +1621,50 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.13 T
-      he \emph{Clifford algebra} $C\ell(V,Q)$ is the quotient algebra [1]
+l.12 \begin{definition}
+                        [1]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 34.
 
 [2] [3] [4] [5]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 165
+LaTeX Font Info:    Trying to load font information for U+euf on input line 185
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
 
-LaTeX Warning: Reference `eq:projection+rejection_vector' on page 17 undefined 
-on input line 607.
-
-
-LaTeX Warning: Reference `eq:projection_rejection_vector' on page 17 undefined 
-on input line 607.
+LaTeX Warning: Reference `eq:projection+rejection_vector' on page 18 undefined 
+on input line 631.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 612.
+LaTeX Warning: Reference `eq:projection_rejection_vector' on page 18 undefined 
+on input line 631.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 612.
+(hyperref)                removing `math shift' on input line 636.
 
-[17]) (main.bbl [18]) [19] (main.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 636.
+
+[18]) (main.bbl [19]) [20] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1BBC88EE5F4CB00DD2AB69D75667FFEA;1193.
+(rerunfilecheck)             Checksum: BE89D194F2488F6D2DA0857324ADB1D0;1289.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 42963 strings out of 479799
- 1029326 string characters out of 2867787
+ 42929 strings out of 479799
+ 1029062 string characters out of 2867787
  1460021 words of memory out of 3000000
- 58987 multiletter control sequences out of 15000+200000
- 558786 words of font info for 120 fonts, out of 3000000 for 9000
+ 58946 multiletter control sequences out of 15000+200000
+ 558450 words of font info for 118 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,13n,132p,1110b,1023s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
@@ -1701,13 +1697,12 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (20 pages, 459479 bytes).
+sfonts/cm/cmtt8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (21 pages, 446164 bytes).
 PDF statistics:
- 513 PDF objects out of 1000 (max. 8388607)
- 163 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 174 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
