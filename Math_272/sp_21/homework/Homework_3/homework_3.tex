@@ -4,6 +4,21 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldU}{\boldsymbol{\vec{U}}}
 
 \begin{document}
 
@@ -13,103 +28,84 @@
 \end{center}
 \vspace{.5cm}
 
-%
-%
+
+\begin{problem}
+Show that for any smooth (more than twice differentiable) fields $f(x,y,z)$ and $\vecfieldV(x,y,z)$ that
+\begin{enumerate}[(a)]
+	\item $\grad \times \left(\grad f\right)=\boldsymbol{\vec{0}}$;
+	\item $\grad \cdot \left(\grad \times \vecfieldV\right)=0$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Let 
+	\[
+	\vecfieldU(x,y,z) = \begin{pmatrix} -y \\ x \\ 0 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV(x,y,z) = \begin{pmatrix} 2x \\ 2y \\ 2z \end{pmatrix},
+	\] 
+	be vector fields.  
+	\begin{enumerate}[(a)]
+		\item Explain why there exists no potential function $\phi(x,y,z)$ for the vector field $\vecfieldU$.
+		\item Explain why there does exist a potential function $\phi(x,y,z)$ for the field $\vecfieldV$.
+		\item Compute the potential function for $\vecfieldV$.
+	\end{enumerate}
+\end{problem}
+
 \begin{problem}
 Consider the two dimensional scalar field $T(x,y)=x+y$ that describes the temperature on the square plate $\Omega$ given by the set $0\leq x,y \leq 1$.  Compare the two answers you get!
 \begin{enumerate}[(a)]
 	\item Compute the integral
 	\[
-	\int_\Omega T(x,y)d\Omega.
+	\int_\Omega T d\Omega.
 	\]
 	\item Let $\curvegamma$ be the curve that traverses the boundary of the square plate in the counterclockwise direction.  Compute
 	\[
-	\int_{\curvegamma} T(\curvegamma)d\curvegamma. 
+	\int_{\curvegamma} T d\curvegamma. 
 	\]
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Compute the Fourier series for the following functions on the interval $[0,L]$. Then plot your result (for $N=1,50,100,500$) compared to the original function. What do you notice if you plot the Fourier series outside the range of $[0,L]$?
+Let $f(x,y,z)=2xy+e^{xz}+\sin(y)$ be a scalar field. Integrate $f$ over the triangular prism $\Omega$ defined by taking the half triangle of the unit square in the $xy$-plane satisfying $x\leq y$ and with height 4 above the $xy$-plane.
+\end{problem}
+
+\begin{problem}
+Consider $f(x,y)= 3x^4+x^3-18x^2y^2-3xy^2+3y^4$. 
 \begin{enumerate}[(a)]
-	\item $f(x)=\frac{1}{2}\cos\left(\frac{2\pi x}{L}\right)+\sin\left(\frac{-4\pi x}{L}\right)$.
-	\item $\sin\left(\frac{3\pi x}{L}\right)$.
-	\item $\delta(x-L/2)$.
+    \item Show $\Delta f = 0$.
+    \item Find the surface normal to the graph of $f$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem} 
+Parameterize the following either implicitly or explicitly. In Cartesian coordinates, find the parameterization of the normal vector as well.
+\begin{enumerate}[(a)]
+	\item The plane perpendicular to the vector $\vecv = \xhat + \yhat + \zhat$ passing through the point $(1,1,1)$.
+	\item The upper half of the unit circle in $\R^2$.
+	\item The surface of the unit sphere in $\R^3$.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Consider a function $f(x)$ that describes the height of a rubber string with rest length $L$. We can attach the ends of the string at $x=0$ and $x=L$ by requiring that $f(0)=f(L)=0$.  Then, one can subject the string to an external force $g(x)$ and find the profile of the string by solving
+Consider the following vector field
 \[
--\frac{d^2}{dx^2} f(x) = g(x).
+\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
 \]
+which models the electric field of an proton (in units of of charge $q=1$) placed at the origin.
 \begin{enumerate}[(a)]
-	\item Let $g(x)=\delta(x-L/2)$ and let $f(x)$ be given by some Fourier series.  Using the equation above, solve for the coefficients of the Fourier series for $f(x)$.
-	\item Plot the Fourier series for $f(x)$ for $N=1,5,50$.
-\end{enumerate}
-This is an extremely important to solve. The fact that we can determine a solution $f(x)$ where the external force is the Dirac delta function means that we have the ability to determine a the deformation of a string from a point force.
-\end{problem}
-
-
-\begin{problem}
-Compute the following Fourier transforms (using a table or WolframAlpha if need be).  
-\begin{enumerate}[(a)]
-	\item $\sin(3\pi x)$.
-	\item $e^{\frac{-x^2}{2}}$.
-	\item $\delta(x)$.
-\end{enumerate}
-\end{problem}
-
-%\begin{problem}
-%The electric potential $V(r)$ is a function that, through a gradient $\nabla$ (a derivative we'll soon see), describes the electric field $\vecE=-\nabla V$ generated by charged particles. One can determine that the potential $V(r)$ created from a point charge $Q$ is
-%\[
-%\frac{Q}{4\pi \epsilon_0 r}.
-%\]
-%But why does it have that form?
-%
-%Consider the equation
-%\[
-%-\frac{1}{x}\frac{d}{dx}\left(x \frac{d}{dx} f(x)\right) = \delta(x)
-%\]
-%over the region $\R$.  
-%\begin{enumerate}[(a)]
-%	\item Simplify the left hand side of the equation.
-%	\item Compute the Fourier transform of both sides of the equation
-%	\[
-%	\fourier\left(-\frac{1}{x}\frac{d}{dx}\left(x \frac{d}{dx} f(x)\right)\right)=\fourier(\delta(x)).
-%	\]
-%	\item Using the inverse Fourier transform, determine your solution $f(x)$ and compare to the function $V(r)=\frac{q}{4\pi \epsilon_0 r}$.
-%\end{enumerate}
-%Note that we were going about solving for the same equation as in Problem 2 except for that the region is no longer $[0,L]$ but rather all of $\R$. Also, the differential operator looks a bit different, but it is in fact the same operator but written in different coordinates!
-%\end{problem}
-
-\begin{problem}
-A common application for the Fourier transform is to solve differential equations whose domain is time $t\in [0,\infty)$. We can model how a point $x$ on a rubber string oscillates over time consider the differential equation
-\[
-u''(t)+v^2u(t)=0,
-\]
-with initial conditions $u(0)=L$ and $u'(0)=0$. Here $u(t)$ is the displacement of the string at position $x$ with the initial conditions describing the string being pulled tight at time $t=0$.
-\begin{figure}[H]
-	\centering
-	\def\svgwidth{\columnwidth}
-	\input{point_on_string.pdf_tex}
-\end{figure}
-To solve this equation, we could use use methods we learned previously, or apply the Fourier transform to the whole equation by
-\[
-\fourier(u''(t)+v^2u(t))=\fourier(0).
-\]
-\begin{enumerate}[(a)]
-	\item Compute the Fourier transform above.
-	\item One should then have a new equation
+	\item Show that $\vecfieldE(x,y,z) = - \grad \phi(x,y,z)$ where $\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $\phi(x,y,z)$ as the electrostatic potential (or voltage).
+	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
 	\[
-	-4\pi^2k^2\hat{u}(k)+v^2\hat{u}(k)=0.
+	\int_\Gamma \vecfieldE \cdot \unitvec d\Sigma.
 	\]
-	Solve this new equation for $k$.
-	\item One should have two values $k_1$ and $k_2$ from the work in (b).  This corresponds to the solution
+	\item Does the total flux depend on the size or shape of the box?
+	\item Using the provided argument, one can compute
 	\[
-	\hat{u}(k)=\delta(k-k_1) \qquad \textrm{and} \qquad \hat{u}(k)=\delta(k-k_2).
+	\int_\Omega \grad \cdot \vecfieldE d\Omega.
 	\]
-	Compute the inverse Fourier transform of the two delta functions. A linear combination of these correspond to your solution $u(t)$.
+	\begin{itemize}
+		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
+		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Is it true that $\grad \cdot \vecfieldE = 0$ everywhere?
+	\end{itemize}
 \end{enumerate}
 \end{problem}
 
