@@ -19,7 +19,7 @@ C\ell(V,Q) = \mathcal{T}(V) ~ / ~ \langle \blade{v} \otimes \blade{v} - Q(\blade
 To see how the tensor product descends to the quotient, we let $\blade{v}_1, \dots, \blade{v}_n$ be an arbitrary basis for $V$, then we can consider the tensor product of basis elements $\blade{v}_i \otimes \blade{v}_j$ which induces a product in the quotient $C\ell(V,Q)$ which we refer to as the \emph{Clifford multiplication}. In this basis, we write this product as concatenation $\blade{v_i}\blade{v_j}$ and define the multiplication by
 \begin{equation}
 \label{eq:clifford_multiplication}
-\blade{v_i} \blade{v_j} = \begin{cases} Q(\blade{v_i}) & \textrm{if $i=j$}, \\ \blade{v_i} \wedge \blade{v_j} & \textrm{if $i\neq j$},\end{cases}
+\blade{v}_i \blade{v}_j = \begin{cases} Q(\blade{v}_i) & \textrm{if $i=j$}, \\ \blade{v}_i \wedge \blade{v}_j & \textrm{if $i\neq j$},\end{cases}
 \end{equation}
 where $\wedge$ is the typical exterior product satisfying $\blade{v}\wedge \blade{w} = - \blade{w}\wedge \blade{v}$ for all $\blade{v},\blade{w}\in V$.  As a consequence, the exterior algebra $\bigwedge(V)$ can be realized as a subalgebra of any Clifford algebra over $V$ or as a Clifford algebra with a trivial quadratic form $Q=0$.  
 
@@ -27,7 +27,7 @@ In the case where $V$ has a (pseudo) inner product $g$, we can induce a quadrati
 \begin{definition}
 Let $V$ be a vector space with an (pseudo) inner product $g(\cdot,\cdot)$. Then taking $Q(\cdot) = g(\cdot,\cdot)$, the Clifford algebra $C \ell(V,Q)$ is called a \emph{geometric algebra}.
 \end{definition}
-In general, we put $\G$ and assume the inner product and vector space will be arbitrary, given alongside, or will be clear from context.  For example, when $V=\R^n$ we have the standard orthonormal basis $\blade{e_1},\dots,\blade{e_n}$ which allows us to neatly define the quadratic form $Q$ from the Euclidean inner product which has coefficients $\delta_{ij}$ with respect to this basis. Since we frequently utilize this geometric algebra, we put $\mathcal{G}_n \coloneqq C\ell(\R^n, |\cdot|)$ to simplify notation. 
+In general, we put $\G$ and assume the inner product and vector space will be arbitrary, given alongside, or will be clear from context.  For example, when $V=\R^n$ we have the standard orthonormal basis $\blade{e}_1,\dots,\blade{e}_n$ which allows us to neatly define the quadratic form $Q$ from the Euclidean inner product which has coefficients $\delta_{ij}$ with respect to this basis. Since we frequently utilize this geometric algebra, we put $\mathcal{G}_n \coloneqq C\ell(\R^n, |\cdot|)$ to simplify notation. 
 
 Geometric algebras are an old and widely studied topic. For more information, see the classical text \cite{hestenes_clifford_1986} or the more modern text \cite{doran_geometric_2003} which also provides a wide range of applications to physics problems. Both these sources include much of the other necessary preliminaries I cover in the remainder of this section. Finally, the paper \cite{chisolm_geometric_2012} proves many of the useful identities and notation used throughout this paper.
 
@@ -41,9 +41,9 @@ Note that $C\ell(V,Q)$ is a $\mathbb{Z}$-graded algebra with elements of grade-0
 and we use a boldface of both the character and its subscript to specify that a $r$-vector is a $r$-blade and we note that vectors (since they are $1$-blades) will not use this subscript. Instead, a vector $\blade{v}$ may use a non-boldfaced subscript to reference an index. Briefly, take for example the case where $\dim(V)=3$, then there are ${3\choose 2}=3$ 2-blades that form a basis for the bivectors and one particular choice of a bivector basis would be the following list of 2-blades
 \begin{equation}
 \label{eq:3_dim_basis}
-\blade{B_{12}} = \blade{v_1} \wedge \blade{v_2}, \quad \blade{B_{13}} = \blade{v_1} \wedge \blade{v_3}, \quad \blade{B_{23}} = \blade{v_2} \wedge \blade{v_3}.
+\blade{B}_{12} = \blade{v}_1 \wedge \blade{v}_2, \quad \blade{B}_{13} = \blade{v}_1 \wedge \blade{v}_3, \quad \blade{B}_{23} = \blade{v}_2 \wedge \blade{v}_3.
 \end{equation}
-We will repeatedly use the notation $\blade{B_{ij}} \coloneqq \blade{v_i}\wedge \blade{v_j}$ and the underlying basis will be clear from context. We refer to an $n-1$-vector as a \emph{pseudovector} and it should be noted that every $n-1$-vector is a blade (see \cref{subsubsec:duality_and_pseudoscalars}). In other literature, some will refer to a $r$-blade as a \emph{simple} or a \emph{decomposable} $r$-vector\todo{citations}. 
+We will repeatedly use the notation $\blade{B}_{ij} \coloneqq \blade{v}_i\wedge \blade{v}_j$ and the underlying basis will be clear from context. We refer to an $n-1$-vector as a \emph{pseudovector} and it should be noted that every $n-1$-vector is a blade (see \cref{subsubsec:duality_and_pseudoscalars}). In other literature, some will refer to a $r$-blade as a \emph{simple} or a \emph{decomposable} $r$-vector\todo{citations}. 
 
 In general, an element $A \in C\ell(V,Q)$ is written as a linear combination of basis elements of all possible grades and we refer to $A$ as a \emph{multivector}.  To extract the grade-$r$ components of $A$, we use the \emph{grade projection} for which we have the notation
 \begin{equation}
@@ -120,36 +120,36 @@ The even subalgebra is an extremely important entity that arises throughout phys
 
 \subsubsection{Multivector operations and the Clifford and spin groups}
 \label{subsubsec:reverse_inverse_clifford_spin_groups}
-For the remainder of this paper, let us focus solely on geometric algebras $\G$. Given access to an (pseudo) inner product we have a natural isomorphism between $V$ and $V^*$ by the Riesz representation.  Namely, given an arbitrary basis $\blade{v_i}$ for $V$ there exists the corresponding dual basis $f_i$ for $V^*$ such that $f_i(\blade{v_j})=\delta_{ij}$. In geometric algebra, this notion is somewhat superfluous as we can realize the dual basis inside $V$ itself in the following manner. Note that there is a unique map $\sharp \colon V^* \to V$ for which $f\mapsto \blade{f^\sharp}$ such that
+For the remainder of this paper, let us focus solely on geometric algebras $\G$. Given access to an (pseudo) inner product we have a natural isomorphism between $V$ and $V^*$ by the Riesz representation.  Namely, given an arbitrary basis $\blade{v}_i$ for $V$ there exists the corresponding dual basis $f_i$ for $V^*$ such that $f_i(\blade{v}_j)=\delta_{ij}$. In geometric algebra, this notion is somewhat superfluous as we can realize the dual basis inside $V$ itself in the following manner. Note that there is a unique map $\sharp \colon V^* \to V$ for which $f\mapsto \blade{f^\sharp}$ such that
 \begin{equation}
-\blade{f_i^\sharp} \cdot \blade{v_j} = \delta_{ij}.
+\blade{f_i^\sharp} \cdot \blade{v}_j = \delta_{ij}.
 \end{equation}
-Hence, if we simply put $\blade{v^i} \coloneqq \blade{f_i^\sharp}$ we can note that $\blade{v^i}$ is simply a vector in the geometric algebra.
+Hence, if we simply put $\blade{v}^i \coloneqq \blade{f^\sharp}_i$ we can note that $\blade{v}^i$ is simply a vector in the geometric algebra.
 \begin{definition}
-Let $\blade{v_1},\blade{v_2},\dots,\blade{v_n}$ be an arbitrary vector basis of $V$ generating $\G$. Then we have the \emph{reciprocal basis} $\blade{v^1},\blade{v^2},\dots,\blade{v^n}$ satisfying
+Let $\blade{v}_1,\blade{v}_2,\dots,\blade{v}_n$ be an arbitrary basis of $V$ generating $\G$. Then we have the \emph{reciprocal basis} $\blade{v}^1,\blade{v}^2,\dots,\blade{v}^n$ satisfying
 \begin{equation}
-    \blade{v^i}\cdot \blade{v_j} = \delta^i_j,
+    \blade{v}^i\cdot \blade{v}_j = \delta^i_j,
 \end{equation}
-and we refer to each $\blade{v^i}$ as a \emph{reciprocal vector}.
+and we refer to each $\blade{v}^i$ as a \emph{reciprocal vector}.
 \end{definition}
-In terms of the inner product $g$, we have that the coefficients are given by $g_{ij}=\blade{v_i}\cdot \blade{v_j}$ and thus we have an explicit definition for the reciprocal vectors by putting $\blade{v^i} = g^{ij}\blade{v_j}$ where $g^{ij}$ is the coefficients to the matrix inverse $(g_{ij})^{-1}$ and we assume the Einstein summation convention. 
+In terms of the inner product $g$, we have that the coefficients are given by $g_{ij}=\blade{v}_i\cdot \blade{v}_j$ and thus we have an explicit definition for the reciprocal vectors by putting $\blade{v}^i = g^{ij}\blade{v}_j$ where $g^{ij}$ is the coefficients to the matrix inverse $(g_{ij})^{-1}$ and we assume the Einstein summation convention. 
 
 The inverse to this isomorphism is $\flat \colon V \to V^*$ which is given by $\blade{v} \mapsto v^\flat$ satisfying
-\[
-v_i^\flat (\blade{v_j})= \delta_{ij}.
-\]
+\begin{equation}
+v_i^\flat (\blade{v}_j)= \delta_{ij}.
+\end{equation}
 Given these identifications, there is no need to distinguish between the vector space $V$ and its dual $V^*$ as it suffices to consider $V$ itself with reciprocal vectors $\blade{v^i}$ with the application of the scalar product. For reference, the maps $\sharp$ and $\flat$ are the \emph{musical isomorphisms} \todo{sources}.
 
 For a geometric algebra with a positive definite inner product, all blades have an inverse and hence form a group. With a pseudo inner product, the invertible elements are not quite as broad\todo{give an example later}. To this end, we can construct a group of all invertible elements referred to as the \emph{Clifford group} $\Gamma(\G)$ for an arbitrary geometric algebra $\G$ by
 \begin{equation}
-\Gamma(\G) \coloneqq \left\{ \prod_{j=1}^k \blade{v_j} ~\vert~ k\in \mathbb{Z}^+,~ \forall j~\colon1\leq j \leq k~\colon~\blade{v_i} \in V ~\textrm{such that}~ g(\blade{v_i},\blade{v_i})\neq 0\right\}.
+\Gamma(\G) \coloneqq \left\{ \prod_{j=1}^k \blade{v}_j ~\vert~ k\in \mathbb{Z}^+,~ \forall j~\colon1\leq j \leq k~\colon~\blade{v}_i \in V ~\textrm{such that}~ g(\blade{v}_i,\blade{v}_i)\neq 0\right\}.
 \end{equation}
-We refer to elements of the Clifford group as \emph{Clifford multivectors}. Note that Clifford multivectors are not necessarily blades since the product used in the construction is not the exterior product $\wedge$. For any Clifford multivectors $A = \blade{v_1} \cdots \blade{v_k}$ in the group $\Gamma$, we have that multiplicative inverse $A^{-1}$ is given by $A^{-1} = \blade{v^k} \dots \blade{v^1}$ as we can see that $A^{-1}A=AA^{-1} = 1$ by construction.  Another note is that all scalars, vectors, pseudovectors, and pseudoscalars are always in the Clifford group and have multiplicative inverses. The inverse of a vector $\blade{v}$ is given by $\frac{\blade{v}}{\blade{v}\cdot\blade{v}}$. The form of the inverse motivates the utility of the \emph{reverse} operator $\dagger$ defined so that $A^\dagger = \blade{v_k} \cdots \blade{v_1}$. For a $r$-blade $A_r$, the reverse also satisfies the relationship
+We refer to elements of the Clifford group as \emph{Clifford multivectors}. Note that Clifford multivectors are not necessarily blades since the product used in the construction is not the exterior product $\wedge$. For any Clifford multivectors $A = \blade{v}_1 \cdots \blade{v}_k$ in the group $\Gamma$, we have that multiplicative inverse $A^{-1}$ is given by $A^{-1} = \blade{v}^k \dots \blade{v}^1$ as we can see that $A^{-1}A=AA^{-1} = 1$ by construction.  Another note is that all scalars, vectors, pseudovectors, and pseudoscalars are always in the Clifford group and have multiplicative inverses. The inverse of a vector $\blade{v}$ is given by $\frac{\blade{v}}{\blade{v}\cdot\blade{v}}$. The form of the inverse motivates the utility of the \emph{reverse} operator $\dagger$ defined so that $A^\dagger = \blade{v}_k \cdots \blade{v}_1$. For a $r$-blade $A_r$, the reverse also satisfies the relationship
 \begin{equation}
 \label{eq:reverse_sign}
 A_r^\dagger = (-1)^{r(r-1)/2} A_r.
 \end{equation}
-One can see that the multiplicative inverse of an element of the Clifford group $A$ is the reverse of the corresponding product of reciprocal vectors since $A_r^{-1} = (\blade{v^1} \cdots \blade{v^k})^\dagger$. When we take $V=\R^n$ with the Euclidean inner product, we can note that elements $s \in \Gamma^+(\G_n)$ act as rotations on multivectors $A\in \G_n$ through a conjugate action
+One can see that the multiplicative inverse of an element of the Clifford group $A$ is the reverse of the corresponding product of reciprocal vectors since $A_r^{-1} = (\blade{v}^1 \cdots \blade{v}^k)^\dagger$. When we take $V=\R^n$ with the Euclidean inner product, we can note that elements $s \in \Gamma^+(\G_n)$ act as rotations on multivectors $A\in \G_n$ through a conjugate action
 \begin{equation}
 A \mapsto s A s^{-1}.
 \end{equation}
@@ -200,9 +200,9 @@ Morally, this definition is telling us $\psi \in \G^+$ is an element that transf
 
 Pseudoscalars are a deeply useful aspect of geometric algebra and we will now cover some of their utility. First and foremost, these pseudoscalars grant us a means of determining volumes. This will be a necessary notion in order to define integration in \cref{subsubsec:integration_on_submanifolds}.
 \begin{definition}
-Let $\G$ be a geometric algebra with an inner product with definite signature. Then the \emph{volume element} in the arbitrary basis $\blade{v_1},\dots,\blade{v_n}$ is 
+Let $\G$ be a geometric algebra with an inner product with definite signature. Then the \emph{volume element} in the arbitrary basis $\blade{v}_1,\dots,\blade{v}_n$ is 
 \begin{equation}
-\blade{\mu}=\blade{v_1} \wedge \blade{v_2} \wedge \cdots \wedge \blade{v_n}.
+\blade{\mu}=\blade{v}_1 \wedge \blade{v}_2 \wedge \cdots \wedge \blade{v}_n.
 \end{equation}
 \end{definition}
 It is worth noting that volume elements are invertible since they are blades in a geometric algebra with definite inner product. Similarly, any pseudoscalar is invertible in this case. 
@@ -273,6 +273,7 @@ where we use the bold notation for $\cross$ to distinguish between the bivector 
 
 
 \subsubsection{Blades and subspaces}
+\label{subsubsec:blades_and_subspaces}
 
 Each invertible unit $r$-blade $\blade{U_r}$ ($\|\blade{U_r}\|=1$) corresponds to a $r$-dimensional subspace and can be identified with a point in the Grassmannian of $r$-dimensional subspaces in an $n$-dimensional vector space, $\Grassmannian{r}{n}$. We will often allude to this identification directly by referring to a subspace via a reference to a unit blade, e.g., the subspace $\blade{U_r}$. Extending the dual to act on the unit $r$-blades that make up $\Grassmannian{r}{n}$, one realizes that $\Grassmannian{r}{n}^\perp = \Grassmannian{n-r}{n}$ shows the spaces are in bijection. Moreover, given a subspace $\blade{U_r}$, we can complete the vector space by
 \begin{equation}
@@ -342,7 +343,7 @@ Given a multivector $B$, the \emph{rejection} from the subspace $\blade{A_r}$ is
 Note that this operation is also grade preserving. In the case we have a blade $\blade{C_k}$ with $k<r$ and $k<n-r$, we can note
 \begin{equation}
 \label{eq:projection+rejection_blade}
-\projection_{\blade{A_r}}(\blade{C_k}) + \rejection_{\blade{A_r}}(\blade{C_k}) = \blade{C_k}.
+\blade{C_k}=\projection_{\blade{A_r}}(\blade{C_k}) + \rejection_{\blade{A_r}}(\blade{C_k}).
 \end{equation}
 This provides us a way to revisit the geometric notions of the interior and exterior products. In particular, we note that
 \begin{align}
@@ -365,88 +366,88 @@ Perhaps it is most enlightening for the reader to revisit \cref{eq:projection+re
 \subsubsection{Motivating example}
 \label{subsubsec:motivating_example}
 
-Rather than a sequence of multiple examples, it will prove to be far more illuminating to construct one large example for which most of the preliminaries to this point can be used in a meaningful way. As such, we shall not rule out the utility of geometric algebras with pseudo inner products. The classical example is the \emph{spacetime algebra} defined by taking $V=\R^4$ with a vector basis $\blade{\gamma_0},\blade{\gamma_1},\blade{\gamma_2},\blade{\gamma_3}$ satisfying
+Rather than a sequence of multiple examples, it will prove to be far more illuminating to construct one large example for which most of the preliminaries to this point can be used in a meaningful way. As such, we shall not rule out the utility of geometric algebras with pseudo inner products. The classical example is the \emph{spacetime algebra} defined by taking $V=\R^4$ with a vector basis $\blade{\gamma}_0,\blade{\gamma}_1,\blade{\gamma}_2,\blade{\gamma}_3$ satisfying
 \begin{subequations}
 \begin{align}
-\blade{\gamma_0} \cdot \blade{\gamma_0} &= -1\\
-\blade{\gamma_0} \cdot \blade{\gamma_i} &= 0  &i=1,2,3\\
-\blade{\gamma_i} \cdot \blade{\gamma_j} &= \delta_{ij}, &i,j=1,2,3.
+\blade{\gamma}_0 \cdot \blade{\gamma}_0 &= -1\\
+\blade{\gamma}_0 \cdot \blade{\gamma}_i &= 0  &i=1,2,3\\
+\blade{\gamma}_i \cdot \blade{\gamma}_j &= \delta_{ij}, &i,j=1,2,3.
 \end{align}
 \end{subequations}
-We refer to $\blade{\gamma_0}$ as \emph{temporal} and $\blade{\gamma_i}$ for $i=1,2,3$ as \emph{spatial}. For this basis, we can denote the matrix for this inner product $\eta =\operatorname{diag}(-+++)$ (often called the \emph{Minkowski metric}) and define $Q$ from $\eta$. Then, we have for a spacetime vector $\blade{v} = v_0 \blade{\gamma_0} +v_1 \blade{\gamma_1} + v_2 \blade{\gamma_2} + v_3 \blade{\gamma_3}$,
+We refer to $\blade{\gamma}_0$ as \emph{temporal} and $\blade{\gamma}_i$ for $i=1,2,3$ as \emph{spatial}. For this basis, we can denote the matrix for this inner product $\eta =\operatorname{diag}(-+++)$ (often called the \emph{Minkowski metric}) and define $Q$ from $\eta$. Then, we have for a spacetime vector $\blade{v} = v_0 \blade{\gamma}_0 +v_1 \blade{\gamma}_1 + v_2 \blade{\gamma}_2 + v_3 \blade{\gamma}_3$,
 \begin{equation}
 \label{eq:spacetime_inner_product}
-\|\blade{v}\| = \blade{v} \cdot \blade{v} = -a_0^2 + \sum_{i=1}^3 a_i^2.
+\|\blade{v}\| = \blade{v} \cdot \blade{v} = -v_0^2 + \sum_{i=1}^3 v_i^2.
 \end{equation}
 Then we put $\G_{1,3}$ to represent the spacetime algebra and, in broader generality, we put $\G_{p,q}$ for a geometric algebra with $p$ temporal vectors and $q$ spatial vectors. The reader may wish to, for example, revisit \cref{subsubsec:reverse_inverse_clifford_spin_groups} with $\G_{p,q}$ in mind in order to see a realization of the groups $\operatorname{SO}(p,q)$, $\operatorname{Spin}(p,q)$, and the spacetime spinors.
 
-As the naming above suggests, the geometric algebra of Euclidean space, $\G_3$, should naturally inside of the spacetime algebra. Note that we have the spatial pseudoscalar $\blade{\gamma_1} \wedge \blade{\gamma_2} \wedge \blade{\gamma_3}$, which, allowing for an extension of our notion of projection to the whole algebra, allows us to put
+As the naming above suggests, the geometric algebra of Euclidean space, $\G_3$, should naturally inside of the spacetime algebra. Note that we have the spatial pseudoscalar $\blade{\gamma}_1 \wedge \blade{\gamma}_2 \wedge \blade{\gamma}_3$, which, allowing for an extension of our notion of projection to the whole algebra, allows us to put
 \begin{equation}
-\projection_{\blade{\gamma_1} \wedge \blade{\gamma_2} \wedge \blade{\gamma_3}}(\G_{1,3}) \equiv \rejection_{\blade{\gamma_0}} (\G_{1,3}) = \G_3.
+\projection_{\blade{\gamma}_1 \wedge \blade{\gamma}_2 \wedge \blade{\gamma}_3}(\G_{1,3}) \equiv \rejection_{\blade{\gamma}_0} (\G_{1,3}) = \G_3.
 \end{equation}
 Perhaps one could refer to this mapping as the \emph{static map} as we project only onto the spatial subspace and, via duality, reject the temporal subspace. It is also worth noting that this static map is not just producing an isomorphic copy of $\G_3$, but a a copy of $\G_3$ directly. Now, in $\G_3$, we can specify an arbitrary multivector $A$ by
 \begin{equation}
-A= a_0 + a_1 \blade{\gamma_1} + a_2 \blade{\gamma_2} + a_3 \blade{\gamma_3} + a_{12} \blade{B_{12}} + a_{13} \blade{B_{13}} + a_{23} \blade{B_{23}} + a_{123} \blade{\gamma_1} \wedge \blade{\gamma_2} \wedge \blade{\gamma_3},
+A= a_0 + a_1 \blade{\gamma}_1 + a_2 \blade{\gamma}_2 + a_3 \blade{\gamma}_3 + a_{12} \blade{B}_{12} + a_{13} \blade{B}_{13} + a_{23} \blade{B}_{23} + a_{123} \blade{\gamma}_1 \wedge \blade{\gamma}_2 \wedge \blade{\gamma}_3,
 \end{equation}
 and so the grade projections read
 \begin{subequations}
 \begin{align}
 \proj{0}{A}&=a_0\\
-\proj{1}{A}&=a_1 \blade{\gamma_1} + a_2 \blade{\gamma_2} + a_3 \blade{\gamma_3}\\
-\proj{2}{A}&=a_{12} \blade{B_{12}} + a_{13} \blade{B_{13}} + a_{23} \blade{B_{23}}\\
-\proj{3}{A}&= a_{123} \blade{\gamma_1} \wedge \blade{\gamma_2} \wedge \blade{\gamma_3}.
+\proj{1}{A}&=a_1 \blade{\gamma}_1 + a_2 \blade{\gamma}_2 + a_3 \blade{\gamma}_3\\
+\proj{2}{A}&=a_{12} \blade{B}_{12} + a_{13} \blade{B}_{13} + a_{23} \blade{B}_{23}\\
+\proj{3}{A}&= a_{123} \blade{\gamma}_1 \wedge \blade{\gamma}_2 \wedge \blade{\gamma}_3.
 \end{align}
 \end{subequations}
 Then, we can write a even multivector as
 \begin{equation}
-q = q_0 + q_{23}\blade{B_{23}} + q_{31} \blade{B_{31}} + q_{12} \blade{B_{12}}.
+q = q_0 + q_{23}\blade{B}_{23} + q_{31} \blade{B}_{31} + q_{12} \blade{B}_{12}.
 \end{equation}
 Note as well that
 \begin{subequations}
 \begin{align}
-\blade{B_{23}}^2 = \blade{B_{31}}^2 = \blade{B_{12}}^2 &= -1\\
-\blade{B_{23}}\blade{B_{31}}\blade{B_{12}} &= +1,
+\blade{B}_{23}^2 = \blade{B}_{31}^2 = \blade{B}_{12}^2 &= -1\\
+\blade{B}_{23}\blade{B}_{31}\blade{B}_{12} &= +1,
 \end{align}
 \end{subequations}
 which is typical for spatial bivectors. In this case, one may notice that this even subalgebra is extremely close to being a copy of the quaternion algebra $\quat$. One can arrive at a representation of the quaternions by taking
 \begin{equation}
-\boldsymbol{i} \leftrightarrow \blade{B_{23}}, \quad \boldsymbol{j} \leftrightarrow -\blade{B_{31}}=\blade{B_{13}}, \quad \boldsymbol{k} \leftrightarrow \blade{B_{12}},
+\boldsymbol{i} \leftrightarrow \blade{B}_{23}, \quad \boldsymbol{j} \leftrightarrow -\blade{B}_{31}=\blade{B}_{13}, \quad \boldsymbol{k} \leftrightarrow \blade{B}_{12},
 \end{equation}
 and noting that we then have $\boldsymbol{ijk}=-1$ as well as $\boldsymbol{i}^2=\boldsymbol{j}^2=\boldsymbol{k}^2=-1$. A more in depth explanation is provided in \cite{doran_geometric_2003}. Thus, a purely we realize a quaternion as a parabivector $q$ and a purely imaginary quaternion is simply the grade-2 portion of the parabivector $q$. We also realize $\quat$ as scalar copies of elements of $\operatorname{Spin}(3) \cong \operatorname{Sp}(1)$. That is to say that $\quat \cong \R \times \operatorname{Spin}(3)$. Indeed, since elements of $\G_3^+$ are simply parabivectors, the parabivectors admit a natural spin representation.
 
 But we are not done here, and we can project down one dimension further by
 \begin{equation}
-    \projection_{\blade{\gamma_1} \wedge \blade{\gamma_2}} (\G_3) = \G_2.
+    \projection_{\blade{\gamma}_1 \wedge \blade{\gamma}_2} (\G_3) = \G_2.
 \end{equation}
-To see this in action, we let $\blade{v}=v_1 \blade{\gamma_1} + v_2 \blade{\gamma_2} + v_3 \blade{\gamma_3}$
+To see this in action, we let $\blade{v}=v_1 \blade{\gamma}_1 + v_2 \blade{\gamma}_2 + v_3 \blade{\gamma}_3$
 \begin{subequations}
 \begin{align}
-    \projection_{\blade{\gamma_1} \wedge \blade{\gamma_2}} = \projection_{\blade{B_{12}}} (\blade{v}) &= (v_1 \blade{\gamma_1} + v_2 \blade{\gamma_2} + v_3 \blade{\gamma_3})\rfloor \blade{B_{12}}\blade{B_{12}}^{-1}\\
-    &= (v_1 \blade{\gamma_2} - v_2 \blade{\gamma_1})\blade{B_{12}}^{-1} \\
-    &= v_1 \blade{\gamma_1} + v_2 \blade{\gamma_2}.
+    \projection_{\blade{\gamma}_1 \wedge \blade{\gamma}_2} = \projection_{\blade{B}_{12}} (\blade{v}) &= (v_1 \blade{\gamma}_1 + v_2 \blade{\gamma}_2 + v_3 \blade{\gamma}_3)\rfloor \blade{B}_{12}\blade{B}_{12}^{-1}\\
+    &= (v_1 \blade{\gamma}_2 - v_2 \blade{\gamma}_1)\blade{B}_{12}^{-1} \\
+    &= v_1 \blade{\gamma}_1 + v_2 \blade{\gamma}_2.
 \end{align}
 \end{subequations}
 Then, arbitrary multivectors $A$ and $B$ can be specified by
 \[
-A = a_0 + a_1 \blade{\gamma_1} + a_2 \blade{\gamma_2} + a_{12} \blade{B_{12}}, \qquad B = b_0 +b_1 \blade{\gamma_1} + b_2 \blade{\gamma_2} + b_{12}\blade{B_{12}}.
+A = a_0 + a_1 \blade{\gamma}_1 + a_2 \blade{\gamma}_2 + a_{12} \blade{B}_{12}, \qquad B = b_0 +b_1 \blade{\gamma}_1 + b_2 \blade{\gamma}_2 + b_{12}\blade{B}_{12}.
 \]
 We can then take the product $AB$ to yield
 \begin{subequations}
 \begin{align}
 \proj{0}{AB} &= a_0b_0 + a_1 b_1 + a_2 b_2 - a_{12}b_{12}\\
-\proj{1}{AB} &= (a_0 b_1 + a_1 b_0 - a_2 b_{12} + a_{12} b_2) \blade{\gamma_1} + (a_0 b_2 + a_2 b_0 + a_1b_{12} - a_{12} b_1) \blade{\gamma_2}\\
-\proj{2}{AB} &= (a_1b_2 - a_2 b_1)\blade{B_{12}}.
+\proj{1}{AB} &= (a_0 b_1 + a_1 b_0 - a_2 b_{12} + a_{12} b_2) \blade{\gamma}_1 + (a_0 b_2 + a_2 b_0 + a_1b_{12} - a_{12} b_1) \blade{\gamma}_2\\
+\proj{2}{AB} &= (a_1b_2 - a_2 b_1)\blade{B}_{12}.
 \end{align}
 \end{subequations}
-Most notably, we see that $\blade{B_{12}}^2=-1$ and this allows us to consider a parabivector
+Most notably, we see that $\blade{B}_{12}^2=-1$ and this allows us to consider a parabivector
 \begin{equation}
-z = x + y \blade{B_{12}}
+z = x + y \blade{B}_{12}
 \end{equation}
-which is exactly a representation of the complex number $\zeta = x+ iy$ in $\G_2^{0+2}=\G_2^+$.  Thus, the even subalgebra of this geometric algebra is indeed isomorphic to the complex numbers $\C$. Indeed, there is one unit 2-blade $\blade{B_{12}}$ in $\G_2$ to form the spin algebra $\mathfrak{spin}(2) \cong \R$ and as a consequence all unit norm elements in $\G_2^+$ can be written as
+which is exactly a representation of the complex number $\zeta = x+ iy$ in $\G_2^{0+2}=\G_2^+$.  Thus, the even subalgebra of this geometric algebra is indeed isomorphic to the complex numbers $\C$. Indeed, there is one unit 2-blade $\blade{B}_{12}$ in $\G_2$ to form the spin algebra $\mathfrak{spin}(2) \cong \R$ and as a consequence all unit norm elements in $\G_2^+$ can be written as
 \begin{equation}
-   e^{\theta \blade{B_{12}}} = \sum_{n=0}^\infty \frac{\theta \blade{B_{12}}}{n!} = \cos(\theta)+\blade{B_{12}}\sin(\theta),
+   e^{\theta \blade{B}_{12}} = \sum_{n=0}^\infty \frac{\theta \blade{B}_{12}}{n!} = \cos(\theta)+\blade{B}_{12}\sin(\theta),
 \end{equation}
-where $\theta \blade{B_{12}}$ is a general bivector in $\G_2$ when $\theta \in \R$ is arbitrary. Hence, we arrive at $\operatorname{Spin}(2)\cong \operatorname{U}(1)$. Any element in $\C$ is also a scaled version of an element of the spin group $\operatorname{Spin}(2)$. Hence, we can use a spin representation for an element in $\C$ via $z=re^{\theta \blade{B_{12}}} \in \R\times \operatorname{Spin}(2)$.  This special case shows that parabivectors in $\G_2$ have a unique spin representation and they are spinors as well since the whole of the even subalgebra consists of parabivectors.
+where $\theta \blade{B}_{12}$ is a general bivector in $\G_2$ when $\theta \in \R$ is arbitrary. Hence, we arrive at $\operatorname{Spin}(2)\cong \operatorname{U}(1)$. Any element in $\C$ is also a scaled version of an element of the spin group $\operatorname{Spin}(2)$. Hence, we can use a spin representation for an element in $\C$ via $z=re^{\theta \blade{B}_{12}} \in \R\times \operatorname{Spin}(2)$.  This special case shows that parabivectors in $\G_2$ have a unique spin representation and they are spinors as well since the whole of the even subalgebra consists of parabivectors.
 
 But, the above work is not necessary special to the starting point of $\G_{1,3}$ or $\G_3$. In fact, if we take $\G_n$ for $n\geq 2$, then there are natural copies of $\C$ contained inside of $\G_n$. In particular, we have the isomorphism
 \begin{equation}
@@ -456,7 +457,7 @@ which shows that complex numbers arise as parabivectors via the representation
 \begin{equation}
         \zeta = x + y\blade{B},
 \end{equation}
-since $\blade{B}^2=-1$. Given the standard basis $\blade{e_1},\dots,\blade{e_n}$ we have copies of $\C$ for each of the ${ n \choose 2}$ unit bivectors $\blade{B_{jk}}$ with $k=2,\dots,n$ and $j<k$.
+since $\blade{B}^2=-1$. Given the standard basis $\blade{e_1},\dots,\blade{e_n}$ we have copies of $\C$ for each of the ${ n \choose 2}$ unit bivectors $\blade{B}_{jk}$ with $k=2,\dots,n$ and $j<k$.
 
 
 
@@ -576,7 +577,7 @@ to refer to elements of this set as \emph{monogenic fields} on $\Omega$. As a su
 
 It will be pertinent in \todo{reference later section} to speak of function algebras. Hence, one could consider if the space $\monogenics(M)$ is, in general, an algebra. While it is clear that the sum of two monogenic fields is also a monogenic field, it is not necessarily true that the product of two monogenic fields is monogenic. Hence, these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient. 
 
-To the contrary, let $M$ be 2-dimensional, then the space of monogenic spinors $\monogenics^+(M)$ is indeed an algebra. In fact, taking $\G_2(\R^2)$ we can note that monogenic spinors are exactly the complex holomorphic functions via the identification in \cref{subsubsec:motivating_example}. Take the coordinates $x$, $y$ and the standard basis $\blade{e}_i$, then if $f=u+v\blade{B_{12}} \in \G_2(\R^2)$ we can note that $\grad f =0$ yields the Cauchy-Riemann equations
+To the contrary, let $M$ be 2-dimensional, then the space of monogenic spinors $\monogenics^+(M)$ is indeed an algebra. In fact, taking $\G_2(\R^2)$ we can note that monogenic spinors are exactly the complex holomorphic functions via the identification in \cref{subsubsec:motivating_example}. Take the coordinates $x$, $y$ and the standard basis $\blade{e}_i$, then if $f=u+v\blade{B}_{12} \in \G_2(\R^2)$ we can note that $\grad f =0$ yields the Cauchy-Riemann equations
 \begin{align}
     \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
     \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
@@ -600,7 +601,7 @@ The language of differential forms rests neatly inside geometric calculus. We wi
 
 Given coordinates $x^i$ on $M$ we have the local basis tangent vector fields $\blade{v}_i=\frac{\partial}{\partial x^i}$ with the corresponding 1-forms $dx^i$ that are each local sections of $T^*M$ and are the exterior derivatives (or gradients) of the coordinate functions.  Typically, 1-forms are viewed as linear functionals on tangent vectors and in these coordinates we have $dx^i  (\partial_j) = \delta^i_j$ and one can thus take a pairing of 1-form fields and vector fields and integrate over 1-dimensional submanifolds. The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product $\wedge$.
 
-Let $M$ be an $n$-dimensional pseudo Riemannian manifold with metric $g$, then we have the Riemannian volume measure in local coordinates by
+Let $M$ be an $n$-dimensional pseudo Riemannian manifold with metric $g$, let $\Omega(M)$ be the exterior algebra of smooth form fields on $M$, and let $\Omega^r(M)$ be the space of smooth $r$-form fields on $M$. Then we have the Riemannian volume measure $\omega \in \Omega^n(M)$ given in local coordinates by
 \begin{equation}
 \omega = \sqrt{|g|} dx^1\dots dx^n.
 \end{equation}
@@ -655,47 +656,93 @@ d \alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger,
 \end{equation}
 which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalar fields, this returns the gradient as desired. We will find $\grad \rfloor$ can be identified with the codifferential $\delta$ up to a sign. 
 
-\subsubsection{Integration and currents}
-\todo{carry on from here}
+\subsubsection{Integration}
 \label{subsubsec:integration_on_submanifolds}
-\todo{rewrite this in terms of chains and currents?}
-Given a $k$-dimensional submanifold of $K \subset \Omega$ with a $k$-form $\alpha_k$ defined on $K$, we can integrate the $k$-form. Using the multivector equivalents leads us to the $k$-dimensional directed measure $dK$ for the submanifold $K$.  Given $K$ is a submanifold of $\Omega$, for any $x \in K$ we have tangent space $T_x K$ which corresponds to a tangent $k$-blade $I_K(x)$.  We put $I_K$ as the smooth $k$-blade field everywhere tangent to $K$. Then we have the directed volume measure on $K$ given by
-\[
-dK = I_K^\dagger \cdot dX_k.
-\]
-For a tangent $k$-vector field $A_k$ on $K$, we must have for any $x \in K$ that $f = \operatorname{P}_{I_K} \circ f$ so that these fields lie purely tangent to $K$. In particular, we can always put $A_k = A I_k^\dagger$ for a scalar field $A$. These fields can contract with the directed measure $dX_k$ to create a $k$-form on $K$ by $\alpha_k = A_k \cdot dX_k = A dK$ which can be integrated as
-\[
-\int_K \alpha = \int_K A dK.
-\]
-Hence, on $\Omega$ itself, we can decompose top grade forms by taking
-\[
-\alpha_n = A_n \cdot dX_n = A I^\dagger \cdot dX_n
-\]
-for a scalar field $A$ satisfying $A_n = AI^\dagger$. Then this form can be integrated by
-\[
-\int_\Omega \alpha_n = \int_\Omega A d\Omega.
-\]
 
-There is also the normal space $N_x K$ that is everywhere orthogonal (with respect to $g$ on $\Omega$) to $T_x K$.  In particular, we have the normal $(n-k)$-blade field $\nu = I_K^\dagger I$. Note that for a unit $k$-blade $I_K$ we have $I_K^{-1}=I_K^\dagger$ and we see $I_K \nu = I$. Since $K$ is a submanifold of $\Omega$ we have the inclusion $\iota \colon K \to \Omega$ and the induced pullback on forms $\iota^*$ which is equivalent to the tangent projection operator $\tangent_K$ seen in \cite{schwarz_hodge_1995}. Given a $p$-form $\alpha_p$ defined on $\Omega$, we have that $\tangent_K \alpha_p = \alpha_p \circ \operatorname{P}_{I_K}$. Specifically, $\alpha_p = A_p \cdot dX_p$ we have \todo[inline]{I should probably work through this to show it's true}
-\[
-\tangent_K \alpha_p  = A_p \cdot (dX_p \circ \operatorname{P}_{I_K}) = \operatorname{P}_{I_K}(A_p) \cdot dX_p = \rejection_{\nu}(A_p)\cdot dX_p.
-\]
-The normal projection $\normal_K$ is then $\normal_K \alpha_p = \alpha_p - \tangent_K \alpha_p$ and moreover
-\[
-\normal_K \alpha_p = \rejection_{I_K}(A_p)\cdot dX_p = \operatorname{P}_{\nu}(A_p)\cdot dX_p.
-\]
-\todo[inline]{Not sure this is true. but \url{https://en.wikipedia.org/wiki/Geometric_algebra} talks about projection and rejection.}
+Given a $r$-dimensional submanifold $R \subset M$ with a $r$-form $\alpha_r$ defined on $R$, we can integrate this $r$-form. However, we want to phrase this in terms of the the multivector equivalents.  First, let $\omega_R$ be the volume measure for the submanifold $R$.  Given $R$ is a submanifold of $M$, for any $x \in R$ we have tangent space $T_x R$ which is a subspace of $T_x M$. Hence, we can put $\blade{I}_R(x)^{-1 \dagger}$ to be the multivector equivalent of $\omega_R$ by
+\begin{equation}
+\omega_R = \blade{I}_R^{-1 \dagger} \cdot dX_r^\dagger = \blade{I}_R^{-1} \cdot dX_r.
+\end{equation}
+We should think of $\blade{I}_R^{-1 \dagger}$ as representing the subspace $T_x R \subset T_x M$ and note that we think of $\blade{I}_R^{-1 \dagger}$ as a unit pseudoscalar field defined on $R$. 
 
-This is pertinent when we take the submanifold $\Sigma = \partial \Omega$. There, $I_\Sigma$ yields the directed measure
+An $s$-vector field $A_s$ on $R$ is said to be \emph{tangent} if
+\begin{equation}
+A_s = \projection_{\blade{I}_R}(A_s)
+\end{equation} 
+so that for any $x \in R$ that $A_s = \operatorname{P}_{\blade{I}_R(x)}(A_s(x))$. Immediately we can conclude that we must have $s\leq r$ or this projection is zero (see \cref{subsubsec:blades_and_subspaces}). We may, for example, wish to integrate scalar fields $A_0$ over $R$ and in this case we can put $A_r = A_0 \blade{I}_R^{-1}$ and contract with $dX_r$ to create a tangent $r$-form on $R$ by 
+\begin{equation}
+\alpha_r = A_r \cdot dX_r = A \omega_R
+\end{equation}
+which can be integrated as
+\begin{equation}
+\int_K \alpha = \int_K A_0 \omega_R.
+\end{equation}
+This of course applies to scalar fields on $M$ itself, for which we can take $A_n = A_0 \blade{I}^{-1}$. Then this form can be integrated by
+\begin{equation}
+\int_M \alpha_n = \int_M A_0 \omega.
+\end{equation}
+
+There is also the normal space $N_x R$ that is everywhere orthogonal to $T_x R$ with respect to $g$ on $M$. This yields the normal $n-r$-blade field $\blade{\nu}_R = \blade{I}_R^\perp$. Since $R$ is a submanifold of $M$, we have the inclusion $\iota \colon R \to M$ and the induced pullback on forms $\iota^* \colon \Omega(M) \to \Omega(R)$. 
+\begin{lemma}
+Let $\alpha_s$ be an $s$-form defined on $M$ and let $\iota \colon R \to M$ be the inclusion of the submanifold $R$ into $M$. Then the pullback $\iota^*$ on the multivector equivalent $A_s$ is given by
+\begin{equation}
+\iota^* \alpha_s = \projection_{\blade{I}_R}(A_s) \cdot dX_s.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Note that by definition we have
 \[
-d\Sigma \coloneqq I_\Sigma^\dagger \cdot dX_{n-1}.
+(\iota^* \alpha_s)_x (\blade{v}_1,\dots,\blade{v}_r) = (\alpha_s)_x(d\iota_x\blade{v}_1,\dots, d\iota_x\blade{v}_r ),
 \]
-The normal space is 1-dimensional and $\nu$ is the unit normal vector to the boundary. The pullback coincides with projection into the tangent space given by $I_\Sigma$.  Then, for 1-forms $\alpha = \cdot dX_1$ it is apparent that $\tangent_\Sigma \alpha = \projection{I_\Sigma}{a} \cdot dX_1$ and $\normal_\Sigma \alpha = \rejection_{I_\Sigma}(a) \cdot dX_1$ by Equations \ref{eq:projection+rejection_vector} and \ref{eq:projection_rejection_vector}. One can then find the flux of a vector field through $\Sigma$ arises as an $(n-1)$-form $\projection{\nu}{a} I^{-1} \cdot dX_{n-1}$. Once again we see that the flux is determined both by the vector field $a$ and the local geometry of $\Sigma$ captured by $d\Sigma$ in the following way. Note that  $\nu^{-1}=\nu$ since $\|\nu\|=1$ everywhere on $\Sigma$ and so $\projection{\nu}{a} I^{-1}= a \cdot \nu \nu I^{-1} = a \cdot \nu I_\Sigma^\dagger$ which gives us the corresponding form $a \cdot \nu d\Sigma$ and the total flux of $a$ through $\Sigma$ is then
+for arbitrary vector fields $\blade{v}_1,\dots,\blade{v}_s$ and at all $x\in R$. Then, since $\iota$ is inclusion, we have
+\[
+d\iota_x = \projection_{\blade{I}_R(x)},
+\]
+at each point $x \in R$ and hence
+\[
+\iota^* \alpha_s = \alpha_s \circ \projection_{\blade{I}_R}.
+\]
+For all $\blade{v}_i$ we can put
+\[
+\blade{v}_i = \projection_{\blade{I}_R}(\blade{v}_i) + \rejection_{\blade{I}_R}(\blade{v}_i),
+\]
+and note for the multivector equivalent
+\begin{align}
+\label{eq:previous_1}
+(\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\blade{v}_1,\dots,\blade{v}_s) &= (\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1) + \rejection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s) + \rejection_{\blade{I}_R}(\blade{v}_s))\\
+&= (\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s)),
+\end{align}
+since $\projection_{\blade{I}_R}(A_s)$ is supported only on $R$. Then, if $s\leq r$,
+\begin{align*}
+\iota^*\alpha_s &= (A_s \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s))\\
+&= ((\projection_{\blade{I}_R}(A_s) + \rejection_{\blade{I}_R}(A_s)) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s))\\
+&= (\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s)),
+\end{align*}
+and by \cref{eq:previous_1} we have our intended result. If $s>r$, then 
+\[
+\iota^* \alpha_s = 0 = \projection_{\blade{I}_R}(A_s)
+\]
+which proves the lemma.
+\end{proof}
+
+The above seems to motivate the choice of \cite{schwarz_hodge_1995} to put $\tangent_R = \iota^*$ to refer to the tangential part of a differential form. The normal part of a form is $\normal_R \alpha_s = \alpha_s - \tangent_R \alpha_s$. The following corollary is immediate given \cref{eq:projection_rejection_duality,eq:projection+rejection_blade}. 
+\begin{corollary}
+Let $\alpha_s$ be an $s$-form with normal part $\normal_R \alpha_s$, then on the multivector equivalent $A_s$ we have
+\begin{equation}
+\normal_R \alpha_p = \operatorname{P}_{\blade{\nu}_R}(A_s)\cdot dX_s = \rejection_{I_R}(A_s)\cdot dX_s.
+\end{equation}
+\end{corollary}
+
+\todo{go from here}
+This is pertinent when we take $M$ to be a manifold with boundary $\partial M$. In this case we let $\blade{I}_\partial$ denote the tangent $n-1$-blade to get the boundary measure
+\begin{equation}
+\omega_\partial \coloneqq \blade{I}_\partial^{-1} \cdot dX_{n-1}.
+\end{equation}
+The normal space is 1-dimensional and we put $\blade{\nu}$ to refer to the boundary normal space. The pullback coincides with projection into the tangent space given by $I_\Sigma$.  Then, for 1-forms $\alpha = \cdot dX_1$ it is apparent that $\tangent_\Sigma \alpha = \projection{I_\Sigma}{a} \cdot dX_1$ and $\normal_\Sigma \alpha = \rejection_{I_\Sigma}(a) \cdot dX_1$ by Equations \ref{eq:projection+rejection_vector} and \ref{eq:projection_rejection_vector}. One can then find the flux of a vector field through $\Sigma$ arises as an $(n-1)$-form $\projection{\nu}{a} I^{-1} \cdot dX_{n-1}$. Once again we see that the flux is determined both by the vector field $a$ and the local geometry of $\Sigma$ captured by $d\Sigma$ in the following way. Note that  $\nu^{-1}=\nu$ since $\|\nu\|=1$ everywhere on $\Sigma$ and so $\projection{\nu}{a} I^{-1}= a \cdot \nu \nu I^{-1} = a \cdot \nu I_\Sigma^\dagger$ which gives us the corresponding form $a \cdot \nu d\Sigma$ and the total flux of $a$ through $\Sigma$ is then
 \[
 \int_\Sigma (\projection{\nu}{a} I^{-1}) \cdot dX_{n-1} = \int_\Sigma a \cdot \nu d\Sigma.
 \]
 
-\subsubsection{$k$-form inner product}
 \todo[inline]{Show that this relates back to the Clifford norm.}
 For smooth $k$-forms $\alpha_k = A_k \cdot dX_k$ and $\beta_k = B_k \cdot dX_k$, we have an inner product 
 \[
