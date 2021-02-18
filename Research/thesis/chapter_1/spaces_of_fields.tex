@@ -1,50 +1,95 @@
+\subsection{Monogenic fields}
+
+Multivectors in the kernel of $\grad$ are of fundamental importance in geometric calculus and these multivectors are the motivation for Clifford analysis much like elements in the kernel of $\Delta$ give rise to harmonic analysis. 
+\begin{definition}
+ Let $A \in \G(M)$. Then we say that $A$ is \emph{monogenic} if $A \in \ker(\grad)$.
+\end{definition}
+
+Monogenic fields are of utmost importance as they have many beautiful properties. One should find them as a suitable generalization of the notion of complex holomorphicity. For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values through a generalized Cauchy integral formula and for a spinor field each of the graded components of $f$ are harmonic. We put 
+\[
+\monogenicfields{}\coloneqq \{A \in \G(M) ~\vert~ \grad A =0\}
+\]
+to refer to elements of this set as \emph{monogenic fields} on $M$. As subspaces we also have the \emph{monogenic $r$-vectors} $\monogenicfields{r}$, \emph{monogenic spinors} $\monogenicfields{+}$, and the \emph{monogenic parabivectors} $\monogenicfields{0+2}$. 
+
+\begin{remark}
+The definition for $\monogenicfields{r}$ is multivector equivalent to space of harmonic fields,
+    \begin{equation}
+        \harmonicfields{r}\coloneqq \{\alpha_r \in \Omega^{r}(M) ~\vert~ d \alpha_r = 0, ~ \delta \alpha_r = 0\}.
+    \end{equation}
+We will avoid the term harmonic fields since we reference multivector fields in the kernel of $\Delta$ as harmonic.
+\end{remark}
+
+It will be pertinent in \todo{reference later section} to speak of function algebras. Hence, one could consider if the space $\monogenicfields{}$ is, in general, an algebra. While it is clear that the sum of two monogenic fields is also a monogenic field, it is not necessarily true that the product of two monogenic fields is monogenic. Hence, these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient. 
+
+To the contrary, let $M$ be 2-dimensional, then the space of monogenic spinors $\monogenics^+(M)$ is indeed an algebra. In fact, taking $\G_2(\R^2)$ we can note that monogenic spinors are exactly the complex holomorphic functions via the identification in \cref{subsubsec:motivating_example}. Take the coordinates $x$, $y$ and the standard basis $\blade{e}_i$, then if $f=u+v\blade{B}_{12} \in \G_2(\R^2)$ we can note that $\grad f =0$ yields the Cauchy-Riemann equations
+\begin{align}
+    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+    \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
+\end{align}
+
+Though the two dimensional case is special, there will be nontrivial algebras living inside each $\monogenics(M)$ for manifolds of dimension $>3$. Also, in all dimensions, the gradient is invariant under actions from the spin group.
+\begin{lemma}
+\label{lem:clifford_invariant}
+Let $s\in \spingroup$ then $\grad \circ s = s \circ \grad$.
+\end{lemma}
+This lemma is classical in the theory of the Dirac operator, Clifford analysis, and harmonic analysis so we omit a proof.  One can see \cite{janssens_special_nodate}, for example. The following corollary is immediate.
+\begin{corollary}
+The space of monogenic spinors $\monogenics^+(M)$ is $\spingroup$ invariant.
+\end{corollary}
+\todo{revisit these lemma and corollary for spin(V) not just spin(n)}.
+
+
 \subsection{Hodge-type decompositions}
-Let us define the following spaces of $r$-vectors. We write this in terms of the multivector equivalents to forms.
+Let us define the following spaces of multivectors that mimic their differential forms counterpart.
 \begin{itemize}
-    \item The \emph{exact $r$-vectors},
+    \item The \emph{exact fields},
     \begin{equation}
-        \exactvectors{r}\coloneqq \{\grad \wedge A_{r-1} ~\vert~ A_{r-1} \in \G^{r-1}(M), ~ \projection_{\blade{\nu}}(A_{r-1}) = 0\};
+        \exactfields{}\coloneqq \{\grad \wedge A ~\vert~ A \in \G(M), ~ \projection_{\blade{\nu}}(A) = 0\};
     \end{equation}
-    \item The \emph{co-exact $r$-vectors},
+    \item The \emph{co-exact fields},
     \begin{equation}
-        \coexactvectors{r}\coloneqq \{\grad \rfloor A_{r+1} ~\vert~ A_{r+1} \in \G^{r+1}(M), ~ \rejection_{\blade{\nu}}(A_{r+1}) = 0\};
-    \end{equation}
-    \item The \emph{harmonic fields},
-    \begin{equation}
-        \harmonicfields{r}\coloneqq \{A_r \in \G^{r}(M) ~\vert~ \grad \wedge A_r = 0, ~ \grad \rfloor A_r = 0\}.
+        \coexactfields{}\coloneqq \{\grad \rfloor A ~\vert~ A \in \G(M), ~ \rejection_{\blade{\nu}}(A) = 0\};
     \end{equation}
     \item The \emph{Dirichlet harmonic fields},
     \begin{equation}
-        \harmonicdirichlet{r}\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ \projection_{\blade{\nu}}(A_r) = 0\}.
+        \monogenicdirichlet{}\coloneqq \{A \in \monogenicfields{} ~\vert~ \projection_{\blade{\nu}}(A) = 0\};
     \end{equation}
     \item The \emph{Neumann harmonic fields},
     \begin{equation}
-        \harmonicneumann{r}\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ \rejection_{\blade{\nu}}(A_r) = 0\}.
+        \monogenicneumann{}\coloneqq \{A \in \monogenicfields{} ~\vert~ \rejection_{\blade{\nu}}(A) = 0\}.
     \end{equation}
 \end{itemize}
-Notice that the exact and coexact forms satisfy not only a differential condition, but a boundary condition as well. Then, under the $r$-form inner product, we find the orthogonal direct sum decomposition
+We then use superscripts to denote the associated $r$-vector subspace. Notice that the exact and coexact fields satisfy not only a differential condition, but a boundary condition as well. Then, under the $r$-form inner product, we find the orthogonal direct sum decomposition
 \begin{equation}
-\Omega^r(M) = \exactvectors{r} \oplus \coexactvectors{r} \oplus \harmonicfields{r},
+\G^r(M) = \exactfields{r} \oplus \coexactfields{r} \oplus \monogenicfields{r},
 \end{equation}
 known as the Hodge-Morrey decomposition. Within the space of harmonic fields we have
 \begin{align}
-    \harmonicex{r} &\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ A_r = \grad \wedge B_{r-1} \},\\
-    \harmonicex{r} &\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ A_r = \grad \rfloor B_{r+1} \}.
+    \monogenicex{} &\coloneqq \{A \in \monogenicfields{} ~\vert~ A = \grad \wedge B \},\\
+    \monogenicco{} &\coloneqq \{A \in \monogenicfields{} ~\vert~ A = \grad \rfloor B \}.
 \end{align}
 Further, we have two decompositions of the space of harmonic fields 
 \begin{align}
-    \harmonicfields{r} &= \harmonicdirichlet{r} \oplus \harmonicco{r}, \\
-    \harmonicfields{r} &= \harmonicneumann{r} \oplus \harmonicex{r},
+    \monogenicfields{r} &= \monogenicdirichlet{r} \oplusl \monogenicco{r}, \\
+    \monogenicfields{r} &= \monogenicneumann{r} \oplusl \monogenicex{r},
 \end{align}
 which are the Friedrichs decompositions.
 
-\begin{proposition}
-    The harmonic fields $\harmonicfields{r}$ are monogenic $r$-vectors so that $\monogenicfields{r} = \harmonicfields{r}$.
-\end{proposition}
-\begin{proof}
-Trivial
-\end{proof}
 
-We can utilize 
-Monogenics of a single grade are already studied. but now we can study monogenics of mixed grades!
+\textcolor{red}{Monogenics of a single grade are already studied. but now we can study monogenics of mixed grades!} It is a very reasonable question to ask whether the Hodge-Morrey decomposition extends to
+    \begin{equation}
+        \G(M) \stackrel{?}{=} \exactfields{} \oplus \coexactfields{} \oplus \monogenicfields{}
+    \end{equation} 
+under the multivector field inner product. This is, in fact, not true.  While it is clear that
+\begin{align}
+    \G(M) &= \bigoplus_{j=1}^n \G^j(M)\\
+    \exactfields{} &= \bigoplus_{j-1}^n \exactfields{j}\\
+    \coexactfields{} &= \bigoplus_{j-1}^n \coexactfields{j},
+\end{align}
+we have the following failure
+\begin{equation}
+    \monogenicfields{} \neq \bigoplus_{j=1}^n \monogenicfields{j}.
+\end{equation}
+
+
 \subsection{Integral transforms}

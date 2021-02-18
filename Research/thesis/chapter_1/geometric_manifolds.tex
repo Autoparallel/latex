@@ -94,38 +94,6 @@ which is manifestly coordinate invariant by definition.  It also motivates the u
 
 Note that since Euclidean space $\R^n$ has global orthonormal coordinates $\blade{e}_i$ we can choose a global constant vector field basis since we identified $\G_n^1$ with $\G(\R^n)^1$. With respect to these fields, we have the that $\nabla_{\blade{u}}$ reduces to the directional derivative. Note then that $\blade{u} \cdot \grad = \nabla_{\blade{u}}$ defines the directional derivative via the gradient. In fact, given a subspace $\blade{U_r}$, one could even describe a derivative in $\blade{U_r}$ by $\projection_{\blade{U_r}}(\grad)$.
 
-\subsection{Monogenic fields}
-
-Multivectors in the kernel of $\grad$ are of fundamental importance in geometric calculus and these multivectors are the motivation for Clifford analysis much like elements in the kernel of $\Delta$ give rise to harmonic analysis. 
-\begin{definition}
- Let $A \in \G(M)$. Then we say that $A$ is \emph{monogenic} if $A \in \ker(\grad)$.
-\end{definition}
-
-Monogenic fields are of utmost importance as they have many beautiful properties. One should find them as a suitable generalization of the notion of complex holomorphicity. For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values through a generalized Cauchy integral formula and for a spinor field each of the graded components of $f$ are harmonic. We put 
-\[
-\monogenics(M) \coloneqq \{A \in \G(M) ~\vert~ \grad A =0\}
-\]
-to refer to elements of this set as \emph{monogenic fields} on $\Omega$. As a subset, we also have the \emph{monogenic spinors} $\monogenics^+(\Omega)$, which are simply the even monogenic fields and the \emph{monogenic parabivectors} $\monogenics^{0+2}(\Omega)$. 
-
-It will be pertinent in \todo{reference later section} to speak of function algebras. Hence, one could consider if the space $\monogenics(M)$ is, in general, an algebra. While it is clear that the sum of two monogenic fields is also a monogenic field, it is not necessarily true that the product of two monogenic fields is monogenic. Hence, these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient. 
-
-To the contrary, let $M$ be 2-dimensional, then the space of monogenic spinors $\monogenics^+(M)$ is indeed an algebra. In fact, taking $\G_2(\R^2)$ we can note that monogenic spinors are exactly the complex holomorphic functions via the identification in \cref{subsubsec:motivating_example}. Take the coordinates $x$, $y$ and the standard basis $\blade{e}_i$, then if $f=u+v\blade{B}_{12} \in \G_2(\R^2)$ we can note that $\grad f =0$ yields the Cauchy-Riemann equations
-\begin{align}
-    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
-    \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
-\end{align}
-
-Though the two dimensional case is special, there will be nontrivial algebras living inside each $\monogenics(M)$ for manifolds of dimension $>3$. Also, in all dimensions, the gradient is invariant under actions from the spin group.
-\begin{lemma}
-\label{lem:clifford_invariant}
-Let $s\in \spingroup$ then $\grad \circ s = s \circ \grad$.
-\end{lemma}
-This lemma is classical in the theory of the Dirac operator, Clifford analysis, and harmonic analysis so we omit a proof.  One can see \cite{janssens_special_nodate}, for example. The following corollary is immediate.
-\begin{corollary}
-The space of monogenic spinors $\monogenics^+(M)$ is $\spingroup$ invariant.
-\end{corollary}
-\todo{revisit these lemma and corollary for spin(V) not just spin(n)}.
-
 \subsection{Differential forms}
 \label{subsubsec:differential_forms}
 
