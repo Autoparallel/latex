@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+The style file: siam.bst
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+Database file #1: calderon_problem.bib
+Warning--I didn't find a database entry for "eq:conjugate_belishev"
+Warning--empty journal in brackx_hilbert_2008
+Warning--empty journal in feldman_calderproblem_nodate
+Warning--empty year in feldman_calderproblem_nodate
+Warning--empty journal in janssens_special_nodate
+Warning--empty year in janssens_special_nodate
+You've used 11 entries,
+            2030 wiz_defined-function locations,
+            564 strings with 5460 characters,
+and the built_in function-call counts, 3415 in all, are:
+= -- 323
+> -- 120
+< -- 0
++ -- 50
+- -- 36
+* -- 246
+:= -- 533
+add.period$ -- 13
+call.type$ -- 11
+change.case$ -- 49
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 180
+empty$ -- 271
+format.name$ -- 36
+if$ -- 731
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 13
+newline$ -- 38
+num.names$ -- 24
+pop$ -- 53
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 141
+stack$ -- 0
+substring$ -- 210
+swap$ -- 72
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 40
+warning$ -- 5
+while$ -- 38
+width$ -- 13
+write$ -- 102
+(There were 6 warnings)

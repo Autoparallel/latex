@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{belishev_dirichlet_2008}
+{\sc M.~Belishev and V.~Sharafutdinov}, {\em Dirichlet to {Neumann} operator on
+  differential forms}, Bulletin des Sciences Mathématiques, 132 (2008),
+  pp.~128--145.
 
 \bibitem{brackx_hilbert_2008}
 {\sc F.~Brackx and H.~D. Schepper}, {\em The {Hilbert} {Transform} on a
@@ -12,6 +17,10 @@
 \bibitem{doran_geometric_2003}
 {\sc C.~Doran and A.~Lasenby}, {\em Geometric {Algebra} for {Physicists}},
   Cambridge University Press, 1~ed., May 2003.
+
+\bibitem{feldman_calderproblem_nodate}
+{\sc J.~Feldman, M.~Salo, and G.~Uhlmann}, {\em The {Calder}´on {Problem} —
+  {An} {Introduction} to {Inverse} {Problems}}, p.~317.
 
 \bibitem{hestenes_clifford_1986}
 {\sc D.~Hestenes}, {\em Clifford {Algebra} and the {Interpretation} of
@@ -32,5 +41,14 @@
 {\sc G.~Schwarz}, {\em Hodge {Decomposition} - {A} {Method} for {Solving}
   {Boundary} {Value} {Problems}}, Lecture {Notes} in {Mathematics},
   Springer-Verlag, Berlin Heidelberg, 1995.
+
+\bibitem{sharafutdinov_complete_2013}
+{\sc V.~Sharafutdinov and C.~Shonkwiler}, {\em The {Complete}
+  {Dirichlet}-to-{Neumann} {Map} for {Differential} {Forms}}, Journal of
+  Geometric Analysis, 23 (2013), pp.~2063--2080.
+
+\bibitem{uhlmann_inverse_2014}
+{\sc G.~Uhlmann}, {\em Inverse problems: seeing the unseen}, Bulletin of
+  Mathematical Sciences, 4 (2014), pp.~209--279.
 
 \end{thebibliography}

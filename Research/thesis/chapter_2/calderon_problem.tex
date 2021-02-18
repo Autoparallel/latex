@@ -1,0 +1,167 @@
+One application for the work we have done thus far is with the Calder\'on inverse problem. This problem stems from a physical question asked by Alberto Calder\'on in which he asked how much information of a body can we determine from measurements along the boundary of the body. More specifically, by applying a voltage to the boundary and measuring the outgoing current flux, can we determine the conductivity of the body? This is the Electrical Impedance Tomography (EIT) problem.
+
+The more modern formulation of this problem casts it as a geometrical inverse problem by replacing the boundary data with the Dirichlet-to-Neumann map (i.e., the voltage-to-current map) and replacing the conductivity with a Riemannian metric. This has lead to generalizations using differential forms\todo{sources}. 
+
+
+\section{Forward problem}
+
+\textcolor{red}{Classically we want to find harmonic fields}
+
+\subsubsection{Classical EIT}
+In the EIT problem, we begin with a region $M$ with unknown symmetric positive definite conductivity matrix $\sigma$. We apply a static scalar potential $\phi$ on $\boundary$ which produces the scalar potential $u$ in the interior. We assume $M$ is flat so that we can choose $g_{ij}=\delta_{ij}$ globally; or, in other words we are working over $\G_n(M)$ where each geometric tangent space is Euclidean $C\ell(T_xM, |\cdot|)$. Then, we posit that $M$ is built from Ohmic material in order to satisfy Ohm's law 
+\begin{equation}
+\label{eq:ohms_law}
+-\sigma \grad \wedge u= \blade{j}
+\end{equation}
+where $\blade{j}$ is the current density vector field. The conservation law
+\begin{equation}
+\label{eq:conservation_law}
+\int_{\boundary} \blade{j} \cdot \blade{\nu} \omega_\partial = \int_{\boundary} \projection_{\blade{I}_\partial}(\blade{j}^\perp) \cdot dX_{n-1} = 0,
+\end{equation}
+implies $\grad \cdot \blade{j}= 0$ via Stokes' theorem. Hence, we arrive at the condition on the scalar potential
+\begin{equation}
+\grad \cdot (\sigma \grad \wedge u) = 0.
+\end{equation} 
+In other words, the conservation law in \cref{eq:conservation_law} is equivalent to the interior of $M$ being charge free. This is derived more fully in \cite{feldman_calderproblem_nodate}. 
+
+Taking some arbitary basis, conductivity matrix assumes the components $\sigma_{ij}$ for $i,j=1,2,3$.  Via \cite{uhlmann_inverse_2014} in dimension $n>2$, we can realize that the conductivity matrix can be replaced with an intrinsic Riemannian metric with the components in this basis given by
+\begin{equation}
+\label{eq:conductivity_metric}
+    g_{ij} = (\det \sigma^{k\ell} )^{\frac{1}{n-2}} (\sigma^{ij})^{-1}, \quad \sigma^{ij} = (\det g_{k\ell})^{\frac{1}{2}} (g_{ij})^{-1}.
+\end{equation}
+It is worth noting that these cannot hold in dimension $n=2$. Due to \cref{eq:conductivity_metric}, we can remove the extrinsic need of $\sigma$ with an intrinsic $g$ on the Clifford bundle structure. That is, we are working with $\G(M)$ where each geometric tangent space is given by $C\ell(T_xM,g_x)$. Hence, Ohm's law is given as
+\begin{equation}
+-\grad \wedge u = \blade{j}.
+\end{equation}
+Then by \cref{eq:conservation_law}, we find the scalar potential is harmonic
+\begin{equation}
+\Delta u = 0 \quad \textrm{in $M$}.
+\end{equation}
+
+
+
+Via Maxwell's equations, it follows that 
+\begin{equation}
+-\sigma \grad \wedge u^\phi = \grad \cdot b,
+\end{equation}
+where $b$ is the magnetic bivector field.
+
+
+\subsubsection{Generalization to forms}
+
+This problem can be cast in a new light by considering harmonic $r$-forms instead of a harmonic 0-form $u$. 
+Given some $\varphi \in \Omega^r(\boundary)$, we have the boundary value problem
+\begin{equation}
+\begin{cases} 
+\Delta \alpha_r = 0, & \textrm{in $M$}\\
+\iota^* \alpha_r = \varphi, \quad \iota^*(\delta \alpha_r) = 0 & \textrm{on $\boundary$}.
+\end{cases}
+\end{equation}
+As stated in \cite{belishev_dirichlet_2008}, there exists a solution $\alpha_r$ to this problem up to a Dirichlet harmonic field $\lambda_D$.
+
+
+
+\subsection{Inverse problem}
+
+\subsubsection{Ohm's law}
+and we arrive at $\Delta u = 0$ for the scalar potential and $\Delta \vectorpotential = \current$ for the magnetic vector potential. In terms of the magnetic field bivector, we have $\grad \cdot b = \current$ and once again by Ohm's law we have $-\grad \wedge u^\phi = \grad \cdot b$. This leads us to consider the parabivector field $f=u+b$. We can note that $f$ is (spatially) monogenic since 
+\[
+\grad f = 0 ~\iff~ -\grad \wedge u^\phi =  \grad \cdot b ~\textrm{and}~ \grad \wedge b = 0,
+\]
+is satisfied. We see now that the fact that the body $\Omega$ is ohmic gives us a necessary coupling between the scalar potential and the magnetic field.
+The classical forward problem in terms of geometric calculus is given by the following scenario. We have an ohmic $M$ and we find the electrostatic potential $u$ satisfying the Dirichlet problem
+\begin{equation}
+\label{eq:dirichlet_problem}
+\begin{cases} \Delta u^\phi = 0 & \textrm{ in $M$} \\  u^\phi \vert_{\boundary} = \phi & \textrm{ on $\boundary$}. \end{cases}.
+\end{equation}
+
+In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\current=\grad \wedge u^\phi$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data $\current^\perp=\projection{\nu}{\grad u^\phi}$ where $\nu$ is the normal to the boundary $\Sigma$ defined by $\nu = I_\Sigma I$ for the oriented boundary pseudoscalar $I_\Sigma$. This motivates the so called Voltage-to-Current (VC) operator $\phi \mapsto \current^\perp$. In general, we refer to set of both boundary conditions $(\phi, \current^\perp)$ $\forall \phi$ as the \emph{Cauchy data} and define the \emph{Dirichlet-to-Neumann (DN) operator} $\Lambda$ such that $\Lambda \phi = \current^\perp$. This mimics the VC operator in EIT. With our notation from before we have
+\[
+\Lambda \phi = \projection{\nu}{\grad u^\phi} = \current^\perp.
+\] 
+Note that this operator $\Lambda$ is often referred to as the \emph{scalar} DN operator since the input is the scalar field $\phi$ whereas a more general operator on differential $k$-forms has been described in \cite{belishev_dirichlet_2008,sharafutdinov_complete_2013}. The inverse problem follows.
+
+\vspace*{5pt}
+\noindent\textbf{Calder\'on problem.} Let $\Omega$ be an unknown Riemannian manifold with unknown metric $g$ and with known boundary $\Sigma$ and known DN operator $\Lambda$. Can one recover $\Omega$ and the spatial inner product $g$ from knowledge of $\Sigma$ and $\Lambda$?
+\vspace*{5pt}
+
+With the DN operator, we can reconstruct the boundary four current $J$.  On $\Sigma$, we have the gradient $\grad_\Sigma$ inherited from $\grad$ on $\Omega$.  In particular, we have the relationship
+\[
+\grad_\Sigma \phi = \projection{I_\Sigma}{\grad \phi},
+\]
+which is accessible with our knowledge of $\phi$ and $\Sigma$. The boundary current is then
+\[
+\current\vert_{\Sigma} = \grad_\Sigma \phi + \Lambda(\phi).
+\]
+Though we do not have access to $u^\phi$ directly, we do know that $\Delta u^\phi = \rho$ and as such we have the boundary four current by
+\[
+J\vert_\Sigma = \Delta u^\phi\vert_\Sigma \gamma_0 + \current\vert_\Sigma
+\]
+as well as the interior four current $J = \current$ since the interior is free of charges.  Defining the the four vector potential as before, we arrive at the extra equation $\Delta \vectorpotential = \current$ in $\Omega$. Once again define the magnetic bivector field $b=\grad \wedge \vectorpotential$ and we note that Ohm's law implies $\grad \cdot b = -\grad \wedge u^\phi$ in $\Omega$ and so the parabivector field $f=u^\phi + b$ is spatially monogenic since we also have $\grad \wedge b = 0$.  This all holds assuming that we can solve the electromagnetic Neumann boundary value problem
+\[
+\begin{cases} \Delta A = \current & \textrm{in $\Omega$}\\ A = A_\Sigma & \textrm{on $\Sigma$} \end{cases}
+\]
+\todo[inline]{Show that we can determine the magnetic potential $A_\Sigma$ on the boundary. This may also show that the two notions of the DN operator are equivalent. That'd be nice.}
+
+\todo[inline]{If we show there is always a unique monogenic conjugate $b$ for any harmonic $u$ then this must be what we are doing here. Is this gauranteed by the Cauchy integral?}
+
+Though briefly we mentioned $\Omega$ as a Riemannian manifold, we now take $\Omega$ to be a region in $\R^n$ for brevity. Using the DN operator, one can define a \emph{Hilbert transform} by
+\[
+T \phi  = d\Lambda^{-1} \phi,
+\]
+as in \cite{belishev_dirichlet_2008}. It has yet to be shown that this definition coincides with the definition in \cite{brackx_hilbert_2008}, but there is reason to believe they are related. The classical Hilbert transform on $\C$ inputs a harmonic function and outputs another harmonic function $v$ such that $u+iv$ is holomorphic. Essentially, this translates into finding a conjugate bivector field $b$ to $u^\phi$ such that $u^\phi +b$ is monogenic. First, we require $\phi$ satisfies
+\todo[inline]{This statement should come from the lagrangian perspective hopefully.}
+\begin{equation}
+\label{eq:conjugate_requirement}
+\left( \Lambda + (-1)^{n}d\Lambda^{-1}d\right)\phi = 0,
+\end{equation}
+where $d$ is the exterior derivative on forms. \textcolor{red}{They show how to find the image of this, perhaps I can show what the kernel is.} As shown earlier in Section \ref{subsec:diff_forms}, $d$ amounts to $\grad \wedge$ on the multivector field constituent of a form.  When condition \ref{eq:conjugate_requirement} is met, there exists a \emph{conjugate form} $\epsilon \in \Omega^{n-2}(M)$. As well, $\epsilon$ is also coclosed in that $\delta \epsilon=0$. To retrieve the constituent $(n-2)$-vector $E$, we just note $\epsilon = E \cdot dX_k$. Given Hodge duality, we have a 2-form $\beta$ such that $\star\beta = \epsilon$ and the corresponding bivector $b^\star=E$.  Combining the fields $u^\phi$ and $b$ into the parabivector $f=u^\phi+b \in \G_n^{0+2}(\Omega)$. We then note that $f$ is monogenic if and only if
+\[
+\grad \wedge u = -\grad \cdot b \qquad \textrm{and} \qquad \grad \wedge b = 0.
+\]
+
+\begin{lemma}
+Given the fields $u^\phi$ and $b$ as above, the corresponding parabivector field
+\[
+f=u^\phi +b
+\]
+is monogenic.
+\end{lemma}
+\begin{proof}
+Let $\star \beta^\psi = \epsilon$ as before and note that 
+\begin{equation}
+\label{eq:conjugate_belishev}
+d u^\phi = \star d \epsilon = \star d \star \beta^\psi,  
+\end{equation}
+as shown in Theorem 5.1 in \cite{belishev_dirichlet_2008}. The multivector equivalent of the right hand side of Equation \cite{eq:conjugate_belishev} yields
+\begin{align*}
+(\grad \wedge b^\star )^\star &= [(\grad \cdot b^\dagger) I]^\star\\
+    &= [I^{-1} ((\grad \cdot b^\dagger) I)]^\dagger\\
+    &= ((\grad \cdot b^\dagger)I)^\dagger I\\
+    &= \grad \cdot b^\dagger && \textrm{since $\dagger$ of a vector is trivial}\\
+    &= -\grad \cdot b. && \textrm{since $\dagger$ of a bivector is -1}
+\end{align*}
+\textcolor{red}{Perhaps I should just show this property in the differntial forms section.} Thus, we have $\grad \wedge u + \grad \cdot b = 0$. Since $\epsilon$ is coclosed we have
+\begin{align*}
+0=\grad \cdot b^\star &= \grad \cdot (I^{-1} b)^\dagger \\
+    &= \grad \cdot (b^\dagger I)\\
+    &= (\grad \wedge b^\dagger) I\\
+  \implies ~0  &= \grad \wedge b.
+\end{align*}
+\textcolor{red}{Perhaps I should just show this property in the differntial forms section.} Thus $\grad f =0$ and $F$ is monogenic.
+\end{proof}
+
+We have shown that conjugate forms give rise to monogenic fields.  We now seek to determine for what boundary conditions $\phi$ we have at our disposal. Let $E^\parallel \coloneqq \projection{I_\Sigma}{E}$, with $I_\Sigma$ the boundary pseudoscalar satisfying $\nu I_\Sigma = I$. Hence by Equation \ref{eq:projection_rejection_vectors} we have $E^\parallel = \rejection_{\nu}(E)$ then in investigating the requirement from Equation \ref{eq:conjugate_requirement} we find the multivector equivalent
+\begin{align*}
+    (\Lambda + (-1)^n (\grad \wedge) \Lambda^{-1} (\grad \wedge))\phi &= E^\perp + (-1)^n T E^\parallel
+\end{align*}
+so we arrive at the fact that we must have
+\[
+E^\perp = (-1)^{n-1} T E^\parallel.
+\]
+In other words,
+\[
+T  \rejection_\nu(E)= (-1)^{n-1}\projection{\nu}{E}.
+\]
+Thus, the Hilbert transform maps tangential components of $\grad u^\phi = E$ to nontangential boundary components on the boundary.
+

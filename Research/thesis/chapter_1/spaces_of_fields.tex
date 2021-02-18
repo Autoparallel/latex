@@ -1,0 +1,50 @@
+\subsection{Hodge-type decompositions}
+Let us define the following spaces of $r$-vectors. We write this in terms of the multivector equivalents to forms.
+\begin{itemize}
+    \item The \emph{exact $r$-vectors},
+    \begin{equation}
+        \exactvectors{r}\coloneqq \{\grad \wedge A_{r-1} ~\vert~ A_{r-1} \in \G^{r-1}(M), ~ \projection_{\blade{\nu}}(A_{r-1}) = 0\};
+    \end{equation}
+    \item The \emph{co-exact $r$-vectors},
+    \begin{equation}
+        \coexactvectors{r}\coloneqq \{\grad \rfloor A_{r+1} ~\vert~ A_{r+1} \in \G^{r+1}(M), ~ \rejection_{\blade{\nu}}(A_{r+1}) = 0\};
+    \end{equation}
+    \item The \emph{harmonic fields},
+    \begin{equation}
+        \harmonicfields{r}\coloneqq \{A_r \in \G^{r}(M) ~\vert~ \grad \wedge A_r = 0, ~ \grad \rfloor A_r = 0\}.
+    \end{equation}
+    \item The \emph{Dirichlet harmonic fields},
+    \begin{equation}
+        \harmonicdirichlet{r}\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ \projection_{\blade{\nu}}(A_r) = 0\}.
+    \end{equation}
+    \item The \emph{Neumann harmonic fields},
+    \begin{equation}
+        \harmonicneumann{r}\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ \rejection_{\blade{\nu}}(A_r) = 0\}.
+    \end{equation}
+\end{itemize}
+Notice that the exact and coexact forms satisfy not only a differential condition, but a boundary condition as well. Then, under the $r$-form inner product, we find the orthogonal direct sum decomposition
+\begin{equation}
+\Omega^r(M) = \exactvectors{r} \oplus \coexactvectors{r} \oplus \harmonicfields{r},
+\end{equation}
+known as the Hodge-Morrey decomposition. Within the space of harmonic fields we have
+\begin{align}
+    \harmonicex{r} &\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ A_r = \grad \wedge B_{r-1} \},\\
+    \harmonicex{r} &\coloneqq \{A_r \in \harmonicfields{r} ~\vert~ A_r = \grad \rfloor B_{r+1} \}.
+\end{align}
+Further, we have two decompositions of the space of harmonic fields 
+\begin{align}
+    \harmonicfields{r} &= \harmonicdirichlet{r} \oplus \harmonicco{r}, \\
+    \harmonicfields{r} &= \harmonicneumann{r} \oplus \harmonicex{r},
+\end{align}
+which are the Friedrichs decompositions.
+
+\begin{proposition}
+    The harmonic fields $\harmonicfields{r}$ are monogenic $r$-vectors so that $\monogenicfields{r} = \harmonicfields{r}$.
+\end{proposition}
+\begin{proof}
+Trivial
+\end{proof}
+
+We can utilize 
+Monogenics of a single grade are already studied. but now we can study monogenics of mixed grades!
+\subsection{Integral transforms}
