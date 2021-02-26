@@ -114,7 +114,11 @@ The \emph{even subalgebra} $C\ell(V,Q)^+ \subset C\ell(V,Q)$ is the subalgebra o
     C\ell(V,Q)^+ \coloneqq C\ell(V,Q)^0 \oplus C\ell(V,Q)^2 \oplus C\ell(V,Q)^4 \oplus \cdots.
 \end{equation}
 \end{definition}
-The even subalgebra is an extremely important entity that arises throughout physics due to its encapsulation of spinors. We touch on this next.
+The split between even and odd subspaces of $C\ell(V,Q)$ makes the space $C\ell(V,Q)$ into a \emph{superalgebra}. Though, one should note that the space of odd grade multivectors, $C\ell(V,Q)^-$, is not an algebra in its own right, it is a $C\ell(V,Q)^+$-module. We can then take the even part of a multivector $A$ by $\proj{+}{A}$ and the odd part by $\proj{-}{A}$ and note
+\begin{equation}
+A = \proj{+}{A} + \proj{-}{A}.
+\end{equation}
+In the same vein, we will denote an even multivector by $A_+$ and an odd multivector by $A_-$. The even subalgebra is an extremely important entity that arises throughout physics due to its encapsulation of spinors which we touch on next. 
 
 \subsection{Multivector operations and the Clifford and spin groups}
 \label{subsubsec:reverse_inverse_clifford_spin_groups}
@@ -192,6 +196,8 @@ Fundamentally, the even subalgebra $\G^+$ is invariant under the action of $\ope
 Let $\G$ be a geometric algebra with an inner product of arbitrary signature, then we define a \emph{spinor} to be an element of $\G^+$.
 \end{definition}
 Morally, this definition is telling us $\psi \in \G^+$ is an element that transforms under a left action of an element of $\operatorname{Spin}(V)$ to produce another spinor which leaves us with a convenient definition in that a spinor is simply an even multivector. For more on the topic, see \cite{janssens_special_nodate}.
+
+\todo{spinors are really a module. The odd subspace is also a similar module. Maybe reference superalgebra and physics again a little bit.}
 
 \subsection{Pseudoscalars and duality}
 \label{subsubsec:duality_and_pseudoscalars}

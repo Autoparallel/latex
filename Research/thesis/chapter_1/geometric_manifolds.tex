@@ -299,37 +299,54 @@ Indeed,
 with the final equality by \cref{eq:dot_product}.
 \end{proof}
 
-\subsection{Stokes' and Green's theorem}
+\subsection{Multivector valued integrals}
 
-Given our definition of the Hodge star on multivector equivalents, we can now define an $L^2$-inner product on multivector fields.
+The integrals defined before are all scalar valued, but geometric calculus allows for an extension to multivector valued integrals. 
+\todo{more work to define and show some stuff here}
+
+Given our definition of the Hodge star on multivector equivalents, we can now define a multivector valued $L^2$-inner product on multivector fields.
 
 \begin{definition}
-Let $A_r$ and $B_s$ be a $r$- and $s$-vector fields. Then the \emph{multivector field inner product} is defined by
+Let $A_r$ and $B_s$ be a $r$- and $s$-vector fields. Then the \emph{Clifford inner product} is defined by
 \begin{equation}
-\multivecinnerproduct{A_r}{B_s} \coloneqq \int_M \proj{0}{A_r B_s^\dagger} \omega.
+\multivecinnerproduct{A_r}{B_s} \coloneqq \int_M A_r B_s^\dagger \omega.
 \end{equation}
+If $\multivecinnerproduct{A_r}{B_s} = 0$, then we say $A_r$ and $B_s$ are \emph{Clifford orthogonal}.
 \end{definition}
-Note that when $s\neq r$, this inner product is zero.
-
-\begin{corollary}
-Given two $r$-forms, the $r$-form inner product is equal to the multivector inner product on their corresponding multivector equivalents.
-\end{corollary}
+In particular, one can consider the graded components of this inner product by
+\begin{equation}
+\multivecinnerproduct{A_r}{B_s}_j \coloneqq \proj{j}{\multivecinnerproduct{A_r}{B_s}} = \proj{j}{\int_M A_r B_s^\dagger \omega} \equiv \int_M \proj{j}{A_r B_s^\dagger} \omega,
+\end{equation}
+which we refer to as the \emph{$j$-vector valued Clifford inner product}. The Clifford inner product extends the notion of the $r$-form inner product.  One should view this extension as the same extension we find in the containment between $\bigwedge(V)$ and the more general $C\ell(V,Q)$. The perspective is that the Clifford algebras always contain at least as much information as the alternating algebras and geometric algebras will strictly resolve finer details. For example, the following proposition is immediate.
+\begin{proposition}
+Given two $r$-forms, the $r$-form inner product is equal to the scalar valued Clifford inner product on their corresponding multivector equivalents.
+\end{proposition}
 \begin{proof}
 Let $\alpha_r$ and $\beta_r$ be $r$-forms with multivector equivalents $A_r$ and $B_r$ respectively. Then
 \begin{align*}
-    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \omega = \multivecinnerproduct{A_r}{B_r},
+    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \omega = \int_M \proj{0}{A_rB_r^\dagger} \omega = \multivecinnerproduct{A_r}{B_r}_0,
 \end{align*}
 by the proof of \cref{prop:multivector_hodge_star}. 
 \end{proof}
+Note that when $s\neq r$, this scalar valued Clifford inner product is zero. Hence, the orthogonal direct sum with respect to the $L^2$ multivector inner product extends the grade based direct sum. It will suffice to use the symbol $\oplus$ for both. 
 
+Two subsets of fields may be orthogonal with respect to the scalar valued Clifford inner product, but they may fail to be Clifford orthogonal. In fact, the grade based decomposition does not hold over the multivector field inner product. For example, consider $M$ a region of $\R^n$ then $\G_n(M)$ and take a constant subspace (unit blade) $\blade{B}_{12}$ and a blade inside this subspace $\blade{e}_2$ then
+\begin{equation}
+\multivecinnerproduct{\blade{B}_{12}}{\blade{e}_2} = \int_M  \blade{e}_1 \omega = \blade{e}_1 \textrm{vol}(M),
+\end{equation}
+which shows the fields $\blade{B}_{12}$ and $\blade{e}_2$ are not Clifford orthogonal.
+\todo{this is kind of interesting. It seems to say that the inner product value is almost describing how the vectors differ and by how much of $M$ they differ by...?}
+We extend the notion of Clifford orthogonal to spaces. That is, if we have a space of multivector fields $X$ and another space of multivector fields $Y$ such that for any $A\in X$ and $B\in Y$ we have $\multivecinnerproduct{A}{B}=0$ then we say $X$ and $Y$ are Clifford orthogonal and we put $X \boxplus Y$ to refer to the orthogonal direct sum with respect to the Clifford inner product.
+
+
+
+\subsection{Stokes' and Green's formula}
+\todo{do stokes' for $r$-dimensional submanifolds $R$}
 On forms, we have a compact form of Stokes' theorem
 \[
 \int_M d \alpha_{n-1} = \int_{\partial \Omega} \iota^* \alpha_{n-1},
 \]
-for sufficiently smooth $n-1$-forms $\alpha_{n-1}$. 
-
-
-Then, in terms of the multivector equivalents, Stokes' theorem reads
+for sufficiently smooth $n-1$-forms $\alpha_{n-1}$. Then, in terms of the multivector equivalents, Stokes' theorem reads
 \begin{equation}
 \label{eq:stokes_theorem}
 \int_M (\grad \wedge A_{n-1})\cdot dX_n = \int_{\partial M} \projection_{\blade{I}_\partial}(A_{n-1}) \cdot dX_{n-1}.
@@ -344,16 +361,14 @@ which implies
 \int_M \grad \cdot \blade{v} \omega = \int_{\partial M} \blade{v}\cdot \blade{\nu} \omega_\partial
 \end{equation}
 
+And, in broader generality we have Green's formula which is given by
+\begin{equation}
+\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M \alpha_{r-1} \wedge \delta \beta_r + \int_{\boundary} \iota^* (\alpha_{r-1} \wedge \star \beta_r)
+\end{equation}
+
+\subsection{Fundamental theorem of geometric calculus}
 
 
-%Taking the multivector equivalent $\alpha_{n-1} = A_{n-1} \cdot dX_{n-1}$ we retrieve \emph{Stokes' theorem} as
-%\[
-%\int_\Omega (\grad \wedge A_{n-1}) \cdot dX_n = \int_\Sigma \projection{I_\Sigma}{A_{n-1}} \cdot dX_{n-1}  = \int_\Sigma \rejection_{\nu}(A_{n-1}) \cdot dX_{n-1}
-%\]
-%Let $v = A_{n-1} I$ denote the vector field dual to the pseudovector $A_{n-1}$, then we have the more recognizable \textcolor{red}{(Helmholtzian?)} form of Stokes' theorem
-%\[
-%\int_\Omega \grad \cdot v d\Omega = \int_\Sigma v \cdot \nu d\Sigma.
-%\]
-%\todo[inline]{Show this work?} This provides a compact relationship for those who choose to work with vector fields and those who choose to work with forms. \textcolor{red}{Pause and reflect here about what Green's theorem and Stokes' theorem are really saying. Use DUAL notation!}
-%
-%Finally,
+
+
+

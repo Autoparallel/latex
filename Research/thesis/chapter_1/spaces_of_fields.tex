@@ -23,6 +23,7 @@ It will be pertinent in \todo{reference later section} to speak of function alge
 
 To the contrary, let $M$ be 2-dimensional, then the space of monogenic spinors $\monogenics^+(M)$ is indeed an algebra. In fact, taking $\G_2(\R^2)$ we can note that monogenic spinors are exactly the complex holomorphic functions via the identification in \cref{subsubsec:motivating_example}. Take the coordinates $x$, $y$ and the standard basis $\blade{e}_i$, then if $f=u+v\blade{B}_{12} \in \G_2(\R^2)$ we can note that $\grad f =0$ yields the Cauchy-Riemann equations
 \begin{align}
+\label{eq:cauchy_riemann_equations}
     \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
     \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
 \end{align}
@@ -39,57 +40,127 @@ The space of monogenic spinors $\monogenics^+(M)$ is $\spingroup$ invariant.
 \todo{revisit these lemma and corollary for spin(V) not just spin(n)}.
 
 
+
 \subsection{Hodge-type decompositions}
+
+For manifolds with boundary, we have distinguished subspaces of $\G(M)$. 
+\begin{definition}
+Let $\G(M)$ be the space of multivector fields on a smooth manifold $M$, then we have the \emph{Dirichlet fields}
+\begin{equation}
+\G_D(M) \coloneqq \{A \in \G(M) ~\vert~ \projection_{I_{\partial}}(A) = 0 \},
+\end{equation}
+and the \emph{Neumann fields}
+\begin{equation}
+\G_N(M) \coloneqq \{A \in \G(M) ~\vert~ \rejection_{I_{\partial}}(A) = 0 \}.
+\end{equation}
+\end{definition}
+
 Let us define the following spaces of multivectors that mimic their differential forms counterpart.
+\begin{definition}
+We have
 \begin{itemize}
-    \item The \emph{exact fields},
+    \item the \emph{exact fields},
     \begin{equation}
-        \exactfields{}\coloneqq \{\grad \wedge A ~\vert~ A \in \G(M), ~ \projection_{\blade{\nu}}(A) = 0\};
+        \exactfields{}\coloneqq \{\grad \wedge A ~\vert~ A \in \G_D(M)\};
     \end{equation}
-    \item The \emph{co-exact fields},
+    \item the \emph{co-exact fields},
     \begin{equation}
-        \coexactfields{}\coloneqq \{\grad \rfloor A ~\vert~ A \in \G(M), ~ \rejection_{\blade{\nu}}(A) = 0\};
+        \coexactfields{}\coloneqq \{\grad \rfloor A ~\vert~ A \in \G_N(M)\};
     \end{equation}
-    \item The \emph{Dirichlet harmonic fields},
+    \item the \emph{Dirichlet harmonic fields},
     \begin{equation}
-        \monogenicdirichlet{}\coloneqq \{A \in \monogenicfields{} ~\vert~ \projection_{\blade{\nu}}(A) = 0\};
+        \monogenicdirichlet{}\coloneqq \monogenicfields{} \cap \G_D(M);
     \end{equation}
-    \item The \emph{Neumann harmonic fields},
+    \item the \emph{Neumann harmonic fields},
     \begin{equation}
-        \monogenicneumann{}\coloneqq \{A \in \monogenicfields{} ~\vert~ \rejection_{\blade{\nu}}(A) = 0\}.
+        \monogenicneumann{}\coloneqq \monogenicfields{} \cap \G_N(M).
     \end{equation}
 \end{itemize}
-We then use superscripts to denote the associated $r$-vector subspace. Notice that the exact and coexact fields satisfy not only a differential condition, but a boundary condition as well. Then, under the $r$-form inner product, we find the orthogonal direct sum decomposition
+\end{definition}
+We then use superscripts to denote the associated $r$-vector subspace. Notice that the exact and coexact fields satisfy not only a differential condition, but a boundary condition as well. Then, under the scalar valued multivector inner product, we find the orthogonal direct sum decomposition
 \begin{equation}
 \G^r(M) = \exactfields{r} \oplus \coexactfields{r} \oplus \monogenicfields{r},
 \end{equation}
-known as the Hodge-Morrey decomposition. Within the space of harmonic fields we have
+known as the Hodge-Morrey decomposition.
+\begin{definition}
+Within the space of harmonic fields we have
 \begin{align}
-    \monogenicex{} &\coloneqq \{A \in \monogenicfields{} ~\vert~ A = \grad \wedge B \},\\
-    \monogenicco{} &\coloneqq \{A \in \monogenicfields{} ~\vert~ A = \grad \rfloor B \}.
+    \monogenicex{} &\coloneqq \monogenicfields{}\cap \exactfields{},\\
+    \monogenicco{} &\coloneqq \monogenicfields{} \cap \coexactfields{}.
 \end{align}
+\end{definition}
 Further, we have two decompositions of the space of harmonic fields 
 \begin{align}
-    \monogenicfields{r} &= \monogenicdirichlet{r} \oplusl \monogenicco{r}, \\
-    \monogenicfields{r} &= \monogenicneumann{r} \oplusl \monogenicex{r},
+    \monogenicfields{r} &= \monogenicdirichlet{r} \oplus \monogenicco{r}, \\
+    \monogenicfields{r} &= \monogenicneumann{r} \oplus \monogenicex{r},
 \end{align}
 which are the Friedrichs decompositions.
 
-
-\textcolor{red}{Monogenics of a single grade are already studied. but now we can study monogenics of mixed grades!} It is a very reasonable question to ask whether the Hodge-Morrey decomposition extends to
+So, this is all to say that monogenic fields of a single grade are already well studied, but now we can study monogenic fields of mixed grades. For example, it is a very reasonable question to ask whether the Hodge-Morrey decomposition extends to
     \begin{equation}
         \G(M) \stackrel{?}{=} \exactfields{} \oplus \coexactfields{} \oplus \monogenicfields{}
     \end{equation} 
-under the multivector field inner product. This is, in fact, not true.  While it is clear that
+under the multivector field inner product. This is, in fact, not true.  While it is clear that the following spaces have a grade-based $L^2$ orthogonal decomposition,
 \begin{align}
     \G(M) &= \bigoplus_{j=1}^n \G^j(M)\\
-    \exactfields{} &= \bigoplus_{j-1}^n \exactfields{j}\\
-    \coexactfields{} &= \bigoplus_{j-1}^n \coexactfields{j},
+    \exactfields{} &= \bigoplus_{j=1}^n \exactfields{j}\\
+    \coexactfields{} &= \bigoplus_{j=1}^n \coexactfields{j},
 \end{align}
-we have the following failure
+we have the failure for the space of monogenic fields in that
 \begin{equation}
     \monogenicfields{} \neq \bigoplus_{j=1}^n \monogenicfields{j}.
 \end{equation}
+The space $\monogenicfields{}$ is quite a bit more rich than the other spaces.  For example, the field $x_1+x_2 \blade{B}_{12}$ is monogenic but the individual graded components are not. Fundamentally, this is due to the mixing of grades that we pick up when considering multivectors (e.g., in \cref{eq:cauchy_riemann_equations}). Since the gradient of a multivector consists of a grade raising and lowering component, we will have an interaction between, for example, $r$, $r-2$, and $r+2$-vectors. This leads to the following proposition.
 
+\begin{lemma}
+The space of monogenic fields is decomposed into even and odd components by
+\begin{equation}
+    \monogenicfields{} = \monogenicfields{+} \oplus \monogenicfields{-}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $A \in \monogenicfields{}$ and let $A_+=\proj{+}{A}$ denote the even grade components of $A$ and let $A_-=\proj{-}{A}$ denote the odd components of $A$. Then it is clear that 
+\begin{equation}
+\label{eq:monogenic_super_splitting}
+\multivecinnerproduct{A_+}{A_-} = 0.
+\end{equation}
+Then,
+\begin{equation}
+\grad A_+ \in \G^-(M) \qquad \textrm{and} \qquad \grad A_- \in \G^+(M),
+\end{equation}
+hence $\grad A = \grad A_+ + \grad A_-$ and since $\grad A=0$ it must be that $\grad A_+=0$ and $\grad A_-=0$. Together with \cref{eq:monogenic_super_splitting} proves the result.
+\end{proof}
+
+\begin{theorem}
+We have the even and odd Hodge-Morrey decomposition given by
+\begin{equation}
+\G^+(M) = \exactfields{+} \oplus \coexactfields{+} \oplus \monogenicfields{+},
+\end{equation}
+and
+\begin{equation}
+\G^-(M) = \exactfields{-} \oplus \coexactfields{-} \oplus \monogenicfields{-}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+
+\end{proof}
 
 \subsection{Integral transforms}
+
+\subsubsection{Cauchy integral}
+
+\textcolor{red}{multivector valued integrals and the multivector valued inner product as an extension to the other inner product?}
+
+One beautiful result in Clifford analysis is the celebrated generalization of the Cauchy integral formula for $\C$-holomorphic functions. Details of the Cauchy integral formula and Hilbert transform for multivector fields can be found in \cite{brackx_hilbert_2008}. We have the fundamental solution to $\grad$ is a vector field given by
+\[
+E(x) = \frac{1}{a_m} \frac{x}{\|x\|^m},
+\]
+for $x\in \R^n$. That is to say that $\grad E(x) = \delta(x)$. For any region $\Omega \subset \R^n$ with boundary $\Sigma$, we define the \emph{Cauchy kernel} for $x\in \R^n$ and $y \in \Sigma$ using the fundamental solution $E$ as
+\[
+C(y, x) = -\frac{1}{a_n} \nu(x_0) E(x-y),
+\]
+where $a_n$ is the surface area of the $n$-ball and $\nu(x_0)$ is the outward normal at $x_0$. The \emph{Cauchy integral} for $\phi \in L_2(\Sigma)$ is then
+\[
+\cauchy[\phi](x) = \frac{1}{a_n} \int_{\Sigma} \frac{y-x}{\|x-y\|^n} \nu(y) \phi(y) d\Sigma(y).
+\]
+The Cauchy integral is indeed a monogenic function and note that for a scalar $\phi$ we have $\cauchy[\phi] \in \monogenics(\Omega)$ since it must be a parabivector as well.

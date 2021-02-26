@@ -3,9 +3,7 @@ One application for the work we have done thus far is with the Calder\'on invers
 The more modern formulation of this problem casts it as a geometrical inverse problem by replacing the boundary data with the Dirichlet-to-Neumann map (i.e., the voltage-to-current map) and replacing the conductivity with a Riemannian metric. This has lead to generalizations using differential forms\todo{sources}. 
 
 
-\section{Forward problem}
-
-\textcolor{red}{Classically we want to find harmonic fields}
+\subsection{Forward problem}
 
 \subsubsection{Classical EIT}
 In the EIT problem, we begin with a region $M$ with unknown symmetric positive definite conductivity matrix $\sigma$. We apply a static scalar potential $\phi$ on $\boundary$ which produces the scalar potential $u$ in the interior. We assume $M$ is flat so that we can choose $g_{ij}=\delta_{ij}$ globally; or, in other words we are working over $\G_n(M)$ where each geometric tangent space is Euclidean $C\ell(T_xM, |\cdot|)$. Then, we posit that $M$ is built from Ohmic material in order to satisfy Ohm's law 
@@ -52,38 +50,66 @@ where $b$ is the magnetic bivector field.
 This problem can be cast in a new light by considering harmonic $r$-forms instead of a harmonic 0-form $u$. 
 Given some $\varphi \in \Omega^r(\boundary)$, we have the boundary value problem
 \begin{equation}
+\label{eq:bvp_forms}
 \begin{cases} 
 \Delta \alpha_r = 0, & \textrm{in $M$}\\
 \iota^* \alpha_r = \varphi, \quad \iota^*(\delta \alpha_r) = 0 & \textrm{on $\boundary$}.
 \end{cases}
 \end{equation}
-As stated in \cite{belishev_dirichlet_2008}, there exists a solution $\alpha_r$ to this problem up to a Dirichlet harmonic field $\lambda_D$.
-
-
+As stated in \cite{belishev_dirichlet_2008}, there exists a solution $\alpha_r$ to this problem up to a monogenic Dirichlet field $\lambda_D$.
 
 \subsection{Inverse problem}
 
-\subsubsection{Ohm's law}
-and we arrive at $\Delta u = 0$ for the scalar potential and $\Delta \vectorpotential = \current$ for the magnetic vector potential. In terms of the magnetic field bivector, we have $\grad \cdot b = \current$ and once again by Ohm's law we have $-\grad \wedge u^\phi = \grad \cdot b$. This leads us to consider the parabivector field $f=u+b$. We can note that $f$ is (spatially) monogenic since 
-\[
-\grad f = 0 ~\iff~ -\grad \wedge u^\phi =  \grad \cdot b ~\textrm{and}~ \grad \wedge b = 0,
-\]
-is satisfied. We see now that the fact that the body $\Omega$ is ohmic gives us a necessary coupling between the scalar potential and the magnetic field.
-The classical forward problem in terms of geometric calculus is given by the following scenario. We have an ohmic $M$ and we find the electrostatic potential $u$ satisfying the Dirichlet problem
+\subsubsection{Classical EIT}
+In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\blade{j}=\grad \wedge u$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data $\projection_{\blade{\nu}}(\grad \wedge u)$. This motivates the so called Voltage-to-Current (VC) operator or  \emph{Dirichlet-to-Neumann (DN) map}
 \begin{equation}
-\label{eq:dirichlet_problem}
-\begin{cases} \Delta u^\phi = 0 & \textrm{ in $M$} \\  u^\phi \vert_{\boundary} = \phi & \textrm{ on $\boundary$}. \end{cases}.
+\label{eq:classical_dn_map}
+\Lambda \phi = \projection_{\blade{\nu}}(\grad u).
 \end{equation}
-
-In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\current=\grad \wedge u^\phi$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data $\current^\perp=\projection{\nu}{\grad u^\phi}$ where $\nu$ is the normal to the boundary $\Sigma$ defined by $\nu = I_\Sigma I$ for the oriented boundary pseudoscalar $I_\Sigma$. This motivates the so called Voltage-to-Current (VC) operator $\phi \mapsto \current^\perp$. In general, we refer to set of both boundary conditions $(\phi, \current^\perp)$ $\forall \phi$ as the \emph{Cauchy data} and define the \emph{Dirichlet-to-Neumann (DN) operator} $\Lambda$ such that $\Lambda \phi = \current^\perp$. This mimics the VC operator in EIT. With our notation from before we have
-\[
-\Lambda \phi = \projection{\nu}{\grad u^\phi} = \current^\perp.
-\] 
-Note that this operator $\Lambda$ is often referred to as the \emph{scalar} DN operator since the input is the scalar field $\phi$ whereas a more general operator on differential $k$-forms has been described in \cite{belishev_dirichlet_2008,sharafutdinov_complete_2013}. The inverse problem follows.
+The inverse problem follows.
 
 \vspace*{5pt}
 \noindent\textbf{Calder\'on problem.} Let $\Omega$ be an unknown Riemannian manifold with unknown metric $g$ and with known boundary $\Sigma$ and known DN operator $\Lambda$. Can one recover $\Omega$ and the spatial inner product $g$ from knowledge of $\Sigma$ and $\Lambda$?
 \vspace*{5pt}
+
+\subsubsection{Generalization to forms}
+
+\todo{belishev sharafutdinov and Shonkwiler sharafutdinov definitions}
+Note that the operator $\Lambda$ is often referred to as the \emph{scalar} DN map since the input is the scalar field $\phi$ whereas a more general operator on differential $r$-forms has been described in \cite{belishev_dirichlet_2008,sharafutdinov_complete_2013}. There, we begin with equation \cref{eq:bvp_forms}. The DN map is extended to $r$-forms by
+\begin{equation}
+\Lambda \varphi = \iota^* (\star d \alpha_r).
+\end{equation}
+In terms of the multivector equivalent $A_r$, we find
+\begin{equation}
+\iota^*(\star d \alpha_r) = \projection_{\blade{I}_\partial} ((\grad \wedge A_r)^\star )\cdot dX_{r}^\dagger
+\end{equation}
+
+
+\subsection{Multivector tomography}
+
+There are two notable related questions that can be stated in terms of multivectors. First, the most natural boundary value problems are 
+\begin{equation}
+\label{eq:multivector_harmonic_bvp}
+\begin{cases}
+\Delta A = 0 & \textrm{in $M$},\\
+A\vert_{\partial M} = B\vert_{\partial M} & \textrm{on $\partial M$},
+\end{cases}
+\end{equation}
+and
+\begin{equation}
+\label{eq:multivector_monogenic_bvp}
+\begin{cases}
+\grad A = 0 & \textrm{in $M$},\\
+A\vert_{\partial M} = B\vert_{\partial M} & \textrm{on $\partial M$}.
+\end{cases}
+\end{equation}
+It should be noted that we have
+\begin{equation}
+A\vert_{\partial M} = \projection_{\blade{I}_\partial}(A) + \rejection_{\blade{I}_\partial}(A)
+\end{equation}
+in order to consider all boundary values for a multivector. 
+
+\subsection{Recovery}
 
 With the DN operator, we can reconstruct the boundary four current $J$.  On $\Sigma$, we have the gradient $\grad_\Sigma$ inherited from $\grad$ on $\Omega$.  In particular, we have the relationship
 \[
@@ -104,6 +130,20 @@ as well as the interior four current $J = \current$ since the interior is free o
 \todo[inline]{Show that we can determine the magnetic potential $A_\Sigma$ on the boundary. This may also show that the two notions of the DN operator are equivalent. That'd be nice.}
 
 \todo[inline]{If we show there is always a unique monogenic conjugate $b$ for any harmonic $u$ then this must be what we are doing here. Is this gauranteed by the Cauchy integral?}
+
+\subsubsection{Ohm's law}
+and we arrive at $\Delta u = 0$ for the scalar potential and $\Delta \vectorpotential = \current$ for the magnetic vector potential. In terms of the magnetic field bivector, we have $\grad \cdot b = \current$ and once again by Ohm's law we have $-\grad \wedge u^\phi = \grad \cdot b$. This leads us to consider the parabivector field $f=u+b$. We can note that $f$ is (spatially) monogenic since 
+\[
+\grad f = 0 ~\iff~ -\grad \wedge u^\phi =  \grad \cdot b ~\textrm{and}~ \grad \wedge b = 0,
+\]
+is satisfied. We see now that the fact that the body $\Omega$ is ohmic gives us a necessary coupling between the scalar potential and the magnetic field.
+The classical forward problem in terms of geometric calculus is given by the following scenario. We have an ohmic $M$ and we find the electrostatic potential $u$ satisfying the Dirichlet problem
+\begin{equation}
+\label{eq:dirichlet_problem}
+\begin{cases} \Delta u^\phi = 0 & \textrm{ in $M$} \\  u^\phi \vert_{\boundary} = \phi & \textrm{ on $\boundary$}. \end{cases}.
+\end{equation}
+
+
 
 Though briefly we mentioned $\Omega$ as a Riemannian manifold, we now take $\Omega$ to be a region in $\R^n$ for brevity. Using the DN operator, one can define a \emph{Hilbert transform} by
 \[
