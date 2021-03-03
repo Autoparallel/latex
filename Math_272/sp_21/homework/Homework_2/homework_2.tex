@@ -5,9 +5,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
 
-\newcommand{\curvegamma}{\boldsymbol{\gamma}}
-\newcommand{\tangentgamma}{\boldsymbol{\dot{\gamma}}}
-\newcommand{\normalgamma}{\boldsymbol{\ddot{\gamma}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
 \newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
 \newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
 \newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
@@ -82,10 +82,10 @@ Here, $\vecfieldB$ denotes the magnetic field. It may be helpful to plot the fie
 \begin{problem}
     Set up but do not compute the integrals of the given fields over the given curves.
     \begin{enumerate}[(a)]
-        \item $f(x,y) = xe^{x+y}+\cos(xy)$, $\gamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix}$, $t_0 = 0$, $t_1=2\pi$.
-        \item $g(x,y,z) = \frac{\ln(z^2)}{e^{xy}}$, $\gamma(t) = \begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ , $t_0 = 1$, $t_1=-1$.
-        \item $\vecfieldU(x,y) = \begin{pmatrix} -y \\ x \end{pmatrix}$, $\gamma(t) = \begin{pmatrix} e^t \\ e^t \end{pmatrix}$, $t_0 = 5$, $t_1=10$.
-        \item $\vecfieldV(x,y,z) = \begin{pmatrix} 2x \\ y \\ x \end{pmatrix}$, $\gamma(t) = \begin{pmatrix} \cos(t) \\ t \\ \sqrt{t} \end{pmatrix}$, $t_0 = 0$, $t_1=1$.
+        \item $f(x,y) = xe^{x+y}+\cos(xy)$, $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix}$, $t_0 = 0$, $t_1=2\pi$.
+        \item $g(x,y,z) = \frac{\ln(z^2)}{e^{xy}}$, $\curvegamma(t) = \begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ , $t_0 = 1$, $t_1=-1$.
+        \item $\vecfieldU(x,y) = \begin{pmatrix} -y \\ x \end{pmatrix}$, $\curvegamma(t) = \begin{pmatrix} e^t \\ e^t \end{pmatrix}$, $t_0 = 5$, $t_1=10$.
+        \item $\vecfieldV(x,y,z) = \begin{pmatrix} 2x \\ y \\ x \end{pmatrix}$, $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ t \\ \sqrt{t} \end{pmatrix}$, $t_0 = 0$, $t_1=1$.
     \end{enumerate}
 \end{problem}
 

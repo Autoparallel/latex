@@ -12,20 +12,20 @@
 \contentsline {subsection}{\numberline {1.2.4}Integration}{19}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5}Multivector valued integrals}{22}{subsection.1.2.5}%
 \contentsline {subsection}{\numberline {1.2.6}Stokes' and Green's formula}{23}{subsection.1.2.6}%
-\contentsline {subsection}{\numberline {1.2.7}Fundamental theorem of geometric calculus}{24}{subsection.1.2.7}%
-\contentsline {section}{\numberline {1.3}Spaces of fields}{24}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Monogenic fields}{24}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Hodge-type decompositions}{25}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Integral transforms}{27}{subsection.1.3.3}%
-\contentsline {subsubsection}{Cauchy integral}{27}{subsubsection*.23}%
-\contentsline {chapter}{\numberline {2}Inverse problems}{29}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Calder\'on problem}{29}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Forward problem}{29}{subsection.2.1.1}%
-\contentsline {subsubsection}{Classical EIT}{29}{subsubsection*.25}%
-\contentsline {subsubsection}{Generalization to forms}{30}{subsubsection*.26}%
-\contentsline {subsection}{\numberline {2.1.2}Inverse problem}{30}{subsection.2.1.2}%
-\contentsline {subsubsection}{Classical EIT}{30}{subsubsection*.27}%
-\contentsline {subsubsection}{Generalization to forms}{31}{subsubsection*.28}%
-\contentsline {subsection}{\numberline {2.1.3}Multivector tomography}{31}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Recovery}{31}{subsection.2.1.4}%
-\contentsline {subsubsection}{Ohm's law}{32}{subsubsection*.32}%
+\contentsline {subsection}{\numberline {1.2.7}Fundamental theorem of geometric calculus}{25}{subsection.1.2.7}%
+\contentsline {section}{\numberline {1.3}Spaces of fields}{25}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Monogenic fields}{25}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Hodge-type decompositions}{26}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Integral transforms}{29}{subsection.1.3.3}%
+\contentsline {subsubsection}{Cauchy integral}{29}{subsubsection*.23}%
+\contentsline {chapter}{\numberline {2}Inverse problems}{30}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Calder\'on problem}{30}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Forward problem}{30}{subsection.2.1.1}%
+\contentsline {subsubsection}{Classical EIT}{30}{subsubsection*.25}%
+\contentsline {subsubsection}{Generalization to forms}{31}{subsubsection*.26}%
+\contentsline {subsection}{\numberline {2.1.2}Inverse problem}{31}{subsection.2.1.2}%
+\contentsline {subsubsection}{Classical EIT}{31}{subsubsection*.27}%
+\contentsline {subsubsection}{Generalization to forms}{32}{subsubsection*.28}%
+\contentsline {subsection}{\numberline {2.1.3}Multivector tomography}{32}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Recovery}{32}{subsection.2.1.4}%
+\contentsline {subsubsection}{Ohm's law}{33}{subsubsection*.32}%

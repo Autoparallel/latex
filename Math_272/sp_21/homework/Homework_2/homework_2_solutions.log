@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  1 FEB 2021 09:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  27 FEB 2021 16:17
 entering extended mode
 **./homework_2_solutions.tex
 (homework_2_solutions.tex
@@ -1090,22 +1090,22 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 ) (homework_2_solutions.aux)
 \openout1 = `homework_2_solutions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
@@ -1132,9 +1132,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 8.
+ on input line 14.
 
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 14.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1150,9 +1150,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count333
 )
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 14.
+LaTeX Info: Redefining \pageref on input line 14.
+LaTeX Info: Redefining \nameref on input line 14.
  (homework_2_solutions.out) (homework_2_solutions.out)
 \@outlinefile=\write4
 \openout4 = `homework_2_solutions.out'.
@@ -1194,24 +1194,24 @@ LaTeX Info: Redefining \nameref on input line 8.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/it' instead on input line 11.
+(Font)              using `OT1/cmr/m/it' instead on input line 17.
 
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
 .
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
 
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
 
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 12
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 23
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
@@ -1219,11 +1219,11 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 25.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 30.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 25.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 30.
 
 (Figures/crystal.pdf_tex
 <Figures//crystal.pdf, id=30, page=1, 421.575pt x 316.18124pt>
@@ -1290,7 +1290,7 @@ iple pdfs with page group included in a single page
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.69 \newpage
+l.74 \newpage
               <./Figures//level_curves.pdf> <./Figures//level_curves.pdf
 
 pdfTeX warning: pdflatex.exe (file ./Figures//level_curves.pdf): PDF inclusion:
@@ -1336,164 +1336,41 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./Figures//drum_head.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] [4]
-Overfull \hbox (2.92755pt too wide) in paragraph at lines 121--122
-[]\OT1/cmr/m/n/12 Show that $[](\OML/cmm/m/it/12 x; y; z\OT1/cmr/m/n/12 ) = \OM
-S/cmsy/m/n/12  []\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; z\OT
-1/cmr/m/n/12 )$ where $\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y
-; z\OT1/cmr/m/n/12 ) = []$. We re-fer to $\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\O
-ML/cmm/m/it/12 x; y; z\OT1/cmr/m/n/12 )$
- []
-
-(Figures/cube_coordinate_axes.pdf_tex
-<Figures//cube_coordinate_axes.pdf, id=103, page=1, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 1>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page1 used on inpu
-t line 56.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=104, page=2, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 2>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page2 used on inpu
-t line 59.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=105, page=3, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 3>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page3 used on inpu
-t line 61.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=106, page=4, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 4>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page4 used on inpu
-t line 63.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=107, page=5, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 5>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page5 used on inpu
-t line 65.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=108, page=6, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 6>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page6 used on inpu
-t line 67.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=109, page=7, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 7>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page7 used on inpu
-t line 69.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-<Figures//cube_coordinate_axes.pdf, id=110, page=8, 345.03535pt x 291.76164pt>
-File: Figures//cube_coordinate_axes.pdf Graphic file (type pdf)
-<use Figures//cube_coordinate_axes.pdf, page 8>
-Package pdftex.def Info: Figures//cube_coordinate_axes.pdf , page8 used on inpu
-t line 71.
-(pdftex.def)             Requested size: 352.31625pt x 297.91792pt.
-) [5] (Figures/cube_normal_vectors.pdf_tex
-<Figures//cube_normal_vectors.pdf, id=125, page=1, 433.25964pt x 307.8691pt>
-File: Figures//cube_normal_vectors.pdf Graphic file (type pdf)
-<use Figures//cube_normal_vectors.pdf, page 1>
-Package pdftex.def Info: Figures//cube_normal_vectors.pdf , page1 used on input
- line 56.
-(pdftex.def)             Requested size: 352.31625pt x 250.35442pt.
-<Figures//cube_normal_vectors.pdf, id=126, page=2, 433.25964pt x 307.8691pt>
-File: Figures//cube_normal_vectors.pdf Graphic file (type pdf)
-<use Figures//cube_normal_vectors.pdf, page 2>
-Package pdftex.def Info: Figures//cube_normal_vectors.pdf , page2 used on input
- line 59.
-(pdftex.def)             Requested size: 352.31625pt x 250.35442pt.
-<Figures//cube_normal_vectors.pdf, id=127, page=3, 433.25964pt x 307.8691pt>
-File: Figures//cube_normal_vectors.pdf Graphic file (type pdf)
-<use Figures//cube_normal_vectors.pdf, page 3>
-Package pdftex.def Info: Figures//cube_normal_vectors.pdf , page3 used on input
- line 61.
-(pdftex.def)             Requested size: 352.31625pt x 250.35442pt.
-) [6 <./Figures//cube_coordinate_axes.pdf> <./Figures//cube_coordinate_axes.pdf
-
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_coordinate_axes.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_coordinate_axes.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
->]
-! Undefined control sequence.
-l.164 ...\iint_{\Sigma} \vecfieldE \cdot \unitevec
-                                                   d\Sigma = \sum_{j=1}^6 \i...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[7 <./Figures//cube_normal_vectors.pdf> <./Figures//cube_normal_vectors.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_normal_vectors.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
-> <./Figures//cube_normal_vectors.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Figures//cube_normal_vectors.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
->] [8] (homework_2_solutions.aux)
+>] [4] [5] [6] [7] [8] [9] [10] [11] (homework_2_solutions.aux)
 Package rerunfilecheck Info: File `homework_2_solutions.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 33137 strings out of 479799
- 826251 string characters out of 2867787
- 1194055 words of memory out of 3000000
- 49446 multiletter control sequences out of 15000+200000
- 546421 words of font info for 71 fonts, out of 3000000 for 9000
+ 33126 strings out of 479799
+ 824330 string characters out of 2867787
+ 1196117 words of memory out of 3000000
+ 49413 multiletter control sequences out of 15000+200000
+ 545988 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 135i,21n,137p,744b,618s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/wasy/dpi720\
-wasy10.pk> <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec
-/dpi600\tcrm1200.pk><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/U
-sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Colin/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
-Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
-><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on homework_2_solutions.pdf (8 pages, 710746 bytes).
+ 135i,16n,137p,795b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1200.pk><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Col
+in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Colin/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/Colin/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/C
+olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on homework_2_solutions.pdf (11 pages, 719029 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

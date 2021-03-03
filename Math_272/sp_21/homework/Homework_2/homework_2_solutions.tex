@@ -4,12 +4,17 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
 
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 272, Homework 5, \emph{Solutions}}\\
-   \textsc{Due March 9$^\textrm{th}$}
+   \textsc{\large MATH 272, Homework 2, \emph{Solutions}}\\
 \end{center}
 \vspace{.5cm}
 
@@ -114,87 +119,238 @@ comes up when you want to find out how a square shaped drum head will vibrate wh
 \begin{problem}
 Consider the following vector field
 \[
-\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
+\vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat.
 \]
-which models the electric field of an proton (in units of of charge $q=1$) placed at the origin.
+Here, $\vecfieldB$ denotes the magnetic field. It may be helpful to plot the fields in this problem.
 \begin{enumerate}[(a)]
-	\item Show that $\vecfieldE(x,y,z) = - \grad V(x,y,z)$ where $V(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $V(x,y,z)$ as the electrostatic potential or voltage.
-	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
-	\[
-	\int_\Gamma \vecfieldE(x,y,z) \cdot \unitvec d\Sigma.
-	\]
- 	\item Does the total flux depend on the size or shape of the box?
-	\item Using the provided argument, one can compute
-	\[
-	\int_\Omega \grad \cdot \vecfieldE(x,y,z) d\Omega.
-	\]
-	\begin{itemize}
-		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
-		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Hence, you can now argue why
-		\[
-		\grad\cdot \vecfieldE = 4\pi\delta(x,y,z),
-		\]
-		where $\delta(x,y,z)$ is the 3-dimensional Dirac delta.
-	\end{itemize}
+    \item Show that $\vecfieldB$ has no divergence. (This is one of Gauss's laws.)
+    \item Show that $\grad \times \vecfieldB = \vecfieldJ$ (Amp\'ere's law) where 
+    \[
+    \vecfieldJ = \zhat.
+    \]
+    This vector field $\vecfieldJ$ represents the electric current (moving charges) in space. One could argue that the current creates the magnetic field via Amp\'ere's law.
+    \item Magnetic fields induce a force $\vecfieldF$ on charged particles by the Lorentz force
+    \[
+    \vecfieldF = \tangentgamma \times \vecfieldB = \normalgamma
+    \]
+    Where $\tangentgamma$ is the velocity of the particle (where we have chosen a mass $m=1$ and charge $q=1$).  Let us do the following.
+    \begin{itemize}
+        \item Assume that $\tangentgamma = \xhat$, what is the force on the particle?
+        \item Repeat the previous step for $\tangentgamma=\yhat$ and $\tangentgamma=\zhat$. 
+        \item Compare and contrast the forces you found.
+    \end{itemize}
+    \item Can you argue why applying a magnetic field to a molecule may cause it to heat up? Can you compare this idea with your home microwave?
 \end{enumerate}
 \end{problem}
-\begin{solution}
-    \begin{enumerate}[(a)]
-        \item   We compute $-\grad V$,
-        \begin{align*}
-            -\grad V &= \begin{pmatrix} -\frac{\partial V}{\partial x} \\ -\frac{\partial V}{\partial y} \\ -\frac{\partial V}{\partial z} \end{pmatrix}\\
-            &= \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}.
-        \end{align*}
-        \item This portion requires computing six different (however, symmetric) integrals.  One can reduce the argument down to a single integral via a bit of physical/mathematical reasoning. Note that the field $\vecfieldE$ is radially symmetric in that the field points radially outward from the origin and the strength falls off as we move away from the origin.  Fundamentally, this means that each face of the cube receives the same amount of flux through it.
-        
-        Picture the situation as follows. We have the cube surface broken up into $6$ faces. We will label these faces as $\Sigma_1$, $\Sigma_2,\dots,\Sigma_6$.  
-        \begin{figure}[H]
-        	\centering
-        	\def\svgwidth{0.75\columnwidth}
-        	\input{Figures/cube_coordinate_axes.pdf_tex}
-        \end{figure}
-        One can take $\Sigma_4$, $\Sigma_5$, and $\Sigma_6$ to be the faces opposite to $\Sigma_1$, $\Sigma_2$ and $\Sigma_3$ respectively.  Each face then has a unique outward normal vector which we can denote by $\unitvec_{\Sigma_j}$ for the face $\Sigma_j$.
-        \begin{figure}[H]
-        	\centering
-        	\def\svgwidth{0.75\columnwidth}
-        	\input{Figures/cube_normal_vectors.pdf_tex}
-        \end{figure}
-        Thus, our integral over the cubic surface $\Sigma$ is given by
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have
+    \begin{align*}
+        \begin{pmatrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \\ \frac{\partial}{\partial z} \end{pmatrix} \times \begin{pmatrix} \frac{-y}{2} \\ \frac{x}{2} \\ 0 \end{pmatrix} &= \begin{pmatrix} 0 \\ 0 \\   \frac{\partial}{\partial x} \frac{x}{2} - \frac{\partial}{\partial y} \frac{-y}{2} \end{pmatrix} \\
+                &= \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\\
+                &= \zhat.
+    \end{align*}
+    \item We will look at the case for the three different tangent vectors.
+    \begin{itemize} 
+        \item If $\tangentgamma = \xhat$, then
         \[
-        \iint_{\Sigma} \vecfieldE \cdot \unitevec d\Sigma = \sum_{j=1}^6 \iint_{\Sigma_j} \vecfieldE \cdot \unitvec_{\Sigma_j}d\Sigma_j.
+        \tangentgamma \times \vecfieldB = \frac{x}{2}\zhat.
         \]
-        By the symmetry argument before, we can simplify this further as
+        \item If $\tangentgamma = \yhat$, then
         \[
-        \iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma = 6 \iint_{\Sigma_1} \vecfieldE \cdot \unitvec_{\Sigma_1}d\Sigma_1.
+        \tangentgamma \times \vecfieldB = \frac{y}{2} \zhat.
         \]
-        Now, we can evaluate this integral
-        \begin{align*}
-            6\iint_{\Sigma_1} \vecfieldE \cdot \unitvec_{\Sigma_1}d\Sigma_1 &= \int_{-1}^1 \int_{-1}^1 \vecfieldE(x,y,1) \cdot \zhat dxdy\\&= 6\int_{-1}^1 \int_{-1}^1 \frac{1}{(x^2+y^2+1)^{3/2}}dxdy\\
-                &= 6\int_{-1}^1 \frac{2}{(y^2+1)\sqrt{y^2+2}} dy\\
-                &= 6\frac{2\pi }{3}\\
-                &= 4\pi.
-        \end{align*}
-    \end{enumerate}
-    \item Note that the divergence of $\vecfieldE$ is zero everywhere aside from the origin.  Hence, the only possible source of flux comes from the origin and our previous argument discussed the symmetry of this field.  So long as we integrate in a surface that encloses the origin, we will have the same answer.  This leads us to (d).
-    \item We have already computed $\grad \cdot \vecfieldE$ and noted this in an earlier problem.  It's now very physically reasonable to suspect that we have the following identity
-    \[
-    \int_\Omega \grad \cdot \vecfieldE d\Omega = \int_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
-    \]
-    since the amount of ``source behavior" in the region $\Omega$ should directly correspond to the flux that will pass through the boundary.  To picture this literally, if we pump in water at $(0,0,0)$, we know how much water we pumped in by seeing how much flows through any surface surrounding the origin.  
+        \item Finally, if $\tangentgamma =\zhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = -\frac{y}{2}\yhat -\frac{x}{2}\xhat.
+        \]
+    \end{itemize}
+    Note that if $\tangentgamma$ is in the $x$- or $y$-direction, we get a force that is aligned in the $z$-direction.  When $\tangentgamma$ is in the $z$-direction, then the forces are in the $x$- and $y$-direction. Moreover, the forces that align in the $z$-direction will cause the particle to move away indefinitely in the $z$-direction whereas when the force is in the $x$- or $y$-direction, we will have a force that causes the particle to oscillate.
     
-    Thus, our argument is that
+    \item If we apply a magnetic field to charged particles, the particles undergo forces. By giving particles more energy of motion, we are heating them up.  If we apply the correct kind of magnetic field, it is conceivable that we would simply causes a particle to vibrate with more intensity.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Set up but do not compute the integrals of the given fields over the given curves.
+    \begin{enumerate}[(a)]
+        \item $f(x,y) = xe^{x+y}+\cos(xy)$, $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix}$, $t_0 = 0$, $t_1=2\pi$.
+        \item $g(x,y,z) = \frac{\ln(z^2)}{e^{xy}}$, $\curvegamma(t) = \begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ , $t_0 = 1$, $t_1=-1$.
+        \item $\vecfieldU(x,y) = \begin{pmatrix} -y \\ x \end{pmatrix}$, $\curvegamma(t) = \begin{pmatrix} e^t \\ e^t \end{pmatrix}$, $t_0 = 5$, $t_1=10$.
+        \item $\vecfieldV(x,y,z) = \begin{pmatrix} 2x \\ y \\ x \end{pmatrix}$, $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ t \\ \sqrt{t} \end{pmatrix}$, $t_0 = 0$, $t_1=1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We want to integrate
     \[
-    \int_\Omega \grad \cdot \vecfieldE d\Omega = 4\pi.
+    \int_{\curvegamma} f d\curvegamma = \int_{t_0}^{t_1} f(\curvegamma(t)) \left| \tangentgamma(t) \right| dt.
     \]
-    Now, $\grad\cdot \vecfieldE$ is zero aside from at $(x,y,z)=(0,0,0)$, and thus $\grad \cdot \vecfieldE$ must mimic the Dirac delta by being infinite at the origin (which we observed previously).  Hence, we conclude that
+    We just have to determine each part of this integral. We know $t_0$ and $t_1$, so we just need $f(\curvegamma(t))$ and the speed $\left|\tangentgamma(t)\right|$. Evaluating yields,
     \[
-    \grad \cdot \vecfieldE = 4\pi \delta(x,y,z).
+    f(\curvegamma(t)) = \cos(t)e^{\cos(t)+\sin(t)} + \cos(\cos(t)\sin(t)),
     \]
-    Furthermore, if we relate this to the Maxwell equation for the electric field $\vecfieldE$ due to a charge distribution $\rho(x,y,z)$, i.e.,
+    and
     \[
-    \grad \cdot \vecfieldE = \rho/\epsilon_0,
+    \tangentgamma(t) = \begin{pmatrix} -\sin(t) \\ \cos(t) \end{pmatrix}
     \]
-    we see that a point charge corresponds to a distribution $\delta(x,y,z)$ times some constant.
+    which means
+    \[
+    \left| \tangentgamma(t) \right| = \sqrt{\sin^2(t) + \cos^2(t)} = 1.
+    \]
+    Thus, we have
+    \[
+    \boxed{\int_{\curvegamma} f d\curvegamma = \int_0^{2\pi} \cos(t)e^{\cos(t)+\sin(t)} + \cos(\cos(t)\sin(t)) dt.}
+    \]
+
+    \item This part is analogous to (a), so we have
+    \[
+    g(\curvegamma(t)) = \frac{\ln(t^6)}{e^{t^3}},
+    \]
+    \[
+    \tangentgamma(t) = \begin{pmatrix} 1 \\ 2t \\ 3t^2 \end{pmatrix},
+    \]
+    therefore
+    \[
+    \left| \tangentgamma(t) \right| = \sqrt{1+4t^2+9t^4}.
+    \]
+    Thus,
+    \[
+    \boxed{\int_{\curvegamma} g d\curvegamma = \int_{1}^{-1} \frac{\ln(t^6)}{e^{t^3}} \sqrt{1+4t^2+9t^4} dt.}
+    \]
+
+    \item We want to integrate
+    \[
+    \int_{\curvegamma} \vecfieldU \cdot d\curvegamma = \int_{t_0}^{t_1} \vecfieldU(\curvegamma(t)) \cdot \tangentgamma(t) dt.
+    \]
+    So, we determine each individual part of this integral. We have
+    \[
+    \vecfieldU(\curvegamma(t)) = \begin{pmatrix} -e^t \\ e^t \end{pmatrix}
+    \]
+    and
+    \[
+    \tangentgamma(t) = \begin{pmatrix} e^t \\ e^t \end{pmatrix}.
+    \]
+    Lastly, we compute the dot product
+    \[
+    \vecfieldU(\curvegamma(t)) \cdot \tangentgamma(t) = -e^{2t} + e^{2t} = 0.
+    \]
+    Thus,
+    \[
+    \boxed{\int_{\curvegamma} \vecfieldU \cdot d\curvegamma = \int_{5}^{10} 0 dt = 0.}
+    \]
+
+    \item This part is analogous to (c). We have
+    \[
+    \vecfieldV(\curvegamma(t)) = \begin{pmatrix} 2 \cos(t) \\ t \\ \cos(t) \end{pmatrix}
+    \]
+    and
+    \[
+    \tangentgamma(t) = \begin{pmatrix} \sin(t) \\ 1 \\ \frac{1}{2\sqrt{t}} \end{pmatrix}.
+    \]
+    Then,
+    \[
+    \vecfieldV(\curvegamma(t)) \cdot \tangentgamma(t) = 2 \cos(t) \sin(t) + t + \frac{\cos(t)}{2\sqrt{t}}.
+    \]
+    Thus,
+    \[
+    \boxed{\int_{\curvegamma} \vecfieldV \cdot d\curvegamma = \int_0^1 2 \cos(t) \sin(t) + t + \frac{\cos(t)}{2\sqrt{t}} dt.}
+    \]
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $f(x,y,z)=x \cos(y) + yz$ be a scalar field and let $\curvegamma = \begin{pmatrix} 1 \\ t \\ \sin(t) \end{pmatrix}$ be a curve from time $t_0 = 0$ to $t_1 = 2 \pi$. Compute
+\[
+    \int_{\curvegamma} f(\curvegamma)d\curvegamma.
+\]
+\end{problem}
+\begin{solution}
+First,
+\[
+f(\curvegamma(t)) = \cos(t) + t \sin(t),
+\]
+\[
+\tangentgamma(t) = \begin{pmatrix} 0 \\ 1 \\ \cos(t) \end{pmatrix},
+\]
+and
+\[
+\left| \tangentgamma(t) \right| = \sqrt{1+\cos^2(t)}.
+\]
+Thus, we now compute
+\begin{align*}
+    \int_{\curvegamma} f(\curvegamma)d\curvegamma & = \int_0^{2\pi} (\cos(t) + t \sin(t)) \sqrt{1+\cos^2(t)} dt\\
+    &\approx -7.2118.
+\end{align*}
+This was computed using WolframAlpha by inputting:
+\begin{verbatim}
+integrate[(cos(t)+t sin(t)) sqrt(1+cos^2(t)), {t,0,2pi}]
+\end{verbatim}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Consider the following vector field
+    \[
+    \vecfieldE = \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \xhat + \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \yhat + \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \zhat,
+    \]
+    which you can think of as the electric field of a positive point charge.  We argued that this field $\vecfieldE$ is conservative in a previous homework problem. Specifically, $\vecfieldE = \grad \phi$, for the scalar field 
+\[
+\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}
+\] 
+This follows from Faraday's law for static charges.
+    \begin{enumerate}[(a)]
+        \item Compute the integral
+        \[
+        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma \qquad \textrm{where} \qquad \curvegamma(t) = \begin{pmatrix} t \\ t \\ t \end{pmatrix},
+        \]
+        and $t\in [t_0,t_1]$ with $t_0$ and $t_1$ both greater than 0.  Note that this integral $T$ describes the gain in kinetic energy of a charged particle that moved along the path $\curvegamma$. 
+        \item Equivalently, since $\vecfieldE$ is conservative, we have
+        \[
+        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma = \phi(\curvegamma(t_1))-\phi(\curvegamma(t_0)).
+        \]
+        Show that this is true for the given vector field and potential. This shows that the choice of path does not matter; only the endpoints $\curvegamma(t_0)$ and $\curvegamma(t_1)$ matter.
+        \item Argue why the integral around any closed curve must be zero.
+        \item Argue why it must be that $\vecfieldE$ has no curl.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item First, note that
+    \[
+    d\curvegamma = \tangentgamma(t) dt = (\xhat + \yhat + \zhat)dt.
+    \]
+    Thus, we have that
+    \[
+    \vecfieldE(\curvegamma(t))= \frac{t}{\left(3t^2\right)^{3/2}} \xhat + \frac{t}{\left(3t^2\right)^{3/2}} \yhat + \frac{t}{\left(3t^2\right)^{3/2}} \zhat,
+    \]
+    and therefore
+    \[
+    \vecfieldE(\curvegamma(t)) \cdot d\curvegamma = \frac{3t}{\left(3t^2\right)^{3/2}}dt = \frac{1}{t^2\sqrt{3}}dt.
+    \]
+    Now, we have
+    \begin{align*}
+        \int_{\curvegamma} \vecfieldE \cdot d\gamma &= \int_{t_0}^{t_1} \frac{1}{t^2\sqrt{3}}dt\\
+        &= \frac{-1}{\sqrt{3}}\left(\frac{1}{t_1} - \frac{1}{t_0}\right).
+    \end{align*}
+    \item Note that we have
+    \[
+    \phi(x,y,z) = \frac{-1}{\sqrt{x^2+y^2+z^2}},
+    \]
+    and we can evalute 
+    \begin{align*}
+        \phi(\curvegamma(t_1))-\phi(\curvegamma(t_0)) &= \frac{-1}{\sqrt{3t_1^2}}-\frac{1}{\sqrt{3t_0^2}}\\
+        &= \frac{-1}{\sqrt{3}} \left(\frac{1}{t_1}-\frac{1}{t_0}\right),
+    \end{align*}
+    which is identical to the answer from (a).
+    \item For a closed curve, we have $\curvegamma(t_1)=\curvegamma(t_0)$ and thus
+    \[
+    \int_{\curvegamma} \vecfieldE \cdot d\gamma = \phi(\curvegamma(t_1))-\phi(\curvegamma(t_0)) = \phi(\curvegamma(t_0))-\phi(\curvegamma(t_0))=0.
+    \]
+    \item The fact that $\vecfieldE = \grad \phi$ or, equivalently, the work in part (c) shows that $\vecfieldE$ is conservative. Note that all conservative vector fields are curl free which means $\grad \times \vecfieldE = \zerovec$.
+\end{enumerate}
 \end{solution}
 
 \end{document}

@@ -4,384 +4,322 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
 
 \begin{document}
 
 \begin{center}
-   \textsc{\large MATH 272, Homework 4, \emph{Solutions}}\\
-   \textsc{Due March 2$^\textrm{nd}$}
+   \textsc{\large MATH 272, Homework 4. \emph{Solutions}.}\\
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-Plot the following curves and print pictures of each using GeoGebra.  
-\begin{enumerate}[(a)]
-	\item (Helix) $\curvegamma_1(t) = \begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ t\end{pmatrix}$, from $t=0$ to $t=2\pi$. Where might this show up? If you think about the Earth moving through space and Moon orbiting Earth, then the Moon follows a (locally) helical path.
-	
-	\item (Falling Ball) $\curvegamma_2(t) = \begin{pmatrix} t\\  0.5t \\ 9-t^2 \end{pmatrix}$ from $t=0$ to $t=3$.
-	
-	\item (Perturbed Orbiter) $\curvegamma_3(t) = \begin{pmatrix} 3\cos(t) \\ 3 \sin(t) \\ \sin(10t)\end{pmatrix}$ from $t=0$ to $t=2\pi$.
-	
-	\item Create your own curve.
-\end{enumerate}
+    Plot each of the following vector fields. Describe what each field represents in the relevant coordinate system. Do we see any points in space where there are issues with these vector fields?
+    \begin{enumerate}[(a)]
+        \item $\rhohat = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$.
+        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
+        \item $\phihat = \frac{xz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\xhat + \frac{yz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\yhat-\frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2+z^2}}\zhat$.
+        \item $\rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat+\frac{z}{\sqrt{x^2+y^2+z^2}}\zhat$.
+    \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item Here is the plot.
+    \item Here is a plot of $\rhohat$.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=.6\textwidth]{Images/helix.png}
-        \caption{Helix.}
+        \includegraphics[width=.6\textwidth]{figures/rho_hat}
     \end{figure}
-    \item Here is the plot.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/falling_ball.png}
-        \caption{Falling ball.}
-    \end{figure}
-    \item Here is the plot.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/perturbed_orbiter.png}
-        \caption{Perturbed orbiter.}
-    \end{figure}
-\end{enumerate}
-And an extra plot of my own. Here, I used the equation
-\[
-\curvegamma = \begin{pmatrix} (5+3\cos(8t))\cos(t) \\ (5+3\cos(8t))\sin(t) \\ 3\sin(8t) \end{pmatrix}
-\]
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.6\textwidth]{Images/torus_knot.png}
-    \caption{A knot that can be tied around a torus (i.e., the surface of a donut).}
-\end{figure}
-\end{solution}
+    Notice that when $x=y=0$ (i.e., along the $z$-axis) that we have an inability to ascribe a direction to $\rhohat$. This is because the coordinate $\rho$ itself is defined to be the measurement of distance from the $z$-axis. The field $\rhohat$ points in the direction in which $\rho$ increases most quickly (i.e., it points along $\grad \rho(x,y,z)$). Since any direction satisfies this idea, there is no unique direction to choose. This vector field is unable to describe anything useful along the $z$-axis.
 
+    \item Here is a plot of $\thetahat$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{figures/theta_hat}
+    \end{figure}
+    Much like $\rhohat$, $\thetahat$ has issues along the $z$-axis. But, the reason for issue is subtly different than the failure of $\rhohat$. If we pick a point with $x\neq 0$ or $y\neq 0$, then we can ascribe an angle to this vector relative to the $xz$-plane. However, for points on the $z$-axis, there is no angle to speak of -- it isn't that it is a zero angle, it simply does not exist. 
+
+    \item Here is a plot of $\phihat$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{figures/phi_hat}
+    \end{figure}
+    This vector field again lacks a description along the $z$-axis since we would have $x=y=0$. Once again, the reasoning here is subtle yet important. A point on the $z$-axis either has an angle of $\phi = 0$ or $\phi = \pi$ and, for the origin, there isn't a valid angle to specify there either. Once again, we can think about what direction moving away from the $z$-axis would increase $\phi$ (i.e., point in $\phihat$), and the answer is \emph{every} direction does this. 
+
+    \item Here is a plot of $\rhat$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{figures/r_hat}
+    \end{figure}
+    This field experiences only a single point of concern. Namely, the origin. There, this field is not defined as any direction we choose to move at the origin increases $r$ since $r$ is a measure of distance from the origin. 
+\end{enumerate}
+\end{solution}
 
 \newpage
 \begin{problem}
-The length of a curve is an important notion. In fact, the length of a curve is often related to the energy of some configuration. We can compute the length of a curve over the time $t=t_0$ to $t=t_1$ by integrating the \emph{speed} of the curve over that time.  That is,
-\[
-l(\curvegamma) = \int_{t_0}^{t_1} \left\|\tangentgamma(t)\right\| dt.
-\]
-We can compute the \emph{energy} of a curve by taking
-\[
-E(\curvegamma) = \int_{t_0}^{t_1} \frac{1}{2} \left\| \tangentgamma(t)\right\|^2dt.
-\]
+Let us see some of the usefulness of cylindrical coordinates.
 \begin{enumerate}[(a)]
-	\item Find the length of the Helix from Problem 1 (a).
-	\item Find the energy of the Perturbed Orbiter in Problem 1 (c).  Roughly, this corresponds to the potential energy a rubber band stretched this way would have.
+    \item Using the fact that $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$, convert the magnetic field 
+    \[
+    \vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat,
+    \]
+    into cylindrical coordinates (i.e., only a function of $\rho$, $\theta$, $z$, and $\rhohat$, $\thetahat$, and $\zhat$).  
+        \item Parameterize a curve $\curvegamma(t)$ that traces out the unit circle in the $xy$-plane in cylindrical coordinates.
+        \item Compute the tangent vector $\tangentgamma(t)$ in cylindrical coordinates?
+        \item Compute the following integral using cylindrical coordinates
+        \[
+        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma.
+        \]
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item We let $\curvegamma(t) = \begin{pmatrix} 3\cos (t) \\ 3\sin(t) \\ t\end{pmatrix}$ and we go from $t=0$ to $t=2\pi$. Then we have
-\[
-\tangentgamma(t) =\begin{pmatrix} -3\sin(t) \\ 3\cos(t) \\ 1\end{pmatrix}.
-\]
-and so
-\[
-\left\|\tangentgamma(t)\right\| = \sqrt{(-3\sin (t))^2+(3\cos (t))^2+1^2} = \sqrt{10},
-\]
-since $\sin^2(t)+\cos^2(t)=1$.
+    \item We have that
+    \[
+    \vecfieldB = -\frac{y}{2} \xhat + \frac{x}{2}\yhat.
+    \]
+    Then, note that we have
+    \begin{align*}
+        \vecfieldB &= \frac{1}{2}\sqrt{x^2+y^2} \left( \frac{-y}{\sqrt{x^2+y^2}} \xhat + \frac{x}{\sqrt{x^2+y^2}} \right)\\
+        &=\frac{1}{2} \sqrt{x^2+y^2} \thetahat.
+    \end{align*}
+    Finally, we have that $\rho = \sqrt{x^2+y^2}$ and hence
+    \[
+    \vecfieldB = \frac{\rho}{2} \thetahat.
+    \]
+    \item It suffices to find functions $\rho(t)$, $\theta(t)$, and $z(t)$ to create the curve
+    \[
+    \curvegamma(t) = \rho(t) \rhohat + \theta(t) \thetahat + z(t) \zhat.
+    \]
+    Note that for a circle centered along the $z$-axis, we have that $\rho$ is constant and in this case since we are considering the unit circle, we have $\rho(t)=1$.  Similarly, we want the circle to lie in the $xy$-plane where $z=0$, hence we must have $z(t)=0$.  Finally, we must trace the whole unit circle so we must have $\theta$ cover all of $[0,2\pi)$. One choice is to have $\theta(t)=t$ for $t\in[0,2\pi)$, but there are many other options! Using these choices, we have
+    \[
+    \curvegamma(t) = \rhohat + t \thetahat.
+    \]
+    \item Then, we have the tangent vector $\tangentgamma = \frac{d\curvegamma}{dt}$ and thus
+    \[
+    \tangentgamma(t) = \thetahat.
+    \]
+    \item Note that from the above work we have
+    \[
+    d \curvegamma = \tangentgamma dt = \thetahat dt.
+    \]
+    Thus, 
+    \[
+    \vecfieldB \cdot \tangentgamma = \frac{\rho}{2}.
+    \]
+    This gives us that
+    \begin{align*}
+        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma &= \int_0^{2\pi} \frac{\rho(t)}{2}dt\\
+        &=\int_0^{2\pi} \frac{1}{2} dt\\
+        &= \pi.
+    \end{align*}
+    Above, we can note that $\rho(t)=1$ since we are integrating along the unit circle in the $xy$-plane.
+\end{enumerate}
+\end{solution}
 
-Now we integrate to find
-\begin{align*}
-    l(\curvegamma) &= \int_0^{2\pi} \sqrt{10}dt\\
-    &= \sqrt{10} t|_0^{2\pi}\\
-    &= 2\pi \sqrt{10}.
-\end{align*}
-    \item Here we have $\curvegamma(t)=\begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ \sin(10t)\end{pmatrix}$ starting from $t=0$ to $t=2\pi$. Then we have
+\newpage
+\begin{problem}
+    Convert the following integrals to integrals in cylindrical coordinates. Also, describe the region in which you are integrating over. Do not evaluate the integrals.
+    \begin{enumerate}[(a)]
+        \item $\displaystyle{\int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz}$.
+        \item $\displaystyle{\int_0^1 \int_{-z}^z \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}} x^2+y^2+z^2 dxdydz}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item First, let us convert the integrand to cylindrical coordinates. We have
     \[
-    \tangentgamma(t)=\begin{pmatrix} -3\sin(t) \\ 3\cos(t) \\ 10\cos(10t)\end{pmatrix}
+    xyz = \rho \cos (\theta) \rho \sin(\theta) z = \rho^2 \cos(\theta)\sin(\theta)z.
     \]
-    and so
+    Now, as for the bounds to the integral, we are letting
     \[
-    \left\|\tangentgamma'(t)\right\| = \sqrt{(-3\sin(t))^2+(3\cos(t))^2+(10\cos(10t))^2} = \sqrt{9+100\cos^2(10t)}.
+    -\sqrt{1-y^2}\leq x \leq \sqrt{1-y^2}.
     \]
-    This is not a function that can be integrated without some trigonometric substitutions.  If you're interested, you can look at integration using trigonometric substitutions, but I will not go into it. Instead, I'd argue it's good practice for us to get more used to using technology to help solve our problems.  So, we wish to evaluate the integral
+    In other words, this is the region given in the following figure.
+    \begin{figure}[H]
+        \centering    
+    \includegraphics[width=.6\textwidth]{figures/disk.png}
+    \end{figure} 
+    So, if we then let $y$ range from $-1$ to $1$, we must be integrating over the unit disk in the $xy$-plane.  Then, we have $-1\leq z\leq 1$, so it must be that we are integrating over a cylindrical region.  So, to convert the whole integral to cylindrical coordinates, we note that
     \[
-    E(\gamma) = \int_0^{2\pi} \frac{1}{2}(9+100\cos^2(10t))dt.
+    dxdydz = \rho d\rho d\theta dz,
     \]
-	Then we can type into WolframAlpha
-	\begin{verbatim}
-	integrate[(1/2)(9+100cos^2(10t)),{t,0,2*pi}]
-	\end{verbatim}
+    and thus
+    \[
+    \int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz = \int_{-1}^1 \int_{0}^{2\pi} \int_{0}^1 \rho^3 \cos(\theta)\sin(\theta)z d\rho d\theta dz.
+    \]
+    \item The intuition from (a) can help us since the bounds for $x$ and $y$ are similar to (a), except that we have that the radius of the circle depends is equal to $z$ and is not just fixed at 1. In other words, as $z$ increases, we are integrating over larger disks. The disks increase from a radius of 0 up to a radius of 1 linearly, so we are integrating over a solid cone!
+
+    In fact, one way to see this is to mess with the above equations
+    \begin{align*}
+        -\sqrt{z^2-y^2}\leq &x \leq \sqrt{z^2-y^2} \\
+        \implies ~ x^2&= z^2-y^2 \\
+        \implies ~ x^2+y^2-z^2=0,
+    \end{align*}
+    which is the implicit equation for a double cone surface. In cylindrical coordinates, this gives us the relationship $\rho^2=z^2$ and thus $z=\pm\rho$. However, we require $0\leq z \leq 1$, so we must take $\rho=z$.  Thus, our integral then becomes
+    \[
+    \int_0^1 \int_{-z}^z \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}} x^2+y^2+z^2 dx\,dy\,dz = \int_{0}^1 \int_0^{2\pi} \int_{0}^z \left(\rho^2 + z^2 \right) \rho \, d\rho \, d \theta\, dz. 
+    \]
     
-    Using this, we find
-    \[
-    E(\gamma)=59\pi.
-    \]
-
-\end{enumerate}
+    \end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-Given a scalar field of two variables $F(x,y)$, we can create an object called the \emph{graph} of $F(x,y)$ by plotting the set of points $(x,y,F(x,y))$. In fact, you have done this many times in your life. For example, you have consistently plotted the graph of a function $f(x)$ by plotting $(x,f(x))$ in the plane!  
-
-Using GeoGebra, plot the graph of the following functions. Print these off and include them.  Also, describe the what the graph of the function does as we move along the $x$-axis, the $y$-axis, and along the line $y=x$. For each, use the range $-3\leq x \leq 3$ and $-3\leq y \leq 3$.
-\begin{enumerate}[(a)]
-	\item $F(x,y) = \frac{4xy}{1+x^2+y^2}$.
-	\item $G(x,y) = \sin(xy)$.
-	\item $H(x,y) = \frac{-x^2-y^2}{5}$.
-\end{enumerate}
+    Note that the Laplacian $\Delta$ in cylindrical coordinates is given by
+    \[
+        \Delta f(\rho,\theta,z) = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho}\right)+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \theta^2} + \frac{\partial^2 f}{\partial z^2}.
+    \]
+    Compute the Laplacian of
+    \[
+        f(\rho,\theta,z) = \sqrt{\rho^2+z^2} z \cos(\theta).
+    \]
 \end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item Below is the graph of the function $F(x,y)$.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/4a.png}
-        \caption{The graph of $F(x,y)$.}
-    \end{figure}
-    If we move along the $x$-axis, then we have that $y=0$ and thus our function takes the form
-    \[
-    F(x,0) = \frac{4x\cdot 0}{1+x^2+0^2} = 0.
-    \]
-    Thus, along this axis the function is a constant zero. Similarly, if we take $x=0$ we have that $F(0,y)=0$ and our function is again constantly zero along this axis. Instead, if we take the function along the $y=x$ line, then we have
-    \[
-    F(x,x) = \frac{4x^2}{1+2x^2}
-    \]
-    We can plot this function as a single variable graph in the $(x=y)z$-plane by:
-    \begin{figure}[H]
-    	\centering
-    	\includegraphics[width=.6\textwidth]{Images/3a_y=x.png}
-    	\caption{The graph of $F(x,x)$ in the $xz$-plane.}
-    \end{figure}
-    \item Below is the graph of the function $G(x,y)$.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/4b.png}
-        \caption{The graph of $G(x,y)$.}
-    \end{figure}
-    If we move along the $x$-axis, we take $y=0$ and thus
-    \[
-    G(x,0) = \sin(0) = 0.
-    \]
-    Hence, our function is constantly zero on this axis.  Similarly, if we take the function on the $y$-axis, then $x=0$ means
-    \[
-    G(0,y) = 0.
-    \]
-    Lastly, if we take $y=x$, then
-    \[
-    G(x,x) = \sin(x^2),
-    \]
-    which we can graph in the $(x=y)z$-plane by:
-        \begin{figure}[H]
-        	\centering
-        	\includegraphics[width=.6\textwidth]{Images/3b_y=x.png}
-        	\caption{The graph of $G(x,x)$ in the $xz$-plane.}
-        \end{figure}
-    \item Below is the graph of $H(x,y)$.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/4c.png}
-        \caption{The graph of $H(x,y)$.}
-    \end{figure}
-    Here if we consider the function along the $x$-axis, we have
-    \[
-    H(x,0)= \frac{-x^2}{5},
-    \]
-    which is a parabola in the $xz$-plane. Similarly, on the $y$-axis, we have
-    \[
-    H(0,y) = \frac{-y^2}{5},
-    \]
-    which is the same parabola but in the $yz$-plane. Lastly, letting $x=y$ we get
-    \[
-    H(x,x) = \frac{-2x^2}{5},
-    \]
-    which is a steeper parabola in the $(x=y)z$-plane.
-\end{enumerate}
-\end{solution}
-
-\newpage
-\begin{problem}
-For this problem, let us consider a family of scalar fields of varying dimensionality.  We will seek out an understanding of the level sets and how to relate these to the derivatives of a scalar field. For each part, compute the set of points such that $f(\vecx)=\frac{1}{2}$, $f(\vecx)=1$, $f(\vecx)=2$, and $f(\vecx)=3$ and plot these sets. 
-
-Compute as well the vector of partial derivatives (referred to as the \emph{gradient vector}) which we write as
+\begin{solution}
+Let's compute each term and then add them together. We have
+\begin{align*}
+    A=\frac{1}{\rho}\frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho} \right) &=  \frac{z\cos \theta}{\rho} \frac{\partial}{\partial \rho} \left( \frac{\rho^2}{\sqrt{\rho^2+z^2}} \right)\\
+    &=\frac{z\cos \theta}{\rho} \left(\frac{2\rho}{\sqrt{\rho^2+z^2}}-\frac{\rho}{\left(\rho^2+z^2\right)}\right)\\
+    &= z\cos \theta \left( \frac{2}{\sqrt{\rho^2+z^2}} - \frac{1}{\left(\rho^2+z^2\right)}\right).
+\end{align*}
+Likewise, we have
+\begin{align*}
+    B=\frac{1}{\rho^2} \frac{\partial^2 f}{\partial \theta^2} &= -\frac{\sqrt{\rho^2+z^2}z\cos\theta}{\rho^2}.
+\end{align*}  
+Lastly, we have
+\begin{align*}
+    C=\frac{\partial^2 f}{\partial z^2} &= \cos \theta \frac{\partial}{\partial z}\frac{\partial}{\partial z} \left( z \sqrt{\rho^2+z^2}\right)\\
+    &= \cos \theta \frac{\partial}{\partial z} \left( \sqrt{\rho^2+z^2}+ \frac{z^2}{\sqrt{\rho^2+z^2}}\right)\\
+    &= \cos \theta \left(\frac{z}{\sqrt{\rho^2+z^2}}+\frac{2z}{\sqrt{\rho^2+z^2}}-\frac{z^3}{\left(\rho^2+z^2\right)^{3/2}}\right).
+\end{align*}
+Then we have that
 \[
-\nablavec f(\vecx) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n}\end{pmatrix}.
+\Delta f = A+B+C.
 \]
-in $\R^n$. Draw the gradient vector on your plots at a three different points for each part.
-\begin{enumerate}[(a)]
-	\item Consider the 1-dimensional scalar field 
-	\[
-	f(x) = \frac{1}{|x|}=\frac{1}{\sqrt{x^2}}.
-	\]
-	Here each level set will be made up of distinct points.
-	\item Consider the 2-dimensional scalar field
-	\[
-	f(x) = \frac{1}{|\vec{x}|} = \frac{1}{\sqrt{x^2+y^2}}.
-	\]
-	Here each level set will be a curve.
-	\item Consider the 3-dimensional scalar field
-		\[
-		f(x) = \frac{1}{|\vec{x}|} = \frac{1}{\sqrt{x^2+y^2+z^2}}.
-		\]
-		Here each level set will be a surface.
-\end{enumerate}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item We first solve this problem algebraically then we'll deal with the plots.  We have
-    \begin{align*}
-        f(x)&=c\\
-        \iff \frac{1}{\sqrt{x}^2} &= c\\
-        \iff \sqrt{x^2}&=\frac{1}{c}\\
-        \iff x^2&= \frac{1}{c^2}\\
-        \iff x &= \pm \frac{1}{c}.
-    \end{align*}
-    Now using this, we find that the level points follow:
-    \begin{align*}
-        \textrm{For $c_0=\frac{1}{2}$:~}\quad x&=\pm 2\\
-        \textrm{For $c_1=1$:~}\quad x&=\pm 1\\
-        \textrm{For $c_2=2$:~}\quad x&=\pm \frac{1}{2}\\
-        \textrm{For $c_3=3$:~}\quad x&=\pm \frac{1}{3}.\\
-    \end{align*}
-    Here are the plots.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_points.png}
-        \caption{Graph of $f(x)$ with level points on the $x$-axis.}
-    \end{figure}
-    \item Let's repeat the same process as in (a). We take
-    \begin{align*}
-        f(x,y)&=c\\
-        \iff \frac{1}{\sqrt{x^2+y^2}}&= c\\
-        \iff \sqrt{x^2+y^2}&=\frac{1}{c}\\
-        \iff x^2+y^2 &= \frac{1}{c^2},
-    \end{align*}
-    which is the equation for a circle of radius $\frac{1}{c}$. Now using this, we find that the level curves follow:
-    \begin{align*}
-        \textrm{For $c_0=\frac{1}{2}$:~}\quad x^2+y^2&=2\\
-        \textrm{For $c_1=1$:~}\quad x^2+y^2&=1\\
-        \textrm{For $c_2=2$:~}\quad x^2+y^2&=\frac{1}{4}\\
-        \textrm{For $c_3=3$:~}\quad x^2+y^2&=\frac{1}{9}.\\
-    \end{align*}
-    Here are the plots.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_curve_surface.png}
-        \caption{The graph of the function $f(x,y)$.}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_curves.png}
-        \caption{The level curves for the function $f(x,y)$.}
-    \end{figure}
-    \item Let's repeat the process one last time, so we have
-    \begin{align*}
-            f(x,y,z)&=c\\
-        \iff \frac{1}{\sqrt{x^2+y^2+z^2}}&= c\\
-        \iff \sqrt{x^2+y^2+z^2}&=\frac{1}{c}\\
-        \iff x^2+y^2+z^2 &= \frac{1}{c^2},
-    \end{align*}
-    which is the equation for a sphere of radius $\frac{1}{c}$.  Then the level surfaces follow:
-        \begin{align*}
-        \textrm{For $c_0=\frac{1}{2}$:~}\quad x^2+y^2+z^2&=2\\
-        \textrm{For $c_1=1$:~}\quad x^2+y^2+z^2&=1\\
-        \textrm{For $c_2=2$:~}\quad x^2+y^2+z^2&=\frac{1}{4}\\
-        \textrm{For $c_3=3$:~}\quad x^2+y^2+z^2&=\frac{1}{9}.\\
-    \end{align*}
-    Here are the plots
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_surface_c0.png}
-        \caption{Level surface for $f(x,y,z)=c_0$.}
-    \end{figure}
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_surface_c1.png}
-        \caption{Level surface for $f(x,y,z)=c_1$.}
-    \end{figure}
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_surface_c2.png}
-        \caption{Level surface for $f(x,y,z)=c_2$.}
-    \end{figure}
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{Images/level_surface_c3.png}
-        \caption{Level surface for $f(x,y,z)=c_3$.}
-    \end{figure}
-\end{enumerate}
-One can think of these level sets as the sets of constant energy. For example, if this function $f(x,y,z)$ describes the potential energy (which this function does for the gravitational and electrostatic force), then the level sets correspond to the circular orbits of particles in this potential field. 
 \end{solution}
 
 \newpage
 \begin{problem}
-Consider the two dimensional scalar field $T(x,y)=x+y$ that describes the temperature on the square plate $\Omega$ given by the set $0\leq x,y \leq 1$.  Compare the two answers you get!
-\begin{enumerate}[(a)]
-	\item Compute the integral
-	\[
-	\int_\Omega T(x,y)d\Omega.
-	\]
-	\item Let $\curvegamma$ be the curve that traverses the boundary of the square plate in the counterclockwise direction.  Compute
-	\[
-	\int_{\curvegamma} T(\curvegamma)d\curvegamma. 
-	\]
-\end{enumerate}
+	In spherical coordinates (either implicitly or explicitly), parameterize the following objects.
+	\begin{enumerate}[(a)]
+		\item A solid sphere with radius 3.
+		\item The surface of an infinite cone with a vertex angle of $\pi/4$.
+		\item A latitudinal curve on the unit sphere at the latitude of 30$^\circ$ above the equator.
+		\item A solid unit sphere with a cylinder of radius 1/2 removed from the core.
+	\end{enumerate}
 \end{problem}
 \begin{solution} ~
-	\begin{enumerate}[(a)]
-		\item We take
-		\begin{align*}
-			\iint_\Omega T(x,y)d\Omega &= \int_0^1 \int_0^1 x+y dxdy\\
-			&= \int_0^1 \left.\left(\frac{1}{2}x^2+xy\right)\right\vert_0^1 dy\\
-			&= \int_0^1 \frac{1}{2} + y dy\\
-			&= \left.\left(\frac{1}{2}y + \frac{1}{2}y^2\right)\right\vert_0^1\\
-			&= 1.
-		\end{align*}
-		\item	First, note that there are four straight curves that parameterize the boundary of the plate.  Namely, we can choose the parameterizations 
-		\[
-		\curvegamma_1(t) = \begin{pmatrix} t \\ 0 \end{pmatrix} \quad \curvegamma_2(t) = \begin{pmatrix} 1 \\ t \end{pmatrix} \quad \curvegamma_1(t) = \begin{pmatrix} 1-t \\ 1 \end{pmatrix} \quad \curvegamma_1(t) = \begin{pmatrix} 0 \\ 1-t \end{pmatrix},
-		\]
-		Note that there are many other parameterizations that work. We can see the chosen curves in this figure:
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=.6\textwidth]{Images/plate_boundary.png}
-		\end{figure}
-		Thus, our integral can be written as
-		\[
-		\int_{\curvegamma} T(\curvegamma) d\curvegamma = \int_{\curvegamma_1} T(\curvegamma) d\curvegamma_1 + \int_{\curvegamma_2} T(\curvegamma) d\curvegamma_2 + \int_{\curvegamma_3} T(\curvegamma) d\curvegamma_3 + \int_{\curvegamma_4} T(\curvegamma) d\curvegamma_4.
-		\]
-		Then, we can compute each integral on the right hand side.
-		\begin{align*}
-			\int_{\curvegamma_1} T(\curvegamma_1) d\curvegamma_1 &= \int_0^1 T(\curvegamma_1(t))\left|\tangentgamma_1(t)\right|dt\\
-			&= \int_0^1 T(t,0) dt\\
-			&= \int_0^1 t dt\\
-			&= 1.
-		\end{align*}
-		Similarly, 
-		\begin{align*}
-				\int_{\curvegamma_2} T(\curvegamma_2) d\curvegamma_2 &= \int_0^1 T(\curvegamma_2(t))\left|\tangentgamma_2(t)\right|dt\\
-				&= \int_0^1 T(1,t) dt\\
-				&= \int_0^1 1+t dt\\
-				&= \left.\left(t+\frac{1}{2}t^2\right)\right\vert_0^1\\
-				&= \frac{3}{2}.
-		\end{align*}	
-		Again,
-		\begin{align*}
-				\int_{\curvegamma_3} T(\curvegamma_3) d\curvegamma_3 &= \int_0^1 T(\curvegamma_3(t))\left|\tangentgamma_3(t)\right|dt\\
-				&= \int_0^1 T(1-t,1) dt\\
-				&= \int_0^1 (1-t)+1 dt\\
-				&= \int_0^1 2-tdt\\
-				&= \left.\left( 2t-\frac{1}{2}t^2\right)\right\vert_0^1\\
-				&= \frac{3}{2}.
-		\end{align*}			
-		Lastly,
-		\begin{align*}
-			\int_{\curvegamma_4} T(\curvegamma_4) d\curvegamma_4 &= \int_0^1 T(\curvegamma_4(t))\left|\tangentgamma_4(t)\right|dt\\
-			&= \int_0^1 T(0,1-t) dt\\
-			&= \int_0^1 1-t dt\\
-			&= \left.\left(t-\frac{1}{2}t^2\right)\right\vert_0^1\\
-			&= \frac{1}{2}.
-		\end{align*}	
-	\end{enumerate}
-	Thus, we have
-	\[
-	\boxed{\int_{\curvegamma} T(\curvegamma) d\curvegamma = 1+\frac{3}{2}+\frac{3}{2}+\frac{1}{2} = \frac{9}{2}.}
-	\]
+ \begin{enumerate}[(a)]
+    \item In this case, it's easiest to just take $0\leq r \leq 3$, $0\leq \theta < 2\pi$ and $0\leq \phi \leq \pi$.  
+    \item Here, we let $\phi=\frac{\pi}{8}$ so that the vertex angle is $\frac{\pi}{4}$.  Then we let $r\in [0,\infty)$ and $\theta \in [0,2\pi)$.
+    \item We can write this in spherical coordinates by noting that 30$^\circ$ is $\frac{\pi}{6}$ and that we can get $\phi(t)$ must be constant and indeed 
+    \[
+    \phi(t) = \frac{\pi}{2}-\frac{\pi}{6}=\frac{\pi}{3}.
+    \]
+    Then, since the curve is on the unit sphere, it must be that $r(t)=1$ and finally we have freedom to choose $\theta(t)$ so long as $\theta$ runs over the range $[0,2\pi)$. Most easily is to take $\theta(t)=t$ and $t\in [0,2\pi)$ to get the curve
+    \[
+    \curvegamma(t) = \rhat + t \thetahat +\frac{\pi}{3} \phihat.
+    \]
+    \item Recall that a cylinder of radius $\frac{1}{2}$ has the equation
+    \[
+    x^2+y^2=\frac{1}{4}.
+    \]
+    The unit sphere is given by $r\leq 1$ with $\theta \in [0,2\pi)$ and $\phi \in [0,\pi]$. However, one can see that for this object to be properly parameterized, we need that $r$ depends on $\phi$.  Drawing from a side profile can lead one to find that we must always have the small value for $r$ is
+    \[
+    r_{\textrm{min}} \sin \phi = \frac{1}{2}
+    \]
+    Then, it must be that at smallest $\phi = \frac{\pi}{6}$ since when $r=1$ we have $\phi = \arcsin(1/2) = \frac{\pi}{6}$.  So, the description is given by $\phi \in [\pi/6, 5\pi/6]$ with $\frac{1}{2\sin \phi} \leq r \leq 1$ and $\theta \in [0,2\pi)$.
+ \end{enumerate}
 \end{solution}
+
+\newpage
+\begin{problem}
+    Let us see some of the benefit of using spherical coordinates. 
+    \begin{enumerate}[(a)]
+        \item Using the fact that 
+        \[
+        \rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat + \frac{z}{\sqrt{x^2+y^2+z^2}}\zhat,
+        \]
+        convert the vector field 
+        \[
+        \vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
+        \] into spherical coordinates (i.e., only a function of $r$, $\theta$, $\phi$, and $\rhat$, $\thetahat$, and $\phihat$).
+        \item Parameterize the surface of a sphere of radius $R$ (which we'll call $\Sigma$) as well as the outward normal vector $\unitvec$ and  in spherical coordinates.
+        \item Compute the following integral using spherical coordinates that we have found:
+        \[
+        \iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
+        \]
+        where $d\Sigma$ will be the area form in spherical coordinates.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have
+    \begin{align*}
+    \vecfieldE &= \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \xhat + \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \yhat + \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \zhat\\
+     &= \frac{1}{x^2+y^2+z^2} \left( \frac{x}{\sqrt{x^2+y^2+z^2}} \xhat + \frac{y}{\sqrt{x^2+y^2+z^2}} \yhat + \frac{z}{\sqrt{x^2+y^2+z^2}} \zhat\right)\\
+     &= \frac{1}{x^2+y^2+z^2} \rhat\\
+     &= \frac{1}{r^2} \rhat.
+    \end{align*}
+    \item We have the parameterization of the surface of a unit sphere given by letting $r=R$ and $\theta \in [0,2\pi)$ and $\phi \in [0,\pi]$. We can use the implicit equation $f(r,\theta,\phi)=r-R$ to find the surface normal by
+    \begin{align*}
+        \unitvec &= \frac{\grad f}{\left| \grad f \right|} \\
+        &= \frac{\grad r}{\left|\grad r\right|}\\
+        &= \rhat,
+    \end{align*}
+    by definition. This was done in a previous homework in cartesian coordinates as well.
+    \item From the previous work, we have that
+    \[
+    \vecfieldE \cdot \unitvec = \frac{1}{r^2}.  
+    \]
+    Then, this gives us
+    \begin{align*}
+        \iint_{\Sigma} \vecfieldE \cdot \unitvec d\Sigma &= \int_0^\pi \int_0^{2\pi} \frac{1}{R^2} R^2 \sin \phi  \, d\theta \, d\phi \\
+        &= 2\pi \int_0^\pi \sin \phi \, d \phi\\
+        &= 4 \pi.  
+    \end{align*}
+    One can notice that the radius of the sphere (so long as it is nonzero) does not come into play here.
+\end{enumerate} 
+\end{solution}
+
+\newpage
+\begin{problem}
+    Note that the Laplacian $\Delta$ in spherical coordinates is given by
+    \[
+        \Delta f(r,\theta,\phi) = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 f}{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right).
+    \]
+    Compute the Laplacian of
+    \[
+       f(r,\theta,\phi) = r^2 \cos(\theta)\cos(\phi).
+    \]
+\end{problem}
+\begin{solution}
+ Again, we will do this piece by piece. First, we have
+ \begin{align*}
+    A=\frac{1}{r^2}\frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)&= \frac{\cos (\theta) \cos (\phi)}{r^2}\frac{\partial}{\partial r} \left(2r^3\right) \\
+    &= \frac{\cos (\theta) \cos(\phi)}{r^2} 6r^2\\
+    &= 6 \cos (\theta) \cos (\phi).
+ \end{align*}
+ Next, we have
+ \begin{align*}
+    B=\frac{1}{r^2 \sin \phi} \frac{\partial^2 f}{\partial \theta^2} &= \frac{1}{r^2 \sin \phi} (-r^2\cos(\theta)\cos(\phi))\\
+    &= -\frac{\cos(\theta)\cos(\phi)}{\sin\phi}
+ \end{align*}
+ Lastly, we have
+ \begin{align*}
+    C=\frac{1}{r^2\sin \phi} \frac{\partial }{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right)&= \frac{1}{r^2\sin \phi} \frac{\partial }{\partial \phi} \left( -r^2 \cos(\theta) \sin^2(\phi)\right)\\
+&=\frac{1}{r^2 \sin \phi} -2r^2 \cos(\theta)\sin(\phi)\cos(\phi)\\
+&=-2\cos(\theta)\cos(\phi).
+ \end{align*}
+ Then,
+ \[
+ \Delta f = A+B+C.
+ \]
+\end{solution}
+
 \end{document}

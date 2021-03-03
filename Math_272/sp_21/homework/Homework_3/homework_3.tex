@@ -80,7 +80,7 @@ Consider $f(x,y)= 3x^4+x^3-18x^2y^2-3xy^2+3y^4$.
 Parameterize the following either implicitly or explicitly. In Cartesian coordinates, find the parameterization of the normal vector as well.
 \begin{enumerate}[(a)]
 	\item The plane perpendicular to the vector $\vecv = \xhat + \yhat + \zhat$ passing through the point $(1,1,1)$.
-	\item The upper half of the unit circle in $\R^2$.
+	\item The upper half of the unit disk in the $xy$-plane.
 	\item The surface of the unit sphere in $\R^3$.
 \end{enumerate}
 \end{problem}
@@ -90,14 +90,13 @@ Consider the following vector field
 \[
 \vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
 \]
-which models the electric field of an proton (in units of of charge $q=1$) placed at the origin.
+which models the electric field of a proton (in units of of charge $q=1$) placed at the origin.
 \begin{enumerate}[(a)]
 	\item Show that $\vecfieldE(x,y,z) = - \grad \phi(x,y,z)$ where $\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $\phi(x,y,z)$ as the electrostatic potential (or voltage).
 	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
 	\[
 	\int_\Sigma \vecfieldE \cdot \unitvec d\Sigma.
 	\]
-	\item Does the total flux depend on the size or shape of the box?
 	\item Using the provided argument, one can compute
 	\[
 	\int_\Omega \grad \cdot \vecfieldE d\Omega.
@@ -106,6 +105,7 @@ which models the electric field of an proton (in units of of charge $q=1$) place
 		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
 		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Is it true that $\grad \cdot \vecfieldE = 0$ everywhere?
 	\end{itemize}
+	\item Does the total flux depend on the size or shape of the box?
 \end{enumerate}
 \end{problem}
 

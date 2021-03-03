@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  26 FEB 2021 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  2 MAR 2021 15:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -1661,25 +1661,25 @@ LaTeX Warning: Marginpar on page 15 moved.
 
 LaTeX Warning: Marginpar on page 23 moved.
 
-[23]) (chapter_1/spaces_of_fields.tex [24] [25] [26] [27]) [28]
+[23] [24]) (chapter_1/spaces_of_fields.tex [25] [26] [27] [28]) [29]
 Chapter 2.
-(chapter_2/calderon_problem.tex [29
+(chapter_2/calderon_problem.tex [30
 
-] [30] [31]
+] [31] [32]
 
-LaTeX Warning: Reference `subsec:diff_forms' on page 32 undefined on input line
+LaTeX Warning: Reference `subsec:diff_forms' on page 33 undefined on input line
  158.
 
-[32]
+[33]
 
-LaTeX Warning: Citation `eq:conjugate_belishev' on page 33 undefined on input l
+LaTeX Warning: Citation `eq:conjugate_belishev' on page 34 undefined on input l
 ine 176.
 
 
-LaTeX Warning: Reference `eq:projection_rejection_vectors' on page 33 undefined
+LaTeX Warning: Reference `eq:projection_rejection_vectors' on page 34 undefined
  on input line 194.
 
-) (main.bbl [33]) [34
+) (main.bbl [34]) [35
 
 ] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1690,10 +1690,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 43264 strings out of 479799
- 1035853 string characters out of 2867787
- 1485060 words of memory out of 3000000
- 59125 multiletter control sequences out of 15000+200000
+ 43285 strings out of 479799
+ 1036185 string characters out of 2867787
+ 1486182 words of memory out of 3000000
+ 59129 multiletter control sequences out of 15000+200000
  556982 words of font info for 111 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,15n,132p,1214b,1020s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1727,9 +1727,9 @@ ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pf
 b><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on main.pdf (36 pages, 490925 bytes).
+Output written on main.pdf (37 pages, 499914 bytes).
 PDF statistics:
- 805 PDF objects out of 1000 (max. 8388607)
- 317 named destinations out of 1000 (max. 500000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 334 named destinations out of 1000 (max. 500000)
  357 words of extra memory for PDF output out of 10000 (max. 10000000)
 

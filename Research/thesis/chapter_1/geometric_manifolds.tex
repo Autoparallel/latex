@@ -171,7 +171,7 @@ A_s = \projection_{\blade{I}_R}(A_s)
 \end{equation} 
 so that for any $x \in R$ that $A_s = \operatorname{P}_{\blade{I}_R(x)}(A_s(x))$. Immediately we can conclude that we must have $s\leq r$ or this projection is zero (see \cref{subsubsec:blades_and_subspaces}). We may, for example, wish to integrate scalar fields $A_0$ over $R$ and in this case we can put $A_r = A_0 \blade{I}_R^{-1}$ and contract with $dX_r$ to create a tangent $r$-form on $R$ by 
 \begin{equation}
-\alpha_r = A_r \cdot dX_r = A \omega_R
+\alpha_r = A_r \cdot dX_r^\dagger = A \omega_R
 \end{equation}
 which can be integrated as
 \begin{equation}
@@ -229,7 +229,7 @@ The above seems to motivate the choice of \cite{schwarz_hodge_1995} to put $\tan
 \begin{corollary}
 Let $\alpha_s$ be an $s$-form with normal part $\normal_R \alpha_s$, then on the multivector equivalent $A_s$ we have
 \begin{equation}
-\normal_R \alpha_p = \operatorname{P}_{\blade{\nu}_R}(A_s)\cdot dX_s = \rejection_{I_R}(A_s)\cdot dX_s.
+\normal_R \alpha_p = \operatorname{P}_{\blade{\nu}_R}(A_s)\cdot dX_s^\dagger = \rejection_{I_R}(A_s)\cdot dX_s^\dagger.
 \end{equation}
 \end{corollary}
 
@@ -242,13 +242,14 @@ The normal space is 1-dimensional and we put $\blade{\nu}$ to refer to the bound
 \projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1}^\dagger = (-1)^p \blade{v}\cdot \blade{\nu} \omega_\partial.
 \end{equation}
 This tells us that the flux is determined both by the vector field $\blade{v}$ and the local geometry of $\partial M$ captured by $\omega_\partial$. A proof follows. 
-\begin{lemma}
+\begin{proposition}
+\label{prop:flux}
 Then the flux of a vector field $\blade{v}$ through $\partial M$ is
 \begin{equation}
 \int_{\partial M} \projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1}^\dagger = (-1)^p\int_{\partial M} \blade{v} \cdot \blade{\nu} \omega_\partial,
 \end{equation}
 where $p$ is the number of temporal vectors in $\G(M)$.
-\end{lemma}
+\end{proposition}
 \begin{proof}
 Take
 \begin{align*}
@@ -363,8 +364,54 @@ which implies
 
 And, in broader generality we have Green's formula which is given by
 \begin{equation}
-\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M \alpha_{r-1} \wedge \delta \beta_r + \int_{\boundary} \iota^* (\alpha_{r-1} \wedge \star \beta_r)
+\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M \alpha_{r-1} \wedge \star \delta \beta_r + \int_{\boundary} \iota^* (\alpha_{r-1} \wedge \star \beta_r)
 \end{equation}
+This equation motivates the definition of $\delta$ as the adjoint to $d$ under the $r$-form inner product. In the case of a closed manifold $M$, $\boundary = \emptyset$ and the boundary integral vanishes. 
+
+\begin{definition}
+We define the adjoint operator $\grad \wedge^*$ to $\grad \wedge$ by
+\[
+\grad \wedge^* = (-1)^{\frac{1}{2}(3n^2-4nr-n+r^2+3r+2)} \grad \rfloor.
+\]
+\end{definition}
+Classically, the Hodge-Dirac operator $d+\delta$ is constructed. One can compare this operator to $\grad$ and notice the subtle differences in the dependence on the manifold dimension and degree of the multivector.
+
+\begin{proposition}
+On multivector equivalents $A_{r-1}$ and $B_r$, we have Green's formula
+\begin{equation}
+\multivecinnerproduct{\grad \wedge A_{r-1}}{B_r}_0 = \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r}_0 + (-1)^{r(n-r)+\frac{(n-r)(n-r-1)}{2}+p} \int_{\partial M} (A_{r-1}\rfloor B_r) \cdot \blade{\nu} \omega_\partial.
+\end{equation}
+\end{proposition}
+\begin{proof}
+First, we have
+\begin{equation}
+\int_M d(\alpha_{r-1} \wedge \star \beta_r) = \underbrace{\int_M d\alpha_{r-1} \wedge \star \beta_r}_{1} + \underbrace{(-1)^{r-1} \int_M \alpha_{r-1} \wedge d \star \beta_r}_{2},
+\end{equation} 
+by the Leibniz rule. By Stokes' theorem,
+\begin{equation}
+\int_M d(\alpha_{r-1} \wedge \star \beta_r) = \underbrace{\int_\boundary \iota^*(\alpha_{r-1} \wedge \star \beta_r)}_{3}.
+\end{equation}
+For underbrace 1,
+\begin{equation}
+\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M (\grad \wedge A_{r-1}) \cdot B_r^\dagger \omega = \multivecinnerproduct{\grad \wedge A_{r-1}}{B_r}_0.
+\end{equation}
+For underbrace 2,
+\begin{align}
+    (-1)^{r-1}\int_M \alpha_{r-1} \wedge d \star \beta_r  &= \int_M A_{r-1} \wedge (\grad \wedge B_r^\star) \cdot dX_n^\dagger\\
+    &= (-1)^{r-1+n(n-r)} \int_M [A_{r-1} \wedge (\grad \wedge (B_r^\perp)^\dagger)] \cdot dX_n^\dagger\\
+    &= (-1)^{r-1 + n(n-r)+\frac{(n-r)(n-r-1)}{2}} \int_M A_{r-1} \wedge (\grad \rfloor B_r)^\perp \cdot dX_n^\dagger\\
+    &= (-1)^{\frac{1}{2}(3n^2-4nr-n+r^2+3r+2)} \int_M A_{r-1} \rfloor (\grad \rfloor B_r) \omega\\
+    &= \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r}_0.
+\end{align}
+For underbrace 3,
+\begin{align}
+\int_\boundary \iota^*(\alpha_{r-1} \wedge \star \beta_r) &= \int_\boundary \projection_{\blade{I}_\partial} (A_{r-1} \wedge B_r^\star) \cdot dX_{n-1}^\dagger\\
+&= (-1)^{r(n-r)+\frac{(n-r)(n-r-1)}{2}} \int_\boundary \projection_{\blade{I}_\partial} (A_{r-1} \wedge B_r^\perp) \cdot dX_{n-1}^\dagger\\
+&= (-1)^{r(n-r)+\frac{(n-r)(n-r-1)}{2}} \int_\boundary \projection_{\blade{I}_\partial}( (A_{r-1} \rfloor B_r)^\perp) \cdot dX_{n-1}^\dagger\\
+&= (-1)^{r(n-r)+\frac{(n-r)(n-r-1)}{2}+p} \int_\boundary (A_{r-1}\rfloor B_r) \cdot \blade{\nu} \omega_\partial 
+\end{align}
+with the final equality by \cref{prop:flux}.
+\end{proof}
 
 \subsection{Fundamental theorem of geometric calculus}
 
