@@ -1,14 +1,14 @@
 % Optional calls for page styles
 
-\documentclass[12pt,letterpaper, openany]{book} %took out one side
-%\usepackage[top=2cm, bottom=2cm, lmargin=3.5cm,rmargin=2.5cm,marginparwidth=6cm,marginparsep=2em]{geometry}
-
 %PRINTING FORMAT
-\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em, twoside]{geometry}
+%\documentclass[12pt,letterpaper, openany]{book}
+%\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em, twoside]{geometry}
 
 %ONLINE FORMAT
-%\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em]{geometry}
-
+\documentclass[12pt,letterpaper, openany, oneside]{book}
+\usepackage[top=1.75cm, bottom=1.75cm, lmargin=2.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em]{geometry}
+\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage[disable]{todonotes}
 
 %\setlength\parindent{0pt} %crush the auto indentation
 
@@ -57,6 +57,7 @@
 \setcounter{part}{4}
 
 \part{Calculus in Higher Dimensions}
+\todo{Add in integration of scalars on surfaces. Look at Alan Macdonald's "Vector and Geometric Calculus"}
 
 \chapter{Curves, scalar fields, and vector fields}
 \input{Chapters_Part_5/curves_fields.tex}
@@ -74,7 +75,7 @@
 
 \part{Partial Differential Equations}
 
-\chapter{Modeling}
+\chapter{Modeling and the continuum limit}
 \input{Chapters_Part_6/modeling.tex}
 
 \chapter{Separation of variables}

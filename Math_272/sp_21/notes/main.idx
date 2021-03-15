@@ -5,4 +5,12 @@
 \indexentry{normal vector|hyperpage}{9}
 \indexentry{acceleration vector|hyperpage}{9}
 \indexentry{directional derivative|hyperpage}{17}
-\indexentry{complex function|hyperpage}{111}
+\indexentry{system of ODEs|hyperpage}{82}
+\indexentry{coupled|hyperpage}{82}
+\indexentry{state|hyperpage}{82}
+\indexentry{linear|hyperpage}{83}
+\indexentry{nonlinear|hyperpage}{83}
+\indexentry{gradient!flow|hyperpage}{85}
+\indexentry{gradient!descent|hyperpage}{86}
+\indexentry{diffusivity|hyperpage}{88}
+\indexentry{complex function|hyperpage}{99}

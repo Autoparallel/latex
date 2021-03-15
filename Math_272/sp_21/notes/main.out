@@ -47,52 +47,46 @@
 \BOOKMARK [1][-]{section.4.2}{Spherical Coordinates}{chapter.4}% 47
 \BOOKMARK [2][-]{subsection.4.2.1}{Integration in Spherical Coordinates}{section.4.2}% 48
 \BOOKMARK [-1][-]{part.6}{VI Partial Differential Equations}{}% 49
-\BOOKMARK [0][-]{chapter.5}{Modeling}{part.6}% 50
-\BOOKMARK [0][-]{chapter.6}{Systems of ODE}{part.6}% 51
-\BOOKMARK [1][-]{section.6.1}{Qualitative Analysis}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.2}{Linearity}{chapter.6}% 53
-\BOOKMARK [1][-]{section.6.3}{Higher Order ODE}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.4}{Linear Systems}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.5}{Linearization}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.6}{General Solutions to Second Order Linear Equations}{chapter.6}% 57
-\BOOKMARK [1][-]{section.6.7}{Examples of PDE}{chapter.6}% 58
-\BOOKMARK [1][-]{section.6.8}{The Problem Statement}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.9}{The Heat Equation}{chapter.6}% 60
-\BOOKMARK [1][-]{section.6.10}{The Laplace Equation}{chapter.6}% 61
-\BOOKMARK [1][-]{section.6.11}{The Wave Equation}{chapter.6}% 62
-\BOOKMARK [0][-]{chapter.7}{Separation of variables}{part.6}% 63
-\BOOKMARK [-1][-]{part.7}{VII Further Topics in Linear Algebra}{}% 64
-\BOOKMARK [0][-]{chapter.8}{Complex functions and transformations}{part.7}% 65
-\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 66
-\BOOKMARK [1][-]{section.8.2}{Complex Functions}{chapter.8}% 67
-\BOOKMARK [2][-]{subsection.8.2.1}{Cartesian and Polar Representations}{section.8.2}% 68
-\BOOKMARK [2][-]{subsection.8.2.2}{Complex Valued Functions}{section.8.2}% 69
-\BOOKMARK [0][-]{chapter.9}{Inner product spaces}{part.7}% 70
-\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 71
-\BOOKMARK [2][-]{subsection.9.1.1}{Infinite Dimensions}{section.9.1}% 72
-\BOOKMARK [1][-]{section.9.2}{Function Spaces}{chapter.9}% 73
-\BOOKMARK [1][-]{section.9.3}{Inner Products and Norms}{chapter.9}% 74
-\BOOKMARK [2][-]{subsection.9.3.1}{Norms}{section.9.3}% 75
-\BOOKMARK [1][-]{section.9.4}{Inner Product Spaces}{chapter.9}% 76
-\BOOKMARK [1][-]{section.9.5}{Symmetries}{chapter.9}% 77
-\BOOKMARK [1][-]{section.9.6}{Bases}{chapter.9}% 78
-\BOOKMARK [2][-]{subsection.9.6.1}{Orthonormal Bases}{section.9.6}% 79
-\BOOKMARK [2][-]{subsection.9.6.2}{Series and Integrals as Linear Combinations}{section.9.6}% 80
-\BOOKMARK [2][-]{subsection.9.6.3}{Projection}{section.9.6}% 81
-\BOOKMARK [0][-]{chapter.10}{Linear Operators}{part.7}% 82
-\BOOKMARK [1][-]{section.10.1}{Matrices}{chapter.10}% 83
-\BOOKMARK [1][-]{section.10.2}{Linear Operators}{chapter.10}% 84
-\BOOKMARK [2][-]{subsection.10.2.1}{Adjoints}{section.10.2}% 85
-\BOOKMARK [2][-]{subsection.10.2.2}{Hermitian Operators}{section.10.2}% 86
-\BOOKMARK [1][-]{section.10.3}{Differential and Integral Operators}{chapter.10}% 87
-\BOOKMARK [2][-]{subsection.10.3.1}{Integral Operators}{section.10.3}% 88
-\BOOKMARK [1][-]{section.10.4}{Spectra}{chapter.10}% 89
-\BOOKMARK [0][-]{chapter.11}{Fourier Theory}{part.7}% 90
-\BOOKMARK [1][-]{section.11.1}{Fourier Series}{chapter.11}% 91
-\BOOKMARK [2][-]{subsection.11.1.1}{Solving Equations}{section.11.1}% 92
-\BOOKMARK [1][-]{section.11.2}{Fourier Transform}{chapter.11}% 93
-\BOOKMARK [2][-]{subsection.11.2.1}{Fourier Transform Operator}{section.11.2}% 94
-\BOOKMARK [1][-]{section.11.3}{The Dirac Delta Function}{chapter.11}% 95
-\BOOKMARK [1][-]{section.11.4}{Computing Fourier Transforms}{chapter.11}% 96
-\BOOKMARK [1][-]{section.11.5}{The Inverse Fourier Transform}{chapter.11}% 97
-\BOOKMARK [1][-]{section.11.6}{Solving Differential Equations}{chapter.11}% 98
+\BOOKMARK [0][-]{chapter.5}{Modeling and the continuum limit}{part.6}% 50
+\BOOKMARK [1][-]{section.5.1}{Higher dimensional ODEs}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.2}{Linear systems and flows}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.3}{Partial Differential Equations}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.4}{The heat equation}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.5}{The Laplace Equation}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.6}{The Wave Equation}{chapter.5}% 56
+\BOOKMARK [0][-]{chapter.6}{Separation of variables}{part.6}% 57
+\BOOKMARK [-1][-]{part.7}{VII Further Topics in Linear Algebra}{}% 58
+\BOOKMARK [0][-]{chapter.7}{Complex functions and transformations}{part.7}% 59
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 60
+\BOOKMARK [1][-]{section.7.2}{Complex Functions}{chapter.7}% 61
+\BOOKMARK [2][-]{subsection.7.2.1}{Cartesian and Polar Representations}{section.7.2}% 62
+\BOOKMARK [2][-]{subsection.7.2.2}{Complex Valued Functions}{section.7.2}% 63
+\BOOKMARK [0][-]{chapter.8}{Inner product spaces}{part.7}% 64
+\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 65
+\BOOKMARK [2][-]{subsection.8.1.1}{Infinite Dimensions}{section.8.1}% 66
+\BOOKMARK [1][-]{section.8.2}{Function Spaces}{chapter.8}% 67
+\BOOKMARK [1][-]{section.8.3}{Inner Products and Norms}{chapter.8}% 68
+\BOOKMARK [2][-]{subsection.8.3.1}{Norms}{section.8.3}% 69
+\BOOKMARK [1][-]{section.8.4}{Inner Product Spaces}{chapter.8}% 70
+\BOOKMARK [1][-]{section.8.5}{Symmetries}{chapter.8}% 71
+\BOOKMARK [1][-]{section.8.6}{Bases}{chapter.8}% 72
+\BOOKMARK [2][-]{subsection.8.6.1}{Orthonormal Bases}{section.8.6}% 73
+\BOOKMARK [2][-]{subsection.8.6.2}{Series and Integrals as Linear Combinations}{section.8.6}% 74
+\BOOKMARK [2][-]{subsection.8.6.3}{Projection}{section.8.6}% 75
+\BOOKMARK [0][-]{chapter.9}{Linear Operators}{part.7}% 76
+\BOOKMARK [1][-]{section.9.1}{Matrices}{chapter.9}% 77
+\BOOKMARK [1][-]{section.9.2}{Linear Operators}{chapter.9}% 78
+\BOOKMARK [2][-]{subsection.9.2.1}{Adjoints}{section.9.2}% 79
+\BOOKMARK [2][-]{subsection.9.2.2}{Hermitian Operators}{section.9.2}% 80
+\BOOKMARK [1][-]{section.9.3}{Differential and Integral Operators}{chapter.9}% 81
+\BOOKMARK [2][-]{subsection.9.3.1}{Integral Operators}{section.9.3}% 82
+\BOOKMARK [1][-]{section.9.4}{Spectra}{chapter.9}% 83
+\BOOKMARK [0][-]{chapter.10}{Fourier Theory}{part.7}% 84
+\BOOKMARK [1][-]{section.10.1}{Fourier Series}{chapter.10}% 85
+\BOOKMARK [2][-]{subsection.10.1.1}{Solving Equations}{section.10.1}% 86
+\BOOKMARK [1][-]{section.10.2}{Fourier Transform}{chapter.10}% 87
+\BOOKMARK [2][-]{subsection.10.2.1}{Fourier Transform Operator}{section.10.2}% 88
+\BOOKMARK [1][-]{section.10.3}{The Dirac Delta Function}{chapter.10}% 89
+\BOOKMARK [1][-]{section.10.4}{Computing Fourier Transforms}{chapter.10}% 90
+\BOOKMARK [1][-]{section.10.5}{The Inverse Fourier Transform}{chapter.10}% 91
+\BOOKMARK [1][-]{section.10.6}{Solving Differential Equations}{chapter.10}% 92

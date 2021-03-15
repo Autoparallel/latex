@@ -43,6 +43,7 @@
 \usepackage{fancyvrb}
 \usepackage{longtable,booktabs}
 \usepackage{stackrel}
+\usepackage{cleveref}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -101,8 +102,9 @@
 \newcommand{\vhat}{\boldsymbol{\boldsymbol{\hat{v}}}}
 \newcommand{\uhat}{\boldsymbol{\boldsymbol{\hat{u}}}}
 \newcommand{\what}{\boldsymbol{\boldsymbol{\hat{w}}}}
-\newcommand{\vecr}{\boldsymbol{\boldsymbol{\vec{r}}}}
-\newcommand{\vecx}{\boldsymbol{\boldsymbol{\vec{x}}}}
+\newcommand{\vecr}{\boldsymbol{\vec{r}}}
+\newcommand{\vecx}{\boldsymbol{\vec{x}}}
+\newcommand{\vecxdot}{\boldsymbol{\dot{\vec{x}}}}
 \newcommand{\vecy}{\boldsymbol{\boldsymbol{\vec{y}}}}
 \newcommand{\evec}{\boldsymbol{\vec{e}}}
 \newcommand{\zerovec}{\boldsymbol{\vec{0}}}
@@ -131,6 +133,7 @@
 \newcommand{\vecfieldT}{\boldsymbol{\vec{T}}}
 \newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
 \newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecf}{\boldsymbol{\vec{f}}}
 
 \newcommand{\Span}{\mathrm{Span}}
 \newcommand{\Null}{\mathrm{Null}}
@@ -153,8 +156,9 @@
 % Environments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Equation Numbering
+\numberwithin{section}{chapter}
 \numberwithin{equation}{section}
-\renewcommand{\theequation}{Eq. \thechapter.\thesection.\arabic{equation}}
+%\renewcommand{\theequation}{\thechapter.\thesection.\arabic{equation}}
 
 % Arrows
 
@@ -176,14 +180,8 @@
 \newtheorem{axiom}{Axiom}
 
 % Plain font
-
-%MANY OF THESE ARE REDUNDANT, REMOVE THEM?
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{example}{Example}[section]
 \newtheorem{remark}{Remark}[section]
-
-%These can probably stay
 \newtheorem{solution}{Solution}[section]
 \newtheorem{exercise}{Exercise}[section]
 \newtheorem{question}{Question}[section]
@@ -201,24 +199,24 @@
 % Decorated
 
 %GREEN
-\newtcbtheorem[number within=section]{thm}{Theorem}%
+\newtcbtheorem[number within=section, crefname={theorem}{theorems}]{thm}{Theorem}%
 {colback={white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt,fontupper=\normalsize\itshape}{th} % Theorem
 
-\newtcbtheorem[number within=section]{prop}{Proposition}%
+\newtcbtheorem[number within=section, crefname={proposition}{propositions}]{prop}{Proposition}%
 {colback={white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt,fontupper=\normalsize\itshape}{prop} % Proposition
 
-\newtcbtheorem[number within=section]{cor}{Corollary}%
+\newtcbtheorem[number within=section, crefname={cor}{corollaries}]{cor}{Corollary}%
 {colback={white},arc=0pt,outer arc=0pt,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt}{cor} % Corollary
 
-\newtcbtheorem[number within=section]{df}{Definition}%
+\newtcbtheorem[number within=section, crefname={definition}{definitions}]{df}{Definition}%
 {colback={white},arc=0pt,outer arc=0pt,,colframe=csu_dark_green,fonttitle=\bfseries,breakable,enhanced,before skip=20pt plus 2pt,after skip=20pt plus 2pt}{df} % Definition
 
 
 %GOLD
-\newtcbtheorem[number within=section]{ex}{Example}%
+\newtcbtheorem[number within=section, crefname={example}{examples}]{ex}{Example}%
 {colback={white},arc=0pt,outer arc=0pt,,colframe=csu_gold,fonttitle=\bfseries,breakable,enhanced, before skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex} %example
 
-\newtcbtheorem[number within=section]{prob}{Problem}%
+\newtcbtheorem[number within=section, crefname={problem}{Problems}]{prob}{Problem}%
 {colback={white},arc=0pt,outer arc=0pt,,colframe=csu_gold,fonttitle=\bfseries,breakable,enhanced,before skip=20pt plus 2pt,after skip=20pt plus 2pt}{prob} %problem
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,4 +226,4 @@
 \usepackage{makeidx}
 
 %% Font Effects
-\newcommand\boldgreen[1]{\textcolor{lighter_csu_green}{\emph{\textbf{#1}}}}
+\newcommand{\boldgreen}[1]{\textcolor{lighter_csu_green}{\emph{\textbf{#1}}}}

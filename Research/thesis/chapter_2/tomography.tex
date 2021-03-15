@@ -1,26 +1,35 @@
-One application for the work we have done thus far is with the Calder\'on inverse problem. This problem stems from a physical question asked by Alberto Calder\'on in which he asked how much information of a body can we determine from measurements along the boundary of the body. More specifically, by applying a voltage to the boundary and measuring the outgoing current flux, can we determine the conductivity of the body? This is the Electrical Impedance Tomography (EIT) problem.
+There is an application in mind with the toolbox we have developed. This is the Calder\'on problem. This physical inverse problem is due to  Alberto Calder\'on who asked how much information of a domain can we determine from measurements along the boundary of the domain. To conduct this experiment physically, one applies a voltage along subsets of the boundary of a given domain and the user measures the outgoing current flux. It is this set of information, the boundary $\partial M$, the input voltage $\phi$, and the measured flux $j$ that is accessible to the user. From this information, can one determine the conductivity of the interior $M$? This is the Electrical Impedance Tomography (EIT) problem. \todo{citations}
 
-The more modern formulation of this problem casts it as a geometrical inverse problem by replacing the boundary data with the Dirichlet-to-Neumann map (i.e., the voltage-to-current map) and replacing the conductivity with a Riemannian metric. This has lead to generalizations using differential forms\todo{sources}. 
+Other forms of this problem exist. For example, magnetic impedance tomography \todo{citation}, ultrasound tomography \todo{citation}, and magnetic resonance imaging are all examples of tomography.  Fundamentally, these problems exist to determine the interior structure of materials that we do not wish to, or, cannot destroy to determine more. To make an approach to these problems in general, we can consider geometrical analogs. For example, in EIT (at least in dimensions $n>2$, one can do away with the notion of the conductivity by replacing the matrix with an intrinsic Riemannian metric. 
 
+Tomography is useful, yet, challenging practice for which there are unanswered questions. For example, it has yet to been proved that the smooth EIT problem with complete boundary measurements even has a solution. \todo{add citations and other results here} One may ask just how much information is necessary to solve the EIT, or related tomography problems. This line of thought has lead researchers to consider generalizations using differential forms \todo{sources}. Using forms, there is less restriction on the types of functions we use to perform tomography and, moreover, what information we allow ourselves to know along the boundary. 
 
 \subsection{Forward problem}
 
-\subsubsection{Classical EIT}
-In the EIT problem, we begin with a region $M$ with unknown symmetric positive definite conductivity matrix $\sigma$. We apply a static scalar potential $\phi$ on $\boundary$ which produces the scalar potential $u$ in the interior. We assume $M$ is flat so that we can choose $g_{ij}=\delta_{ij}$ globally; or, in other words we are working over $\G_n(M)$ where each geometric tangent space is Euclidean $C\ell(T_xM, |\cdot|)$. Then, we posit that $M$ is built from Ohmic material in order to satisfy Ohm's law 
+\subsubsection{Electrical Impedance Tomography}
+Let $M$ be a smooth, compact, oriented, Euclidean, 3-dimensional region in $\R^3$ with boundary $\partial M$; $M$ plays the role of the domain we wish to perform EIT on. Take $\sigma$ to be a symmetric positive definite matrix to play the role of a conductivity. If $\sigma$ can be diagonalized as an scalar field times an identity matrix, we say that $M$ is constructed of \emph{isotropic} material, otherwise $M$ is made of \emph{anisotropic} material. We have access to the boundary $\boundary$ and we to this end, we make choices of a static scalar potential (voltage) $\phi$ to apply along $\boundary$. This applied voltage induces the potential $u$ in the interior of $M$. Since $M$ is Euclidean, we have the freedom to choose a global basis for which the metric coefficients satisfy $g_{ij}=\delta_{ij}$. Thus, we construct the $M$ as a geometric manifold, where each geometric tangent space is Euclidean $C\ell(T_xM, |\cdot|)$, so that we are working with multivector fields in $\G_n(M)$. Finally, we posit that $M$ is built from an electrically conductive Ohmic material. Succinctly, the scalar potential $u$ and the current $\blade{j}$ satisfy Ohm's law 
 \begin{equation}
 \label{eq:ohms_law}
 -\sigma \grad \wedge u= \blade{j}
 \end{equation}
-where $\blade{j}$ is the current density vector field. The conservation law
+on the entirety of $M$. We also put $\blade{E}\coloneqq \grad \wedge u$ as the electric field. 
+
+Inside $M$ there must be no free charges that can accumulate and we arrive at the following conservation law
 \begin{equation}
 \label{eq:conservation_law}
-\int_{\boundary} \blade{j} \cdot \blade{\nu} \omega_\partial = \int_{\boundary} \projection_{\blade{I}_\partial}(\blade{j}^\perp) \cdot dX_{n-1} = 0,
+\int_{\boundary} \blade{j} \cdot \blade{\nu} \mu_\partial = \int_{\boundary} \projection_{\blade{I}_\partial}(\blade{j}^\perp) \cdot dX_{n-1} = 0
 \end{equation}
-implies $\grad \cdot \blade{j}= 0$ via Stokes' theorem. Hence, we arrive at the condition on the scalar potential
+due to \cref{prop:flux}. Via Stokes' theorem through \cref{eq:stokes_theorem,eq:stokes_theorem_dual} we arrive at the conclusion that 
 \begin{equation}
-\grad \cdot (\sigma \grad \wedge u) = 0.
+\grad \cdot \blade{j}= 0.
+\end{equation}
+Thus, for the scalar potential we have
+\begin{equation}
+\grad \cdot (\sigma \grad \wedge u) = 0,
 \end{equation} 
-In other words, the conservation law in \cref{eq:conservation_law} is equivalent to the interior of $M$ being charge free. This is derived more fully in \cite{feldman_calderproblem_nodate}. 
+as an equivalent condition to \cref{eq:conservation_law}. A more thorough analysis can be found in \cite{feldman_calderproblem_nodate}. 
+
+\todo{left off here}
 
 Taking some arbitary basis, conductivity matrix assumes the components $\sigma_{ij}$ for $i,j=1,2,3$.  Via \cite{uhlmann_inverse_2014} in dimension $n>2$, we can realize that the conductivity matrix can be replaced with an intrinsic Riemannian metric with the components in this basis given by
 \begin{equation}
@@ -36,9 +45,57 @@ Then by \cref{eq:conservation_law}, we find the scalar potential is harmonic
 \Delta u = 0 \quad \textrm{in $M$}.
 \end{equation}
 
+In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\blade{j}=\grad \wedge u$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data is the outward normal derivative of the solution $u$, $\nabla_{\blade{\nu}} \phi$. In this case, all vectors are spatial and since $\blade{\nu}$ is unital, $\blade{\nu}=\blade{\nu}^{-1}$ which allows us to note
+\begin{equation}
+\nabla_{\blade{\nu}} \phi = \blade{\nu}\rfloor (\grad \wedge \phi) = (\grad \wedge \phi) \cdot \blade{\nu} = \projection_{\blade{\nu}} (\grad \wedge \phi) \blade{\nu},
+\end{equation}
+with the last equality by \cref{eq:projection_inner_product}. The sole difference in interpration lies in the fact that the projection $\projection_{\blade{\nu}}(\grad \wedge u)$ is vector valued whereas $\nabla_{\blade{\nu}}\phi$ is scalar valued. Since the span of $\blade{\nu}$ is one dimensional, the difference is only in taking the whole outward component of $\grad \wedge \phi$ itself or the coefficient thereof. This motivates the so called Voltage-to-Current (VC) operator or  \emph{Dirichlet-to-Neumann (DN) map}
+\begin{equation}
+\label{eq:classical_dn_map}
+\Lambda_\textrm{Cl} \phi = \projection_{\blade{\nu}}(\grad \wedge u),
+\end{equation}
+and we put $\Lambda_{\textrm{Cl}} \phi = \normalcurrent$ as the normal component of the boundary current $\blade{j}\vert_{\boundary}$. he inverse problem is to determine $g$ from complete knowledge of $\Lambda_{\textrm{Cl}}$.
 
 
-Via Maxwell's equations, it follows that 
+\subsubsection{Magnetic Impedance Tomography}
+
+Tomography can be performed using magnetic fields as well. In this case, we consider the boundary value problem for the magnetic vector field $\blade{h}$ by
+\begin{equation}
+\label{eq:magnetic_forward_problem}
+\begin{cases}
+\Delta \blade{h} = 0, ~\grad \rfloor \blade{h}=0 & \textrm{in $M$}\\
+\blade{\nu}\cross \blade{h} = \tangentialcurrent,
+\end{cases}
+\end{equation}
+\todo{this is right, but it will be rotated from what we do with the electric. So we can always multiply by $I_{\partial}^{-1}$.}
+where $\tangentialcurrent$ is the tangential component of the boundary current $\blade{j}\vert_{\boundary}$. It becomes quite clear there is a direct relationship between the electric and magnetic impedance tomography problems. We shall examine this further.
+
+Via Maxwell's equations, we note Ampere's law
+\begin{equation}
+\grad \cross \blade{h} = \current.
+\end{equation}
+Via \cref{rem:cross_product}, we see
+\begin{equation}
+\grad \rfloor \blade{h}^\perp,
+\end{equation}
+is equivalent and this leads us to define $\magneticbivector\coloneqq \blade{h}^\perp$ as the \emph{magnetic bivector field}. In \cref{eq:magnetic_forward_problem}, we can note that
+\begin{equation}
+\grad \rfloor \blade{h} = \grad \wedge \magneticbivector = 0
+\end{equation}
+and moreover
+\begin{equation}
+\Delta \blade{h} = \grad \rfloor (\grad \wedge \blade{h}) = \grad \rfloor (\grad \rfloor \magneticbivector)\blade{I} = (-1)^{3n(n-1)/2+p} \left(\grad \wedge (\grad \rfloor \magneticbivector)\right)^\perp.
+\end{equation}
+Finally, with another application of \cref{rem:cross_product}, we find \cref{eq:magnetic_forward_problem} can be written equivalently as
+\begin{equation}
+\begin{cases}
+\Delta \magneticbivector = 0, ~\grad \wedge \magneticbivector=0 & \textrm{in $M$}\\
+\blade{\nu}\rfloor \magneticbivector = \tangentialcurrent,
+\end{cases}
+\end{equation}
+in terms of the magnetic bivector field $\magneticbivector$.
+
+it follows that 
 \begin{equation}
 -\sigma \grad \wedge u^\phi = \grad \cdot b,
 \end{equation}
@@ -58,22 +115,6 @@ Given some $\varphi \in \Omega^r(\boundary)$, we have the boundary value problem
 \end{equation}
 As stated in \cite{belishev_dirichlet_2008}, there exists a solution $\alpha_r$ to this problem up to a monogenic Dirichlet field $\lambda_D$.
 
-\subsection{Inverse problem}
-
-\subsubsection{Classical EIT}
-In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\blade{j}=\grad \wedge u$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data $\projection_{\blade{\nu}}(\grad \wedge u)$. This motivates the so called Voltage-to-Current (VC) operator or  \emph{Dirichlet-to-Neumann (DN) map}
-\begin{equation}
-\label{eq:classical_dn_map}
-\Lambda \phi = \projection_{\blade{\nu}}(\grad u).
-\end{equation}
-The inverse problem follows.
-
-\vspace*{5pt}
-\noindent\textbf{Calder\'on problem.} Let $\Omega$ be an unknown Riemannian manifold with unknown metric $g$ and with known boundary $\Sigma$ and known DN operator $\Lambda$. Can one recover $\Omega$ and the spatial inner product $g$ from knowledge of $\Sigma$ and $\Lambda$?
-\vspace*{5pt}
-
-\subsubsection{Generalization to forms}
-
 \todo{belishev sharafutdinov and Shonkwiler sharafutdinov definitions}
 Note that the operator $\Lambda$ is often referred to as the \emph{scalar} DN map since the input is the scalar field $\phi$ whereas a more general operator on differential $r$-forms has been described in \cite{belishev_dirichlet_2008,sharafutdinov_complete_2013}. There, we begin with equation \cref{eq:bvp_forms}. The DN map is extended to $r$-forms by
 \begin{equation}
@@ -81,9 +122,16 @@ Note that the operator $\Lambda$ is often referred to as the \emph{scalar} DN ma
 \end{equation}
 In terms of the multivector equivalent $A_r$, we find
 \begin{equation}
-\iota^*(\star d \alpha_r) = \projection_{\blade{I}_\partial} ((\grad \wedge A_r)^\star )\cdot dX_{r}^\dagger
+\iota^*(\star d \alpha_r) = \projection_{\blade{I}_\partial} ((\grad \wedge A_r)^\star )\cdot dX_{n-r-1}^\dagger = 
+\end{equation}
+\todo{this should also be some kind of rotated version of $P_{I_\partial}(\grad \rfloor A_r^\perp$} One should note that in the case of a scalar potential 
+\begin{equation}
+\Lambda_\textrm{Cl} \phi = \Lambda \phi
 \end{equation}
 
+\vspace*{5pt}
+\noindent\textbf{Calder\'on problem.} Let $\Omega$ be an unknown Riemannian manifold with unknown metric $g$ and with known boundary $\Sigma$ and known DN operator $\Lambda$. Can one recover $\Omega$ and the spatial inner product $g$ from knowledge of $\Sigma$ and $\Lambda$?
+\vspace*{5pt}
 
 \subsection{Multivector tomography}
 
@@ -105,9 +153,11 @@ A\vert_{\partial M} = B\vert_{\partial M} & \textrm{on $\partial M$}.
 \end{equation}
 It should be noted that we have
 \begin{equation}
-A\vert_{\partial M} = \projection_{\blade{I}_\partial}(A) + \rejection_{\blade{I}_\partial}(A)
+A\vert_{\partial M} = \projection_{\blade{I}_\partial}(A) + \rejection_{\blade{I}_\partial}(A) = \projection_{\blade{I}_\partial}(A) + \projection_{\blade{\nu}}(A)
 \end{equation}
 in order to consider all boundary values for a multivector. 
+
+\todo{Show that a multivector DN map is well defined. There are sort of 4 options here.}
 
 \subsection{Recovery}
 

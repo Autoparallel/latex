@@ -13,43 +13,43 @@ Warning--empty journal in janssens_special_nodate
 Warning--empty year in janssens_special_nodate
 You've used 12 entries,
             2030 wiz_defined-function locations,
-            573 strings with 5798 characters,
-and the built_in function-call counts, 3931 in all, are:
-= -- 361
-> -- 159
+            569 strings with 5658 characters,
+and the built_in function-call counts, 3658 in all, are:
+= -- 341
+> -- 133
 < -- 0
-+ -- 63
-- -- 48
-* -- 291
-:= -- 619
++ -- 55
+- -- 40
+* -- 263
+:= -- 575
 add.period$ -- 14
 call.type$ -- 12
 change.case$ -- 53
 chr.to.int$ -- 0
 cite$ -- 17
-duplicate$ -- 202
-empty$ -- 311
-format.name$ -- 48
-if$ -- 841
+duplicate$ -- 193
+empty$ -- 294
+format.name$ -- 40
+if$ -- 781
 int.to.chr$ -- 0
 int.to.str$ -- 12
-missing$ -- 14
+missing$ -- 15
 newline$ -- 41
-num.names$ -- 28
-pop$ -- 59
+num.names$ -- 26
+pop$ -- 60
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 43
 quote$ -- 0
-skip$ -- 156
+skip$ -- 148
 stack$ -- 0
-substring$ -- 239
-swap$ -- 80
+substring$ -- 215
+swap$ -- 74
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 42
 warning$ -- 5
-while$ -- 44
+while$ -- 40
 width$ -- 14
-write$ -- 113
+write$ -- 111
 (There were 6 warnings)

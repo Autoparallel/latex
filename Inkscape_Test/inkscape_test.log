@@ -1,48 +1,143 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.21)  29 OCT 2020 08:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  8 MAR 2021 14:15
 entering extended mode
 **./inkscape_test.tex
 (inkscape_test.tex
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03>
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 ) ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/svg\svg.sty"
-Package: svg 2020/01/13 v2.02e (include SVG pictures)
+Package: svg 2020/10/23 v2.02j (include SVG pictures)
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 )
+
+LaTeX Warning: You have requested, on input line 66, version
+               `2020/03/06' of package iftex,
+               but only version
+               `2019/11/07 v1.0c TeX engine tests'
+               is available.
+
+
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrbas
 e.sty"
-Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent 
+Package: scrbase 2020/09/21 v3.32 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlfi
+le.sty"
+Package: scrlfile 2020/09/21 v3.32 KOMA-Script package (file load hooks)
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlfi
+le-hook.sty"
+Package: scrlfile-hook 2020/09/21 v3.32 KOMA-Script package (using LaTeX hooks)
+
+
+LaTeX3 Info: Defining command \BeforeFile with sig. 'm' on line 61.
+
+
+LaTeX3 Info: Defining command \AfterFile with sig. 'm' on line 65.
+
+
+LaTeX3 Info: Defining command \BeforeClass with sig. 'm' on line 69.
+
+
+LaTeX3 Info: Defining command \BeforePackage with sig. 'm' on line 73.
+
+
+LaTeX3 Info: Defining command \AfterAtEndOfClass with sig. 'smo+m' on line 83.
+
+
+LaTeX3 Info: Defining command \AfterAtEndOfPackage with sig. 'smo+m' on line
+(LaTeX3)     93.
+
+
+LaTeX3 Info: Defining command \scrlfile@AfterClass with sig. 'smo+m' on line
+(LaTeX3)     173.
+
+
+LaTeX3 Info: Defining command \AfterClass with sig. '' on line 174.
+
+
+LaTeX3 Info: Defining command \scrlfile@AfterPackage with sig. 'smo+m' on line
+(LaTeX3)     191.
+
+
+LaTeX3 Info: Defining command \AfterPackage with sig. '' on line 192.
+
+
+LaTeX3 Info: Defining command \ReplaceInput with sig. '' on line 193.
+
+
+LaTeX3 Info: Defining command \ReplaceClass with sig. 'mm' on line 196.
+
+
+LaTeX3 Info: Defining command \ReplacePackage with sig. 'mm' on line 199.
+
+
+LaTeX3 Info: Defining command \UnReplaceInput with sig. '' on line 200.
+
+
+LaTeX3 Info: Defining command \UnReplaceClass with sig. 'm' on line 203.
+
+
+LaTeX3 Info: Defining command \UnReplacePackage with sig. 'mm' on line 206.
+
+
+LaTeX3 Info: Defining command \PreventPackageFromLoading with sig. 's+om' on
+(LaTeX3)     line 234.
+
+
+LaTeX3 Info: Defining command \StorePreventPackageFromLoading with sig. 'm' on
+(LaTeX3)     line 242.
+
+
+LaTeX3 Info: Defining command \ResetPreventPackageFromLoading with sig. '' on
+(LaTeX3)     line 247.
+
+
+LaTeX3 Info: Defining command \UnPreventPackageFromLoading with sig. 'sm' on
+(LaTeX3)     line 261.
+
+
+LaTeX3 Info: Defining command \BeforeClosingMainAux with sig. 'om' on line
+(LaTeX3)     274.
+
+
+LaTeX3 Info: Defining command \AfterReadingMainAux with sig. 'om' on line 287.
+
+
+LaTeX3 Info: Defining command \protected@immediate@write with sig. 'm+m+m' on
+(LaTeX3)     line 298.
+
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlog
+o.sty"
+Package: scrlogo 2020/09/21 v3.32 KOMA-Script package (logo)
+)))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
 y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlfi
-le.sty"
-Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
+\KV@toks@=\toks15
 ))
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexc
-mds.sty"
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdftexcmds\pdfte
+xcmds.sty"
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwar
@@ -51,16 +146,11 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.
 sty"
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.sty
-"
-Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/trimspaces\trimspa
 ces.sty"
@@ -68,11 +158,11 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
 sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
 sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -85,14 +175,19 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
 x.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen135
-\Gin@req@width=\dimen136
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
 )
-\svg@box=\box45
-\c@svg@param@lastpage=\count175
-\c@svg@param@currpage=\count176
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.sty
+"
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count183
+\svg@box=\box47
+\c@svg@param@currpage=\count184
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -120,24 +215,106 @@ Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\auxhook.st
 y"
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)) ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/soul\soul.sty"
+))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/systemlayer\pg
+fsys.sty"
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfr
+cs.sty"
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-common.tex"
+\pgfutil@everybye=\toks16
+\pgfutil@tempdima=\dimen141
+\pgfutil@tempdimb=\dimen142
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-common-lists.tex"))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-latex.def"
+\pgfutil@abb=\box48
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+frcs.code.tex"
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revision
+.tex")
+Package: pgfrcs 2020/10/01 v3.1.6a (3.1.6a)
+))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsys.code.tex"
+Package: pgfsys 2020/10/01 v3.1.6a (3.1.6a)
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeys.code.tex"
+\pgfkeys@pathtoks=\toks17
+\pgfkeys@temptoks=\toks18
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks19
+))
+\pgf@x=\dimen143
+\pgf@y=\dimen144
+\pgf@xa=\dimen145
+\pgf@ya=\dimen146
+\pgf@xb=\dimen147
+\pgf@yb=\dimen148
+\pgf@xc=\dimen149
+\pgf@yc=\dimen150
+\pgf@xd=\dimen151
+\pgf@yd=\dimen152
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count185
+\c@pgf@countb=\count186
+\c@pgf@countc=\count187
+\c@pgf@countd=\count188
+\t@pgf@toka=\toks20
+\t@pgf@tokb=\toks21
+\t@pgf@tokc=\toks22
+\pgf@sys@id@count=\count189
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgf.cfg"
+File: pgf.cfg 2020/10/01 v3.1.6a (3.1.6a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2020/10/01 v3.1.6a (3.1.6a)
+
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2020/10/01 v3.1.6a (3.1.6a)
+)))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfsyssoftpath@smallbuffer@items=\count190
+\pgfsyssoftpath@bigbuffer@items=\count191
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+))
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/soul\soul.sty"
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks15
-\SOUL@lasttoken=\toks16
-\SOUL@cmds=\toks17
-\SOUL@buffer=\toks18
-\SOUL@token=\toks19
+\SOUL@word=\toks23
+\SOUL@lasttoken=\toks24
+\SOUL@cmds=\toks25
+\SOUL@buffer=\toks26
+\SOUL@token=\toks27
 \SOUL@spaceskip=\skip49
-\SOUL@ttwidth=\dimen137
-\SOUL@uldp=\dimen138
-\SOUL@ulht=\dimen139
-) ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+\SOUL@ttwidth=\dimen153
+\SOUL@uldp=\dimen154
+\SOUL@ulht=\dimen155
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count177
-\float@exts=\toks20
-\float@box=\box46
-\@float@everytoks=\toks21
-\@floatcapt=\box47
+\c@float@type=\count192
+\float@exts=\toks28
+\float@box=\box49
+\@float@everytoks=\toks29
+\@floatcapt=\box50
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/morefloats\moreflo
 ats.sty"
@@ -158,7 +335,7 @@ Package morefloats Info: Maximum number of possible floats asked for: 36
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
 y"
-Package: amsmath 2020/01/20 v2.17e AMS math features
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
@@ -170,67 +347,67 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks22
-\ex@=\dimen140
+\@emptytoks=\toks30
+\ex@=\dimen156
 ))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
 "
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen141
+\pmbraise@=\dimen157
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
 "
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count178
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count179
-\leftroot@=\count180
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count181
-\DOTSCASE@=\count182
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box48
-\strutbox@=\box49
-\big@size=\dimen142
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count183
-\c@MaxMatrixCols=\count184
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen158
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
 \dotsspace@=\muskip16
-\c@parentequation=\count185
-\dspbrk@lvl=\count186
-\tag@help=\toks23
-\row@=\count187
-\column@=\count188
-\maxfields@=\count189
-\andhelp@=\toks24
-\eqnshift@=\dimen143
-\alignsep@=\dimen144
-\tagshift@=\dimen145
-\tagwidth@=\dimen146
-\totwidth@=\dimen147
-\lineht@=\dimen148
-\@envbody=\toks25
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks31
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks32
+\eqnshift@=\dimen159
+\alignsep@=\dimen160
+\tagshift@=\dimen161
+\tagwidth@=\dimen162
+\totwidth@=\dimen163
+\lineht@=\dimen164
+\@envbody=\toks33
 \multlinegap=\skip51
 \multlinetaggap=\skip52
-\mathdisplay@stack=\toks26
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\mathdisplay@stack=\toks34
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.sty"
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks27
-\thm@bodyfont=\toks28
-\thm@headfont=\toks29
-\thm@notefont=\toks30
-\thm@headpunct=\toks31
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks35
+\thm@bodyfont=\toks36
+\thm@headfont=\toks37
+\thm@notefont=\toks38
+\thm@headpunct=\toks39
 \thm@preskip=\skip53
 \thm@postskip=\skip54
 \thm@headsep=\skip55
-\dth@everypar=\toks32
+\dth@everypar=\toks40
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
 ty"
@@ -250,10 +427,10 @@ y"
 Package: relsize 2013/03/29 ver 4.1
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
-d-pdfmode.def"
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count190
-\l__pdf_internal_box=\box50
+d-pdftex.def"
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count271
+\l__pdf_internal_box=\box53
 ) (inkscape_test.aux)
 \openout1 = `inkscape_test.aux'.
 
@@ -275,29 +452,30 @@ LaTeX Font Info:    ... okay on input line 56.
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count191
-\scratchdimen=\dimen149
-\scratchbox=\box51
-\nofMPsegments=\count192
-\nofMParguments=\count193
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count194
-\MPscratchDim=\dimen150
-\MPnumerator=\count195
-\makeMPintoPDFobject=\count196
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count272
+\scratchdimen=\dimen165
+\scratchbox=\box54
+\nofMPsegments=\count273
+\nofMParguments=\count274
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count275
+\MPscratchDim=\dimen166
+\MPnumerator=\count276
+\makeMPintoPDFobject=\count277
+\everyMPtoPDFconversion=\toks42
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) (proj_process_diag.pdf_tex
-<proj_process_diag.pdf, id=1, page=1, 1422.67178pt x 1100.39328pt>
-File: proj_process_diag.pdf Graphic file (type pdf)
-<use proj_process_diag.pdf, page 1>
-Package pdftex.def Info: proj_process_diag.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 1422.67175pt x 1100.42416pt.
+) (equally_spaced_line_points.pdf_tex
+<equally_spaced_line_points.pdf, id=4, page=1, 482.84496pt x 37.31425pt>
+File: equally_spaced_line_points.pdf Graphic file (type pdf)
+<use equally_spaced_line_points.pdf, page 1>
+Package pdftex.def Info: equally_spaced_line_points.pdf , page1 used on input l
+ine 56.
+(pdftex.def)             Requested size: 482.84492pt x 37.31416pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
@@ -308,29 +486,44 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [1
+)
+<equally_spaced_line_points.pdf, id=5, page=2, 482.84496pt x 37.31425pt>
+File: equally_spaced_line_points.pdf Graphic file (type pdf)
+<use equally_spaced_line_points.pdf, page 2>
+Package pdftex.def Info: equally_spaced_line_points.pdf , page2 used on input l
+ine 63.
+(pdftex.def)             Requested size: 482.84492pt x 37.31416pt.
+) [1
 
-{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./proj_proc
-ess_diag.pdf>] (inkscape_test.aux) ) 
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./equally_s
+paced_line_points.pdf> <./equally_spaced_line_points.pdf
+
+pdfTeX warning: pdflatex.exe (file ./equally_spaced_line_points.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]
+
+LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
+(LaTeX3)     64.
+
+ (inkscape_test.aux) ) 
 Here is how much of TeX's memory you used:
- 4458 strings out of 481556
- 65941 string characters out of 2913869
- 332712 words of memory out of 3000000
- 19621 multiletter control sequences out of 15000+200000
- 540065 words of font info for 52 fonts, out of 3000000 for 9000
+ 5612 strings out of 479799
+ 95952 string characters out of 2867787
+ 391587 words of memory out of 3000000
+ 22473 multiletter control sequences out of 15000+200000
+ 540046 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,21n,44p,322b,449s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Colin/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/U
-sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb>
-Output written on inkscape_test.pdf (1 page, 57968 bytes).
+ 93i,17n,98p,338b,415s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
+/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb>
+Output written on inkscape_test.pdf (1 page, 42226 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 33 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

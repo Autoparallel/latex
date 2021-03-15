@@ -1,10 +1,11 @@
 \subsection{Monogenic fields}
-
+\todo{Q: What are the fields that are both left and right monogenic? Also, I should probably define that.}
 Multivectors in the kernel of $\grad$ are of fundamental importance in geometric calculus and these multivectors are the motivation for Clifford analysis much like elements in the kernel of $\Delta$ give rise to harmonic analysis. 
 \begin{definition}
- Let $A \in \G(M)$. Then we say that $A$ is \emph{monogenic} if $A \in \ker(\grad)$.
+ Let $A,B,C \in \G(M)$. Then we say that $A$ is \emph{(left) monogenic} if $\grad A =0$, $B$ is \emph{(right) monogenic} if $\dot{B}\dot{\grad} = 0$, and $C$ is \emph{two-sided monogenic} if $\grad C = \dot{C}\dot{\grad} = 0$.
 \end{definition}
 
+\todo{discuss the new left and right}
 Monogenic fields are of utmost importance as they have many beautiful properties. One should find them as a suitable generalization of the notion of complex holomorphicity. For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values through a generalized Cauchy integral formula and for a spinor field each of the graded components of $f$ are harmonic. We put 
 \[
 \monogenicfields{}\coloneqq \{A \in \G(M) ~\vert~ \grad A =0\}
@@ -146,10 +147,11 @@ and
 \end{proof}
 
 \subsection{Integral transforms}
+\label{subsec:integral_transforms}
 
 \subsubsection{Cauchy integral}
 
-\textcolor{red}{multivector valued integrals and the multivector valued inner product as an extension to the other inner product?}
+\textcolor{red}{Biot savart as a special case of cauchy integral?}
 
 One beautiful result in Clifford analysis is the celebrated generalization of the Cauchy integral formula for $\C$-holomorphic functions. Details of the Cauchy integral formula and Hilbert transform for multivector fields can be found in \cite{brackx_hilbert_2008}. We have the fundamental solution to $\grad$ is a vector field given by
 \[
