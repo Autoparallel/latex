@@ -52,7 +52,7 @@ Let $\G(M)$ be the space of multivector fields on a smooth manifold $M$, then we
 \end{equation}
 and the \emph{Neumann fields}
 \begin{equation}
-\G_N(M) \coloneqq \{A \in \G(M) ~\vert~ \rejection_{I_{\partial}}(A) = 0 \}.
+\G_N(M) \coloneqq \{A \in \G(M) ~\vert~ \projection_{I_{\partial}}(A^\perp) = 0 \}.
 \end{equation}
 \end{definition}
 
@@ -78,7 +78,11 @@ We have
     \end{equation}
 \end{itemize}
 \end{definition}
-We then use superscripts to denote the associated $r$-vector subspace. Notice that the exact and coexact fields satisfy not only a differential condition, but a boundary condition as well. Then, under the scalar valued multivector inner product, we find the orthogonal direct sum decomposition
+We then use superscripts to denote the associated $r$-vector subspace. For instance, we may put
+\begin{equation}
+\monogenicdirichlet{r}^\perp = \monogenicneumann{r},
+\end{equation}
+which can be noted in \cite{belishev_dirichlet_2008}, for example. Notice that the exact and coexact fields satisfy not only a differential condition, but a boundary condition as well. Then, under the scalar valued multivector inner product, we find the orthogonal direct sum decomposition
 \begin{equation}
 \G^r(M) = \exactfields{r} \oplus \coexactfields{r} \oplus \monogenicfields{r},
 \end{equation}
@@ -151,18 +155,29 @@ and
 
 \subsubsection{Cauchy integral}
 
-\textcolor{red}{Biot savart as a special case of cauchy integral?}
+\todo{Is Biot savart as a special case of cauchy integral?}
 
-One beautiful result in Clifford analysis is the celebrated generalization of the Cauchy integral formula for $\C$-holomorphic functions. Details of the Cauchy integral formula and Hilbert transform for multivector fields can be found in \cite{brackx_hilbert_2008}. We have the fundamental solution to $\grad$ is a vector field given by
-\[
-E(x) = \frac{1}{a_m} \frac{x}{\|x\|^m},
-\]
-for $x\in \R^n$. That is to say that $\grad E(x) = \delta(x)$. For any region $\Omega \subset \R^n$ with boundary $\Sigma$, we define the \emph{Cauchy kernel} for $x\in \R^n$ and $y \in \Sigma$ using the fundamental solution $E$ as
-\[
-C(y, x) = -\frac{1}{a_n} \nu(x_0) E(x-y),
-\]
-where $a_n$ is the surface area of the $n$-ball and $\nu(x_0)$ is the outward normal at $x_0$. The \emph{Cauchy integral} for $\phi \in L_2(\Sigma)$ is then
-\[
-\cauchy[\phi](x) = \frac{1}{a_n} \int_{\Sigma} \frac{y-x}{\|x-y\|^n} \nu(y) \phi(y) d\Sigma(y).
-\]
-The Cauchy integral is indeed a monogenic function and note that for a scalar $\phi$ we have $\cauchy[\phi] \in \monogenics(\Omega)$ since it must be a parabivector as well.
+One beautiful result in Clifford analysis and geometric caclulus is the celebrated generalization of the Cauchy integral formula for $\C$-holomorphic functions. Details and proofs can be found in our standard texts \cite{doran_geometric_2003,hestenes_clifford_1984} as well as many others. Briefly, let the smooth, compact, oriented, $n$-dimensional manifold $M$ with a positive definite $g$ be isometrically imbedded into $\R^n$. Then, there exists a Green's function
+\begin{equation}
+G(x)\coloneqq \frac{1}{S_n} \frac{x}{|x|^n}
+\end{equation}
+satisfying the equation
+\begin{equation}
+\label{eq:fundamental_solution}
+\grad G(x) = -\dot{G(x)}\dot{\grad} = \delta(x),
+\end{equation}
+where $\delta(x)$ is the Dirac delta distribution and where $x\in \R^n$. All this to say that $G(x)$ is the fundamental solution to the gradient operator. This allows for us to define the \emph{Cauchy kernel} by $G(x'-x)$. Let $A_+ \in \monogenicfields{+}$, then we can note
+\begin{align}
+\label{eq:integration_greens_function}
+\int_\boundary G(x'-x) \pseudoscalar_\partial(x') A_+(x') \mu_\partial(x') &= \int_M (\dot{G}(x'-x)\dot{\grad_x} A_+(x'-x) + G(x'-x)\grad_x A_+(x'-x))\mu(x')\\
+&= \int_M \dot{G}(x'-x)\dot{\grad_x}A_+(x'-x) \pseudoscalar^{-1} \mu \\
+&= \frac{1}{\pseudoscalar(x) S_n} A_+(x),
+\end{align}
+where we write $\grad_x$ to denote the gradient with respect to the variable $x$. Therefore, we have arrived at the \emph{Cauchy integral formula}
+\begin{equation}
+\label{eq:cauchy_integral}
+A_+(x) = \frac{1}{\pseudoscalar(x) S_n} \int_\boundary G(x'-x) \pseudoscalar_\partial(x') A_+(x') \mu_\partial(x').
+\end{equation}
+Hence, we have a method for uniquely determining a monogenic spinor field $A_+$ from the boundary values $A_+\vert_\boundary$. This Cauchy integral formula is a fundamental and powerful result in the world of Clifford analysis\todo{citations}. 
+
+Now, take $M$ to be a manifold that is not imbedded into $\R^n$ but with otherwise equivalent properties as before. Then, our goal is to construct a Cauchy kernel function $G$ on $M$. Since $M$ is compact, we can take an arbitrary finite open cover $\{U_i\}_{i=1}^{N}$ lying in the atlas of $M$. Taking our previous work, we realize that for each coordinate patch of $M$, we have a well defined Green's function $G_i$ on each $U_i$. Take a smooth partition of unity subordinate to the open cover $\{\rho_i\}_{i=1}^N$. Using this partition of unity, we define a global vector field $G \in \G(M)$. Hence, the local behavior of $G$ can be extended throughout all of $M$ and \cref{eq:fundamental_solution,eq:integration_greens_function,eq:cauchy_integral} all hold for $M$. One may see that \cref{eq:cauchy_integral} is written in a handful of slightly different ways. If $M$ admits global coordinates and we can put $g_{ij}=\delta_{ij}$, then $\pseudoscalar$ is constant and can be taken inside the integral.

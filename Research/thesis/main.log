@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  14 MAR 2021 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  16 MAR 2021 20:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -1415,7 +1415,7 @@ Package cleveref Info: `listings' support loaded on input line 3131.
 \symMnLargeSymbols=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `MnLargeSymbols' in version `bold'
 (Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
-56.
+58.
 
 
 LaTeX Warning: You have requested package `preamble',
@@ -1468,7 +1468,14 @@ r/tikz/libraries\tikzlibraryshadows.code.tex"
 File: tikzlibraryshadows.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 )
 \c@@todonotes@numberoftodonotes=\count382
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `eq:dirichlet_problem' multiply defined.
+
+
+LaTeX Warning: Label `eq:dirichlet_problem@cref' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -1670,7 +1677,12 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
 
 LaTeX Warning: Marginpar on page 26 moved.
 
-[26] [27] [28] [29]) [30]
+[26] [27] [28] [29]
+Overfull \hbox (24.52405pt too wide) detected at line 175
+[]
+ []
+
+) [30]
 Chapter 2.
 (chapter_2/tomography.tex
 
@@ -1684,35 +1696,48 @@ LaTeX Warning: Marginpar on page 31 moved.
 
 [31
 
-] [32] [33] [34] [35]
+] [32] [33]
 
-LaTeX Warning: Reference `subsec:diff_forms' on page 36 undefined on input line
- 208.
+LaTeX Warning: Reference `eq:eq:dirichlet_magnetic_bivector' on page 1 undefine
+d on input line 127.
+
+[34] [35] [36]
+
+LaTeX Warning: Reference `subsec:diff_forms' on page 37 undefined on input line
+ 250.
 
 
-LaTeX Warning: Citation `eq:conjugate_belishev' on page 36 undefined on input l
-ine 226.
+LaTeX Warning: Citation `eq:conjugate_belishev' on page 37 undefined on input l
+ine 268.
 
-[36]
 
 LaTeX Warning: Reference `eq:projection_rejection_vectors' on page 37 undefined
- on input line 244.
+ on input line 286.
 
-) (main.bbl [37]) [38
+[37]) (main.bbl [38]
+Underfull \hbox (badness 3343) in paragraph at lines 9--11
+[]\OT1/cmr/m/sc/12 M. I. Bel-i-shev\OT1/cmr/m/n/12 , \OT1/cmr/m/it/12 Some re-m
+arks on the impedance to-mog-ra-phy prob-lem for
+ []
+
+) [39
 
 ] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1DBBB4D7A0FB7EF7D0E4FD25DCB5193E;1735.
+(rerunfilecheck)             Checksum: 41F91B791AB6D6A713148CB61642951A;1736.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 43470 strings out of 479799
- 1040144 string characters out of 2867787
- 1517285 words of memory out of 3000000
- 59275 multiletter control sequences out of 15000+200000
+ 43527 strings out of 479799
+ 1041374 string characters out of 2867787
+ 1522729 words of memory out of 3000000
+ 59312 multiletter control sequences out of 15000+200000
  557942 words of font info for 114 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,15n,132p,1230b,1021s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1748,9 +1773,9 @@ al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin
 er/eufm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (40 pages, 534034 bytes).
+Output written on main.pdf (41 pages, 547387 bytes).
 PDF statistics:
- 903 PDF objects out of 1000 (max. 8388607)
- 370 named destinations out of 1000 (max. 500000)
+ 947 PDF objects out of 1000 (max. 8388607)
+ 390 named destinations out of 1000 (max. 500000)
  349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

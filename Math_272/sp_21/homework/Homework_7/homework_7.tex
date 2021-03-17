@@ -29,74 +29,46 @@
 \vspace{.5cm}
 
 \begin{problem}
-    Plot each of the following vector fields.
-    \begin{enumerate}[(a)]
-        \item $\rhohat = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$.
-        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
-        \item $\zhat$.
-    \end{enumerate}
-\end{problem}
-
-\begin{problem}
-Consider the following vector field
+Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
 \[
-\vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat.
+H \Psi(x,t) = i\hbar \frac{\partial}{\partial t} \Psi(x,t),
 \]
-Here, $\vecfieldB$ denotes the magnetic field. It may be helpful to plot the fields in this problem.
+where $H$ is the Hamiltonian operator.  Consider the situation for the free particle in the 1-dimensional box of length $L$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(L,t)$.  
 \begin{enumerate}[(a)]
-    \item Show that $\grad \times \vecfieldB = \vecfieldJ$ (Amp\'ere's law) where 
+    \item Take a separation of variables ansatz and find a set of solutions (one for every positive integer $n$) to the time-dependent equation.
+    \item Show that a super position of solutions is also a solution.
+    \item For a single state $\psi_n(x,t)$, show that 
     \[
-    \vecfieldJ = \zhat.
+    \int_0^L \left|\psi_n(x,t)\right|^2 dx,
     \]
-    This vector field $\vecfieldJ$ represents the electric current (moving charges) in space. One could argue that the current creates the magnetic field via Amp\'ere's law.
-    \item Magnetic fields induce a force $\vecfieldF$ on charged particles by the Lorentz force
-    \[
-    \vecfieldF = \tangentgamma \times \vecfieldB = \normalgamma
-    \]
-    Where $\tangentgamma$ is the velocity of the particle (where we have chosen a mass $m=1$ and charge $q=1$).  Let us do the following.
-    \begin{itemize}
-        \item Assume that $\tangentgamma = \xhat$, what is the force on the particle?
-        \item Repeat the previous step for $\tangentgamma=\yhat$ and $\tangentgamma=\zhat$. 
-        \item Compare and contrast the forces you found.
-    \end{itemize}
-    \item Can you argue why applying a magnetic field to a molecule may cause it to heat up? Can you compare this idea with your home microwave? (Please don't put anything dangerous in your microwave due to this discovery!)
+    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their total probability does not depend on time.
 \end{enumerate}
 \end{problem}
 
+
 \begin{problem}
-Let us see some of the usefulness of cylindrical coordinates.
+Maxwell's equations are given as
+\begin{align*}
+\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
+\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
+\end{align*}
 \begin{enumerate}[(a)]
-    \item Using the fact that $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$, convert the magnetic field from Problem 2 into Cylindrical coordinates (i.e., only a function of $\rho$, $\theta$, $z$, and $\rhohat$, $\thetahat$, and $\zhat$).  
-        \item Parameterize a curve $\curvegamma(t)$ that traces out the unit circle in the $xy$-plane in cylindrical coordinates.
-        \item What is the tangent vector $\tangentgamma(t)$ in terms of $\rhohat$, $\thetahat$, and $\zhat$?
-        \item Compute the following integral using cylindrical coordinates that we have found:
-        \[
-        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma
-        \]
-        \item Using cylindrical coordinates, compare your result with
-        \[
-        \iint_\Sigma \left(\grad \times \vecfieldB\right) \cdot \unitvec d\Sigma,
-        \]
-        where $\Sigma$ is the unit disk.
+    \item Look up each of the terms in the equations above and describe them.
+    \item Describe what each equation is saying and why these are PDEs.
+    \item In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
+    \[
+    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
+    \]
+    derive the vector wave equations for light
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
+    \]
+    and
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
+    \]
+    \item From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
 \end{enumerate}
-\end{problem}
-
-\begin{problem}
-    Convert the following integrals to integrals in cylindrical coordinates. Also, describe the region in which you are integrating over. Do not evaluate the integrals.
-    \begin{enumerate}[(a)]
-        \item $\displaystyle{\int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz}$.
-        \item $\displaystyle{\int_0^1 \int_{-z}^z \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} x^2+y^2+z^2 dxdydz}$.
-    \end{enumerate}
-\end{problem}
-
-\begin{problem}
-	In spherical coordinates (either implicitly or explicitly), parameterize the following objects.
-	\begin{enumerate}[(a)]
-		\item A solid sphere with radius 3.
-		\item The surface of an infinite cone with a vertex angle of $\pi/4$.
-		\item A latitudinal curve on the unit sphere at the latitude of 30$^\circ$ above the equator.
-		\item A solid unit sphere with a cylinder of radius 1/2 removed from the core.
-	\end{enumerate}
 \end{problem}
  
 

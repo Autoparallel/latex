@@ -1,101 +1,101 @@
 \contentsline {part}{V\hspace {1em}Calculus in Higher Dimensions}{1}{part.5}%
-\contentsline {chapter}{\numberline {1}Curves, scalar fields, and vector fields}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Overview of higher dimensional functions}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Curves in space}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Derivatives of Curves}{7}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Lengths of Curves}{10}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Scalar fields}{10}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Partial derivatives of scalar fields}{14}{subsection.1.3.1}%
-\contentsline {subsubsection}{Properties of partial derivatives}{16}{subsubsection*.12}%
-\contentsline {subsection}{\numberline {1.3.2}Directional Derivatives}{17}{subsection.1.3.2}%
-\contentsline {section}{\numberline {1.4}Vector Fields}{17}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Vector field algebra}{20}{subsection.1.4.1}%
-\contentsline {chapter}{\numberline {2}Vector calculus}{23}{chapter.2}%
-\contentsline {section}{\numberline {2.1}The gradient of a scalar field}{23}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Optimization}{25}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Differentiation of Vector fields}{26}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}The Jacobian of a vector field}{27}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Divergence and Curl}{29}{subsection.2.2.2}%
-\contentsline {subsubsection}{Sources, Sinks, and Divergence Fields}{29}{subsubsection*.19}%
-\contentsline {subsubsection}{Rotation Fields}{30}{subsubsection*.21}%
-\contentsline {subsubsection}{Constant Vector Fields}{33}{subsubsection*.23}%
-\contentsline {section}{\numberline {2.3}Laplace Operator}{33}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}The Laplacian of a Scalar Field}{34}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Vector Laplacian}{35}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Composite Functions and Chain Rule}{36}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Composite Functions}{37}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Integration of Vector Fields}{38}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Line integrals of vector fields}{39}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Flux and Surface Integrals}{39}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Volume Integrals}{41}{subsection.2.6.1}%
-\contentsline {section}{\numberline {2.7}Potential Functions}{42}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Integrating the Gradient}{43}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Requirements for Potentials}{44}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}Properties of Fields with Potentials}{45}{subsection.2.7.3}%
-\contentsline {section}{\numberline {2.8}Integrals of Scalar Fields}{45}{section.2.8}%
-\contentsline {subsubsection}{One Dimensional Case}{46}{subsubsection*.28}%
-\contentsline {subsubsection}{Two Dimensional Case}{47}{subsubsection*.29}%
-\contentsline {subsubsection}{Three Dimensional Case}{48}{subsubsection*.30}%
-\contentsline {subsection}{\numberline {2.8.1}Line Integrals}{50}{subsection.2.8.1}%
-\contentsline {chapter}{\numberline {3}Implicit and explicit parameterizations}{52}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Implicit surfaces}{53}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Normal Vectors to Implicit Surfaces}{58}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Implicit Function Theorem}{59}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Surfaces as Graphs}{60}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Equation for a Plane}{61}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Tangent Planes and Surface Normals}{61}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Area Form and Integration}{64}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Coordinate systems}{69}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Cylindrical Coordinates}{69}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Functions and Calculus in Cylindrical Coordinates}{72}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Cylindrical Unit Vector Fields}{73}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Integration in Cylindrical Coordinates}{76}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Derivatives in Cylindrical Coordinates}{77}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Spherical Coordinates}{78}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Integration in Spherical Coordinates}{79}{subsection.4.2.1}%
-\contentsline {part}{VI\hspace {1em}Partial Differential Equations}{80}{part.6}%
-\contentsline {chapter}{\numberline {5}Modeling and the continuum limit}{81}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Higher dimensional ODEs}{81}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Linear systems and flows}{83}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Partial Differential Equations}{86}{section.5.3}%
-\contentsline {section}{\numberline {5.4}The heat equation}{88}{section.5.4}%
-\contentsline {section}{\numberline {5.5}The Laplace Equation}{92}{section.5.5}%
-\contentsline {section}{\numberline {5.6}The Wave Equation}{93}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Separation of variables}{97}{chapter.6}%
-\contentsline {part}{VII\hspace {1em}Further Topics in Linear Algebra}{98}{part.7}%
-\contentsline {chapter}{\numberline {7}Complex functions and transformations}{99}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Introduction}{99}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Complex Functions}{99}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Cartesian and Polar Representations}{100}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Complex Valued Functions}{103}{subsection.7.2.2}%
-\contentsline {chapter}{\numberline {8}Inner product spaces}{111}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Introduction}{111}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Infinite Dimensions}{112}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}Function Spaces}{112}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Inner Products and Norms}{113}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Norms}{115}{subsection.8.3.1}%
-\contentsline {section}{\numberline {8.4}Inner Product Spaces}{116}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Symmetries}{117}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Bases}{118}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Orthonormal Bases}{119}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Series and Integrals as Linear Combinations}{121}{subsection.8.6.2}%
-\contentsline {subsection}{\numberline {8.6.3}Projection}{122}{subsection.8.6.3}%
-\contentsline {chapter}{\numberline {9}Linear Operators}{126}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Matrices}{126}{section.9.1}%
-\contentsline {subsubsection}{Linear Equations}{126}{subsubsection*.50}%
-\contentsline {subsubsection}{Adjoints}{127}{subsubsection*.51}%
-\contentsline {section}{\numberline {9.2}Linear Operators}{128}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Adjoints}{129}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Hermitian Operators}{131}{subsection.9.2.2}%
-\contentsline {section}{\numberline {9.3}Differential and Integral Operators}{134}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Integral Operators}{135}{subsection.9.3.1}%
-\contentsline {section}{\numberline {9.4}Spectra}{135}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Fourier Theory}{138}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Fourier Series}{138}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}Solving Equations}{140}{subsection.10.1.1}%
-\contentsline {section}{\numberline {10.2}Fourier Transform}{142}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Fourier Transform Operator}{144}{subsection.10.2.1}%
-\contentsline {section}{\numberline {10.3}The Dirac Delta Function}{145}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Computing Fourier Transforms}{146}{section.10.4}%
-\contentsline {section}{\numberline {10.5}The Inverse Fourier Transform}{148}{section.10.5}%
-\contentsline {section}{\numberline {10.6}Solving Differential Equations}{149}{section.10.6}%
+\contentsline {chapter}{\numberline {1}Curves, scalar fields, and vector fields}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Overview of higher dimensional functions}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Curves in space}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Derivatives of Curves}{8}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Lengths of Curves}{11}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Scalar fields}{11}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Partial derivatives of scalar fields}{15}{subsection.1.3.1}%
+\contentsline {subsubsection}{Properties of partial derivatives}{17}{subsubsection*.13}%
+\contentsline {subsection}{\numberline {1.3.2}Directional Derivatives}{18}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Vector Fields}{18}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Vector field algebra}{21}{subsection.1.4.1}%
+\contentsline {chapter}{\numberline {2}Vector calculus}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The gradient of a scalar field}{24}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Optimization}{26}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Differentiation of Vector fields}{27}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}The Jacobian of a vector field}{28}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Divergence and Curl}{30}{subsection.2.2.2}%
+\contentsline {subsubsection}{Sources, Sinks, and Divergence Fields}{30}{subsubsection*.20}%
+\contentsline {subsubsection}{Rotation Fields}{31}{subsubsection*.22}%
+\contentsline {subsubsection}{Constant Vector Fields}{34}{subsubsection*.24}%
+\contentsline {section}{\numberline {2.3}Laplace Operator}{34}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}The Laplacian of a Scalar Field}{35}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Vector Laplacian}{36}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Composite Functions and Chain Rule}{37}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Composite Functions}{38}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}Integration of Vector Fields}{39}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Line integrals of vector fields}{40}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Flux and Surface Integrals}{40}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Volume Integrals}{42}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Potential Functions}{43}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Integrating the Gradient}{44}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Requirements for Potentials}{45}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Properties of Fields with Potentials}{46}{subsection.2.7.3}%
+\contentsline {section}{\numberline {2.8}Integrals of Scalar Fields}{46}{section.2.8}%
+\contentsline {subsubsection}{One Dimensional Case}{47}{subsubsection*.29}%
+\contentsline {subsubsection}{Two Dimensional Case}{48}{subsubsection*.30}%
+\contentsline {subsubsection}{Three Dimensional Case}{49}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {2.8.1}Line Integrals}{51}{subsection.2.8.1}%
+\contentsline {chapter}{\numberline {3}Implicit and explicit parameterizations}{53}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Implicit surfaces}{54}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Normal Vectors to Implicit Surfaces}{59}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Implicit Function Theorem}{60}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Surfaces as Graphs}{61}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Equation for a Plane}{62}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Tangent Planes and Surface Normals}{62}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Area Form and Integration}{65}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Coordinate systems}{70}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Cylindrical Coordinates}{70}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Functions and Calculus in Cylindrical Coordinates}{73}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Cylindrical Unit Vector Fields}{74}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Integration in Cylindrical Coordinates}{77}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Derivatives in Cylindrical Coordinates}{78}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Spherical Coordinates}{79}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Integration in Spherical Coordinates}{80}{subsection.4.2.1}%
+\contentsline {part}{VI\hspace {1em}Partial Differential Equations}{81}{part.6}%
+\contentsline {chapter}{\numberline {5}Modeling and the continuum limit}{82}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Higher dimensional ODEs}{82}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Linear systems and flows}{84}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Partial Differential Equations}{87}{section.5.3}%
+\contentsline {section}{\numberline {5.4}The heat equation}{89}{section.5.4}%
+\contentsline {section}{\numberline {5.5}The Laplace Equation}{93}{section.5.5}%
+\contentsline {section}{\numberline {5.6}The Wave Equation}{94}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Separation of variables}{98}{chapter.6}%
+\contentsline {part}{VII\hspace {1em}Further Topics in Linear Algebra}{99}{part.7}%
+\contentsline {chapter}{\numberline {7}Complex functions and transformations}{100}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{100}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Complex Functions}{100}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Cartesian and Polar Representations}{101}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Complex Valued Functions}{104}{subsection.7.2.2}%
+\contentsline {chapter}{\numberline {8}Inner product spaces}{112}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Introduction}{112}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Infinite Dimensions}{113}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Function Spaces}{113}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Inner Products and Norms}{114}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Norms}{116}{subsection.8.3.1}%
+\contentsline {section}{\numberline {8.4}Inner Product Spaces}{117}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Symmetries}{118}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Bases}{119}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Orthonormal Bases}{120}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Series and Integrals as Linear Combinations}{122}{subsection.8.6.2}%
+\contentsline {subsection}{\numberline {8.6.3}Projection}{123}{subsection.8.6.3}%
+\contentsline {chapter}{\numberline {9}Linear Operators}{127}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Matrices}{127}{section.9.1}%
+\contentsline {subsubsection}{Linear Equations}{127}{subsubsection*.51}%
+\contentsline {subsubsection}{Adjoints}{128}{subsubsection*.52}%
+\contentsline {section}{\numberline {9.2}Linear Operators}{129}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Adjoints}{130}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Hermitian Operators}{132}{subsection.9.2.2}%
+\contentsline {section}{\numberline {9.3}Differential and Integral Operators}{135}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Integral Operators}{136}{subsection.9.3.1}%
+\contentsline {section}{\numberline {9.4}Spectra}{136}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Fourier Theory}{139}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Fourier Series}{139}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Solving Equations}{141}{subsection.10.1.1}%
+\contentsline {section}{\numberline {10.2}Fourier Transform}{143}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Fourier Transform Operator}{145}{subsection.10.2.1}%
+\contentsline {section}{\numberline {10.3}The Dirac Delta Function}{146}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Computing Fourier Transforms}{147}{section.10.4}%
+\contentsline {section}{\numberline {10.5}The Inverse Fourier Transform}{149}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Solving Differential Equations}{150}{section.10.6}%

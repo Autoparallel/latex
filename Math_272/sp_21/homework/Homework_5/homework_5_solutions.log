@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  9 MAR 2021 10:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  16 MAR 2021 17:01
 entering extended mode
 **./homework_5_solutions.tex
 (homework_5_solutions.tex
@@ -1109,6 +1109,22 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 \c@subfigure=\count328
 \c@subtable=\count329
 )
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cleveref\cleveref.
+sty"
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
 d-pdftex.def"
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
@@ -1117,22 +1133,22 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 ) (homework_5_solutions.aux)
 \openout1 = `homework_5_solutions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
@@ -1159,9 +1175,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 10.
+ on input line 11.
 
-Package hyperref Info: Link coloring OFF on input line 10.
+Package hyperref Info: Link coloring OFF on input line 11.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1177,9 +1193,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count337
 )
-LaTeX Info: Redefining \ref on input line 10.
-LaTeX Info: Redefining \pageref on input line 10.
-LaTeX Info: Redefining \nameref on input line 10.
+LaTeX Info: Redefining \ref on input line 11.
+LaTeX Info: Redefining \pageref on input line 11.
+LaTeX Info: Redefining \nameref on input line 11.
  (homework_5_solutions.out) (homework_5_solutions.out)
 \@outlinefile=\write4
 \openout4 = `homework_5_solutions.out'.
@@ -1223,24 +1239,24 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/it' instead on input line 13.
+(Font)              using `OT1/cmr/m/it' instead on input line 14.
 
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 19
 .
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
 
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 18
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 19
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
@@ -1248,11 +1264,11 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 18.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 19.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 18.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 19.
 
 [1
 
@@ -1265,7 +1281,7 @@ Package epstopdf Info: Source file: <figures/flow.eps>
 (epstopdf)                    size: 91217 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/flow-eps-converted-
 to.pdf figures/flow.eps>
-(epstopdf)             \includegraphics on input line 89.
+(epstopdf)             \includegraphics on input line 90.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1275,7 +1291,7 @@ clusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/flow-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/flow-eps-converted-to.pdf>
 Package pdftex.def Info: figures/flow-eps-converted-to.pdf  used on input line 
-89.
+90.
 (pdftex.def)             Requested size: 281.85587pt x 211.39647pt.
 [2] [3 <./figures/flow-eps-converted-to.pdf>]
 (figures/equally_spaced_line_points.pdf_tex
@@ -1308,19 +1324,19 @@ Package epstopdf Info: Source file: <figures/heat_solution_t=0.eps>
 (epstopdf)                    size: 81069 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/heat_solution_t=0-e
 ps-converted-to.pdf figures/heat_solution_t=0.eps>
-(epstopdf)             \includegraphics on input line 303.
+(epstopdf)             \includegraphics on input line 311.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/heat_solution_t=0-eps-converted-to
 .pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
 d
-<figures/heat_solution_t=0-eps-converted-to.pdf, id=149, 421.575pt x 316.18124p
+<figures/heat_solution_t=0-eps-converted-to.pdf, id=151, 421.575pt x 316.18124p
 t>
 File: figures/heat_solution_t=0-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/heat_solution_t=0-eps-converted-to.pdf>
 Package pdftex.def Info: figures/heat_solution_t=0-eps-converted-to.pdf  used o
-n input line 303.
+n input line 311.
 (pdftex.def)             Requested size: 140.92793pt x 105.69582pt.
 Package epstopdf Info: Source file: <figures/heat_solution_t=0.01.eps>
 (epstopdf)                    date: 2021-03-08 15:18:26
@@ -1331,20 +1347,20 @@ Package epstopdf Info: Source file: <figures/heat_solution_t=0.01.eps>
 (epstopdf)                    size: 80156 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/heat_solution_t=0.0
 1-eps-converted-to.pdf figures/heat_solution_t=0.01.eps>
-(epstopdf)             \includegraphics on input line 309.
+(epstopdf)             \includegraphics on input line 317.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/heat_solution_t=0.01-eps-converted
 -to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
 owed
-<figures/heat_solution_t=0.01-eps-converted-to.pdf, id=150, 421.575pt x 316.181
+<figures/heat_solution_t=0.01-eps-converted-to.pdf, id=152, 421.575pt x 316.181
 24pt>
 File: figures/heat_solution_t=0.01-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/heat_solution_t=0.01-eps-converted-to.pdf>
 Package pdftex.def Info: figures/heat_solution_t=0.01-eps-converted-to.pdf  use
-d on input line 309.
+d on input line 317.
 (pdftex.def)             Requested size: 140.92793pt x 105.69582pt.
 Package epstopdf Info: Source file: <figures/heat_solution_t=0.1.eps>
 (epstopdf)                    date: 2021-03-08 15:19:24
@@ -1355,19 +1371,19 @@ to.pdf>
 (epstopdf)                    size: 68139 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/heat_solution_t=0.1
 -eps-converted-to.pdf figures/heat_solution_t=0.1.eps>
-(epstopdf)             \includegraphics on input line 315.
+(epstopdf)             \includegraphics on input line 323.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/heat_solution_t=0.1-eps-converted-
 to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
 wed
-<figures/heat_solution_t=0.1-eps-converted-to.pdf, id=151, 421.575pt x 316.1812
+<figures/heat_solution_t=0.1-eps-converted-to.pdf, id=153, 421.575pt x 316.1812
 4pt>
 File: figures/heat_solution_t=0.1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/heat_solution_t=0.1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/heat_solution_t=0.1-eps-converted-to.pdf  used
- on input line 315.
+ on input line 323.
 (pdftex.def)             Requested size: 140.92793pt x 105.69582pt.
 Package epstopdf Info: Source file: <Figures//heat_solution_m=3_n=3.eps>
 (epstopdf)                    date: 2021-03-08 15:13:10
@@ -1378,20 +1394,20 @@ ed-to.pdf>
 (epstopdf)                    size: 117611 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures//heat_solution_m=3_
 n=3-eps-converted-to.pdf Figures//heat_solution_m=3_n=3.eps>
-(epstopdf)             \includegraphics on input line 330.
+(epstopdf)             \includegraphics on input line 338.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures//heat_solution_m=3_n=3-eps-convert
 ed-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
-<Figures//heat_solution_m=3_n=3-eps-converted-to.pdf, id=152, 421.575pt x 316.1
+<Figures//heat_solution_m=3_n=3-eps-converted-to.pdf, id=154, 421.575pt x 316.1
 8124pt>
 File: Figures//heat_solution_m=3_n=3-eps-converted-to.pdf Graphic file (type pd
 f)
 <use Figures//heat_solution_m=3_n=3-eps-converted-to.pdf>
 Package pdftex.def Info: Figures//heat_solution_m=3_n=3-eps-converted-to.pdf  u
-sed on input line 330.
+sed on input line 338.
 (pdftex.def)             Requested size: 211.38832pt x 158.54373pt.
 Package epstopdf Info: Source file: <Figures//heat_solution_m=5_n=5.eps>
 (epstopdf)                    date: 2021-03-08 15:10:52
@@ -1402,20 +1418,20 @@ ed-to.pdf>
 (epstopdf)                    size: 139365 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures//heat_solution_m=5_
 n=5-eps-converted-to.pdf Figures//heat_solution_m=5_n=5.eps>
-(epstopdf)             \includegraphics on input line 336.
+(epstopdf)             \includegraphics on input line 344.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures//heat_solution_m=5_n=5-eps-convert
 ed-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
-<Figures//heat_solution_m=5_n=5-eps-converted-to.pdf, id=153, 421.575pt x 316.1
+<Figures//heat_solution_m=5_n=5-eps-converted-to.pdf, id=155, 421.575pt x 316.1
 8124pt>
 File: Figures//heat_solution_m=5_n=5-eps-converted-to.pdf Graphic file (type pd
 f)
 <use Figures//heat_solution_m=5_n=5-eps-converted-to.pdf>
 Package pdftex.def Info: Figures//heat_solution_m=5_n=5-eps-converted-to.pdf  u
-sed on input line 336.
+sed on input line 344.
 (pdftex.def)             Requested size: 211.38832pt x 158.54373pt.
 [11 <./figures/heat_solution_t=0-eps-converted-to.pdf> <./figures/heat_solution
 _t=0.01-eps-converted-to.pdf> <./figures/heat_solution_t=0.1-eps-converted-to.p
@@ -1425,13 +1441,13 @@ Package rerunfilecheck Info: File `homework_5_solutions.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34488 strings out of 479799
- 851645 string characters out of 2867787
- 1215565 words of memory out of 3000000
- 50747 multiletter control sequences out of 15000+200000
+ 36097 strings out of 479799
+ 888885 string characters out of 2867787
+ 1269145 words of memory out of 3000000
+ 52351 multiletter control sequences out of 15000+200000
  548611 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 135i,18n,137p,775b,734s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 135i,18n,137p,775b,755s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
@@ -1452,9 +1468,9 @@ fonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Colin/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework_5_solutions.pdf (12 pages, 781410 bytes).
+Output written on homework_5_solutions.pdf (12 pages, 782559 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
+ 279 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

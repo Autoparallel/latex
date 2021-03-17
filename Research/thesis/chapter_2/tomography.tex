@@ -4,9 +4,9 @@ Other forms of this problem exist. For example, magnetic impedance tomography \t
 
 Tomography is useful, yet, challenging practice for which there are unanswered questions. For example, it has yet to been proved that the smooth EIT problem with complete boundary measurements even has a solution. \todo{add citations and other results here} One may ask just how much information is necessary to solve the EIT, or related tomography problems. This line of thought has lead researchers to consider generalizations using differential forms \todo{sources}. Using forms, there is less restriction on the types of functions we use to perform tomography and, moreover, what information we allow ourselves to know along the boundary. 
 
-\subsection{Forward problem}
+\subsection{Forward problems}
 
-\subsubsection{Electrical Impedance Tomography}
+\subsubsection{Electrostatics}
 Let $M$ be a smooth, compact, oriented, Euclidean, 3-dimensional region in $\R^3$ with boundary $\partial M$; $M$ plays the role of the domain we wish to perform EIT on. Take $\sigma$ to be a symmetric positive definite matrix to play the role of a conductivity. If $\sigma$ can be diagonalized as an scalar field times an identity matrix, we say that $M$ is constructed of \emph{isotropic} material, otherwise $M$ is made of \emph{anisotropic} material. We have access to the boundary $\boundary$ and we to this end, we make choices of a static scalar potential (voltage) $\phi$ to apply along $\boundary$. This applied voltage induces the potential $u$ in the interior of $M$. Since $M$ is Euclidean, we have the freedom to choose a global basis for which the metric coefficients satisfy $g_{ij}=\delta_{ij}$. Thus, we construct the $M$ as a geometric manifold, where each geometric tangent space is Euclidean $C\ell(T_xM, |\cdot|)$, so that we are working with multivector fields in $\G_n(M)$. Finally, we posit that $M$ is built from an electrically conductive Ohmic material. Succinctly, the scalar potential $u$ and the current $\blade{j}$ satisfy Ohm's law 
 \begin{equation}
 \label{eq:ohms_law}
@@ -29,8 +29,6 @@ Thus, for the scalar potential we have
 \end{equation} 
 as an equivalent condition to \cref{eq:conservation_law}. A more thorough analysis can be found in \cite{feldman_calderproblem_nodate}. 
 
-\todo{left off here}
-
 Taking some arbitary basis, conductivity matrix assumes the components $\sigma_{ij}$ for $i,j=1,2,3$.  Via \cite{uhlmann_inverse_2014} in dimension $n>2$, we can realize that the conductivity matrix can be replaced with an intrinsic Riemannian metric with the components in this basis given by
 \begin{equation}
 \label{eq:conductivity_metric}
@@ -44,20 +42,17 @@ Then by \cref{eq:conservation_law}, we find the scalar potential is harmonic
 \begin{equation}
 \Delta u = 0 \quad \textrm{in $M$}.
 \end{equation}
-
-In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\blade{j}=\grad \wedge u$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data is the outward normal derivative of the solution $u$, $\nabla_{\blade{\nu}} \phi$. In this case, all vectors are spatial and since $\blade{\nu}$ is unital, $\blade{\nu}=\blade{\nu}^{-1}$ which allows us to note
+Hence, this yields the Dirichlet boundary value problem
 \begin{equation}
-\nabla_{\blade{\nu}} \phi = \blade{\nu}\rfloor (\grad \wedge \phi) = (\grad \wedge \phi) \cdot \blade{\nu} = \projection_{\blade{\nu}} (\grad \wedge \phi) \blade{\nu},
+\label{eq:dirichlet_problem}
+\begin{cases}
+\Delta u = 0 & \textrm{in $M$}\\
+u = \phi & \textrm{on $\boundary$}.
+\end{cases}
 \end{equation}
-with the last equality by \cref{eq:projection_inner_product}. The sole difference in interpration lies in the fact that the projection $\projection_{\blade{\nu}}(\grad \wedge u)$ is vector valued whereas $\nabla_{\blade{\nu}}\phi$ is scalar valued. Since the span of $\blade{\nu}$ is one dimensional, the difference is only in taking the whole outward component of $\grad \wedge \phi$ itself or the coefficient thereof. This motivates the so called Voltage-to-Current (VC) operator or  \emph{Dirichlet-to-Neumann (DN) map}
-\begin{equation}
-\label{eq:classical_dn_map}
-\Lambda_\textrm{Cl} \phi = \projection_{\blade{\nu}}(\grad \wedge u),
-\end{equation}
-and we put $\Lambda_{\textrm{Cl}} \phi = \normalcurrent$ as the normal component of the boundary current $\blade{j}\vert_{\boundary}$. he inverse problem is to determine $g$ from complete knowledge of $\Lambda_{\textrm{Cl}}$.
+It is a well known fact that this problem is uniquely solvable (e.g., see \cite[Theorem 3.4.6]{schwarz_hodge_1995}).
 
-
-\subsubsection{Magnetic Impedance Tomography}
+\subsubsection{Magnetostatics}
 
 Tomography can be performed using magnetic fields as well. In this case, we consider the boundary value problem for the magnetic vector field $\blade{h}$ by
 \begin{equation}
@@ -67,12 +62,24 @@ Tomography can be performed using magnetic fields as well. In this case, we cons
 \blade{\nu}\cross \blade{h} = \tangentialcurrent,
 \end{cases}
 \end{equation}
-\todo{this is right, but it will be rotated from what we do with the electric. So we can always multiply by $I_{\partial}^{-1}$.}
-where $\tangentialcurrent$ is the tangential component of the boundary current $\blade{j}\vert_{\boundary}$. It becomes quite clear there is a direct relationship between the electric and magnetic impedance tomography problems. We shall examine this further.
+where $\tangentialcurrent$ is the tangential component of the boundary current $\tangentialcurrent \coloneqq \projection_{\pseudoscalar_\partial}$, which we can refer to as the surface current. The equation
+\begin{equation}
+\label{eq:gauss_law}
+\grad \rfloor \blade{h} = 0
+\end{equation}
+is Gauss's law for magnetism. It becomes quite clear there is a direct relationship between the electric and magnetic impedance tomography problems. We shall examine this further later. Note that this problem is not uniquely solvable (\cite[Theorem 3.5.6]{schwarz_hodge_1995}) as the solution is determined up to a field in $\monogenicdirichlet{1}$ and we can choose to take $\blade{h}$ to be orthogonal to $\monogenicdirichlet{1}$ under the scalar valued Clifford inner product (see, for instance, \cite{belishev_remarks_2005}). 
+
+Let us examine this problem locally on $\partial M$. Let $\blade{e}_1$,$\blade{e}_2$, and $\normal$ constitute a right-handed local orthonormal basis around a point $x\in \boundary$. Hence, the local pseudoscalar is $\pseudoscalar = \blade{e}_1\blade{e}_2\normal$ and thus the boundary pseudoscalar is given by $\pseudoscalar_\partial = \blade{e}_1\blade{e}_2$ by definition since $\normal = \pseudoscalar_\partial \pseudoscalar^{-1}$. Then let $\blade{h}=h_1\blade{e}_1 + h_2 \blade{e}_2 + h_{\normal} \normal$. Then,
+\begin{equation}
+\label{eq:boundary_cross_product}
+\normal \cross \blade{h} = h_1 \blade{e}_2 - h_2 \blade{e}_1 = \projection_{\pseudoscalar_\partial} (\blade{h}) \pseudoscalar_\partial=  \blade{h}\rfloor \pseudoscalar_\partial = \tangentialcurrent.
+\end{equation}
+From \cref{eq:boundary_cross_product}, one can deduce that there are a few geometrical insights. The foremost is that the surface current $\tangentialcurrent$ is simply rotated $\pi/2$ from the projection (or pullback) of $\blade{h}$ into the boundary.
 
 Via Maxwell's equations, we note Ampere's law
 \begin{equation}
-\grad \cross \blade{h} = \current.
+\label{eq:amperes_law}
+\grad \cross \blade{h} = \current,
 \end{equation}
 Via \cref{rem:cross_product}, we see
 \begin{equation}
@@ -88,18 +95,38 @@ and moreover
 \end{equation}
 Finally, with another application of \cref{rem:cross_product}, we find \cref{eq:magnetic_forward_problem} can be written equivalently as
 \begin{equation}
+\label{eq:dirichlet_magnetic_bivector}
 \begin{cases}
 \Delta \magneticbivector = 0, ~\grad \wedge \magneticbivector=0 & \textrm{in $M$}\\
-\blade{\nu}\rfloor \magneticbivector = \tangentialcurrent,
+\normal \rfloor \magneticbivector = \tangentialcurrent,
 \end{cases}
 \end{equation}
-in terms of the magnetic bivector field $\magneticbivector$.
-
-it follows that 
+in terms of the magnetic bivector field $\magneticbivector$. By analogous logic, this boundary value problem is uniquely solvable up to some element of $\monogenicneumann{2}$. The statement on the boundary can be given equivelently in a few ways by \cref{eq:cross_product} seen in \cref{rem:cross_product}, e.g.
 \begin{equation}
--\sigma \grad \wedge u^\phi = \grad \cdot b,
+\label{eq:magnetic_commutator}
+\normal \rfloor \magneticbivector = \magneticbivector \times \pseudoscalar_\partial.
 \end{equation}
-where $b$ is the magnetic bivector field.
+From \cref{eq:amperes_law,eq:magnetic_commutator}, we find
+\begin{equation}
+\projection_{\pseudoscalar_\partial}(\grad \rfloor \magneticbivector) = \projection_{\pseudoscalar_\partial}(\magneticbivector \times \pseudoscalar_\partial).
+\end{equation}
+\todo{investigate this more. Maybe has something to do with fluids?}
+
+
+
+\subsubsection{Electromagnetostatics}
+
+One can seek to combine the problems above into a single multivector formulation. Note that a combination of Ohm's law (\cref{eq:ohms_law}) and Ampere's law (\cref{eq:amperes_law}) yields the expression
+\begin{equation}
+-\grad \wedge u = \current = \grad \rfloor \magneticbivector.
+\end{equation}
+Combined with Gauss's law (\cref{eq:gauss_law}) in the form $\grad \wedge \magneticbivector=0$, we can note that the spinor field $u+\magneticbivector \in \G^+(M)$ is left monogenic since
+\begin{equation}
+\grad(u+\magneticbivector) =  \grad \wedge u + \grad \rfloor \magneticbivector + \grad \wedge \magneticbivector = 0.
+\end{equation}
+The Dirichlet problem for the scalar potential (\cref{eq:dirichlet_problem}) and the magnetic field (\cref{eq:eq:dirichlet_magnetic_bivector}) both find unique solutions (once again, up to a component in $\monogenicneumann{2}$). 
+
+\todo{left off here}
 
 
 \subsubsection{Generalization to forms}
@@ -134,6 +161,21 @@ In terms of the multivector equivalent $A_r$, we find
 \vspace*{5pt}
 
 \subsection{Multivector tomography}
+
+\subsubsection{Electrical impedance tomography}
+
+In the realm of EIT, the Dirichlet data $\phi$ amounts to an input voltage along the boundary and by Ohm's law $\blade{j}=\grad \wedge u$ provides us the current. For any given solution to the boundary value problem, there is the corresponding Neumann data is the outward normal derivative of the solution $u$, $\nabla_{\blade{\nu}} \phi$. In this case, all vectors are spatial and since $\blade{\nu}$ is unital, $\blade{\nu}=\blade{\nu}^{-1}$ which allows us to note
+\begin{equation}
+\nabla_{\blade{\nu}} \phi = \blade{\nu}\rfloor (\grad \wedge \phi) = (\grad \wedge \phi) \cdot \blade{\nu} = \projection_{\blade{\nu}} (\grad \wedge \phi) \blade{\nu},
+\end{equation}
+with the last equality by \cref{eq:projection_inner_product}. The sole difference in interpration lies in the fact that the projection $\projection_{\blade{\nu}}(\grad \wedge u)$ is vector valued whereas $\nabla_{\blade{\nu}}\phi$ is scalar valued. Since the span of $\blade{\nu}$ is one dimensional, the difference is only in taking the whole outward component of $\grad \wedge \phi$ itself or the coefficient thereof. This motivates the so called Voltage-to-Current (VC) operator or  \emph{Dirichlet-to-Neumann (DN) map}
+\begin{equation}
+\label{eq:classical_dn_map}
+\Lambda_\textrm{Cl} \phi = \projection_{\blade{\nu}}(\grad \wedge u),
+\end{equation}
+and we put $\Lambda_{\textrm{Cl}} \phi = \normalcurrent$ as the normal component of the boundary current $\blade{j}\vert_{\boundary}$. he inverse problem is to determine $g$ from complete knowledge of $\Lambda_{\textrm{Cl}}$.
+
+\subsubsection{Generalizations}
 
 There are two notable related questions that can be stated in terms of multivectors. First, the most natural boundary value problems are 
 \begin{equation}

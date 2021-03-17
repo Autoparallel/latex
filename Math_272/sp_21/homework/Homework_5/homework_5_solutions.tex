@@ -7,6 +7,7 @@
 \usepackage{caption,subcaption}
 \newcommand{\vecx}{\boldsymbol{\vec{x}}}
 \newcommand{\vecxdot}{\boldsymbol{\dot{\vec{x}}}}
+\usepackage{cleveref}
 \begin{document}
 
 \begin{center}
@@ -103,7 +104,7 @@ Let $u_j(t) \coloneqq u(x_j,t)$ denote the temperature of particle $j$ at time $
 \begin{enumerate}[(a)]
     \item For the boundary particles $x_1$ and $x_n$, we have
     \[
-    \dot{u}_1 = -k_1 u_1 + k_1 u_{2} + f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_1 u_{n-1} +f_n,
+    \dot{u}_1 = -k_1 u_1 + k_1 u_{2} + f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_{n-1} u_{n-1} +f_n,
     \]
     which correspond to \emph{Neumann type boundary conditions}. Explain each term in the above equations.
     \item If we attached $x_1$ to $x_n$ with a material with a thermal transport coefficent of $k_0$ the above equations would need modification. Write these new equations. These are the \emph{periodic boundary conditions}. 
@@ -232,16 +233,23 @@ Indeed, this means that there is an extra term when we compare to the second equ
 \newpage
 \begin{problem}
     Using intuition from the previous problem, explain how one could solve the heat equation with a nonzero source term that only depends on $x$. In other words, how could one try to solve
-    \[
+    \begin{equation}
+    \label{eq:poisson}
     \left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = f(x),
-    \]
+    \end{equation}
 \end{problem}
 \begin{solution}
 One could argue that the equilibrium solution $u_E(x)$ will solve the equation
 \[
 -k\frac{\partial^2}{\partial x^2} u_E(x) = f(x),
 \]
-since this mimics what we did in the earlier problem.  This shows that when there are sources of heat in the material, they will contribute to the equilibrium temperature profile.  
+since this mimics what we did in the earlier problem.  This shows that when there are sources of heat in the material, they will contribute to the equilibrium temperature profile. How so? Take $u(x,t)=v(x,t)+u_E(x)$ as before, then
+\begin{align*}
+\left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) &= f(x)\\
+\left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right)( v(x,t)+u_E(x)) &= f(x)\\
+\left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) v(x,t) + -k \frac{\partial^2}{\partial x^2} u_E(x) &= f(x),
+\end{align*}
+and since $v(x,t)$ solves the 1d heat equation, are left with the above equation (\cref{eq:poisson}). Moreover, one should note that the boundary conditions must be handled by $u_E(x)$ as in problem 3.
 \end{solution}
 
 \newpage

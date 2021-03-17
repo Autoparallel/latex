@@ -1,0 +1,14 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Introduction}{8}{0}{1}
+\beamer@subsectionintoc {1}{1}{Calder\'on Problem}{9}{0}{1}
+\beamer@sectionintoc {2}{The Calder\'on Problem on Riemannian Manifolds}{26}{0}{2}
+\beamer@subsectionintoc {2}{1}{Preliminaries}{27}{0}{2}
+\beamer@subsectionintoc {2}{2}{Raphrasing EIT Problem in a Geometrical Language}{45}{0}{2}
+\beamer@subsectionintoc {2}{3}{Expected and Current Results}{52}{0}{2}
+\beamer@sectionintoc {3}{Boundary Control Method in 2 Dimensions}{74}{0}{3}
+\beamer@subsectionintoc {3}{1}{Lemma 1}{94}{0}{3}
+\beamer@subsectionintoc {3}{2}{Lemma 2}{114}{0}{3}
+\beamer@subsectionintoc {3}{3}{Lemma 3}{133}{0}{3}
+\beamer@subsectionintoc {3}{4}{Proof of the Main Theorem}{137}{0}{3}
+\beamer@sectionintoc {4}{Generalizing This Method}{145}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{171}{0}{5}
