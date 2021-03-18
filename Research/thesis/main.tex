@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[doctor]{thesis}
 \usepackage{import}
 \usepackage{preamble}
 \usepackage{environments}
@@ -10,26 +10,96 @@
 
 %\usepackage{showkeys} %show cites and refs
 
-\title{Multivector boundary value inverse problems}
+
+
+
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title of your thesis
+\title{Multivector inverse problems}
+
+% author's name
 \author{Colin Roberts}
 
+% author's email address
+\email{colin.roberts@rams.colostate.edu}
 
+% department name
+\department{Department of Mathematics}
+
+% semester of completion
+\semester{Spring 2021}
+
+% committee member names
+\advisor{Clayton Shonkwiler}
+\committee{Henry Adams} % as many committee entries as you need
+\committee{Wolfgang Bangerth}
+\committee{Jacob Roberts}
+
+% Copyright Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% here is an example of student copyright declaration
+% note that the \copyright command prints the copyright symbol,
+% so we use the name \mycopyright instead
+\mycopyright{%
+Copyright by Colin Roberts 2020 \\
+All Rights Reserved
+}
+
+%\tableofcontents
+
+\abstract{ Fill in abstract here.
+%The problem of determining an unknown Riemannian manifold given the Dirichlet-to-Neumann (DN) operator is known as the Calder\'on problem.  One method of solving this problem in the two dimensional case is through the Boundary Control method.  There, one uses the DN operator to construct a Banach algebra of holomorphic functions on the manifold. The Gelfand transform of this algebra is then homeomorphic to the manifold. In higher dimensions, we replace the complex field with a Clifford algebra and use the DN operator to determine a $\spingroup$ invariant space of monogenic multivector fields. Using a power series representation for monogenic fields, one decomposes the space of monogenics into products of commutative algebras of $(0+2)$-vector fields constant on translations of planes and monogenic in $\R^n$. Using this decomposition, we define spinor characters on the space of monogenic fields that correspond to Dirac measures on the manifold.  The set of these Dirac measures is then homeomorphic to the underlying manifold with the Gelfand topology.
+}
+
+% Acknowledgments 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgements{ Fill in acknowledgements here.
+}
 
 \begin{document}
 
 \todo{Start working on a literature review type thing so I can cite sources more easily later.}
 \todo{The space $\G_n^+$ is a module over $\spingroup$ and in the case of the complex numbers we can realize this is just a phase. Similar thing for quaternions probably.}
 
- \begin{titlingpage}
-     \maketitle
-     \vfill
-%     \begin{abstract}
-%        The problem of determining an unknown Riemannian manifold given the Dirichlet-to-Neumann (DN) operator is known as the Calder\'on problem.  One method of solving this problem in the two dimensional case is through the Boundary Control method.  There, one uses the DN operator to construct a Banach algebra of holomorphic functions on the manifold. The Gelfand transform of this algebra is then homeomorphic to the manifold. In higher dimensions, we replace the complex field with a Clifford algebra and use the DN operator to determine a $\spingroup$ invariant space of monogenic multivector fields. Using a power series representation for monogenic fields, one decomposes the space of monogenics into products of commutative algebras of $(0+2)$-vector fields constant on translations of planes and monogenic in $\R^n$. Using this decomposition, we define spinor characters on the space of monogenic fields that correspond to Dirac measures on the manifold.  The set of these Dirac measures is then homeomorphic to the underlying manifold with the Gelfand topology.
-%     \end{abstract}
- \end{titlingpage}
 
-\tableofcontents
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter % starts preliminary pages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle              % insert title page
+\makemycopyright        % insert copyright page
+\makeabstract           % insert abstract page
+\makeacknowledgements   % insert acknowledgements page
+
+% any extra preliminary pages can be added here
+% below is an example of a dedication page
+% the dedication page is optional
+\prelimtocentry{Dedication} % add table of contents entry
+\begin{flatcenter} % center without extra space
+
+    % page title
+    DEDICATION
+
+    %\vspace{3em} % place at top
+    \vfill % or center on page
+
+    \noindent \textit{I would like to dedicate this thesis to my dog fluffy.}
+    \vfill % fill extra space at bottom
+\end{flatcenter}
+\newpage
+
+\tableofcontents    % insert table of contents
+\listoftables       % insert list of tables (optional)
+\listoffigures      % insert list of figures (optional)
+
+\mainmatter % starts thesis body
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter 1
@@ -52,9 +122,9 @@
 \label{sec:spaces_of_fields}
 \input{chapter_1/spaces_of_fields.tex}
 
-%\section{Algebras of fields}
-%\label{sec:algebras_of_fields}
-%\input{chapter_1/algebras_of_fields.tex}
+\section{Algebras of fields}
+\label{sec:algebras_of_fields}
+\input{chapter_1/algebras_of_fields.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,9 +142,9 @@
 \label{sec:calderon_problem}
 \input{chapter_2/tomography.tex}
 
-%\section{Gelfand theory}
-%\label{sec:gelfand_theory}
-%\input{chapter_2/gelfand_theory.tex}
+\section{Gelfand theory}
+\label{sec:gelfand_theory}
+\input{chapter_2/gelfand_theory.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

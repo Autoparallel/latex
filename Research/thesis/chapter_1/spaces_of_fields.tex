@@ -44,8 +44,9 @@ The space of monogenic spinors $\monogenics^+(M)$ is $\spingroup$ invariant.
 
 \subsection{Hodge-type decompositions}
 
-For manifolds with boundary, we have distinguished subspaces of $\G(M)$. 
+For manifolds, we have distinguished subspaces of $\G(M)$. 
 \begin{definition}
+\label{def:dirichlet_neumann}
 Let $\G(M)$ be the space of multivector fields on a smooth manifold $M$, then we have the \emph{Dirichlet fields}
 \begin{equation}
 \G_D(M) \coloneqq \{A \in \G(M) ~\vert~ \projection_{I_{\partial}}(A) = 0 \},
@@ -58,8 +59,13 @@ and the \emph{Neumann fields}
 
 Let us define the following spaces of multivectors that mimic their differential forms counterpart.
 \begin{definition}
+\label{def:differential_spaces}
 We have
 \begin{itemize}
+    \item the \emph{gradients},
+    \begin{equation}
+    \grad \G(M) \coloneqq \{ \grad A ~\vert~ A \in \G(M) \textrm{~and~} A\vert_\boundary = 0\};
+    \end{equation}
     \item the \emph{exact fields},
     \begin{equation}
         \exactfields{}\coloneqq \{\grad \wedge A ~\vert~ A \in \G_D(M)\};
@@ -82,7 +88,7 @@ We then use superscripts to denote the associated $r$-vector subspace. For insta
 \begin{equation}
 \monogenicdirichlet{r}^\perp = \monogenicneumann{r},
 \end{equation}
-which can be noted in \cite{belishev_dirichlet_2008}, for example. Notice that the exact and coexact fields satisfy not only a differential condition, but a boundary condition as well. Then, under the scalar valued multivector inner product, we find the orthogonal direct sum decomposition
+which can be noted in \cite{belishev_dirichlet_2008}, for example. Notice that boundary behavior of these different spaces are important and if the manifold does not have boundary, they can be ignored to realize the correct definitions. Then, under the scalar valued multivector inner product, we find the orthogonal direct sum decomposition
 \begin{equation}
 \G^r(M) = \exactfields{r} \oplus \coexactfields{r} \oplus \monogenicfields{r},
 \end{equation}
@@ -115,6 +121,26 @@ we have the failure for the space of monogenic fields in that
 \begin{equation}
     \monogenicfields{} \neq \bigoplus_{j=1}^n \monogenicfields{j}.
 \end{equation}
+However, rephrasing this in terms of the gradient brings new light.
+\begin{theorem}[Monogenic Hodge Decomposition]
+The space of multivector fields $\G(M)$ has the $L^2$-orthogonal decomposition
+\begin{equation}
+\G(M) = \monogenicfields{} \oplus \grad \G(M).
+\end{equation}
+\end{theorem}
+\begin{proof}
+First, let $A \in \monogenicfields{}$ and $\grad B\in \grad \G(M)$ then
+\begin{equation}
+\multivecinnerproduct{\grad A}{B} = \multivecinnerproduct{A}{\grad B} + (-1)^{n(n-1)/2+p} \multivecinnerproduct{A}{\normal B} = 0.
+\end{equation}
+Thus the spaces $\monogenicfields{}$ and $\grad \G(M)$ are orthogonal. Next, let $C\neq 0$ be in the orthogonal complement to $\monogenicfields{} \oplus \grad \G(M)$. Then
+\begin{align}
+\multivecinnerproduct{A+\grad B}{C}=0&= \multivecinnerproduct{A}{C}+\multivecinnerproduct{B}{\grad C}+\multivecinnerproduct{B}{\normal C}_\partial\\
+&=\multivecinnerproduct{B}{\grad C}.
+\end{align}
+Since $B\in \G(M)$ is arbitrary, it must be that $\grad C = 0$ on $M$ and so $C \in \monogenicfields{}$.  This is a contradiction, therefore we have proven the statement.
+\end{proof}
+
 The space $\monogenicfields{}$ is quite a bit more rich than the other spaces.  For example, the field $x_1+x_2 \blade{B}_{12}$ is monogenic but the individual graded components are not. Fundamentally, this is due to the mixing of grades that we pick up when considering multivectors (e.g., in \cref{eq:cauchy_riemann_equations}). Since the gradient of a multivector consists of a grade raising and lowering component, we will have an interaction between, for example, $r$, $r-2$, and $r+2$-vectors. This leads to the following proposition.
 
 \begin{lemma}
@@ -147,7 +173,7 @@ and
 \end{equation}
 \end{theorem}
 \begin{proof}
-
+\textcolor{red}{I am not sure this is true. In fact, it may not be. But there is probably some kind of theorem like this that is attainable.}
 \end{proof}
 
 \subsection{Integral transforms}
@@ -169,8 +195,8 @@ satisfying the equation
 where $\delta(x)$ is the Dirac delta distribution and where $x\in \R^n$. All this to say that $G(x)$ is the fundamental solution to the gradient operator. This allows for us to define the \emph{Cauchy kernel} by $G(x'-x)$. Let $A_+ \in \monogenicfields{+}$, then we can note
 \begin{align}
 \label{eq:integration_greens_function}
-\int_\boundary G(x'-x) \pseudoscalar_\partial(x') A_+(x') \mu_\partial(x') &= \int_M (\dot{G}(x'-x)\dot{\grad_x} A_+(x'-x) + G(x'-x)\grad_x A_+(x'-x))\mu(x')\\
-&= \int_M \dot{G}(x'-x)\dot{\grad_x}A_+(x'-x) \pseudoscalar^{-1} \mu \\
+\int_\boundary G(x'-x) \pseudoscalar_\partial(x') A_+(x') \mu_\partial(x') &= \int_M (\dot{G}(x'-x)\dot{\grad}_x A_+(x'-x) + G(x'-x)\grad_x A_+(x'-x))\mu(x')\\
+&= \int_M \dot{G}(x'-x)\dot{\grad}_xA_+(x'-x) \pseudoscalar^{-1} \mu \\
 &= \frac{1}{\pseudoscalar(x) S_n} A_+(x),
 \end{align}
 where we write $\grad_x$ to denote the gradient with respect to the variable $x$. Therefore, we have arrived at the \emph{Cauchy integral formula}

@@ -165,7 +165,10 @@ which realizes the exterior derivative as the grade raising component of the gra
 \subsection{Integration}
 \label{subsec:integration_on_submanifolds}
 
-Given a $r$-dimensional submanifold $R \subset M$ with a $r$-form $\alpha_r$ defined on $R$, we can integrate this $r$-form. However, we want to phrase this in terms of the the multivector equivalents.  First, let $\mu_R$ be the volume measure for the submanifold $R$.  Given $R$ is a submanifold of $M$, for any $x \in R$ we have tangent space $T_x R$ which is a subspace of $T_x M$. Hence, we can put $\blade{I}_R(x)^{-1 \dagger}$ to be the multivector equivalent of $\mu_R$ by
+Given a $r$-dimensional submanifold $R \subset M$ with a $r$-form $\alpha_r$ defined on $R$, we can integrate this $r$-form. However, we want to phrase this in terms of the the multivector equivalents.  First, we will do this for scalar valued integrals. 
+
+\subsubsection{Scalar valued integrals}
+Let $\mu_R$ be the volume measure for the submanifold $R$.  Given $R$ is a submanifold of $M$, for any $x \in R$ we have tangent space $T_x R$ which is a subspace of $T_x M$. Hence, we can put $\blade{I}_R(x)^{-1 \dagger}$ to be the multivector equivalent of $\mu_R$ by
 \begin{equation}
 \mu_R = \blade{I}_R^{-1 \dagger} \cdot dX_r^\dagger = \blade{I}_R^{-1} \cdot dX_r.
 \end{equation}
@@ -306,44 +309,45 @@ Computing
 \end{proof}
 \todo{fix this proof.}
 
-\subsection{Multivector valued integrals}
+\subsubsection{Multivector valued integrals}
 
-The integrals defined before are all scalar valued, but geometric calculus allows for an extension to multivector valued integrals. 
-\todo{more work to define and show some stuff here}
+The integrals defined before allow us to encapsulate integration via differential forms, but geometric calculus allows for an extension to multivector valued integrals. Examples using kernel functions are prevalent in physics. Take for instance, determining a magnetic field from a charge distribution or the Biot-Savart law to determine a magnetic field from a current distribution. No drastic changes are needed to our previous formulation. 
 
-Given our definition of the Hodge star on multivector equivalents, we can now define a multivector valued $L^2$-inner product on multivector fields.
+Let $A\in \G(M)$ be a multivector field and take a submanifold $R\subset M$. Then, we can define a multivector valued integral by
+\begin{equation}
+\int_R A \pseudoscalar_R \mu_R.
+\end{equation}
 
+
+Given our definition of the Hodge star on multivector equivalents, we can now define a multivector valued $L^2$ product on multivector fields.
 \begin{definition}
-Let $A_r$ and $B_s$ be a $r$- and $s$-vector fields. Then the \emph{Clifford inner product} is defined by
+Let $A_r$ and $B_s$ be a $r$- and $s$-vector fields. Then the \emph{multivector field inner product} is defined by
 \begin{equation}
-\multivecinnerproduct{A_r}{B_s} \coloneqq \int_M A_r B_s^\dagger \mu.
+\multivecinnerproduct{A_r}{B_s} \coloneqq \int_M \proj{}{A_r B_s^\dagger} \mu.
 \end{equation}
-If $\multivecinnerproduct{A_r}{B_s} = 0$, then we say $A_r$ and $B_s$ are \emph{Clifford orthogonal}.
 \end{definition}
-In particular, one can consider the graded components of this inner product by
-\begin{equation}
-\multivecinnerproduct{A_r}{B_s}_j \coloneqq \proj{j}{\multivecinnerproduct{A_r}{B_s}} = \proj{j}{\int_M A_r B_s^\dagger \mu} \equiv \int_M \proj{j}{A_r B_s^\dagger} \mu,
-\end{equation}
-which we refer to as the \emph{$j$-vector valued Clifford inner product}. The Clifford inner product extends the notion of the $r$-form inner product.  One should view this extension as the same extension we find in the containment between $\bigwedge(V)$ and the more general $C\ell(V,Q)$. The perspective is that the Clifford algebras always contain at least as much information as the alternating algebras and geometric algebras will strictly resolve finer details. For example, the following proposition is immediate.
+If $\multivecinnerproduct{A_r}{B_s} = 0$, then we say $A_r$ and $B_s$ are orthogonal. Once again, this is only a true inner product when $g$ is positive definite.  We put $\multivecinnerproduct{\cdot}{\cdot}_\partial$ to represent the inner product on the boundary manifold. 
+
+One should view this extension as the same extension we find in the containment between $\bigwedge(V)$ and the more general $C\ell(V,Q)$. The perspective is that the Clifford algebras always contain at least as much information as the alternating algebras and geometric algebras will strictly resolve finer details. For example, the following proposition is immediate.
 \begin{proposition}
 Given two $r$-forms, the $r$-form inner product is equal to the scalar valued Clifford inner product on their corresponding multivector equivalents.
 \end{proposition}
 \begin{proof}
 Let $\alpha_r$ and $\beta_r$ be $r$-forms with multivector equivalents $A_r$ and $B_r$ respectively. Then
 \begin{align*}
-    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \mu = \int_M \proj{0}{A_rB_r^\dagger} \mu = \multivecinnerproduct{A_r}{B_r}_0,
+    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \mu = \int_M \proj{}{A_rB_r^\dagger} \mu = \multivecinnerproduct{A_r}{B_r},
 \end{align*}
 by the proof of \cref{prop:multivector_hodge_star}. 
 \end{proof}
 Note that when $s\neq r$, this scalar valued Clifford inner product is zero. Hence, the orthogonal direct sum with respect to the $L^2$ multivector inner product extends the grade based direct sum. It will suffice to use the symbol $\oplus$ for both. 
 
-Two subsets of fields may be orthogonal with respect to the scalar valued Clifford inner product, but they may fail to be Clifford orthogonal. In fact, the grade based decomposition does not hold over the multivector field inner product. For example, consider $M$ a region of $\R^n$ then $\G_n(M)$ and take a constant subspace (unit blade) $\blade{B}_{12}$ and a blade inside this subspace $\blade{e}_2$ then
-\begin{equation}
-\multivecinnerproduct{\blade{B}_{12}}{\blade{e}_2} = \int_M  \blade{e}_1 \mu = \blade{e}_1 \textrm{vol}(M),
-\end{equation}
-which shows the fields $\blade{B}_{12}$ and $\blade{e}_2$ are not Clifford orthogonal.
-\todo{this is kind of interesting. It seems to say that the inner product value is almost describing how the vectors differ and by how much of $M$ they differ by...?}
-We extend the notion of Clifford orthogonal to spaces. That is, if we have a space of multivector fields $X$ and another space of multivector fields $Y$ such that for any $A\in X$ and $B\in Y$ we have $\multivecinnerproduct{A}{B}=0$ then we say $X$ and $Y$ are Clifford orthogonal and we put $X \boxplus Y$ to refer to the orthogonal direct sum with respect to the Clifford inner product.
+%Two subsets of fields may be orthogonal with respect to the scalar valued Clifford inner product, but they may fail to be Clifford orthogonal. In fact, the grade based decomposition does not hold over the multivector field inner product. For example, consider $M$ a region of $\R^n$ then $\G_n(M)$ and take a constant subspace (unit blade) $\blade{B}_{12}$ and a blade inside this subspace $\blade{e}_2$ then
+%\begin{equation}
+%\multivecinnerproduct{\blade{B}_{12}}{\blade{e}_2} = \int_M  \blade{e}_1 \mu = \blade{e}_1 \textrm{vol}(M),
+%\end{equation}
+%which shows the fields $\blade{B}_{12}$ and $\blade{e}_2$ are not Clifford orthogonal.
+%\todo{this is kind of interesting. It seems to say that the inner product value is almost describing how the vectors differ and by how much of $M$ they differ by...?}
+%We extend the notion of Clifford orthogonal to spaces. That is, if we have a space of multivector fields $X$ and another space of multivector fields $Y$ such that for any $A\in X$ and $B\in Y$ we have $\multivecinnerproduct{A}{B}=0$ then we say $X$ and $Y$ are Clifford orthogonal and we put $X \boxplus Y$ to refer to the orthogonal direct sum with respect to the Clifford inner product.
 
 
 
@@ -384,7 +388,7 @@ This leads to the Hodge-Dirac operator $d+\delta$. One should compare this opera
 \begin{proposition}
 On multivector equivalents $A_{r-1}$ and $B_r$, we have Green's formula
 \begin{equation}
-\multivecinnerproduct{\grad \wedge A_{r-1}}{B_r}_0 = \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r}_0 + (-1)^{p} \int_{\partial M} (A_{r-1}\rfloor B_r^\dagger) \cdot \blade{\nu} \mu_\partial.
+\multivecinnerproduct{\grad \wedge A_{r-1}}{B_r} = \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r} + (-1)^{p} \int_{\partial M} (A_{r-1}\rfloor B_r^\dagger) \cdot \blade{\nu} \mu_\partial.
 \end{equation}
 \end{proposition}
 \begin{proof}
@@ -398,7 +402,7 @@ by the Leibniz rule. By Stokes' theorem,
 \end{equation}
 For underbrace 1,
 \begin{equation}
-\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M (\grad \wedge A_{r-1}) \cdot B_r^\dagger \mu = \multivecinnerproduct{\grad \wedge A_{r-1}}{B_r}_0.
+\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M (\grad \wedge A_{r-1}) \cdot B_r^\dagger \mu = \multivecinnerproduct{\grad \wedge A_{r-1}}{B_r}.
 \end{equation}
 For underbrace 2,
 \begin{align}
@@ -406,7 +410,7 @@ For underbrace 2,
     &= (-1)^{r-1+n(n-1)} \int_M [A_{r-1} \wedge (\grad \wedge (B_r^\perp)^\dagger)] \cdot dX_n^\dagger\\
     &= (-1)^{r-1 + \xi} \int_M A_{r-1} \wedge (\grad \rfloor B_r)^\perp \cdot dX_n^\dagger\\
     &= (-1)^{r-1 + \xi} \int_M A_{r-1} \rfloor (\grad \rfloor B_r) \mu\\
-    &= \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r}_0.
+    &= \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r}.
 \end{align}
 For underbrace 3,
 \begin{align}
@@ -425,14 +429,50 @@ Stokes' theorem and Green's formula are essential in determining the $L^2$-ortho
 The containment of the exterior algebra inside a geometric algebra motivates us to push both Stokes' theorem and Green's formula to further limits. Green's formula is derived via Stokes' theorem and both solely make use of the exterior derivative, its adjoint, and the scalar valued Clifford inner product. As it turns out, there is a more general version of Stokes' theorem based on the gradient $\grad$. This theorem turns out to take advantage of the multivector-valued nature of directed integration. Moreover, we pose no restrictions that require single graded elements and we realize that multiple versions exist to the fact that $\grad$ can act on both sides of a multivector.
 
 \begin{theorem}[Fundamental theorems of geometric calculus]
+\label{thm:ftga}
 Let $A,B\in \G(M)$. Then
 \begin{align}
-\label{eq:ftga_start}
+\label{eq:ftga_1}
 \int_M \dot{A}\dot{\grad} \blade{I}^{-1} \mu &= \int_\boundary  A \blade{I}_\partial \mu_\partial\\
+\label{eq:ftga_2}
 \int_M  \blade{I}^{-1} \grad B \mu &= \int_\boundary \blade{I}_\partial B \mu_\partial\\
+\label{eq:ftga_3}
 \int_M ((-1)^{n-1} \dot{A}\dot{\grad} \blade{I}^{-1} B + A \blade{I}^{-1} \grad B)\mu &= \int_\boundary A \blade{I}_\partial B \mu_\partial.
-\label{eq:ftga_end}
 \end{align}
+Finally,
+\begin{equation}
+\label{eq:ftga_4}
+\int_M \dot{\sf{L}}(\dot{\grad} \pseudoscalar^{-1})\mu = \int_\boundary \sf{L}(\pseudoscalar_\partial)\mu_\partial,
+\end{equation}
+holds for linear functions $\sf{L}$ of pseudovectors.
 \end{theorem}
-The above theorem is proved in a handful of texts \todo{add citations}. Note that \cref{eq:ftga_end} is describing a multivector valued form of a Green's formula. This is wholeheartedly allowing us to consider consequences of the actions of $\grad$ on both sides of a multivector. One may question the inclusion of the unit pseudoscalar in equations \crefrange{eq:ftga_start}{eq:ftga_end} and whether they can be pulled outside of the integral. The answer is no, unless $M$ is Euclidean. In fact, this is used explicitly in the Cauchy integral formula in complex analysis. We visit an analog of this later in \cref{subsec:integral_transforms}. \todo{maybe consider the green's theorem scalar part as the inner product?}
+The above theorem is proved in a handful of texts \todo{add citations}. One may question the inclusion of the unit pseudoscalar in equations \cref{eq:ftga_1,eq:ftga_2,eq:ftga_3} and whether they can be pulled outside of the integral. The answer is no, unless $M$ is a region of $\R^n$. In fact, this is used explicitly in the Cauchy integral formula in complex analysis. We visit an analog of this later in \cref{subsec:integral_transforms}. Note that \cref{eq:ftga_3} is close to describing a multivector valued form of a Green's formula. This is wholeheartedly allowing us to consider consequences of the actions of $\grad$ on both sides of a multivector. In fact, we have the following result.
+
+\begin{theorem}[Multivector Green's formula]
+\label{thm:multivector_greens_formula}
+We have the Green's formula for the gradient
+\begin{equation}
+\multivecinnerproduct{\grad A}{B} = \multivecinnerproduct{A}{\grad B} + (-1)^{n(n-1)/2+p} \multivecinnerproduct{A}{\normal B}_\partial.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Fix $A,B \in \G(M)$ and define a function $\mathsf{L}(C) = \proj{}{A^\dagger C I B}$ and note that $\sf{L}$ is linear.  Note
+\begin{align}
+\dot{\sf{L}}(\dot{\grad}\pseudoscalar^{-1}) &= \proj{}{\dot{A}^\dagger \dot{\grad} B} + \proj{}{A^\dagger \grad B}\\
+&=\proj{}{\dot{A}^\dagger \dot{\grad} B} +  \proj{}{A^\dagger \grad B}
+\end{align} 
+Then, \cref{eq:ftga_4} of \cref{thm:ftga} holds and we have
+\begin{equation}
+\int_M \left(\proj{}{\dot{A}^\dagger \dot{\grad}  B} + \proj{}{A^\dagger \grad B} \right) \mu = \int_\boundary \proj{}{A^\dagger \pseudoscalar_\partial \pseudoscalar B}\mu_\partial,
+\end{equation}
+therefore
+\begin{equation}
+\multivecinnerproduct{\grad A}{B} = \multivecinnerproduct{A}{\grad B} + (-1)^{n(n-1)/2+p} \multivecinnerproduct{A}{\normal B}_\partial.
+\end{equation}
+\end{proof}
+A final remark is that the term
+\begin{equation}
+\multivecinnerproduct{A}{\normal B}_\partial = \multivecinnerproduct{\normal A}{B}_\partial
+\end{equation}
+is symmetric with the exchange of $\normal$. 
 

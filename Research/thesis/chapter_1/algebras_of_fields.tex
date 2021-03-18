@@ -1,24 +1,6 @@
 \subsection{Banach algebras of Clifford fields}
 
-\todo[inline]{Finish this section. I'm saying this here but it should go later on, but this should lead to the weak formulation for the laplace equation??? Does there exist an inner product instead of just a norm? }
-
-Letting $\Omega$ be a region in $\R^n$, recall that the space of monogenic fields $\monogenics(\Omega)$ is not an algebra. However, $\monogenics(\Omega)$ does contain algebras that are commutative Banach algebras. To start, consider the algebra of spinor fields $\G_n^+(\Omega)$ which has a norm induced from the spinor norm in the $L_2$ sense by
-\[
-\spinnorm{s} = \int_\Omega ss^\dagger d\Omega
-\]
-This gives us a normed algebra of spinor fields. One can see that we also have the unit $1$ in this algebra. Spinors $s,r \in \G_n^+$ satisfy
-\[
-\|sr\| = \|s\|\|r\|
-\]
-since
-\[
-\|sr\|^2 = (sr)(sr)^\dagger = srr^\dagger s^\dagger = s\|rr^\dagger\|^2 s^\dagger = \|s\|^2 \|r\|^2.
-\]
-It follows immediately that for the non-constant $C^\infty$-fields $s$ and $r$
-\[
-\spinnorm{sr} \leq \spinnorm{s}\spinnorm{r}.
-\]
-Identifying the constant fields in the algebra $\G_n^+(\Omega)$ with points in $\R^{2^{n-1}}$ (since $\dim(\G_n^+)=2^{n-1}$) we see that the algebra is also complete. Thus we have shown that the space $\G_n^+(\Omega)$ is a (noncommutative) Banach algebra. There are more algebras to discover.
+The space $\monogenics{}$ is a vector space due but it is not, in general, an algebra. For instance, if $M$ is dimension $n=2$, then $\monogenics{+}$ is an algebra due to the commutivity of $\monogenics{+}$. Yet, the $\monogenics{}$ does contain algebras that are commutative Banach algebras. 
 
 \subsubsection{Planar monogenic fields}
 

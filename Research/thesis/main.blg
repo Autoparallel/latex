@@ -12,45 +12,45 @@ Warning--empty journal in feldman_calderproblem_nodate
 Warning--empty year in feldman_calderproblem_nodate
 Warning--empty journal in janssens_special_nodate
 Warning--empty year in janssens_special_nodate
-You've used 13 entries,
+You've used 16 entries,
             2030 wiz_defined-function locations,
-            574 strings with 5766 characters,
-and the built_in function-call counts, 3904 in all, are:
-= -- 363
-> -- 140
+            595 strings with 6486 characters,
+and the built_in function-call counts, 4989 in all, are:
+= -- 456
+> -- 205
 < -- 0
-+ -- 58
-- -- 42
-* -- 282
-:= -- 614
-add.period$ -- 15
-call.type$ -- 13
-change.case$ -- 57
++ -- 81
+- -- 62
+* -- 372
+:= -- 795
+add.period$ -- 19
+call.type$ -- 16
+change.case$ -- 71
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 208
-empty$ -- 313
-format.name$ -- 42
-if$ -- 833
+cite$ -- 22
+duplicate$ -- 256
+empty$ -- 393
+format.name$ -- 62
+if$ -- 1059
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 16
-newline$ -- 44
-num.names$ -- 28
-pop$ -- 65
+int.to.str$ -- 16
+missing$ -- 19
+newline$ -- 54
+num.names$ -- 36
+pop$ -- 78
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 57
 quote$ -- 0
-skip$ -- 159
+skip$ -- 194
 stack$ -- 0
-substring$ -- 224
-swap$ -- 80
+substring$ -- 282
+swap$ -- 96
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 46
+type$ -- 58
 warning$ -- 6
-while$ -- 43
-width$ -- 15
-write$ -- 119
+while$ -- 56
+width$ -- 18
+write$ -- 149
 (There were 7 warnings)

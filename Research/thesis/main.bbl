@@ -9,6 +9,17 @@
 {\sc M.~I. Belishev}, {\em Some remarks on the impedance tomography problem for
   3d–manifolds.},  (2005), p.~13.
 
+\bibitem{belishev_algebraic_2019}
+{\sc M.~I. Belishev and A.~F. Vakulenko}, {\em On algebraic and uniqueness
+  properties of 3d harmonic quaternion fields}, arXiv:1901.09201 [math],
+  (2019).
+\newblock arXiv: 1901.09201.
+
+\bibitem{belishev_algebras_2019}
+{\sc M.~I. Belishev and A.~F. Vakulenko}, {\em On algebras of harmonic
+  quaternion fields in \${\textbackslash}mathbb \{{R}\}{\textasciicircum}3\$},
+  St. Petersburg Mathematical Journal, 31 (2019), pp.~1--12.
+
 \bibitem{brackx_hilbert_2008}
 {\sc F.~Brackx and H.~D. Schepper}, {\em The {Hilbert} {Transform} on a
   {Smooth} {Closed} {Hypersurface}},  (2008), p.~24.
@@ -39,6 +50,13 @@
 
 \bibitem{janssens_special_nodate}
 {\sc T.~Janssens}, {\em Special functions in higher spin settings}, p.~192.
+
+\bibitem{ryan_clifford_2004}
+{\sc J.~Ryan}, {\em Clifford {Analysis}}, in Lectures on {Clifford}
+  ({Geometric}) {Algebras} and {Applications}, R.~Ablamowicz, W.~E. Baylis,
+  T.~Branson, P.~Lounesto, I.~Porteous, J.~Ryan, J.~M. Selig, G.~Sobczyk,
+  R.~Abłamowicz, and G.~Sobczyk, eds., Birkhäuser, Boston, MA, 2004,
+  pp.~53--89.
 
 \bibitem{schindler_geometric_2020}
 {\sc J.~C. Schindler}, {\em Geometric {Manifolds} {Part} {I}: {The}

@@ -47,7 +47,7 @@ In general, an element $A \in C\ell(V,Q)$ is written as a linear combination of 
 \begin{equation}
 \proj{r}{A} \in C\ell(V,Q)^r
 \end{equation}
-to denote the grade-$r$ components of the multivector $A$ (i.e., $\proj{r}{A} \in C\ell(V,Q)^r$). Any multivector $A$ can then be given by
+to denote the grade-$r$ components of the multivector $A$ (i.e., $\proj{r}{A} \in C\ell(V,Q)^r$) and for the scalar component we put $\proj{}{A}$. Any multivector $A$ can then be given by
 \begin{equation}
 A = \sum_{r=0}^n \proj{r}{A}
 \end{equation}
@@ -114,7 +114,26 @@ Finally, to suppress needless additional parentheses later on, we assert that th
 \begin{equation}
 A\cdot B C \equiv (A \cdot B)C,
 \end{equation}
-and extend this to the other products defined in \cref{eq:wedge,eq:left_contraction,eq:right_contraction,eq:commutator_product} as well. 
+and extend this to the other products defined in \cref{eq:wedge,eq:left_contraction,eq:right_contraction,eq:commutator_product} as well.
+
+We can also define an inner product on multivector fields that captures that mimics Euclidean inner product on structure of $\R^{2^n}$, i.e., treating each of the basis blades as independent vectors in $\R^{2^n}$. 
+\begin{definition}
+Let $A,B \in \G$, then the \emph{multivector inner product} is given by
+\begin{equation}
+(A,B) \coloneqq \proj{}{A^\dagger B}.
+\end{equation}
+\end{definition}
+This product is bilinear, symmetric, positive definite, and satisfies
+\begin{equation}
+(A,B)=(A^\dagger,B^\dagger)
+\end{equation}
+so long as $g$ is positive definite. The product $(\cdot,\cdot)$ is a natural extension of the inner product $g$ on the $n$-dimensional space $V$ to the $2^n$-dimensional $\G$. If $g$ is not positive definite, then there are vectors called \emph{null vectors} such that $(\blade{v},\blade{v})=0$. This can be realized in the spacetime algebra (see \cref{subsec:motivating_example}).
+\begin{definition}
+    The \emph{multivector norm} $| \cdot |$ for $A \in \G$ is given by
+    \begin{equation}
+    |A| \coloneqq \sqrt{(A,A)}.
+    \end{equation}
+\end{definition}
 
 As discussed, $C\ell(V,Q)$ is naturally a $\mathbb{Z}$-graded algebra but we also find that it carries a $\mathbb{Z}/2\mathbb{Z}$-grading as well. Some would then refer to $C\ell(V,Q)$ as an \emph{superalgebra} \todo{source}. This additional grading can be realized by sorting $r$-vectors in $C\ell(V,Q)$ into the sets where $r$ is even or odd.  We say a $r$-vector is \emph{even} (resp. \emph{odd}) if $r$ is even (resp. odd) and in general if a multivector $A$ is a sum of only even (resp. odd) grade elements we also refer to $A$ as even (resp. odd).  Taking note of the multiplication defined in \ref{eq:general_clifford_multiplication}, one can see that the multiplication of even multivectors with another even multivectors outputs an even multivector and that motivates the following.
 \begin{definition}
@@ -158,7 +177,12 @@ For a geometric algebra with a positive definite inner product, all blades have 
 We refer to elements of the Clifford group as \emph{Clifford multivectors}. Note that Clifford multivectors are not necessarily blades since the product used in the construction is not the exterior product $\wedge$. For any Clifford multivectors $A = \blade{v}_1 \cdots \blade{v}_k$ in the group $\Gamma$, we have that multiplicative inverse $A^{-1}$ is given by $A^{-1} = \blade{v}^k \dots \blade{v}^1$ as we can see that $A^{-1}A=AA^{-1} = 1$ by construction.  Another note is that all scalars, vectors, pseudovectors, and pseudoscalars are always in the Clifford group and have multiplicative inverses. The inverse of a vector $\blade{v}$ is given by $\frac{\blade{v}}{\blade{v}\cdot\blade{v}}$. The form of the inverse motivates the utility of the \emph{reverse} operator $\dagger$ defined so that $A^\dagger = \blade{v}_k \cdots \blade{v}_1$. For a $r$-blade $A_r$, the reverse also satisfies the relationship
 \begin{equation}
 \label{eq:reverse_sign}
-A_r^\dagger = (-1)^{r(r-1)/2} A_r.
+A_r^\dagger = (-1)^{r(r-1)/2} A_r
+\end{equation}
+as well as
+\begin{equation}
+\label{eq:dagger_distribution}
+(AB)^\dagger = B^\dagger A^\dagger.
 \end{equation}
 One can see that the multiplicative inverse of an element of the Clifford group $A$ is the reverse of the corresponding product of reciprocal vectors since $A_r^{-1} = (\blade{v}^1 \cdots \blade{v}^k)^\dagger$. When we take $V=\R^n$ with the Euclidean inner product, we can note that elements $s \in \Gamma^+(\G_n)$ act as rotations on multivectors $A\in \G_n$ through a conjugate action
 \begin{equation}
@@ -170,20 +194,13 @@ Following these realizations, one can see that the Clifford group $\Gamma(\G_n)$
 \begin{equation}
 \operatorname{O}(n) \cong \Gamma(\G_n)/(\R\setminus 0) \qquad \textrm{and} \qquad \operatorname{SO}(n) \cong \Gamma^+(\G_n) /(\R\setminus 0),
 \end{equation}
-where $\R\setminus 0$ is the multiplicative group of real numbers. This motivates the following definition.
-\begin{definition}
-    The \emph{Clifford norm} $\| \cdot \|$ for $s \in \Gamma(\G)$ is given by
-    \begin{equation}
-    \|s\|^2 \coloneqq ss^\dagger.
-    \end{equation}
-\end{definition}
-Note that when the inner product is positive definite the Clifford norm is indeed a norm \todo{source} but can fail to be a norm in spaces with mixed signature (see \cref{eq:spacetime_inner_product}). Also, note that for vectors the Clifford norm corresponds with the norm induced from the inner product in that with a vector $\blade{v}$ we have $\|\blade{v}\|=\blade{v}\blade{v}^\dagger = \blade{v}\cdot \blade{v}$. We also give the name \emph{unit} to $r$-blades $\blade{A_r}$ with unit Clifford norm $1=\|\blade{A_r}\|$. Finally, this allows us to arrive at a definition for the classical pin and spin groups.
+where $\R\setminus 0$ is the multiplicative group of real numbers. We give the name \emph{unit} to $r$-blades $\blade{A_r}$ with unit Clifford norm $1=|\blade{A_r}|$. Finally, this allows us to arrive at a definition for the classical pin and spin groups.
 \begin{definition}
 \begin{subequations}
 The \emph{pin} and \emph{spin} groups $\operatorname{Pin}(V)$ and $\operatorname{Spin}(V)$ are defined to be
 \begin{align}
-    \operatorname{Pin}(V) &\coloneqq \{s\in \Gamma(\G) ~\vert~ \|s\|=1\}.\\
-    \operatorname{Spin}(V) &\coloneqq \{s\in \Gamma^+(\G) ~\vert~ \|s\|=1\}.
+    \operatorname{Pin}(V) &\coloneqq \{s\in \Gamma(\G) ~\vert~ |s|=1\}.\\
+    \operatorname{Spin}(V) &\coloneqq \{s\in \Gamma^+(\G) ~\vert~ |s|=1\}.
 \end{align}
 \end{subequations}
 \end{definition}
@@ -223,18 +240,18 @@ It is worth noting that all volume elements and pseudoscalars are invertible in 
 We also want to note that the volume element here fits our intuition and indeed we find
 \begin{equation}
 \label{eq:pseudoscalar_norm}
-\|\blade{\mu}\| = \sqrt{\det(g)}.
+|\blade{\mu}| = \sqrt{\det(g)}.
 \end{equation}
 Since pseudoscalars are generated by a single element (recall there are ${n \choose n}$ independent grade-$n$ elements), we should realize that the volume element is simply a scalar copy of a pseudoscalar that is unital.
 \begin{definition}
 Let $\blade{\mu}$ be the volume element, then we have the \emph{unit pseudoscalar}
 \begin{equation}
-\blade{I} \coloneqq \frac{1}{\|\blade{\mu}\|} \blade{\mu}.
+\blade{I} \coloneqq \frac{1}{|\blade{\mu}|} \blade{\mu}.
 \end{equation}
 \end{definition}
 As is clear by the definition above, we must have that
 \begin{equation}
-\|\blade{I}\| = 1.
+|\blade{I}| = 1.
 \end{equation}
 The unit pseudoscalar satisfies a useful relationship when swapping the left for right multiplication with an $r$-vector by
 \begin{equation}
@@ -246,9 +263,9 @@ Thus, $\blade{I}$ always commutes with the even subalgebra and the commutation p
 \end{equation}
 which lets us see that the inverse is given by
 \begin{equation}
-\blade{I}^{-1} = (-1)^{3n(n-1)/2+p} \blade{I},
+\blade{I}^{-1} = (-1)^{n(n-1)/2+p} \blade{I},
 \end{equation}
-which is an identification that we will often use. Formulas throughout are usually given in their most general context and substitution is done only when working with specialized algebras.  
+which is an identification that we will often use. Formulas throughout are usually given in their most general context and substitution is done only when working with specialized algebras. From here, one notices that when $g$ is positive definite we have no temporal vectors and $p=0$ which means $\blade{I}^\dagger = \blade{I}^{-1}$.
 
 Note that for a homogeneous $r$-rector $A_r$ we have that $A_r^\perp$ is an $n-r$-vector. Indeed, if we take an invertible $r$-blade $\blade{A_r}$, then we can find the \emph{$\blade{A_r}$-subspace dual} of a multivector $B$ by
 \[
@@ -297,7 +314,7 @@ where we use the bold notation for $\cross$ to distinguish between the bivector 
 \subsection{Blades and subspaces}
 \label{subsubsec:blades_and_subspaces}
 
-Each invertible unit $r$-blade $\blade{U_r}$ ($\|\blade{U_r}\|=1$) corresponds to a $r$-dimensional subspace and can be identified with a point in the Grassmannian of $r$-dimensional subspaces in an $n$-dimensional vector space, $\Grassmannian{r}{n}$. We will often allude to this identification directly by referring to a subspace via a reference to a unit blade, e.g., the subspace $\blade{U_r}$. Extending the dual to act on the unit $r$-blades that make up $\Grassmannian{r}{n}$, one realizes that $\Grassmannian{r}{n}^\perp = \Grassmannian{n-r}{n}$ shows the spaces are in bijection. Moreover, given a subspace $\blade{U_r}$, we can complete the vector space by
+Each invertible unit $r$-blade $\blade{U_r}$ ($|\blade{U_r}|=1$) corresponds to a $r$-dimensional subspace and can be identified with a point in the Grassmannian of $r$-dimensional subspaces in an $n$-dimensional vector space, $\Grassmannian{r}{n}$. We will often allude to this identification directly by referring to a subspace via a reference to a unit blade, e.g., the subspace $\blade{U_r}$. Extending the dual to act on the unit $r$-blades that make up $\Grassmannian{r}{n}$, one realizes that $\Grassmannian{r}{n}^\perp = \Grassmannian{n-r}{n}$ shows the spaces are in bijection. Moreover, given a subspace $\blade{U_r}$, we can complete the vector space by
 \begin{equation}
 \blade{U_r}\wedge \blade{U_r}^\perp = \blade{I}.
 \end{equation} 
@@ -351,7 +368,7 @@ since the subspace $\blade{A_r}$ is $r$-dimensional and moreover the operation p
 \end{equation}
 For example, given vectors $\blade{u}$ and $\blade{v}$ we retrieve the familiar statement 
 \begin{equation}
-\projection_{\blade{u}} (\blade{v}) = (\blade{v} \cdot \blade{u}) \frac{\blade{u}}{\|\blade{u}\|^2}.
+\projection_{\blade{u}} (\blade{v}) = (\blade{v} \cdot \blade{u}) \frac{\blade{u}}{|\blade{u}|^2}.
 \end{equation}
 
 A dual notion exists as well; we can project onto the subspace perpendicular to $\blade{A_r}$.
@@ -401,7 +418,7 @@ Rather than a sequence of multiple examples, it will prove to be far more illumi
 Where $\blade{\gamma}_0$ is temporal since its square is negative and $\blade{\gamma}_i$ for $i=1,2,3$ are all spatial since their squares are positive. For this basis, we can denote the matrix for this inner product $\eta =\operatorname{diag}(-+++)$ (often called the \emph{Minkowski metric}) and define $Q$ from $\eta$. Then, we have for a spacetime vector $\blade{v} = v_0 \blade{\gamma}_0 +v_1 \blade{\gamma}_1 + v_2 \blade{\gamma}_2 + v_3 \blade{\gamma}_3$,
 \begin{equation}
 \label{eq:spacetime_inner_product}
-\|\blade{v}\| = \blade{v} \cdot \blade{v} = -v_0^2 + \sum_{i=1}^3 v_i^2,
+|\blade{v}| = \blade{v} \cdot \blade{v} = -v_0^2 + \sum_{i=1}^3 v_i^2,
 \end{equation}
 which defines the algebra $\G_{1,3}$ as the spacetime algebra. The reader may now wish to, for example, revisit \cref{subsubsec:reverse_inverse_clifford_spin_groups} with $\G_{p,q}$ in mind in order to see a realization of the groups $\operatorname{SO}(p,q)$, $\operatorname{Spin}(p,q)$, and the spacetime spinors. 
 
@@ -416,7 +433,7 @@ A= a_0 + a_1 \blade{\gamma}_1 + a_2 \blade{\gamma}_2 + a_3 \blade{\gamma}_3 + a_
 and so the grade projections read
 \begin{subequations}
 \begin{align}
-\proj{0}{A}&=a_0\\
+\proj{}{A}&=a_0\\
 \proj{1}{A}&=a_1 \blade{\gamma}_1 + a_2 \blade{\gamma}_2 + a_3 \blade{\gamma}_3\\
 \proj{2}{A}&=a_{12} \blade{B}_{12} + a_{13} \blade{B}_{13} + a_{23} \blade{B}_{23}\\
 \proj{3}{A}&= a_{123} \blade{\gamma}_1 \wedge \blade{\gamma}_2 \wedge \blade{\gamma}_3.
