@@ -1,0 +1,119 @@
+\subsection{Subsurface fields}
+
+The space $\monogenicfields{}$ is a vector space due but it is not, in general, an algebra. For instance, if $M$ is dimension $n=2$, then $\monogenicfields{+}$ is an algebra due to the commutivity of $\monogenicfields{+}$. Yet, the $\monogenicfields{}$ does contain algebras that are commutative Banach algebras given essentially by \cref{eq:c_isomorphisms}. For this section, take $M$ imbedded in $\R^n$ with the Euclidean metric.
+
+But, there are certain types of monogenic fields in which this property is true. We describe a set of parabivectors that operate entirely on a 2-dimensional submanifolds defined by an unit bivector field $\bivector$. These specific fields will be of great utility for the remainder of this paper.
+\begin{definition}
+    Let $\bivector \in \G(M)$ be a constant unit bivector field. Then an even multivector field $f_+$ satisfying
+    \begin{equation}
+    f_+ = \projection_{\bivector} \circ f \circ \projection_{\bivector}
+    \end{equation}
+    is a \emph{subsurface spinor field} and we put $\G_{\bivector}^+(M)$ to denote the space of such fields.
+\end{definition} 
+Note that in $\R^n$, we have $\Grassmannian{2}{n}$ choices of a constant $\bivector\in \G(M)$. Choosing a specific point in $\R^n$ allows us to construct a plane $R$ passing through that point with $\bivector$ the defining the tangent space at each point of that surface. Thus, we define a unique plane in $\R^n$ by choice of point in the product manifold $\R^n \times \Grassmannian{2}{n}$.
+
+We can note that $\mu_R = \bivector^{-1} \cdot dX_2$ as constructed in \cref{eq:submanifold_volume_form} and a multivector valued integral of a field $g$ can be evaluated by
+\begin{equation}
+\int_R g\bivector\mu_R.
+\end{equation}
+By definition, we have made $f_+$ constant on translations of $R$ by the precomposition $f_+ = f_+ \circ \projection_{\bivector}$. It follows that 
+\begin{equation}
+\label{eq:exterior_b_derivative}
+(\dot{\grad} \wedge \bivector)\dot{f} = 0.
+\end{equation}
+In $\R^3$, for example, this amounts to fields constant along an axis $\omega$ such that $\omega^\perp = \bivector$ then
+\begin{equation}
+\label{eq:omega_axial_equivalence}
+(\dot{\grad} \wedge \bivector)f = (\dot{\grad} \wedge \omega^\perp)f  =(\dot{\grad} \cdot \omega)f = \nabla_\omega f.
+\end{equation} 
+Hence, the intrinsic gradient on any plane $R$ defined by choosing a point in $\R^n \times \Grassmannian{2}{n}$ can be found via projection of $\grad$ onto $R$ by 
+\begin{equation}
+\grad_R f \coloneqq \projection_{\bivector} (\dot{\grad})\dot{f}.
+\end{equation} 
+Monogenic subsurface spinor fields satisfy $\grad f_+ = 0$. Note that, by definition, we have defined $f_+$ so that $\nabla_{\blade{v}} f_+ =0$ for vector fields in the normal space to $R$. This leads to the fact that
+\begin{equation}
+\grad f_+ = \grad_R f_+.
+\end{equation}
+Hence, $f_+$ if monogenic if $\grad_R f_+ =0$.  Monogenic subsurface spinor fields will serve as a realization of complex holomorphic functions since they carry over some additional nice properties and admit a nice representation. We can always put $f_+=u+\beta \bivector$ for $u,\beta \in \G^0(M)$ since we required the postcomposition $f_+=\projection_{\bivector} \circ f_+$ and so $f_+$ must be a $C^\infty$-linear combination of even elements defined by the subspace $\bivector$.  
+
+Recall from Example \ref{subsec:motivating_example} that multivectors in the form $z=x+y\bivector$ mimic the complex number $z$ when $\bivector$ is a unit $2$-blade since $\bivector^2=-1$.  Monogenic subsurface spinor fields are thus a direct analog of $\C$-holomorphic functions.  As noted before, we also have the Cauchy-Riemann equations by \cref{eq:cauchy_riemann_equations}.
+
+Let us choose some unit bivector $\bivector$ and define the space of monogenic subsurface spinors by
+\begin{equation}
+\algebra{\bivector}(M) = \{f_+ \in \G_{\bivector}^+ ~|~ \grad f_+ = 0\}.
+\end{equation}
+Note that multiplication of two fields $f=u_f+\beta_f B$ and $g=u_g+\beta_g B$ in $\algebra{\bivector}(M)$ is commutative and given pointwise by
+\begin{equation}
+\label{eq:axial_multiplication}
+fg = u_f u_g - \beta_f \beta_g + \bivector (u_f \beta_g + u_g \beta_f) = gf.
+\end{equation}
+In fact, products of monogenic subsurface spinors $\algebra{\bivector}(M)$ forms a commutative Banach algebra.
+% Namely, scaling a holomorphic function by constant complex numbers remains holomorphic. We realize this for $B$-planar fields as $R^+\times \operatorname{Spin}(2)$ invariance.  The following corollary follows from Lemma \ref{lem:clifford_invariant}.
+%\begin{corollary}
+%    \label{cor:mult_by_i_monogenic}
+%    Let $f_+ \in \algebra{\bivector}(M)$ and let $\zeta=x+y\bivector$ for constant scalars $x$ and $y$. Then $\zeta f$ is monogenic.
+%\end{corollary}
+%\begin{proof}
+%    Note that $\zeta$ admits the representation $\zeta = re^{\theta B}$ as seen in Example \ref{ex:exponential_of_bivector} for some $r,\theta \in \R$ with $r= \|\zeta\|$. If $\|\zeta\|=1$, then this corollary follows immediately from Lemma \ref{lem:clifford_invariant} as $\zeta \in \spingroup$. If $r\neq 1$, we note that the the corollary remains true given the $\R$-linearity of $\grad$.
+%\end{proof}
+%The point here is that we have now effectively found functions that can be scaled by $B$-planar constants $\zeta$ and remain monogenic. 
+\begin{proposition}
+The space $\algebra{\bivector}(\Omega)$ is a commutative unital Banach algebra.
+\end{proposition}
+\begin{proof}
+Note that the space $\algebra{\bivector}(M)$ inherits the norm $\|\cdot \|$ and the associative algebra structure from the space $\G(M)$ since $\algebra{\bivector}(M)\subset \G(M)$. Taking $f,g \in \algebra{\bivector}(M)$ we can note that at each point
+\begin{align}
+(fg,fg) = \proj{}{(fg)^\dagger fg}=\proj{}{g^\dagger f^\dagger f g} = \proj{}{gg^\dagger f^\dagger f} = (gg^\dagger, f^\dagger f),
+\end{align}
+and by the Cauchy-Schwarz inequality 
+\begin{align}
+|fg|^2 = (fg,fg) \leq (f^\dagger f, f^\dagger f) (gg^\dagger,gg^\dagger) = |f|^2 |g|^2.
+\end{align}
+Therefore, it follows that $\|fg\|\leq \|f\|\|g\|$. Clearly, $\|1\|=1$. We can then note that we have shown that for any $f,g \in \algebra{\bivector}(M)$ that $fg \in \G_{\bivector}^+(M)$ and moreover that $fg=gf$ by \cref{eq:axial_multiplication}. Given commutivity, we realize that the product $fg$ is monogenic by
+\begin{equation}
+\grad(fg) = \grad fg+\dot{\grad}f \dot{g} = \grad g f = 0.
+\end{equation}
+\end{proof}
+
+
+%\subsubsection{$\omega$-axial fields}
+%The authors in \cite{belishev_algebraic_2019,belishev_algebras_2019} give a thorough treatment of an analogous story but with quaternion fields.  We show the relationship between the two stories in this section and we find them to be entirely equivalent. As in Example \ref{ex:quaternions}, we can see these quaternion fields as parabivector fields.  The authors work exclusively in 3-dimensions and quickly specialize to the fields which are $\omega$-axial due to their rich algebraic structure. There, $\omega$ is a purely imaginary unit quaternion. Their harmonic $\omega$-axial fields are equivalent to monogenic $B$-planar fields if we take the axis $\omega = BI^{-1}$. First, note we define $\omega$-axial in the same way.
+%\begin{definition}
+%    Let $A \in \G_3(\Omega)$ be a multivector field then $A$ is \emph{$\omega$-axial} if $A(x+t\omega) = A(x+t\omega)$.  
+%\end{definition}
+%
+%This definition allows us to perfectly coincide the notions of $B$-planar monogenic fields with $\omega$-axial harmonic quaternion fields.
+%\begin{proposition}
+%    In $\R^3$, every $B$-planar monogenic field is in correspondence with an $\omega$-axial harmonic quaternion field $h = \varphi + \psi \omega$. 
+%\end{proposition}
+%\begin{proof}
+%    Let $f$ be a $B$-planar monogenic field with $\tilde{\omega}=BI^{-1}$ and note that $f(x+t\tilde{\omega)}=f(x)$ since $\projection{B}{t\omega}=0$. Thus, $f$ is $\tilde{\omega}$-axial.
+%    
+%    Given the quaternion multiplication is a left handed bivector multiplication (see Example \ref{ex:quaternions}, we can replace the purely imaginary quaternion $\omega$ and get a vector in $\G_3^1$ by using the correspondence $\boldsymbol{i} \leftrightarrow e_1$, $\boldsymbol{j}\leftrightarrow e_2$, and $\boldsymbol{k}\leftrightarrow e_3$ we generate $\tilde{\omega} \in \G_3^1$. We then have the $2$-blade $B=\tilde{\omega} I$ such that
+%    \[
+%        \tilde{h} = \varphi + \psi B,
+%    \]
+%    is the corresponding parabivector in $\G_3$. It's clear that $\operatorname{P}_B \circ \tilde{h} = \tilde{h}$. Likewise, since $\varphi$ and $\psi$ were constant on the axis given by $\omega$, then by the previous work $\varphi \circ \operatorname{P}_B$ and $\psi \circ \operatorname{P}_B$ implies that $\tilde{h} \circ \operatorname{P}_B$ and so $\tilde{h}$ is a $B$-planar. Hence, setting $\varphi = u$ and $\psi=\beta$, we recover a unique $f$ from a given $h$.
+%
+%Then, if $h=\varphi + \psi \omega$ is harmonic, we know
+%\[
+%\grad \psi = \omega \times \grad \varphi,
+%\]
+%where we take the vector cross product $\times$.  Based on Example \ref{ex:cross_product}, we can see that corresponding $B$-planar field $f=u+\beta B$ yields the analogous equation
+%\[
+%\grad u = \grad \cdot \beta B = (\grad \wedge \tilde{\omega})I = \tilde{\omega } \times \grad \beta.
+%\]
+%Thus, the notions of an $\omega$-axial harmonic quaternion field coincides with $B$-planar monogenic fields in $\R^3$ so long as $B=\tilde{\omega}I$.
+%\end{proof}
+%
+%The $\omega$-axial fields do not generalize properly and this definition is solely a happy circumstance seen in $\R^3$ given the duality between vectors and bivectors.  In higher dimensions, the notion of $B$-planar retains all the desired properties that let us define a notion of a Gelfand spectrum.
+
+
+
+
+
+%\begin{example}
+%\textcolor{red}{Edit this}
+%In the case where $\Omega$ itself is 2-dimensional and compact, we realize $\G_n^+$ is isomorphic to $\C$ and we find that these match the typical definition for characters $\mu\in \characters(\Omega)$.  These spin characters each amount to function evalation. Take $f\in \monogenics(\Omega)$ and note that $f \in \algebra{B}(\Omega)$ as well.  $f$ is then a holomorphic function when we identify $B \leftrightarrow i$ and as such the spin character $\mu$ acts by $\mu(f)=f(x_\mu)$ for some point $x_\mu \in \Omega$ showing the correspondence of points in $\Omega$ with spin characters in $\characters(\Omega)$. Hence, with the weak-$\ast$ topology, the space $\characters(\Omega)$ is homeomorphic to $\Omega$. 
+%\end{example}
+

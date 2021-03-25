@@ -1,0 +1,272 @@
+\subsection{Monogenic fields}
+\todo{Q: What are the fields that are both left and right monogenic? Also, I should probably define that.}
+Multivectors in the kernel of $\grad$ are of fundamental importance in geometric calculus and these multivectors are the motivation for Clifford analysis much like elements in the kernel of $\Delta$ give rise to harmonic analysis. 
+\begin{definition}
+ Let $A,B,C \in \G(M)$. Then we say that $A$ is \emph{(left) monogenic} if $\grad A =0$, $B$ is \emph{(right) monogenic} if $\dot{B}\dot{\grad} = 0$, and $C$ is \emph{two-sided monogenic} if $\grad C = \dot{C}\dot{\grad} = 0$.
+\end{definition}
+
+\todo{discuss the new left and right}
+Monogenic fields are of utmost importance as they have many beautiful properties. One should find them as a suitable generalization of the notion of complex holomorphicity. For example, in regions of Euclidean spaces, a monogenic field $f$ can be completely determined by its Dirichlet boundary values through a generalized Cauchy integral formula and for a spinor field each of the graded components of $f$ are harmonic. We put 
+\[
+\monogenicfields{}\coloneqq \{A \in \G(M) ~\vert~ \grad A =0\}
+\]
+to refer to elements of this set as \emph{monogenic fields} on $M$. As subspaces we also have the \emph{monogenic $r$-vectors} $\monogenicfields{r}$, \emph{monogenic spinors} $\monogenicfields{+}$, and the \emph{monogenic parabivectors} $\monogenicfields{0+2}$. 
+
+\begin{remark}
+The definition for $\monogenicfields{r}$ is multivector equivalent to space of harmonic fields,
+    \begin{equation}
+        \harmonicfields{r}\coloneqq \{\alpha_r \in \Omega^{r}(M) ~\vert~ d \alpha_r = 0, ~ \delta \alpha_r = 0\}.
+    \end{equation}
+We will avoid the term harmonic fields since we reference multivector fields in the kernel of $\Delta$ as harmonic.
+\end{remark}
+
+It will be pertinent in \todo{reference later section} to speak of function algebras. Hence, one could consider if the space $\monogenicfields{}$ is, in general, an algebra. While it is clear that the sum of two monogenic fields is also a monogenic field, it is not necessarily true that the product of two monogenic fields is monogenic. Hence, these spaces do not form algebras in their own right, they do indeed form a vector space as sums of monogenic functions are monogenic due to the linearity of the gradient. 
+
+To the contrary, let $M$ be 2-dimensional, then the space of monogenic spinors $\monogenics^+(M)$ is indeed an algebra. In fact, taking $\G_2(\R^2)$ we can note that monogenic spinors are exactly the complex holomorphic functions via the identification in \cref{subsubsec:motivating_example}. Take the coordinates $x$, $y$ and the standard basis $\blade{e}_i$, then if $f=u+v\blade{B}_{12} \in \G_2(\R^2)$ we can note that $\grad f =0$ yields the Cauchy-Riemann equations
+\begin{align}
+\label{eq:cauchy_riemann_equations}
+    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+    \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
+\end{align}
+
+Though the two dimensional case is special, there will be nontrivial algebras living inside each $\monogenics(M)$ for manifolds of dimension $>3$. One should also note that the space $\monogenicfields{}$ is a right $\G$-module since for $a\in \G$ and $A\in \monogenicfields{}$
+\begin{equation}
+\grad(As) = \grad A s + \dot{\grad}A \dot{s} = 0.
+\end{equation}
+
+\subsubsection{Cauchy integral}
+
+\todo{Is Biot savart as a special case of cauchy integral?}
+
+One beautiful result in Clifford analysis and geometric caclulus is the celebrated generalization of the Cauchy integral formula for $\C$-holomorphic functions. Details and proofs can be found in our standard texts \cite{doran_geometric_2003,hestenes_clifford_1984} as well as many others. Briefly, let the smooth, compact, oriented, $n$-dimensional manifold $M$ with a positive definite $g$ be isometrically imbedded into $\R^n$. Then, there exists a Green's function
+\begin{equation}
+\label{eq:greens_function}
+E(x)\coloneqq \frac{1}{S_n} \frac{x}{|x|^n}
+\end{equation}
+satisfying the equation
+\begin{equation}
+\label{eq:fundamental_solution}
+\grad E(x) = -\dot{E(x)}\dot{\grad} = \delta(x),
+\end{equation}
+where $\delta(x)$ is the Dirac delta distribution and where $x\in \R^n$. All this to say that $E(x)$ is the fundamental solution to the gradient operator. Let $A \in \monogenicfields{}$, then we can note
+\begin{align}
+\label{eq:integration_greens_function}
+\int_\boundary G \pseudoscalar_\partial A \mu_\partial &= \int_M G\grad \pseudoscalar^{-1} A\mu + (-1)^n \int_M \dot{E}\dot{\grad} A\mu \\
+&= (-1)^n\int_M \dot{E}\dot{\grad}\pseudoscalar^{-1} A \mu \\
+&= (-1)^n \int_M \delta(x)\pseudoscalar^{-1} A,
+\end{align}
+This allows for us to define the \emph{Cauchy kernel} by $G(x,x')\coloneqq E(x'-x)$ and moreover we arrive at the \emph{Cauchy integral formula}
+\begin{equation}
+\label{eq:cauchy_integral}
+A(x) = (-1)^n \pseudoscalar^{-1} \int_\boundary E(x'-x) \pseudoscalar_\partial(x') A(x') \mu_\partial(x').
+\end{equation}
+Hence, we have a method for uniquely determining a monogenic field $A$ from the boundary values $A\vert_\boundary$. This Cauchy integral formula is a fundamental and powerful result in the world of Clifford analysis\todo{citations}. 
+
+Now, take $M$ to be a manifold that is not imbedded into $\R^n$ but with otherwise equivalent properties as before. Then, our goal is to construct a Cauchy kernel function $G$ on $M$. Since $M$ is compact, we can take an arbitrary finite open cover $\{U_i\}_{i=1}^{N}$ lying in the atlas of $M$. Taking our previous work, we realize that for each coordinate patch of $M$, we have a well defined Green's function $G_i$ on each $U_i$. Take a smooth partition of unity subordinate to the open cover $\{\rho_i\}_{i=1}^N$. Using this partition of unity, we define a global vector field $G \in \G(M)$. Hence, the local behavior of $G$ can be extended throughout all of $M$ and \cref{eq:fundamental_solution,eq:integration_greens_function,eq:cauchy_integral} all hold for $M$. One may see that \cref{eq:cauchy_integral} is written in a handful of slightly different ways. If $M$ admits global coordinates and we can put $g_{ij}=\delta_{ij}$, then $\pseudoscalar$ is constant and can be taken inside the integral.
+
+Based on the Cauchy integral, we can determine another property of the monogenic fields. In particular, we have the following lemma.
+
+\begin{lemma}
+\label{lem:monogenic_zero}
+Let $A \in \monogenicfields{}$ be such that $A\vert_\boundary = 0$. Then $A=0$ on all of $M$.
+\end{lemma}
+\begin{proof}
+Since $A$ is monogenic, we can write
+\begin{equation}
+A(x) = (-1)^n \pseudoscalar^{-1} \int_\boundary G(x,x') \pseudoscalar_\partial(x') A(x') \mu_\partial(x').
+\end{equation}
+Then,
+\begin{equation}
+|A| = \left| \int_\boundary G(x,x') \pseudoscalar_\partial A(x') \mu_\partial(x')\right| \leq \int_\boundary \left| G(x,x') \pseudoscalar_\partial A(x')\right| \mu_\partial = 0.
+\end{equation}
+Hence, $A=0$ on $M$.
+\end{proof}
+
+%Also, in all dimensions, the gradient is invariant under actions from the spin group.
+%\begin{lemma}
+%\label{lem:clifford_invariant}
+%Let $s\in \spingroup$ then $\grad \circ s = s \circ \grad$.
+%\end{lemma}
+%This lemma is classical in the theory of the Dirac operator, Clifford analysis, and harmonic analysis so we omit a proof.  One can see \cite{janssens_special_nodate}, for example. The following corollary is immediate.
+%\begin{corollary}
+%The space of monogenic spinors $\monogenics^+(M)$ is $\spingroup$ invariant.
+%\end{corollary}
+%\todo{revisit these lemma and corollary for spin(V) not just spin(n)}.
+
+
+
+\subsection{Hodge-type decompositions}
+
+For manifolds, we have distinguished subspaces of $\G(M)$. 
+\begin{definition}
+\label{def:dirichlet_neumann}
+Let $\G(M)$ be the space of multivector fields on a smooth manifold $M$, then we have the \emph{Dirichlet fields}
+\begin{equation}
+\G_D(M) \coloneqq \{A \in \G(M) ~\vert~ \projection_{I_{\partial}}(A) = 0 \},
+\end{equation}
+and the \emph{Neumann fields}
+\begin{equation}
+\G_N(M) \coloneqq \{A \in \G(M) ~\vert~ \projection_{I_{\partial}}(A^\perp) = 0 \}.
+\end{equation}
+\end{definition}
+
+Let us define the following spaces of multivectors that mimic their differential forms counterpart.
+\begin{definition}
+\label{def:differential_spaces}
+We have
+\begin{itemize}
+    \item the \emph{gradients},
+    \begin{equation}
+    \grad \G(M) \coloneqq \{ \grad A ~\vert~ A \in \G(M) \textrm{~and~} A\vert_\boundary = 0\};
+    \end{equation}
+    \item the \emph{exact fields},
+    \begin{equation}
+        \exactfields{}\coloneqq \{\grad \wedge A ~\vert~ A \in \G_D(M)\};
+    \end{equation}
+    \item the \emph{co-exact fields},
+    \begin{equation}
+        \coexactfields{}\coloneqq \{\grad \rfloor A ~\vert~ A \in \G_N(M)\};
+    \end{equation}
+    \item the \emph{Dirichlet harmonic fields},
+    \begin{equation}
+        \monogenicdirichlet{}\coloneqq \monogenicfields{} \cap \G_D(M);
+    \end{equation}
+    \item the \emph{Neumann harmonic fields},
+    \begin{equation}
+        \monogenicneumann{}\coloneqq \monogenicfields{} \cap \G_N(M).
+    \end{equation}
+\end{itemize}
+\end{definition}
+We then use superscripts to denote the associated $r$-vector subspace. For instance, we may put
+\begin{equation}
+\monogenicdirichlet{r}^\perp = \monogenicneumann{r},
+\end{equation}
+which can be noted in \cite{belishev_dirichlet_2008}, for example. Likewise, we can use the superscripts $+$ or $-$ to denote the spaces of even and odd grading respectively and remark
+\begin{equation}
+\grad \G^+(M) \subset \G^-(M) \qquad \textrm{and} \qquad \grad \G^-(M) \subset \G^+(M).
+\end{equation}
+Notice that boundary behavior of these different spaces are important and if the manifold does not have boundary, they can be ignored to realize the correct definitions. Then, under the scalar valued multivector inner product, we find the orthogonal direct sum decomposition
+\begin{equation}
+\G^r(M) = \exactfields{r} \oplus \coexactfields{r} \oplus \monogenicfields{r},
+\end{equation}
+known as the Hodge-Morrey decomposition.
+\begin{definition}
+Within the space of monogenic fields we have
+\begin{align}
+    \monogenicex{} &\coloneqq \monogenicfields{}\cap \exactfields{},\\
+    \monogenicco{} &\coloneqq \monogenicfields{} \cap \coexactfields{}.
+\end{align}
+\end{definition}
+Further, we have two decompositions of the space of harmonic fields 
+\begin{align}
+    \monogenicfields{r} &= \monogenicdirichlet{r} \oplus \monogenicco{r}, \\
+    \monogenicfields{r} &= \monogenicneumann{r} \oplus \monogenicex{r},
+\end{align}
+which are the Friedrichs decompositions. \todo{Friedrichs for multivector stuff?}
+
+So, this is all to say that monogenic fields of a single grade are already well studied, but now we can study monogenic fields of mixed grades. For example, it is a very reasonable question to ask whether the Hodge-Morrey decomposition extends to
+    \begin{equation}
+        \G(M) \stackrel{?}{=} \exactfields{} \oplus \coexactfields{} \oplus \monogenicfields{}
+    \end{equation} 
+under the multivector field inner product. This is, in fact, not true.  While it is clear that the following spaces have a grade-based $L^2$ orthogonal decomposition,
+\begin{align}
+    \G(M) &= \bigoplus_{j=1}^n \G^j(M)\\
+    \exactfields{} &= \bigoplus_{j=1}^n \exactfields{j}\\
+    \coexactfields{} &= \bigoplus_{j=1}^n \coexactfields{j},
+\end{align}
+we have the failure for the space of monogenic fields in that
+\begin{equation}
+    \monogenicfields{} \neq \bigoplus_{j=1}^n \monogenicfields{j}.
+\end{equation}
+However, rephrasing this in terms of the gradient brings new light.
+\begin{theorem}[Monogenic Hodge Decomposition]
+\label{thm:monogenic_hodge}
+The space of multivector fields $\G(M)$ has the $L^2$-orthogonal decomposition
+\begin{equation}
+\G(M) = \monogenicfields{} \oplus \pseudoscalar^{-1} \grad \G(M).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Let $A \in \monogenicfields{}$ and $\pseudoscalar^{-1}\grad B\in \grad \G(M)$ then note
+\begin{equation}
+\multivecinnerproduct{A}{\pseudoscalar^{-1} \grad B} = \multivecinnerproduct{\grad A}{\pseudoscalar^{-1} B} + (-1)^{n} \multivecinnerproduct{A}{\pseudoscalar_\partial B} = 0
+\end{equation}
+by \cref{thm:multivector_greens_formula}. Thus the spaces $\monogenicfields{}$ and $\pseudoscalar^{-1}\grad \G(M)$ are orthogonal. 
+
+Note that by the Cauchy integral formula \cref{eq:cauchy_integral}, for any $C \in \G(M)$ we can construct a monogenic field $\tilde{C}$ from $C\vert_\boundary$. Hence, we can take
+\begin{equation}
+C - \tilde{C} = C_0,
+\end{equation}
+where $C_0\in \G(M)$ and $C_0\vert_\boundary =0$. Suppose that $C_0 \notin \pseudoscalar^{-1} \grad \G(M)$, then by \cref{lem:monogenic_zero}, if $C_0 \in \monogenicfields{}$, then $C_0=0$ on all of $M$ and our proof would be complete. At any rate, if $C_0\neq 0$, it must be that $C_0$ is in the orthogonal complement to $\monogenicfields{}\oplus \pseudoscalar^{-1}\grad \G(M)$. But,
+\begin{equation}
+\multivecinnerproduct{C_0}{A+\pseudoscalar^{-1}\grad B} = 0
+\end{equation}
+which implies
+\begin{equation}
+\multivecinnerproduct{\grad C_0}{\pseudoscalar^{-1} B} = 0.
+\end{equation}
+But, $B$ is an arbitrary function supported on the interior of $M$ and so $\grad C_0 =0$ which implies that $C_0=0$ identically. 
+\end{proof}
+\todo{If this is true, the impact would be nice on the harmonic multivector fields since $\grad A = \grad (A_\mathcal{M})+ \Delta (A_{\grad})$.}
+\begin{remark}
+One could also put
+\begin{equation}
+\G(M) = \pseudoscalar^{-1 \dagger} \monogenicfields{} \oplus \grad \G(M)
+\end{equation}
+using the adjoint.
+\end{remark}
+\todo{mention this is also true for any $g$ not just positive definite $g$}
+
+The space $\monogenicfields{}$ is quite a bit more rich than the other spaces.  For example, the field $x_1+x_2 \blade{B}_{12}$ is monogenic but the individual graded components are not. Fundamentally, this is due to the mixing of grades that we pick up when considering multivectors (e.g., in \cref{eq:cauchy_riemann_equations}). Since the gradient of a multivector consists of a grade raising and lowering component, we will have an interaction between, for example, $r$, $r-2$, and $r+2$-vectors. This leads to the following proposition.
+
+\begin{lemma}
+\label{lem:monogenic_even_odd}
+The space of monogenic fields is decomposed into even and odd components by
+\begin{equation}
+    \monogenicfields{} = \monogenicfields{+} \oplus \monogenicfields{-}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $A \in \monogenicfields{}$ and let $A_+=\proj{+}{A}$ denote the even grade components of $A$ and let $A_-=\proj{-}{A}$ denote the odd components of $A$. Then it is clear that 
+\begin{equation}
+\label{eq:monogenic_super_splitting}
+\multivecinnerproduct{A_+}{A_-} = 0.
+\end{equation}
+Then,
+\begin{equation}
+\grad A_+ \in \G^-(M) \qquad \textrm{and} \qquad \grad A_- \in \G^+(M),
+\end{equation}
+hence $\grad A = \grad A_+ + \grad A_-$ and since $\grad A=0$ it must be that $\grad A_+=0$ and $\grad A_-=0$. Together with \cref{eq:monogenic_super_splitting} proves the result.
+\end{proof}
+
+The following corollary is immediate from \cref{thm:monogenic_hodge} and \cref{lem:monogenic_even_odd}.
+\begin{corollary}
+When $n$ is odd we have
+\begin{align}
+\G^+(M) &= \monogenicfields{+} \oplus \pseudoscalar^{-1} \grad \G^+(M)\\
+\G^-(M) &= \monogenicfields{-} \oplus \pseudoscalar^{-1} \grad \G^-(M)\\
+\end{align}
+and when $n$ is odd
+\begin{align}
+\G^+(M) &= \monogenicfields{+} \oplus \pseudoscalar^{-1} \grad \G^-(M)\\
+\G^-(M) &= \monogenicfields{-} \oplus \pseudoscalar^{-1} \grad \G^+(M)\\
+\end{align}
+\end{corollary}
+
+%\begin{theorem}
+%We have the even and odd Hodge-Morrey decomposition given by
+%\begin{equation}
+%\G^+(M) = \exactfields{+} \oplus \coexactfields{+} \oplus \monogenicfields{+},
+%\end{equation}
+%and
+%\begin{equation}
+%\G^-(M) = \exactfields{-} \oplus \coexactfields{-} \oplus \monogenicfields{-}.
+%\end{equation}
+%\end{theorem}
+%\begin{proof}
+%\textcolor{red}{I am not sure this is true. In fact, it may not be. But there is probably some kind of theorem like this that is attainable.}
+%\end{proof}
+
+%\subsection{Integral transforms}
+%\label{subsec:integral_transforms}
+

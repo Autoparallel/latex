@@ -1,0 +1,465 @@
+We want to generalize the setting of geometric algebra to include a smooth structure. For instance, we can consider a manifold $M$ (likely with boundary $\partial M$) with a metric structure and develop a geometric algebra at each tangent space to this manifold (e.g., following \cite{schindler_geometric_2020}). We refer to this as the \emph{geometric tangent space} and put $C\ell(T_xM,g_x)$.
+\begin{definition}
+A manifold $M$ with a pseudo-Riemannian metric $g$ is a \emph{geometric manifold} if each tangent space is a geometric tangent space.
+\end{definition}
+On geometric manifolds we will be able to attach multivector fields and compute their derivatives as well as integrate. This leads us to the realm of geometric calculus and Cifford analysis. Geometric calculus is intimately related to both the vector calculus in $\R^3$ and differential forms. It has the added advantage of notational convenience and clarity as we have seen with geometric algebra and its subspace operations. In the beginning of \cref{subsec:clifford_and_geometric_algebras} we realize as well that the exterior algebra is contained inside any Clifford algebra and, to this end, geometric calculus will contain the calculus of differential forms. 
+
+Forms are a useful language for proving general theorems about boundary value problems \cite{schwarz_hodge_1995}, and so we will retrieve all of these theorems for our own utility. Given that we have increased geometrical intuition on different graded elements of a geometric algebra, we can realize that we can work with multivector equivalents of forms instead of concentrating on forms of a specific grade. For example, in \cref{subsec:forward_problems} we see that one can think of the electromagnetic field as a multivector consisting of elements of various degree as opposed to the usual field strength 2-form \cite{warnick_dierential_2014}. In fact, under certain other restrictions such as those present in Ohmic materials, we find there are surface spinors that fall into the kernel of a Dirac-type operator.
+
+This Dirac-type operator, $\grad$, is the grade-1 derivative operator studied in Clifford analysis. Fundamentally, this operator generalizes the Wirtinger derivative for complex functions to multivectors and, as such, generalizes the notion of a $\C$-holomorphic function to that of a monogenic function (see \todo{refence later}). Happily, we even retain a Taylor series representation (see \cref{lem:density}) for functions in the kernel of $\grad$ due to a generalized form of the Cauchy integral formula. This Cauchy integral formula has been applied elsewhere (see \cite{brackx_hilbert_2008}). The Cauchy integral also provides a direct correspondence between smooth functions defined on the boundary $\partial M$ of a manifold $M$. 
+
+\subsection{Multivector fields}
+
+In order to develop fields on a geometric manifold we must first create the relevant bundle structure. There is a natural bundle associated to a  geometric manifold given by by gluing together each of the tangent geometric algebras. The \emph{geometric algebra bundle} of a geometric manifold $(M,g)$ is the space
+\begin{equation}
+\bigsqcup_{x \in M} C\ell(T_xM,g_x).
+\end{equation}
+Given this bundle, the fields follow.
+\begin{definition}
+A \emph{(smooth) multivector field} is a ($C^{\infty}$-smooth) section of the geometric algebra bundle. We put $\G(M)$ as the \emph{space of multivector fields on $M$}.
+\end{definition}
+Note that the we will assume that all multivector fields are $C^\infty$-smooth and drop this additional modifier when speaking of any type of multivector field. The above definition above is very general and we may not find ourselves working over arbitrary geometric manifolds. For example, we highlight a specific use case by letting $M$ be a connected region of $\R^n$. For brevity, we will put $\mathcal{G}_n(M)$ to denote we are working over a region $M\subseteq \R^n$. In this case, the multivectors themselves are realized as constant multivector fields which allows us to say $\G_n \subset \G_n(M)$. This smooth setting simply makes the coefficients of the global basis blades given by $C^\infty$ functions as opposed to $\R$ scalars.  Hence, $\G_n(M)$ is simply the $C^{\infty}$-module equivalent of $\mathcal{G}_n$.
+
+Perhaps the $C^\infty$-module structure obfuscates the point slightly, but the notion of a smooth section does not.  One should think of the fields in $\G_n(M)$ as multivector valued functions on $M \subset \R^n$. Taking this identification allows for an extended toolbox at our disposal. In particular, points in $M$ are uniquely identified with constant vector fields in $\G_n^1$ and one can consider endomorphisms living in $\G_n$ (acting on $\G_n^1$) as acting on the input of fields in $\G_n(M)$ as well (see \cref{rem:input_projection}).  Thus, there is not only an algebraic structure on the fields themselves, but on the point in which the field is evaluated.  This is perhaps the key insight on why authors developed the so-called vector manifolds widely used in the geometric algebra landscape. Fundamentally, this is true in all local coordinates for an arbitrary manifold $M$, but it is not a global phenomenon since, for example, not all manifolds admit everywhere smooth nonzero constant vector fields. Just take the 2-sphere, $M=S^2$, and note the hairy ball theorem.
+
+\begin{remark}
+\label{rem:input_projection}
+    If we consider a multivector field $f \in \G_n(\R^n)$. With $x\in \R^n$ being identified with the vector $\blade{x} \in \G_n^1$, we can safely put $f(\blade{x})$.  One may be interested in the restriction of the input of $f$ to a subspace $\blade{U_r}$ which yields $f(\projection_{\blade{U_r}}(\blade{x}))$.  
+\end{remark}
+
+As noted throughout \cref{subsec:clifford_and_geometric_algebras}, there are spaces of multivectors inside $\G$ of interest and each of these extends to their field counterpart. Construction of each is done pointwise and made global through the relevant bundle. Let us list the relevant spaces of fields.
+\begin{itemize}
+    \item The \emph{$r$-vector fields},
+    \begin{equation}
+        \G^r(M) \coloneqq \left\{\textrm{smooth sections of } \bigsqcup_{x \in M} C\ell(T_xM,g_x)^r\right\}; 
+    \end{equation}
+    \item The \emph{spinor fields},
+    \begin{equation}
+        \G^+(M) \coloneqq \left\{\textrm{smooth sections of } \bigsqcup_{x \in M} C\ell(T_xM,g_x)^+\right\};
+    \end{equation}
+    \item The \emph{surface spinor fields},
+    \begin{equation}
+        \G^{0+2}(M) \coloneqq \left\{\textrm{smooth sections of } \bigsqcup_{x \in M}  C\ell(T_xM,g_x)^{0+2}\right\};
+    \end{equation}
+%    \item The \emph{Clifford fields},
+%    \begin{equation}
+%        \G^r(M) \coloneqq \left\{\textrm{smooth sections of } \bigsqcup_{p \in M} \Gamma(C\ell(T_pM,g_p))\right\};
+%    \end{equation}
+%    \item The \emph{spin group fields},
+%    \begin{equation}
+%        \G^r(M) \coloneqq \left\{\textrm{smooth sections of } \bigsqcup_{p \in M} \operatorname{Spin}(T_pM)\right\};
+%    \end{equation}
+%    \item The \emph{spin algebra fields},
+%    \begin{equation}
+%        \G^r(M) \coloneqq \left\{\textrm{smooth sections of } \bigsqcup_{p \in M} \mathfrak{spin}(T_pM)\right\};
+%    \end{equation}
+\end{itemize}
+Our operations from \cref{subsec:clifford_and_geometric_algebras} carry over. We simply define all the products seen in \cref{eq:dot,eq:wedge,eq:left_contraction,eq:right_contraction} to act pointwise in each geometric tangent space. Previously we referred to $r$-blades as special $r$-vectors. Thus, we realize an $r$-blade field $\blade{A_r} \in \G^r(M)$ assumes the same form of \cref{eq:blade} where the vectors $\blade{v}_j$ are to be understood as vector fields for which all $\blade{v}_j(x)$ are linearly independent in $T_xM$ at the point $x$.
+
+Given local coordinates $x^i$ on $M$ containing the point $p$, the tangent vectors in a neighborhood about $p$ are induced from the coordinates by $\frac{\partial}{\partial x^i}$. However, this choice of basis may be canonical, but it is not arbitrary. Instead, at each point we can simply choose an arbitrary local vector basis $\blade{v}_i$ and let the components of the metric be given in this basis by $g_{{ij}(x)} = \blade{v}_i(x)\cdot \blade{v}_j(x)$. From here, we can suppress the pointwise notion and instead just put $g_{ij}=\blade{v}_i\cdot \blade{v}_j$ locally. This allows us to work notationally with bases in a global manner without any reference to coordinates, so long as we assume the understanding is clear -- these vector bases do only exist locally. If explicit computations are to be carried out, one can just take the canonical basis so that $\blade{v}_i=\frac{\partial}{\partial x^i}$. Thus, locally we have the reciprocal basis $\blade{v}^i=g^{ij}\blade{v}_j$, the reverse $\dagger$, dual $\perp$, projection $\projection$, and rejection $\rejection$ that act on multivector fields pointwise in $C\ell(T_xM,g_x)$ and, if the need arises, all computations can be done in local coordinates. 
+
+\subsection{Geometric calculus}
+
+On $M$ we have the unique torsion free Levi-Civita connection $\nabla$ for which we can define the covariant derivative $\nabla_{\blade{u}}$ for a vector field $\blade{u}$. The covariant derivative is extended to act on multivector fields following \cite{schindler_geometric_2020}. We can note that $\nabla_{\blade{u}}$ is a grade preserving differential operator so that
+\begin{align}
+    \nabla_{\blade{u}} \proj{r}{A_r} = \proj{r}{\nabla_{\blade{u}} \proj{r}{A_r}},
+\end{align}
+and it is a dot-compatible and wedge-compatible operator since
+\begin{align}
+    \nabla_{\blade{u}} (A\cdot B) &= (\nabla_{\blade{u}} A) \cdot B + A \cdot (\nabla_{\blade{u}} B)\\
+    \nabla_{\blade{u}} (A\wedge B) &= (\nabla_{\blade{u}} A) \wedge B + A \wedge (\nabla_{\blade{u}} B)
+\end{align}
+\begin{definition}
+    Let $\blade{v}_i$ be an arbitrary basis, then the \emph{gradient} (or \emph{Dirac operator}) $\grad$ is defined by
+\begin{equation} 
+\grad = \sum_{i} \blade{v}^i \nabla_{\blade{v}_i}.
+\end{equation}
+\end{definition}
+The space of multivector fields $\G(M)$ along with $\grad$ is usually referred to as geometric calculus. One should note that $\grad$ is acts as a grade-1 element. Thus, the gradient splits into two operators, 
+\begin{align}
+\grad \rfloor &\colon \G_n^r(M) \to \G_n^{r-1}(M), \\
+\grad \wedge &\colon \G_n^r(M) \to \G_n^{r+1}(M),
+\end{align}
+which satisfy the properties
+\begin{align}
+\label{eq:differential_properties}
+(\grad \wedge)^2=0,\\
+(\grad \rfloor)^2 = 0,
+\end{align}
+when acting on a homogeneous $r$-vector. Since \ref{eq:differential_properties} holds, the gradient operator gives rise to the grade preserving \emph{Laplace-Beltrami operator}
+\[
+\Delta = \grad^2 = \grad \rfloor \circ \grad \wedge + \grad \wedge \circ \grad \rfloor,
+\]
+which is manifestly coordinate invariant by definition.  It also motivates the use of the physicist notation $\grad^2=\Delta$, but we do not adopt this here.  We refer to multivector fields $f$ in the kernel of the Laplace-Beltrami operator \emph{harmonic multivector fields} or simply as \emph{harmonic}.
+
+Note that since Euclidean space $\R^n$ has global orthonormal coordinates $\blade{e}_i$ we can choose a global constant vector field basis since we identified $\G_n^1$ with $\G(\R^n)^1$. With respect to these fields, we have the that $\nabla_{\blade{u}}$ reduces to the directional derivative. Note then that $\blade{u} \cdot \grad = \nabla_{\blade{u}}$ defines the directional derivative via the gradient. In fact, given a subspace $\blade{U_r}$, one could even describe a derivative in $\blade{U_r}$ by $\projection_{\blade{U_r}}(\grad)$.
+
+There exists a Leibniz rule for $\grad$ as well given by
+\begin{equation}
+\grad(AB) = \grad A B + \dot{\grad}A\dot{B},
+\end{equation}
+where we use the overdot to signify which multivector field we are taking derivatives of. The Clifford product, however, does not change. 
+
+\subsection{Differential forms}
+\label{subsec:differential_forms}
+
+The language of differential forms \cite{guillemin_differential_2010} rests neatly inside geometric calculus. We will develop the relationship between multivectors and forms which will serve as a link between the two notions so that researchers with interest in Clifford analysis can communicate with those who study forms. In order to do so, we appeal to the language of differential forms and build a relationship between multivector fields and forms through measures. Forms have their appeal in global understanding via their properties through integration (e.g., Stokes' and Green's theorems) and the exterior calculus along with de Rham cohomology will provide us a larger toolbox.
+
+Given coordinates $\blade{x}=(x_1,x_2,\dots,x_n)$ on $M$ we have the local basis tangent vector fields $\blade{v}_i=\frac{\partial \blade{x}}{\partial x_i}$  with the corresponding 1-forms $dx^i$ that are each local sections of $T^*M$ and are the exterior derivatives (or gradients) of the coordinate functions.  1-forms are linear functionals on tangent vectors and in these coordinates we have $dx^i  (\blade{v}_i) = \delta^i_j$ and one can thus take a pairing of 1-form fields and vector fields and integrate over 1-dimensional submanifolds. The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product $\wedge$.
+
+On $M$, we let $\Omega(M)$ be the exterior algebra of smooth form fields on $M$, and let $\Omega^r(M)$ be the space of smooth $r$-form fields on $M$. Then we have the Riemannian volume measure $\mu \in \Omega^n(M)$ given in local coordinates by
+\begin{equation}
+\mu = \sqrt{|g|} dx^1\dots dx^n.
+\end{equation}
+\begin{definition}
+The \emph{$r$-dimensional directed measure} $dX_r$ is given in local coordinates by
+\begin{equation}
+    dX_r \coloneqq \blade{v}_{i_1} \wedge \cdots \wedge \blade{v}_{i_r} dx^{i_1} \cdots dx^{i_r}. 
+\end{equation}
+\end{definition}
+For example, along a 2-dimensional submanifold we have the 2-dimensional directed measure 
+\begin{equation}
+    dX_2 = \blade{v}_i \wedge \blade{v}_j dx^i dx^j
+\end{equation}
+and we can note that 
+\begin{equation}
+(\blade{v}^i \wedge \blade{v}^j)\cdot dX_2^\dagger = dx^idx^j - dx^j dx^i
+\end{equation}
+is completely antisymmetric and provides us a surface measure we can integrate; this is a differential 2-form. We then find that
+\begin{equation}
+\label{eq:volume_form}
+\mu = \blade{I}^{-1} \cdot dX_n = \blade{I}^{-1} dX_n = \blade{I}^{-1 \dagger} \cdot dX_n^\dagger = 1^\perp \cdot dX_n,
+\end{equation}
+where $\blade{I}$ is the unit pseudoscalar field defined on $M$ with respect to $g$. The last of the equalities above is quite important. It seeks to tell us that, morally, many of our familiar statements about integrals will involve the dual.
+
+We can now write a $r$-form $\alpha_r = \alpha_{i_1 \cdots i_r} dx^{i_1}\wedge \cdots dx^{i_r}$ as 
+\begin{equation}
+\alpha_r = A_r \cdot dX_k^\dagger,
+\end{equation}
+where
+\begin{equation}
+A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}.
+\end{equation}
+We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and note that by \cref{eq:volume_form} that the multivector equivalent to $\mu$ is $\pseudoscalar^{-1 \dagger}$. This provides an isomorphism between $r$-forms and $r$-vectors via a contraction with the $r$-dimensional volume directed measure. In this sense, a differential form is made up of two essential components namely the multivector field and the $r$-dimensional directed measure. Hence, we can see now how a differential form simply appends the measure attached to the underlying space. We can also see how this generalizes the musical isomorphism $\flat$ by taking a vector field $\blade{v}$ and noting
+\begin{equation}
+\label{eq:line_element}
+\blade{v} \cdot dX_1 = v_i  \blade{v}_i \cdot \blade{v}^j dx^j = v_i dx^i.
+\end{equation}
+
+The exterior algebra of differential forms comes with an addition $+$ and exterior multiplication $\wedge$.  We note that the sum of two $r$-forms $\alpha_r$ and $\beta_r$ is also a $r$-form which we can see reduces to addition on the multivector equivalents $A_r$ and $B_r$ by
+\begin{equation}
+\alpha_r + \beta_r = (A_r \cdot dX_r^\dagger)+(B_r \cdot dX_r^\dagger) = (A_r + B_r) \cdot dX_r^\dagger,
+\end{equation}
+due to the linearity of $\cdot$.  If instead had an $s$ form $\beta_s$ then we have the exterior product
+\begin{equation}
+\alpha_r \wedge \beta_s = (A_r \wedge B_s) \cdot dX_{r+s}^\dagger,
+\end{equation}
+where $dX_{r+s}=0$ if $r+s>n$.  
+
+With differential forms one also has the exterior derivative $d$ giving rise to the exterior calculus. On the multivector equivalents we have
+\begin{equation}
+d \alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger,
+\end{equation}
+which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalar fields, this returns the gradient as desired. We will find $\grad \rfloor$ can be identified with the codifferential $\delta$ up to a sign. 
+
+\subsection{Integration}
+\label{subsec:integration_on_submanifolds}
+
+Given a $r$-dimensional submanifold $R \subset M$ with a $r$-form $\alpha_r$ defined on $R$, we can integrate this $r$-form. However, we want to phrase this in terms of the the multivector equivalents.  First, we will do this for scalar valued integrals. 
+
+\subsubsection{Scalar valued integrals}
+Let $\mu_R$ be the volume measure for the submanifold $R$.  Given $R$ is a submanifold of $M$, for any $x \in R$ we have tangent space $T_x R$ which is a subspace of $T_x M$. Hence, we can put $\blade{I}_R(x)^{-1 \dagger}$ to be the multivector equivalent of $\mu_R$ by
+\begin{equation}
+\label{eq:submanifold_volume_form}
+\mu_R = \blade{I}_R^{-1 \dagger} \cdot dX_r^\dagger = \blade{I}_R^{-1} \cdot dX_r.
+\end{equation}
+We should think of $\blade{I}_R^{-1 \dagger}$ as representing the subspace $T_x R \subset T_x M$ and note that we think of $\blade{I}_R^{-1 \dagger}$ as a unit pseudoscalar field defined on $R$. 
+
+An $s$-vector field $A_s$ on $R$ is said to be \emph{tangent to $R$} if
+\begin{equation}
+A_s = \projection_{\blade{I}_R}(A_s)
+\end{equation} 
+so that for any $x \in R$ that $A_s = \operatorname{P}_{\blade{I}_R(x)}(A_s(x))$. Immediately we can conclude that we must have $s\leq r$ or this projection is zero (see \cref{subsubsec:blades_and_subspaces}). We may, for example, wish to integrate scalar fields $A_0$ over $R$ and in this case we can put $A_r = A_0 \blade{I}_R^{-1}$ and contract with $dX_r$ to create a tangent $r$-form on $R$ by 
+\begin{equation}
+\alpha_r = A_r \cdot dX_r^\dagger = A_0 \mu_R
+\end{equation}
+which can be integrated as
+\begin{equation}
+\int_K \alpha = \int_K A_0 \mu_R.
+\end{equation}
+This of course applies to scalar fields on $M$ itself, for which we can take $A_n = A_0 \blade{I}^{-1}$. Then this form can be integrated by
+\begin{equation}
+\int_M \alpha_n = \int_M A_0 \mu.
+\end{equation}
+
+There is also the normal space $N_x R$ that is everywhere orthogonal to $T_x R$ with respect to $g$ on $M$. This yields the normal $n-r$-blade field $\blade{\nu}_R = \blade{I}_R^\perp$. Since $R$ is a submanifold of $M$, we have the inclusion $\iota \colon R \to M$ and the induced pullback on forms $\iota^* \colon \Omega(M) \to \Omega(R)$. 
+\begin{proposition}
+Let $\alpha_s$ be an $s$-form defined on $M$ and let $\iota \colon R \to M$ be the inclusion of the submanifold $R$ into $M$. Then the pullback $\iota^*$ on the multivector equivalent $A_s$ is given by
+\begin{equation}
+\iota^* \alpha_s = \projection_{\blade{I}_R}(A_s) \cdot dX_s.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Note that by definition we have
+\[
+(\iota^* \alpha_s)_x (\blade{v}_1,\dots,\blade{v}_r) = (\alpha_s)_x(d\iota_x\blade{v}_1,\dots, d\iota_x\blade{v}_r ),
+\]
+for arbitrary vector fields $\blade{v}_1,\dots,\blade{v}_s$ and at all $x\in R$. Then, since $\iota$ is inclusion, we have
+\[
+d\iota_x = \projection_{\blade{I}_R(x)},
+\]
+at each point $x \in R$ and hence
+\[
+\iota^* \alpha_s = \alpha_s \circ \projection_{\blade{I}_R}.
+\]
+For all $\blade{v}_i$ we can put
+\[
+\blade{v}_i = \projection_{\blade{I}_R}(\blade{v}_i) + \rejection_{\blade{I}_R}(\blade{v}_i),
+\]
+and note for the multivector equivalent
+\begin{align}
+\label{eq:previous_1}
+(\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\blade{v}_1,\dots,\blade{v}_s) &= (\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1) + \rejection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s) + \rejection_{\blade{I}_R}(\blade{v}_s))\\
+&= (\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s)),
+\end{align}
+since $\projection_{\blade{I}_R}(A_s)$ is supported only on $R$. Then, if $s\leq r$,
+\begin{align*}
+\iota^*\alpha_s &= (A_s \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s))\\
+&= ((\projection_{\blade{I}_R}(A_s) + \rejection_{\blade{I}_R}(A_s)) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s))\\
+&= (\projection_{\blade{I}_R}(A_s) \cdot dX_s)(\projection_{\blade{I}_R}(\blade{v}_1),\dots,\projection_{\blade{I}_R}(\blade{v}_s)),
+\end{align*}
+and by \cref{eq:previous_1} we have our intended result. If $s>r$, then 
+\[
+\iota^* \alpha_s = 0 = \projection_{\blade{I}_R}(A_s)
+\]
+which proves the proposition.
+\end{proof}
+
+The above seems to motivate the choice of \cite{schwarz_hodge_1995} to put $\tangent_R = \iota^*$ to refer to the tangential part of a differential form. The normal part of a form is $\mathbf{n}_R \alpha_s = \alpha_s - \tangent_R \alpha_s$. The following corollary is immediate given \cref{eq:projection_rejection_duality,eq:projection+rejection_blade}. 
+\begin{corollary}
+Let $\alpha_s$ be an $s$-form with $s<r$ and $s<n-r$ and multivector equivalent $A_s$. Then
+\begin{equation}
+\mathbf{n}_R \alpha_s = \alpha_s - \operatorname{P}_{\pseudoscalar_R}(A_s)\cdot dX_s^\dagger = \rejection_{I_R}(A_s)\cdot dX_s^\dagger.
+\end{equation}
+\end{corollary}
+
+This is pertinent when we take $M$ to be a manifold with boundary $\partial M$. In this case we let $\blade{I}_\partial$ denote the tangent $n-1$-blade and build boundary measure via
+\begin{equation}
+\mu_\partial \coloneqq \blade{I}_\partial^{-1} \cdot dX_{n-1}.
+\end{equation}
+The normal space is 1-dimensional and we put $\blade{\nu}$ to refer to the boundary normal space. It is common to compute the flux of a vector field $\blade{v}$ through $\partial M$ by integrating $\projection_{\blade{\nu}}(\blade{v})$ over the boundary. However, the the vector field $\projection_{\blade{\nu}}(\blade{v})$ is the multivector equivalent of a 1-form. Hence, what we should have is a pseudovector $\projection_{\blade{I}_\partial}(\blade{v}^\perp)$ which is the equivalent to the $n-1$-form
+\begin{equation}
+\projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1}^\dagger = (-1)^p \blade{v}\cdot \blade{\nu} \mu_\partial.
+\end{equation}
+This tells us that the flux is determined both by the vector field $\blade{v}$ and the local geometry of $\partial M$ captured by $\mu_\partial$. A proof follows. 
+\begin{proposition}
+\label{prop:flux}
+Then the flux of a vector field $\blade{v}$ through $\partial M$ is
+\begin{equation}
+\int_{\partial M} \projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1}^\dagger = (-1)^p\int_{\partial M} \blade{v} \cdot \blade{\nu} \mu_\partial,
+\end{equation}
+where $p$ is the number of temporal vectors in $\G(M)$.
+\end{proposition}
+\begin{proof}
+Take
+\begin{align*}
+\projection_{\blade{I}_\partial}(\blade{v}^\perp) &= \blade{v}^\perp \rfloor \blade{I}_\partial \blade{I}_\partial^{-1}\\
+    &= (\blade{v}^\perp \wedge \blade{\nu})^\perp \blade{I}_\partial^{-1}\\
+    &= (-1)^{n-1} (\blade{\nu} \rfloor \blade{v})^{\perp \perp} \blade{I}_\partial^{-1}\\
+    &= (-1)^{\frac{1}{2}(n+1)(n-1)+p} \blade{v}\cdot \blade{\nu} \blade{I}_\partial^{-1}\\
+    &= (-1)^p \blade{v} \cdot \blade{\nu} \blade{I}_\partial^{-1 \dagger}.
+\end{align*}
+Hence 
+\[
+\projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1}^\dagger =(-1)^p \blade{v} \cdot \blade{\nu} \mu_\partial.
+\]
+\end{proof}
+
+For smooth $r$-forms $\alpha_r$ and $\beta_r$, we have an $L^2$-inner product 
+\begin{equation}
+\int_M \alpha_r \wedge \star \beta_r 
+\end{equation}
+where $\star$ is the Hodge star. By definition, the Hodge star acts on $r$-forms by returning a Hodge dual $n-r$-form so that on the multivector equivalents we have
+\begin{equation}
+\alpha_r \wedge \star \beta_r  = \proj{}{A_r B_r^\dagger}\mu = (A_r,B_R)\mu
+\end{equation}
+as well as
+\begin{equation}
+    \alpha_r \wedge \star \alpha_r = |A_r|^2\mu.
+\end{equation}
+For the action of $\star$ on the multivector equivalents we will put $B_r^\star$ for which we have
+\begin{equation}
+B_r^\star = (\pseudoscalar^{-1} B_r)^\dagger
+\end{equation}
+and we can quickly verify that
+\begin{align}
+(A_r \wedge B_r^\star)\cdot dX_n^\dagger = (A_r\cdot B_r^\dagger) \pseudoscalar^{-1 \dagger}\cdot dX_n^\dagger = \proj{}{A_rB_r^\dagger}\mu.
+\end{align}
+This allows us to define can now define an $L^2$ inner product on multivector fields.
+\begin{definition}
+\label{def:multivector_field_inner_product}
+Let $A$ and $B$ be multivector fields. Then the \emph{multivector field inner product} is defined by
+\begin{equation}
+\multivecinnerproduct{A}{B} \coloneqq \frac{1}{\operatorname{vol}(M)} \int_M (A,B) \mu.
+\end{equation}
+\end{definition}
+If $\multivecinnerproduct{A}{B} = 0$, then we say $A$ and $B$ are orthogonal. Once again, this is only a true inner product when $g$ is positive definite.  We put $\multivecinnerproduct{\cdot}{\cdot}_\partial$ to represent the inner product on the boundary manifold. Note that if we take a homogeneous $r$-vector field $A_r$ and $s$-vector field $B_s$ that if $s\neq r$, the multivector field inner product is zero. Hence, the orthogonal direct sum with respect to the $L^2$ multivector inner product agrees with the grade based direct sum. It will suffice to use the symbol $\oplus$ for both. One should view this as a slight extension to the $r$-form inner product that garners the ability to consider the inner product of elements that are not necessarily homogeneous in grade. The following proposition confirms this.
+\begin{proposition}
+Given two $r$-forms, the $r$-form inner product is equal to the multivector inner product on their corresponding multivector equivalents up to the constant $\operatorname{vol}(M)$.
+\end{proposition}
+\begin{proof}
+Let $\alpha_r$ and $\beta_r$ be $r$-forms with multivector equivalents $A_r$ and $B_r$ respectively. Then
+\begin{align*}
+    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \mu = \int_M \proj{}{A_r^\dagger B_r} \mu =\operatorname{vol}(M) \multivecinnerproduct{A_r}{B_r},
+\end{align*}
+by the definition of the Hodge star.
+\end{proof}
+
+
+\subsubsection{Multivector valued integrals}
+
+The integrals defined before allow us to encapsulate integration via differential forms, but geometric calculus allows for an extension to multivector valued integrals. Examples using kernel functions are prevalent in physics. Take for instance, determining a magnetic field from a charge distribution or the Biot-Savart law to determine a magnetic field from a current distribution. No drastic changes are needed to our previous formulation. 
+
+Let $A\in \G(M)$ be a multivector field and take a submanifold $R\subset M$. Then, we can define a multivector valued integral by
+\begin{equation}
+\int_R A \pseudoscalar_R \mu_R.
+\end{equation}
+The benefit here is more pronounced in \cref{subsec:ftgc}. For example, this notion allows us to define multivector fields via integration. It will lead us to \cref{eq:cauchy_integral}.
+
+
+%Two subsets of fields may be orthogonal with respect to the scalar valued Clifford inner product, but they may fail to be Clifford orthogonal. In fact, the grade based decomposition does not hold over the multivector field inner product. For example, consider $M$ a region of $\R^n$ then $\G_n(M)$ and take a constant subspace (unit blade) $\blade{B}_{12}$ and a blade inside this subspace $\blade{e}_2$ then
+%\begin{equation}
+%\multivecinnerproduct{\blade{B}_{12}}{\blade{e}_2} = \int_M  \blade{e}_1 \mu = \blade{e}_1 \textrm{vol}(M),
+%\end{equation}
+%which shows the fields $\blade{B}_{12}$ and $\blade{e}_2$ are not Clifford orthogonal.
+%\todo{this is kind of interesting. It seems to say that the inner product value is almost describing how the vectors differ and by how much of $M$ they differ by...?}
+%We extend the notion of Clifford orthogonal to spaces. That is, if we have a space of multivector fields $X$ and another space of multivector fields $Y$ such that for any $A\in X$ and $B\in Y$ we have $\multivecinnerproduct{A}{B}=0$ then we say $X$ and $Y$ are Clifford orthogonal and we put $X \boxplus Y$ to refer to the orthogonal direct sum with respect to the Clifford inner product.
+
+
+
+
+\subsection{Stokes' and Green's formula}
+\todo{left off here}
+On forms, we have a compact form of Stokes' theorem
+\begin{equation}
+\int_M d \alpha_{n-1} = \int_{\boundary} \iota^* \alpha_{n-1},
+\end{equation}
+for sufficiently smooth $n-1$-forms $\alpha_{n-1}$. This theorem is irrespective of $M$ and can be applied to submanifolds of $M$ as well. For example, if $M\subset \R^3$ is a 2-dimensional submanifold of $\R^3$, then one retrieves the Stokes' theorem in vector calculus. \cref{subsec:differential_forms,subsec:integration_on_submanifolds} allows us to determine this in terms of the multivector equivalents. We have the multivector version of Stokes' theorem given by
+\begin{equation}
+\label{eq:stokes_theorem}
+\int_M (\grad \wedge A_{n-1})\cdot dX_n = \int_{\partial M} \projection_{\blade{I}_\partial}(A_{n-1}) \cdot dX_{n-1}.
+\end{equation}
+But this has another, more physical, interpretation. Let us consider the dual relationship by taking vector field $\blade{v}$ and noting that $\blade{v}^\perp$ is an $n-1$-vector for which Stokes' theorem can be applied. Hence,
+\begin{equation}
+\label{eq:stokes_theorem_dual}
+\int_M (\grad \wedge \blade{v}^\perp) \cdot dX_n = \int_{\partial M} \projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1},
+\end{equation}
+which realizes the divergence theorem
+\begin{equation}
+\int_M \grad \cdot \blade{v} \mu = \int_{\partial M} \blade{v}\cdot \blade{\nu} \mu_\partial.
+\end{equation}
+
+Moreover, we also have Green's formula
+\begin{equation}
+\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M \alpha_{r-1} \wedge \star \delta \beta_r + \int_{\boundary} \iota^* (\alpha_{r-1} \wedge \star \beta_r)
+\end{equation}
+This equation motivates the definition of \emph{codifferential} $\delta$ as the adjoint to $d$ under the $r$-form inner product. In the case of a closed manifold $M$, $\boundary = \emptyset$ and the boundary integral vanishes, we see that $\delta$ is adjoint to $d$.
+
+\begin{definition}
+The adjoint operator $\grad \wedge^*$ to $\grad \wedge$ on $r$-vectors is given by
+\begin{equation}
+\grad \wedge^* = (-1)^{r-1} (\grad \rfloor A_r^\dagger).
+\end{equation}
+\end{definition}
+This leads to the Hodge-Dirac operator $d+\delta$. One should compare this operator to $\grad$ and notice the subtle differences in the dependence on the manifold dimension and degree of the multivector via both the $(-1)^{r-1}$ term and the application of the reverse $\dagger$.
+
+\begin{proposition}
+On multivector equivalents $A_{r-1}$ and $B_r$, we have Green's formula
+\begin{equation}
+\multivecinnerproduct{\grad \wedge A_{r-1}}{B_r} = \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r} + (-1)^{p} \int_{\partial M} (A_{r-1}\rfloor B_r^\dagger) \cdot \blade{\nu} \mu_\partial.
+\end{equation}
+\end{proposition}
+\begin{proof}
+First, we have
+\begin{equation}
+\int_M d(\alpha_{r-1} \wedge \star \beta_r) = \underbrace{\int_M d\alpha_{r-1} \wedge \star \beta_r}_{1} + \underbrace{(-1)^{r-1} \int_M \alpha_{r-1} \wedge d \star \beta_r}_{2},
+\end{equation} 
+by the Leibniz rule. By Stokes' theorem,
+\begin{equation}
+\int_M d(\alpha_{r-1} \wedge \star \beta_r) = \underbrace{\int_\boundary \iota^*(\alpha_{r-1} \wedge \star \beta_r)}_{3}.
+\end{equation}
+For underbrace 1,
+\begin{equation}
+\int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M (\grad \wedge A_{r-1}) \cdot B_r^\dagger \mu = \multivecinnerproduct{\grad \wedge A_{r-1}}{B_r}.
+\end{equation}
+For underbrace 2,
+\begin{align}
+    (-1)^{r-1}\int_M \alpha_{r-1} \wedge d \star \beta_r  &= \int_M A_{r-1} \wedge (\grad \wedge B_r^\star) \cdot dX_n^\dagger\\
+    &= (-1)^{r-1+n(n-1)} \int_M [A_{r-1} \wedge (\grad \wedge (B_r^\perp)^\dagger)] \cdot dX_n^\dagger\\
+    &= (-1)^{r-1 + \xi} \int_M A_{r-1} \wedge (\grad \rfloor B_r)^\perp \cdot dX_n^\dagger\\
+    &= (-1)^{r-1 + \xi} \int_M A_{r-1} \rfloor (\grad \rfloor B_r) \mu\\
+    &= \multivecinnerproduct{A_{r-1}}{\grad \wedge^* B_r}.
+\end{align}
+For underbrace 3,
+\begin{align}
+\int_\boundary \iota^*(\alpha_{r-1} \wedge \star \beta_r) &= \int_\boundary \projection_{\blade{I}_\partial} (A_{r-1} \wedge B_r^\star) \cdot dX_{n-1}^\dagger\\
+&= (-1)^{\xi} \int_\boundary \projection_{\blade{I}_\partial} (A_{r-1} \wedge B_r^\perp) \cdot dX_{n-1}^\dagger\\
+&= (-1)^{\xi} \int_\boundary \projection_{\blade{I}_\partial}( (A_{r-1} \rfloor B_r)^\perp) \cdot dX_{n-1}^\dagger\\
+&= (-1)^{\xi+p} \int_\boundary (A_{r-1}\rfloor B_r) \cdot \blade{\nu} \mu_\partial 
+\end{align}
+with the final equality by \cref{prop:flux}.
+\end{proof}
+\todo{shorten and fix this proof with the new dagger in there.}
+Stokes' theorem and Green's formula are essential in determining the $L^2$-orthogonal decomposition of the space of differential $r$-forms $\Omega^r(M)$. This will be visited in \cref{sec:spaces_of_fields}. The applications thereof provide general existence and uniqueness results for boundary value problems.
+
+\subsection{Fundamental theorem of geometric calculus}
+\label{subsec:ftgc}
+
+The containment of the exterior algebra inside a geometric algebra motivates us to push both Stokes' theorem and Green's formula to further limits. Green's formula is derived via Stokes' theorem and both solely make use of the exterior derivative, its adjoint, and the scalar valued Clifford inner product. As it turns out, there is a more general version of Stokes' theorem based on the gradient $\grad$. This theorem turns out to take advantage of the multivector-valued nature of directed integration. Moreover, we pose no restrictions that require single graded elements and we realize that multiple versions exist to the fact that $\grad$ can act on both sides of a multivector.
+
+\begin{theorem}[Fundamental theorems of geometric calculus]
+\label{thm:ftga}
+Let $A,B\in \G(M)$. Then
+\begin{align}
+\label{eq:ftga_1}
+\int_M \dot{A}\dot{\grad} \blade{I}^{-1} \mu &= \int_\boundary  A \blade{I}_\partial \mu_\partial\\
+\label{eq:ftga_2}
+\int_M  \blade{I}^{-1} \grad B \mu &= \int_\boundary \blade{I}_\partial B \mu_\partial\\
+\label{eq:ftga_3}
+\int_M ((-1)^{n-1} \dot{A}\dot{\grad} \blade{I}^{-1} B + A \blade{I}^{-1} \grad B)\mu &= \int_\boundary A \blade{I}_\partial B \mu_\partial.
+\end{align}
+Finally,
+\begin{equation}
+\label{eq:ftga_4}
+\int_M \dot{\sf{L}}(\dot{\grad} \pseudoscalar^{-1})\mu = \int_\boundary \sf{L}(\pseudoscalar_\partial)\mu_\partial,
+\end{equation}
+holds for linear functions $\sf{L}$ of pseudovectors.
+\end{theorem}
+The above theorem is proved in a handful of texts \todo{add citations}. One may question the inclusion of the unit pseudoscalar in equations \cref{eq:ftga_1,eq:ftga_2,eq:ftga_3} and whether they can be pulled outside of the integral. The answer is no, unless $M$ is a region of $\R^n$. In fact, this is used explicitly in the Cauchy integral formula in complex analysis. We visit an analog of this later in \cref{subsec:integral_transforms}. Note that \cref{eq:ftga_3} is close to describing a multivector valued form of a Green's formula. This is wholeheartedly allowing us to consider consequences of the actions of $\grad$ on both sides of a multivector. In fact, we have the following result.
+
+\begin{theorem}[Multivector Green's formula]
+\label{thm:multivector_greens_formula}
+We have the Green's formula for the gradient
+\begin{equation}
+\multivecinnerproduct{\pseudoscalar^{-1 \dagger} A}{\grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar^{-1} B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Fix $A^\dagger,B \in \G(M)$ and note \cref{eq:ftga_3} of \cref{thm:ftga} yields
+\begin{align}
+\int_M A^\dagger \blade{I}^{-1} \grad B\mu &= (-1)^{n} \int_M \dot{A}^\dagger\dot{\grad} \blade{I}^{-1} B \mu +  \int_\boundary A^\dagger \blade{I}_\partial B \mu_\partial\\
+\int_M (\pseudoscalar^{-1 \dagger} A)^\dagger \grad B \mu &= (-1)^n \int_M (\grad A)^\dagger \pseudoscalar^{-1} B \mu + \int_\boundary (A)^\dagger \pseudoscalar_\partial B \mu_\partial.
+\end{align}
+Now, if we take the scalar part of the above equation and dividing by $\operatorname{vol}(M)$ we have
+\begin{align}
+\multivecinnerproduct{A}{\pseudoscalar^{-1} \grad B} &= (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar^{-1} B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+\end{align}
+
+\end{proof}
+\begin{remark}
+The position of $\pseudoscalar$ and $\pseudoscalar_\partial$ in the above computation is an artifact of choice. Recall \cref{prop:adjoint} and note, for example, that
+\begin{equation}
+\multivecinnerproduct{I^{-1}A}{\grad B} = \multivecinnerproduct{\pseudoscalar^{-1 \dagger}A}{\grad{B}}.
+\end{equation}
+\end{remark}
+

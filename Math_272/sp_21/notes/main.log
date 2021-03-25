@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  15 MAR 2021 11:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  23 MAR 2021 17:13
 entering extended mode
 **./main.tex
 (main.tex
@@ -2515,7 +2515,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  45867 strings out of 479799
  1095404 string characters out of 2867787
- 1529496 words of memory out of 3000000
+ 1528496 words of memory out of 3000000
  61351 multiletter control sequences out of 15000+200000
  659904 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2557,7 +2557,7 @@ ype1/public/lm/lmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/lm/lmsy6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/lm/lmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (161 pages, 13086278 bytes).
+Output written on main.pdf (161 pages, 13086295 bytes).
 PDF statistics:
  2266 PDF objects out of 2487 (max. 8388607)
  555 named destinations out of 1000 (max. 500000)

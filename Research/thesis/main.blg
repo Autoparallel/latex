@@ -12,45 +12,49 @@ Warning--empty journal in feldman_calderproblem_nodate
 Warning--empty year in feldman_calderproblem_nodate
 Warning--empty journal in janssens_special_nodate
 Warning--empty year in janssens_special_nodate
-You've used 16 entries,
+Warning--empty journal in joshi_inverse_nodate
+Warning--empty year in joshi_inverse_nodate
+Warning--empty journal in salo_calderon_nodate
+Warning--empty year in salo_calderon_nodate
+You've used 24 entries,
             2030 wiz_defined-function locations,
-            595 strings with 6486 characters,
-and the built_in function-call counts, 4989 in all, are:
-= -- 456
-> -- 205
+            642 strings with 7662 characters,
+and the built_in function-call counts, 7290 in all, are:
+= -- 677
+> -- 283
 < -- 0
-+ -- 81
-- -- 62
-* -- 372
-:= -- 795
-add.period$ -- 19
-call.type$ -- 16
-change.case$ -- 71
++ -- 116
+- -- 86
+* -- 536
+:= -- 1149
+add.period$ -- 28
+call.type$ -- 24
+change.case$ -- 107
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 256
-empty$ -- 393
-format.name$ -- 62
-if$ -- 1059
+cite$ -- 34
+duplicate$ -- 379
+empty$ -- 570
+format.name$ -- 86
+if$ -- 1550
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 19
-newline$ -- 54
-num.names$ -- 36
-pop$ -- 78
+int.to.str$ -- 24
+missing$ -- 28
+newline$ -- 79
+num.names$ -- 51
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 57
+purify$ -- 86
 quote$ -- 0
-skip$ -- 194
+skip$ -- 291
 stack$ -- 0
-substring$ -- 282
-swap$ -- 96
+substring$ -- 422
+swap$ -- 145
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
-warning$ -- 6
-while$ -- 56
-width$ -- 18
-write$ -- 149
-(There were 7 warnings)
+type$ -- 88
+warning$ -- 10
+while$ -- 80
+width$ -- 26
+write$ -- 217
+(There were 11 warnings)

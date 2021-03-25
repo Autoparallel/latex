@@ -120,12 +120,12 @@
 \newcommand{\spingroup}{\operatorname{Spin}(n)}
 \newcommand{\ball}{\mathbb{B}}
 \newcommand{\disk}{\mathbb{D}}
-\newcommand{\projection}{\operatorname{P}}
+\newcommand{\projection}{\mathsf{P}}
 \newcommand{\vectorspace}{\mathbb{V}}
 \newcommand{\multivectorfieldson}[1]{\mathcal{G}(#1)}
 \newcommand{\biparavectorfieldson}[1]{\mathcal{G}_n(#1)^{0+2}}
 \newcommand{\spinnorm}[1]{\|#1\|_{L_2}}
-\newcommand{\rejection}{\operatorname{R}}
+\newcommand{\rejection}{\mathsf{R}}
 \newcommand{\vectorpotential}{\mathbf{A}}
 \newcommand{\current}{\blade{j}}
 \newcommand{\magneticbivector}{\blade{b}}
@@ -151,6 +151,7 @@
 \newcommand{\coexactfields}[1]{\mathcal{C}^{#1}(M)}
 \newcommand{\monogenicfields}[1]{\mathcal{M}^{#1}(M)}
 \newcommand{\cliffordoplus}{\stackrel{C\ell}{\oplus}}
+\newcommand{\bivector}{\blade{B}}
 
 \makeatletter
 \DeclareFontFamily{OMX}{MnSymbolE}{}
@@ -223,3 +224,8 @@
 % Numbering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\numberwithin{equation}{subsection}
+
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}

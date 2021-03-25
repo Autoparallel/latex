@@ -194,7 +194,7 @@ We can then plot $u_R(x,t)$ for a few different times with $c=1$.
 Consider the heat flow problem on the region $\Omega=[0,1]$ given by
 \[
 \begin{cases}
-\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) + 1, & \textrm{in $(0,1)$},\\
+\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
 u(0,t)=0 \textrm{~and~} u(1,t)=1, & \text{as boundary conditions},\\
 u(x,0) = \sin\left(\pi x\right) + \frac{1}{2}(x^2+x), & \textrm{as the initial condition}.
 \end{cases}
@@ -216,13 +216,13 @@ v(0,t)=0 \textrm{~and~} v(1,t)=0, & \text{as boundary conditions}.
 
     \item Show that for $u(x,t)$ to be a solution that
     \[
-    -\frac{\partial^2}{\partial x^2} u_E(x) = 1.
+    \frac{\partial^2}{\partial x^2} u_E(x) = 1.
     \]
 
     \item Find the solution $u_E(x)$ to the following problem
     \[
     \begin{cases}
-    -\frac{\partial^2}{\partial x^2} u_E(x) = 1, & \textrm{in $(0,1)$},\\
+    \frac{\partial^2}{\partial x^2} u_E(x) = 1, & \textrm{in $(0,1)$},\\
     u_E(0)=0 \textrm{~and~} u_E(1)=1, & \text{as boundary conditions}.
     \end{cases}
     \]
@@ -243,13 +243,13 @@ v(0,t)=0 \textrm{~and~} v(1,t)=0, & \text{as boundary conditions}.
 
     \item If we apply our ansatz with our given information about $v(x,t)$ we must have
     \begin{align*}
-    -\frac{\partial}{\partial t}u(x,t) &= \frac{\partial^2}{\partial x^2}u(x,t)+1\\
-     -\frac{\partial}{\partial t}(v(x,t)+u_E(x)) &= \frac{\partial^2}{\partial x^2}(v(x,t)+u_E(x))+1\\
-    0 &= \frac{\partial^2}{\partial x^2}u_E(x)+1,
+    -\frac{\partial}{\partial t}u(x,t) &= \frac{\partial^2}{\partial x^2}u(x,t)-1\\
+     -\frac{\partial}{\partial t}(v(x,t)+u_E(x)) &= \frac{\partial^2}{\partial x^2}(v(x,t)+u_E(x))-1\\
+    0 &= \frac{\partial^2}{\partial x^2}u_E(x)-1,
     \end{align*}
-    since $v(x,t)$ is a solution to the wave equation. Thus,
+    since $v(x,t)$ is a solution to the heat equation. Thus,
     \[
- -\frac{\partial^2}{\partial x^2}u_E(x)=1
+    \frac{\partial^2}{\partial x^2}u_E(x)=1
     \]
 
     \item To find this particular solution, we first note that the general solution can be found by integrating twice. That is,
@@ -288,7 +288,7 @@ v(0,t)=0 \textrm{~and~} v(1,t)=0, & \text{as boundary conditions}.
 Take the set up from the previous problem, but let us modify the initial conditions and boundary conditions slightly. Instead, we have
 \[
 \begin{cases}
-\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) + 1, & \textrm{in $(0,1)$},\\
+\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
 u(0,t)=0 \textrm{~and~} u(1,t)=0, & \text{as boundary conditions},\\
 u(x,0) = -(2x-1)^2+1, & \textrm{as the initial condition}.
 \end{cases}
@@ -297,7 +297,7 @@ We want to discover how we can possibly solve problems with more general initial
 
 Taking a look at Example ``Particular Solution to the 1D Heat Equation" in the notes. Notice that it is of the form
 \[
-u_n(x,t) = A_ne^{-n^2\pi^2} \sin(n \pi x),
+u_n(x,t) = A_ne^{-n^2\pi^2 t} \sin(n \pi x),
 \]
 is a general solution for all integers $n$. 
 \begin{enumerate}[(a)]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  14 MAR 2021 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  24 MAR 2021 14:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -1554,6 +1554,25 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen319
 \SOUL@ulht=\dimen320
 )
+
+! LaTeX Error: Option clash for package xcolor.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \usepackage
+                {tikz-cd} % For commutative diagrams
+The package xcolor has already been loaded with options:
+  []
+There has now been an attempt to load it with options
+  [dvipsnames]
+Adding the global options:
+  ,dvipsnames
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tikz-cd\tikz-cd.st
 y"
 Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
@@ -2725,8 +2744,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
-6.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 19
+9.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2734,31 +2753,31 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 136.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 199.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-36.
+99.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cbfonts-fd\lgrcmr.
 fd"
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    ... okay on input line 199.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2816,7 +2835,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring ON on input line 136.
+Package hyperref Info: Link coloring ON on input line 199.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -2832,9 +2851,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count438
 )
-LaTeX Info: Redefining \ref on input line 136.
-LaTeX Info: Redefining \pageref on input line 136.
-LaTeX Info: Redefining \nameref on input line 136.
+LaTeX Info: Redefining \ref on input line 199.
+LaTeX Info: Redefining \pageref on input line 199.
+LaTeX Info: Redefining \nameref on input line 199.
  (main.out) (main.out)
 \@outlinefile=\write8
 \openout8 = `main.out'.
@@ -2842,41 +2861,41 @@ LaTeX Info: Redefining \nameref on input line 136.
 \symnumbers=\mathgroup12
 \sympureletters=\mathgroup13
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 136.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 136.
+(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 199.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 136.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 136.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 136.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 199.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 136.
+(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/lmr/m/n on input line 136.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 136.
+(Font)                  OT1/cmss/bx/n --> T1/lmr/m/n on input line 199.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 136.
+(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 136.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 136.
+(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 199.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 136.
+(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 136.
+(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 199.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 136.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 199.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 136.
+(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 136.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 136.
+(Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 136.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 136.
+(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 199.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 136.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 199.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-basic-dictionary-English.dict"
@@ -2902,14 +2921,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 136.
+LaTeX Info: Redefining \microtypecontext on input line 199.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 136.
+LaTeX Info: Redefining \showhyphens on input line 199.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2932,12 +2951,12 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count439
-<UiB-images/colorado-state-university-logo.png, id=100, 628.43478pt x 471.32608
-pt>
+<UiB-images/colorado-state-university-logo.png, id=60, 628.43478pt x 471.32608p
+t>
 File: UiB-images/colorado-state-university-logo.png Graphic file (type png)
 <use UiB-images/colorado-state-university-logo.png>
 Package pdftex.def Info: UiB-images/colorado-state-university-logo.png  used on
- input line 136.
+ input line 199.
 (pdftex.def)             Requested size: 94.26114pt x 70.69586pt.
  [1
 
@@ -2948,46 +2967,8 @@ s/colorado-state-university-logo.png>] (main.nav) [2
 
 ] [4
 
-] [5
-
 ]
-[6
-
-] [7
-
-] [8
-
-] [9
-
-] [10
-
-] [11
-
-] [12
-
-] [13
-
-] [14
-
-]
-<eit.jpg, id=197, 615.29875pt x 615.29875pt>
-File: eit.jpg Graphic file (type jpg)
-<use eit.jpg>
-Package pdftex.def Info: eit.jpg  used on input line 189.
-(pdftex.def)             Requested size: 187.62204pt x 187.6142pt.
- [15
-
- <./eit.jpg>] [16
-
-] [17
-
-] [18
-
-]
-[19
-
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 235
+LaTeX Font Info:    Trying to load font information for U+msa on input line 243
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -2997,7 +2978,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 235
+LaTeX Font Info:    Trying to load font information for U+msb on input line 243
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -3007,495 +2988,168 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
-5.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 24
+3.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 23
-5.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 24
+3.
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-) [20
+) (figures/sphere_charts_maps.pdf_tex
+<figures/sphere_charts_maps.pdf, id=93, page=1, 765.41641pt x 545.24957pt>
+File: figures/sphere_charts_maps.pdf Graphic file (type pdf)
+<use figures/sphere_charts_maps.pdf, page 1>
+Package pdftex.def Info: figures/sphere_charts_maps.pdf , page1 used on input l
+ine 56.
+(pdftex.def)             Requested size: 225.14873pt x 160.38132pt.
+<figures/sphere_charts_maps.pdf, id=94, page=2, 765.41641pt x 545.24957pt>
+File: figures/sphere_charts_maps.pdf Graphic file (type pdf)
+<use figures/sphere_charts_maps.pdf, page 2>
+Package pdftex.def Info: figures/sphere_charts_maps.pdf , page2 used on input l
+ine 58.
+(pdftex.def)             Requested size: 225.14873pt x 160.38132pt.
+<figures/sphere_charts_maps.pdf, id=95, page=3, 765.41641pt x 545.24957pt>
+File: figures/sphere_charts_maps.pdf Graphic file (type pdf)
+<use figures/sphere_charts_maps.pdf, page 3>
+Package pdftex.def Info: figures/sphere_charts_maps.pdf , page3 used on input l
+ine 61.
+(pdftex.def)             Requested size: 225.14873pt x 160.38132pt.
+) [5
 
-] [21
+ <./figures/sphere_charts_maps.pdf> <./figures/sphere_charts_maps.pdf
 
-] [22
+pdfTeX warning: pdflatex.exe (file ./figures/sphere_charts_maps.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+> <./figures/sphere_charts_maps.pdf
 
-] [23
+pdfTeX warning: pdflatex.exe (file ./figures/sphere_charts_maps.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>] (figures/pushforward.pdf_tex
+<figures/pushforward.pdf, id=121, page=1, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 1>
+Package pdftex.def Info: figures/pushforward.pdf , page1 used on input line 56.
 
-] [24
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+<figures/pushforward.pdf, id=122, page=2, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 2>
+Package pdftex.def Info: figures/pushforward.pdf , page2 used on input line 59.
 
-] [25
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+<figures/pushforward.pdf, id=123, page=3, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 3>
+Package pdftex.def Info: figures/pushforward.pdf , page3 used on input line 62.
 
-] [26
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+<figures/pushforward.pdf, id=124, page=4, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 4>
+Package pdftex.def Info: figures/pushforward.pdf , page4 used on input line 66.
 
-] [27
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+<figures/pushforward.pdf, id=125, page=5, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 5>
+Package pdftex.def Info: figures/pushforward.pdf , page5 used on input line 69.
 
-] [28
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+<figures/pushforward.pdf, id=126, page=6, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 6>
+Package pdftex.def Info: figures/pushforward.pdf , page6 used on input line 71.
 
-] [29
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+<figures/pushforward.pdf, id=127, page=7, 738.76355pt x 438.37627pt>
+File: figures/pushforward.pdf Graphic file (type pdf)
+<use figures/pushforward.pdf, page 7>
+Package pdftex.def Info: figures/pushforward.pdf , page7 used on input line 75.
 
-] [30
+(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
+) [6
 
-] [31
+ <./figures/pushforward.pdf> <./figures/pushforward.pdf
 
-] [32
+pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./figures/pushforward.pdf
 
-]
-(sphere_charts_maps.pdf_tex
-<sphere_charts_maps.pdf, id=323, page=1, 765.41641pt x 545.24957pt>
-File: sphere_charts_maps.pdf Graphic file (type pdf)
-<use sphere_charts_maps.pdf, page 1>
-Package pdftex.def Info: sphere_charts_maps.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 337.71738pt x 240.57613pt.
-<sphere_charts_maps.pdf, id=324, page=2, 765.41641pt x 545.24957pt>
-File: sphere_charts_maps.pdf Graphic file (type pdf)
-<use sphere_charts_maps.pdf, page 2>
-Package pdftex.def Info: sphere_charts_maps.pdf , page2 used on input line 58.
-(pdftex.def)             Requested size: 337.71738pt x 240.57613pt.
-<sphere_charts_maps.pdf, id=325, page=3, 765.41641pt x 545.24957pt>
-File: sphere_charts_maps.pdf Graphic file (type pdf)
-<use sphere_charts_maps.pdf, page 3>
-Package pdftex.def Info: sphere_charts_maps.pdf , page3 used on input line 61.
-(pdftex.def)             Requested size: 337.71738pt x 240.57613pt.
-)
-Overfull \vbox (3.19084pt too high) detected at line 268
- []
+pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./figures/pushforward.pdf
 
-[33
+pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./figures/pushforward.pdf
 
- <./sphere_charts_maps.pdf> <./sphere_charts_maps.pdf
+pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./figures/pushforward.pdf
 
-pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
-> <./sphere_charts_maps.pdf
+pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./figures/pushforward.pdf
 
-pdfTeX warning: pdflatex.exe (file ./sphere_charts_maps.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
->] (pushforward.pdf_tex
-<pushforward.pdf, id=343, page=1, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 1>
-Package pdftex.def Info: pushforward.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-<pushforward.pdf, id=344, page=2, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 2>
-Package pdftex.def Info: pushforward.pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-<pushforward.pdf, id=345, page=3, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 3>
-Package pdftex.def Info: pushforward.pdf , page3 used on input line 62.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-<pushforward.pdf, id=346, page=4, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 4>
-Package pdftex.def Info: pushforward.pdf , page4 used on input line 66.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-<pushforward.pdf, id=347, page=5, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 5>
-Package pdftex.def Info: pushforward.pdf , page5 used on input line 69.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-<pushforward.pdf, id=348, page=6, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 6>
-Package pdftex.def Info: pushforward.pdf , page6 used on input line 71.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-<pushforward.pdf, id=349, page=7, 738.76355pt x 438.37627pt>
-File: pushforward.pdf Graphic file (type pdf)
-<use pushforward.pdf, page 7>
-Package pdftex.def Info: pushforward.pdf , page7 used on input line 75.
-(pdftex.def)             Requested size: 375.24408pt x 222.66591pt.
-) [34
+pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] (figures/section.pdf_tex
+<figures/section.pdf, id=145, page=1, 865.5322pt x 484.4323pt>
+File: figures/section.pdf Graphic file (type pdf)
+<use figures/section.pdf, page 1>
+Package pdftex.def Info: figures/section.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 225.14873pt x 126.01595pt.
+<figures/section.pdf, id=146, page=2, 865.5322pt x 484.4323pt>
+File: figures/section.pdf Graphic file (type pdf)
+<use figures/section.pdf, page 2>
+Package pdftex.def Info: figures/section.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 225.14873pt x 126.01595pt.
+<figures/section.pdf, id=147, page=3, 865.5322pt x 484.4323pt>
+File: figures/section.pdf Graphic file (type pdf)
+<use figures/section.pdf, page 3>
+Package pdftex.def Info: figures/section.pdf , page3 used on input line 67.
+(pdftex.def)             Requested size: 225.14873pt x 126.01595pt.
+) [7
 
- <./pushforward.pdf> <./pushforward.pdf
+ <./figures/section.pdf> <./figures/section.pdf
 
-pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./pushforward.pdf
+pdfTeX warning: pdflatex.exe (file ./figures/section.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+> <./figures/section.pdf
 
-pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./pushforward.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
->] (area.pdf_tex
-<area.pdf, id=366, page=1, 853.58266pt x 569.05513pt>
-File: area.pdf Graphic file (type pdf)
-<use area.pdf, page 1>
-Package pdftex.def Info: area.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 450.29175pt x 300.19981pt.
-<area.pdf, id=367, page=2, 853.58266pt x 569.05513pt>
-File: area.pdf Graphic file (type pdf)
-<use area.pdf, page 2>
-Package pdftex.def Info: area.pdf , page2 used on input line 58.
-(pdftex.def)             Requested size: 450.29175pt x 300.19981pt.
-)
-Overfull \hbox (23.00883pt too wide) in paragraph at lines 287--287
- |   [] 
- []
-
-
-Overfull \vbox (80.49248pt too high) detected at line 287
- []
-
-[35
-
- <./area.pdf> <./area.pdf
-
-pdfTeX warning: pdflatex.exe (file ./area.pdf): PDF inclusion: multiple pdfs wi
-th page group included in a single page
+pdfTeX warning: pdflatex.exe (file ./figures/section.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
 >]
-<1forms.png, id=384, 505.89pt x 308.65312pt>
-File: 1forms.png Graphic file (type png)
-<use 1forms.png>
-Package pdftex.def Info: 1forms.png  used on input line 295.
-(pdftex.def)             Requested size: 300.1964pt x 183.15872pt.
- [36
 
- <./1forms.png>]
-<2forms.png, id=391, 537.50812pt x 330.23375pt>
-File: 2forms.png Graphic file (type png)
-<use 2forms.png>
-Package pdftex.def Info: 2forms.png  used on input line 303.
-(pdftex.def)             Requested size: 300.1964pt x 184.4358pt.
- [37
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 284.
 
- <./2forms.png>]
-<3forms.png, id=399, 510.40688pt x 336.75812pt>
-File: 3forms.png Graphic file (type png)
-<use 3forms.png>
-Package pdftex.def Info: 3forms.png  used on input line 312.
-(pdftex.def)             Requested size: 300.1964pt x 198.07408pt.
- [38
 
- <./3forms.png>] [39
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 284.
 
-] [40
 
-]
-[41
+LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10.95> not available
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 284.
 
-] [42
 
-] [43
+LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <8> not available
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 284.
 
-] [44
 
-] [45
+LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 284.
 
-] [46
+[8
 
-] [47
+] [9
 
-] [48
+] [10
 
-] [49
-
-] [50
-
-] [51
-
-] [52
-
-] [53
-
-] [54
-
-] [55
-
-]
-[56
-
-] [57
-
-] [58
-
-] [59
-
-] [60
-
-] [61
-
-] [62
-
-] [63
-
-] [64
-
-] [65
-
-] [66
-
-] [67
-
-] [68
-
-] [69
-
-] [70
-
-]
-[71
-
-] [72
-
-] [73
-
-] [74
-
-] [75
-
-] [76
-
-] [77
-
-] [78
-
-] [79
-
-] [80
-
-] [81
-
-] [82
-
-] [83
-
-] [84
-
-] [85
-
-]
-[86
-
-] [87
-
-] [88
-
-] [89
-
-] [90
-
-] [91
-
-] [92
-
-]
-File: 2forms.png Graphic file (type png)
-<use 2forms.png>
-Package pdftex.def Info: 2forms.png  used on input line 523.
-(pdftex.def)             Requested size: 300.1964pt x 184.4358pt.
- [93
-
-] [94
-
-] [95
-
-] [96
-
-] [97
-
-] [98
-
-] [99
-
-] [100
-
-]
-[101
-
-] [102
-
-] [103
-
-] [104
-
-] [105
-
-] [106
-
-] [107
-
-] [108
-
-] [109
-
-] [110
-
-] [111
-
-] [112
-
-]
-[113
-
-] [114
-
-] [115
-
-] [116
-
-] [117
-
-] [118
-
-] [119
-
-] [120
-
-] [121
-
-] [122
-
-] [123
-
-] [124
-
-]
-[125
-
-] [126
-
-] [127
-
-] [128
-
-] [129
-
-] [130
-
-] [131
-
-] [132
-
-] [133
-
-] [134
-
-] [135
-
-] [136
-
-]
-[137
-
-] [138
-
-] [139
-
-] [140
-
-] [141
-
-] [142
-
-] [143
-
-] [144
-
-] [145
-
-] [146
-
-] [147
-
-] [148
-
-]
-[149
-
-] [150
-
-] [151
-
-] [152
-
-] [153
-
-] [154
-
-] [155
-
-] [156
-
-] [157
-
-] [158
-
-] [159
-
-] [160
-
-]
-[161
-
-] [162
-
-] [163
-
-] [164
-
-] [165
-
-] [166
-
-] [167
-
-] [168
-
-] [169
-
-] [170
-
-] [171
-
-] [172
-
-]
-[173
-
-] [174
-
-] [175
-
-] [176
-
-] [177
-
-] [178
-
-] [179
-
-] [180
-
-] [181
-
-] [182
-
-] [183
-
-] [184
-
-]
-[185
+] [11
 
 ]
 \tf@nav=\write9
@@ -3509,47 +3163,44 @@ Package pdftex.def Info: 2forms.png  used on input line 523.
 
  (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 853E86F5E7ADDA5AEF89BBD74437CDF0;867.
+(rerunfilecheck)             Checksum: 100C531E1650D22E3D8E76E47D7B4B73;192.
  ) 
 Here is how much of TeX's memory you used:
- 52639 strings out of 479799
- 1210698 string characters out of 2867787
- 1670961 words of memory out of 3000000
- 68086 multiletter control sequences out of 15000+200000
- 643687 words of font info for 164 fonts, out of 3000000 for 9000
+ 52112 strings out of 479799
+ 1205533 string characters out of 2867787
+ 1672766 words of memory out of 3000000
+ 67943 multiletter control sequences out of 15000+200000
+ 629446 words of font info for 125 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,15n,126p,725b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
-SymbolE.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
-nsymbol/MnSymbolS.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/mnsymbol/MnSymbolA.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Users/Colin/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{C:/Users/Colin/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Colin/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}<C:/Users/Colin/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:
-/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSy
-mbol12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/mnsymbol/MnSymbol8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Us
-ers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
-.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
-bx10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
-m/lmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmbxi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmr17.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/lm/lmri10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmri8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (185 pages, 854517 bytes).
+ 125i,14n,126p,725b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
+c}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
+SymbolD.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
+nsymbol/MnSymbolF.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
+nc/dvips/mnsymbol/MnSymbolS.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Colin/AppData/Local/Program
+s/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}<C:/Users/Colin/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Col
+in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmbo10.pfb><C:/Users/Colin/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Colin/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Colin/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Colin/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Col
+in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri7.pfb><C:/Users/
+Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Use
+rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on main.pdf (11 pages, 333029 bytes).
 PDF statistics:
- 1488 PDF objects out of 1728 (max. 8388607)
- 384 named destinations out of 1000 (max. 500000)
- 25464 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 19737 words of extra memory for PDF output out of 20736 (max. 10000000)
 

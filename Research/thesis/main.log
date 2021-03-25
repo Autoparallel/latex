@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  17 MAR 2021 20:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  25 MAR 2021 12:26
 entering extended mode
 **./main.tex
 (main.tex
@@ -1472,7 +1472,7 @@ Package cleveref Info: `listings' support loaded on input line 3131.
 \symMnLargeSymbols=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `MnLargeSymbols' in version `bold'
 (Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
-58.
+59.
 
 
 LaTeX Warning: You have requested package `preamble',
@@ -1481,21 +1481,23 @@ LaTeX Warning: You have requested package `preamble',
 Package: design 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
-)) (environments.sty
+)
+\c@innercustomthm=\count371
+) (environments.sty
 Package: environments 
-\c@theorem=\count371
-\c@theorem*=\count372
-\c@lemma=\count373
-\c@corollary=\count374
-\c@axiom=\count375
-\c@proposition=\count376
-\c@definition=\count377
-\c@example=\count378
-\c@remark=\count379
-\c@solution=\count380
-\c@problem=\count381
-\c@question=\count382
-\c@exercise=\count383
+\c@theorem=\count372
+\c@theorem*=\count373
+\c@lemma=\count374
+\c@corollary=\count375
+\c@axiom=\count376
+\c@proposition=\count377
+\c@definition=\count378
+\c@example=\count379
+\c@remark=\count380
+\c@solution=\count381
+\c@problem=\count382
+\c@question=\count383
+\c@exercise=\count384
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/todonotes\todonote
 s.sty"
@@ -1513,7 +1515,7 @@ tex"
 \XKV@toks=\toks58
 \XKV@tempa@toks=\toks59
 )
-\XKV@depth=\count384
+\XKV@depth=\count385
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
@@ -1524,7 +1526,7 @@ File: tikzlibrarypositioning.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 r/tikz/libraries\tikzlibraryshadows.code.tex"
 File: tikzlibraryshadows.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 )
-\c@@todonotes@numberoftodonotes=\count385
+\c@@todonotes@numberoftodonotes=\count386
 ) (main.aux
 
 LaTeX Warning: Label `eq:dirichlet_problem' multiply defined.
@@ -1590,16 +1592,16 @@ LaTeX Font Info:    ... okay on input line 63.
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count386
+\scratchcounter=\count387
 \scratchdimen=\dimen330
 \scratchbox=\box132
-\nofMPsegments=\count387
-\nofMParguments=\count388
+\nofMPsegments=\count388
+\nofMParguments=\count389
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count389
+\MPscratchCnt=\count390
 \MPscratchDim=\dimen331
-\MPnumerator=\count390
-\makeMPintoPDFobject=\count391
+\MPnumerator=\count391
+\makeMPintoPDFobject=\count392
 \everyMPtoPDFconversion=\toks61
 )
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
@@ -1617,7 +1619,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.15).
 
-\c@lstlisting=\count392
+\c@lstlisting=\count393
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks62
@@ -1637,7 +1639,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count393
+\c@section@level=\count394
 )
 LaTeX Info: Redefining \ref on input line 63.
 LaTeX Info: Redefining \pageref on input line 63.
@@ -1646,45 +1648,34 @@ LaTeX Info: Redefining \nameref on input line 63.
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 65.
-
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 66
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 77
 .
+
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
 
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
 
  ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 66
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 77
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-[1
-
-{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [1
+) [1
 
 
-]
-\c@@temppage=\count394
 
-[1]
+{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+\c@@temppage=\count395
+ [1]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 78.
@@ -1723,160 +1714,124 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
  [7]
 Chapter 1.
-(chapter_1/clifford_and_geometric_algebras.tex
-Overfull \hbox (7.21646pt too wide) in paragraph at lines 4--5
-\T1/ptm/m/n/12 through this sub-sec-tion and visit sec-tion []1.1.5[] to re-vie
-w the no-ta-tion used through-out this manuscript. 
- []
+(chapter_1/introduction.tex [1
 
+
+]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 10.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 9.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 10.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 9.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.18 \begin{equation}
-                      [1
+[2]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 19.
 
 
-] [2]
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)) [3] [4]
+Chapter 2.
+(chapter_2/clifford_and_geometric_algebras.tex
+
+LaTeX Warning: Reference `subsubsec:motivating_example' on page 1 undefined on 
+input line 4.
+
+[5
+
+] [6]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 34.
 
-[3] [4]
-Overfull \hbox (11.64613pt too wide) in paragraph at lines 73--75
+[7] [8]
+Overfull \hbox (11.64613pt too wide) in paragraph at lines 78--80
 \T1/ptm/m/n/12 This rule for mul-ti-pli-ca-tion then al-lows for the mul-ti-pli
 -ca-tion of two gen-eral mul-ti-vec-tors in $\OML/cmm/m/it/12 C`\OT1/cmr/m/n/12
  (\OML/cmm/m/it/12 V; Q\OT1/cmr/m/n/12 )$\T1/ptm/m/n/12 .
  []
 
 
-Overfull \hbox (0.54417pt too wide) in paragraph at lines 95--97
+Overfull \hbox (0.54417pt too wide) in paragraph at lines 100--102
 \T1/ptm/m/n/12 These prod-ucts are par-tic-u-larly em-pha-sized as many help-fu
 l iden-ti-ties used in this pa-per are phrased
  []
 
-[5]
-
-LaTeX Warning: Reference `subsec:motivating_example' on page 1 undefined on inp
-ut line 130.
-
-[6] [7] [8] [9]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 216
-.
-
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [10]
-
-LaTeX Warning: Reference `subsubsec:integration_on_submanifolds' on page 1 unde
-fined on input line 231.
-
-[11]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-76.
+[9] [10] [11] [12] [13] [14] [15] [16] [17]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+07.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [12] [13] [14] [15] [16] [17] [18] [19] [20])
-(chapter_1/geometric_manifolds.tex [21]
+) [18] [19] [20] [21] [22] [23] [24] [25] [26])
+(chapter_2/geometric_manifolds.tex [27] [28] [29] [30] [31] [32] [33] [34]
+[35] [36] [37] [38] [39] [40] [41] [42] [43]
 
-LaTeX Warning: Marginpar on page 22 moved.
+LaTeX Warning: Reference `subsec:integral_transforms' on page 1 undefined on in
+put line 437.
 
+[44]) [45]
+Chapter 3.
+(chapter_3/spaces_of_fields.tex [46
 
-LaTeX Warning: Marginpar on page 22 moved.
+]
 
-[22] [23] [24] [25]
+LaTeX Warning: Reference `subsubsec:motivating_example' on page 1 undefined on 
+input line 25.
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 108.
+[47] [48] [49] [50] [51] [52] [53]) (chapter_3/algebras_of_fields.tex [54]
+[55] [56]) (chapter_3/gelfand_theory.tex
 
-[26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39])
-(chapter_1/spaces_of_fields.tex [40] [41] [42] [43] [44] [45]
-Overfull \hbox (24.52405pt too wide) detected at line 201
-[]
- []
-
-[46]) (chapter_1/algebras_of_fields.tex [47]
-
-LaTeX Warning: Reference `ex:complex_representation' on page 48 undefined on in
-put line 39.
-
-[48]
-
-LaTeX Warning: Reference `ex:exponential_of_bivector' on page 49 undefined on i
-nput line 69.
-
-[49] [50]
-
-LaTeX Warning: Reference `ex:quaternions' on page 51 undefined on input line 12
-5.
-
-[51]
-
-LaTeX Warning: Reference `ex:quaternions' on page 52 undefined on input line 13
-7.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
 
 
-LaTeX Warning: Reference `ex:cross_product' on page 52 undefined on input line 
-147.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
 
-[52] [53]) [54]
-Chapter 2.
-(chapter_2/tomography.tex
 
-LaTeX Warning: Marginpar on page 55 moved.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
 
-[55
+[57] [58] [59] [60] [61]) [62]
+Chapter 4.
+(chapter_4/tomography.tex [63
 
-] [56] [57] [58] [59]
+] [64] [65] [66] [67]
 
 LaTeX Warning: Reference `eq:eq:dirichlet_magnetic_bivector' on page 1 undefine
 d on input line 127.
 
-[60] [61] [62] [63]
+[68] [69] [70] [71]
 
-LaTeX Warning: Reference `subsec:diff_forms' on page 64 undefined on input line
+LaTeX Warning: Reference `subsec:diff_forms' on page 72 undefined on input line
  250.
 
-[64]
+[72]
 
-LaTeX Warning: Citation `eq:conjugate_belishev' on page 65 undefined on input l
+LaTeX Warning: Citation `eq:conjugate_belishev' on page 73 undefined on input l
 ine 268.
 
 
-LaTeX Warning: Reference `eq:projection_rejection_vectors' on page 65 undefined
+LaTeX Warning: Reference `eq:projection_rejection_vectors' on page 73 undefined
  on input line 286.
 
-[65]) (chapter_2/gelfand_theory.tex [66]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
-.
-
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Overfull \hbox (255.24467pt too wide) in paragraph at lines 21--22
-\T1/pcr/m/n/12 com / questions / 811248 / wedge-[]product-[]between-[]nonorthog
-onal-[]basis-[]and-[]its-[]reciprocal-[]basis-[]in-[]geometric$[][]
- []
-
-[67] [68] [69] [70]) (main.bbl [71]
+[73]) (main.bbl [74]
 LaTeX Info: Symbol \textasciiacute not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 37.
- [72
+            Default family used instead on input line 47.
+ [75
 
-]) [73] (main.aux)
+]
+LaTeX Info: Symbol \textasciiacute not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 90.
+ [76]) [77] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 50782E638F5CC5C1580AB748B69AF513;2308.
+(rerunfilecheck)             Checksum: 1F4A9135A1138291CFCA499C15EEC4E3;2393.
 
 
 LaTeX Warning: There were undefined references.
@@ -1886,48 +1841,49 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44037 strings out of 479799
- 1049379 string characters out of 2867787
- 1488410 words of memory out of 3000000
- 59672 multiletter control sequences out of 15000+200000
- 591364 words of font info for 135 fonts, out of 3000000 for 9000
+ 43653 strings out of 479799
+ 1040554 string characters out of 2867787
+ 1446729 words of memory out of 3000000
+ 59269 multiletter control sequences out of 15000+200000
+ 592328 words of font info for 139 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,15n,132p,1230b,1022s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 108i,16n,132p,1552b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Colin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
 tcti1200.pk>{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
 ase/8r.enc}<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cmextra/cmbsy8.pfb><C:/Users/Colin/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Colin/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi5.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Colin/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Coli
-n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib6.
-pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cmextra/cmmib8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Colin/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/
-Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
+s/type1/public/amsfonts/cmextra/cmbsy6.pfb><C:/Users/Colin/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><C:/Users/Colin/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/U
+sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmbx8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmex10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Colin/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users
+/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.p
 fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Colin/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Co
-lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/User
-s/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/
-Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on main.pdf (82 pages, 609708 bytes).
+s/cm/cmmib10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cmextra/cmmib6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/Colin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Coli
+n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
+/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmss12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Colin/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/U
+sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/
+times/utmb8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+urw/times/utmr8a.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on main.pdf (85 pages, 608736 bytes).
 PDF statistics:
- 1244 PDF objects out of 1440 (max. 8388607)
- 485 named destinations out of 1000 (max. 500000)
- 429 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1316 PDF objects out of 1440 (max. 8388607)
+ 502 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 
