@@ -339,17 +339,17 @@ The benefit here is more pronounced in \cref{subsec:ftgc}. For example, this not
 
 
 \subsection{Stokes' and Green's formula}
-\todo{left off here}
-On forms, we have a compact form of Stokes' theorem
+
+With forms, we have a compact form of Stokes' theorem given by
 \begin{equation}
 \int_M d \alpha_{n-1} = \int_{\boundary} \iota^* \alpha_{n-1},
 \end{equation}
-for sufficiently smooth $n-1$-forms $\alpha_{n-1}$. This theorem is irrespective of $M$ and can be applied to submanifolds of $M$ as well. For example, if $M\subset \R^3$ is a 2-dimensional submanifold of $\R^3$, then one retrieves the Stokes' theorem in vector calculus. \cref{subsec:differential_forms,subsec:integration_on_submanifolds} allows us to determine this in terms of the multivector equivalents. We have the multivector version of Stokes' theorem given by
+for sufficiently smooth $n-1$-forms $\alpha_{n-1}$. This theorem can be applied to submanifolds $R$ of $M$ as well, just with $r-1$-forms. For example, if $M\subset \R^3$ is a 2-dimensional submanifold of $\R^3$, then one retrieves the Stokes' theorem in vector calculus. \cref{subsec:differential_forms,subsec:integration_on_submanifolds} allows us to determine this in terms of the multivector equivalents. We have the multivector version of Stokes' theorem given by
 \begin{equation}
 \label{eq:stokes_theorem}
 \int_M (\grad \wedge A_{n-1})\cdot dX_n = \int_{\partial M} \projection_{\blade{I}_\partial}(A_{n-1}) \cdot dX_{n-1}.
 \end{equation}
-But this has another, more physical, interpretation. Let us consider the dual relationship by taking vector field $\blade{v}$ and noting that $\blade{v}^\perp$ is an $n-1$-vector for which Stokes' theorem can be applied. Hence,
+But this has another, more physical, interpretation. Let us consider the dual relationship by taking vector field $\blade{v}$ and noting that $\blade{v}^\perp$ is an pseudovector for which Stokes' theorem can be applied. Hence,
 \begin{equation}
 \label{eq:stokes_theorem_dual}
 \int_M (\grad \wedge \blade{v}^\perp) \cdot dX_n = \int_{\partial M} \projection_{\blade{I}_\partial}(\blade{v}^\perp) \cdot dX_{n-1},
@@ -358,8 +358,7 @@ which realizes the divergence theorem
 \begin{equation}
 \int_M \grad \cdot \blade{v} \mu = \int_{\partial M} \blade{v}\cdot \blade{\nu} \mu_\partial.
 \end{equation}
-
-Moreover, we also have Green's formula
+Based on Stokes' theorem and the product rule for the exterior derivative, we also have Green's formula
 \begin{equation}
 \int_M d\alpha_{r-1} \wedge \star \beta_r = \int_M \alpha_{r-1} \wedge \star \delta \beta_r + \int_{\boundary} \iota^* (\alpha_{r-1} \wedge \star \beta_r)
 \end{equation}
@@ -410,7 +409,7 @@ For underbrace 3,
 with the final equality by \cref{prop:flux}.
 \end{proof}
 \todo{shorten and fix this proof with the new dagger in there.}
-Stokes' theorem and Green's formula are essential in determining the $L^2$-orthogonal decomposition of the space of differential $r$-forms $\Omega^r(M)$. This will be visited in \cref{sec:spaces_of_fields}. The applications thereof provide general existence and uniqueness results for boundary value problems.
+Stokes' theorem and Green's formula are essential in determining the $L^2$-orthogonal decomposition of the space of differential $r$-forms $\Omega^r(M)$. The applications thereof provide general existence and uniqueness results for boundary value problems. An analogy of this result can be found next in \cref{subsec:ftgc}. 
 
 \subsection{Fundamental theorem of geometric calculus}
 \label{subsec:ftgc}
@@ -422,44 +421,45 @@ The containment of the exterior algebra inside a geometric algebra motivates us 
 Let $A,B\in \G(M)$. Then
 \begin{align}
 \label{eq:ftga_1}
-\int_M \dot{A}\dot{\grad} \blade{I}^{-1} \mu &= \int_\boundary  A \blade{I}_\partial \mu_\partial\\
+\int_M \dot{A}\dot{\grad} \blade{I}\mu &= \int_\boundary  A \blade{I}_\partial \mu_\partial\\
 \label{eq:ftga_2}
-\int_M  \blade{I}^{-1} \grad B \mu &= \int_\boundary \blade{I}_\partial B \mu_\partial\\
+\int_M  \blade{I} \grad B \mu &= \int_\boundary \blade{I}_\partial B \mu_\partial\\
 \label{eq:ftga_3}
-\int_M ((-1)^{n-1} \dot{A}\dot{\grad} \blade{I}^{-1} B + A \blade{I}^{-1} \grad B)\mu &= \int_\boundary A \blade{I}_\partial B \mu_\partial.
+\int_M  \dot{A}\dot{\grad} \blade{I} B\mu &= (-1)^{n}\int_M A \blade{I} \grad B\mu + \int_\boundary A \blade{I}_\partial B \mu_\partial.
 \end{align}
 Finally,
 \begin{equation}
 \label{eq:ftga_4}
-\int_M \dot{\sf{L}}(\dot{\grad} \pseudoscalar^{-1})\mu = \int_\boundary \sf{L}(\pseudoscalar_\partial)\mu_\partial,
+\int_M \dot{\sf{L}}(\dot{\grad} \pseudoscalar)\mu = \int_\boundary \sf{L}(\pseudoscalar_\partial)\mu_\partial,
 \end{equation}
 holds for linear functions $\sf{L}$ of pseudovectors.
 \end{theorem}
-The above theorem is proved in a handful of texts \todo{add citations}. One may question the inclusion of the unit pseudoscalar in equations \cref{eq:ftga_1,eq:ftga_2,eq:ftga_3} and whether they can be pulled outside of the integral. The answer is no, unless $M$ is a region of $\R^n$. In fact, this is used explicitly in the Cauchy integral formula in complex analysis. We visit an analog of this later in \cref{subsec:integral_transforms}. Note that \cref{eq:ftga_3} is close to describing a multivector valued form of a Green's formula. This is wholeheartedly allowing us to consider consequences of the actions of $\grad$ on both sides of a multivector. In fact, we have the following result.
+The above theorem is proved in a handful of texts, but originates via Hestene's work in our go-to reference \cite{hestenes_clifford_1984}. One may question the inclusion of the unit pseudoscalar in equations \cref{eq:ftga_1,eq:ftga_2,eq:ftga_3} and whether they can be pulled outside of the integral. The answer is no, unless $M$ is a region of $\R^n$ since, in that case, the pseudoscalar is constant. In fact, this is used explicitly in the Cauchy integral formula in complex analysis for which we will describe the generalization found in \cref{eq:cauchy_integral}. Note that \cref{eq:ftga_3} is close to describing a multivector valued form of a Green's formula. This is wholeheartedly allowing us to consider consequences of the actions of $\grad$ on both sides of a multivector. In fact, taking the scalar part of \cref{eq:ftga_3} will lead us to the following result.
 
 \begin{theorem}[Multivector Green's formula]
 \label{thm:multivector_greens_formula}
 We have the Green's formula for the gradient
 \begin{equation}
-\multivecinnerproduct{\pseudoscalar^{-1 \dagger} A}{\grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar^{-1} B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+\multivecinnerproduct{\pseudoscalar^{\dagger} A}{\grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
 \end{equation}
 \end{theorem}
 \begin{proof}
 Fix $A^\dagger,B \in \G(M)$ and note \cref{eq:ftga_3} of \cref{thm:ftga} yields
 \begin{align}
-\int_M A^\dagger \blade{I}^{-1} \grad B\mu &= (-1)^{n} \int_M \dot{A}^\dagger\dot{\grad} \blade{I}^{-1} B \mu +  \int_\boundary A^\dagger \blade{I}_\partial B \mu_\partial\\
-\int_M (\pseudoscalar^{-1 \dagger} A)^\dagger \grad B \mu &= (-1)^n \int_M (\grad A)^\dagger \pseudoscalar^{-1} B \mu + \int_\boundary (A)^\dagger \pseudoscalar_\partial B \mu_\partial.
+\int_M A^\dagger \blade{I} \grad B\mu &= (-1)^{n} \int_M \dot{A}^\dagger\dot{\grad} \blade{I} B \mu +  \int_\boundary A^\dagger \blade{I}_\partial B \mu_\partial\\
+\int_M A^\dagger \pseudoscalar \grad B \mu &= (-1)^n \int_M (\grad A)^\dagger \pseudoscalar B \mu + \int_\boundary A^\dagger \pseudoscalar_\partial B \mu_\partial.
 \end{align}
 Now, if we take the scalar part of the above equation and dividing by $\operatorname{vol}(M)$ we have
 \begin{align}
-\multivecinnerproduct{A}{\pseudoscalar^{-1} \grad B} &= (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar^{-1} B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+\multivecinnerproduct{A}{\pseudoscalar\grad B} &= (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
 \end{align}
 
 \end{proof}
 \begin{remark}
 The position of $\pseudoscalar$ and $\pseudoscalar_\partial$ in the above computation is an artifact of choice. Recall \cref{prop:adjoint} and note, for example, that
 \begin{equation}
-\multivecinnerproduct{I^{-1}A}{\grad B} = \multivecinnerproduct{\pseudoscalar^{-1 \dagger}A}{\grad{B}}.
+\multivecinnerproduct{A}{\pseudoscalar\grad B} = \multivecinnerproduct{\pseudoscalar^{\dagger}A}{\grad{B}}.
 \end{equation}
 \end{remark}
 
+Another benefit to this formulation is there was no mention of dependence on the properties of the metric $g$. So, \cref{thm:multivector_greens_formula} holds in spaces with temporal vectors. However, one should remark that we do lose the definiteness of the inner product.

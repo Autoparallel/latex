@@ -57,13 +57,13 @@
     \put(0.79252352,0.55612332){\color[rgb]{0,0.52941176,0.16078431}\transparent{0.63137257}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$TM$\end{tabular}}}}%
     \put(0.19957715,0.27213961){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/section.pdf}}%
-    \put(0.26335275,0.44261016){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$X_q$\end{tabular}}}}%
-    \put(0.38423072,0.12531223){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$X_p$\end{tabular}}}}%
-    \put(-0.00263309,0.32236594){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$X_r$\end{tabular}}}}%
+    \put(0.26335275,0.44261016){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{v}_q$\end{tabular}}}}%
+    \put(0.38423072,0.12531223){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{v}_p$\end{tabular}}}}%
+    \put(-0.00263309,0.32236594){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{v}_r$\end{tabular}}}}%
     \put(0.86740711,0.25703129){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
     \put(0.92527619,0.30738157){\color[rgb]{0,0,0}\transparent{0.99878049}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
     \put(0.6210157,0.29455344){\color[rgb]{0,0,0}\transparent{0.99878049}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
-    \put(0.71270284,0.43730319){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$X$\end{tabular}}}}%
+    \put(0.71270284,0.43730319){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{v}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/section.pdf}}%
   \end{picture}%
 \endgroup%

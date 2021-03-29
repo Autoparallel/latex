@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{noauthor_evans_nodate}
+{\em Evans: {Partial} {Differential} {Equations}: {Second} {Edition}}.
+
 \bibitem{belishev_dirichlet_2008}
 {\sc M.~Belishev and V.~Sharafutdinov}, {\em Dirichlet to {Neumann} operator on
   differential forms}, Bulletin des Sciences Mathématiques, 132 (2008),
@@ -26,9 +29,25 @@
   [math],  (2019).
 \newblock arXiv: 1901.09201.
 
+\bibitem{brackx_fundamental_2012}
+{\sc F.~Brackx, H.~De~Schepper, M.~E. Luna-Elizarrarás, and M.~Shapiro}, {\em
+  On {Fundamental} {Solutions} in {Clifford} {Analysis}}, Complex Analysis and
+  Operator Theory, 6 (2012), pp.~325--339.
+
+\bibitem{brackx_metric_2006}
+{\sc F.~Brackx, N.~De~Schepper, and F.~Sommen}, {\em Metric {Dependent}
+  {Clifford} {Analysis} with {Applications} to {Wavelet} {Analysis}}, in
+  Wavelets, {Multiscale} {Systems} and {Hypercomplex} {Analysis}, D.~Alpay,
+  A.~Luger, and H.~Woracek, eds., Operator {Theory}: {Advances} and
+  {Applications}, Birkhäuser, Basel, 2006, pp.~17--67.
+
 \bibitem{brackx_hilbert_2008}
 {\sc F.~Brackx and H.~D. Schepper}, {\em The {Hilbert} {Transform} on a
   {Smooth} {Closed} {Hypersurface}},  (2008), p.~24.
+
+\bibitem{calderbank_dirac_1997}
+{\sc D.~M.~J. Calderbank}, {\em Dirac operators and {Clifford} analysis on
+  manifolds with boundary}, 1997.
 
 \bibitem{calderon_inverse_2006}
 {\sc A.~Calderón}, {\em On inverse boundary value problem}, Computational \&

@@ -26,23 +26,21 @@
 \contentsline {subsection}{\numberline {3.1.1}Monogenic fields}{46}{subsection.3.1.1}%
 \contentsline {subsubsection}{Cauchy integral}{47}{section*.8}%
 \contentsline {subsection}{\numberline {3.1.2}Hodge-type decompositions}{49}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Algebras of fields}{54}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Subsurface fields}{54}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Gelfand theory}{57}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}$\mathcal {G}_n$-spectrum}{57}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Topology from monogenics}{58}{subsection.3.3.2}%
-\contentsline {subsubsection}{Taylor series}{58}{section*.9}%
-\contentsline {subsubsection}{Correspondence}{60}{section*.10}%
-\contentsline {chapter}{\numberline {4}Inverse problems}{63}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Tomography}{63}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Forward problems}{64}{subsection.4.1.1}%
-\contentsline {subsubsection}{Electrostatics}{64}{section*.11}%
-\contentsline {subsubsection}{Magnetostatics}{66}{section*.12}%
-\contentsline {subsubsection}{Electromagnetostatics}{68}{section*.13}%
-\contentsline {subsubsection}{Generalization to forms}{68}{section*.14}%
-\contentsline {subsection}{\numberline {4.1.2}Multivector tomography}{69}{subsection.4.1.2}%
-\contentsline {subsubsection}{Electrical impedance tomography}{69}{section*.15}%
-\contentsline {subsubsection}{Generalizations}{70}{section*.16}%
-\contentsline {subsection}{\numberline {4.1.3}Recovery}{70}{subsection.4.1.3}%
-\contentsline {subsubsection}{Ohm's law}{71}{section*.17}%
-\contentsline {chapter}{Bibliography}{75}{section*.19}%
+\contentsline {section}{\numberline {3.2}Algebras of fields}{55}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Subsurface fields}{55}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Gelfand theory}{59}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}$\mathcal {G}_n$-spectrum}{59}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Topology from monogenics}{60}{subsection.3.3.2}%
+\contentsline {subsubsection}{Taylor series}{60}{section*.9}%
+\contentsline {subsubsection}{Correspondence}{62}{section*.10}%
+\contentsline {chapter}{\numberline {4}Inverse problems}{65}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Tomography}{65}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Forward problems}{66}{subsection.4.1.1}%
+\contentsline {subsubsection}{Electrostatics}{66}{section*.11}%
+\contentsline {subsubsection}{Magnetostatics}{68}{section*.12}%
+\contentsline {subsubsection}{Electromagnetostatics}{70}{section*.13}%
+\contentsline {subsubsection}{Generalization to forms}{70}{section*.14}%
+\contentsline {subsection}{\numberline {4.1.2}Multivector tomography}{71}{subsection.4.1.2}%
+\contentsline {subsubsection}{Electrical impedance tomography}{71}{section*.15}%
+\contentsline {subsubsection}{Generalizations}{72}{section*.16}%
+\contentsline {chapter}{Bibliography}{73}{section*.18}%

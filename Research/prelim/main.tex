@@ -20,8 +20,8 @@
 %\usefonttheme{serif}
 
 \usepackage{xfrac}
-\usepackage{color, soul} % Colored text and highlighting, respectively
-\usepackage[dvipsnames]{xcolor}
+\usepackage{soul} % Colored text and highlighting, respectively
+\usepackage{xcolor}
 \usepackage{tikz-cd} % For commutative diagrams
 \usepackage{tikz-3dplot}
 \usetikzlibrary{angles}
@@ -50,6 +50,7 @@
 \usepackage{animate}
 \usepackage[percent]{overpic}
 \definecolor{lighter_csu_green}{RGB}{60,133,77}
+\definecolor{gray}{RGB}{60,60,60}
 \newcommand\boldgreen[1]{\textcolor{lighter_csu_green}{\emph{\textbf{#1}}}}
 \usepackage{MnSymbol}
 %border matrix
@@ -176,6 +177,11 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \newcommand{\normal}{\blade{\nu}}
 \newcommand{\pseudoscalar}{\blade{I}}
 
+\newcommand{\kforminnerproduct}[2]{\llangle #1, #2 \rrangle}
+
+\DeclarePairedDelimiter\angles{\langle}{\rangle}
+\newcommand{\proj}[2]{\angles*{#2}_{#1}}
+
 % Forms stuff
 \newcommand{\harmonicfields}[1]{\mathcal{H}^{#1}(M)}
 \newcommand{\monogenicex}[1]{\mathcal{M}^{#1}_{\textrm{ex}}(M)}
@@ -190,7 +196,7 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \author{Colin Roberts}
 \setbeamercolor{title}{fg=white} 
-\title{Geometric Calculus and a Noncommutative Gelfand Representation}
+\title{Clifford Analysis and a Noncommutative Gelfand Representation}
 \setbeamercolor{subtitle}{fg=white} 
 \subtitle{}
 
@@ -218,16 +224,125 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \section{Introduction}
 
-%\subsection{Calder\'on Problem}
+\subsection{Motivation}
+\begin{frame}{Electrical Impedance Tomography}
+\vfill
+\boldgreen{Electrical Impedance Tomography (EIT)} asks whether one can determine the conductivity of a medium based on measurements along the boundary.
+\vfill
+\end{frame}
+
+\begin{frame}{Calder\'on problem}
+\vfill 
+    \begin{itemize}
+        \pause 
+        \item Let $M$ be a smooth, connected, oriented Riemannian manifold with boundary $\partial M$ with metric $g$.
+        
+        \pause
+        \item Conductivity is represented by $g$.
+        
+        \pause
+        \item \underline{Forward problem:} Let $\Delta u = 0$ in $M$ and $u=\phi$ on $\partial M$.
+        
+        \pause
+        \item \underline{Inverse problem:} Given the \boldgreen{Dirichlet-to-Neumann map} $\Lambda \phi = \frac{\partial u}{\partial \nu}$, can we recover $(M,g)$?
+    \end{itemize}
+\vfill
+\end{frame}
+
+\subsection{Preliminaries}
+
 
 \begin{frame}{}
 \vfill
 \begin{itemize}
-    \item \boldgreen{Geometric algebra} originated in 1878 with William Kingdon Clifford's work that extends Hermann Grassmann's \boldgreen{exterior algebra}.
+    \item \boldgreen{Clifford algebra} originated in 1878 with William Kingdon Clifford's work that extends Hermann Grassmann's \boldgreen{exterior algebra}.
     \pause
-    \item \boldgreen{Geometric calculus} arrived in 1984 due to David Hestenes and Garrett Sobczyk in order to enrich \'Ellie Cartan's \boldgreen{differential forms}.
+    \item \boldgreen{Clifford analysis} arrived in the 1980's due to Hestenes, Sobczyk, Sommen, Brackx, and Delenghe in order to enrich \'Ellie Cartan's \boldgreen{differential forms}.
+    \begin{itemize}
+    \pause
+        \item Atiyah-Singer Dirac operator and spin manifolds.
+    \end{itemize}
 \end{itemize}
 \vfill
+\end{frame}
+
+\begin{frame}{Clifford algebras}
+\vfill
+Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
+\begin{itemize}
+    \pause
+        \item Define the tensor algebra
+        \[
+        \mathcal{T}(V) \coloneqq \bigoplus_{j=0}^\infty V^{\otimes_j} = \mathbb{F} \oplus (V \otimes V) \oplus (V \otimes V \otimes V) \oplus \cdots.
+        \]
+    \pause
+        \item Form the \boldgreen{Clifford algebra} via a quotient
+        \[
+        C\ell(V,Q) \coloneqq \mathcal{T}(V)/ \langle \blade{v} \otimes \blade{v} - Q(V)\rangle.
+        \]
+\end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{Geometric and exterior algebras}
+\vfill
+Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
+\begin{itemize}
+    \pause
+        \item Given a (pseudo) inner product $g$, we set $Q(\cdot)=g(\cdot,\cdot)$ and define a \boldgreen{geometric algebra}
+        \[
+        \G \coloneqq C\ell(V,g).
+        \]
+    \pause
+        \item The \boldgreen{exterior algebra} is given by
+        \[
+        \bigwedge(V) \coloneqq C\ell(V,0).
+        \]
+\end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{Algebra structure}
+\vfill
+We define a multiplication in $\G(V)$ by noting how the product $\otimes$ acts in the quotient.
+\begin{itemize}
+\pause
+    \item Given $\blade{u}, \blade{v} \in \G(V)$ we can take the product
+    \[
+    \blade{u}\blade{v} = \underbrace{\blade{u}\cdot \blade{v}}_{\textrm{scalar}} + \underbrace{\blade{u}\wedge \blade{v}}_{\textrm{bivector}}.
+    \]
+\pause
+\begin{itemize}
+    \item The scalar part is symmetric: $\blade{u}\cdot \blade{v} = g(\blade{u},\blade{v})$.
+\pause
+    \item The bivector part is antisymmetric: $\blade{u}\wedge \blade{v} = -\blade{v}\wedge \blade{u}$.
+\end{itemize}
+\end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{Multivectors}
+\vfill
+\begin{itemize}
+    \pause
+        \item $\G$ is graded and of dimension $2^n$.
+    \begin{itemize}
+    \pause
+        \item There are ${n \choose r}$ elements of grade $r$ called \boldgreen{$r$-vectors}. 
+        \item Those that are exterior products of $r$ independent vectors are \boldgreen{$r$-blades}. E.g., $\blade{v}_1 \wedge \cdots \wedge\blade{v}_r$.
+    \end{itemize}
+    \pause
+        \item The most general elements are \boldgreen{multivectors} and are given by
+        \[
+        A = \sum_{r=0}^n \proj{r}{A},
+        \]
+        where $\proj{r}{A}$ extracts the grade $r$ part of $A$.
+\end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{Examples}
+$\C$ and quaternions, spacetime algebra even subalgebras
 \end{frame}
 
 \begin{frame}{The playing field}
@@ -269,42 +384,61 @@ From $M$, we create the tangent bundle $TM$ whose sections are vector fields.
     \textbf{\underline{Idea:}} On each tangent space, let us construct a manner in which to multiply vectors.
     \pause
     \begin{itemize}
-        \item Take the tensor algebra
-        \[
-        \mathcal{T}(T_pM) \coloneqq \bigoplus_{j=0}^\infty T_pM^{\otimes_j} = \R \oplus (T_pM \otimes T_pM) \oplus (T_pM \otimes T_pM \otimes T_pM) \oplus \cdots.
-        \]
-    
-        \item Form the quotient algebra
-        \[
-        \G = \mathcal{T}(T_pM)/ \langle \blade{v}
-        \]
-
+        \item 
     \end{itemize}
 \vfill
 \end{frame}
 
+\begin{frame}{}
+\vfill
+    \textbf{\underline{Idea:}} Glue together geometric tangent spaces.
+    \pause
+    \begin{itemize}
+        \item Each $C\ell(T_pM,g_p)$ is a \boldgreen{geometric tangent space} which we glue together to form
+        \[
+        C\ell(TM,g) \coloneqq \bigsqcup_{p\in M} C\ell(T_pM,g_p).
+        \]
+    
+        \item The space of \boldgreen{(smooth) multivector fields} is
+        \[
+        \G(M) \coloneqq \{\textrm{$C^\infty$-smooth sections of $C\ell(TM,g)$}\}.
+        \]
+    \end{itemize}
+\vfill
+\end{frame}
 
-\section{The Calder\'on Problem on Riemannian Manifolds}
-
-\subsection{Preliminaries}
-
-\begin{frame}{Geometry}
+\begin{frame}{Clifford Algebraic Structure}
 \vfill
     \pause
     \begin{itemize}
-        \item \boldgreen{Smooth $n$-dimensional manifold}: A space that locally looks like (is $C^\infty$ diffeomorphic to) an open subset of $\R^n$.
-        
-        \pause 
-        \item \boldgreen{Riemannian metric}: A smoothly varying inner product defined on $\Omega$.  In coordinates, $g$ takes the form of a symmetric and positive definite matrix with entries $g_{jk}$ with inverse $g^{jk}$.
-        
-        \pause
-        \item \boldgreen{Exterior algebra}: Differential forms with the wedge product $\wedge$.
-        
-        \pause
-        \item \boldgreen{Hodge Star}: Attached to the exterior algebra when we also have a Riemannian metric.  Gives an isomorphism between $k$ and $n-k$-forms.
+        \item How do we add and multiply vector fields.
+    
+        \item Extend this to products on multivectors
     \end{itemize}
 \vfill
 \end{frame}
+
+
+
+\subsection{Preliminaries}
+
+%\begin{frame}{Geometry}
+%\vfill
+%    \pause
+%    \begin{itemize}
+%        \item \boldgreen{Smooth $n$-dimensional manifold}: A space that locally looks like (is $C^\infty$ diffeomorphic to) an open subset of $\R^n$.
+%        
+%        \pause 
+%        \item \boldgreen{Riemannian metric}: A smoothly varying inner product defined on $\Omega$.  In coordinates, $g$ takes the form of a symmetric and positive definite matrix with entries $g_{jk}$ with inverse $g^{jk}$.
+%        
+%        \pause
+%        \item \boldgreen{Exterior algebra}: Differential forms with the wedge product $\wedge$.
+%        
+%        \pause
+%        \item \boldgreen{Hodge Star}: Attached to the exterior algebra when we also have a Riemannian metric.  Gives an isomorphism between $k$ and $n-k$-forms.
+%    \end{itemize}
+%\vfill
+%\end{frame}
 
 %\begin{frame}{}
 %\vfill
@@ -380,26 +514,7 @@ From $M$, we create the tangent bundle $TM$ whose sections are vector fields.
 %
 %\subsection{Raphrasing EIT Problem in a Geometrical Language}
 %
-%\begin{frame}{}
-%\vfill 
-%    \begin{itemize}
-%        \pause
-%        \item Let (unknown) connected $\Omega$ be a smooth Riemannian manifold with boundary $\partial \Omega$.
-%        
-%        \pause
-%        \item Replace conductivity be represented by (unknown) $g$ since $\gamma^{jk}=\sqrt{|g|}g^{jk}$.
-%        
-%        \pause
-%        \item Let $\Delta u = 0$ in $\Omega^+$ and $u=f$ on $\partial \Omega$.
-%        
-%        \pause
-%        \item \boldgreen{Dirichlet-to-Neumann operator} $\Lambda$ maps Dirichlet data $f=u|_{\partial \Omega}$ to $g = \frac{\partial u}{\partial \nu}=\iota^*(\star d u)$.
-%        
-%        \pause
-%        \item Recover $g$ from knowing $\Lambda$.
-%    
-%    \end{itemize}
-%\end{frame}
+
 %
 %\subsection{Expected and Current Results}
 %

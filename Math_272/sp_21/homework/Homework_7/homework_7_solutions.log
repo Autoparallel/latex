@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  22 MAR 2021 10:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  29 MAR 2021 05:36
 entering extended mode
 **./homework_7_solutions.tex
 (homework_7_solutions.tex
@@ -1252,7 +1252,7 @@ Package rerunfilecheck Info: File `homework_7_solutions.out' has not changed.
 Here is how much of TeX's memory you used:
  33042 strings out of 479799
  821956 string characters out of 2867787
- 1200148 words of memory out of 3000000
+ 1200147 words of memory out of 3000000
  49368 multiletter control sequences out of 15000+200000
  546590 words of font info for 72 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1281,7 +1281,7 @@ in/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/symbols/msbm7.pfb>
-Output written on homework_7_solutions.pdf (9 pages, 229292 bytes).
+Output written on homework_7_solutions.pdf (9 pages, 229645 bytes).
 PDF statistics:
  192 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)

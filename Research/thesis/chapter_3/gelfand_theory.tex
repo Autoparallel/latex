@@ -25,7 +25,7 @@ We seek to determine that the space $\characters(M)$ is homeomorphic to $M$ in t
 
 \begin{theorem}
 \label{thm:gelfand}
-For any $\delta \in \characters(M)$, there is a point $x^\delta \in M$ such that $\delta(f) = f(x^\delta)$ for any $f\in \monogenics(M)$ a monogenic spinor field. Given the weak-$\ast$ topology on $\dualmonogenics(M)$, the map
+For any $\delta \in \characters(M)$, there is a point $x^\delta \in M$ such that $\delta(f) = f(x^\delta)$ for any $f\in \monogenics(M)$ a monogenic field. Given the weak-$\ast$ topology on $\dualmonogenics(M)$, the map
 \[
 \gamma \colon \characters(M) \to M, \quad \delta \mapsto x^\delta
 \]
@@ -41,15 +41,11 @@ We prove this theorem in three main components. First, we can realize a power se
 
 \subsubsection{Taylor series}
 %\url{https://math.stackexchange.com/questions/811248/wedge-product-between-nonorthogonal-basis-and-its-reciprocal-basis-in-geometric}
-Fix an orthonormal basis $\blade{e}_1,\dots,\blade{e}_n$ for $\R^n$ and define the functions $z_{ij} = x_j - x_i \blade{e}_i \blade{e}_j$. Recall that for an orthonormal basis the reciprocal basis elements $\blade{e}^i=\blade{e}_i$. To further condense notation, we define $\bivector_{ij}\coloneqq \blade{e}_i \blade{e}_j$ for $i\neq j$ as necessary. The functions $z_{ij}$ are the analogs to $z$ in $\C$ but specifically in the $\bivector_{ij}$ plane.  We then note
+Fix an orthonormal basis $\blade{e}_1,\dots,\blade{e}_n$ for $\R^n$ and define the functions $z_{ij} = x_j - x_i \blade{e}_i \blade{e}_j$. Recall that for an orthonormal basis the reciprocal basis elements $\blade{e}^i=\blade{e}_i$. To further condense notation, we define $\bivector_{ij}\coloneqq \blade{e}_i \blade{e}_j$ for $i\neq j$ as necessary. The functions $z_{ij}$ are the analogs to $z$ in $\C$ but specifically in the $\bivector_{ij}$ plane. We then note
 \begin{equation}
 z_{ij} = x_j - x_i \bivector_{ij} = \blade{e}_j\projection_{\bivector_{ij}}(x),
 \end{equation}
-for $x=(x_1,\dots,x_n)\in \R^n$. One can quickly confirm that $z_{ij} \in \algebra{\bivector_{ij}}(M)$ so long as $i\neq j$ by
-\begin{equation}
-\grad z_{ij} = e_j - e_i \bivector_{ij} = 0.
-\end{equation}
-When $i=j$, $\bivector_{ii}=1$ and one can verify $z_{ii}$ is not monogenic. These functions find their use in a power series representation for monogenic fields $f$. Specifically, let $\sigma$ be a permutation of the set $\{2,3,\dots,n\}$, then we have the polynomials
+for $x=(x_1,\dots,x_n)\in \R^n$. Hence, this is but a special case of \cref{eq:z} and we note that each $z_{ij}$ is monogenic and hence belongs in $\algebra{\bivector_{ij}}$ so long as $i \neq j$. One can quickly verify $z_{ii}$ is not monogenic. These functions find their use in a power series representation for monogenic fields $f$. Specifically, let $\sigma$ be a permutation of the set $\{2,3,\dots,n\}$, then we have the polynomials
 \begin{equation}
         p_{j_2 \dots j_n}(x) = \frac{1}{j!} \sum_{\textrm{permutations}}z_{1\sigma(1)}(x) \cdots z_{1\sigma(j)}(x),
 \end{equation}
@@ -66,13 +62,13 @@ The space $\monogenics^\mathcal{P}(\ball_{R,w})$ is dense in $\monogenics(\ball_
 \begin{proof}
 We can center a ball of radius $R$ at $w$ to get the monogenic polynomials $p_{j_2 \dots j_n}(x-w)$. Then, let $f\in \monogenics(\ball_{R,w})$ and define the coefficients $a_{j_2 \cdots j_n}\in \G_n$ by
 \begin{equation}
-a_{j_2 \cdots j_n} = \frac{1}{a_n} \int_{\partial B(w,R)} \frac{\partial^j G(y-w)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y).
+a_{j_2 \cdots j_n} = \int_{\partial B(w,R)} \frac{\partial^j G(w,y)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y),
 \end{equation}
-Then by \cite[Theorem 4]{ryan_clifford_2004}, we have
+where $G$ is the Cauchy kernel and we have used the Cauchy integral formula with the fact $\pseudoscalar$ is constant. By \cite[Theorem 4]{ryan_clifford_2004}, we have
 \begin{equation}
         f(x) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}} p_{j_2 \cdots j_n} (x-w) a_{j_2 \cdots j_n} \right),
 \end{equation}
-which converges uniformly to $f$ for points $x\in \ball_{R,w}$.
+which converges pointwise to $f$ for points $x\in \ball_{R,w}$.
 \end{proof}
 
 We have found that all monogenic fields are generated as power series of homogeneous polynomials in the variables $z_{ij}$. Thus, we have a form for which we can determine the action of a $\G_n$-character on a monogenic field. Specifically, take the series for $f(x)$ above and note for $\delta \in \characters(\ball_{R,w})$ that
@@ -99,7 +95,7 @@ Let $\delta \in \characters(\ball_{R,w})$ and note that $\delta(1)=1$ since $\de
 \end{equation}
 by definition. Applying $\delta$ to $z_{ij}$ yields
 \begin{equation}
-\mu(z_{ij}) = \alpha_{ij} + \beta_{ij} \bivector_{ij},
+\delta(z_{ij}) = \alpha_{ij} + \beta_{ij} \bivector_{ij},
 \end{equation}
 for some constants $\alpha_{ij}$ and $\beta_{ij}$. Then, note that we have two key relationships
 \begin{equation}
@@ -123,7 +119,7 @@ Hence, $\alpha_i^j = -\beta_j^i$ for all $i \neq j$.
 
 Applying $\delta$ to \cref{eq:z_relationship}
 \begin{equation}
-\delta(z_{ij}) = \delta(z_{kj} + z_{ik} B_{kj}) = \delta(z_{kj})+\delta(z_{ik})\bivector_{kj}
+\delta(z_{ij}) = \delta(z_{kj} + z_{ik} \bivector_{kj}) = \delta(z_{kj})+\delta(z_{ik})\bivector_{kj}
 \end{equation}
 yields
 \begin{equation}

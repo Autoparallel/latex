@@ -74,6 +74,18 @@ Therefore, it follows that $\|fg\|\leq \|f\|\|g\|$. Clearly, $\|1\|=1$. We can t
 \grad(fg) = \grad fg+\dot{\grad}f \dot{g} = \grad g f = 0.
 \end{equation}
 \end{proof}
+The set of algebras $\algebra{\bivector}(M)$ parameterized by $\Grassmannian{2}{n}$ are sufficiently intriguing. For a brief moment, if $M$ is a region of $\R^n$ with a Euclidean metric, we have a natural choice for an element in $\algebra{\bivector}(M)$. Specifically, take two orthogonal unit vectors $\blade{v}$ and $\blade{w}$, then define $\bivector = \blade{v}\blade{w}$. Then, note that the field
+\begin{equation}
+\label{eq:z}
+z = \blade{w} \projection_{\bivector}(x)
+\end{equation}
+is a subsurface spinor. By definition, it is clear that $z = z \circ \projection_{\bivector}$ and since $\blade{w}$ is in the subspace $\bivector$, we can note $z = \projection_{\bivector} \circ z$. Moreover, $z$ is monogenic since
+\begin{align}
+\grad z &= \grad\left(\blade{w} (x\rfloor \bivector)\bivector^{-1}\right)\\
+    &= \grad \left( (x\cdot \blade{v})\blade{w}\blade{v}+(x\cdot \blade{w}) \ \right)\\
+    &= \blade{v}\blade{w}\blade{v}+\blade{w} = 0,
+\end{align}
+using, the fact that $\grad (x \cdot \blade{v})=\blade{v}$, which is shown in \cite[eq. (6.5)]{doran_geometric_2003}. We can define a function $z$ for any choice of $\bivector$ and construct new functions from these. The notation $z$ should make one think of $z$ in complex analysis and, in much the same vein, we can develop a power series using such $z$.
 
 
 %\subsubsection{$\omega$-axial fields}

@@ -60,7 +60,7 @@
     \put(0.45980193,0.0674438){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\varphi_\beta$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/sphere_charts_maps.pdf}}%
     \put(0.81901894,0.3492678){\color[rgb]{0.56078431,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\varphi_{\alpha \beta}=\varphi_\alpha^{-1} \circ \varphi_\beta$\end{tabular}}}}%
-    \put(0.79580845,0.68354086){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^m$\end{tabular}}}}%
-    \put(0.79869341,0.26502512){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^m$\end{tabular}}}}%
+    \put(0.79580845,0.68354086){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^n$\end{tabular}}}}%
+    \put(0.79869341,0.26502512){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^n$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

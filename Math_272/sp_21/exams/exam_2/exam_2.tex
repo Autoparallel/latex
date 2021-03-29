@@ -6,7 +6,7 @@
 \pagenumbering{gobble}       % This kills the page numbering
 
 \begin{center}
-   \textsc{\large MATH 271, Exam 2}\\
+   \textsc{\large MATH 272, Exam 2}\\
    \textsc{Oral Examination Problems}\\
    \textsc{Due one hour before your exam time slot.}
 \end{center}
@@ -27,56 +27,85 @@
 \newpage
 
 \begin{problem}
-Taylor series provides a useful method for approximating numerical values of functions. In particular, this is useful for computers as they can only perform the operations of addition and multiplication (which is nothing but repeated addition). Even when we cannot compute the whole series, one can still build polynomial approximations from partial sums of the Taylor series.
+Consider a two dimensional Helmholtz equation problem
+\[
+\begin{cases}
+    \Delta f(x,y) = -k^2 f(x,y) & \textrm{on the unit square $0<x<1$ and $0<y<1$}\\
+    f(x,y) = 0 & \textrm{on the boundary of the unit square}.
+\end{cases}
+\]
+Note that $k$ is a real number that we are \underline{not} fixing to be any specific value. $k$ 
 \begin{enumerate}[(a)]
-    \item Write down a power series for $\cos(x^2)$ centered around $x=0$.
-    \item Plot the 0th, 4th, 8th, and 12th order approximations to $\cos(x^2)$ alongside of the function $\cos(x^2)$ itself.
-    \item But just how accurate are these approximations for approximating $\cos(x^2)$ in the domain $[-2,2]$? In particular, what is the worst error (difference between approximation and true function) that each of the approximations yields in the interval $[-2,2]$? Write these errors down for the 0th, 4th, 8th, and 12th order approximations.  
+\vspace*{0.25cm}
+    \item Take a separation of variables ansatz $f(x,y)=X(x)Y(y)$ and separate the PDE into two ODEs.
+\vspace*{0.25cm}
+    \item Apply the boundary conditions for $X(x)$ and determine a set of general solutions $X_m(x)$ for each integer $m$.
+\vspace*{0.25cm}
+    \item Repeat the same process but for $Y(y)$ to determine a set of general solutions $Y_n(x)$ for each integer $n$.
+\vspace*{0.25cm}
+    \item Note that $f_{mn}=C_{mn}\sin(m\pi x)\sin(n \pi y)$. Does this agree with your solutions found by $f_{mn}(x,y)=X_m(x)Y_n(x)$? To this end, consider the following:
+\vspace*{0.25cm}
+\begin{itemize}
+    \item What is $f_{mn}(x,y)$ if $m=0$? What about $n=0$? 
+\vspace*{0.25cm}
+    \item Plot your solution for $m=3$ and $n=1$ \emph{only on the unit square}.
+\end{itemize}
+\vspace*{0.25cm}
+    \item Deduce the constant $-k^2$ in terms of $m$ and $n$. 
 \end{enumerate}
 \end{problem}
 
 \newpage
 \begin{problem}
-Bessel functions can arise as the vibrational states of disk shaped objects (e.g., ripples that form in drum heads and cymbals when struck), or as electromagnetic waves in a cylindrical waveguide, or in diffraction from DNA.  The \emph{Bessel equation of order zero} is given by
+The wave equation in 2-dimensions can be used to model the vibrational states of membranes. Indeed, it is actually partly determined by the Helmholtz equation. To this end, let us consider the wave problem
 \[
-x^2 f''+xf'+x^2f =0,
+\begin{cases}
+    \frac{\partial^2}{\partial t^2} u(x,y,t) = \Delta u(x,y,t) & \textrm{on the unit square}\\
+    u(x,y,t) = 0 & \textrm{on the boundary of the unit square}\\
+    u(x,y,0) = \sin(3\pi x)\sin(\pi y) \quad \frac{\partial}{\partial t} u(x,y,0)=0 &\textrm{as the initial conditions}.
+\end{cases}
 \]
-where $f$ is a function of $x$.
-
-These parts will walk you through finding a solution to the equation.  I give you the answer in part (a) (which you will check is a solution), but you can (and should) use this to help guide you through the remaining parts. \textcolor{red}{The trick for this problem is to be careful and to write out the first few terms of series when needed. Wolfram Alpha can help you write partial sums.}
+where we have set $c=1$ and we note that $\Delta$ is the spatial Laplacian from Problem 1.
 \begin{enumerate}[(a)]
-    \item Show that the power series
-    \[
-        f(x) = a_0 \sum_{n=0}^\infty \frac{(-1)^n}{2^{2n} (n!)^2} x^{2n},
-    \]
-    is a solution to the Bessel equation of order zero.
-    \item Take a power series ansatz for $f(x)$.  Then, using that ansatz in the ODE, show that you arrive at the condition
-    \[
-        a_1x + \sum_{n=2}^\infty \left[ n^2 a_n + a_{n-2} \right]x^n = 0.
-    \]
-    \item Argue now that all the odd terms of the series for your solution must be odd. Do not use the given answer in (a) as your reasoning!
-    \item Determine a general form for $a_{2n}$ and show that you get the same solution as in part (a).
+\vspace*{0.25cm}
+    \item Let $u(x,y,t)=T(t)f(x,y)$ where $f(x,y)$ is from Problem 1. Show that this reduces to the 2-dimensional Helmholtz equation for $f(x,y)$ and an ODE for $T(t)$.
+\vspace*{0.25cm}
+    \item Given that you have the solutions $f_{mn}(x,y)$ for the Helmholtz equation, solve the ODE for $T(t)$ to find a general solution. \emph{Hint: you know what $\Delta f_{mn}(x,y)$ is equal to and you know the value for $-k^2$. You can save yourself quite a bit of work by finding your solution $T(t)$ using this data. Note that $T(t)$ should have some dependence on your choice of $m$ and $n$!}
+\vspace*{0.25cm}
+    \item Find the particular solution for $u(x,y,t)$ using the given initial condition. 
+\vspace*{0.25cm}
+    \item Let us plot $u(x,y,t)$ \emph{only on the unit square}.
+\vspace*{0.25cm}
+\begin{itemize}
+    \item Plot $u(x,y,0)$ and show this yields the same surface as in Problem 1.
+\vspace*{0.25cm}
+    \item Plot $u(x,y,0.1)$.
+\vspace*{0.25cm}
+    \item Plot $u(x,y,0.25)$.
+\vspace*{0.25cm}
+\end{itemize}
+    \item What is the first time $\tau$ so that $u(x,y,0)=u(x,y,\tau)$?
 \end{enumerate}
 \end{problem}
 
 
 \newpage
 \begin{problem}
-Consider the two example systems from quantum mechanics. First, for a particle in a box of length 1 we have the equation
+We studied the 1-dimensional time dependent Schr\"odinger equation to some degree. Let us do a bit more analysis. First, let us take $\hbar=m=L=1$ and note we have the energy eigenvalues
 \[
--\frac{\hbar^2}{2m}\frac{d^2 \Psi}{dx^2} = E\Psi,
+E_n = \frac{n^2 \pi^2}{2}
 \]
-with boundary conditions $\Psi(0)=0$ and $\Psi(1)=0$.
-
-Second,  the Quantum Harmonic Oscillator (QHO)
+which correspond to the normalized stationary states
 \[
-\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2\right) \Psi = E\Psi
+\psi_n(x,t) = \sqrt{2} e^{-iE_n t} \sin(n\pi x).
 \]
 \begin{enumerate}[(a)]
-    \item Write down the states for both systems. What are their similarities and differences?
-    \item Write down the energy eigenvalues for both systems. What are their similarities and differences?
-    \item Plot the first three states of the QHO along with the potential for the system.
-    \item Explain why you can observe a particle outside of the ``classically allowed region". \emph{Hint: you can use any state and compute an integral to determine a probability of a particle being in a given region.}
+\vspace*{0.25cm}
+    \item Show the state $\psi_n(x,t)$ is normalized over the region $[0,1]$ for all times $t$. \emph{Recall that we can determine this by an integral of $\psi_n(x,t)\psi_n^*(x,t)$ over $[0,1]$.}
+\vspace*{0.25cm}
+    \item Consider the superposition state $\Psi(x,t) = \frac{1}{\sqrt{2}}\left( \psi_1(x,t) + \psi_2(x,t) \right)$. Show that this state is normalized over $[0,1]$ for all times $t$. \emph{Hint: you can use the fact that functions of just $t$ are constant in $x$ and note that $\psi_1(x,0)$ and $\psi_2(x,0)$ are orthogonal.}
+\vspace*{0.25cm}
+    \item We want to compute the following likelihoods. For this, free to use this visualization \url{https://www.desmos.com/calculator/bxgoq94uwg}. For $t=\frac{3}{\pi}$, compute the likelihood that the particle is found between $\left[0,\frac{1}{2}\right]$. What would the likelihood be for the particle to be found in $\left[\frac{1}{2}, 0\right]$. \emph{Please don't compute two integrals here! Save yourself some time by thinking about what the total probability must be.}
 \end{enumerate}
 \end{problem}
 
