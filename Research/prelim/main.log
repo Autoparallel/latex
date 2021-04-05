@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  4 APR 2021 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  5 APR 2021 16:35
 entering extended mode
 **./main.tex
 (main.tex
@@ -2714,6 +2714,8 @@ Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 themerectangles.sty")
 \c@tcb@cnt@lem=\count431
 )
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerfontt
+hemeserif.sty")
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -2832,14 +2834,10 @@ LaTeX Info: Redefining \nameref on input line 204.
 \@outlinefile=\write8
 \openout8 = `main.out'.
 
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 204.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 204.
 \symnumbers=\mathgroup11
 \sympureletters=\mathgroup12
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 204.
+(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 204.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 204.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 204.
@@ -2865,7 +2863,7 @@ LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 204.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/lmr/b/n on input line 204.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 204.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 204.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
@@ -2929,7 +2927,7 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count439
-<UiB-images/colorado-state-university-logo.png, id=88, 628.43478pt x 471.32608p
+<UiB-images/colorado-state-university-logo.png, id=48, 628.43478pt x 471.32608p
 t>
 File: UiB-images/colorado-state-university-logo.png Graphic file (type png)
 <use UiB-images/colorado-state-university-logo.png>
@@ -2949,11 +2947,7 @@ s/colorado-state-university-logo.png>] (main.nav) (main.toc) [2
 ] [5
 
 ]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmss' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 235
+LaTeX Font Info:    Trying to load font information for U+msa on input line 232
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -2963,7 +2957,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 235
+LaTeX Font Info:    Trying to load font information for U+msb on input line 232
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -2974,7 +2968,7 @@ fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 23
-5.
+2.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
@@ -2986,28 +2980,24 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 
 ]
 
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 270.
-
-
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 270.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 262.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 270.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 262.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 270.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 262.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <8> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 270.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 262.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 270.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 262.
 
 [9
 
@@ -3016,23 +3006,23 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
 ]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 307.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 299.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 307.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 299.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 307.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 299.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <7> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 307.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 299.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 307.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 299.
 
 [11
 
@@ -3040,22 +3030,22 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 327.
+(amsmath)                 on input line 319.
 
 [12
 
 ] [13
 
-] [14
-
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-53.
+45.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-[15
+[14
+
+] [15
 
 ] [16
 
@@ -3071,142 +3061,23 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ] [22
 
-]
-Overfull \hbox (4.41011pt too wide) in paragraph at lines 428--428
-[]$[]$  
- []
-
-[23
+] [23
 
 ] [24
 
-] (figures/sphere_charts_maps.pdf_tex
-<figures/sphere_charts_maps.pdf, id=285, page=1, 765.41641pt x 545.24957pt>
-File: figures/sphere_charts_maps.pdf Graphic file (type pdf)
-<use figures/sphere_charts_maps.pdf, page 1>
-Package pdftex.def Info: figures/sphere_charts_maps.pdf , page1 used on input l
-ine 56.
-(pdftex.def)             Requested size: 225.14873pt x 160.38132pt.
-<figures/sphere_charts_maps.pdf, id=286, page=2, 765.41641pt x 545.24957pt>
-File: figures/sphere_charts_maps.pdf Graphic file (type pdf)
-<use figures/sphere_charts_maps.pdf, page 2>
-Package pdftex.def Info: figures/sphere_charts_maps.pdf , page2 used on input l
-ine 58.
-(pdftex.def)             Requested size: 225.14873pt x 160.38132pt.
-<figures/sphere_charts_maps.pdf, id=287, page=3, 765.41641pt x 545.24957pt>
-File: figures/sphere_charts_maps.pdf Graphic file (type pdf)
-<use figures/sphere_charts_maps.pdf, page 3>
-Package pdftex.def Info: figures/sphere_charts_maps.pdf , page3 used on input l
-ine 61.
-(pdftex.def)             Requested size: 225.14873pt x 160.38132pt.
-) [25
+] [25
 
- <./figures/sphere_charts_maps.pdf> <./figures/sphere_charts_maps.pdf
+] [26
 
-pdfTeX warning: pdflatex.exe (file ./figures/sphere_charts_maps.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
-> <./figures/sphere_charts_maps.pdf
+] [27
 
-pdfTeX warning: pdflatex.exe (file ./figures/sphere_charts_maps.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
->] (figures/pushforward.pdf_tex
-<figures/pushforward.pdf, id=305, page=1, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 1>
-Package pdftex.def Info: figures/pushforward.pdf , page1 used on input line 56.
+] [28
 
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-<figures/pushforward.pdf, id=306, page=2, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 2>
-Package pdftex.def Info: figures/pushforward.pdf , page2 used on input line 59.
+]
+Overfull \vbox (3.44574pt too high) detected at line 547
+ []
 
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-<figures/pushforward.pdf, id=307, page=3, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 3>
-Package pdftex.def Info: figures/pushforward.pdf , page3 used on input line 62.
-
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-<figures/pushforward.pdf, id=308, page=4, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 4>
-Package pdftex.def Info: figures/pushforward.pdf , page4 used on input line 66.
-
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-<figures/pushforward.pdf, id=309, page=5, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 5>
-Package pdftex.def Info: figures/pushforward.pdf , page5 used on input line 69.
-
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-<figures/pushforward.pdf, id=310, page=6, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 6>
-Package pdftex.def Info: figures/pushforward.pdf , page6 used on input line 71.
-
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-<figures/pushforward.pdf, id=311, page=7, 738.76355pt x 438.37627pt>
-File: figures/pushforward.pdf Graphic file (type pdf)
-<use figures/pushforward.pdf, page 7>
-Package pdftex.def Info: figures/pushforward.pdf , page7 used on input line 75.
-
-(pdftex.def)             Requested size: 225.14873pt x 133.60088pt.
-) [26
-
- <./figures/pushforward.pdf> <./figures/pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/pushforward.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/pushforward.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->] (figures/section.pdf_tex
-<figures/section.pdf, id=328, page=1, 865.5322pt x 484.4323pt>
-File: figures/section.pdf Graphic file (type pdf)
-<use figures/section.pdf, page 1>
-Package pdftex.def Info: figures/section.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 225.14873pt x 126.01595pt.
-<figures/section.pdf, id=329, page=2, 865.5322pt x 484.4323pt>
-File: figures/section.pdf Graphic file (type pdf)
-<use figures/section.pdf, page 2>
-Package pdftex.def Info: figures/section.pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 225.14873pt x 126.01595pt.
-<figures/section.pdf, id=330, page=3, 865.5322pt x 484.4323pt>
-File: figures/section.pdf Graphic file (type pdf)
-<use figures/section.pdf, page 3>
-Package pdftex.def Info: figures/section.pdf , page3 used on input line 67.
-(pdftex.def)             Requested size: 225.14873pt x 126.01595pt.
-) [27
-
- <./figures/section.pdf> <./figures/section.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/section.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
-> <./figures/section.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/section.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->] [28
-
-] [29
+[29
 
 ] [30
 
@@ -3216,15 +3087,32 @@ ple pdfs with page group included in a single page
 
 ] [33
 
-] [34
+]
+Overfull \vbox (2.28728pt too high) detected at line 619
+ []
 
-] [35
+[34
+
+]
+Overfull \vbox (12.87973pt too high) detected at line 642
+ []
+
+[35
 
 ] [36
 
 ] [37
 
-] [38
+]
+Overfull \hbox (7.3772pt too wide) detected at line 678
+\OMX/MnSymbolE/m/n/10.95 S\T1/lmr/m/it/10.95 A\OMX/MnSymbolE/m/n/10.95 à\T1/lmr
+/m/it/10.95 x\OMX/MnSymbolE/m/n/10.95 çS \U/MnSymbolD/m/n/10.95 B [] B [][] [] 
+\OML/cmm/m/it/10.95 []\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10.95 x[]\OMX/MnS
+ymbolE/m/n/10.95 ç \U/MnSymbolD/m/n/10.95   \T1/lmr/m/n/10.95 0\OML/cmm/m/it/10
+.95 :
+ []
+
+[38
 
 ] [39
 
@@ -3232,8 +3120,7 @@ ple pdfs with page group included in a single page
 
 ] [41
 
-]
-[42
+] [42
 
 ] [43
 
@@ -3247,11 +3134,49 @@ ple pdfs with page group included in a single page
 
 ] [48
 
-] [49
+]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 806
+.
 
-] [50
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-euf.c
+fg"
+File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-] [51
+)
+Overfull \hbox (12.53894pt too wide) detected at line 806
+\U/euf/m/n/10.95 M\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10.95 M\OMX/MnSymbolE/
+m/n/10.95 ç [][]\U/MnSymbolD/m/n/10.95   \OMX/MnSymbolE/m/n/10.95 ò\OML/cmm/m/i
+t/10.95  \U/MnSymbolD/m/n/10.95 > \OMS/MnSymbolS/m/n/10.95 M[]\OMX/MnSymbolE/m
+/n/10.95 à\T1/lmr/m/it/10.95 M\OMX/MnSymbolE/m/n/10.95 ç S \OML/cmm/m/it/10.95 
+\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10.95 f\OMX/MnSymbolE/m/n/10.95 ç \U/Mn
+SymbolD/m/n/10.95 > \U/msb/m/n/10.95 A[]\OML/cmm/m/it/10.95 ;  \OMX/MnSymbolE/
+m/n/10.95 à\T1/lmr/m/it/10.95 fg\OMX/MnSymbolE/m/n/10.95 ç \U/MnSymbolD/m/n/10.
+95   \OML/cmm/m/it/10.95 \OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10.95 f\OMX/Mn
+SymbolE/m/n/10.95 ç\OML/cmm/m/it/10.95 \OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/
+10.95 g\OMX/MnSymbolE/m/n/10.95 ç\OML/cmm/m/it/10.95 ;  \U/MnSymbolC/m/n/10.95 
+¶\T1/lmr/m/it/10.95 f\OML/cmm/m/it/10.95 ; \T1/lmr/m/it/10.95 g \U/MnSymbolD/m/
+n/10.95 > \OMS/MnSymbolS/m/n/10.95 A[]\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10
+.95 M\OMX/MnSymbolE/m/n/10.95 ç\OML/cmm/m/it/10.95 ;  [] \U/MnSymbolD/m/n/10.95
+ > []\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \T1/lmr
+/m/it/10.95 n\OMX/MnSymbolE/m/n/10.95 çù
+ []
+
+[49
+
+]
+Overfull \vbox (1.08806pt too high) detected at line 821
+ []
+
+[50
+
+]
+Overfull \vbox (0.7872pt too high) detected at line 838
+ []
+
+[51
 
 ] [52
 
@@ -3263,8 +3188,7 @@ ple pdfs with page group included in a single page
 
 ] [56
 
-]
-[57
+] [57
 
 ] [58
 
@@ -3274,32 +3198,11 @@ ple pdfs with page group included in a single page
 
 ] [61
 
-]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 792
-.
+] [62
 
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-euf.c
-fg"
-File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
-
-) [62
-
-]
-Overfull \vbox (1.08806pt too high) detected at line 807
- []
-
-[63
+] [63
 
 ] [64
-
-] [65
-
-] [66
-
-] [67
 
 ]
 \tf@nav=\write9
@@ -3313,26 +3216,22 @@ Overfull \vbox (1.08806pt too high) detected at line 807
 
  (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 26B160984DFCCF3DF9798FE4FBA6EB8A;597.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 52749 strings out of 479799
- 1215674 string characters out of 2867787
- 1673911 words of memory out of 3000000
- 68390 multiletter control sequences out of 15000+200000
- 712926 words of font info for 237 fonts, out of 3000000 for 9000
+ 52703 strings out of 479799
+ 1213960 string characters out of 2867787
+ 1669862 words of memory out of 3000000
+ 68336 multiletter control sequences out of 15000+200000
+ 715079 words of font info for 250 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,18n,126p,725b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
-SymbolS.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/l
-m/lm-ec.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
+ 125i,16n,126p,725b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
+c}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
+SymbolS.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/m
 nsymbol/MnSymbolA.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/lm/lm-ts1.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/
-enc/dvips/mnsymbol/MnSymbolC.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 
+nc/dvips/mnsymbol/MnSymbolC.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 
 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Colin/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Users/Colin/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}<C:/Users/Colin/
@@ -3343,28 +3242,29 @@ public/mnsymbol/MnSymbol8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Colin/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/
-Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.p
-fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmss8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/lm/lmbo10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Colin/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Colin/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/Colin/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/Colin/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Colin/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Colin
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri7.pfb><C:/User
-s/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/U
-sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb>
-Output written on main.pdf (67 pages, 576453 bytes).
+Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmb10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmbo10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Colin/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/Colin/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/Colin/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Colin/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Coli
+n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/
+Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri7.pfb><C:/Use
+rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/
+Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on main.pdf (64 pages, 567396 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
- 35665 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 624 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
+ 38592 words of extra memory for PDF output out of 42996 (max. 10000000)
 
