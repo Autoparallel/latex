@@ -7,5 +7,5 @@
 \beamer@subsectionintoc {2}{1}{Differentiation}{30}{0}{2}
 \beamer@subsectionintoc {2}{2}{Integration}{34}{0}{2}
 \beamer@subsectionintoc {2}{3}{Clifford-Hodge-Morrey decomposition}{44}{0}{2}
-\beamer@sectionintoc {3}{Gelfand theory}{55}{0}{3}
-\beamer@sectionintoc {4}{Conclusions}{56}{0}{4}
+\beamer@sectionintoc {3}{Gelfand theory}{58}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{66}{0}{4}

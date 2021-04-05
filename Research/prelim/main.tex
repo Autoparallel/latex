@@ -33,14 +33,14 @@
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{multicol}
-\usepackage{mathrsfs}
-\usepackage{amsmath,amsthm,amssymb}
+%\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm}
 \usepackage{marvosym,wasysym} %fucking smileys
 \usepackage{float}
 \usepackage{morefloats}
 \usepackage{pgf,tikz}
 \pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
+%\usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{subcaption}
 \usepackage[most]{tcolorbox}
@@ -91,9 +91,7 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 
 %% FONT STUFF
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usefonttheme[onlymath]{serif}
+%\usefonttheme[onlymath]{serif}
 
 %Commands
 \newcommand{\R}{\mathbb{R}}
@@ -152,17 +150,17 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \newcommand{\paravectorfields}{\mathcal{P}(M)}
 \newcommand{\monogenics}{\mathcal{M}}
 \newcommand{\dualmonogenics}{\mathcal{M}^\times}
-\newcommand{\Grassmannian}[2]{\operatorname{Gr}(#1,#2)}
+\newcommand{\Grassmannian}[2]{\textrm{Gr}(#1,#2)}
 \newcommand{\spinalgebra}{\mathfrak{spin}(n)}
 \newcommand{\spingroup}{\operatorname{Spin}(n)}
 \newcommand{\ball}{\mathbb{B}}
 \newcommand{\disk}{\mathbb{D}}
-\newcommand{\projection}{\mathsf{P}}
+\newcommand{\projection}{\operatorname{P}}
 \newcommand{\vectorspace}{\mathbb{V}}
 \newcommand{\multivectorfieldson}[1]{\mathcal{G}(#1)}
 \newcommand{\biparavectorfieldson}[1]{\mathcal{G}_n(#1)^{0+2}}
 \newcommand{\spinnorm}[1]{\|#1\|_{L_2}}
-\newcommand{\rejection}{\mathsf{R}}
+\newcommand{\rejection}{\operatorname{R}}
 \newcommand{\vectorpotential}{\mathbf{A}}
 \newcommand{\current}{\blade{j}}
 \newcommand{\magneticbivector}{\blade{b}}
@@ -664,8 +662,13 @@ Then, take the scalar part and divide by $\textrm{vol}(M)$ to find
 \]
 \end{frame}
 
-\begin{frame}{Monogenic fields}
+\begin{frame}{Monogenic fields and gradients}
 Let $A\in \G(M)$. Then we say that $A$ is \boldgreen{monogenic} if $\grad A = 0$. We denote the space of monogenic fields by $\monogenicfields{}$.
+
+We also define the \boldgreen{gradients} by 
+\[
+\grad \G(M) \coloneqq \{\grad A ~\vert~ A \in \G(M) \textrm{~and~} A\vert_\boundary = 0 \}.
+\]
 \end{frame}
 
 \begin{frame}{Holomorphic functions}
@@ -730,9 +733,104 @@ for all $B\in \G(M)$ with $B\vert_{\boundary} = 0$, then $A=0$.
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Clifford-Hodge-Morrey Decomposition}
+The space of multivector fields $\G(M)$ has the $L^2$-orthogonal decomposition
+\[
+\G(M) = \monogenicfields{} \oplus \pseudoscalar \grad \G(M).
+\]
+\end{frame}
+
+\begin{frame}{Proof}
+\emph{Orthogonality:} Let $A \in \monogenicfields{}$ and $\pseudoscalar \grad B \in \pseudoscalar \grad \G(M)$ and note
+\[
+\multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B} = 0,
+\]
+by the multivector Green's formula.
+\end{frame}
+
+\begin{frame}{Proof}
+Let $C\in \G(M)$ be in the orthogonal complement to $\pseudoscalar \grad \G(M)$. Then, by the Cauchy integral formula, construct a monogenic field $\tilde{C}$ from $C\vert_\boundary$ and note $C=\tilde{C}+C_0$ where $C_0\vert_\boundary = 0$. Note
+\[
+0 = \multivecinnerproduct{C}{\pseudoscalar \grad B} = \multivecinnerproduct{\grad C_0}{\pseudoscalar B}.
+\]
+By the previous lemmas, it must be that $C_0=0$. Hence the orthogonal complement to $\pseudoscalar \grad \G(M)$ is $\monogenicfields{}$.
+\end{frame}
+
 
 \section{Gelfand theory}
 
+\begin{frame}{Subsurface spinor fields}
+Let $\bivector \in \G(M)$ be a constant unit bivector field, then an even multivector field $f_+$ satisfying
+\[
+f_+ = \projection_{\bivector} \circ f_+ \circ \projection_{\bivector}
+\]
+is a \boldgreen{subsurface spinor field} and we let $\G_{\bivector}^+(M)$ to denote the space such fields. This algebra is commutative.
+\end{frame}
+
+\begin{frame}{Algebras of monogenic subsurface spinors}
+We note that the space 
+\[
+\algebra_{\bivector(M)} = \{ f_+ \in \G_{\bivector}^+(M) ~\vert~ \grad f_+ = 0 \}
+\]
+is a commutative unital Banach algebra.
+\end{frame}
+
+\begin{frame}{Functionals}
+We define the \boldgreen{$\G_n$-dual} $\dualmonogenics(M)$ as the continuous right $\G_n$-module homomorphisms
+\[
+\dualmonogenics(M) \coloneqq \{ l \colon \monogenicfields{} \to \G_n ~\vert~ l(fs+g)=l(f)s+l(g), ~\forall f,g\in \monogenicfields{}, ~s \in \G_n\}
+\]
+and refer to the elements as \boldgreen{$\G_n$-functionals}. We provide $\dualmonogenics(M)$ with the weak-$\ast$ topology so that every $x\in M$ corresponds to a continuous map on $\dualmonogenics(M)$.
+\end{frame}
+
+\begin{frame}{Characters}
+The \boldgreen{$\G_n$-spectrum} $\characters(M)$ is the set of algebra homomorphisms
+\[
+\characters(M) \coloneqq \{ \delta \in \dualmonogenics(M) ~\vert~ \delta(fg) = \delta(f)\delta(g),~\forall f,g \in \algebra_{\bivector}(M),~ \bivector \in \Grassmannian{2}{n} \}
+\]
+and refer to the elements as \boldgreen{$\G_n$-characters}. Note that one example of such characters are point evaluations $\delta(f)=f(x^\delta)$.
+\end{frame}
+
+\begin{frame}{$z$ analogs}
+Take $\blade{e}_i$ to be an orthonormal basis for $\R^n$, let $\bivector_{ij}=\blade{e}_i\blade{e}_j$ and define the functions $z_{ij}=x_j-x_i \bivector_{ij}$ and note $z_{ij} \in \algebra_{\bivector_{ij}}(M)$. 
+
+Let $\sigma$ be a permutation of $\{2,3,\dots,n\}$, then the homogeneous polynomial of degree $j$
+\[
+p_{j_2\cdots j_n}(x) = \frac{1}{j!} \sum_{\textrm{permutations}} z_{1\sigma(1)}(x)\cdots z_{1\sigma(j)}(x)
+\]
+is monogenic.
+
+Collect these into the set of \boldgreen{monogenic polynomials}
+\[
+    \monogenics^\mathcal{P}(M) = \left\{\sum_{j=0}^N \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}}p_{j_2 \cdots j_n}a_{j_2 \cdots j_n}\right) ~\vert~ j_2+\cdots+j_n = j, N\in \mathbb{N}, ~ a_{j_2\cdots j_n} \in \G_n\right\}.
+\]
+\end{frame}
+
+\begin{frame}{Lemma}
+The space $\monogenics^\mathcal{P}(M)$ is dense in $\monogenicfields{}(\ball_{R,w})$.
+
+\emph{Proof sketch:} Let $f \in \monogenics{}(\ball_{R,w})$ and use the Cauchy integral formula to define the coefficients by
+\[
+a_{j_2 \cdots j_n} = \int_{\partial B(w,R)} \frac{\partial^j G(w,y)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y),
+\]
+then 
+\[
+f(x) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}} p_{j_2 \cdots j_n} (x-w) a_{j_2 \cdots j_n} \right),
+\]
+converges pointwise for $x\in \ball_{R,w}$ by [Ryan, 2004].
+\end{frame}
+
+\begin{frame}{Idea}
+By linearity, we can note that for $\delta \in \characters(M)$
+\[
+\delta(f(x)) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}} \delta(p_{j_2 \cdots j_n} (x-w)) a_{j_2 \cdots j_n} \right)
+\]
+and on each monogenic polynomial
+\[
+\delta(p_{j_2 \dots j_n}(x)) = \frac{1}{j!} \sum_{\textrm{permutations}}\delta\left((z_{1\sigma(1)}(x)\right) \cdots \delta\left(z_{1\sigma(j)}(x)\right)
+\]
+by the multiplicativity of $\delta$.
+\end{frame}
 
 \section{Conclusions}
 
