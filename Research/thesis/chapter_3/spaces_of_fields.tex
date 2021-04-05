@@ -201,7 +201,7 @@ Hence, $A_J=0$ on $U^\epsilon$. Note that $J$ was arbitrary and thus it is clear
 
 Cover $M$ in such sets $U^\epsilon$ and note that for any such set, we will find $A=0$ by the same process leaving the value of $A$ along the boundary of $M$ undetermined. But, by smoothness of $A$, if $A=0$ on the interior of $M$, it must be that $A=0$ on $\partial M$ as well, and thus $A=0$ identically.
 \end{proof}
-\begin{theorem}[Monogenic Hodge Decomposition]
+\begin{theorem}[Clifford-Hodge Decomposition]
 \label{thm:monogenic_hodge}
 The space of multivector fields $\G(M)$ has the $L^2$-orthogonal decomposition
 \begin{equation}
@@ -209,25 +209,21 @@ The space of multivector fields $\G(M)$ has the $L^2$-orthogonal decomposition
 \end{equation}
 \end{theorem}
 \begin{proof}
-Let $A \in \monogenicfields{}$ and $\pseudoscalar\grad B\in \grad \G(M)$ then note
+Let $A \in \monogenicfields{}$ and $\pseudoscalar\grad B\in \pseudoscalar \grad \G(M)$ then note
 \begin{equation}
 \multivecinnerproduct{A}{\pseudoscalar \grad B} = \multivecinnerproduct{\grad A}{\pseudoscalar B} + (-1)^{n} \multivecinnerproduct{A}{\pseudoscalar_\partial B} = 0
 \end{equation}
 by \cref{thm:multivector_greens_formula}. Thus the spaces $\monogenicfields{}$ and $\pseudoscalar\grad \G(M)$ are orthogonal. 
 
-Note that by the Cauchy integral formula \cref{eq:cauchy_integral}, for any $C \in \G(M)$ we can construct a monogenic field $\tilde{C}$ from $C\vert_\boundary$. Hence, we can take
+Next, let $C\in \G(M)$ be in the orthogonal complement of $\pseudoscalar \grad \G(M)$. Then, by the Cauchy integral formula \cref{eq:cauchy_integral},  we can construct a monogenic field $\tilde{C}$ from $C\vert_\boundary$ and we have
 \begin{equation}
-C - \tilde{C} = C_0,
+C = \tilde{C} + C_0,
 \end{equation}
-where $C_0\in \G(M)$ and $C_0\vert_\boundary =0$. Suppose that $C_0 \notin \pseudoscalar \grad \G(M)$, then by \cref{lem:monogenic_zero}, if $C_0 \in \monogenicfields{}$, then $C_0=0$ on all of $M$ and our proof would be complete. At any rate, if $C_0\neq 0$, it must be that $C_0$ is in the orthogonal complement to $\monogenicfields{}\oplus \pseudoscalar\grad \G(M)$. But,
+where $C_0\in \G(M)$ and $C_0\vert_\boundary =0$. Then, take $\pseudoscalar \grad B \in \pseudoscalar \grad \G(M)$ and
 \begin{equation}
-\multivecinnerproduct{C_0}{A+\pseudoscalar\grad B} = 0
+0 = \multivecinnerproduct{C}{\pseudoscalar \grad B} = \multivecinnerproduct{\grad C_0}{\pseudoscalar B}.
 \end{equation}
-which implies
-\begin{equation}
-\multivecinnerproduct{\grad C_0}{\pseudoscalar B} = 0.
-\end{equation}
-But, $B$ is an arbitrary function supported on the interior of $M$ and so $\grad C_0 =0$ by \cref{lem:mollifier} which implies that $C_0$ is monogenic or $C_0=0$ identically. Both of which contradict the statement that $C_0$ is not a nonzero monogenic field. 
+Thus, by  \cref{lem:mollifier}, it must be that $C_0$ is monogenic and by \cref{lem:monogenic_zero}, it must be that $C_0=0$. Therefore, the orthogonal complement to $\pseudoscalar \grad \G(M)$ is $\monogenicfields{}$.
 \end{proof}
 \todo{If this is true, the impact would be nice on the harmonic multivector fields since $\grad A = \grad (A_\mathcal{M})+ \Delta (A_{\grad})$.}
 \begin{remark}

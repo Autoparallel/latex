@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usetikzlibrary{overlay-beamer-styles}  % Overlay effects for TikZ
 
+
 \AtBeginSection{\frame{\sectionpage}}
 \AtBeginSubsection{\frame{\subsectionpage}}
 
@@ -204,22 +205,8 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \begin{document}
 
-\begin{frame}{Outline}
-\vfill
-    \begin{itemize}
-    \pause
-        \item Introduce geometric algebra and calculus.
-        
-        \pause
-        \item Describe the toolbox in comparison to differential forms.
-        
-        \pause
-        \item Prove a multivector version of the Hodge-Morrey decomposition.
-        
-        \pause
-        \item Prove a noncommutative version of the Gelfand representation.
-    \end{itemize}
-\vfill    
+\begin{frame}{Overview}
+\tableofcontents
 \end{frame}
 
 \section{Introduction}
@@ -304,10 +291,10 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 
 \begin{frame}{Algebra structure}
 \vfill
-We define a multiplication in $\G(V)$ by noting how the product $\otimes$ acts in the quotient.
+We define a multiplication in $\G$ by noting how the product $\otimes$ acts in the quotient.
 \begin{itemize}
 \pause
-    \item Given $\blade{u}, \blade{v} \in \G(V)$ we can take the product
+    \item Given $\blade{u}, \blade{v} \in \G$ we can take the product
     \[
     \blade{u}\blade{v} = \underbrace{\blade{u}\cdot \blade{v}}_{\textrm{scalar}} + \underbrace{\blade{u}\wedge \blade{v}}_{\textrm{bivector}}.
     \]
@@ -329,21 +316,122 @@ We define a multiplication in $\G(V)$ by noting how the product $\otimes$ acts i
     \begin{itemize}
     \pause
         \item There are ${n \choose r}$ elements of grade $r$ called \boldgreen{$r$-vectors}. 
-        \item Those that are exterior products of $r$ independent vectors are \boldgreen{$r$-blades}. E.g., $\blade{v}_1 \wedge \cdots \wedge\blade{v}_r$.
+        \item Those that are exterior products of $r$ independent vectors are \boldgreen{$r$-blades}. E.g., $\blade{A_r}=\blade{v}_1 \wedge \cdots \wedge\blade{v}_r$.
     \end{itemize}
     \pause
         \item The most general elements are \boldgreen{multivectors} and are given by
         \[
         A = \sum_{r=0}^n \proj{r}{A},
         \]
-        where $\proj{r}{A}$ extracts the grade $r$ part of $A$.
+        where $\proj{r}{A}\in \G^r$ extracts the grade $r$ part of $A$.
 \end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{Examples}
-$\C$ and quaternions, spacetime algebra even subalgebras
+\begin{frame}{Algebra Structure}
+\vfill
+Extend the multiplication from vectors to multivectors by
+\[
+A_r B_s = \proj{|r-s|}{A_r B_s} + \proj{|r-s|+2}{A_r B_s} + \cdots + \proj{r+s}{A_r B_s}
+\]
+with
+\begin{align*}
+A_r \cdot B_s &\coloneqq \proj{|r-s|}{A_r B_s}  & A_r \wedge B_s &\coloneqq \proj{r+s}{A_r B_s}\\
+~\\
+A_r \rfloor B_s &\coloneqq \proj{s-r}{A_r B_s}  & A_r \lfloor B_s &\coloneqq \proj{r-s}{A_r B_s}
+\end{align*}
+\vfill
 \end{frame}
+
+\begin{frame}{Reciprocals}
+ Given any vector basis $\blade{v}_i$ we define the \boldgreen{reciprocal vectors} by $\blade{v}^i\cdot \blade{v}_j = \delta^i_j$.
+\end{frame}
+
+\begin{frame}{Reverse}
+The \boldgreen{reverse} of a multivector is extended linearly from the action on $r$-blades by
+\[
+\blade{A_r}^\dagger = (\blade{v}_1 \wedge \cdots \wedge\blade{v}_r)^\dagger = \blade{v}_r \wedge \cdots \wedge\blade{v}_1.
+\]
+\end{frame}
+
+\begin{frame}{Inner product and norm}
+We define the \boldgreen{multivector inner product} by
+\[
+(A,B) \coloneqq \proj{}{A^\dagger B}
+\]
+which is bilinear, symmetric, and positive definite if $g$ is positive definite. Then we define the \boldgreen{multivector norm} by
+\[
+|A| \coloneqq \sqrt{(A,A)}.
+\]
+\end{frame}
+
+\begin{frame}{Adjoint}
+Note the reverse acts as an adjoint by
+\begin{align}
+(CA,B) &= (A,C^\dagger B)\\
+(AC,B) &= (A,BC^\dagger).
+\end{align}
+\end{frame}
+
+\begin{frame}{Pseudoscalars}
+\boldgreen{Pseudoscalars} are the grade-$n$ elements. For example, $\blade{\mu} = \blade{v}_1 \wedge \blade{v}_n$.  We define the \boldgreen{unit pseudoscalar} by 
+\[
+\pseudoscalar \coloneqq \frac{1}{|\blade{\mu}|} \blade{\mu}.
+\]
+\end{frame}
+
+\begin{frame}{Blades and subspaces}
+If $|\blade{A_r}|=1$, then $\blade{A_r}$ is a \boldgreen{unit blade}. 
+
+All unit $r$-blades correspond to an $r$-dimensional subspace and can be identified with points in $\Grassmannian{r}{n}$.
+\end{frame}
+
+\begin{frame}{Duality}
+Given any multivector $A$, we can take its \boldgreen{dual}
+\[
+A^\perp \coloneqq A \pseudoscalar^{-1}.
+\]
+Note $A_r^\perp \in \G^{n-r}$.
+\end{frame}
+
+\begin{frame}{Projection and rejection}
+We can define the \boldgreen{projection} of $B$ into a subspace $\blade{A_r}$ by
+\[
+\projection_{\blade{A_r}} (B) \coloneqq B\rfloor \blade{A_r}\blade{A_r}^{-1}
+\]
+and the \boldgreen{rejection} by
+\[
+\rejection_{\blade{A_r}} (B) \coloneqq B\wedge \blade{A_r}\blade{A_r}^{-1}.
+\]
+Both are grade preserving.
+\end{frame}
+
+\begin{frame}{Complex Numbers}
+\textcolor{red}{Do a more thorough example like in my thesis to wrap everything up Maybe it is worth including the hermitian inner product example in both?} 
+\vfill
+\underline{\textbf{Claim:} $\C$ arises naturally as the even subalgebra $\G_2^+$.}\\
+\vspace*{0.25cm}
+
+Take the standard basis $\blade{e}_1,\blade{e}_2$, and define $\bivector_{12}= \blade{e}_1\blade{e}_2$ and note $\bivector_{12}^2 = -1$. Thus
+\[
+(u_1+v_1 \bivector_{12})(u_2 + v_2 \bivector_{12}) = u_1u_2-v_1 v_2 + (u_1 v_2+u_2v_1)\bivector_{12}.
+\]
+
+Moreover, right multiplication of vectors by $\bivector_{12}$ rotates counter-clockwise by $\pi/2$.
+\vfill
+\end{frame}
+
+\begin{frame}{Examples}
+\vfill
+\underline{\textbf{Claim:} The quaternion algebra arises naturally inside the even subalgebra $\G_3^+$.}\\
+\vspace*{0.5cm}
+\underline{\textbf{Claim:} The spacetime algebra is $\G_{3,1}$.}\\
+\vfill
+\end{frame}
+
+
+
+\subsection{Manifolds and fields}
 
 \begin{frame}{The playing field}
 \vfill
@@ -381,17 +469,7 @@ From $M$, we create the tangent bundle $TM$ whose sections are vector fields.
 
 \begin{frame}{}
 \vfill
-    \textbf{\underline{Idea:}} On each tangent space, let us construct a manner in which to multiply vectors.
-    \pause
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\vfill
-\end{frame}
-
-\begin{frame}{}
-\vfill
-    \textbf{\underline{Idea:}} Glue together geometric tangent spaces.
+    \textbf{\underline{Idea:}} Form the Clifford algebras on tangent spaces.
     \pause
     \begin{itemize}
         \item Each $C\ell(T_pM,g_p)$ is a \boldgreen{geometric tangent space} which we glue together to form
@@ -407,20 +485,207 @@ From $M$, we create the tangent bundle $TM$ whose sections are vector fields.
 \vfill
 \end{frame}
 
-\begin{frame}{Clifford Algebraic Structure}
+
+\section{Clifford analysis}
+
+\subsection{Differentiation}
+
+\begin{frame}{Covariant derivative}
 \vfill
+    On $M$ we have the unique torsion free Levi-Civita connection $\nabla$ and covariant derivative $\nabla_{\blade{u}}$.
     \pause
     \begin{itemize}
-        \item How do we add and multiply vector fields.
+        \item $\nabla_{\blade{u}}$ can be extended to multivectors \textcolor{red}{Explain briefly how} and it is grade preserving
+        \[
+        \nabla_{\blade{u}} A_r = \proj{r}{\nabla_{\blade{u}} A_r}.
+        \]
     
-        \item Extend this to products on multivectors
+        \item $\nabla_{\blade{u}}$ is compatible with dot and wedge since
+        \begin{align*}
+        \nabla_{\blade{u}}(A\cdot B) &= (\nabla_{\blade{u}} A)\cdot B + A \cdot (\nabla_{\blade{u}} B)\\
+        \nabla_{\blade{u}}(A\wedge B) &= (\nabla_{\blade{u}} A) \wedge B + A \wedge (\nabla_{\blade{u}} B).
+        \end{align*}
     \end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{Gradient}
+\vfill
+    We define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) in some local basis $\blade{v}_1,\dots,\blade{v}_n$ by
+    \[
+    \grad = \sum_{i=1}^n \blade{v}^i \nabla_{\blade{v}_i}
+    \]
+    \pause
+    Note that this has the algebraic properties of a vector in $\G(M)$.
+\vfill
+\end{frame}
+
+\begin{frame}{Gradient}
+\vfill
+    We define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) in some local basis $\blade{v}_1,\dots,\blade{v}_n$ by
+    \[
+    \grad = \sum_{i=1}^n \blade{v}^i \nabla_{\blade{v}_i}
+    \]
+    \pause
+    Note that this has the algebraic properties of a vector in $\G(M)$ and has the Leibniz rule
+    \[
+    \grad(AB) = \dot{\grad}\dot{A}B + \dot{\grad}A\dot{B}.
+    \]
 \vfill
 \end{frame}
 
 
 
-\subsection{Preliminaries}
+\subsection{Integration}
+
+\begin{frame}{Differential forms}
+    We define the \boldgreen{$r$-dimensional directed measure}
+    \[
+    dX_r\coloneqq \blade{v}_{j_1} \wedge \cdots \blade{v}_{j_r} dx^1 \cdots dx^n
+    \]
+    where $1\leq j_1<\cdots<j_r\leq n$ is an increasing set of indices. This allows us to define an $r$-form $\alpha_r$ by
+    \[
+    \alpha_r = A_r \cdot dX_k^\dagger
+    \]
+    where $A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}$. We call $A_r$ the \boldgreen{multivector equivalent} of $\alpha_r$.
+\end{frame}
+
+\begin{frame}{Volume form}
+\vfill
+    The \boldgreen{volume form} on $M$ is given in local coordinates by 
+    \[
+    \mu = \sqrt{|g|}dx^1\cdots dx^n = \pseudoscalar^{-1} \cdot dX_n
+    \]
+    Hence, we can integrate scalar fields $A_0$ on $M$ by
+    \[
+    \int_M A_0^\perp \cdot dX_n =  \int_M A_0 \mu.
+    \]
+\vfill
+\end{frame}
+
+\begin{frame}{Exterior algebra}
+\vfill
+Given an $r$- and $s$-form $\alpha_r$ and $\beta_s$ we have
+\[
+\alpha_r + \beta_s = (A_r+B_s) \cdot dX_r^\dagger
+\]
+\[
+\alpha_r \wedge \beta_s = (A_r \wedge B_s) \cdot dX_{r+s}^\dagger.
+\]
+\vfill
+\end{frame}
+
+\begin{frame}{Exterior derivative}
+\vfill
+The exterior derivative on multivector equivalents is 
+\[
+d\alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger
+\]
+\vfill
+\end{frame}
+
+\begin{frame}{Hodge star}
+\vfill
+The Hodge star on multivector equivalents is
+\[
+\star \alpha_r = (\pseudoscalar^{-1} A_r)^\dagger \cdot dX_{n-r}^\dagger
+\]
+\vfill
+\end{frame}
+
+
+\begin{frame}{Multivector field inner product}
+\vfill
+We define an inner product on multivector fields by 
+\[
+\multivecinnerproduct{A}{B}~ \coloneqq \frac{1}{\textrm{vol}(M)} \int_M (A,B)\mu
+\]
+which realizes the $r$-form inner product
+\[
+\int_M \alpha_r \wedge \star \beta_r = \int_M \proj{}{A_r\dagger B_r}\mu = \textrm{vol}(M)\multivecinnerproduct{A}{B}.
+\]
+\vfill
+\end{frame}
+
+\begin{frame}{}
+\textbf{\underline{Remark:}} By definition of the multivector inner product, $A_r$ and $B_s$ are orthogonal when $r\neq s$ so this agrees with the grade direct sum $\oplus$ -- we use the same notation for both.
+\end{frame}
+
+\begin{frame}{Boundary}
+\vfill
+On the boundary $\partial M$, we have the boundary pseudoscalar $\pseudoscalar_{\partial}$ and the boundary normal $\blade{\nu} = \pseudoscalar_\partial^\perp$. Then
+\[
+\mu_\partial \coloneqq \pseudoscalar_\partial^{-1} \cdot dX_{n-1}
+\] 
+and we define 
+\[
+\multivecinnerproduct{A}{B}_\partial~ \coloneqq \frac{1}{\textrm{vol}(M)}\int_{\boundary} (A,B)\mu_\partial.
+\]
+\vfill
+\end{frame}
+
+\begin{frame}{Multivector valued integrals}
+\vfill
+We can define a multivector valued integral on an oriented submanifold $R$ by taking $A\in \G(M)$ and computing
+\[
+\int_R A \pseudoscalar_R \mu_R.
+\]
+\vfill
+\end{frame}
+
+
+\subsection{Clifford-Hodge-Morrey decomposition}
+
+\begin{frame}{Fundamental theorems of geometric calculus}
+Let $A,B \in \G(M)$, then
+\begin{align*}
+\int_M \dot{A}\dot{\grad}\pseudoscalar \mu &= \int_\boundary A \pseudoscalar_\partial \mu_\partial\\
+\int_M \pseudoscalar \grad B \mu &= \int_\boundary \pseudoscalar_\partial B\mu_\partial\\
+\int_M \dot{A}\dot{\grad} \pseudoscalar B \mu &= (-1)^n \int_M A \pseudoscalar \grad B \mu + \int_\boundary A \pseudoscalar_\partial B \mu_\partial.
+\end{align*}
+\end{frame}
+
+\begin{frame}{Theorem: (Multivector Green's formula)}
+We have the Green's formula for the gradient
+\[
+\multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+\]
+\end{frame}
+
+\begin{frame}{Proof}
+Fix $A^\dagger,B \in \G(M)$ and note that
+\begin{align*}
+    \int_M A^\dagger \pseudoscalar \grad B \mu &= (-1)^n \int_M \dot{A}^\dagger \dot{\grad} \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial\\
+    &=(-1)^n \int_M (\grad A)^\dagger \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial.
+\end{align*}
+Then, take the scalar part and divide by $\textrm{vol}(M)$ to find
+\[
+\multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+\]
+\end{frame}
+
+\begin{frame}{Monogenic fields}
+Let $A\in \G(M)$. Then we say that $A$ is \boldgreen{monogenic} if $\grad A = 0$.
+\end{frame}
+
+\begin{frame}{Holomorphic functions}
+Take the coordinates $x$ and $y$ and let $f=u+v\blade{B} \in \G_2(\R^2)$ then $\grad f = 0$ yields the Cauchy-Riemann equations
+\begin{align*}
+    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+    \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
+\end{align*}
+\end{frame}
+
+\section{Gelfand theory}
+
+
+\section{Conclusions}
+
+\begin{frame}{Other projects}
+Data assimilation.
+\end{frame}
+
+\end{document}
 
 %\begin{frame}{Geometry}
 %\vfill
@@ -547,59 +812,6 @@ From $M$, we create the tangent bundle $TM$ whose sections are vector fields.
 %\vfill   
 %\end{frame}
 %
-%\begin{frame}{Issue In 2-Dimensions}
-%    \pause In 2D, $\Delta$ is conformally invariant.  \\
-%    
-%    \vspace*{.5cm}
-%    \pause Indeed, let $\tilde{g}=e^{2\phi}g$, then
-%    \[
-%    \Delta_{\tilde{g}} = e^{-2\phi}\Delta_g +(n-2)e^{-2\phi} g^{jk} \frac{\partial \phi}{\partial x^k} \frac{\partial}{\partial x^j}
-%    \]
-%    
-%    \pause When $n=2$, the extra term cancels.
-%\end{frame}
-%
-%\begin{frame}{1 Dimension}
-%\vfill
-%\pause
-%    \begin{itemize}
-%        \item The problem in 1 dimension is trivial.
-%        
-%        \pause
-%        \item Can only know the total impedence between the two electrodes.
-%        
-%    \end{itemize}
-%\vfill
-%\end{frame}
-%
-%\begin{frame}{Isotropic Case}
-%    For $g$ isotropic and $n\geq 3$ one can determine $g$ from $\Lambda$. \\
-%    (\emph{Sylvester-Uhlmann 1987})
-%    
-%\end{frame}
-%
-%\begin{frame}{2 Dimensional Anisotropic}
-%\vfill
-%    \begin{itemize}
-%        \item Can recover $g$ up to conformal class and can't do better.
-%        \item Proven by Lassas and Uhlmann in \emph{On Determining the Riemannian manifold from the Dirichlet to Neumann map}.
-%    \end{itemize}
-%\vfill
-%\end{frame}
-%
-%\begin{frame}{3+ Dimensional Anisotropic}
-%\vfill
-%\pause
-%    \begin{itemize}
-%        \item For real analytic manifolds, the (scalar/classical) DN map determines the manifold up to isometry.  This gives the topological information as well. (Lassas, Taylor, Uhlmann \emph{The Dirichlet-to-Neumann map for complete Riemannian manifolds with boundary}.
-%        
-%        \pause
-%        \item Can determine the boundary $C^\infty$-jet of $g$ in Lee and Uhlmann's \emph{Determining anisotropic real-analytic conductivities by boundary measurements.}
-%        
-%        \pause
-%        \item For smooth manifolds, the anisotropic problem is open. The goal is to recover the metric up to isometry.
-%    \end{itemize}
-%\end{frame}
 %
 %
 %
@@ -1130,6 +1342,3 @@ From $M$, we create the tangent bundle $TM$ whose sections are vector fields.
 %        \item The HIlbert Transform on a smooth closed hypersurface
 %    \end{itemize}
 %\end{frame}
-
-\end{document}
-

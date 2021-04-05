@@ -2,4 +2,10 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Motivation}{4}{0}{1}
 \beamer@subsectionintoc {1}{2}{Preliminaries}{7}{0}{1}
-\beamer@subsectionintoc {1}{3}{Preliminaries}{20}{0}{1}
+\beamer@subsectionintoc {1}{3}{Manifolds and fields}{24}{0}{1}
+\beamer@sectionintoc {2}{Clifford analysis}{29}{0}{2}
+\beamer@subsectionintoc {2}{1}{Differentiation}{30}{0}{2}
+\beamer@subsectionintoc {2}{2}{Integration}{34}{0}{2}
+\beamer@subsectionintoc {2}{3}{Clifford-Hodge-Morrey decomposition}{44}{0}{2}
+\beamer@sectionintoc {3}{Gelfand theory}{50}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{51}{0}{4}

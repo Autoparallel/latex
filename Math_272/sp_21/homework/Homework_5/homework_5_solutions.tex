@@ -139,7 +139,7 @@ Let $u_j(t) \coloneqq u(x_j,t)$ denote the temperature of particle $j$ at time $
 
     \item The equations we have will need an additional term that corresponds to thermal transport to the particle at the other end of the interval. The original terms remain. Thus, we would have
     \[
-\dot{u}_1 = -k_1 u_1 + k_1 u_{2} -k_0 u_n + f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_1 u_{n-1} - k_0 u_1 + f_n.
+\dot{u}_1 = -k_1 u_1 + k_1 u_{2} -k_0 u_1  + k_0 u_n+ f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_1 u_{n-1} - k_0 u_n + k_0u_1 f_n.
     \]
     
     \item The above equations go to show that we have added medium between particles 1 and 2 so that 1 and 2 are in thermal contact. Thus, it is sensible to realize that we have taken this line of particles and attached endpoints to form a circle.
