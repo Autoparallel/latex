@@ -665,7 +665,7 @@ Then, take the scalar part and divide by $\textrm{vol}(M)$ to find
 \end{frame}
 
 \begin{frame}{Monogenic fields}
-Let $A\in \G(M)$. Then we say that $A$ is \boldgreen{monogenic} if $\grad A = 0$.
+Let $A\in \G(M)$. Then we say that $A$ is \boldgreen{monogenic} if $\grad A = 0$. We denote the space of monogenic fields by $\monogenicfields{}$.
 \end{frame}
 
 \begin{frame}{Holomorphic functions}
@@ -675,6 +675,61 @@ Take the coordinates $x$ and $y$ and let $f=u+v\blade{B} \in \G_2(\R^2)$ then $\
     \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
 \end{align*}
 \end{frame}
+
+\begin{frame}{Cauchy integral}
+For $M$ a domain in $\R^n$ with $n\geq 2$, we have the vector valued field
+\[
+E(x) \coloneqq \frac{1}{S_n} \frac{x}{|x|^n}
+\]
+where $S_n$ is the surface area of the unit ball. Note
+\[
+\grad E(x) = -\dot{E}(x)\dot{\grad} = \delta(x).
+\]
+We then define the \boldgreen{Cauchy kernel} by $G(x,x')\coloneqq E(x'-x)$.
+\end{frame}
+
+\begin{frame}{Cauchy integral}
+If $A\in \monogenicfields{}$, then we have the \boldgreen{Cauchy integral formula}
+\[
+A(x) = (-1)^n \pseudoscalar^{-1} \int_\boundary G(x,x') \pseudoscalar_\partial(x') A(x') \mu_\partial(x').
+\]
+This allows us to uniquely determine a monogenic field from boundary values $A\vert_\boundary$.
+\end{frame}
+
+\begin{frame}{Lemma}
+Let $A\in \monogenicfields{}$ be such that $A\vert_\boundary = 0$. Then $A=0$ on all of $M$.
+\emph{Proof sketch:} Utilize the Cauchy integral formula for $A$ to deduce that $A=0$ on $M$.
+\end{frame}
+
+%\begin{frame}{Proof}
+%We note
+%\[
+%|A| \leq |\pseudoscalar^{-1}| \left| \int_\boundary G(x,x')\pseudoscalar_\partial(x') A(x')\mu_\partial(x')\right| \leq \int_\boundary\left|  G(x,x')\pseudoscalar_\partial(x') A(x') \right|\mu_\partial(x') = 0
+%\]
+%thus $A=0$ on $M$.
+%\end{frame}
+
+\begin{frame}{Lemma}
+Fix a multivector field $A\in \G(M)$. If
+\[
+\multivecinnerproduct{A}{B}=0
+\]
+for all $B\in \G(M)$ with $B\vert_{\boundary} = 0$, then $A=0$.
+\end{frame}
+
+\begin{frame}{}
+\emph{Proof sketch:}
+\begin{itemize}
+\item Use mollifiers to smooth indicator functions $\chi_U$ on open subsets $U$ to be supported only on closed $\epsilon$ neighborhood $\overline{U^\epsilon}$. Call these functions $\chi_U^\epsilon$.
+\item Write $A=\sum_J A_J \blade{V}^J$ with $\blade{V}^J = \blade{v}^{j_1}\wedge \cdots\wedge  \blade{v}^{j_r}$. Then note
+    \[
+    \multivecinnerproduct{A}{A_J \blade{V}_J \chi_U^\epsilon} = 0
+    \] 
+    implies $A_J=0$ on $U^\epsilon$ for all $J$ since $(\blade{V}^{J}, \blade{V}_K)=\delta^J_K$. Hence $A=0$ on $U^\epsilon$.
+\item Cover $M$ in such $U^\epsilon$ and repeat the argument leaving the $A\vert_\boundary$ undetermined. But, by smoothness of $A$, $A=0$ on $M$.
+\end{itemize}
+\end{frame}
+
 
 \section{Gelfand theory}
 
