@@ -209,7 +209,6 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \section{Introduction}
 
-\subsection{Motivation}
 \begin{frame}{Electrical Impedance Tomography}
 \vfill
 \boldgreen{Electrical Impedance Tomography (EIT)} asks whether one can determine the conductivity of a medium based on measurements along the boundary.
@@ -236,6 +235,7 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \begin{frame}{}
 \vfill
 \begin{itemize}
+    \pause
     \item \boldgreen{Clifford algebra} originated in 1878 with William Kingdon Clifford's work that extends Hermann Grassmann's \boldgreen{exterior algebra}.
     \pause
     \item \boldgreen{Clifford analysis} arrived in the 1980's due to Hestenes, Sobczyk, Sommen, Brackx, and Delenghe in order to enrich \'Ellie Cartan's \boldgreen{differential forms}.
@@ -245,14 +245,15 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \begin{frame}{Clifford algebras}
 \vfill
+\pause
 Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 \begin{itemize}
-    \pause
+        \pause
         \item Define the tensor algebra
         \[
         \mathcal{T}(V) \coloneqq \bigoplus_{j=0}^\infty V^{\otimes_j} = \mathbb{F} \oplus (V \otimes V) \oplus (V \otimes V \otimes V) \oplus \cdots.
         \]
-    \pause
+        \pause
         \item Form the \boldgreen{Clifford algebra} via a quotient
         \[
         C\ell(V,Q) \coloneqq \mathcal{T}(V)/ \langle \blade{v} \otimes \blade{v} - Q(V)\rangle.
@@ -263,14 +264,15 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 
 \begin{frame}{Geometric and exterior algebras}
 \vfill
+\pause
 Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 \begin{itemize}
-    \pause
+        \pause
         \item Given a (pseudo) inner product $g$, we set $Q(\cdot)=g(\cdot,\cdot)$ and define a \boldgreen{geometric algebra}
         \[
         \G \coloneqq C\ell(V,g).
         \]
-    \pause
+        \pause
         \item The \boldgreen{exterior algebra} is given by
         \[
         \bigwedge(V) \coloneqq C\ell(V,0).
@@ -281,17 +283,18 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 
 \begin{frame}{Algebra structure}
 \vfill
+\pause
 We define a multiplication in $\G$ by noting how the product $\otimes$ acts in the quotient.
 \begin{itemize}
-\pause
+    \pause
     \item Given $\blade{u}, \blade{v} \in \G$ we can take the product
     \[
     \blade{u}\blade{v} = \underbrace{\blade{u}\cdot \blade{v}}_{\textrm{scalar}} + \underbrace{\blade{u}\wedge \blade{v}}_{\textrm{bivector}}.
     \]
-\pause
 \begin{itemize}
+    \pause
     \item The scalar part is symmetric: $\blade{u}\cdot \blade{v} = g(\blade{u},\blade{v})$.
-\pause
+    \pause
     \item The bivector part is antisymmetric: $\blade{u}\wedge \blade{v} = -\blade{v}\wedge \blade{u}$.
 \end{itemize}
 \end{itemize}
@@ -304,11 +307,12 @@ We define a multiplication in $\G$ by noting how the product $\otimes$ acts in t
     \pause
         \item $\G$ is graded and of dimension $2^n$.
     \begin{itemize}
-    \pause
+        \pause
         \item There are ${n \choose r}$ elements of grade $r$ called \boldgreen{$r$-vectors}. 
+        \pause
         \item Those that are exterior products of $r$ independent vectors are \boldgreen{$r$-blades}. E.g., $\blade{A_r}=\blade{v}_1 \wedge \cdots \wedge\blade{v}_r$.
     \end{itemize}
-    \pause
+        \pause
         \item The most general elements are \boldgreen{multivectors} and are given by
         \[
         A = \sum_{r=0}^n \proj{r}{A},
@@ -324,7 +328,8 @@ Extend the multiplication from vectors to multivectors by
 \[
 A_r B_s = \proj{|r-s|}{A_r B_s} + \proj{|r-s|+2}{A_r B_s} + \cdots + \proj{r+s}{A_r B_s}
 \]
-with
+\pause
+and define
 \begin{align*}
 A_r \cdot B_s &\coloneqq \proj{|r-s|}{A_r B_s}  & A_r \wedge B_s &\coloneqq \proj{r+s}{A_r B_s}\\
 ~\\
@@ -335,26 +340,34 @@ A_r \rfloor B_s &\coloneqq \proj{s-r}{A_r B_s}  & A_r \lfloor B_s &\coloneqq \pr
 
 \begin{frame}{Reciprocals and reverses}
 \vfill
-Given any vector basis $\blade{v}_i$ we define the \boldgreen{reciprocal vectors} by $\blade{v}^i\cdot \blade{v}_j = \delta^i_j$.
-\vspace{0.5cm}
-The \boldgreen{reverse} of a multivector is extended linearly from the action on $r$-blades by
+\begin{itemize}
+\pause
+\item Given any vector basis $\blade{v}_i$, define the \boldgreen{reciprocal vectors} by $\blade{v}^i\cdot \blade{v}_j = \delta^i_j$.
+\pause
+\item The \boldgreen{reverse} of a multivector is extended linearly from the action on $r$-blades by
 \[
 \blade{A_r}^\dagger = (\blade{v}_1 \wedge \cdots \wedge\blade{v}_r)^\dagger = \blade{v}_r \wedge \cdots \wedge\blade{v}_1.
 \]
+\end{itemize}
 \vfill
 \end{frame}
 
 
 \begin{frame}{Inner product and norm}
 \vfill
-We define the \boldgreen{multivector inner product} by
+\begin{itemize}
+\pause
+\item Define the \boldgreen{multivector inner product} by
 \[
 (A,B) \coloneqq \proj{}{A^\dagger B}
 \]
-which is bilinear, symmetric, and positive definite if $g$ is positive definite. Then we define the \boldgreen{multivector norm} by
+which is bilinear, symmetric, and positive definite if $g$ is positive definite. 
+\pause
+\item Define the \boldgreen{multivector norm} by
 \[
 |A| \coloneqq \sqrt{(A,A)}.
 \]
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -370,79 +383,108 @@ Note the reverse acts as an adjoint by
 
 \begin{frame}{Pseudoscalars}
 \vfill
-\boldgreen{Pseudoscalars} are the grade-$n$ elements. For example, $\blade{\mu} = \blade{v}_1 \wedge \cdots \wedge \blade{v}_n$.  We define the \boldgreen{unit pseudoscalar} by 
+\begin{itemize}
+\pause
+\item \boldgreen{Pseudoscalars} are the grade-$n$ elements. For example, the volume element 
+\[
+\blade{\mu} = \blade{v}_1 \wedge \cdots \wedge \blade{v}_n.
+\]
+\pause  
+\item We define the \boldgreen{unit pseudoscalar} by 
 \[
 \pseudoscalar \coloneqq \frac{1}{|\blade{\mu}|} \blade{\mu}.
 \]
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Blades and subspaces}
 \vfill
-If $|\blade{A_r}|=1$, then $\blade{A_r}$ is a \boldgreen{unit blade}. 
-
-All unit $r$-blades correspond to an $r$-dimensional subspace and can be identified with points in $\Grassmannian{r}{n}$.
+\begin{itemize}
+\pause
+\item If $g$ is positive definite, then all blades are invertible [Chisholm: 2012].
+\pause
+\item If $|\blade{A_r}|=1$, then $\blade{A_r}$ is a \boldgreen{unit blade}. 
+\pause
+\item Unit $r$-blades correspond to an $r$-dimensional subspace and can be identified with points in $\Grassmannian{r}{n}$.
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Duality}
 \vfill
-Given any multivector $A$, we can take its \boldgreen{dual}
+\begin{itemize}
+\pause
+\item Given any multivector $A$, we can take its \boldgreen{dual}
 \[
 A^\perp \coloneqq A \pseudoscalar^{-1}.
 \]
-Note $A_r^\perp \in \G^{n-r}$, much like the Hodge star $\star$.
+\pause
+\item Note $A_r^\perp \in \G^{n-r}$, like the Hodge star $\star$.
+\end{itemize}
 \vfill
 \end{frame}
 
-%\begin{frame}{Projection and rejection}
-%We can define the \boldgreen{projection} of $B$ into a subspace $\blade{A_r}$ by
-%\[
-%\projection_{\blade{A_r}} (B) \coloneqq B\rfloor \blade{A_r}\blade{A_r}^{-1}
-%\]
-%and the \boldgreen{rejection} by
-%\[
-%\rejection_{\blade{A_r}} (B) \coloneqq B\wedge \blade{A_r}\blade{A_r}^{-1}.
-%\]
-%Both are grade preserving.
-%\end{frame}
+\begin{frame}{Projection and rejection}
+\vfill
+\begin{itemize}
+\pause
+\item The \boldgreen{projection} of $B$ into a subspace $\blade{A_r}$ by
+\[
+\projection_{\blade{A_r}} (B) \coloneqq B\rfloor \blade{A_r}\blade{A_r}^{-1}
+\]
+\pause
+\item The \boldgreen{rejection} by
+\[
+\rejection_{\blade{A_r}} (B) \coloneqq B\wedge \blade{A_r}\blade{A_r}^{-1}.
+\]
+\pause
+\item Both are grade preserving.
+\end{itemize}
+\vfill
+\end{frame}
 
 \begin{frame}{Quaternions and complex numbers}
-\underline{\textbf{Claim:} $\mathbb{H}$ arises naturally as the even subalgebra $\G_3^+$.}
+\vfill
+\begin{itemize}
+\pause
+\item \underline{\textbf{Claim:} $\mathbb{H}$ arises naturally as the even subalgebra $\G_3^+$.}
 
-\vspace*{0.5cm}
-
-\underline{\textbf{Claim:} $\C$ arises naturally as the even subalgebra $\G_2^+$.}\\
-\vspace*{0.25cm}
-
-Take the standard basis $\blade{e}_1,\blade{e}_2$, and define $\bivector_{12}= \blade{e}_1\blade{e}_2$ and note $\bivector_{12}^2 = -1$. Thus
+\pause
+\item \underline{\textbf{Claim:} $\C$ arises naturally as the even subalgebra $\G_2^+$.}\\
+\begin{itemize}
+\pause
+\item Take the standard basis $\blade{e}_1,\blade{e}_2$, and define $\bivector_{12}= \blade{e}_1\blade{e}_2$ and note $\bivector_{12}^2 = -1$. Thus,
 \[
 (u_1+v_1 \bivector_{12})(u_2 + v_2 \bivector_{12}) = u_1u_2-v_1 v_2 + (u_1 v_2+u_2v_1)\bivector_{12}.
 \]
-
-Moreover, right multiplication of vectors by $\bivector_{12}$ rotates counter-clockwise by $\pi/2$.
+\pause
+\item Moreover, right multiplication of vectors by $\bivector_{12}$ rotates counter-clockwise by $\pi/2$.
+\end{itemize}
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Clifford algebra structure on manifolds}
 \vfill
-\pause
-We let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemannian manifold with metric $g$ \textcolor{gray}{(unless otherwise stated)}.
-\vspace*{0.5cm}
+\begin{itemize}
+\item We let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemannian manifold with metric $g$ \textcolor{gray}{(unless otherwise stated)}.
 
-\noindent\textbf{\underline{Idea:}} Form the Clifford algebras on tangent spaces.
-    \pause
+\item \noindent\textbf{\underline{Idea:}} Form the Clifford algebras on tangent spaces.
     \begin{itemize}
+        \pause
         \item Each $C\ell(T_pM,g_p)$ is a \boldgreen{geometric tangent space} which we glue together to form
         \[
         C\ell(TM,g) \coloneqq \bigsqcup_{p\in M} C\ell(T_pM,g_p).
         \]
-    
+        \pause
         \item The space of \boldgreen{(smooth) multivector fields} is
         \[
         \G(M) \coloneqq \{\textrm{$C^\infty$-smooth sections of $C\ell(TM,g)$}\}.
         \]
     \end{itemize}
+
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -453,11 +495,12 @@ We let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemann
     On $M$ we have the unique torsion free Levi-Civita connection $\nabla$ and covariant derivative $\nabla_{\blade{u}}$.
     \pause
     \begin{itemize}
-        \item [Schindler, 2018], $\nabla_{\blade{u}}$ can be extended to multivectors and it is grade preserving 
+        \pause
+        \item $\nabla_{\blade{u}}$ can be extended to multivectors and it is grade preserving [Schindler: 2018],
         \[
         \nabla_{\blade{u}} A_r = \proj{r}{\nabla_{\blade{u}} A_r}.
         \]
-    
+        \pause
         \item $\nabla_{\blade{u}}$ is compatible with dot and wedge since
         \begin{align*}
         \nabla_{\blade{u}}(A\cdot B) &= (\nabla_{\blade{u}} A)\cdot B + A \cdot (\nabla_{\blade{u}} B)\\
@@ -469,39 +512,28 @@ We let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemann
 
 \begin{frame}{Gradient}
 \vfill
-    We define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) in some local basis $\blade{v}_1,\dots,\blade{v}_n$ by
+\begin{itemize}
+    \pause
+    \item We define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) in some local basis $\blade{v}_1,\dots,\blade{v}_n$ by
     \[
     \grad = \sum_{i=1}^n \blade{v}^i \nabla_{\blade{v}_i}
     \]
     \pause
-    Note that this has the algebraic properties of a vector in $\G(M)$.
-\vfill
-\end{frame}
-
-\begin{frame}{Gradient}
-\vfill
-    We define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) in some local basis $\blade{v}_1,\dots,\blade{v}_n$ by
-    \[
-    \grad = \sum_{i=1}^n \blade{v}^i \nabla_{\blade{v}_i}
-    \]
-    \pause
-    Note that this has the algebraic properties of a vector in $\G(M)$ and has the Leibniz rule
+    \item $\grad$ has the algebraic properties of a vector in $\G(M)$ and Leibniz rule
     \[
     \grad(AB) = \dot{\grad}\dot{A}B + \dot{\grad}A\dot{B}.
     \]
-    Note $\grad^2=\Delta$, the Laplace-Beltrami operator.
+    \pause
+    \item Note $\grad^2=\Delta$, the Laplace-Beltrami operator.
+\end{itemize}
 \vfill
 \end{frame}
-
-
-
-\subsection{Integration}
 
 \begin{frame}{Differential forms}
 \vfill
     We define the \boldgreen{$r$-dimensional directed measure}
     \[
-    dX_r\coloneqq \blade{v}_{j_1} \wedge \cdots \blade{v}_{j_r} dx^1 \cdots dx^n
+    dX_r\coloneqq \blade{v}_{j_1} \wedge \cdots \blade{v}_{j_r} dx^{j_1} \cdots dx^{j_r}
     \]
     where summation is implied over the increasing set of indices $1\leq j_1<\cdots<j_r\leq n$. This allows us to define an $r$-form $\alpha_r$ by
     \[
@@ -764,7 +796,14 @@ whereas the Clifford-Hodge-Morrey decomposition ignores specific grades
 \section{Gelfand theory}
 
 \begin{frame}{Open question}
-Motivation from belishev 2d and 3d papers. Mention we will work with $M$ imbedded in $\R^n$
+\vfill
+\begin{itemize}
+    \item [Belishev, Vakulenko, 2017] Prove a noncommutative Gelfand representation using quaternion fields for a ball $\ball$ in $\R^3$. 
+    \item We will prove an analogous result for an arbitrary $\ball$ in $\R^n$.
+    \item This approach can hopefully be used to prove the analogous result for any smooth orientable Riemannian manifold $M$.
+    \item For now, we take $M$ imbedded in $\R^n$.
+\end{itemize}
+\vfill
 \end{frame}
 
 \begin{frame}{Subsurface spinor fields}
@@ -805,7 +844,7 @@ and refer to the elements as \boldgreen{spin characters}. Note that one example 
 \vfill
 \end{frame}
 
-\begin{frame}{$z$ analogs and monogeneic polynomials}
+\begin{frame}{$z$ analogs and monogenic polynomials}
 Take $\blade{e}_i$ to be an orthonormal basis for $\R^n$, let $\bivector_{ij}=\blade{e}_i\blade{e}_j$ and define the functions $z_{ij}=x_j-x_i \bivector_{ij}$ and note $z_{ij} \in \algebra_{\bivector_{ij}}(M)$. 
 
 Let $\sigma$ be a permutation of $\{2,3,\dots,n\}$, then the homogeneous polynomial of degree $j$
@@ -928,6 +967,7 @@ Define the \boldgreen{Dirichlet-to-Neumann map} on forms by $\Lambda\phi = \iota
     \item This problem is equivalent to the electical impedance tomography problem in dimension 3. 
     \item The problem has been solved in dimension $n=2$ [Belishev, 2003].
     \item Solved in dimensions $n\geq 3$ when $M$ is an analytic manifold [Krupchyk, Lassas, Uhlmann, 1989]. The smooth cases is still unsolved.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Calder\'on problem on manifolds}
@@ -944,7 +984,7 @@ If $\Lambda$ can provide us $b\vert_\boundary$, then we can reconstruct $\monoge
 \vfill
 \begin{itemize}
     \item Can the magnetic impedance tomography problem can provide some extra insight on the EIT problem?
-    \item The Hodge-Morrey decomposition is an instrumental tool for boundary value problems that, for example, allows one to show that $\Lambda$ determines the Betti numbers of $M$.
+    \item The Hodge-Morrey decomposition is an instrumental tool for boundary value problems that, for example, allows one to show that $\Lambda$ determines the Betti numbers of $M$ [Belishev, Sharafutdinov: 2008].
     \item Can the Clifford-Hodge-Morrey decomposition can allow us to work on other related boundary inverse problems? 
     \item These problems could include spacetime problems where the metric $g$ is of mixed signature.
 \end{itemize}
