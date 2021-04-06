@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  5 APR 2021 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  5 APR 2021 19:53
 entering extended mode
 **./main.tex
 (main.tex
@@ -3219,11 +3219,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 52703 strings out of 479799
- 1213960 string characters out of 2867787
+ 52701 strings out of 479799
+ 1213940 string characters out of 2867787
  1669862 words of memory out of 3000000
  68336 multiletter control sequences out of 15000+200000
- 715079 words of font info for 250 fonts, out of 3000000 for 9000
+ 714949 words of font info for 249 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,725b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
@@ -3262,7 +3262,7 @@ Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri7.pfb><C:/Use
 rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/
 Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
-Output written on main.pdf (64 pages, 567396 bytes).
+Output written on main.pdf (64 pages, 567593 bytes).
 PDF statistics:
  624 PDF objects out of 1000 (max. 8388607)
  137 named destinations out of 1000 (max. 500000)

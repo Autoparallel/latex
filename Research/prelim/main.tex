@@ -910,6 +910,7 @@ Taking $n\to \infty$ we realize $\gamma$ and $\gamma^{-1}$ are continuous theref
 \section{Future work}
 
 \begin{frame}{Calder\'on problem on manifolds}
+\vfill
 \textbf{\underline{Question:}} Let $(M,g)$ be an unknown Riemannian manifold with known boundary $\partial M$. Consider the forward problem
 \[
 \begin{cases}
@@ -918,39 +919,57 @@ Taking $n\to \infty$ we realize $\gamma$ and $\gamma^{-1}$ are continuous theref
 \end{cases}
 \]
 Define the \boldgreen{Dirichlet-to-Neumann map} on forms by $\Lambda\phi = \iota^*(\star d \omega)$. Can we determine $(M,g)$ from $\Lambda$?
+\vfill
 \end{frame}
 
 \begin{frame}{Calder\'on problem on manifolds}
-This problem is equivalent to the electical impedance tomography problem in dimension 3. The problem has been solved in dimension $n=2$ (CITATIONS) and in dimensions $n\geq 3$ when $M$ is an analytic manifold. The smooth cases is still unsolved.
+\vfill
+\begin{itemize}
+    \item This problem is equivalent to the electical impedance tomography problem in dimension 3. 
+    \item The problem has been solved in dimension $n=2$ [Belishev, 2003].
+    \item Solved in dimensions $n\geq 3$ when $M$ is an analytic manifold [Krupchyk, Lassas, Uhlmann, 1989]. The smooth cases is still unsolved.
 \end{frame}
 
 \begin{frame}{Calder\'on problem on manifolds}
+\vfill
 When $M$ is dimension $n=3$, the scalar potential $u$ and magnetic bivector field $b$ are two parts of a monogenic field $f=u+b$ due to Ohm's and Ampere's laws 
 \[
-\grad \wedge u = \grad \rfloor b.
+-\grad \wedge u = \grad \rfloor b.
 \] 
 If $\Lambda$ can provide us $b\vert_\boundary$, then we can reconstruct $\monogenicfields{+}$. Perhaps we can show that $\monogenicfields{+}$ recreates $M$ up to homeomorphism. Moreover, we know the algebraic structure of each $\algebra_{\bivector}(M)$, can this be used to determine $g$ up to isometry?
+\vfill
 \end{frame}
 
 \begin{frame}{Other inverse problems}
-The Hodge-Morrey decomposition of forms has proven to be extremely useful in proving existence of solutions to boundary value problems. It is an instrumental tool that allows one to show that $\Lambda$ determines the Betti numbers of $M$. Perhaps the Clifford-Hodge-Morrey decomposition can allow us to work on other related boundary inverse problems?
+\vfill
+\begin{itemize}
+    \item Can the magnetic impedance tomography problem can provide some extra insight on the EIT problem?
+    \item The Hodge-Morrey decomposition is an instrumental tool for boundary value problems that, for example, allows one to show that $\Lambda$ determines the Betti numbers of $M$.
+    \item Can the Clifford-Hodge-Morrey decomposition can allow us to work on other related boundary inverse problems? 
+    \item These problems could include spacetime problems where the metric $g$ is of mixed signature.
+\end{itemize}
+\vfill
 \end{frame}
 
 \section{Conclusions}
 
 \begin{frame}{}
+\vfill
 \begin{itemize}
     \item We have utilized multivector fields to serve as a meaningful generalization of both the complex numbers and differential forms. 
     \item This provides a new way to decompose fields on domains of $\R^n$ and this can likely be generalized to arbitrary compact orientable pseudo-Riemannian manifolds.
     \item Likewise, we have proven that the monogenic fields contain a wealth of topological information and this information is supported on the boundary by the Cauchy integral formula.
 \end{itemize}
+\vfill
 \end{frame}
 
 \begin{frame}{Data Assimilation}
+\vfill
 Over the past two years I have also worked with a team on developing new techniques for data assimilation. We have submitted an article titled
 ``Model and Data Reduction for Data Assimilation: Particle Filters Employing Projected Forecasts and Data with Application to a Shallow Water Model"
 
 We are continuing to work to apply our scheme to new models such as the Modular Arbitrary-Order Ocean-Atmospheric Model (MAOOAM).
+\vfill
 \end{frame}
 
 \end{document}
