@@ -1,5 +1,5 @@
-%\documentclass[aspectratio=169]{beamer}
-\documentclass[aspectratio=169,handout]{beamer}
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[aspectratio=169,handout]{beamer}
 \usepackage[utf8]{inputenx} % For æ, ø, å
 \usepackage{csquotes}       % Quotation marks
 \usepackage{microtype}      % Improved typography
@@ -285,7 +285,7 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 \vfill
 \end{frame}
 
-\begin{frame}{Algebra structure}
+\begin{frame}{Algebraic structure}
 \vfill
 \pause
 Multiplication in $\G$ is seen by looking at how $\otimes$ acts in the quotient.
@@ -483,8 +483,9 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 \begin{frame}{Multivector Fields}
 \vfill
 \begin{itemize}
+\pause
 \item Let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemannian manifold with metric $g$.
-
+\pause
 \item \noindent\textbf{\underline{Idea:}} Form the Clifford algebras on tangent spaces.
     \begin{itemize}
         \pause
@@ -506,10 +507,10 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 
 \begin{frame}{Multivector derivative}
 \vfill
+\pause
     On $M$, take the unique Levi-Civita connection $\nabla$ and covariant derivative $\nabla_{\blade{u}}$.
     \pause
     \begin{itemize}
-        \pause
         \item $\nabla_{\blade{u}}$ is extended to multivectors and is grade preserving \boldgold{[Schindler: 2018]},
         \[
         \nabla_{\blade{u}} A_r = \proj{r}{\nabla_{\blade{u}} A_r}.
@@ -572,11 +573,11 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
     \] 
     where $1\leq j_1<\cdots<j_r\leq n$ and summation is implied. 
     \pause
-    \item Define an $r$-form $\alpha_r$ by
+    \item Define an $r$-form $a_r$ by
     \[
     \alpha_r = A_r \cdot dX_r^\dagger
     \]
-    where $A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}$. 
+    where $A_r = \frac{1}{r!} a_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}$. 
     \pause
     \item Refer to $A_r$ the \boldgreen{multivector equivalent} of $\alpha_r$.
 \end{itemize}
@@ -587,21 +588,21 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 \vfill
 \begin{itemize}
 \pause
-\item Given an $r$- and $s$-form $\alpha_r$ and $\beta_s$ we have
+\item Given $r$-forms $a_r$, $b_r$, and an $s$-form $c_s$, we have
 \begin{align*}
-\alpha_r + \beta_s &= (A_r+B_s) \cdot dX_r^\dagger, & \alpha_r \wedge \beta_s &= (A_r \wedge B_s) \cdot dX_{r+s}^\dagger.
+a_r + b_r &= (A_r+B_r) \cdot dX_r^\dagger, & a_r \wedge c_s &= (A_r \wedge C_s) \cdot dX_{r+s}^\dagger.
 \end{align*}
 \vspace*{-0.25cm}
 \pause
 \item The exterior derivative on multivector equivalents is 
 \[
-d\alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger
+da_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger
 \]
 \pause
 \vspace*{-0.25cm}
 \item The Hodge star on multivector equivalents is
 \[
-\star \alpha_r = (\pseudoscalar^{-1} A_r)^\dagger \cdot dX_{n-r}^\dagger
+\star a_r = (\pseudoscalar^{-1} A_r)^\dagger \cdot dX_{n-r}^\dagger
 \]
 \end{itemize}
 \vfill
@@ -659,7 +660,7 @@ d\alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger
 \[
 \mu_\partial \coloneqq \pseudoscalar_\partial^{-1} \cdot dX_{n-1}
 \] 
-and we define the \boldgreen{multivector field inner product}
+and we define 
 \[
 \multivecinnerproduct{A}{B}_\partial~ \coloneqq \frac{1}{\textrm{vol}(M)}\int_{\boundary} (A,B)\mu_\partial.
 \]
@@ -697,16 +698,16 @@ We have the Green's formula for the gradient
 \multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
 \]
 \end{theorem}
-
-\emph{Proof.} Fix $A^\dagger,B \in \G(M)$ and note that
-\begin{align*}
-    \int_M A^\dagger \pseudoscalar \grad B \mu &= (-1)^n \int_M \dot{A}^\dagger \dot{\grad} \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial\\
-    &=(-1)^n \int_M (\grad A)^\dagger \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial.
-\end{align*}
-Take the scalar part and divide by $\textrm{vol}(M)$ to find
-\[
-\multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
-\]
+%
+%\emph{Proof.} Fix $A^\dagger,B \in \G(M)$ and note that
+%\begin{align*}
+%    \int_M A^\dagger \pseudoscalar \grad B \mu &= (-1)^n \int_M \dot{A}^\dagger \dot{\grad} \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial\\
+%    &=(-1)^n \int_M (\grad A)^\dagger \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial.
+%\end{align*}
+%Take the scalar part and divide by $\textrm{vol}(M)$ to find
+%\[
+%\multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
+%\]
 \vfill
 \end{frame}
 
@@ -932,7 +933,7 @@ is a commutative unital Banach algebra.
 \vfill
 \begin{itemize}
 \pause
-\item Define the \boldgreen{spinor dual} $\dualmonogenics(M)$ as the continuous right $\G_n$-module homomorphisms
+\item Define the \boldgreen{spinor dual} $\dualmonogenics(M)$ as the continuous right $\G_n^+$-module homomorphisms
 \[
 \dualmonogenics(M) \coloneqq \{ l \colon \monogenicfields{+} \to \G_n^+ ~\vert~ l(fs+g)=l(f)s+l(g), ~\forall f,g\in \monogenicfields{}, ~s \in \G_n^+\}
 \]
@@ -998,11 +999,11 @@ is a monogenic homogeneous polynomial of degree $j$.
 \begin{frame}{}
 \vfill
 \begin{lemma}[Density]
-The space $\monogenics^\mathcal{P}(\ball_{R,w})$ is dense in $\monogenics(\ball_{R,w})$.
+The space $\monogenics^\mathcal{P}(\ball_{R,w})$ is dense in $\monogenics^+(\ball_{R,w})$.
 \end{lemma}
 \emph{Proof sketch.} 
 \begin{itemize}
-\item Let $f \in \monogenics{}(\ball_{R,w})$ and use the Cauchy integral formula to define the coefficients $a_{j_2\cdots j_n} \in \G_n^+$ by
+\item Let $f \in \monogenics^+(\ball_{R,w})$ and use the Cauchy integral formula to define the coefficients $a_{j_2\cdots j_n} \in \G_n^+$ by
 \[
 a_{j_2 \cdots j_n} = \int_{\partial \ball_{R,w}} \frac{\partial^j G(w,y)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y),
 \]
@@ -1210,6 +1211,14 @@ f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
 \pause
 \item We are continuing to work to apply our scheme to new models such as the Modular Arbitrary-Order Ocean-Atmospheric Model (MAOOAM).
 \end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{}
+\vfill
+\begin{center}
+\large Thank you!
+\end{center}
 \vfill
 \end{frame}
 
