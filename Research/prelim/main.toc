@@ -1,7 +1,7 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Preliminaries}{6}{0}{1}
-\beamer@sectionintoc {2}{Clifford analysis}{22}{0}{2}
-\beamer@sectionintoc {3}{Gelfand theory}{43}{0}{3}
-\beamer@sectionintoc {4}{Future work}{55}{0}{4}
-\beamer@sectionintoc {5}{Conclusions}{60}{0}{5}
+\beamer@sectionintoc {2}{Clifford analysis}{21}{0}{2}
+\beamer@sectionintoc {3}{Gelfand theory}{42}{0}{3}
+\beamer@sectionintoc {4}{Future work}{56}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{61}{0}{5}

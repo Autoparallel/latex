@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  6 APR 2021 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  7 APR 2021 12:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -2721,7 +2721,7 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20
-4.
+5.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2729,31 +2729,31 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 204.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 205.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 2
-04.
+05.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cbfonts-fd\lgrcmr.
 fd"
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    ... okay on input line 205.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2811,7 +2811,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring ON on input line 204.
+Package hyperref Info: Link coloring ON on input line 205.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -2827,9 +2827,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count438
 )
-LaTeX Info: Redefining \ref on input line 204.
-LaTeX Info: Redefining \pageref on input line 204.
-LaTeX Info: Redefining \nameref on input line 204.
+LaTeX Info: Redefining \ref on input line 205.
+LaTeX Info: Redefining \pageref on input line 205.
+LaTeX Info: Redefining \nameref on input line 205.
  (main.out) (main.out)
 \@outlinefile=\write8
 \openout8 = `main.out'.
@@ -2837,41 +2837,41 @@ LaTeX Info: Redefining \nameref on input line 204.
 \symnumbers=\mathgroup11
 \sympureletters=\mathgroup12
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 204.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 204.
+(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 205.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 204.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 204.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 204.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 205.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 204.
+(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/lmr/m/n on input line 204.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 204.
+(Font)                  OT1/cmss/bx/n --> T1/lmr/m/n on input line 205.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 204.
+(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 204.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 204.
+(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 205.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 204.
+(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 204.
+(Font)                  OT1/cmtt/m/n --> T1/lmr/m/n on input line 205.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 204.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 205.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 204.
+(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 204.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/b/n on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 204.
+(Font)                  T1/lmr/b/n --> T1/lmr/b/n on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 204.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 204.
+(Font)                  T1/lmr/m/it --> T1/lmr/b/it on input line 205.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 204.
+(Font)                  T1/lmr/m/n --> T1/lmr/b/n on input line 205.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-basic-dictionary-English.dict"
@@ -2897,14 +2897,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 204.
+LaTeX Info: Redefining \microtypecontext on input line 205.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 204.
+LaTeX Info: Redefining \showhyphens on input line 205.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2932,7 +2932,7 @@ t>
 File: UiB-images/colorado-state-university-logo.png Graphic file (type png)
 <use UiB-images/colorado-state-university-logo.png>
 Package pdftex.def Info: UiB-images/colorado-state-university-logo.png  used on
- input line 204.
+ input line 205.
 (pdftex.def)             Requested size: 94.26114pt x 70.69586pt.
  [1
 
@@ -2942,10 +2942,8 @@ s/colorado-state-university-logo.png>] (main.nav) (main.toc) [2
 ]
 [3
 
-] [4
-
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 231
+LaTeX Font Info:    Trying to load font information for U+msa on input line 222
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -2955,7 +2953,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 231
+LaTeX Font Info:    Trying to load font information for U+msb on input line 222
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -2965,12 +2963,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 23
-1.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 22
+2.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd"
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-) [5
+) [4
+
+] [5
 
 ] [6
 
@@ -2979,23 +2979,23 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 263.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 269.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 263.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 269.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 263.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 269.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <8> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 263.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 269.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 263.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 269.
 
 [8
 
@@ -3004,23 +3004,23 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
 ]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 302.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 306.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 302.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 306.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 302.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 306.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <7> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 302.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 306.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 302.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 306.
 
 [10
 
@@ -3028,7 +3028,7 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 323.
+(amsmath)                 on input line 329.
 
 [11
 
@@ -3036,7 +3036,7 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-53.
+64.
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -3070,7 +3070,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ] [26
 
 ]
-Overfull \vbox (3.44574pt too high) detected at line 579
+Overfull \vbox (3.89943pt too high) detected at line 608
  []
 
 [27
@@ -3079,36 +3079,31 @@ Overfull \vbox (3.44574pt too high) detected at line 579
 
 ] [29
 
-] [30
+]
+Overfull \vbox (1.14299pt too high) detected at line 668
+ []
+
+[30
 
 ] [31
 
-]
-Overfull \vbox (2.28728pt too high) detected at line 651
- []
-
-[32
+] [32
 
 ]
-Overfull \vbox (12.87973pt too high) detected at line 674
+Overfull \vbox (2.28728pt too high) detected at line 711
  []
 
 [33
 
-] [34
+]
+Overfull \vbox (5.11545pt too high) detected at line 737
+ []
+
+[34
 
 ] [35
 
-]
-Overfull \hbox (7.3772pt too wide) detected at line 710
-\OMX/MnSymbolE/m/n/10.95 S\T1/lmr/m/it/10.95 A\OMX/MnSymbolE/m/n/10.95 à\T1/lmr
-/m/it/10.95 x\OMX/MnSymbolE/m/n/10.95 çS \U/MnSymbolD/m/n/10.95 B [] B [][] [] 
-\OML/cmm/m/it/10.95 []\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10.95 x[]\OMX/MnS
-ymbolE/m/n/10.95 ç \U/MnSymbolD/m/n/10.95   \T1/lmr/m/n/10.95 0\OML/cmm/m/it/10
-.95 :
- []
-
-[36
+] [36
 
 ] [37
 
@@ -3131,7 +3126,7 @@ ymbolE/m/n/10.95 ç \U/MnSymbolD/m/n/10.95   \T1/lmr/m/n/10.95 0\OML/cmm/m/it/10
 ] [46
 
 ]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 845
+LaTeX Font Info:    Trying to load font information for U+euf on input line 963
 .
 
 ("C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
@@ -3142,7 +3137,7 @@ fg"
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
-Overfull \hbox (12.53894pt too wide) detected at line 845
+Overfull \hbox (34.439pt too wide) detected at line 963
 \U/euf/m/n/10.95 M\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10.95 M\OMX/MnSymbolE/
 m/n/10.95 ç [][]\U/MnSymbolD/m/n/10.95   \OMX/MnSymbolE/m/n/10.95 ò\OML/cmm/m/i
 t/10.95  \U/MnSymbolD/m/n/10.95 > \OMS/MnSymbolS/m/n/10.95 M[]\OMX/MnSymbolE/m
@@ -3162,14 +3157,12 @@ n/10.95 > \OMS/MnSymbolS/m/n/10.95 A[]\OMX/MnSymbolE/m/n/10.95 à\T1/lmr/m/it/10
 
 [47
 
-]
-Overfull \vbox (1.08806pt too high) detected at line 860
- []
-
-[48
+] [48
 
 ]
-Overfull \vbox (0.7872pt too high) detected at line 877
+Overfull \hbox (14.01445pt too wide) detected at line 996
+\OMS/MnSymbolS/m/n/10.95 M[]\OMX/MnSymbolE/m/n/10.95 à\U/msb/m/n/10.95 B[]\OMX/
+MnSymbolE/m/n/10.95 ç \U/MnSymbolD/m/n/10.95   [] \OML/cmm/m/it/10.95 :
  []
 
 [49
@@ -3200,6 +3193,8 @@ Overfull \vbox (0.7872pt too high) detected at line 877
 
 ] [62
 
+] [63
+
 ]
 \tf@nav=\write9
 \openout9 = `main.nav'.
@@ -3210,16 +3205,17 @@ Overfull \vbox (0.7872pt too high) detected at line 877
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
- (main.aux)
+
+(main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 52687 strings out of 479799
- 1213797 string characters out of 2867787
- 1669862 words of memory out of 3000000
- 68328 multiletter control sequences out of 15000+200000
- 714902 words of font info for 249 fonts, out of 3000000 for 9000
+ 52685 strings out of 479799
+ 1213769 string characters out of 2867787
+ 1671972 words of memory out of 3000000
+ 68332 multiletter control sequences out of 15000+200000
+ 714429 words of font info for 245 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,725b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
@@ -3233,35 +3229,37 @@ ms/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Colin/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}<C:/Users/Colin/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol-Bold10.p
 fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbo
-l/MnSymbol10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/mnsymbol/MnSymbol7.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Colin/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Colin/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.p
-fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/lm/lmb10.pfb><C:/Users/Colin/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/lm/lmbo10.pfb><C:/Users/Colin/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Colin/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Coli
-n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/C
-olin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users
-/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Use
-rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/U
-sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><
-C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.p
-fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri
-7.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
-mri8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb>
-Output written on main.pdf (62 pages, 576646 bytes).
+l/MnSymbol-Bold8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/mnsymbol/MnSymbol7.pfb><C:/Users/Colin/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Colin/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/U
+sers/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Use
+rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmb10.pfb><C:/
+Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbo10.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.
+pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmb
+x12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm
+/lmbxi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmr6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmr7.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/lm/lmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmri10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmri12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmri7.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Users/Colin/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (63 pages, 605646 bytes).
 PDF statistics:
- 613 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
+ 628 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
  38592 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -1,6 +1,5 @@
 %\documentclass[aspectratio=169]{beamer}
 \documentclass[aspectratio=169,handout]{beamer}
-
 \usepackage[utf8]{inputenx} % For æ, ø, å
 \usepackage{csquotes}       % Quotation marks
 \usepackage{microtype}      % Improved typography
@@ -51,8 +50,10 @@
 \usepackage{animate}
 \usepackage[percent]{overpic}
 \definecolor{lighter_csu_green}{RGB}{60,133,77}
+\definecolor{csu_gold}{RGB}{198,184,77}
 \definecolor{gray}{RGB}{60,60,60}
 \newcommand\boldgreen[1]{\textcolor{lighter_csu_green}{\emph{\textbf{#1}}}}
+\newcommand\boldgold[1]{\textcolor{csu_gold}{\textbf{#1}}}
 \usepackage{MnSymbol}
 %border matrix
 \makeatletter
@@ -209,9 +210,14 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 
 \section{Introduction}
 
-\begin{frame}{Electrical Impedance Tomography}
+\begin{frame}{Motivating problems}
 \vfill
-\boldgreen{Electrical Impedance Tomography (EIT)} asks whether one can determine the conductivity of a medium based on measurements along the boundary.
+\begin{itemize}
+\pause
+\item \boldgreen{Electrical Impedance Tomography (EIT)} asks whether one can determine the conductivity of a medium from the voltage-to-current map.
+\pause
+\item The \boldgreen{Calder\'on problem} replaces the medium with a manifold $M$, conductivity with $g$, and replaces the voltage-to-current map with the Dirichlet-to-Neumann operator $\Lambda$.
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -219,13 +225,13 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \vfill 
     \begin{itemize}
         \pause 
-        \item Can we retrieve topological information from spaces of functions on a manifold $M$?
+        \item What topological information can we retrieve from functions on a manifold $M$?
 
         \pause
-        \item Do these spaces also contain geometric information such as metric data?
+        \item Do these functions also contain geometric information such as metric data?
 
         \pause
-        \item Can we determine enough about these spaces from partial information -- say information only on the boundary?
+        \item How much can we learn about $M$ if our data is supported only on the boundary?
     \end{itemize}
 \vfill
 \end{frame}
@@ -236,9 +242,9 @@ $\kern\wd\@ne\kern -\@tempdima\left\@firstoftwo#1%
 \vfill
 \begin{itemize}
     \pause
-    \item \boldgreen{Clifford algebra} originated in 1878 with William Kingdon Clifford's work that extends Hermann Grassmann's \boldgreen{exterior algebra}.
+    \item \boldgreen{Clifford algebra} originated in 1878 with William Kingdon Clifford's work that extends Hermann Grassmann's \boldgreen{exterior algebra}. 
     \pause
-    \item \boldgreen{Clifford analysis} arrived in the 1980's due to Hestenes, Sobczyk, Sommen, Brackx, and Delenghe in order to enrich \'Ellie Cartan's \boldgreen{differential forms}.
+    \item \boldgreen{Clifford analysis} arrived in the 1980's due to Hestenes, Sobczyk, Sommen, Brackx, and Delenghe in order to enrich \'Elie Cartan's \boldgreen{differential forms}. See: \boldgold{[Hestenes, Sobczyk: 1984]} and \boldgold{[Doran, Lasenby: 2003]}.
 \end{itemize}
 \vfill
 \end{frame}
@@ -256,7 +262,7 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
         \pause
         \item Form the \boldgreen{Clifford algebra} via a quotient
         \[
-        C\ell(V,Q) \coloneqq \mathcal{T}(V)/ \langle \blade{v} \otimes \blade{v} - Q(V)\rangle.
+        C\ell(V,Q) \coloneqq \mathcal{T}(V)/ \langle \blade{v} \otimes \blade{v} - Q(\blade{v})\rangle.
         \]
 \end{itemize}
 \vfill
@@ -264,8 +270,6 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 
 \begin{frame}{Geometric and exterior algebras}
 \vfill
-\pause
-Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 \begin{itemize}
         \pause
         \item Given a (pseudo) inner product $g$, we set $Q(\cdot)=g(\cdot,\cdot)$ and define a \boldgreen{geometric algebra}
@@ -284,7 +288,7 @@ Let $V$ be a vector space over a field $\mathbb{F}$ with quadratic form $Q$.
 \begin{frame}{Algebra structure}
 \vfill
 \pause
-We define a multiplication in $\G$ by noting how the product $\otimes$ acts in the quotient.
+Multiplication in $\G$ is seen by looking at how $\otimes$ acts in the quotient.
 \begin{itemize}
     \pause
     \item Given $\blade{u}, \blade{v} \in \G$ we can take the product
@@ -308,33 +312,40 @@ We define a multiplication in $\G$ by noting how the product $\otimes$ acts in t
         \item $\G$ is graded and of dimension $2^n$.
     \begin{itemize}
         \pause
-        \item There are ${n \choose r}$ elements of grade $r$ called \boldgreen{$r$-vectors}. 
+        \item There are ${n \choose r}$ elements in the space of grade-$r$ elements, $\G^r$, called \boldgreen{$r$-vectors}. 
         \pause
         \item Those that are exterior products of $r$ independent vectors are \boldgreen{$r$-blades}. E.g., $\blade{A_r}=\blade{v}_1 \wedge \cdots \wedge\blade{v}_r$.
+        \pause
+        \item Elements of the even grade subalgebra, $\G^+$, are called \boldgreen{spinors}.
     \end{itemize}
         \pause
         \item The most general elements are \boldgreen{multivectors} and are given by
         \[
         A = \sum_{r=0}^n \proj{r}{A},
         \]
-        where $\proj{r}{A}\in \G^r$ extracts the grade $r$ part of $A$.
+        where $\proj{r}{A}\in \G^r$ extracts the grade $r$ part of $A$. So $\displaystyle{\G=\bigoplus_{r=0}^n \G^r}$.
 \end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{Algebra Structure}
+\begin{frame}{Algebraic Structure}
 \vfill
-Extend the multiplication from vectors to multivectors by
+\begin{itemize}
+\pause
+\item Extend the multiplication from vectors to multivectors. 
+\pause
+\item On homogeneous elements,
 \[
 A_r B_s = \proj{|r-s|}{A_r B_s} + \proj{|r-s|+2}{A_r B_s} + \cdots + \proj{r+s}{A_r B_s}
 \]
 \pause
-and define
+\item The most important products are
 \begin{align*}
 A_r \cdot B_s &\coloneqq \proj{|r-s|}{A_r B_s}  & A_r \wedge B_s &\coloneqq \proj{r+s}{A_r B_s}\\
 ~\\
 A_r \rfloor B_s &\coloneqq \proj{s-r}{A_r B_s}  & A_r \lfloor B_s &\coloneqq \proj{r-s}{A_r B_s}
 \end{align*}
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -374,10 +385,10 @@ which is bilinear, symmetric, and positive definite if $g$ is positive definite.
 \begin{frame}{Adjoint}
 \vfill
 Note the reverse acts as an adjoint by
-\begin{align}
+\begin{align*}
 (CA,B) &= (A,C^\dagger B)\\
 (AC,B) &= (A,BC^\dagger).
-\end{align}
+\end{align*}
 \vfill
 \end{frame}
 
@@ -402,11 +413,11 @@ Note the reverse acts as an adjoint by
 \vfill
 \begin{itemize}
 \pause
-\item If $g$ is positive definite, then all blades are invertible [Chisholm: 2012].
+\item If $g$ is positive definite all blades are invertible \boldgold{[Chisholm: 2012]}.
 \pause
 \item If $|\blade{A_r}|=1$, then $\blade{A_r}$ is a \boldgreen{unit blade}. 
 \pause
-\item Unit $r$-blades correspond to an $r$-dimensional subspace and can be identified with points in $\Grassmannian{r}{n}$.
+\item Unit $r$-blades correspond to $r$-dimensional subspaces so they correspond to points in $\Grassmannian{r}{n}$.
 \end{itemize}
 \vfill
 \end{frame}
@@ -444,14 +455,16 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 \vfill
 \end{frame}
 
-\begin{frame}{Quaternions and complex numbers}
+\begin{frame}{Examples}
 \vfill
 \begin{itemize}
 \pause
-\item \underline{\textbf{Claim:} $\mathbb{H}$ arises naturally as the even subalgebra $\G_3^+$.}
+\item Define $\G_{p,q}$ by letting $\blade{e}_i^2=-1$ for $i=1,\dots,p$ and $\blade{e}_i^2=+1$ otherwise.
+\pause
+\item \underline{\textbf{Claim:}} $\mathbb{H}$ arises naturally as the even subalgebra $\G_3^+\coloneqq \G_{0,3}^+$.
 
 \pause
-\item \underline{\textbf{Claim:} $\C$ arises naturally as the even subalgebra $\G_2^+$.}\\
+\item \underline{\textbf{Claim:}} $\C$ arises naturally as the even subalgebra $\G_2^+\coloneqq \G_{0,2}^+$.
 \begin{itemize}
 \pause
 \item Take the standard basis $\blade{e}_1,\blade{e}_2$, and define $\bivector_{12}= \blade{e}_1\blade{e}_2$ and note $\bivector_{12}^2 = -1$. Thus,
@@ -459,16 +472,18 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 (u_1+v_1 \bivector_{12})(u_2 + v_2 \bivector_{12}) = u_1u_2-v_1 v_2 + (u_1 v_2+u_2v_1)\bivector_{12}.
 \]
 \pause
-\item Moreover, right multiplication of vectors by $\bivector_{12}$ rotates counter-clockwise by $\pi/2$.
+\item Right multiplication by $\bivector_{12}$ rotates counter-clockwise by $\pi/2$.
 \end{itemize}
 \end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{Clifford algebra structure on manifolds}
+\section{Clifford analysis}
+
+\begin{frame}{Multivector Fields}
 \vfill
 \begin{itemize}
-\item We let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemannian manifold with metric $g$ \textcolor{gray}{(unless otherwise stated)}.
+\item Let $M$ be a smooth, compact, connected, and oriented $n$-dimensional Riemannian manifold with metric $g$.
 
 \item \noindent\textbf{\underline{Idea:}} Form the Clifford algebras on tangent spaces.
     \begin{itemize}
@@ -483,20 +498,19 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
         \G(M) \coloneqq \{\textrm{$C^\infty$-smooth sections of $C\ell(TM,g)$}\}.
         \]
     \end{itemize}
-
+    \pause
+    \item Retain the same naming scheme as before.
 \end{itemize}
 \vfill
 \end{frame}
 
-\section{Clifford analysis}
-
-\begin{frame}{Covariant derivative}
+\begin{frame}{Multivector derivative}
 \vfill
-    On $M$ we have the unique torsion free Levi-Civita connection $\nabla$ and covariant derivative $\nabla_{\blade{u}}$.
+    On $M$, take the unique Levi-Civita connection $\nabla$ and covariant derivative $\nabla_{\blade{u}}$.
     \pause
     \begin{itemize}
         \pause
-        \item $\nabla_{\blade{u}}$ can be extended to multivectors and it is grade preserving [Schindler: 2018],
+        \item $\nabla_{\blade{u}}$ is extended to multivectors and is grade preserving \boldgold{[Schindler: 2018]},
         \[
         \nabla_{\blade{u}} A_r = \proj{r}{\nabla_{\blade{u}} A_r}.
         \]
@@ -514,12 +528,12 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 \vfill
 \begin{itemize}
     \pause
-    \item We define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) in some local basis $\blade{v}_1,\dots,\blade{v}_n$ by
+    \item Define the \boldgreen{gradient} (or \boldgreen{Dirac operator}) locally by
     \[
     \grad = \sum_{i=1}^n \blade{v}^i \nabla_{\blade{v}_i}
     \]
     \pause
-    \item $\grad$ has the algebraic properties of a vector in $\G(M)$ and Leibniz rule
+    \item $\grad$ acts as a vector in $\G(M)$ and obeys the Leibniz rule
     \[
     \grad(AB) = \dot{\grad}\dot{A}B + \dot{\grad}A\dot{B}.
     \]
@@ -529,47 +543,62 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
 \vfill
 \end{frame}
 
-\begin{frame}{Differential forms}
+\begin{frame}{Example}
 \vfill
-    We define the \boldgreen{$r$-dimensional directed measure}
+\begin{itemize}
+\pause
+\item In $\G_3(\R^3)$, $\nabla_{\blade{e}_i}$ is the partial derivative.
+\pause
+\item Take a vector field $\blade{v}$, then
     \[
-    dX_r\coloneqq \blade{v}_{j_1} \wedge \cdots \blade{v}_{j_r} dx^{j_1} \cdots dx^{j_r}
+    \grad \blade{v} = \underbrace{\grad \cdot \blade{v}}_{\textrm{divergence}} + \underbrace{\grad \wedge \blade{v}}_{\textrm{curl}}.
     \]
-    where summation is implied over the increasing set of indices $1\leq j_1<\cdots<j_r\leq n$. This allows us to define an $r$-form $\alpha_r$ by
-    \[
-    \alpha_r = A_r \cdot dX_k^\dagger
-    \]
-    where $A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}$. We call $A_r$ the \boldgreen{multivector equivalent} of $\alpha_r$.
+\pause
+\item Specifically,
+\[
+    \operatorname{curl}(\blade{v}) = (\grad \wedge \blade{v})^\perp
+\]
+\end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{Volume form}
+\begin{frame}{Differential forms}
 \vfill
-    The \boldgreen{volume form} on $M$ is given in local coordinates by 
+\begin{itemize}
+    \pause
+    \item Define the \boldgreen{$r$-dimensional directed measure}
     \[
-    \mu = \sqrt{|g|}dx^1\cdots dx^n = \pseudoscalar^{-1} \cdot dX_n
-    \]
-    Hence, we can integrate scalar fields $A_0$ on $M$ by
+    dX_r\coloneqq \blade{v}_{j_1} \wedge \cdots \wedge \blade{v}_{j_r} dx^{j_1} \cdots dx^{j_r}
+    \] 
+    where $1\leq j_1<\cdots<j_r\leq n$ and summation is implied. 
+    \pause
+    \item Define an $r$-form $\alpha_r$ by
     \[
-    \int_M A_0^\perp \cdot dX_n =  \int_M A_0 \mu.
+    \alpha_r = A_r \cdot dX_r^\dagger
     \]
+    where $A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}$. 
+    \pause
+    \item Refer to $A_r$ the \boldgreen{multivector equivalent} of $\alpha_r$.
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Exterior algebra and calculus}
 \vfill
 \begin{itemize}
+\pause
 \item Given an $r$- and $s$-form $\alpha_r$ and $\beta_s$ we have
 \begin{align*}
-\alpha_r + \beta_s &= (A_r+B_s) \cdot dX_r^\dagger\\
-\alpha_r \wedge \beta_s &= (A_r \wedge B_s) \cdot dX_{r+s}^\dagger.
+\alpha_r + \beta_s &= (A_r+B_s) \cdot dX_r^\dagger, & \alpha_r \wedge \beta_s &= (A_r \wedge B_s) \cdot dX_{r+s}^\dagger.
 \end{align*}
-
+\vspace*{-0.25cm}
+\pause
 \item The exterior derivative on multivector equivalents is 
 \[
 d\alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger
 \]
-
+\pause
+\vspace*{-0.25cm}
 \item The Hodge star on multivector equivalents is
 \[
 \star \alpha_r = (\pseudoscalar^{-1} A_r)^\dagger \cdot dX_{n-r}^\dagger
@@ -578,32 +607,63 @@ d\alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger
 \vfill
 \end{frame}
 
+\begin{frame}{Volume form}
+\vfill
+\begin{itemize}
+    \pause
+    \item The \boldgreen{volume form} on $M$ is given in local coordinates by 
+    \[
+    \mu = \sqrt{|g|}dx^1\cdots dx^n = \pseudoscalar^{-1} \cdot dX_n
+    \]
+    \pause
+    \item We integrate scalar fields $A_0$ on $M$ by
+    \[
+    \int_M A_0^\perp \cdot dX_n =  \int_M A_0 \mu.
+    \]
+\end{itemize}
+\vfill
+\end{frame}
+
 \begin{frame}{Multivector field inner product}
 \vfill
 \begin{itemize}
-\item We define an inner product on multivector fields by 
+\pause
+\item We define the $L^2$-inner product on multivector fields by 
 \[
 \multivecinnerproduct{A}{B}~ \coloneqq \frac{1}{\textrm{vol}(M)} \int_M (A,B)\mu
 \]
+\vspace*{-0.1cm}
+\pause
 \item This realizes the $r$-form inner product
 \[
 \int_M \alpha_r \wedge \star \beta_r = \int_M \proj{}{A_r^\dagger B_r}\mu = \textrm{vol}(M)\multivecinnerproduct{A}{B}
 \]
-\item $A_r$ and $B_s$ are orthogonal when $r\neq s$ so this agrees with the grade direct sum $\oplus$ -- we use the same notation for both.
+\vspace*{-0.1cm}
+\pause
+\item $\multivecinnerproduct{A_r}{B_s}=0$ when $r\neq s$ so the $L^2$-direct sum agrees with the grade based direct sum.
 \end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Boundary}
 \vfill
-On the boundary $\partial M$, we have the boundary pseudoscalar $\pseudoscalar_{\partial}$ and the boundary normal $\blade{\nu} = \pseudoscalar_\partial^\perp$. Then
+\begin{itemize}
+\pause
+\item On $\partial M$, the boundary pseudoscalar $\pseudoscalar_{\partial}$ induces the boundary normal 
+\[
+\blade{\nu} = \pseudoscalar_\partial^\perp.
+\]
+\vspace*{-0.25cm}
+\pause
+\item The boundary volume form is
 \[
 \mu_\partial \coloneqq \pseudoscalar_\partial^{-1} \cdot dX_{n-1}
 \] 
-and we define 
+and we define the \boldgreen{multivector field inner product}
 \[
 \multivecinnerproduct{A}{B}_\partial~ \coloneqq \frac{1}{\textrm{vol}(M)}\int_{\boundary} (A,B)\mu_\partial.
 \]
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -643,7 +703,7 @@ We have the Green's formula for the gradient
     \int_M A^\dagger \pseudoscalar \grad B \mu &= (-1)^n \int_M \dot{A}^\dagger \dot{\grad} \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial\\
     &=(-1)^n \int_M (\grad A)^\dagger \pseudoscalar B \mu + \int_{\partial M} A^\dagger \pseudoscalar_\partial B \mu_\partial.
 \end{align*}
-Then, take the scalar part and divide by $\textrm{vol}(M)$ to find
+Take the scalar part and divide by $\textrm{vol}(M)$ to find
 \[
 \multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B}_\partial.
 \]
@@ -651,21 +711,24 @@ Then, take the scalar part and divide by $\textrm{vol}(M)$ to find
 \end{frame}
 
 
-\begin{frame}{Monogenic fields and gradients}
+\begin{frame}{Special fields}
 \vfill
 \begin{itemize}
-\item The space of \boldgreen{monogenic fields} is
+\pause
+\item Define the \boldgreen{monogenic fields}
 \[
 \monogenicfields{} ~\coloneqq \{ A \in \G(M) ~\vert~ \grad A = 0 \}.
 \]
-
+\vspace*{-0.25cm}
+\pause
 \item Let $f=u+v\blade{B} \in \G_2^+(\R^2)$ then $\grad f = 0$ yields the Cauchy-Riemann equations
 \begin{align*}
-    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}, &
     \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}.
 \end{align*}
-
-\item The \boldgreen{gradients} are 
+\pause
+\vspace*{-0.25cm}
+\item Define the \boldgreen{gradients}
 \[
 \grad \G(M) \coloneqq \{\grad A ~\vert~ A \in \G(M) \textrm{~and~} A\vert_\boundary = 0 \}.
 \]
@@ -673,27 +736,39 @@ Then, take the scalar part and divide by $\textrm{vol}(M)$ to find
 \vfill
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Cauchy kernel}
 \vfill
-For $M$ a domain in $\R^n$ with $n\geq 2$, we have the vector valued field
+\begin{itemize}
+\pause
+\item For the remainder, take $M$ imbedded in $\R^n$ with $n\geq 2$.
+\pause
+\item Define the vector field
 \[
 E(x) \coloneqq \frac{1}{S_n} \frac{x}{|x|^n}
 \]
-where $S_n$ is the surface area of the unit ball. Note
+where $S_n$ is the surface area of the unit ball. 
+\pause
+\item Note,
 \[
 \grad E(x) = -\dot{E}(x)\dot{\grad} = \delta(x).
 \]
-We then define the \boldgreen{Cauchy kernel} by $G(x,x')\coloneqq E(x'-x)$.
+\pause
+\item Define the \boldgreen{Cauchy kernel} by $G(x,x')\coloneqq E(x'-x)$.
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Cauchy integral}
 \vfill
-If $A\in \monogenicfields{}$, then we have the \boldgreen{Cauchy integral formula}
+\begin{itemize}
+\pause
+\item Let $A\in \monogenicfields{}$, then we have the \boldgreen{Cauchy integral formula}
 \[
 A(x) = (-1)^n \pseudoscalar^{-1} \int_\boundary G(x,x') \pseudoscalar_\partial(x') A(x') \mu_\partial(x').
 \]
-This allows us to uniquely determine a monogenic field from boundary values $A\vert_\boundary$.
+\pause
+\item This uniquely determines a monogenic field from boundary values.
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -702,10 +777,13 @@ This allows us to uniquely determine a monogenic field from boundary values $A\v
 \begin{lemma}
 Let $A\in \monogenicfields{}$ be such that $A\vert_\boundary = 0$. Then $A=0$ on all of $M$.
 \end{lemma}
-\emph{Proof.}
+\begin{lemma}
+Fix a multivector field $A\in \G(M)$. If
 \[
-|A(x)| \leq \left| \int_{\boundary} G(x,x') \pseudoscalar_{\partial}(x') A(x') \mu_\partial(x') \right| \leq  \int_{\boundary}\left| G(x,x') \pseudoscalar_{\partial}(x') A(x') \right| \mu_\partial(x') =0.
+\multivecinnerproduct{A}{B}=0
 \]
+for all $B\in \G(M)$ with $B\vert_{\boundary} = 0$, then $A=0$.
+\end{lemma}
 \vfill
 \end{frame}
 
@@ -717,32 +795,23 @@ Let $A\in \monogenicfields{}$ be such that $A\vert_\boundary = 0$. Then $A=0$ on
 %thus $A=0$ on $M$.
 %\end{frame}
 
-\begin{frame}{}
-\vfill
-\begin{lemma}
-Fix a multivector field $A\in \G(M)$. If
-\[
-\multivecinnerproduct{A}{B}=0
-\]
-for all $B\in \G(M)$ with $B\vert_{\boundary} = 0$, then $A=0$.
-\end{lemma}
-\vfill
-\end{frame}
-
-\begin{frame}{}
-\vfill
-\emph{Proof sketch.}
-\begin{itemize}
-\item Use mollifiers to smooth indicator functions $\chi_U$ on open subsets $U$ to be supported only on closed $\epsilon$ neighborhood $\overline{U^\epsilon}$. Call these functions $\chi_U^\epsilon$.
-\item Write $A=\sum_J A_J \blade{V}^J$ with $\blade{V}^J = \blade{v}^{j_1}\wedge \cdots\wedge  \blade{v}^{j_r}$. Then note
-    \[
-    \multivecinnerproduct{A}{A_J \blade{V}_J \chi_U^\epsilon} = 0
-    \] 
-    implies $A_J=0$ on $U^\epsilon$ for all $J$ since $(\blade{V}^{J}, \blade{V}_K)=\delta^J_K$. Hence $A=0$ on $U^\epsilon$.
-\item Cover $M$ in such $U^\epsilon$ and repeat the argument leaving the $A\vert_\boundary$ undetermined. But, by smoothness of $A$, $A=0$ on $M$.
-\end{itemize}
-\vfill
-\end{frame}
+%\begin{frame}{}
+%\vfill
+%\emph{Proof sketch.}
+%\begin{itemize}
+%\pause
+%\item Use mollifiers to smooth indicator functions $\chi_U$ on open subsets $U$ to be supported only on closed $\epsilon$ neighborhood $\overline{U^\epsilon}$. Call these functions $\chi_U^\epsilon$.
+%\pause
+%\item Write $A=\sum_J A_J \blade{V}^J$ with $\blade{V}^J = \blade{v}^{j_1}\wedge \cdots\wedge  \blade{v}^{j_r}$. Then note
+%    \[
+%    \multivecinnerproduct{A}{A_J \blade{V}_J \chi_U^\epsilon} = 0
+%    \] 
+%    implies $A_J=0$ on $U^\epsilon$ for all $J$ since $(\blade{V}^{J}, \blade{V}_K)=\delta^J_K$. Hence $A=0$ on $U^\epsilon$.
+%\pause
+%\item Cover $M$ in such $U^\epsilon$ and repeat the argument leaving the $A\vert_\boundary$ undetermined. But, by smoothness of $A$, $A=0$ on $\partial M$.
+%\end{itemize}
+%\vfill
+%\end{frame}
 
 \begin{frame}{}
 \vfill
@@ -757,8 +826,9 @@ The space of multivector fields $\G(M)$ has the $L^2$-orthogonal decomposition
 
 \begin{frame}
 \vfill
-\emph{Proof}
+\emph{Proof.}
 \begin{itemize}
+\pause
 \item \emph{Orthogonality:} Let $A \in \monogenicfields{}$ and $\pseudoscalar \grad B \in \pseudoscalar \grad \G(M)$ and note
 \[
 \multivecinnerproduct{A}{\pseudoscalar \grad B} = (-1)^n \multivecinnerproduct{\grad A}{\pseudoscalar B} + \multivecinnerproduct{A}{\pseudoscalar_\partial B} = 0,
@@ -771,37 +841,70 @@ by the multivector Green's formula.
 \begin{frame}{}
 \vfill
 \begin{itemize}
-\item Let $C\in \G(M)$ be in the orthogonal complement to $\pseudoscalar \grad \G(M)$. Then, by the Cauchy integral formula, construct a monogenic field $\tilde{C}$ from $C\vert_\boundary$ and note $C=\tilde{C}+C_0$ where $C_0\vert_\boundary = 0$. Note
+\pause
+\item Let $C\in \G(M)$ be in the orthogonal complement to $\pseudoscalar \grad \G(M)$. 
+\pause
+\item Use the Cauchy integral formula, construct a monogenic field $\tilde{C}$ from $C\vert_\boundary$ and note $C=\tilde{C}+C_0$ where $C_0\vert_\boundary = 0$. 
+\pause
+\item Note,
 \[
 0 = \multivecinnerproduct{C}{\pseudoscalar \grad B} = \multivecinnerproduct{\grad C_0}{\pseudoscalar B}.
 \]
-By the previous lemmas, it must be that $C_0=0$. Hence the orthogonal complement to $\pseudoscalar \grad \G(M)$ is $\monogenicfields{}$.
+\pause
+\item By the previous lemmas, it must be that $C_0=0$. Hence the orthogonal complement to $\pseudoscalar \grad \G(M)$ is $\monogenicfields{}$.
 \end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Comparing to Hodge-Morrey}
 \vfill
-The Hodge-Morrey decomposition reads
+\begin{itemize}
+\pause
+\item The Hodge-Morrey decomposition reads
 \[
-\G^r(M) = \mathcal{E}^r(M) \oplus \mathcal{C}^r(M) \oplus \mathcal{M}^r(M).
+\Omega^r(M) = \underbrace{\mathcal{E}_D^r(M)}_{\operatorname{Im}(\grad \wedge)} \oplus \underbrace{\mathcal{C}_N^r(M)}_{\operatorname{Im}(\grad \rfloor)} \oplus \underbrace{\mathcal{H}^r(M)}_{\operatorname{Ker}(\grad)}.
 \]
-whereas the Clifford-Hodge-Morrey decomposition ignores specific grades
+via \boldgold{[Schwarz: 1995]}.
+\pause 
+\item Whereas the Clifford-Hodge-Morrey decomposition ignores specific grades
 \[
 \G(M) = \monogenicfields{} \oplus \pseudoscalar \grad \G(M).
 \]
+\end{itemize}
 \vfill
 \end{frame}
 
 \section{Gelfand theory}
 
-\begin{frame}{Open question}
+\begin{frame}{Open questions}
 \vfill
 \begin{itemize}
-    \item [Belishev, Vakulenko, 2017] Prove a noncommutative Gelfand representation using quaternion fields for a ball $\ball$ in $\R^3$. 
-    \item We will prove an analogous result for an arbitrary $\ball$ in $\R^n$.
+\pause
+    \item In \boldgold{[Belishev: 2003]}, we see an algebraic proof for the 2-dimensional Calder\'on problem.
+\pause
+    \item In \boldgold{[Belishev, Vakulenko: 2017]}, we see a proof for a noncommutative Gelfand representation using quaternion fields for a ball $\ball$ in $\R^3$. 
+\pause
+    \item Belishev and Vakulenko as whether this is true in higher dimensions.
+\pause
+    \item We prove an analogous result for an arbitrary $\ball$ in $\R^n$.
+\pause
     \item This approach can hopefully be used to prove the analogous result for any smooth orientable Riemannian manifold $M$.
-    \item For now, we take $M$ imbedded in $\R^n$.
+\end{itemize}
+\vfill
+\end{frame}
+
+\begin{frame}{2-dimensional BC method}
+\vfill
+The boundary control (BC) method is implemented in \boldgold{[Belishev: 2003]} in the following manner.
+\begin{itemize}
+    \pause
+    \item Determine the algebra $\algebra{}(M)$ of holomorphic functions on $M$ from continuous function algebra on the boundary $\algebra{}(\partial M)$ using $\Lambda$.
+    \pause
+    \item The classical Gelfand representation shows $\algebra{}(M)$ is homeomorphic to $M$ via the weak-$\ast$ topology.
+    \pause
+    \item Functions in $\algebra{}(M)$ determine the complex structure on $M$.
+    \pause
+    \item Thus, we can find a $g$ that is conformal with the complex structure.
 \end{itemize}
 \vfill
 \end{frame}
@@ -809,15 +912,16 @@ whereas the Clifford-Hodge-Morrey decomposition ignores specific grades
 \begin{frame}{Subsurface spinor fields}
 \vfill
 \begin{itemize}
-\item Let $\bivector \in \G(M)$ be a constant unit $2$-blade, then an even multivector field $f_+$ satisfying
+\pause
+\item Let $\bivector \in \G(M)$ be a constant unit $2$-blade, then $f_+\in \G^+(M)$ satisfying
 \[
 f_+ = \projection_{\bivector} \circ f_+ \circ \projection_{\bivector}
 \]
-is a \boldgreen{subsurface spinor field} and we let $\G_{\bivector}^+(M)$ to denote the space such fields.
-
-\item We note that the space 
+is a \boldgreen{subsurface spinor field}. Let $\G_{\bivector}^+(M)$ denote the space such fields.
+\pause
+\item The space of monogenic subsurface spinors
 \[
-\algebra_{\bivector(M)} = \{ f_+ \in \G_{\bivector}^+(M) ~\vert~ \grad f_+ = 0 \}
+\algebra_{\bivector}(M) = \{ f_+ \in \G_{\bivector}^+(M) ~\vert~ \grad f_+ = 0 \}
 \]
 is a commutative unital Banach algebra.
 \end{itemize}
@@ -826,67 +930,108 @@ is a commutative unital Banach algebra.
 
 \begin{frame}{Functionals}
 \vfill
-We define the \boldgreen{spinor dual} $\dualmonogenics(M)$ as the continuous right $\G_n$-module homomorphisms
+\begin{itemize}
+\pause
+\item Define the \boldgreen{spinor dual} $\dualmonogenics(M)$ as the continuous right $\G_n$-module homomorphisms
 \[
 \dualmonogenics(M) \coloneqq \{ l \colon \monogenicfields{+} \to \G_n^+ ~\vert~ l(fs+g)=l(f)s+l(g), ~\forall f,g\in \monogenicfields{}, ~s \in \G_n^+\}
 \]
-and refer to the elements as \boldgreen{spin functionals}. We provide $\dualmonogenics(M)$ with the weak-$\ast$ topology so that every $x\in M$ corresponds to a continuous map on $\dualmonogenics(M)$.
+and refer to the elements as \boldgreen{spin functionals}. 
+\pause
+\item Assert the weak-$\ast$ topology on $\dualmonogenics(M)$ so that every $x\in M$ corresponds to a continuous map on $\dualmonogenics(M)$.
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Characters}
 \vfill
-Define the algebra $\mathbb{A}_{\bivector}$ to be the algebra generated by $1$ and $\bivector$. Then, the \boldgreen{spinor spectrum} $\characters(M)$ is the set of algebra homomorphisms
+\begin{itemize}
+\pause
+\item Define the algebra $\mathbb{A}_{\bivector}$ to be the algebra generated by $1$ and $\bivector$. 
+\pause
+\item The \boldgreen{spinor spectrum} $\characters(M)$ is the set of algebra homomorphisms
 \[
 \characters(M) \coloneqq \{ \delta \in \dualmonogenics(M) ~\vert~ \delta(f)\in\mathbb{A}_{\bivector},~ \delta(fg) = \delta(f)\delta(g),~\forall f,g \in \algebra_{\bivector}(M),~ \bivector \in \Grassmannian{2}{n} \}
 \]
-and refer to the elements as \boldgreen{spin characters}. Note that one example of such characters are point evaluations $\delta(f)=f(x^\delta)$.
+and refer to the elements as \boldgreen{spin characters}. 
+\pause
+\item One example of such characters are point evaluations $\delta(f)=f(x^\delta)$.
+\pause
+\item We show these are the only elements in the spectrum.
+\end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{$z$ analogs and monogenic polynomials}
-Take $\blade{e}_i$ to be an orthonormal basis for $\R^n$, let $\bivector_{ij}=\blade{e}_i\blade{e}_j$ and define the functions $z_{ij}=x_j-x_i \bivector_{ij}$ and note $z_{ij} \in \algebra_{\bivector_{ij}}(M)$. 
+\begin{frame}{$z$ analogs}
+\vfill
+\begin{itemize}
+\pause
+\item Take the standard basis for $\R^n$, and consider $M=\ball_{R,w}$.
+\pause
+\item Let $\bivector_{ij}=\blade{e}_i\blade{e}_j$, and define 
+\[
+z_{ij}=x_j-x_i \bivector_{ij}
+\]
+\pause
+\item Note $z_{ij} \in \algebra_{\bivector_{ij}}(\ball_{R,w})$.
+\end{itemize}
+\vfill
+\end{frame}
 
-Let $\sigma$ be a permutation of $\{2,3,\dots,n\}$, then the homogeneous polynomial of degree $j$
+\begin{frame}{Monogenic polynomials}
+\begin{itemize}
+\pause
+
+\item Let $\sigma$ be a permutation of $\{2,3,\dots,n\}$, then
 \[
 p_{j_2\cdots j_n}(x) = \frac{1}{j!} \sum_{\textrm{permutations}} z_{1\sigma(1)}(x)\cdots z_{1\sigma(j)}(x)
 \]
-is monogenic.
-
-Collect these into the set of \boldgreen{monogenic polynomials}
+is a monogenic homogeneous polynomial of degree $j$.
+\pause
+\item Collect these into the set of \boldgreen{monogenic polynomials}
 \[
-    \monogenics^\mathcal{P}(M) = \left\{\sum_{j=0}^N \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}}p_{j_2 \cdots j_n}a_{j_2 \cdots j_n}\right) ~\vert~ j_2+\cdots+j_n = j, N\in \mathbb{N}, ~ a_{j_2\cdots j_n} \in \G_n\right\}.
+    \monogenics^\mathcal{P}(\ball_{R,w}) = \left\{\sum_{j=0}^N \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots + j_n = j}}}p_{j_2 \cdots j_n}a_{j_2 \cdots j_n}\right) ~\vert~ j_2+\cdots+j_n = j, N\in \mathbb{N}, ~ a_{j_2\cdots j_n} \in \G_n\right\}.
 \]
+\end{itemize}
 \end{frame}
 
 \begin{frame}{}
 \vfill
 \begin{lemma}[Density]
-The space $\monogenics^\mathcal{P}(M)$ is dense in $\monogenicfields{}(\ball_{R,w})$.
+The space $\monogenics^\mathcal{P}(\ball_{R,w})$ is dense in $\monogenics(\ball_{R,w})$.
 \end{lemma}
-\emph{Proof sketch.} Let $f \in \monogenics{}(\ball_{R,w})$ and use the Cauchy integral formula to define the coefficients by
+\emph{Proof sketch.} 
+\begin{itemize}
+\item Let $f \in \monogenics{}(\ball_{R,w})$ and use the Cauchy integral formula to define the coefficients $a_{j_2\cdots j_n} \in \G_n^+$ by
 \[
-a_{j_2 \cdots j_n} = \int_{\partial B(w,R)} \frac{\partial^j G(w,y)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y),
+a_{j_2 \cdots j_n} = \int_{\partial \ball_{R,w}} \frac{\partial^j G(w,y)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y),
 \]
-where each $a_{j_2\cdots j_n} \in \G_n^+$. Then 
+\vspace*{-0.5cm}
+\pause
+\item Then
 \[
-f(x) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}} p_{j_2 \cdots j_n} (x-w) a_{j_2 \cdots j_n} \right),
+f(x) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots + j_n = j}}} p_{j_2 \cdots j_n} (x-w) a_{j_2 \cdots j_n} \right),
 \]
-converges pointwise for $x\in \ball_{R,w}$ by [Ryan, 2004].
+converges pointwise for $x\in \ball_{R,w}$ by \boldgold{[Ryan, 2004]}.
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Idea}
 \vfill
-By linearity, we can note that for $\delta \in \characters(M)$
+\begin{itemize}
+\pause
+\item By linearity, we can note that for $\delta \in \characters(\ball_{R,w})$
 \[
-\delta(f(x)) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots j_n = j}}} \delta(p_{j_2 \cdots j_n} (x-w)) a_{j_2 \cdots j_n} \right)
+\delta(f(x)) = \sum_{j=0}^\infty \left(\sum_{\substack{{j_2 \cdots j_n} \\ {j_2 + \cdots + j_n = j}}} \delta(p_{j_2 \cdots j_n} (x-w)) a_{j_2 \cdots j_n} \right)
 \]
-and on each monogenic polynomial
+\pause
+\item On each monogenic polynomial
 \[
 \delta(p_{j_2 \dots j_n}(x)) = \frac{1}{j!} \sum_{\textrm{permutations}}\delta\left((z_{1\sigma(1)}(x)\right) \cdots \delta\left(z_{1\sigma(j)}(x)\right)
 \]
 by the multiplicativity of $\delta$.
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -895,15 +1040,19 @@ by the multiplicativity of $\delta$.
 \begin{lemma}[Point evaluation]
 Let $\delta \in \characters(\ball_{R,w})$ and $z_{ij}\in \algebra_{\bivector_{ij}}(\ball_{R,w})$, then $\delta(z_{ij})=z_{ij}(x^\delta)$ for some $x^\delta \in \R^n$.
 \end{lemma}
-\emph{Proof sketch.} Note that $\delta$ is an algebra homomorphism and thus 
-\[
-\delta(z_{ij})=\alpha_{ij}+\beta_{ij}\bivector_{ij}.
-\]
-Two key relationships $z_{ij}\bivector_{ji}=-z_{ji}$ and $z_{ij}+z_{kj}+z_{ik}\bivector_{kj}$ yield the relationships
+\pause
+\emph{Proof sketch.} 
+\begin{itemize}
+\pause
+\item We have $\delta(z_{ij})=\alpha_{ij}+\beta_{ij}\bivector_{ij}$.
+\pause
+\item Note $z_{ij}\bivector_{ji}=-z_{ji}$ and $z_{ij}=z_{kj}+z_{ik}\bivector_{kj}$ yield the relationships
 \[
 \alpha_{ji}=-\beta_{ij} \qquad \alpha_{ij}=\alpha_{kj} \qquad \beta_{ij}=\beta_{ik} \qquad \alpha_{ik}=-\beta_{kj}.
 \]
-Each set of constants $\alpha$ and $\beta$ is thus given by $n$ independent numbers and so it must be that $\delta(z_{ij})=z_{ij}(x^\delta)$ for some $x^\delta \in \R^n$.
+\pause 
+\item The set of constants $\alpha$ and $\beta$ are determined by $n$ independent numbers, so we can say $\delta(z_{ij})=z_{ij}(x^\delta)$ for some $x^\delta \in \R^n$.
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -912,11 +1061,24 @@ Each set of constants $\alpha$ and $\beta$ is thus given by $n$ independent numb
 \begin{lemma}[Identification]
 \emph{Let $f\in \mathcal{M}(\ball_{R,w})$, then $\delta (f)=f(x^\delta)$ for some $x^\delta \in \ball_{R,w}$.}
 \end{lemma}
-\emph{Proof:} Take $G_0 \in \monogenics^+(\ball_{R,w})$ by $G_0(x) = G(x,x_0)\blade{e}_1$ with $x_0 \notin \ball_{R,w}$. Fix $\delta \in \characters(\ball_{R,w})$ and note $\delta(G_0)=G_0(x^\delta)$. Take a sequence $x_n \to x^\delta$ with $x_n \notin \ball_{R,w}$ and note that the sequence of functions $G_n(x)=G(x,x_n)\blade{e_1} \in \monogenics(\ball_{R,w})$. But 
+\pause
+\emph{Proof.} 
+\begin{itemize}
+\pause
+\item Fix $\delta \in \characters(\ball_{R,w})$ and suppose $x^\delta \notin \ball_{R,w}$. 
+\pause
+\item Take a sequence $x_n \to x^\delta$ with $x_n \notin \ball_{R,w}$.
+\pause
+\item Define $G_n(x)\coloneqq G(x,x_n)\blade{e_1} \in \monogenics^+(\ball_{R,w})$.
+\pause 
+\item Note,
 \[
 \lim_{n\to \infty} \delta(G_n) = \lim_{n\to \infty} G_n(x^\delta)
 \]
-does not converge due to a singularity at $x^\delta$. It must be that $x^\delta \in \ball_{R,w}$ by continuity of $\delta$.
+so this sequence not converge due to a singularity at $x^\delta$. 
+\pause
+\item Hence, it must be that $x^\delta \in \ball_{R,w}$ by continuity of $\delta$.
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -934,58 +1096,90 @@ is a homeomorphism.
 
 \begin{frame}{}
 \vfill
-\emph{Proof:} The lemmas show that the map $\gamma \colon \characters(\ball_{R,w}) \to \ball_{R,w}$ is bijective. To see that this map is a homeomorphism, take a sequence $\delta_n \to \delta$ in $\characters(\ball_{R,w})$ and note
-\[
-\gamma(\delta_n)=x^{\delta_n}.
-\]
-For $f\in \monogenics(\ball_{R,w})$ we have
+\emph{Proof.}
+\begin{itemize}
+\pause
+\item The lemmas show that $\gamma \colon \characters(\ball_{R,w}) \to \ball_{R,w}$ is bijective. 
+\pause
+\item To see that $\gamma$ is a homeomorphism, take a sequence $\delta_n \to \delta$ in $\characters(\ball_{R,w})$.
+\pause
+\item For $f\in \monogenics^+(\ball_{R,w})$ we have
 \[
 f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
 \]
-Taking $n\to \infty$ we realize $\gamma$ and $\gamma^{-1}$ are continuous therefore $\gamma$ is a homeomorphism.
+\vspace*{-0.1cm}
+\pause
+\item Taking $n\to \infty$ shows $\gamma$ and $\gamma^{-1}$ are continuous so $\gamma$ is a homeomorphism.
+\end{itemize}
 \vfill
 \end{frame}
 
 \section{Future work}
 
-\begin{frame}{Calder\'on problem on manifolds}
+\begin{frame}{Calder\'on problem}
 \vfill
-\textbf{\underline{Question:}} Let $(M,g)$ be an unknown Riemannian manifold with known boundary $\partial M$. Consider the forward problem
+\begin{itemize}
+\pause
+\item \textbf{\underline{Question:}} Let $(M,g)$ be an unknown Riemannian manifold with known boundary $\partial M$. Consider the forward problem
 \[
 \begin{cases}
 \Delta \omega = 0 & \textrm{in $M$}\\
 \iota^*\omega = \phi & \textrm{on $\partial M$}
 \end{cases}
 \]
-Define the \boldgreen{Dirichlet-to-Neumann map} on forms by $\Lambda\phi = \iota^*(\star d \omega)$. Can we determine $(M,g)$ from $\Lambda$?
+\pause
+\item Define the \boldgreen{Dirichlet-to-Neumann map} on forms by $\Lambda\phi = \iota^*(\star d \omega)$. 
+\pause
+\item Can we determine $(M,g)$ from $\Lambda$?
+\end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{Calder\'on problem on manifolds}
+\begin{frame}{Calder\'on problem}
 \vfill
 \begin{itemize}
+\pause
     \item This problem is equivalent to the electical impedance tomography problem in dimension 3. 
-    \item The problem has been solved in dimension $n=2$ [Belishev, 2003].
-    \item Solved in dimensions $n\geq 3$ when $M$ is an analytic manifold [Krupchyk, Lassas, Uhlmann, 1989]. The smooth cases is still unsolved.
+\pause
+    \item The problem has been solved in dimension $n=2$ \boldgold{[Belishev: 2003]}.
+\pause
+    \item Solved in dimensions $n\geq 3$ when $M$ is an analytic manifold \boldgold{[Lassas, Taylor, Uhlmann: 2003]}. 
+\pause
+\item The smooth cases is still unsolved.
 \end{itemize}
+\vfill
 \end{frame}
 
-\begin{frame}{Calder\'on problem on manifolds}
+\begin{frame}{Thoughts}
 \vfill
-When $M$ is dimension $n=3$, the scalar potential $u$ and magnetic bivector field $b$ are two parts of a monogenic field $f=u+b$ due to Ohm's and Ampere's laws 
+\begin{itemize}
+\pause
+\item Even monogenic fields have harmonic components. Given a harmonic $r$-vector $A_{r}$, can we reconstruct a monogenic multivector containing $A_r$?
+\pause
+\item For $n=3$, the scalar potential $u$ and magnetic bivector field $b$ are two parts of a monogenic field $f=u+b$ due to Ohm's and Ampere's laws 
 \[
--\grad \wedge u = \grad \rfloor b.
+-\grad \wedge u = \blade{j}= \grad \rfloor b.
 \] 
-If $\Lambda$ can provide us $b\vert_\boundary$, then we can reconstruct $\monogenicfields{+}$. Perhaps we can show that $\monogenicfields{+}$ recreates $M$ up to homeomorphism. Moreover, we know the algebraic structure of each $\algebra_{\bivector}(M)$, can this be used to determine $g$ up to isometry?
+\vspace*{-0.25cm}
+\pause
+\item If $\Lambda$ can provide us $b\vert_\boundary$, then we can possibly reconstruct $\monogenics^+(M)$.
+\pause
+\item Given the algebraic structure of each $\algebra_{\bivector}(M) \subset \monogenics^+(M)$, can this be used to determine $g$?
+\end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{Other inverse problems}
 \vfill
 \begin{itemize}
+\pause
     \item Can the magnetic impedance tomography problem can provide some extra insight on the EIT problem?
-    \item The Hodge-Morrey decomposition is an instrumental tool for boundary value problems that, for example, allows one to show that $\Lambda$ determines the Betti numbers of $M$ [Belishev, Sharafutdinov: 2008].
+\pause
+    \item The Hodge-Morrey decomposition is an instrumental tool for boundary value problems that, for example, allows one to show that
+ $\Lambda$ determines the Betti numbers of $M$ \boldgold{[Belishev, Sharafutdinov: 2008]}.
+\pause
     \item Can the Clifford-Hodge-Morrey decomposition can allow us to work on other related boundary inverse problems? 
+\pause
     \item These problems could include spacetime problems where the metric $g$ is of mixed signature.
 \end{itemize}
 \vfill
@@ -993,11 +1187,14 @@ If $\Lambda$ can provide us $b\vert_\boundary$, then we can reconstruct $\monoge
 
 \section{Conclusions}
 
-\begin{frame}{}
+\begin{frame}{Conclusion}
 \vfill
 \begin{itemize}
+\pause
     \item We have utilized multivector fields to serve as a meaningful generalization of both the complex numbers and differential forms. 
+\pause
     \item This provides a new way to decompose fields on domains of $\R^n$ and this can likely be generalized to arbitrary compact orientable pseudo-Riemannian manifolds.
+\pause
     \item Likewise, we have proven that the monogenic fields contain a wealth of topological information and this information is supported on the boundary by the Cauchy integral formula.
 \end{itemize}
 \vfill
@@ -1005,10 +1202,14 @@ If $\Lambda$ can provide us $b\vert_\boundary$, then we can reconstruct $\monoge
 
 \begin{frame}{Data Assimilation}
 \vfill
-Over the past two years I have also worked with a team on developing new techniques for data assimilation. We have submitted an article titled
-``Model and Data Reduction for Data Assimilation: Particle Filters Employing Projected Forecasts and Data with Application to a Shallow Water Model"
-
-We are continuing to work to apply our scheme to new models such as the Modular Arbitrary-Order Ocean-Atmospheric Model (MAOOAM).
+\begin{itemize}
+\pause
+\item Over the past two years I have also worked with a team on developing new techniques for data assimilation. 
+\pause
+\item We have submitted \emph{Model and Data Reduction for Data Assimilation: Particle Filters Employing Projected Forecasts and Data with Application to a Shallow Water Model}.
+\pause
+\item We are continuing to work to apply our scheme to new models such as the Modular Arbitrary-Order Ocean-Atmospheric Model (MAOOAM).
+\end{itemize}
 \vfill
 \end{frame}
 
