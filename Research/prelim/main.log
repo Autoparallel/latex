@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  7 APR 2021 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  8 APR 2021 07:49
 entering extended mode
 **./main.tex
 (main.tex
@@ -3470,7 +3470,7 @@ n/10.95 > \OMS/MnSymbolS/m/n/10.95 A[]\OMX/MnSymbolE/m/n/10.95 ˆ\T1/lmr/m/it/10
 ] [154
 
 ]
-Overfull \hbox (14.01445pt too wide) detected at line 997
+Overfull \hbox (14.4766pt too wide) detected at line 997
 \OMS/MnSymbolS/m/n/10.95 M[]\OMX/MnSymbolE/m/n/10.95 ˆ\U/msb/m/n/10.95 B[]\OMX/
 MnSymbolE/m/n/10.95  \U/MnSymbolD/m/n/10.95   [] \OML/cmm/m/it/10.95 :
  []
@@ -3478,7 +3478,7 @@ MnSymbolE/m/n/10.95  \U/MnSymbolD/m/n/10.95   [] \OML/cmm/m/it/10.95 :
 [155
 
 ]
-Overfull \hbox (14.01445pt too wide) detected at line 997
+Overfull \hbox (14.4766pt too wide) detected at line 997
 \OMS/MnSymbolS/m/n/10.95 M[]\OMX/MnSymbolE/m/n/10.95 ˆ\U/msb/m/n/10.95 B[]\OMX/
 MnSymbolE/m/n/10.95  \U/MnSymbolD/m/n/10.95   [] \OML/cmm/m/it/10.95 :
  []
@@ -3486,7 +3486,7 @@ MnSymbolE/m/n/10.95  \U/MnSymbolD/m/n/10.95   [] \OML/cmm/m/it/10.95 :
 [156
 
 ]
-Overfull \hbox (14.01445pt too wide) detected at line 997
+Overfull \hbox (14.4766pt too wide) detected at line 997
 \OMS/MnSymbolS/m/n/10.95 M[]\OMX/MnSymbolE/m/n/10.95 ˆ\U/msb/m/n/10.95 B[]\OMX/
 MnSymbolE/m/n/10.95  \U/MnSymbolD/m/n/10.95   [] \OML/cmm/m/it/10.95 :
  []
@@ -3620,7 +3620,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  52971 strings out of 479799
  1216696 string characters out of 2867787
- 1672017 words of memory out of 3000000
+ 1672016 words of memory out of 3000000
  68332 multiletter control sequences out of 15000+200000
  714180 words of font info for 242 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3664,7 +3664,7 @@ fonts/type1/public/lm/lmri12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX
 2.9/fonts/type1/public/lm/lmri7.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Users/Colin/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (210 pages, 905698 bytes).
+Output written on main.pdf (210 pages, 905710 bytes).
 PDF statistics:
  1597 PDF objects out of 1728 (max. 8388607)
  427 named destinations out of 1000 (max. 500000)
