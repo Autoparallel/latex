@@ -575,11 +575,11 @@ A^\perp \coloneqq A \pseudoscalar^{-1}.
     \pause
     \item Define an $r$-form $a_r$ by
     \[
-    \alpha_r = A_r \cdot dX_r^\dagger
+    a_r = A_r \cdot dX_r^\dagger
     \]
     where $A_r = \frac{1}{r!} a_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}$. 
     \pause
-    \item Refer to $A_r$ the \boldgreen{multivector equivalent} of $\alpha_r$.
+    \item Refer to $A_r$ the \boldgreen{multivector equivalent} of $a_r$.
 \end{itemize}
 \vfill
 \end{frame}
@@ -863,7 +863,7 @@ by the multivector Green's formula.
 \pause
 \item The Hodge-Morrey decomposition reads
 \[
-\Omega^r(M) = \underbrace{\mathcal{E}_D^r(M)}_{\operatorname{Im}(\grad \wedge)} \oplus \underbrace{\mathcal{C}_N^r(M)}_{\operatorname{Im}(\grad \rfloor)} \oplus \underbrace{\mathcal{H}^r(M)}_{\operatorname{Ker}(\grad)}.
+\Omega^r(M) = \underbrace{\mathcal{E}_D^r(M)}_{\operatorname{Im}(\grad \wedge)} \oplus \underbrace{\mathcal{C}_N^r(M)}_{\operatorname{Im}(\grad \dot)} \oplus \underbrace{\mathcal{H}^r(M)}_{\operatorname{Ker}(\grad)}.
 \]
 via \boldgold{[Schwarz: 1995]}.
 \pause 
@@ -901,7 +901,7 @@ The boundary control (BC) method is implemented in \boldgold{[Belishev: 2003]} i
     \pause
     \item Determine the algebra $\algebra{}(M)$ of holomorphic functions on $M$ from continuous function algebra on the boundary $\algebra{}(\partial M)$ using $\Lambda$.
     \pause
-    \item The classical Gelfand representation shows $\algebra{}(M)$ is homeomorphic to $M$ via the weak-$\ast$ topology.
+    \item The classical Gelfand representation shows the spectrum of $\algebra{}(M)$ is homeomorphic to $M$ via the weak-$\ast$ topology.
     \pause
     \item Functions in $\algebra{}(M)$ determine the complex structure on $M$.
     \pause
@@ -939,7 +939,7 @@ is a commutative unital Banach algebra.
 \]
 and refer to the elements as \boldgreen{spin functionals}. 
 \pause
-\item Assert the weak-$\ast$ topology on $\dualmonogenics(M)$ so that every $x\in M$ corresponds to a continuous map on $\dualmonogenics(M)$.
+\item Assert the weak-$\ast$ topology on $\dualmonogenics(M)$ so that every $x\in M$ corresponds to a continuous map on $\monogenics^+(M)$.
 \end{itemize}
 \vfill
 \end{frame}
@@ -1001,8 +1001,10 @@ is a monogenic homogeneous polynomial of degree $j$.
 \begin{lemma}[Density]
 The space $\monogenics^\mathcal{P}(\ball_{R,w})$ is dense in $\monogenics^+(\ball_{R,w})$.
 \end{lemma}
+\pause
 \emph{Proof sketch.} 
 \begin{itemize}
+\pause
 \item Let $f \in \monogenics^+(\ball_{R,w})$ and use the Cauchy integral formula to define the coefficients $a_{j_2\cdots j_n} \in \G_n^+$ by
 \[
 a_{j_2 \cdots j_n} = \int_{\partial \ball_{R,w}} \frac{\partial^j G(w,y)}{\partial y_2^{j_2} \cdots \partial y_n^{j_n}} \normal(y) f(y) \mu_\partial(y),
@@ -1121,7 +1123,7 @@ f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
 \vfill
 \begin{itemize}
 \pause
-\item \textbf{\underline{Question:}} Let $(M,g)$ be an unknown Riemannian manifold with known boundary $\partial M$. Consider the forward problem
+\item Let $(M,g)$ be an unknown Riemannian manifold with known boundary $\partial M$. Consider the forward problem
 \[
 \begin{cases}
 \Delta \omega = 0 & \textrm{in $M$}\\
@@ -1131,7 +1133,7 @@ f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
 \pause
 \item Define the \boldgreen{Dirichlet-to-Neumann map} on forms by $\Lambda\phi = \iota^*(\star d \omega)$. 
 \pause
-\item Can we determine $(M,g)$ from $\Lambda$?
+\item \textbf{\underline{Question:}} Can we determine $(M,g)$ from $\Lambda$?
 \end{itemize}
 \vfill
 \end{frame}
@@ -1139,8 +1141,6 @@ f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
 \begin{frame}{Calder\'on problem}
 \vfill
 \begin{itemize}
-\pause
-    \item This problem is equivalent to the electical impedance tomography problem in dimension 3. 
 \pause
     \item The problem has been solved in dimension $n=2$ \boldgold{[Belishev: 2003]}.
 \pause
@@ -1180,8 +1180,6 @@ f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
  $\Lambda$ determines the Betti numbers of $M$ \boldgold{[Belishev, Sharafutdinov: 2008]}.
 \pause
     \item Can the Clifford-Hodge-Morrey decomposition can allow us to work on other related boundary inverse problems? 
-\pause
-    \item These problems could include spacetime problems where the metric $g$ is of mixed signature.
 \end{itemize}
 \vfill
 \end{frame}
@@ -1192,11 +1190,11 @@ f(\gamma(\delta_n))=f(x^{\delta_n})=\delta_n(f)=\gamma^{-1}(x^{\delta_n})(f).
 \vfill
 \begin{itemize}
 \pause
-    \item We have utilized multivector fields to serve as a meaningful generalization of both the complex numbers and differential forms. 
+    \item We have utilized Clifford analysis to serve as a meaningful generalization of both the complex analysis and differential forms. 
 \pause
-    \item This provides a new way to decompose fields on domains of $\R^n$ and this can likely be generalized to arbitrary compact orientable pseudo-Riemannian manifolds.
+    \item This provides a new way to decompose fields on domains of $\R^n$ and this can likely be generalized to arbitrary compact orientable Riemannian manifolds.
 \pause
-    \item Likewise, we have proven that the monogenic fields contain a wealth of topological information and this information is supported on the boundary by the Cauchy integral formula.
+    \item Likewise, we have proven that the monogenic spinors contain a wealth of topological information.
 \end{itemize}
 \vfill
 \end{frame}
