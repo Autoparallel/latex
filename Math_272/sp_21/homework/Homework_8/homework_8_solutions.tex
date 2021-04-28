@@ -12,6 +12,10 @@
 \newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
 \newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
 \newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\innprod}[2]{\langle #1, #2\rangle}
+\definecolor{nice_blue}{RGB}{59,140,245} 
+
+\newcommand\boldblue[1]{\textcolor{nice_blue}{\emph{\textbf{#1}}}}
 \begin{document}
 
 \begin{center}
@@ -21,219 +25,192 @@
 \vspace{.5cm}
 
 \begin{problem}
-    Plot each of the following vector fields.
-    \begin{enumerate}[(a)]
-        \item $\rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat+\frac{z}{\sqrt{x^2+y^2+z^2}}\zhat$.
-        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
-        \item $\phihat = \frac{xz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\xhat + \frac{yz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\yhat+\frac{-\sqrt{x^2+y^2}}{\sqrt{x^2+y^2+z^2}}\zhat$.
-    \end{enumerate}
+	Write down the definition for a vector space.  
 \end{problem}
 \begin{solution}
-~
-\begin{enumerate}[(a)]
-    \item Here is the plot for $\rhat$.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.8\textwidth]{r_hat.png}
-    \end{figure}
-        \item Here is the plot for $\thetahat$.
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=.8\textwidth]{theta_hat.png}
-        \end{figure}
-    \item Here is the plot for $\phihat$.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=.8\textwidth]{phi_hat.png}
-    \end{figure}        
-\end{enumerate}
+	     A \boldblue{vector space} $V$ over a field $\mathbb{F}$ is a set of elements we call \boldblue{vectors} that satisfy the following properties. Take vectors $\vecu,\vecv,\vecw \in V$ and scalars $\alpha, \beta \in \mathbb{F}$. Then, we require that $\alpha\vecv + \beta\vecu \in V$ and 
+	            \begin{enumerate}[(i)]
+	                \item (Commutivity of vector addition)
+	                \[
+	                \vecu+\vecv=\vecv+\vecu
+	                \]
+	                \item (Associativity of vector addition)
+	                \[
+	                \vecu+(\vecv+\vecw)=(\vecu+\vecv)+\vecw;
+	                \]
+	                \item (Neutral element) There exists $\zerovec$ such that
+	                \[
+	                \zerovec+\vecv=\vecv;
+	                \]
+	                \item (Inverse element) For each $\vecv$ there exists $-\vecv$ such that
+	                \[
+	                \vecv+(-\vecv)=\zerovec;
+	                \]                
+	                \item (Assosciativity of scalar multiplication) We have
+	                \[
+	                \alpha(\beta \vecv)=(\alpha \beta)\vecv;
+	                \]
+	                \item (Distribution over vector addition) we have
+	                \[
+	                \alpha(\vecu+\vecv)=\alpha \vecu + \alpha \vecv;
+	                \]
+	                \item (Distribution over field addition) we have
+	                \[
+	                (\alpha+\beta)\vecv = \alpha \vecv + \beta \vecv;
+	                \]
+	                \item (Unit element) There exists $1\in \mathbb{F}$ such that
+	                \[
+	                1\vecv = \vecv.
+	                \]
+	            \end{enumerate}
+\end{solution}	
+
+\newpage
+\begin{problem}
+	For the following vectors in $\C^3$, compute each pairwise Hermitian inner product $\innprod{\cdot}{\cdot}$.  
+	\[
+		\vecu = \begin{pmatrix} i \\ 1 \\ 0 \end{pmatrix}, \qquad \vecv = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}, \qquad \vecw = \begin{pmatrix} i \\ 2i \\ 2 \end{pmatrix}.
+	\]
+\end{problem}
+\begin{solution}
+	Recall that the Hermitian inner product for vectors in $\C^n$ is given by
+	\[
+	\innprod{\vecu}{\vecv} = \sum_{j=1}^\infty u_j v_j^*.
+	\]
+	So in this case, we must compute
+	\[
+	\innprod{\vecu}{\vecv}, \qquad \innprod{\vecu}{\vecw}, \qquad \innprod{\vecv}{\vecw}.
+	\]
+	Thus we have
+	\begin{align*}
+		\innprod{\vecu}{\vecv} &= (i)(1)^*+(1)(-i)^*+(0)(0)^*\\
+			&= i +i\\
+			&= 2i.
+	\end{align*}
+	Next,
+		\begin{align*}
+			\innprod{\vecu}{\vecw} &= (i)(i)^*+(1)(2i)^*+(0)(2)^*\\
+				&= 1-2i.
+		\end{align*}
+	Finally,
+	\begin{align*}
+		\innprod{\vecv}{\vecw} &= (1)(i)^*+(-i)(2i)^*+(0)(2)^*\\
+		&=-2-i.
+	\end{align*}
 \end{solution}
 
 \newpage
 \begin{problem}
-    Consider the following vector field
-    \[
-    \vecfieldE = \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \xhat + \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \yhat + \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \zhat,
-    \]
-    which you can think of as the electric field of a positive point charge.  We argued that this field $\vecfieldE$ is conservative in a previous homework problem. Specifically, $\vecfieldE = \grad \phi$, for some scalar field $\phi$. This follows from Faraday's law for static charges.
-    \begin{enumerate}[(a)]
-        \item Compute the integral
-        \[
-        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma \qquad \textrm{where} \qquad \curvegamma(t) = \begin{pmatrix} t \\ t \\ t \end{pmatrix},
-        \]
-        and $a\leq t \leq b$ with $a$ and $b$ both greater than 0.  Note that this integral $T$ describes the gain in kinetic energy of a charged particle that moved along the path $\curvegamma$. 
-        \item Equivalently, since $\vecfieldE$ is conservative, we have
-        \[
-        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma = \phi(\curvegamma(b))-\phi(\curvegamma(a)).
-        \]
-        Show that this is true for the given vector field and potential. This shows that the choice of path does not matter; only the endpoints $\curvegamma(a)$ and $\curvegamma(b)$ matter.
-        \item Argue why the integral around any closed curve must be zero.
-    \end{enumerate}
-\end{problem}
-\begin{solution}
-\begin{enumerate}[(a)]
-    \item First, note that
-    \[
-    d\curvegamma = \tangentgamma dt = (\xhat + \yhat + \zhat)dt.
-    \]
-    Thus, we have that
-    \[
-    \vecfieldE \cdot d\curvegamma = \frac{x+y+z}{\left(x^2+y^2+z^2\right)^{3/2}}dt.
-    \]
-    Now, we have
-    \begin{align*}
-        \int_{\curvegamma} \vecfieldE \cdot d\gamma &= \int_a^b \frac{t+t+t}{\left(t^2+t^2+t^2\right)^{3/2}} dt\\
-        &= \int_a^b \frac{3t}{(3t^2)^{3/2}}dt\\
-        &= \int_a^b \frac{1}{\sqrt{3}} \frac{1}{t^2} dt\\
-        &= \frac{-1}{\sqrt{3}}\left(\frac{1}{b} - \frac{1}{a}\right).
-    \end{align*}
-    \item Note that we have
-    \[
-    \phi(x,y,z) = \frac{-1}{\sqrt{x^2+y^2+z^2}},
-    \]
-    from previous homeworks.  Then, we have
-    \begin{align*}
-        \phi(\curvegamma(b))-\phi(\curvegamma(a)) &= \frac{-1}{\sqrt{b^2+b^2+b^2}}-\frac{1}{\sqrt{a^2+a^2+a^2}}\\
-        &= \frac{-1}{\sqrt{3}} \left(\frac{1}{b}-\frac{1}{a}\right)
-    \end{align*}
-    \item For a closed curve, we have $\curvegamma(b)=\curvegamma(a)$ and thus
-    \[
-    \int_{\curvegamma} \vecfieldE \cdot d\gamma = \phi(\curvegamma(b))-\phi(\curvegamma(a)) = \phi(\curvegamma(a))-\phi(\curvegamma(a))=0.
-    \]
-\end{enumerate}
-\end{solution}
-
-\newpage
-\begin{problem}
-    Let us see some of the benefit of using spherical coordinates. 
-    \begin{enumerate}[(a)]
-        \item Using the fact that 
-        \[
-        \rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat + \frac{z}{\sqrt{x^2+y^2+z^2}}\zhat,
-        \]
-        convert the vector field $\vecfieldE$ into spherical coordinates (i.e., only a function of $r$, $\theta$, $\phi$, and $\rhat$, $\thetahat$, and $\phihat$).
-        \item Parameterize the surface of a sphere of radius $R$ (which we'll call $\Sigma$) as well as the outward normal vector $\unitvec$ and  in spherical coordinates.
-        \item Compute the following integral using spherical coordinates that we have found:
-        \[
-        \iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
-        \]
-        where $d\Sigma$ will be the area form in spherical coordinates.
-    \end{enumerate}
+	Write down what it means to have an orthonormal basis for the vector space $\R^n$ and the vector space $\C^n$.
 \end{problem}
 \begin{solution}~
-\begin{enumerate}[(a)]
-    \item We have
-    \begin{align*}
-    \vecfieldE &= \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \xhat + \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \yhat + \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \zhat\\
-     &= \frac{1}{x^2+y^2+z^2} \left( \frac{x}{\sqrt{x^2+y^2+z^2}} \xhat + \frac{y}{\sqrt{x^2+y^2+z^2}} \yhat + \frac{z}{\sqrt{x^2+y^2+z^2}} \zhat\right)\\
-     &= \frac{1}{x^2+y^2+z^2} \rhat\\
-     &= \frac{1}{r^2} \rhat.
-    \end{align*}
-    \item We have the parameterization of the surface of a unit sphere given by letting $r=R$ and $\theta \in [0,2\pi)$ and $\phi \in [0,\pi]$.  If we then attempt to compute the unit vector, we can use the implicit equation 
-    \[
-    f(x,y,z)=x^2+y^2+z^2=R^2.
-    \]
-    From this, we have
-    \begin{align*}
-        \unitvec &= \frac{\grad f}{\left| \grad f \right|} \\
-        &= \frac{2x}{\sqrt{4x^2+4y^2+4z^2}}\xhat + \frac{2y}{\sqrt{4x^2+4y^2+4z^2}}\yhat + \frac{2z}{\sqrt{4x^2+4y^2+4z^2}}\zhat\\
-        &= \rhat.
-    \end{align*}
-    \item From the previous work, we have that
-    \[
-    \vecfieldE \cdot \unitvec = \frac{1}{r^2}.  
-    \]
-    Then, this gives us
-    \begin{align*}
-        \iint_{\Sigma} \vecfieldE \cdot \unitvec d\Sigma &= \int_0^\pi \int_0^{2\pi} \frac{1}{R^2} R^2 \sin \phi  \, d\theta \, d\phi \\
-        &= 2\pi \int_0^\pi \sin \phi \, d \phi\\
-        &= 4 \pi.  
-    \end{align*}
-    One can notice that the radius of the sphere does not come into play here.
-\end{enumerate} 
+	\begin{itemize}
+		\item A basis for the vector space $\R^n$ is the smallest list of vectors so that any vector $\vecv\in \R^n$ can be written as a linear combination of the basis vectors. In this case, you will need $n$ linearly independent vectors. Moreover, the vectors in the basis (denote by $\xhat_1,\xhat_2,\dots,\xhat_n$) are normalized so that
+		\[
+		\|\xhat_j\|=\xhat_j \cdot \xhat_j=1,
+		\]
+		and orthogonal so that
+		\[
+		\xhat_j\cdot \xhat_k=0
+		\]
+		if $j\neq k$. Often one may see this condensed into the following
+		\[
+		\xhat_j \cdot \xhat_k = \delta_{jk},
+		\]
+		where $\delta_{jk}$ is the Kronecker delta which is given by
+		\[
+		\delta_{jk} =  \begin{cases} 0 & j\neq k \\ 1 & j=k\end{cases}.
+		\]
+		\item The story is analogous in $\C^n$ except that the inner product is different. Instead, we take the Hermitian inner product $\innprod{\cdot}{\cdot}$ instead of the dot product.  Thus, we will have a list of $n$ vectors $\zhat_1,\zhat_2,\dots,\zhat_n$ such that
+		\[
+		\innprod{\zhat_j}{\zhat_k} = \delta_{jk}.
+		\]
+	\end{itemize}
+	The moral is that orthonormal bases depend on the space and the choice of inner product. So, we need to be careful we are aware of both when working a problem!
 \end{solution}
 
 \newpage
 \begin{problem}
-    Note that the Laplacian $\Delta$ in cylindrical coordinates is given by
-    \[
-        \Delta f(\rho,\theta,z) = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho}\right)+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \theta^2} + \frac{\partial^2 f}{\partial z^2}.
-    \]
-    Compute the Laplacian of
-    \[
-        f(\rho,\theta,z) = \sqrt{\rho^2+z^2} z \cos(\theta).
-    \]
+	(Pointwise) We often extend operations that we perform with numbers to functions without spending too much time on how this is done. For example, you know perfectly well what it means to evaluate
+	\[
+		5+7
+	\]
+	but what does it mean to evaluate
+	\[
+		f(x)=\cos(x)+\sin(x)?
+	\]
+	I'd argue that you know what this means as well.  In the above, we simply evaluate the added functions \emph{pointwise} by computing the value of each individual function at the point $x$ and then adding the resulting numbers afterwards. For example,
+	\[
+		f(3\pi/4)=\cos(3\pi/4) + \sin(3\pi/4)= -\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=0.
+	\]
+	For the following, explain how the operation is to be performed on functions for some arbitrary functions $g(x)$ and $h(x)$.
+	\begin{enumerate}[(a)]
+		\item $g^*(x)$;
+		\item $g(x)h(x)$;
+		\item $(g(x))^{-1}(h^*(x))^2$.
+	\end{enumerate}
 \end{problem}
-\begin{solution}
-Let's compute each term and then add them together. We have
-\begin{align*}
-    A=\frac{1}{\rho}\frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho} \right) &=  \frac{z\cos \theta}{\rho} \frac{\partial}{\partial \rho} \left( \frac{\rho^2}{\sqrt{\rho^2+z^2}} \right)\\
-    &=\frac{z\cos \theta}{\rho} \left(\frac{2\rho}{\sqrt{\rho^2+z^2}}-\frac{\rho}{\left(\rho^2+z^2\right)}\right)\\
-    &= z\cos \theta \left( \frac{2}{\sqrt{\rho^2+z^2}} - \frac{1}{\left(\rho^2+z^2\right)}\right).
-\end{align*}
-Likewise, we have
-\begin{align*}
-    B=\frac{1}{\rho^2} \frac{\partial^2 f}{\partial \theta^2} &= -\frac{\sqrt{\rho^2+z^2}z\cos\theta}{\rho^2}.
-\end{align*}  
-Lastly, we have
-\begin{align*}
-    C=\frac{\partial^2 f}{\partial z^2} &= \cos \theta \frac{\partial}{\partial z}\frac{\partial}{\partial z} \left( z \sqrt{\rho^2+z^2}\right)\\
-    &= \cos \theta \frac{\partial}{\partial z} \left( \sqrt{\rho^2+z^2}+ \frac{z^2}{\sqrt{\rho^2+z^2}}\right)\\
-    &= \cos \theta \left(\frac{z}{\sqrt{\rho^2+z^2}}+\frac{2z}{\sqrt{\rho^2+z^2}}-\frac{z^3}{\left(\rho^2+z^2\right)^{3/2}}\right).
-\end{align*}
-Then we have that
-\[
-\Delta f = A+B+C.
-\]
+\begin{solution}~
+	\begin{enumerate}[(a)]
+		\item We will plug in a value $x$ into the function $g$ which gives us a (possibly complex) number $g(x)$. Then, we find $g^*(x)$ by taking the complex conjugate of this number $g(x)$. In other words, it may be easier to realize this as
+		\[
+		g^*(x)=(g(x))^*.
+		\]
+		\item Here, we plug in a value $x$ into both functions $g$ and $h$ to get the number values $g(x)$ and $h(x)$. Then we find $g(x)h(x)$ by multiplying the numbers we got.
+		\item Take a value $x$ and plug it into the functions $g$ and $h$. Then we can take $1/g(x)=(g(x))^{-1}$. Next, we can take the complex conjugate of $h(x)$ and  then square that value to find $(h^*(x))^2$. Finally, we multiply our $(g(x))^{-1}$ by $(h^*(x))^2$.
+		\end{enumerate}
 \end{solution}
 
 \newpage
 \begin{problem}
-    Note that the Laplacian $\Delta$ in spherical coordinates is given by
-    \[
-        \Delta f(r,\theta,\phi) = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 f}{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right).
-    \]
-    Compute the Laplacian of
-    \[
-       f(r,\theta,\phi) = r^2 \cos(\theta)\cos(\phi).
-    \]
+	Consider the complex valued function $f(x) = \cos(x)+i\sin(x)$.  
+	\begin{enumerate}[(a)]
+		\item Plot this function in the complex plane for the input values $[0,2\pi]$. Clearly label the function values for $x=0,\pi/2,\pi,3\pi/2,2\pi$.
+		\item Write this function in polar form. That is, find fuctions $r(x)$ and $\theta(x)$ so that $f(x)=r(x)e^{i\theta(x)}$. \emph{Hint: There are a few ways to do this, but can you use the geometry from (a) to help you here?}
+		\item Evaluate the integral
+		\[
+			\int_0^{2\pi}f(x)dx.
+		\]
+		\item Evaluate the inner product for complex functions given by the integral
+		\[
+			\innprod{f}{f}\coloneqq \int_0^{2\pi} |f(x)|^2dx
+		\]
+		where $|\cdot|^2$ is the modulus squared of a complex number. You will need to realize what the modulus of a complex function is. \emph{Hint: think pointwise.}
+	\end{enumerate}
 \end{problem}
-\begin{solution}
-\textcolor{red}{This needs redone as theta and phi were switched}
- Again, we will do this piece by piece. First, we have
- \begin{align*}
-    A=\frac{1}{r^2}\frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)&= \frac{\cos \theta \cos \phi}{r^2}\frac{\partial}{\partial r} \left(2r^3\right) \\
-    &= \frac{\cos \theta \cos\phi}{r^2} 6r^2\\
-    &= 6 \cos \theta \cos \phi.
- \end{align*}
- Next, we have
- \begin{align*}
-    B=\frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta} \left(\sin \theta \frac{\partial f}{\partial \theta}\right) &= \frac{\cos \phi}{\sin \theta} \frac{\partial}{\partial \theta} \left( -\sin^2 \theta\right)\\
-    &=-2\cos \theta \cos \phi.
- \end{align*}
- Lastly, we have
- \begin{align*}
-    C=\frac{1}{r^2\sin^2 \theta} \frac{\partial^2 f}{\partial \phi^2}&= \frac{\cos \theta}{\sin^2 \theta} \left(-\cos \phi\right)\\
-    &= \frac{-\cos \theta \cos \phi}{\sin^2 \theta}.
- \end{align*}
- Then,
- \[
- \Delta f = A+B+C.
- \]
-\end{solution}
-
-\newpage
-\begin{problem} (BONUS)
-The following problem is a somewhat pop-culture math paradox known as the \emph{napkin ring problem} (see Vsauce for more).  Consider the following problem.  We want to compute the volume inside a ball of radius $R$ after drilling out an inscribed cylinder of height $h$. See the following picture.
-\begin{figure}[H]
-	\centering
-	\def\svgwidth{0.60\columnwidth}
-	\input{Sphere_Bands.pdf_tex}
-\end{figure}
-The question is, does the left over volume (of the napkin ring) depend on the radius $R$ of the sphere. You have your choice of working in spherical or cylindrical coordinates. Use whichever helps you most.
-\end{problem}
-\begin{solution}
-
+\begin{solution}~
+	\begin{enumerate}[(a)]
+		\item ~
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.5\textwidth]{figures/circle_parameterization.png}
+			\caption{A graph of the function $f(x)$ in orange. Green, blue, red, purple, and green dots label the output values $f(x)$ for the input values $x=0,\pi/2,\pi,3\pi/2,2\pi$ respectively.}
+		\end{figure}
+		\item This function is very nicely written in complex form.  Notice the outputs are all on the unit circle, and thus $r(x)=1$.  We can also see this by noting 
+		\[
+		\|\cos(x)+i\sin(x)\|=1,
+		\]
+		since $\sin^2(x)+\cos^2(x)=1$.  We could also realize this from Euler's formula in that
+		\[
+		r(x)e^{i\theta(x)}=r(x)\cos(\theta(x))+ir(x)\sin(\theta(x)).
+		\]
+		Euler's formula then shows us that we must also have $\theta(x)=x$. Hence, in polar form, our function is given by
+		\[
+		f(x)=e^{ix}.
+		\]
+		\item We compute this in the same way as any integral we have done before. We have
+		\begin{align*}
+			\int_0^{2\pi} f(x) dx &= \int_0^{2\pi} e^{ix}dx\\
+			&= \left. \frac{1}{i} e^{ix} \right\vert_0^{2\pi}\\
+			&= 0.
+		\end{align*}
+		\item Now we know that $\|f(x)\|^2=1$ by the work in (a). Hence, we simply have
+		\begin{align*}
+			\int_0^{2\pi} 1 dx &= x\vert_0^{2\pi}\\
+			&= 2\pi
+		\end{align*}
+		This just so happens to be the circumference of the circle.  
+	\end{enumerate}
 \end{solution}
 
 

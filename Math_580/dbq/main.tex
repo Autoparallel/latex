@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{environments}
+% package for todo 
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\setuptodonotes{size=\scriptsize,backgroundcolor=red!15!white} 
+
+%\usepackage{showkeys} %show cites and refs
+
+\title{Database Question: What were the connections behind the development of complex numbers, Hamilton's quaternions, Gibbs' and Heaviside's vector algebra, Grassmann's algebra, and Clifford's geometric algebras?}
+\author{Colin Roberts}
+
+
+
+\begin{document}
+
+ \begin{titlingpage}
+     \maketitle
+     \vfill
+     \begin{abstract}
+        \textcolor{red}{TODO}
+     \end{abstract}
+ \end{titlingpage}
+
+
+\section{Introduction}
+The database question posed stems from a question I have been curious about since my introduction to Clifford algebras. Our key figures include William Rowan Hamilton, Hermann Grassmann, Josiah Willard Gibbs, Oliver Heaviside, and the less well-known William Kingdon Clifford. Of course, we may touch briefly on some other important mathematicians such as John Wallis and Felix Klein. Each member in this list had some role, be it direct or indirect, in the formulation of algebra that describes geometry. These algebras include the complex numbers, the quaternions, the Grassmann (or exterior) algebra, Gibbs/Heaviside vector algebra, and the enveloping Clifford algebras. One may take this foray and venture into the algebra of Pauli matrices or Dirac matrices as well.
+
+I will attempt to give brief background in order to better immerse the reader into the topic. A mix of rigor will be used -- some elucidations will be more or less in depth than one may wish. Also, some prior knowledge will be assumed. At any rate, one will hopefully find curious relationships between these structures and, ideally, arrive at the same question posed earlier on their own. Throughout the introduction will be some brief historical remarks to set the stage for the primary sources and the subsequent commentary. For those familiar with the algebras stated above, you may feel free to move quickly or skip entirely the ensuing subsections. 
+
+\subsection{Complex numbers}
+The complex numbers find their origin in Wallis' 1685 text \emph{A Treatise of Algebra} and were formalized later into the complex plane by Caspar Wessel in 1799 in the text \emph{On the analytic representation of direction, an effort applied in particular to the determination of plane and spherical polygons}. To begin, one may first consider the complex number algebra $\C$ which adopts two key elements 1 and $i$. We note the identity 1 satisfies  $1^2=1$ whereas the imaginary unit $i$ satisfies $i^2=-1$. Taking $\R$ linear combinations of these elements by $x\cdot 1 + y \cdot i$ with $x,y \in \R$. We typically put $x+yi$ to reduce notational overhead and we reserve the binary operation $\cdot$ for later examples. Next, we see the addition and multiplication properties
+\begin{align}
+\label{eq:C_addition}
+    x_1 + y_1 i + x_2 + y_2i  &= (x_1+x_2)+(y_1+y_2)i\\
+\label{eq:C_multiplication}
+    (x_1 + y_1 i)(x_2 + y_2i) &= (x_1x_2-y_1y_2)+(x_1y_2+x_2y_1)i,
+\end{align}
+where we have grouped terms to make the operations more clear. This algebra proves to be useful both algebraically and geometrically. The latter will prove to be of no surprise as we descend to more general structures.
+
+In \cref{eq:C_addition}, we note that this addition mimics vector addition and Wessel argues that we can represent these numbers in a plane in order to realize this concretely. The role of $i$, however, is immense. For one, the fundamental theorem of algebra states that all polynomials over $\C$ (or any subring) have a full factorization in $\C$. Geometrically, $i$ acts as a rotor. Specifically, if I take a complex number $z$, $iz$ rotates the point $z$ by $\frac{\pi}{2}$ radians in the counter clockwise direction (see \cref{eq:C_multiplication}). Succinctly, algebra can lead to geometry. This theme is important.
+
+Both the above realizations manifest themselves in other fields. For example, the fundamental theorem of algebra guarantees existence of Jordon forms for matrices as we can always find $n$-complex eigenvalues (possibly with repetition) for a linear operator on an $n$-dimensional vector space. Following from this, one finds that linear dynamical systems can be solved uniquely and the role of imaginary eigenvalues is to describe systems with rotations or oscillations. 
+
+Lastly, and certainly not least, the complex algebra envelops many of the groups we typically see in introductory group theory courses. For example, symmetries of equilateral polygons are nicely encapsulated through multiplication of complex numbers. Perhaps this is most easily seen by the roots of unity $z^n=1$ for which we receive unique roots $z_1,\dots,z_n$ that form the vertices of an equilateral $n$-gon. Multiplication of these complex roots, for example, encodes the cyclic group of order $n$. Other symmetries utilizing complex numbers are prevalent in quantum mechanics, for example. Most generally, a rotation is given by an exponential $e^{i\theta}$.
+
+\subsection{Quaternions}
+
+The quaternions were independently discovered by Olinde Rodrigues in 1840 \textcolor{red}{source} and later by Sir William Rowan Hamilton in 1843. As the story goes, Hamilton came to his realization on a walk passing over Brougham Bridge in Dublin where he scratched the famous equations
+\begin{equation}
+\label{eq:hamiltons}
+i^2=j^2=k^2=ijk=-1
+\end{equation}
+in the stone. The quaternion algebra is the $\R$ algebra with the the basis elements 1, $i$, $j$, and $k$.
+
+Much like the complex numbers describe rigid motions in the plane, the quaternions describe rigid motions in 3-dimensional space. Addition of purely imaginary quaternions, that is objects of the form $\alpha_1 i + \alpha_2 j + \alpha_3 k$, functions like 3-dimensional vector addition. Rotation in each plane can be captured via multiplication by certain elements. In fact, it comes down to the same exponential mapping for the complex numbers. Quaternions are used today in computer vision applications since they drastically simplify the computational overhead compared to matrices that are needed to compute rigid motions. 
+
+It should be noted that the complex numbers arise as subalgebras of the quaternions. Indeed, any purely imaginary unit quaternion (so that $\alpha_1^2+\alpha_2^2+\alpha_3^2=1$) can be taken to act as the imaginary unit. Therefore we see that, for any axis we choose in space, there is a copy of $\C$ waiting there. Or, maybe more intuitively, for any plane in 3-dimensional space, we can induce a complex structure on the plane from a unit quaternion orthogonal to this plane. This is the isomorphism between the projective space and grassmannians 
+\begin{equation}
+\label{eq:isomorphisms}
+\mathbb{RP}^3\cong \mathrm{Gr}(1,3)\cong \mathrm{Gr}(2,3).
+\end{equation}
+Grassmannians, named after Hermann Grassmann, leads us to our next icon.
+
+
+\subsection{Grassmann algebra}
+
+Hermann Grassmann developed his own take on a geometrically meaningful algebra which we now call the exterior algebra. His work beginning in 1832 formalized what we refer to as linear algebra. Later, in 1844, he published his \emph{theory of extension} \textcolor{red}{sources} which outlines the his algebra. Rather than just working in dimensions 2 or 3, Grassmann built this structure to encode some geometry of $n$-dimensional spaces. Given two vectors $u$ and $v$ in an $n$-dimensional vector space, he equipped another product $\wedge$ called the wedge (or exterior or outer) product satisfying
+\begin{equation}
+\label{eq:anticommutivity}
+u \wedge v = - v \wedge u.
+\end{equation}
+The wedge product allows one to concatenate vectors into new objects of higher grade which seek to describe subspaces (or, really, linear combinations of subspaces). The elements have an orientation due to the anticommutivity property given in \cref{eq:anticommutivity}. These objects play a natural role in geometry as representations of $k$-dimensional volumes or $k$-vector fields. For example, given explicit $u$ and $v$, the wedge product can be used to output the area of an oriented parallelogram generated by $u$ and $v$. In the same vein, linear algebra operations such as the determinant are neatly captured in this algebra and the geometrical meaning becomes clear. For the case of the determinant, there is only a single grade $n$-vector and thus the product of $n$-vectors will describe the relative volume of an $n$-dimensional parallepiped that the vectors generate.
+
+\subsection{Gibbs' and Heaviside's vector algebra}
+
+Once again, two mathematicians independently discover the same idea. Starting in 1880, Gibbs followed the work of Grassmann to use the exterior algebra specifically for 3-dimensional space in order to produce the Maxwell equations. Heaviside was doing the same, and it is his version that we dominantly see today in a multivariate calculus course or course in electricity and magnetism. \textcolor{red}{sources}
+
+Both introduced the dot and cross products as the fundamental operations. The dot product provides the measure of lengths of vectors and can be used to determine angles between vectors. The curl, on the other hand, outputs information about areas generated by vectors as the wedge product of Grassmann did. However, the major difference is the cross product outputs another vector that is perpendicular to the plane generated by two independent vectors. But this is merely the same realization noted in the isomorphisms in \cref{eq:isomorphisms}.
+
+
+\subsection{Clifford algebras}
+
+At last, we arrive at our final key player, William Kingdon Clifford. Given the distinct advantage of coming last in our timeline of interest, Clifford was able to unify the above concepts into one single entity. We see the important quote from Henry John Stephen Smith \textcolor{red}{Source} that, ``Clifford was above all and before all a geometer." As such, though the work we examine is algebraic in nature, we expect the work to be rich in geometry.
+
+In 1878, Clifford unifies the quaternions and Grassmann's algebra in his paper \emph{Applications of Grassmann's extensive algebra}. He equips a vector space not only with the product $\wedge$ but also includes an (psuedo)inner product $\cdot$ and incorporates this into the single geometric product. That is, the geometric product of vectors is
+\begin{equation}
+\label{eq:geometric_product}
+uv = u\cdot v + u \wedge v.
+\end{equation}
+The geometric product places the $k$-vectors in the exterior algebra in the same footing as scalars and vectors. The inner product structure allows for a metric on the whole of the algebra and the geometric product allows for inverse operations. He referred to these algebras as geometric algebras.
+
+The quaternions were a special case of a subalgebra of the larger geometric algebra on 3-dimensional space. The quaternions are ${{3}\choose{0}}+ {{3}\choose{2}}=4$-dimensional and the whole geometric algebra is of dimension $2^3$, i.e., the sum of all the binomial coefficients. Of course, the algebras exist for arbitrary dimensions. Clifford showed other examples of related algebras over different fields such as the complex field, the split-complex numbers, or dual numbers which could be used to form split-biquaternions or dual quaternions as well.
+
+Notably, I shall mention that the choice of signature of the inner product produces more interesting algebras. For example, take a basis $e_1,\dots, e_4$ such that $e_i^2=1$ for $i=1,2,3$ and $e_4^2=-1$. This is often called the spacetime algebra which is used throughout relativity. From which, one can seek out to discover more about the Pauli and Dirac matrices.
+
+
+\section{The primary sources}
+
+\section{Commentary}
+
+
+\section{Sources (temp)}
+
+\begin{itemize}
+    \item  Wessel, Caspar (1799). "Om Directionens analytiske Betegning, et Forsog, anvendt fornemmelig til plane og sphæriske Polygoners Oplosning" [On the analytic representation of direction, an effort applied in particular to the determination of plane and spherical polygons]. Nye Samling af det Kongelige Danske Videnskabernes Selskabs Skrifter [New Collection of the Writings of the Royal Danish Science Society] (in Danish). 5: 469–518.
+    \item Wallis, John (1685). A Treatise of Algebra, Both Historical and Practical …. London, England: printed by John Playford, for Richard Davis. pp. 264–273.
+\end{itemize}
+
+
+\bibliographystyle{siam}
+\bibliography{dbq}
+
+
+
+
+
+\end{document}

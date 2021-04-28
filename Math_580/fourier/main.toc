@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Fourier's life}{3}{0}{1}
+\beamer@sectionintoc {2}{The propagation of heat in solid bodies}{17}{0}{2}
+\beamer@sectionintoc {3}{Fourier series}{30}{0}{3}
+\beamer@sectionintoc {4}{Reception}{41}{0}{4}

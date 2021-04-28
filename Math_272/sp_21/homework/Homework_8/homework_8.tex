@@ -12,91 +12,67 @@
 \newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
 \newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
 \newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\innprod}[2]{\langle #1, #2\rangle}
+
 \begin{document}
 
 \begin{center}
    \textsc{\large MATH 272, Homework 8}\\
-   \textsc{Due April 6$^\textrm{th}$}
+   \textsc{Due April 23$^\textrm{rd}$}
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-    Plot each of the following vector fields.
-    \begin{enumerate}[(a)]
-        \item $\rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat+\frac{z}{\sqrt{x^2+y^2+z^2}}\zhat$.
-        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
-        \item $\phihat = \frac{xz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\xhat + \frac{yz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\yhat+\frac{-\sqrt{x^2+y^2}}{\sqrt{x^2+y^2+z^2}}\zhat$.
-    \end{enumerate}
+	Write down the definition for a vector space.  
 \end{problem}
 
 \begin{problem}
-    Consider the following vector field
-    \[
-    \vecfieldE = \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \xhat + \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \yhat + \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \zhat,
-    \]
-    which you can think of as the electric field of a positive point charge.  We argued that this field $\vecfieldE$ is conservative in a previous homework problem. Specifically, $\vecfieldE = \grad \phi$, for some scalar field $\phi$. This follows from Faraday's law for static charges.
-    \begin{enumerate}[(a)]
-        \item Compute the integral
-        \[
-        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma \qquad \textrm{where} \qquad \curvegamma(t) = \begin{pmatrix} t \\ t \\ t \end{pmatrix},
-        \]
-        and $a\leq t \leq b$ with $a$ and $b$ both greater than 0.  Note that this integral $T$ describes the gain in kinetic energy of a charged particle that moved along the path $\curvegamma$. 
-        \item Equivalently, since $\vecfieldE$ is conservative, we have
-        \[
-        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma = \phi(\curvegamma(b))-\phi(\curvegamma(a)).
-        \]
-        Show that this is true for the given vector field and potential. This shows that the choice of path does not matter; only the endpoints $\curvegamma(a)$ and $\curvegamma(b)$ matter.
-        \item Argue why the integral around any closed curve must be zero.
-    \end{enumerate}
+	For the following vectors in $\C^3$, compute each pairwise Hermitian inner product $\innprod{\cdot}{\cdot}$.  
+	\[
+		\vecu = \begin{pmatrix} i \\ 1 \\ 0 \end{pmatrix}, \qquad \vecv = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}, \qquad \vecw = \begin{pmatrix} i \\ 2i \\ 2 \end{pmatrix}.
+	\]
 \end{problem}
 
 \begin{problem}
-    Let us see some of the benefit of using spherical coordinates. 
-    \begin{enumerate}[(a)]
-        \item Using the fact that 
-        \[
-        \rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat + \frac{z}{\sqrt{x^2+y^2+z^2}}\zhat,
-        \]
-        convert the vector field $\vecfieldE$ into spherical coordinates (i.e., only a function of $r$, $\theta$, $\phi$, and $\rhat$, $\thetahat$, and $\phihat$).
-        \item Parameterize the surface of a sphere of radius $R$ (which we'll call $\Sigma$) as well as the outward normal vector $\unitvec$ and  in spherical coordinates.
-        \item Compute the following integral using spherical coordinates that we have found:
-        \[
-        \iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
-        \]
-        where $d\Sigma$ will be the area form in spherical coordinates.
-    \end{enumerate}
+	Write down what it means to have an orthonormal basis for the vector space $\R^n$ and the vector space $\C^n$.
 \end{problem}
 
 \begin{problem}
-    Note that the Laplacian $\Delta$ in cylindrical coordinates is given by
-    \[
-        \Delta f(\rho,\theta,z) = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho}\right)+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \theta^2} + \frac{\partial^2 f}{\partial z^2}.
-    \]
-    Compute the Laplacian of
-    \[
-        f(\rho,\theta,z) = \sqrt{\rho^2+z^2} z \cos(\theta).
-    \]
+	(Pointwise) We often extend operations that we perform with numbers to functions without spending too much time on how this is done. For example, you know perfectly well what it means to evaluate
+	\[
+		5+7
+	\]
+	but what does it mean to evaluate
+	\[
+		f(x)=\cos(x)+\sin(x)?
+	\]
+	I'd argue that you know what this means as well.  In the above, we simply evaluate the added functions \emph{pointwise} by computing the value of each individual function at the point $x$ and then adding the resulting numbers afterwards. For example,
+	\[
+		f(3\pi/4)=\cos(3\pi/4) + \sin(3\pi/4)= -\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=0.
+	\]
+	For the following, explain how the operation is to be performed on functions for some arbitrary functions $g(x)$ and $h(x)$.
+	\begin{enumerate}[(a)]
+		\item $g^*(x)$;
+		\item $g(x)h(x)$;
+		\item $(g(x))^{-1}(h^*(x))^2$.
+	\end{enumerate}
 \end{problem}
 
 \begin{problem}
-    Note that the Laplacian $\Delta$ in spherical coordinates is given by
-    \[
-        \Delta f(r,\theta,\phi) = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 f}{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right).
-    \]
-    Compute the Laplacian of
-    \[
-       f(r,\theta,\phi) = r^2 \cos(\theta)\cos(\phi).
-    \]
-\end{problem}
-
-\begin{problem} (BONUS)
-The following problem is a somewhat pop-culture math paradox known as the \emph{napkin ring problem} (see Vsauce for more).  Consider the following problem.  We want to compute the volume inside a ball of radius $R$ after drilling out an inscribed cylinder of height $h$. See the following picture.
-\begin{figure}[H]
-	\centering
-	\def\svgwidth{0.60\columnwidth}
-	\input{Sphere_Bands.pdf_tex}
-\end{figure}
-The question is, does the left over volume (of the napkin ring) depend on the radius $R$ of the sphere. You have your choice of working in spherical or cylindrical coordinates. Use whichever helps you most.
+	Consider the complex valued function $f(x) = \cos(x)+i\sin(x)$.  
+	\begin{enumerate}[(a)]
+		\item Plot this function in the complex plane for the input values $[0,2\pi]$. Clearly label the function values for $x=0,\pi/2,\pi,3\pi/2,2\pi$.
+		\item Write this function in polar form. That is, find fuctions $r(x)$ and $\theta(x)$ so that $f(x)=r(x)e^{i\theta(x)}$. \emph{Hint: There are a few ways to do this, but can you use the geometry from (a) to help you here?}
+		\item Evaluate the integral
+		\[
+			\int_0^{2\pi}f(x)dx.
+		\]
+		\item Evaluate the inner product for complex functions given by the integral
+		\[
+			\innprod{f}{f}\coloneqq \int_0^{2\pi} |f(x)|^2dx
+		\]
+		where $|\cdot|^2$ is the modulus squared of a complex number. You will need to realize what the modulus of a complex function is. \emph{Hint: think pointwise.}
+	\end{enumerate}
 \end{problem}
 
 
