@@ -4,47 +4,48 @@ The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: siam.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
-I found no \citation commands---while reading file main.aux
 Database file #1: dbq.bib
-You've used 0 entries,
+Warning--empty journal in hamilton_quaternions_nodate
+Warning--empty year in hamilton_quaternions_nodate
+You've used 5 entries,
             2030 wiz_defined-function locations,
-            497 strings with 3713 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            531 strings with 4752 characters,
+and the built_in function-call counts, 1635 in all, are:
+= -- 168
+> -- 35
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 17
+- -- 10
+* -- 107
+:= -- 246
+add.period$ -- 9
+call.type$ -- 5
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 7
+duplicate$ -- 87
+empty$ -- 133
+format.name$ -- 10
+if$ -- 358
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 5
+missing$ -- 6
+newline$ -- 22
+num.names$ -- 10
+pop$ -- 17
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 15
 quote$ -- 0
-skip$ -- 1
+skip$ -- 75
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 135
+swap$ -- 40
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+type$ -- 18
+warning$ -- 2
+while$ -- 20
+width$ -- 6
+write$ -- 52
+(There were 2 warnings)

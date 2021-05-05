@@ -9,7 +9,7 @@
 
 %\usepackage{showkeys} %show cites and refs
 
-\title{Database Question: What were the connections behind the development of complex numbers, Hamilton's quaternions, Gibbs' and Heaviside's vector algebra, Grassmann's algebra, and Clifford's geometric algebras?}
+\title{Database Question: What has led to the dominance of Hamilton's quaternions, Heaviside's 3-dimensional vector algebra, and Grassmann's exterior algebra over Clifford algebras?}
 \author{Colin Roberts}
 
 
@@ -20,7 +20,9 @@
      \maketitle
      \vfill
      \begin{abstract}
-        \textcolor{red}{TODO}
+        The topics in the title has interested me for quite some time. Each has found use for me in studying both pure mathematics and physics. My mathematical journey has taken me through each of the  of the topics listed and I have now settled on utilizing geometric algebras since they prove to simply contain all of the previously mentioned algebras in a more concrete manner. In fact, this is exactly why I have posed the proceeding question. One could argue that the rigorous notion of the Clifford algebras can be off putting, but if someone is interested in vector and linear algebra as a whole, a cursory understanding of Clifford algebras would allow one to build a strong foundation without needless rigor. For example, see the text \textcolor{red}{cite doran and lasenby and chisolm}. I believe there is a great deal of insight that Clifford algebras can provide a young mathematician over, say, Heaviside's approach, all without overbearing rigor or, conversely, lack of detail.
+
+        As a final set of remarks, there seems to be two camps studying Clifford algebras. First, there are those who are deeply devoted and see it as a be-all end-all formalism that believe, unequivocally, that Clifford algebras are some type of holy grail of mathematics \textcolor{red}{probably some hestene's source}. The others are working predominantly in very pure fields who seem to use Clifford algebras in the most abstract and mind-bendingly rigorous way possible, thereby eclipsing adoption from mathematical youth who are driven away by overtly abject and complex technical jargon. One side question one could presume is, ``why is there such a dramatic divergence of scope for this topic?" Or, in the same vein, ``is there no middle ground for us to create a balanced viewpoint?" In writing this, I have discovered that these questions may be more fundamental than my original DBQ, but we carry on.
      \end{abstract}
  \end{titlingpage}
 
@@ -31,7 +33,9 @@ The database question posed stems from a question I have been curious about sinc
 I will attempt to give brief background in order to better immerse the reader into the topic. A mix of rigor will be used -- some elucidations will be more or less in depth than one may wish. Also, some prior knowledge will be assumed. At any rate, one will hopefully find curious relationships between these structures and, ideally, arrive at the same question posed earlier on their own. Throughout the introduction will be some brief historical remarks to set the stage for the primary sources and the subsequent commentary. For those familiar with the algebras stated above, you may feel free to move quickly or skip entirely the ensuing subsections. 
 
 \subsection{Complex numbers}
-The complex numbers find their origin in Wallis' 1685 text \emph{A Treatise of Algebra} and were formalized later into the complex plane by Caspar Wessel in 1799 in the text \emph{On the analytic representation of direction, an effort applied in particular to the determination of plane and spherical polygons}. To begin, one may first consider the complex number algebra $\C$ which adopts two key elements 1 and $i$. We note the identity 1 satisfies  $1^2=1$ whereas the imaginary unit $i$ satisfies $i^2=-1$. Taking $\R$ linear combinations of these elements by $x\cdot 1 + y \cdot i$ with $x,y \in \R$. We typically put $x+yi$ to reduce notational overhead and we reserve the binary operation $\cdot$ for later examples. Next, we see the addition and multiplication properties
+The complex numbers find their origin quite long ago. There were references to square roots of negative numbers that may have appeared in Hero of Alaxandria's work in the first century AD. Studying polynomial equations led Gerolamo Cardano and Niccol\'o Tartaglia to consider complex numbers possibly as early as 1545. Ren\'e Descartes is given credit for providing the name ``imaginary". Later, we see complex numbers appear in Wallis' 1685 text \emph{A Treatise of Algebra} were formalized later into the complex plane by Caspar Wessel in 1799 in the text \emph{On the analytic representation of direction, an effort applied in particular to the determination of plane and spherical polygons}. 
+
+To begin, one may first consider the complex number algebra $\C$ which adopts two key elements 1 and $i$. We note the identity 1 satisfies  $1^2=1$ whereas the imaginary unit $i$ satisfies $i^2=-1$. Taking $\R$ linear combinations of these elements by $x\cdot 1 + y \cdot i$ with $x,y \in \R$. We typically put $x+yi$ to reduce notational overhead and we reserve the binary operation $\cdot$ for later examples. Next, we see the addition and multiplication properties
 \begin{align}
 \label{eq:C_addition}
     x_1 + y_1 i + x_2 + y_2i  &= (x_1+x_2)+(y_1+y_2)i\\
@@ -92,22 +96,94 @@ uv = u\cdot v + u \wedge v.
 \end{equation}
 The geometric product places the $k$-vectors in the exterior algebra in the same footing as scalars and vectors. The inner product structure allows for a metric on the whole of the algebra and the geometric product allows for inverse operations. He referred to these algebras as geometric algebras.
 
-The quaternions were a special case of a subalgebra of the larger geometric algebra on 3-dimensional space. The quaternions are ${{3}\choose{0}}+ {{3}\choose{2}}=4$-dimensional and the whole geometric algebra is of dimension $2^3$, i.e., the sum of all the binomial coefficients. Of course, the algebras exist for arbitrary dimensions. Clifford showed other examples of related algebras over different fields such as the complex field, the split-complex numbers, or dual numbers which could be used to form split-biquaternions or dual quaternions as well.
+The complex numbers can be seen as Clifford algebras or subalgebras in a handful of ways. For one, take $\R$ and define $e_1^2=-1$. Then, we have that $x+ye_1$ is a faithful representation of the complex number $x+iy$. Another way that is possibly more geometrically insightful is to consider $\R^2$ with $e_i^2=1$ and take the even subalgebra generated by $1$ and $e_1e_2$. Then $(e_1e_2)^2=-1$ and we can also note that $e_1e_2$ acts as a rotor for vectors in the plane. Indeed, we can refer to this as a spinor algebra. In fact, all elements in this algebra are generated by exponentials of bivectors, that is, any unitary even element can be written as $e^{\theta e_1 e_2}$. This is not surprising as for complex numbers we have the polar representation $re^{i\theta}$. 
+
+The quaternions were a special case of a subalgebra of the larger geometric algebra on 3-dimensional space. The quaternions are ${{3}\choose{0}}+ {{3}\choose{2}}=4$-dimensional and the whole geometric algebra is of dimension $2^3$, i.e., the sum of all the binomial coefficients. Of course, the algebras exist for arbitrary dimensions. Clifford showed other examples of related algebras over different fields such as the complex field, the split-complex numbers, or dual numbers which could be used to form split-biquaternions or dual quaternions as well. When written as a geometric algebra, I will remark that if $e_1 e_2$ is a rotor for the $e_1 e_2$-plane, then it is clear that we have rotors for the other planes as well. These are the elements $i$, $j$, and $k$ of the quaternion algebra.
 
 Notably, I shall mention that the choice of signature of the inner product produces more interesting algebras. For example, take a basis $e_1,\dots, e_4$ such that $e_i^2=1$ for $i=1,2,3$ and $e_4^2=-1$. This is often called the spacetime algebra which is used throughout relativity. From which, one can seek out to discover more about the Pauli and Dirac matrices.
 
+\newpage
 
 \section{The primary sources}
 
+\subsection{A treatise of algebra, both historical and practical}
+
+My first primary source is John Wallis' \emph{A treatise of algebra, both historical and practical} \cite{wallis_treatise_1685}.  This work provides a bit of a historical account of state of algebra at the time.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/wallis_title.png}
+\end{figure}
+
+For example, we can see Wallis mention the real and imaginary parts to roots. A great portion of this treatise is devoted to discussing the mathematicians who were working to solve and simplify polynomial equations.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/wallis_imaginary.png}
+\end{figure}
+
+To get a full perspective of the development of Clifford algebras, it felt pertinent to start from the very beginning.
+
+\newpage
+\subsection{On quaternions, or on a new system of imaginaries in algebra}
+
+Just a note, this is not an original scan of the multiple documents -- I have only been able to find a typed revision \cite{hamilton_quaternions_nodate}. 
+
+Hamilton's work is beautiful. He aptly describes a completely new number system that extends the notion of imaginary numbers to a system with three imaginary components and a single real scalar. He begins by describing their products, length, and a polar representation which allows him to conclude that he has now described infinitely many different square roots of negative one. Thus, returning back to the original premise of complex numbers.
+
+He is able to extract a large amount of geometry from this number system via algebraic equations by identifying the imaginary part of quaternions with points in space. In essence, it seems that he realizes there are two components to multiplication of quaternions -- the scalar product and some other type of product which we would think of as the cross or bivector product. 
+
+It is clear that this is a heavy motivator for Clifford once his comes.
+
+\newpage
+\subsection{The linear extension theory - a new branch of mathematics}
+
+The original document is in German and can be found via \cite{grassmann_lineale_1844} and the go-to english translation via this link \url{https://bookstore.ams.org/hmath-19}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/grassmann_title.png}
+\end{figure}
+
+I am quite struck by the immense amount of groundwork that Grassmann lays out in his document. In essence, he describes our modern notions of linear algebra through his descriptions of elementary magnitudes. That is, elements that cannot be derived from one another -- or, in our more modern language, linearly independent vectors. Likewise, he notes that the complex numbers form an essential example for which he realizes are a foundation for understanding.
+
+His claim to fame comes in the form of his antisymmetric product which he writes as $[ab]=-[ba]$ which we now write as $a\wedge b = - b \wedge a$. He uses this along with the inner product to build up geometrical interpretations of solutions to linear systems of equations. This general framework of linear algebra is essential to our story.
+
+\newpage
+
+\subsection{Applications of Grassmann's extensive algebra}
+
+Finally, we arrive at some work by Clifford himself. In \cite{clifford_applications_1878}, we see that Clifford merely takes the axiom that we have orthogonal magnitudes such that $e_i e_j = -e_j e_i$ when $i\neq j$. This is the fundamental assumption for a geometric algebra. He realizes that there is more to the multiplication for quaternions than the two products of Grassmann in that the quaternion multiplication encapsulates ``turning and stretching". He realizes the quaternions as ``rectangular versors" (i.e., what we realize as $e_i e_j$ for $i\neq j$ in dimension 3). Purely by geometry, he reasons that these elements, when squared, should reverse a vector (that is, for example, $(e_1 e_2)^2=-1$). Perhaps, this makes Henry Smith's quote ``Clifford was above all and before a geometer," more reasonable!
+
+Clifford reunites the quaternions with Grassmann's extensive algebra and, quite clearly, also realizes the complex field as a special case in dimension 2 as well. He then describes, in general, the geometric algebra for $n$-dimensional space.
+
+\newpage
+\subsection{On the space-theory of matter}
+
+I include this short text found via \url{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-clifford-on-riemann-surfaces} which contains Clifford's comments on whether we live in a curved universe. I found it quite intriguing that his geometry led him down this same path prior to Einstein. Also, you can find his general comments on Riemann surfaces as well.
+
+\newpage
+\subsection{The quantum theory of the electron}
+
+Finally, I chose the source of Dirac on \emph{the quantum theory of the electron} \cite{dirac_quantum_1928}. This inclusion may seem out of place, but I contest that it may have some to do with my DBQ.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/dirac_matrices.png}
+\end{figure}
+
+It is abundantly clear that Dirac is of dire importance to modern physics. This paper of his is paramount. But, the catching point is his matrices $\sigma_i$. Herein lies an issue. Dirac needed no help to realize that he could generate square roots to a relativistic wave equation for which he has two new equations which allowed him to find two (spinor) solutions. These $\sigma_i$ are in fact, elements of the spacetime algebra -- he just had no need of using this formalism and instead used matrices as his convention. 
+\textcolor{red}{Pauli matrices}
+
+
+\newpage
 \section{Commentary}
 
+Clifford had built his theory off of giants such as Hamilton and Grassmann. Yet, his implementation seemed mostly formal. Though it unified a landscape of mathematics, it was not a necessity like Grassmann's work. It was also not completely pioneering like Hamilton's quaternions. Rather, it was somewhat of a historical sidenote in comparison.
 
-\section{Sources (temp)}
+Clearly, Clifford was an intelligent man that was quite far ahead of his time. If someone can predict the work of Einstein before Einstein, they are certainly bright. Yet, due to the fact that his work was not required to solve problems and was really only an encapsulating framework, authors like Dirac managed to sidestep the notion of a geometric (or Clifford) algebra in lieu of matrices. 
 
-\begin{itemize}
-    \item  Wessel, Caspar (1799). "Om Directionens analytiske Betegning, et Forsog, anvendt fornemmelig til plane og sphæriske Polygoners Oplosning" [On the analytic representation of direction, an effort applied in particular to the determination of plane and spherical polygons]. Nye Samling af det Kongelige Danske Videnskabernes Selskabs Skrifter [New Collection of the Writings of the Royal Danish Science Society] (in Danish). 5: 469–518.
-    \item Wallis, John (1685). A Treatise of Algebra, Both Historical and Practical …. London, England: printed by John Playford, for Richard Davis. pp. 264–273.
-\end{itemize}
+I cannot say with certainty that this is a possible answer to my question as there is more to be dug out. 
+
 
 
 \bibliographystyle{siam}

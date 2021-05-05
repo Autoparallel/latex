@@ -1,14 +1,14 @@
 \documentclass[12pt]{amsbook}
 \usepackage{preamble}
 \newcommand{\R}{\mathbb{R}}
-
+\newcommand{\innprod}[2]{\langle #1, #2 \rangle}
 
 \begin{document}
 \pagenumbering{gobble}       % This kills the page numbering
 
 \begin{center}
    \textsc{\large MATH 271, Quiz 4}\\
-   \textsc{Due November 13$^\textrm{th}$ at the end of class}
+   \textsc{Due April 30$^\textrm{th}$ at the end of class}
 \end{center}
 
 \vspace{1cm}
@@ -20,69 +20,62 @@
 \hrule
 \vspace*{.5cm}
 
-\begin{center}\textbf{\large THERE ARE 5 TOTAL PROBLEMS.}\normalsize \end{center}
+\begin{center}\textbf{\large THERE ARE 4 TOTAL PROBLEMS.}\normalsize \end{center}
 
-\begin{problem} Consider the vectors $\vecu = 3\xhat -\yhat$, $\vecv = -\yhat$, and $\vecw = -\xhat + 2\yhat$.
+\begin{problem} For the following, decide whether the statment is \textbf{true} or \textbf{false}. For full credit, provide an explanation for your answer.
 \begin{enumerate}[(a)]
-    \item \textbf{(2 pts.)} Draw the vectors $\vecu$, $\vecv$, $\vecw$, and $\vecu+\vecv$ in the plane.
-    \item \textbf{(3 pts.)} Compute $\vecu \cdot \vecv$, $\|\vecu\|$, and $\|\vecv\|$.
-    \item \textbf{(2 pts.)} What is the angle betwen $\vecu$ and $\vecv$? (Do not worry about getting a numerical answer, just show the work to explain what the angle is.)
-\end{enumerate}
-\end{problem}
-
-\begin{problem}
-Consider the following functions.
-\begin{enumerate}[i.]
-    \item $f\colon \R \to \R$ given by $f(x)=2x+1$.
-    \item $g\colon \R^2 \to \R$ given by $g\begin{pmatrix} x \\ y \end{pmatrix} = x+y$.
-\end{enumerate}
-\begin{enumerate}[(a)]
-    \item \textbf{(2 pts.)} Is $f$ linear or nonlinear? Explain.
-    \item \textbf{(2 pts.)} Show that $g$ is linear.
-\end{enumerate}
-\end{problem}
-
-
-
-\begin{problem}
-Consider the matrices
-\[
-[A] = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad [B] = \begin{pmatrix} 3 & 1 & 1 \\ 0 & 2 & -1 \end{pmatrix}, \quad [C] = \begin{pmatrix} -2 & -1 \\ 1 & 0 \\ 0 & 3 \end{pmatrix}.
-\]
-\begin{enumerate}[(a)]
-    \item \textbf{(2 pts.)} Say which of the following products can you compute
+    \item \textbf{(2 pts.)} Consider the differential operator $\frac{d}{dx}$. Then the function $f(x)=1$ is an eigenfunction with eigenvalue 0.
+    \item \textbf{(2 pts.)} Let $f(x)$ and $g(x)$ be two complex valued functions defined on $[0,L]$. Then we say $f(x)$ and $g(x)$ are orthogonal if
     \[
-    [A][B],\quad [B][A], \quad [A][C], \quad [C][A], \quad [B][C], \quad [C][B].
+    \innprod{f}{g} = \int_0^L f(x)g^*(x)dx = 0.
     \]
-    \item \textbf{(2 pts.)} What are $n$ and $m$ if we think of $[C] \colon \R^n \to \R^m$?
+    \item \textbf{(2 pts.)} Let $f(x)$ be a complex valued function defined on all of $\R$. Then we say $f(x)$ is normalized if
+    \[
+    \sqrt{\innprod{f}{f}} = \sqrt{\int_{-\infty}^\infty f(x)f^*(x)dx} = 1.
+    \]
+    \item \textbf{(2 pts.)} Suppose that we are given a wavefunction $\Psi(x)$ for a free particle in a box $[0,L]$ and let $\psi_n(x)$ denote the normalized states for $n=1,2,3,\dots$. Then, we can write
+    \[
+    \Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x)dx
+    \]
+    with 
+    \[
+    a_n = \innprod{\Psi}{\psi_n} = \int_0^L \Psi(x) \psi_n^*(x)dx.
+    \]
+    \item \textbf{(2 pts.)} Let $\delta(x)$ be the Dirac delta. Then
+    \[
+    \int_{-\infty}^\infty \delta(x-3) f(x)dx = f(0).
+    \]
 \end{enumerate}
+\end{problem}
+
+\begin{problem}
+\textbf{(4 pts.)} Consider the quantum harmonic oscillator with $x$ the position operator and $p$ the momentum operator and note that both operators are self adjoint (Hermitian). Define the \emph{lowering operator}
+\[
+a = \sqrt{\frac{m\omega}{2\hbar}} \left(x+\frac{i}{m\omega} p\right).
+\]
+Show, using the definition of the adjoint (i.e., in terms of the inner product) that the adjoint is given by
+\[
+a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} \left(x-\frac{i}{m\omega} p\right).
+\]
+\emph{Hint: you really don't need to know any more than what I've given you here except for the definition of the inner product. Recall that it is defined by an integral and the domain for the QHO is all of $\R$.} \emph{Optional: if you feel like you can't work this out, try to provide your best reasoning as to why this is true.}
+\end{problem}
+
+\begin{problem}
+\textbf{(2 pts.)} Define $f(x)$ by the Fourier series
+\[
+f(x) = \sum_{n=-\infty}^\infty a_n e^{2\pi i n x}.
+\]
+Describe/explain the roles of $a_n$ and $e^{2\pi i n x}$ in some mathematical or physical way. \emph{Just do your best here!}
 \end{problem}
 
 
 \begin{problem}
-Consider the two matrices 
+\textbf{(BONUS 4 pts.)} We say that an operator $\mathcal{U}$ is \emph{unitary} if
 \[
-[A] = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \quad [B] = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}.
+\innprod{\mathcal{U}\Psi}{\mathcal{U}\Phi}= \innprod{\Psi}{\Phi}.
 \]
-\begin{enumerate}[(a)]
-    \item \textbf{(2 pts.)} Find the solution(s) to the homogeneous equation $[A]\vecx = \zerovec$.
-    \item \textbf{(2 pts.)} What is the nullspace of $[A]$?
-    \item \textbf{(2 pts.)} Can you find a solution to $[B]\vecx = \vecy$ with $\vecy = 2\xhat +5\yhat$? Explain.
-    \item \textbf{(2 pts.)} Explain why $\det([B])=0$ without computing it.
-\end{enumerate}
+Show that it must be that $\mathcal{U}$ has an inverse $\mathcal{U}^{-1}$ and moreover that the inverse is the adjoint  $\mathcal{U}^{-1} = \mathcal{U}^\dagger$.
 \end{problem}
 
-
-\begin{problem}
-Take the same two two matrices from Problem 4
-\[
-[A] = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \quad [B] = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}
-\]
-\begin{enumerate}[(a)]
-    \item \textbf{(2 pts.)} Compute $\det([A])$ and $\det([B])$.
-    \item \textbf{(1 pts.)} Compute $\det([A][B])$ without computing $[A][B]$.
-    \item \textbf{(2 pts.)} Are the columns of $[A]$ linearly independent? Explain.
-\end{enumerate}
-\end{problem}
 
 \end{document}  

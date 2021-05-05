@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  12 NOV 2020 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  30 APR 2021 11:28
 entering extended mode
 **./quiz_4.tex
 (quiz_4.tex
@@ -1453,48 +1453,40 @@ Package caption Info: End \AtBeginDocument code.
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks60
 \inpenc@posthook=\toks61
-)
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 25.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 25.
-
-[1{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX war
-ning (ext4): destination with the same identifier (name{page.}) has been alread
-y used, duplicate ignored
+) [1{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX w
+arning (ext4): destination with the same identifier (name{page.}) has been alre
+ady used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 \end{document}
+l.81 \end{document}
                     [2] (quiz_4.aux)
 Package rerunfilecheck Info: File `quiz_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39946 strings out of 479799
- 964282 string characters out of 2867787
- 1363320 words of memory out of 3000000
- 56026 multiletter control sequences out of 15000+200000
- 548848 words of font info for 84 fonts, out of 3000000 for 9000
+ 39917 strings out of 479799
+ 964022 string characters out of 2867787
+ 1354331 words of memory out of 3000000
+ 56017 multiletter control sequences out of 15000+200000
+ 546513 words of font info for 76 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 135i,11n,137p,755b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 135i,6n,137p,755b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Colin/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Co
-lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pf
-b><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on quiz_4.pdf (2 pages, 118991 bytes).
+lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on quiz_4.pdf (2 pages, 138697 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

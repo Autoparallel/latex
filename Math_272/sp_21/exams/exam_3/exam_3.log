@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  7 DEC 2020 08:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  3 MAY 2021 16:53
 entering extended mode
 **./exam_3.tex
 (exam_3.tex
@@ -1455,63 +1455,56 @@ Package caption Info: End \AtBeginDocument code.
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks60
 \inpenc@posthook=\toks61
-) [1{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 36.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 36.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
+) [1{C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX w
+arning (ext4): destination with the same identifier (name{page.}) has been alre
+ady used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 \newpage
+l.48 \newpage
               [2]pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 \newpage
-              [3]pdfTeX warning (ext4): destination with the same identifier (n
-ame{page.}) has been already used, duplicate ignored
+l.81 \newpage
+              [3]
+<single_slit.jpg, id=76, 915.42pt x 275.0275pt>
+File: single_slit.jpg Graphic file (type jpg)
+<use single_slit.jpg>
+Package pdftex.def Info: single_slit.jpg  used on input line 86.
+(pdftex.def)             Requested size: 266.14978pt x 79.96156pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.82 \newpage
-              [4]pdfTeX warning (ext4): destination with the same identifier (n
-ame{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.100 \end{document}
-                     [5] (exam_3.aux)
+l.103 \end{document}
+                     [4 <./single_slit.jpg>] (exam_3.aux)
 Package rerunfilecheck Info: File `exam_3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39943 strings out of 479799
- 964226 string characters out of 2867787
- 1353330 words of memory out of 3000000
- 56025 multiletter control sequences out of 15000+200000
- 548286 words of font info for 82 fonts, out of 3000000 for 9000
+ 39934 strings out of 479799
+ 964209 string characters out of 2867787
+ 1356330 words of memory out of 3000000
+ 56023 multiletter control sequences out of 15000+200000
+ 545604 words of font info for 73 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 135i,11n,137p,755b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 135i,12n,137p,755b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmcsc10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Colin/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Colin/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/
-Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pf
-b><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Colin/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exam_3.pdf (5 pages, 126992 bytes).
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Co
+lin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr8.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on exam_3.pdf (4 pages, 163416 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  20 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 
