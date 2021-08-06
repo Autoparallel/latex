@@ -4,7 +4,7 @@ A manifold $M$ with a pseudo-Riemannian metric $g$ is a \emph{geometric manifold
 \end{definition}
 On geometric manifolds we will be able to attach multivector fields and compute their derivatives as well as integrate. This leads us to the realm of geometric calculus and Cifford analysis. Geometric calculus is intimately related to both the vector calculus in $\R^3$ and differential forms. It has the added advantage of notational convenience and clarity as we have seen with geometric algebra and its subspace operations. In the beginning of \cref{subsec:clifford_and_geometric_algebras} we realize as well that the exterior algebra is contained inside any Clifford algebra and, to this end, geometric calculus will contain the calculus of differential forms. 
 
-Forms are a useful language for proving general theorems about boundary value problems \cite{schwarz_hodge_1995}, and so we will retrieve all of these theorems for our own utility. Given that we have increased geometrical intuition on different graded elements of a geometric algebra, we can realize that we can work with multivector equivalents of forms instead of concentrating on forms of a specific grade. For example, in \cref{subsec:forward_problems} we see that one can think of the electromagnetic field as a multivector consisting of elements of various degree as opposed to the usual field strength 2-form \cite{warnick_dierential_2014}. In fact, under certain other restrictions such as those present in Ohmic materials, we find there are surface spinors that fall into the kernel of a Dirac-type operator.
+Forms are a useful language for proving general theorems about boundary value problems \cite{schwarz_hodge_1995}, and so we will retrieve all of these theorems for our own utility. Given that we have increased geometrical intuition on different graded elements of a geometric algebra, we can realize that we can work with multivector equivalents of forms instead of concentrating on forms of a specific grade. For example, one can think of the electromagnetic field as a multivector consisting of elements of various degree as opposed to the usual field strength 2-form \cite{warnick_dierential_2014}. In fact, under certain other restrictions such as those present in Ohmic materials, we find there are surface spinors that fall into the kernel of a Dirac-type operator.
 
 This Dirac-type operator, $\grad$, is the grade-1 derivative operator studied in Clifford analysis. Fundamentally, this operator generalizes the Wirtinger derivative for complex functions to multivectors and, as such, generalizes the notion of a $\C$-holomorphic function to that of a monogenic function (see \todo{refence later}). Happily, we even retain a Taylor series representation (see \cref{lem:density}) for functions in the kernel of $\grad$ due to a generalized form of the Cauchy integral formula. This Cauchy integral formula has been applied elsewhere (see \cite{brackx_hilbert_2008}). The Cauchy integral also provides a direct correspondence between smooth functions defined on the boundary $\partial M$ of a manifold $M$. 
 
@@ -105,16 +105,21 @@ where we use the overdot to signify which multivector field we are taking deriva
 
 The language of differential forms \cite{guillemin_differential_2010} rests neatly inside geometric calculus. We will develop the relationship between multivectors and forms which will serve as a link between the two notions so that researchers with interest in Clifford analysis can communicate with those who study forms. In order to do so, we appeal to the language of differential forms and build a relationship between multivector fields and forms through measures. Forms have their appeal in global understanding via their properties through integration (e.g., Stokes' and Green's theorems) and the exterior calculus along with de Rham cohomology will provide us a larger toolbox.
 
-Given coordinates $\blade{x}=(x_1,x_2,\dots,x_n)$ on $M$ we have the local basis tangent vector fields $\blade{v}_i=\frac{\partial \blade{x}}{\partial x_i}$  with the corresponding 1-forms $dx^i$ that are each local sections of $T^*M$ and are the exterior derivatives (or gradients) of the coordinate functions.  1-forms are linear functionals on tangent vectors and in these coordinates we have $dx^i  (\blade{v}_i) = \delta^i_j$ and one can thus take a pairing of 1-form fields and vector fields and integrate over 1-dimensional submanifolds. The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product $\wedge$.
+Given coordinates $\blade{x}=(x_1,x_2,\dots,x_n)$ on $M$ we have the local basis tangent vector fields $\blade{v}_i=\frac{\partial}{\partial x_i}$  with the corresponding 1-forms $dx^i$ that are each local sections of $T^*M$ and are the exterior derivatives (or gradients) of the coordinate functions.  1-forms are linear functionals on tangent vectors and in these coordinates we have $dx^i  (\blade{v}_i) = \delta^i_j$ and one can thus take a pairing of 1-form fields and vector fields and integrate over 1-dimensional submanifolds. The benefit of this definition is that the 1-forms $dx^i$ carry a natural measure and we can form product measures via the exterior product $\wedge$.
 
 On $M$, we let $\Omega(M)$ be the exterior algebra of smooth form fields on $M$, and let $\Omega^r(M)$ be the space of smooth $r$-form fields on $M$. Then we have the Riemannian volume measure $\mu \in \Omega^n(M)$ given in local coordinates by
 \begin{equation}
 \mu = \sqrt{|g|} dx^1\dots dx^n.
 \end{equation}
-\begin{definition}
-The \emph{$r$-dimensional directed measure} $dX_r$ is given in local coordinates by
+Given a reciprocal basis, we can define a \emph{basic directed measure} as an element 
 \begin{equation}
-    dX_r \coloneqq \blade{v}_{i_1} \wedge \cdots \wedge \blade{v}_{i_r} dx^{i_1} \cdots dx^{i_r}. 
+d\blade{x}^i \coloneqq \blade{v}^i dx^i.
+\end{equation}
+These allow us to build measures for higher dimensional geometries such as surfaces and volumes.
+\begin{definition}
+The \emph{$r$-dimensional directed measure} is the measure given locally by 
+\begin{equation}
+    dX_r \coloneqq d\blade{x}^{i_1}\wedge \cdots \wedge d\blade{x}^{i_r}.
 \end{equation}
 \end{definition}
 For example, along a 2-dimensional submanifold we have the 2-dimensional directed measure 
@@ -140,10 +145,10 @@ where
 \begin{equation}
 A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}.
 \end{equation}
-We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and note that by \cref{eq:volume_form} that the multivector equivalent to $\mu$ is $\pseudoscalar^{-1 \dagger}$. This provides an isomorphism between $r$-forms and $r$-vectors via a contraction with the $r$-dimensional volume directed measure. In this sense, a differential form is made up of two essential components namely the multivector field and the $r$-dimensional directed measure. Hence, we can see now how a differential form simply appends the measure attached to the underlying space. We can also see how this generalizes the musical isomorphism $\flat$ by taking a vector field $\blade{v}$ and noting
+We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and note that by \cref{eq:volume_form} that the multivector equivalent to $\mu$ is $\pseudoscalar^{-1 \dagger}$. This provides an isomorphism between $r$-forms and $r$-vectors via a contraction with the $r$-dimensional volume directed measure. In this sense, a differential form is made up of two essential components namely the multivector field and the $r$-dimensional directed measure. Hence, we can see now how a differential form simply appends the measure attached to the underlying space. We can also see how this generalizes the musical isomorphism $\flat$ by taking a vector field $\blade{v} \mapsto \blade{v}^\flat = \cdot dX_1$. In coordinates,
 \begin{equation}
 \label{eq:line_element}
-\blade{v} \cdot dX_1 = v_i  \blade{v}_i \cdot \blade{v}^j dx^j = v_i dx^i.
+ \blade{v} \cdot dX_1 = v_i  \blade{v}_i \cdot d\blade{x}^j = v_i dx^i.
 \end{equation}
 
 The exterior algebra of differential forms comes with an addition $+$ and exterior multiplication $\wedge$.  We note that the sum of two $r$-forms $\alpha_r$ and $\beta_r$ is also a $r$-form which we can see reduces to addition on the multivector equivalents $A_r$ and $B_r$ by
@@ -160,7 +165,10 @@ With differential forms one also has the exterior derivative $d$ giving rise to 
 \begin{equation}
 d \alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger,
 \end{equation}
-which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalar fields, this returns the gradient as desired. We will find $\grad \rfloor$ can be identified with the codifferential $\delta$ up to a sign. 
+which realizes the exterior derivative as the grade raising component of the gradient $\grad$. Of course, for scalar fields, this returns the gradient as desired. It follows that $\grad \rfloor$ can be identified with the codifferential $\delta$ by
+\begin{equation}
+\delta \alpha_r = (\grad \rfloor A_r)\cdot dX_{r-1}^\dagger
+\end{equation} 
 
 \subsection{Integration}
 \label{subsec:integration_on_submanifolds}

@@ -1,15 +1,27 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{chisolm_geometric_2012}
+{\sc E.~Chisolm}, {\em Geometric {Algebra}}, arXiv:1205.5935 [math-ph],
+  (2012).
+\newblock arXiv: 1205.5935.
 
 \bibitem{clifford_applications_1878}
 {\sc P.~Clifford}, {\em Applications of {Grassmann}'s {Extensive} {Algebra}},
   American Journal of Mathematics, 1 (1878), pp.~350--358.
 \newblock Publisher: Johns Hopkins University Press.
 
+\bibitem{clifford_1882}
+{\sc W.~K. Clifford}, {\em Mathematical Papers}, Macmillan and Co., 1882.
+
 \bibitem{dirac_quantum_1928}
 {\sc P.~A.~M. Dirac}, {\em The quantum theory of the electron}, Proceedings of
   the Royal Society of London. Series A, Containing Papers of a Mathematical
   and Physical Character, 117 (1928), pp.~610--624.
 \newblock Publisher: Royal Society.
+
+\bibitem{doran_lasenby_2013}
+{\sc C.~Doran and A.~N. Lasenby}, {\em Geometric algebra for physicists},
+  Cambridge University Press, 2013.
 
 \bibitem{grassmann_lineale_1844}
 {\sc H.~Grassmann}, {\em Die lineale {Ausdehnungslehre} ein neuer {Zweig} der
@@ -19,8 +31,17 @@
 \newblock Google-Books-ID: bKgAAAAAMAAJ.
 
 \bibitem{hamilton_quaternions_nodate}
-{\sc W.~R. Hamilton}, {\em {ON} {QUATERNIONS}, {OR} {ON} {A} {NEW} {SYSTEM}
-  {OF} {IMAGINARIES} {IN} {ALGEBRA}}, p.~92.
+{\sc W.~R. Hamilton}, {\em On quaternions; or on a new system of imaginaries in
+  algebra},  (1844).
+
+\bibitem{heaviside_2011_vec}
+{\sc O.~Heaviside}, {\em THE ELEMENTS OF VECTORIAL ALGEBRA AND ANALYSIS},
+  vol.~1 of Cambridge Library Collection - Technology, Cambridge University
+  Press, 2011, p.~132–305.
+
+\bibitem{maxwell_1865}
+{\sc J.~C. Maxwell}, {\em A dynamical theory of the electromagnetic field},
+  Royal Society,  (1865).
 
 \bibitem{wallis_treatise_1685}
 {\sc J.~Wallis}, {\em A treatise of algebra, both historical and practical},

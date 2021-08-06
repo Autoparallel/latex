@@ -9,13 +9,13 @@
 
 \begin{center}
    \LARGE{\textsc{MATH 272, Mini Project}}\\
-   \large{\textsc{Due May 15$^\textrm{th}$}}
+   \large{\textsc{Due May 14$^\textrm{th}$}}
 \end{center}
 \vspace{.5cm}
 
 
 \section*{Due Date}
-The assignment must be turned in via Canvas by Friday May 15$^\textrm{th}$, 2020, by 11:59PM mountain time.
+The assignment must be turned in via Canvas by Friday May 14$^\textrm{th}$, 2021, by 11:59PM mountain time.
 \subsection*{Requirements}
 \begin{itemize}
     \item You may work together, but you must submit your own individual work.
@@ -53,20 +53,20 @@ Convert the Hamiltonian $\hamiltonian$ into spherical coordinates.  Then convert
 \end{problem}
 \noindent From here, it is a matter of using the separation of variables ansatz that we are growing more familiar with.  In this case, we will take our wavefunction $\Psi(r,\theta,\phi)$ to be given by
 \[
-\Psi(r,\theta,\phi) = R(r) \Theta(\theta) \Phi(\phi).
+\Psi(r,\theta,\phi) = R(r) Y(\theta,\phi).
 \]
 This guess will allow us to continue forward in solving this problem.
 \begin{problem}{}{2}
-Using the separation of variables ansatz, separate the Schr\"odinger equation into a radial component and a component for both the angular variables.
+Using the separation of variables ansatz, separate the Schr\"odinger equation into a radial component $R(r)$ and an angular component $Y(\theta,\phi)$.
 \begin{itemize}
     \item When you separate, choose the separation constant to be $l(l+1)$ Why is this choice convenient?
     \item What does $l$ correspond to/how does it translate into talking about the atomic orbitals of hydrogen?
 \end{itemize}
 \end{problem}
-\noindent The equation has to now be separated one more time, and thus we will introduce another separation constant.  This will give us two more equations; one for the angular variable $\Phi(\phi)$ and the other for $\Theta(\theta)$.
+\noindent The angular equation for $Y(\theta,\phi)$ has to now be separated one more time, and thus we will introduce another separation constant.  This will give us two more equations; one for the angular variable $\Phi(\phi)$ and the other for $\Theta(\theta)$.
 
 \begin{problem}{}{3}
-Separate the angular equation into $\Phi(\phi)$ and $\Theta(\theta)$ and use the separation constant $-m^2$ here.  Note that $m$ may be a positive or negative number.  (Note: this $m$ is not the same as the mass of the electron $m_e$.)
+Separate the angular equation for $Y(\theta,\phi)$ into $\Phi(\phi)$ and $\Theta(\theta)$ and use the separation constant $-m^2$ here.  Note that $m$ may be a positive or negative number.  (Note: this $m$ is not the same as the mass of the electron $m_e$.)
 \end{problem}
 
 \noindent Now with all of the equations separated, we have three ODEs that we will need to solve. The key tool to use here is the method of power series solutions.  Previously we have solved equations using this technique, and one of our specific solutions will arise again.
@@ -90,7 +90,7 @@ Solve the $\Phi$ equation by first performing the change of variable $x=\cos(\ph
 \end{problem}
 
 \begin{problem}{}{6}
-Solve the radial ODE. Again, this can be solved by the series method (if you are ambitious).  You may also choose to use the change of variables.
+Solve the radial ODE. Again, this can be solved by the series method (if you are ambitious).  You may also choose to use the change of variables $y(r)=rR(r)$.
 \begin{itemize}
     \item Show that the resulting differential equation is actually a special differential equation with a known family of solutions (for example, Legendre, Laguerre, or Hermite). Identify the family and find the appropriate normalization constant.
     \item Write out (all) solutions for the first two values of $l$ and three associated values of $n$ (the integer introduced when you solved the radial equation).  
