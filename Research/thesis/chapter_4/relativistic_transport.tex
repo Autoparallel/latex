@@ -1,0 +1,160 @@
+\subsection{The 4-Momentum, 4-Current, and 4-Velocity Field Decomposition}
+
+Let $M^4$ be global spacetime and let $N^4\subset M^4$ be a (small) local region of spacetime. Since $M^4$ is foliated, there exists a function $t \colon N^4 \to \R$ such that $d\tau \neq 0$ anywhere on $N^4$. Let $\blade{e}_\tau$ be the corresponding vector field corresponding to $d\tau$, i.e., $\blade{e}_\tau \cdot dX_1 = dt$ (or, in other words, $\blade{e}_\tau = d\tau^\flat$).  In particular, choose this $\tau$ so that $\blade{e}_\tau\cdot \blade{e}_\tau = -1$ everywhere in $N^4$.  Let $t\in T\subset \R$ be the \emph{time} and define, \emph{space at time $t$} by $N^3(t)=\tau^{-1}(t)$ so we see space forms the $3$-dimensional leaves of the $3+1$-foliation. Let $\iota\colon N^3(t)\hookrightarrow N^4$ be inclusion then define the coordinates $x_{i}$ be local coordinates on $N^3(t)$ with corresponding $1$-forms, $dx_i = \blade{e}_i \cdot dX_1$, where $\blade{e}_1,\blade{e}_2,\blade{e}_3\in \G_{3}^1(N^3(t))$ and $\blade{e}_i\cdot \blade{e}_j = \delta_{ij}$. Let $\blade{I}_4$ be the unit pseudoscalar field on $N^4$, then at the point $x \in N^3(t)$, the tangent unit pseudoscalar is defined by $\blade{I}_3(x) = \blade{e_\tau}(x,t)\rfloor \blade{I}_4(x,t)$ is the pseudoscalar 
+
+Let $\blade{p}\in \G_{1,3}^1(N^4)$ be the \emph{4-momentum field} which we assume can be decomposed as
+\begin{equation}
+    \blade{p} = m \blade{v},
+\end{equation}
+where $m\in \G_{1,3}^0(N^4)$ and $\blade{v} \in \G_{1,3}^1(N^4)$ with $|\blade{v}|=-1$ everywhere in $N^4$. We refer to $m$ as the \emph{mass energy field} and $\blade{v}$ as the \emph{massive 4-velocity field}. From $p$ we can always deduce $m$ via the expression $p^2 = p\cdot p = -m^2$. Finally, let $q\colon N^4 \to \R$ be the \emph{charge field}, then $j=qv$ defines the \emph{4-current field}.
+
+For a moment, consider $\gamma \colon (0,1) \to N^4$ to be the worldline of a massive particle, that is, a curve such that $\dot{\gamma}^2<0$. If we assume the mass of the particle is unchanging, $\dot{\gamma}^2=-m^2$ for some $m>0$. This allows us to write $\dot{\gamma}=m\blade{v}$ where $\blade{v}$ is a massive 4-velocity. If the particle is statically charged, then $\blade{j}=q\blade{v}$ is the \emph{4-current vector field of this particle} if $\grad \cdot \blade{j} = 0$. Note that
+\begin{equation}
+    \grad \cdot \blade{j} = \grad \cdot (q\blade{v}) = (\grad q) \cdot \blade{v} + q\grad \cdot \blade{v} = 0
+\end{equation}
+
+Let $F\in G_{1,3}^2(N^4)$ be the \emph{electromagnetic bivector field}. Since this is done locally in $M^4$, $F=\grad A$ where $A\in \G_{1,3}^1(N^4)$ and this implies that $F=\blade{F}$ is a $2$-blade. We say that this particle $\gamma$ obeys the Lorentz force law if the vector field ${\blade{v}} = \blade{\dot{\gamma}}$ satisfies
+\begin{equation}
+    \label{eq:lorentz_force_geometric_algebra}
+    \nabla_{\blade{v}} \blade{p} = \blade{j}\rfloor \blade{F}.
+\end{equation}
+We could also imagine ${\blade{v}}$ as a velocity field on $N^4$ that describes a fluid of charged particles. In that case, we would not be able to impose that $m$ is static and instead
+\begin{equation}
+    m \nabla_{\blade{v}} \blade{v} + (\nabla_{\blade{v}} m)\blade{v} = q\blade{v} \rfloor \blade{F}
+\end{equation}
+where we use linearity on the right hand side. On the other hand, when $m$ is constant
+\begin{equation}
+    \label{eq:lorentz_force_static_mass}
+    \nabla_{\blade{v}} \blade{v} = \frac{q}{m} \blade{v} \rfloor \blade{F}.
+\end{equation}
+and if we require $\blade{v}^2$ to be constant everywhere in $N^4$, it must be that in our local coordinates $\blade{v}(x+\delta x,t + \delta t)=\mathsf{R}(\delta x,\delta t)\blade{v}(x,t)$ where $R(\delta x,\delta t)$ is an element of the isometry group of the metric $g$. This was an argument in local coordinates---instead, we can choose $\mathsf{R}$ so that it is a section of $\mathrm{End}(\G_{1,3}^1(N^4))$ by choosing some fixed reference ${\blade{u}}$, building a set of orthonormal vectors in the tangent space at an arbitrary point in $N^4$, and defining a frame field via parallel translation of this orthonormal basis. 
+
+We can see that we have a differential constraint on ${\blade{v}}$ by
+\begin{equation}
+    \grad ({\blade{v}} \cdot {\blade{v}}) = 0 
+\end{equation}
+which implies that
+\begin{equation}
+    \label{eq:velocity_covariant_derivative}
+    \nabla_{\blade{v}} {\blade{v}} - {\blade{v}}\cdot (\grad \wedge {\blade{v}}) = 0.
+\end{equation}
+One interpretation of this could be that the advection of the velocity field depends solely on ${\blade{v}} \cdot (\grad \wedge {\blade{v}})$ (see the last two equations in \url{https://en.wikipedia.org/wiki/Advection}). Or, said another way, optimal transport of ${\blade{v}}$ (when $\nabla_{\blade{v}} {\blade{v}} = 0$) occurs when ${\blade{v}}$ lies solely outside of the plane defined by the 2-blade $\grad \wedge {\blade{v}}$ or if $\grad \wedge {\blade{v}} = 0$. Finally, using \cref{eq:lorentz_force_geometric_algebra,eq:velocity_covariant_derivative}, we could also write
+\begin{equation}
+    {\blade{v}}\cdot (\grad \wedge {\blade{v}}) = \frac{q}{m} {\blade{v}} \rfloor \blade{F} = \frac{q}{m} \blade{v} \rfloor (\grad \wedge \blade{A}).
+\end{equation}
+
+\subsection{Lie Algebras of Bivectors and Spacetime Rotors}
+
+Since $\grad \wedge {\blade{v}}, \blade{F} \in \G_{1,3}^2(N^4)$ are bivectors, they are both sections of the $\spina(1,3)$ bundle. To this end, let us investigate this Lie algebra with the commutator bracket $[-,-]$. Using our basis, we realize there is an orthogonal decomposition 
+\begin{equation}
+    \label{eq:spin_algebra_split}
+    \spina(1,3) = \mathcal{T} \oplus \mathcal{S},
+\end{equation}
+where 
+\begin{align}
+    \mathcal{T} &\coloneqq \mathrm{span}(\{\blade{e}_0 \blade{e}_i ~\vert~ i = 1,2,3\})\\
+    \mathcal{S} &\coloneqq \mathrm{span}(\{\blade{e}_i \blade{e}_j ~\vert~ i,j = 1,2,3, ~ i\neq j\}).
+\end{align}
+Each space $\mathcal{T}$ and $\mathcal{S}$ are 3-dimensional and the space $\mathcal{S}\cong \mathfrak{spin}(3)$. Orthogonality is realized by the fact
+\begin{align}
+    (\blade{e}_0 \blade{e}_i, \blade{e}_j \blade{e}_k) &= \proj{}{(\blade{e}_0 \blade{e}_i)^\dagger \blade{e}_j \blade{e}_k} = 0.
+\end{align}
+The space $\mathcal{T}$ does not form a Lie subalgebra since it is not closed under the bracket
+\begin{equation}
+    [\blade{e}_0\blade{e}_i,\blade{e}_0 \blade{e}_j] = \frac{1}{2} (\blade{e}_0 \blade{e}_i \blade{e}_0 \blade{e}_j - \blade{e}_0 \blade{e}_j \blade{e}_0 \blade{e}_i) = \frac{1}{2}(\blade{e}_j \blade{e}_i-\blade{e}_i \blade{e}_j).
+\end{equation}
+However, we can note that elements in $\mathcal{T}$ and $\mathcal{S}$ commute since
+\begin{equation}
+[e_0 e_i,e_j e_k] = 0.
+\end{equation}
+Let $\blade{v}$ be a vector, then we also note that for a 2-blade $\blade{B}$ that
+\begin{equation}
+    \blade{v} \rfloor \blade{B} = \frac{1}{2}[\blade{B},\blade{v}] = \frac{1}{2}(\blade{B}\blade{v} - \blade{v}\blade{B}).
+\end{equation}
+This holds true for the bivector fields $\nabla \wedge \blade{v}$ and $\blade{F}$ and from \cref{eq:lorentz_force_static_mass} we get
+\begin{equation}
+    \label{eq:static_charge_mass_faraday_transport}
+    \boxed{\nabla_{\blade{v}} \blade{v} = \frac{q}{2m} [\blade{F},\blade{v}].}
+\end{equation}
+This \cref{eq:static_charge_mass_faraday_transport} is the \emph{static mass and charge Faraday transport equation}.
+
+At any point in $N^4$, we can realize this bracket of an element of a Lie algebra $\mathfrak{g}$ acting on a tangent vector. The exponential of a Lie algebra element produces a Lie group element $\exp \colon \mathfrak{g} \to G$. In our case, take a bivector $B$ and this implies that $\exp \left(B/2\right)=R$ is an element of $\sping(1,3)$ which generates an isometry $\mathsf{R}$ by
+\begin{equation}
+    \mathsf{R}(\blade{v}) = R\blade{v}R^\dagger.
+\end{equation}
+
+\begin{proposition}
+The transformation above, $\blade{v} \mapsto R\blade{v}R^\dagger$ with $R=\exp\left(B/2\right)$ is an isometry.
+\end{proposition}
+The proof is immediate. By definition, $R=\exp\left(B\right)$ satisfies $RR^\dagger = \pm 1$. Hence,
+\begin{equation}
+    (R\blade{v}R^\dagger,R\blade{v}R^\dagger) = (\blade{v},R^\dagger R \blade{v} RR^\dagger) = (\blade{v},\blade{v}).
+\end{equation}
+If $RR^\dagger = 1$, then we say that $R\in \sping^+(1,3)$ and say that $R$ is an \emph{spacetime rotor}. By smoothness, if $R\in \sping^+(1,3)$ at some point, then $R$ will be a section of the $\sping^+(1,3)$ bundle, i.e., a spacetime rotor field. 
+
+We can deduce differential constraints for the spacetime rotor field $R$ via transport. Let us assume that we have some fixed tangent vector $\blade{u}$ at a point in $N^4$ with $\blade{u}^2 = -1$, then the tangent vector at another point is $\blade{v}=R\blade{u}R^\dagger$ where $R$ is allowed to vary in space and we assume we parallel translate $\blade{u}$ from point to point. Thus,
+\begin{align}
+    \nabla_{\blade{v}} {\blade{v}} &= \nabla_{\blade{v}} R {\blade{u}} R^\dagger + R{\blade{u}} \nabla_{\blade{v}} R^\dagger \\
+    &= \nabla_{\blade{v}} R(R^\dagger {\blade{v}} R)R^\dagger + R(R^\dagger {\blade{v}}R)\nabla_{\blade{v}} R^\dagger\\
+    &= (\nabla_{\blade{v}} R) R^\dagger {\blade{v}} + {\blade{v}} R \nabla_{\blade{v}} R^\dagger
+\end{align}
+Then, since $R$ is a spacetime rotor field, $RR^\dagger = 1$ everywhere and it must be that
+\begin{align}
+    0 = \nabla_{\blade{v}} (RR^\dagger) = \nabla_{\blade{v}} R R^\dagger + R\nabla_{\blade{v}}R^\dagger
+\end{align}
+and by the previous work 
+\begin{equation}
+    \nabla_{\blade{v}} {\blade{v}} = [(\nabla_{\blade{v}} R) R^\dagger,{\blade{v}}]
+\end{equation}
+In the same vein, ${\blade{v}}^2={\blade{v}}\cdot {\blade{v}}=-1$ so
+\begin{align}
+    0=\nabla_{\blade{v}} ({\blade{v}}^2)=2(\nabla_{\blade{v}} {\blade{v}})\cdot {\blade{v}},
+\end{align}
+which is a requirement for the transport along a geodesic, hence
+\begin{align}
+    (\nabla_{\blade{v}} {\blade{v}}) {\blade{v}} = [(\nabla_{\blade{v}} R)R^\dagger,{\blade{v}}] {\blade{v}}.
+\end{align}
+
+This spacetime rotor $R$ can be decomposed further into the decomposition $R=LU$. Physically, we care about the vector ${\blade{v}}$ and its evolution in space which is governed by ${\blade{v}}=R{\blade{u}}R^\dagger$. Relative to ${\blade{u}}$ we build an orthonormal frame $\blade{e}^{\blade{u}}=({\blade{u}},\blade{y}_1,\blade{y}_2,\blade{y}_3)$ and we can note that this whole frame is evolved by $R\blade{e}^{\blade{u}}R^\dagger$. The transformation of the frame vectors $\blade{y}_i$ is not physical which represents a freedom in choice of the spatial reference frame for an observer. Mathematically, this is due to the splitting in \cref{eq:spin_algebra_split} and noting that 
+\begin{equation}
+    R = \exp(B) = \exp(B_\mathcal{T}+B_\mathcal{S})=\exp(B_\mathcal{T})\exp(B_\mathcal{S})=LU,
+\end{equation}
+which follows from $[\mathcal{T},\mathcal{S}]=0$. Letting $\delta r = (\delta x,\delta t)$ be an infinitesimal displacement, we have that to first order
+\begin{align}
+    {\blade{v}}(r + \delta r) &= {\blade{v}}(r)+\delta r \nabla_{\blade{v}} {\blade{v}}\\
+    R(r+\delta r) &= (1+\delta r (\nabla_{\blade{v}} R) R^\dagger)R.
+\end{align}
+Hence, we want that
+\begin{equation}
+    L(r + \delta r) = 1+ \frac{1}{2}\delta r (\nabla_{\blade{v}} {\blade{v}}){\blade{v}}.
+\end{equation}
+(see \cite{doran_geometric_2003}) and equating $R=L$ yields
+\begin{equation}
+    (\nabla_{\blade{v}} R)R^\dagger = \frac{1}{2}(\nabla_{\blade{v}} {\blade{v}}){\blade{v}}
+\end{equation}
+and using the bracket
+\begin{equation}
+    \label{eq:fermi_transport}
+    \boxed{[\nabla_{\blade{v}} R, R^\dagger] = \frac{1}{2} [\nabla_{\blade{v}} {\blade{v}},{\blade{v}}].}
+\end{equation}
+We refer to the above \cref{eq:fermi_transport} as the \emph{Fermi transport equation}. A charged particle's 4-velocity undergoes Faraday transport and we can combine this with the equations of Fermi transport to get
+\begin{equation}
+    \boxed{[\nabla_{\blade{v}} R,R^\dagger]= \frac{q}{4m} \left[ [\blade{F},{\blade{v}}],{\blade{v}}\right].}
+\end{equation}
+
+For a single particle, assumption of static mass and charge is reasonable to make, but it is not true for a collection of charges acting as a fluid. We will revisit this later, but for now let us take a single particle given by the curve $\gamma(\tau)$ where $\tau$ is the proper time. Likewise, we choose units such that $q=m=1$ and note that by construction $\blade{v}(\tau)=\dot{\gamma}(\tau)$ satisfies $\blade{v}^2 = -1$ since $\tau$ is the arclength parameter. In other words, $\nabla_{\dot{\gamma}(\tau)}\dot{\gamma}(\tau)=\frac{d}{d\tau}\blade{v}(\tau)$. At proper time $\tau=0$, we observe the particle velocity $\blade{v}(0)$ and realize that at later times $\blade{v}(\tau)=R(\tau)v(0)R^\dagger(\tau)$ with $R\in \sping(1,3)$ with $R(0)=\mathrm{id}$. Fermi transport is given by
+\begin{equation}
+    \dot{\blade{v}}(\tau) = [\dot{R}R^\dagger,v]
+\end{equation}
+and Faraday transport by
+\begin{equation}
+    \dot{\blade{v}}(\tau) = \frac{1}{2}[F,v]
+\end{equation}
+hence
+\begin{equation}
+\dot{R}(\tau) = \frac{1}{2}F(\gamma(\tau))R(\tau).
+\end{equation}
+Initially, we find
+\begin{equation}
+    \dot{R}(0)=\frac{1}{2}F(\gamma(0))
+\end{equation}

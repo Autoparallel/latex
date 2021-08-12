@@ -21,7 +21,11 @@ To see how the tensor product descends to the quotient, we let $\blade{v}_1, \do
 \end{equation}
 where $\wedge$ is the typical exterior product satisfying $\blade{v}\wedge \blade{w} = - \blade{w}\wedge \blade{v}$ for all $\blade{v},\blade{w}\in V$.  As a consequence, the exterior algebra $\bigwedge(V)$ can be realized as a subalgebra of any Clifford algebra over $V$ or as a Clifford algebra with a trivial quadratic form $Q=0$.  
 
-In the case where $V$ has a (pseudo) inner product $g$, we can induce a quadratic form $Q$ by $Q(\blade{v})=g(\blade{v},\blade{v})$ and give rise to a special type of Clifford algebra which motivates the following definition.
+In the case where $V$ has a (pseudo) inner product $g$, we can induce a quadratic form $Q$ by $Q(\blade{v})=g(\blade{v},\blade{v})$. One can recover $g$ from $Q$ by polarization
+\begin{equation}
+g(\blade{v},\blade{w})=\frac{1}{2} \left(Q(\blade{v})+Q(\blade{w})-Q(\blade{v}-\blade{w})\right).
+\end{equation}
+Clifford algebras constructed this way are special and it motivates their own definition.
 \begin{definition}
 Let $V$ be a vector space with an (pseudo) inner product $g(\cdot,\cdot)$. Then taking $Q(\cdot) = g(\cdot,\cdot)$, the Clifford algebra $C \ell(V,Q)$ is called a \emph{geometric algebra}.
 \end{definition}
