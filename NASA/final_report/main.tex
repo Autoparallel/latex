@@ -2,16 +2,27 @@
 %\documentclass[journal]{new-aiaa} for journal papers
 \usepackage[utf8]{inputenc}
 
-\usepackage{graphicx}
-\usepackage{amsmath}
+%\usepackage{enumerate}
+%\usepackage{graphicx}
+%\usepackage{amsmath}
 \usepackage[version=4]{mhchem}
 \usepackage{siunitx}
 \usepackage{longtable,tabularx}
 \setlength\LTleft{0pt} 
+\usepackage{preamble}
 
-\title{Preparation of Papers for AIAA Technical Conferences}
+\setlength{\marginparwidth}{2.5cm}
+\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage[disable]{todonotes} % This will disable viewing Todos
+\setuptodonotes{size=\scriptsize,backgroundcolor=red!15!white} 
 
-\author{First A. Author\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for first author.} and Second B. Author Jr.\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for second author.}}
+
+\newcommandx{\cameron}[2][1=]{\todo[linecolor=cyan,backgroundcolor=cyan!25,bordercolor=cyan,#1]{\tiny Cameron: #2}}
+\newcommandx{\colin}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{\tiny Colin: #2}}
+
+\title{Mathematics of Plasma and the Coordinate Free Vlasov Equation}
+
+\author{FColin Roberts\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for first author.} and Second B. Author Jr.\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for second author.}}
 \affil{Business or Academic Affiliation 1, City, State, Zip Code}
 \author{Third C. Author\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for third author.}}
 \affil{Business or Academic Affiliation 2, City, Province, Zip Code, Country}
@@ -23,7 +34,9 @@
 \maketitle
 
 \begin{abstract}
-These instructions give you guidelines for preparing papers for AIAA Technical Papers using \LaTeX{}. Define all symbols used in the abstract. Do not cite references in the abstract. The footnote on the first page should list the Job Title and AIAA Member Grade for each author, if known Authors do not have to be AIAA members.
+The kinematics and self interaction of charges and neutral particles is described by combining Maxwell's equations of electromagnetism with the Boltzmann equation of gas/fluid kinematics. In tandem, we refer to the set of these equations as the Vlasov equations. One can note that the theory of electromagnetism is purely topological and, in fact, through the lens of relativity, Maxwell's equations are purely topological. This perspective is immensely powerful, but it does not immediately ascend to providing us with a topological version of Vlasov's equation due to Boltzmann's equation. There have been versions of Vlasov's equations which are, at least, coordinate free. 
+
+Our goals are to understand the coordinate free Vlasov equations and seek to determine a topological version, if possible. We take two novel approaches. First, we consider relativistic phase space and construct the Boltzmann equations and investigate the symplectic and contact structures therein. Second, we take an approach to describing the relativistic motion of single charged particles via differential equations of spinors and attempt to extend this to a fluid of charges. An analogy forms -- the equations of motion of lone charges immersed in an electromagnetic field follows paths in the Poincar\'e group much like the motion of rigid body can be seen as a path (in fact, geodesics) in the Euclidean group as described by Vladimir Arnol'd. In the same vein, Arnol'd determined that incompressible fluids follow geodesics on the infinite dimensional group of volume preserving diffeomorphisms. This begs the question of whether ideal charged fluids behave similarly but on, perhaps, some other group.
 \end{abstract}
 
 \section{Nomenclature}
@@ -47,9 +60,11 @@ $K$  & trailing-edge (TE) nondimensional angular deflection rate
 \end{longtable*}}
 
 \section{Introduction}
-\lettrine{T}{his} document is a \LaTeX{} template for preparation of papers for AIAA Technical Conferences. If you are reading a hard-copy or .pdf version of this document, download the electronic file, new-aiaa.cls, and use it to prepare your manuscript.
+Plasma dynamics is a complicated problem with many facets of interest in many communities. Since plasmas consist of freely moving charged particles,the evolution of a plasma is tightly coupled to its self generated electromagnetic (EM) field. A consistent theory should provide a coupling of kinemetic (or fluid) equations for the plasma to the self induced field via the Lorentz force under the constraints of Maxwell's equations. Examples of these equations are given by, but not limited to, magnetohydrodynamics and the Vlasov equation. 
 
-Authors using \url{https://www.overleaf.com} may simply open the AIAA template from the Overleaf gallery to work online; no local installation of any files is required. Authors using a local \LaTeX{} installation will need to open the template in Overleaf and use the ``Download as zip'' option from the project menu to download a local copy of the template files. To create your formatted manuscript, type your own text over sections of the template, or cut and paste from another document and then use the available markup styles. Note that special formatting such as subscripts, superscripts, and italics may be lost when you copy your text into the template from a Word Processing program such as Microsoft Word. See Sec. V for more detailed formatting guidelines.
+If we take for example, the Vlasov equation, we find that it is, in essence, a combination of Maxwell's equations (which describe the field produced by charges) with the collisionless Boltzmann equation (which describes the kinematics of these charges). Fundamentally, Maxwell's equations are topological. They solely require that the spacetime manifold $M^4$ admits a $3+1$-foliation and do not hinge on a metric structure on spacetime \cite{delphenich_axioms_2005, hehl_foundations_2003}. It is a worthy question to ask if the Vlasov equations admit a purely topological understanding as well. Hence, we really seek to find a topological version of the collisionless Boltzmann equation.
+
+Kinematics on spacetime is a touchy subject. Sadly, there is an inability to describe the worldlines of more than one particle \colin{cite something here}. Sarbach and Zannias have produced a series of papers \cite{sarbach_relativistic_2013, sarbach_tangent_2014, sarbach_geometry_2014} that provide a relativistic version of Boltzmann's equation for a single particle which they claim is useful for describing the average properties of a gas. In fact, they even provide the equations for a charged and massive gas that includes self generated EM field and gravitation. In our case, we can ignore gravitational interactions since we wish to consider plasma on the small and low mass scale. Almost 50 years prior to Sarbach and Zannias, Bichteler produced the paper \cite{bichteler_cauchy_1967} which outlines a similar approach in the first few sections.
 
 \section{Procedure for Paper Submission}
 
@@ -228,6 +243,6 @@ An Appendix, if needed, should appear before the acknowledgments.
 \section*{Acknowledgments}
 An Acknowledgments section, if used, \textbf{immediately precedes} the References. Sponsorship information and funding data are included here. The preferred spelling of the word ``acknowledgment'' in American English is without the ``e'' after the ``g.'' Avoid expressions such as ``One of us (S.B.A.) would like to thank\ldots'' Instead, write ``F.~A.~Author thanks\ldots'' Sponsor and financial support acknowledgments are also to be listed in the ``acknowledgments'' section.
 
-\bibliography{sample}
+%\bibliography{final_report_bib}
 
 \end{document}
