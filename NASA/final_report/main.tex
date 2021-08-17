@@ -20,14 +20,12 @@
 \newcommandx{\cameron}[2][1=]{\todo[linecolor=cyan,backgroundcolor=cyan!25,bordercolor=cyan,#1]{\tiny Cameron: #2}}
 \newcommandx{\colin}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{\tiny Colin: #2}}
 
-\title{Mathematics of Plasma and the Coordinate Free Vlasov Equation}
+\title{Spinor Equations of Fluid Plasmas and the Coordinate Free Vlasov Equation}
 
-\author{FColin Roberts\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for first author.} and Second B. Author Jr.\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for second author.}}
-\affil{Business or Academic Affiliation 1, City, State, Zip Code}
-\author{Third C. Author\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for third author.}}
-\affil{Business or Academic Affiliation 2, City, Province, Zip Code, Country}
-\author{Fourth D. Author\footnote{Insert Job Title, Department Name, Address/Mail Stop, and AIAA Member Grade (if any) for fourth author (etc.).}}
-\affil{Business or Academic Affiliation 2, City, State, Zip Code}
+\author{Colin P. Roberts\footnote{Ph.D. Candidate, Colorado State University, 1874 Campus Delivery Fort Collins, CO 80523-1874}}
+\affil{Colorado State University, Fort Collins, Colorado, 80523}
+\author{Alan G. Hylton\footnote{Engineer, LCN}}
+\affil{NASA Glenn Research Center, Cleveland, Ohio, 44133, USA}
 
 \begin{document}
 
@@ -39,25 +37,25 @@ The kinematics and self interaction of charges and neutral particles is describe
 Our goals are to understand the coordinate free Vlasov equations and seek to determine a topological version, if possible. We take two novel approaches. First, we consider relativistic phase space and construct the Boltzmann equations and investigate the symplectic and contact structures therein. Second, we take an approach to describing the relativistic motion of single charged particles via differential equations of spinors and attempt to extend this to a fluid of charges. An analogy forms -- the equations of motion of lone charges immersed in an electromagnetic field follows paths in the Poincar\'e group much like the motion of rigid body can be seen as a path (in fact, geodesics) in the Euclidean group as described by Vladimir Arnol'd. In the same vein, Arnol'd determined that incompressible fluids follow geodesics on the infinite dimensional group of volume preserving diffeomorphisms. This begs the question of whether ideal charged fluids behave similarly but on, perhaps, some other group.
 \end{abstract}
 
-\section{Nomenclature}
-
-{\renewcommand\arraystretch{1.0}
-\noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
-$A$  & amplitude of oscillation \\
-$a$ &    cylinder diameter \\
-$C_p$& pressure coefficient \\
-$Cx$ & force coefficient in the \textit{x} direction \\
-$Cy$ & force coefficient in the \textit{y} direction \\
-c   & chord \\
-d$t$ & time step \\
-$Fx$ & $X$ component of the resultant pressure force acting on the vehicle \\
-$Fy$ & $Y$ component of the resultant pressure force acting on the vehicle \\
-$f, g$   & generic functions \\
-$h$  & height \\
-$i$  & time index during navigation \\
-$j$  & waypoint index \\
-$K$  & trailing-edge (TE) nondimensional angular deflection rate
-\end{longtable*}}
+%\section{Nomenclature}
+%
+%{\renewcommand\arraystretch{1.0}
+%\noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
+%$A$  & amplitude of oscillation \\
+%$a$ &    cylinder diameter \\
+%$C_p$& pressure coefficient \\
+%$Cx$ & force coefficient in the \textit{x} direction \\
+%$Cy$ & force coefficient in the \textit{y} direction \\
+%c   & chord \\
+%d$t$ & time step \\
+%$Fx$ & $X$ component of the resultant pressure force acting on the vehicle \\
+%$Fy$ & $Y$ component of the resultant pressure force acting on the vehicle \\
+%$f, g$   & generic functions \\
+%$h$  & height \\
+%$i$  & time index during navigation \\
+%$j$  & waypoint index \\
+%$K$  & trailing-edge (TE) nondimensional angular deflection rate
+%\end{longtab*}}
 
 \section{Introduction}
 Plasma dynamics is a complicated problem with many facets of interest in many communities. Since plasmas consist of freely moving charged particles,the evolution of a plasma is tightly coupled to its self generated electromagnetic (EM) field. A consistent theory should provide a coupling of kinemetic (or fluid) equations for the plasma to the self induced field via the Lorentz force under the constraints of Maxwell's equations. Examples of these equations are given by, but not limited to, magnetohydrodynamics and the Vlasov equation. 
@@ -66,183 +64,388 @@ If we take for example, the Vlasov equation, we find that it is, in essence, a c
 
 Kinematics on spacetime is a touchy subject. Sadly, there is an inability to describe the worldlines of more than one particle \colin{cite something here}. Sarbach and Zannias have produced a series of papers \cite{sarbach_relativistic_2013, sarbach_tangent_2014, sarbach_geometry_2014} that provide a relativistic version of Boltzmann's equation for a single particle which they claim is useful for describing the average properties of a gas. In fact, they even provide the equations for a charged and massive gas that includes self generated EM field and gravitation. In our case, we can ignore gravitational interactions since we wish to consider plasma on the small and low mass scale. Almost 50 years prior to Sarbach and Zannias, Bichteler produced the paper \cite{bichteler_cauchy_1967} which outlines a similar approach in the first few sections.
 
-\section{Procedure for Paper Submission}
+\section{Preliminaries}
 
-All manuscripts are to be submitted electronically to the ScholarOne Abstracts site created for each conference. The manuscript upload will be enabled several weeks after acceptance notices have been sent. Presenting authors of accepted papers will receive an email with instructions when manuscript submission is open. It is important that presenting authors keep their email addresses up-to- date so they do not miss this notice.
+\subsection{Clifford Algebras and Analysis}
 
-Before completing manuscript submission, submitters must also select the copyright statement that will appear on the paper, and complete other acknowledgments. It is also necessary to click both the ``Accept'' and ``Save'' buttons to complete a submission. All completed manuscript submission will be confirmed by email. Completed submissions will also have a status of ``Accepted'' at the top of your manuscript submission page.
+\subsubsection{Clifford Algebras, Multivectors, and Rotors}
 
-All files must be in pdf format. Please be sure that all security settings are removed from the pdf file before uploading to ensure proper processing of your manuscript file.
-
-\section{General Guidelines}
-
-The following section outlines general (nonformatting) guidelines to follow, drawn from the original AIAA Manuscript Preparation Kit. These guidelines are applicable to all authors (except as noted), and include information on the policies and practices relevant to the publication of your manuscript.
-
-\subsection{Publication by AIAA}
-Your manuscript cannot be published by AIAA if:
-\begin{enumerate}
-\item It has been published previously or
-
-\item The work contains copyright-infringing material or
-
-\item An appropriate copyright statement has not yet been selected.
-\end{enumerate}
-
-\subsection{Paper Review and Visa Considerations}
-
-It is the responsibility of the author to obtain any required government or company reviews for their papers in advance of publication. Start early to determine if the reviews are required; this process can take several weeks.
-
-If you plan to attend an AIAA Forum, technical conference or professional development course held in the United States and you require a visa for travel, it is incumbent upon you to apply for a visa with the U.S.~embassy (consular division) or consulate with ample time for processing.  To avoid bureaucratic problems, AIAA strongly suggests that you submit your formal application to U.S.~ authorities a minimum of 120 days in advance of the date of anticipated travel.
-
-Prospective conference and course attendees requiring a visa to travel to the United States should first contact
-
-AIAA to request an official letter of invitation. This letter and a copy of the conference call for papers should be presented along with the required documentation to the U.S. consular officials as part of the formal application process.  AIAA cannot directly intervene with the U.S. Department of State, consular offices, or embassies on behalf of individuals applying for visas. A letter of invitation can be requested by completing the Visa Invitation Letter Request Form at \url{https://www.aiaa.org/Secondary.aspx?id=6258} or you may contact the Event Registrar at \url{invitation@aiaa.org} for more information.
-
-\subsection{Control ID Number vs Paper Number}
-
-Your paper was assigned a control ID number at the time you submitted your abstract. It is critical that you reference the tracking number and conference name when contacting AIAA regarding your submission. The control ID number is \emph{not} the final AIAA paper number. The paper number, which appears in the format AIAA-20XX-XXXX, will be used to refer to your paper in the program and in any publication format. It will not be assigned until shortly before the conference. \textbf{Do not include a paper number anywhere on your paper, as this number will be stamped automatically in the top right corner of your paper at the time of processing.}
-
-\subsection{Copyright}
-
-Before AIAA can print or publish any paper, the copyright information must be completed in the submission system. Failure to complete the electronic form correctly could result in your paper not being published. The following fields must be completed:
-
-\begin{enumerate}
-\item Clearance Statement
-\item Non-Infringement Statement
-\item Publication Status Statement
-\item One Copyright Assignment Statement (Select either A, B, C, or D)
-\end{enumerate}
-
-Be sure to read the copyright statements carefully. AIAA requires a copyright transfer from the author(s) to AIAA or a license to publish and distribute your material; government authors can assert that the work is in the public domain. If you are not sure which copyright statement to use, contact your legal department. Refer to AIAA’s Rights and Permissions page at \url{www.aiaa.org} for more information; AIAA cannot help you determine which statement to use. Do not include a copyright statement anywhere on your paper. A hard copy of the form is found in the Author Kit for your reference. As you will be completing this form online, you do not need to fill out the hard-copy form. Do not include a copyright statement anywhere on your paper, and do not upload a copyright form with your paper. The correct statement will be stamped automatically at the time of processing.
-
-\subsection{Submission Deadlines}
-
-Manuscripts will be accepted for upload to the system from the receipt of the email invitation until the deadline set for the conference. You will be notified of the specific manuscript submission deadline in your acceptance letter, and the deadline will also be listed on the conference web page at AIAA. Please do not upload a draft version of your manuscript with the intent to upload a final version later. \textbf{Please review your manuscript very carefully before completing your submission to ensure that your paper is complete and final in all respects. Once the manuscript deadline has passed you will be locked out of the manuscript site so it is critical that you upload a final, carefully proofed document.}
-
-Online conference proceedings will be made accessible to attendees who have registered for the ``full conference'' when the conference opens. Once the proceedings are published online, the conference papers will be considered the version of record and may not be removed or replaced. Changes to published papers can be made available through the Crossmark feature, where corrections and updates are accessed by clicking the Crossmark icon available on every paper published in Aerospace Research Central.
-
-The opportunity to submit Crossmark updates will be provided to presenting authors starting the first day of the conference through 2000 hrs/8 pm Eastern Time, seven business days after the last day of the conference.  The proceedings will be updated with Crossmark updates shortly after that date.  
-
-AIAA will NOT accept changes and/or change requests that solely correct grammatical errors, spelling errors, or errors in formatting.  All corrections should be for editorially significant changes where the change affects interpretation or crediting of the work.
-
-To ensure conference quality, session chairs will enforce a ``no paper, no podium'' rule. This policy is intended to eliminate no-shows, to improve the quality of the conference for all participants, and to ensure that the published proceedings accurately represent the presentations made at a conference.
-
-\section{Detailed Formatting Instructions}
-
-The styles and formats for the AIAA Papers Template have been incorporated into the structure of this document. If you are using \LaTeX{}, please use this template to prepare your manuscript. A Microsoft Word template is also available from AIAA's website if you prefer to use Microsoft Word 2001 or later. Regardless of which program you use to prepare your manuscript, please use the formatting instructions contained in this document as a guide.
-
-If you are using the AIAA Meeting Papers \LaTeX{} Template file to prepare your manuscript, you can simply type your own text over sections of this document, or cut and paste from another document and use the available markup styles. If you choose to cut and paste, select the text from your original document and choose Edit>Copy. (Do not select your title and author information, since the document spacing may be affected. It is a simple task to reenter your title and author information in the template.) Open the \LaTeX{} template file. Place your cursor in the text area of the template and select Edit>Paste. Please note that special formatting (e.g., subscripts, superscripts, italics) may be lost when you copy your text into the template. Use italics for emphasis; do not underline. Use the compiled \LaTeX{} pdf to see the most accurate representation of how your final paper will appear.
-
-\subsection{Document Text}
-The default font for AIAA papers is Times New Roman, 10-point size.  The first line of every paragraph should be indented, and all lines should be single-spaced. Default margins are 1'' on all sides. In the electronic version of this template, all margins and other formatting is preset. There should be no additional lines between paragraphs.
-
-\begin{quoting}
-Extended quotes, such as this example, are to be used when material being cited is longer than a few sentences, or the standard quotation format is not practical. In this \LaTeX template, the appropriate command environment is \verb|\begin{quoting}...\end{quoting}|. Extended quotes are to be in Times New Roman, 9-point font, indented 0.4'' and full justified.
-\end{quoting}
-
-\emph{NOTE:} If you are using the electronic \LaTeX{} template to format your manuscript, the required spacing and formatting will be applied automatically.
-
-\subsection{Headings}
-The title of your paper should be typed in bold, 24-point type, with capital and lower-case letters, and centered at the top of the page. The names of the authors, business or academic affiliation, city, and state/province should follow on separate lines below the title. The names of authors with the same affiliation can be listed on the same line above their collective affiliation information. Author names are centered, and affiliations are centered and in italic type immediately below the author names. The affiliation line for each author is to include that author’s city, state, and zip/postal code (or city, province, zip/postal code and country, as appropriate). The first-page footnotes (lower left-hand side) contain the job title and department name, street address/mail stop, and AIAA member grade for each author. Author email addresses may be included also.
-
-Major headings (``sections'' in the \LaTeX{} template commands) are bold 11-point font, centered, and numbered with Roman numerals.
-
-Subheadings (``subsections'' in the \LaTeX{} template commands) are bold, flush left, and numbered with capital letters. 
-
-Sub-Subheadings (``subsubsections'' in the \LaTeX{} template commands) are italic, flush left, and numbered (1. 2. 3. etc.)
-
-
-\subsection{Abstract}
-The abstract should appear at the beginning of your paper. It should be one paragraph long (not an introduction) and complete in itself (no reference numbers). It should indicate subjects dealt with in the paper and state the objectives of the investigation. Newly observed facts and conclusions of the experiment or argument discussed in the paper must be stated in summary form; readers should not have to read the paper to understand the abstract. The abstract should be bold, indented 3 picas (1/2'') on each side, and separated from the rest of the document by blank lines above and below the abstract text..
-
-\subsection{Nomenclature}
-Papers with many symbols may benefit from a nomenclature list that defines all symbols with units, inserted between the abstract and the introduction. If one is used, it must contain all the symbology used in the manuscript, and the definitions should not be repeated in the text. In all cases, identify the symbols used if they are not widely recognized in the profession. Define acronyms in the text, not in the nomenclature.
-
-\subsection{Footnotes and References}
-Footnotes, where they appear, should be placed above the 1'' margin at the bottom of the page. To insert footnotes into the template, use the Insert>Footnote feature from the main menu as necessary. Numbered footnotes as formatted automatically in the template are acceptable, but superscript  symbols are the preferred AIAA style, *, $\dag$, $\ddag$, \S, \P, **, $\dag\dag$, $\ddag\ddag$, \S\S, etc.
-
-List and number all references at the end of the paper. Corresponding bracketed numbers are used to cite references in the text \cite{vatistas1986reverse}, including citations that are an integral part of the sentence (e.g., ``It is shown in \cite{dornheim1996planetary} that\ldots '') or follow a mathematical expression: ``$A^{2} + B = C$ (Ref.~\cite{terster1997nasa}).'' For multiple citations, separate reference numbers with commas \cite{peyret2012computational,oates1997aerothermodynamics}, or use a dash to show a range \cite{volpe1994techniques,thompsonspacecraft,chi1993fluid,brandis2016nonequi}. Reference citations in the text should be in numerical order.
-
-In the reference list, give all authors' names; do not use ``et al.''. Papers that have not been published should be cited as ``unpublished''; papers that have been submitted or accepted for publication should be cited as ``submitted for publication.'' Private communications and personal website should appear as footnotes rather than in the reference list.
-
-References should be cited according to the standard publication reference style (for examples, see the ``References'' section of this template). Never edit titles in references to conform to AIAA style of spellings, abbreviations, etc. Names and locations of publishers should be listed; month and year should be included for reports and papers. For papers published in translation journals, please give the English citation first, followed by the original foreign language citation.
-
-\subsection{Images, Figures and Tables}
-All artwork, captions, figures, graphs, and tables will be reproduced exactly as submitted. Be sure to position any figures, tables, graphs, or pictures as you want them printed. AIAA will not be responsible for incorporating your figures, tables, etc. (Company logos and identification numbers are not permitted on your illustrations.)
-
-Do not insert your tables and figures in text boxes. Figures should have no background, borders, or outlines. In the \LaTeX{} template, use the ``caption'' command to type caption text. Captions are bold with a single tab (no hyphen or other character) between the figure number and figure description.
-
-% \begin{table}
-% \caption{\label{tab:table1} Transitions selected for thermometry}
-% \centering
-% \begin{tabular}{lcccccc}
-% \hline
-% & Transition& & \multicolumn{2}{c}{}\\\cline{2-2}
-% Line& $\nu''$& & $J'' $& Frequency, cm$^{-1}$& $FJ$, cm$^{-1}$& $G\nu $, cm$^{-1}$\\\hline
-% a& 0& P$_{12}$& 2.5& 44069.416& 73.58& 948.66\\
-% b& 1& R$_{2}$& 2.5& 42229.348& 73.41& 2824.76\\
-% c& 2& R$_{21}$& 805& 40562.179& 71.37& 4672.68\\
-% d& 0& R$_{2}$& 23.5& 42516.527& 1045.85& 948.76\\
-% \hline
-% \end{tabular}
-% \end{table}
-
-
-\begin{figure}[hbt!]
-\centering
-\includegraphics[width=.5\textwidth]{graph}
-\caption{Magnetization as a function of applied fields.}
-\end{figure}
-
-Place figure captions below all figures; place table titles above the tables. If your figure has multiple parts, include the labels ``a),'' ``b),'' etc. below and to the left of each part, above the figure caption. Please verify that the figures and tables you mention in the text actually exist. \emph{Please do not include captions as part of the figures, and do not put captions in separate text boxes linked to the figures.} When citing a figure in the text, use the abbreviation ``Fig.'' except at the beginning of a sentence. Do not abbreviate ``Table.'' Number each different type of illustration (i.e., figures, tables, images) sequentially with relation to other illustrations of the same type.
-
-Figure axis labels are often a source of confusion. Use words rather than symbols. As in the example to the right, write the quantity ``Magnetization'' rather than just ``M.'' Do not enclose units in parenthesis, but rather separate them from the preceding text by commas. Do not label axes only with units. As in Fig.~1, for example, write ``Magnetization, \si[per-mode=symbol]{\ampere\per\meter},'' not just ``A/m.'' Do not label axes with a ratio of quantities and units. For example, write ``Temperature, K,'' not ``Temperature/K.''
-
-Multipliers can be especially confusing. Write ``Magnetization, \si[per-mode=symbol]{\kilo\ampere\per\meter}'' or ``Magnetization, \SI[per-mode=symbol]{e3}{\ampere\per\meter}.'' Do not write ``Magnetization (A/m) x 1000'' because the reader would not then know whether the top axis label in Fig.~1 meant 16000 A/m or 0.016 A/m. Figure labels must be legible, and all text within figures should be uniform in style and size, no smaller than 8-point type.
-
-\subsection{Equations, Numbers, Symbols, and Abbreviations}
-Equations are numbered consecutively, with equation numbers in parentheses flush right, as in Eq.~\eqref{sample:equation}. Insert a blank line above and below the equation. To insert an equation into the \LaTeX{} document, use the \verb|\begin{equation}...\end{equation}| command environment.
-
-A sample equation is included here, formatted using the preceding instructions. To make your equation more compact, you can use the solidus (/), the exp function, or appropriate exponents. Use parentheses to avoid ambiguities in denominators.
-
+Clifford (or geometric) algebras are $\Z$- and $\Z/2\Z$- graded algebras with elements we refer to as multivectors. Formally, To see this, let us take the quadratic space $(V,q)$ and construct the Clifford algebra $C\ell(V,Q)$ by
 \begin{equation}
-\label{sample:equation}
-\int^{r_2}_0 F(r,\varphi){\rm d}r\,{\rm d}\varphi = [\sigma r_2/(2\mu_0)]\int^{\infty}_0\exp(-\lambda|z_j-z_i|)\lambda^{-1}J_1 (\lambda r_2)J_0 (\lambda r_i\,\lambda {\rm d}\lambda)
+C\ell(V,Q) \coloneqq \mathcal{T}(V) ~ / ~ \langle \blade{v} \otimes \blade{v} - Q(\blade{v}) \rangle
+\end{equation}
+with the induced addition and multiplication from this quotient. There are many wonderful sources on Clifford algebras but I will primarily use \cite{doran_geometric_2003} as a source for geometric and physical insight and the source \cite{chisolm_geometric_2012} for the vast amount of identities and clear notation. 
+
+These algebras extend the exterior algebra $\bigwedge(V)$ by including the quadratic form $Q$ in the quotient which implies that $\bigwedge(V)\subset C\ell(V,Q)$ and, moreover, the product of vectors splits into a grade lowering term and grade raising term
+\begin{equation}
+    \blade{v}\blade{w}= \underbrace{\blade{v}\cdot \blade{w}}_{\textrm{grade lowering}} +\underbrace{\blade{v}\wedge \blade{w}}_{\textrm{grade raising}},
+\end{equation}
+where $\wedge$ is indeed the exterior product in $\bigwedge(V)$. Hence, we see that $C\ell(V,Q)$ gains an additional term $\cdot$ between vectors and, as with the exterior algebra, the higher graded elements are generated from taking exterior products of vectors
+\begin{equation}
+    \blade{A_k}\blade{v}_1 \wedge \cdots \blade{v}_k,
+\end{equation}
+If $\blade{v}_1,\dots,\blade{v}_k$ are linearly independent, we refer to $\blade{A_k}$ as a $k$-blade and sums of $k$-blades form the more general $k$-vectors which are referred to as grade-$k$ as well. The vector subspace of all $k$-vectors is denoted by $C\ell^k(V,Q)$. Given any multivector, we have the reverse operation $\dagger$ which is extended from the action on a $k$-blade by
+\begin{equation}
+    \blade{A_k}^\dagger = \blade{v}_k\wedge \cdots \blade{v}_1 = (-1)^{k(k-1)/2} \blade{A_k}
 \end{equation}
 
-Be sure that the symbols in your equation are defined before the equation appears, or immediately following. Italicize symbols ($T$ might refer to temperature, but T is the unit tesla). Refer to ``Eq.~(1),'' not ``(1)'' or ``equation (1)'' except at the beginning of a sentence: ``Equation (1) is\ldots'' Equations can be labeled other than ``Eq.'' should they represent inequalities, matrices, or boundary conditions. If what is represented is really more than one equation, the abbreviation ``Eqs.'' can be used.
+The Clifford algebras are most special when the quadratic form is inherited from an inner product $Q(-)=g(-,-)$, since $g$ will be clear from context, we just put $\G$ to denote this algebra. When $V$ has pseudo-euclidean inner product with $p$ vectors that square to $-1$ and and $q$ vectors that square to $1$, we will put $\G_{p,q}$. In the case we are given $\G$, there are natural subgroups contained, namely $V\subset C\ell(V,Q)$ as well as $\sping(V) \subset C\ell(V,Q)$. The elements of $R\in \sping(V)$ are of even grade (multivectors consisting of only even grade elements) and have unit norm so that 
+\begin{equation}
+|R|^2 \coloneqq (R,R) \coloneqq \proj{0}{R^\dagger R}= R^\dagger R\pm 1.
+\end{equation}
+Here the notation $\proj{k}{A}$ tells us to select only the grade $k$-components of a multivector $A$ and it is important to note that $\dagger$ acts as the adjoint in the inner product $(-,-)$ on $\G$. If $R^\dagger R = +1$, we refer to this element as an \emph{rotor}. Briefly, let us first investigate the linear transformation induced by a rotor $\mathsf{R}({\blade{v}})=R \blade{v} R^\dagger$. 
+\begin{proposition}
+\label{prop:orthogonal_transformation}
+The transformation above, $\mathsf{R}(\blade{v}) \mapsto R\blade{v}R^\dagger$ with $R=\sping(V)$ is an isometry and hence, $\mathsf{R}\in \mathrm{O}(V)$.
+\end{proposition}
+\begin{proof}
+The proof is immediate. By definition we have that $R$ satisfies $RR^\dagger = \pm 1$. Hence,
+\begin{equation}
+    (R\blade{v}R^\dagger,R\blade{v}R^\dagger) = (\blade{v},R^\dagger R \blade{v} RR^\dagger) = (\blade{v},\blade{v}).
+\end{equation}
+\end{proof}
 
-Define abbreviations and acronyms the first time they are used in the text, even after they have already been defined in the abstract. Very common abbreviations such as AIAA, SI, ac, and dc do not have to be defined. Abbreviations that incorporate periods should not have spaces: write ``P.R.,'' not ``P.~R.'' Delete periods between initials if the abbreviation has three or more initials; e.g., U.N.~but ESA. Do not use abbreviations in the title unless they are unavoidable (for instance, ``AIAA'' in the title of this article).
+\subsubsection{Clifford Analysis}
 
-\subsection{General Grammar and Preferred Usage}
-Use only one space after periods or colons. Hyphenate complex modifiers: ``zero-field-cooled magnetization.'' Avoid dangling participles, such as, ``Using Eq.~(1), the potential was calculated.'' [It is not clear who or what used Eq.~(1).] Write instead ``The potential was calculated using Eq.~(1),'' or ``Using Eq.~(1), we calculated the potential.''
+Semi-Riemannian manifolds $M$ can be given a Clifford algebra structure since each tangent space is equipped with an inner product $g$. This is done in an analogous way to the exterior algebra of smooth differential $k$-forms. We put $\G(M)$ to represent this algebra bundle and the sections use the previous terminology with addition of the word ``field". For another reference, see \cite{schindler_geometric_2020}. 
 
-Insert a zero before decimal points: ``0.25,'' not ``.25.'' Use ``\si{\centi\meter\squared}'' not ``cc.'' Indicate sample dimensions as ``$\SI{0.1}{\centi\meter} \times \SI{0.2}{\centi\meter}$,'' not ``$0.1 \times \SI{0.2}{\centi\meter\squared}$.'' The preferred abbreviation for ``seconds'' is ``s,'' not ``sec.'' Do not mix complete spellings and abbreviations of units: use ``\si[per-mode=symbol]{\weber\per\meter\squared}'' or ``webers per square meter,'' not ``webers/m$^2$.'' When expressing a range of values, write ``7 to 9'' or ``7--9,'' not ``7$\sim$9.''
+Given the Levi-Civita connection $\nabla$ and a vector field $\blade{v}$, we have the covariant derivative $\nabla_{\blade{v}}$ that can act on vector fields. In local coordinates on $M$ $x^i$ we have the induced basis in the tangent space $\blade{e}_i$ so that $\blade{e}_i\cdot \blade{e}_j = g_{ij}$ and this allows us to construct the reciprocal basis $\blade{e}^i$ so that $\blade{e}^i\cdot \blade{e}_j = \delta_{ij}$. This then allows us to define the gradient (or Dirac operator) $\grad$ given in these coordinates
+\begin{equation}
+    \grad \coloneqq \blade{e}^i \frac{\partial}{\partial x^i},
+\end{equation}
+where Einstein summation is implied. This derivative acts algebraically as a vector in the algebra and so we have
+\begin{equation}
+\grad A = \grad \cdot A + \grad \wedge A
+\end{equation}
+on any multivector field. 
 
-A parenthetical statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within parenthesis.) In American English, periods and commas are placed within quotation marks, like ``this period.'' Other punctuation is ``outside''! Avoid contractions; for example, write ``do not'' instead of ``don’t.'' The serial comma is preferred: ``A, B, and C'' instead of ``A, B and C.''
+Also in these coordinates we have the measures $dx^i$ which, when combined with a reciprocal vector yield directed measures $d\blade{x}^i = \blade{e}^i dx^i$. Hence, we can recover a differential form from a $k$-vector by taking the \emph{$k$-dimensional directed measure} given locally by 
+\begin{equation}
+    dX_k \coloneqq \frac{1}{r!} d\blade{x}^{i_1}\wedge \cdots \wedge d\blade{x}^{i_r}.
+\end{equation}
+Hence a $k$-form $\alpha_k \in \Omega^k(M)$ is given locally by  $\alpha_k = \alpha_{i_1 \cdots i_r} dx^{i_1}\wedge \cdots dx^{i_r}$ and in terms of a $k$-vector $A_k$ we have
+\begin{equation}
+\alpha_k = A_k \cdot dX_k^\dagger,
+\end{equation}
+where
+\begin{equation}
+A_r = \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}.
+\end{equation}
+We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and, for example, the multivector equivalent of the Riemannian volume form $\mu$ is $\pseudoscalar^{-1 \dagger}$. This provides an isomorphism between $k$-forms and $k$-vectors via a contraction with the $k$-dimensional volume directed measure. For example, there is the Riesz (or musical) isomorphism $\flat \mathfrak{X}(M)\to \Omega(M)$ by taking a vector field $\blade{v} \mapsto \blade{v}^\flat = \blade{v} \cdot dX_1$. In coordinates,
+\begin{equation}
+\label{eq:line_element}
+ \blade{v} \cdot dX_1 = v_i  \blade{v}_i \cdot d\blade{x}^j = v_i dx^i.
+\end{equation}
+The algebraic operations of addition $+$, exterior multiplication $\wedge$, and contractions $\rfloor$ carry over to the familiar products on $\Omega(M)$ to $\G(M)$. Likewise, the differential operations of the exterior derivative $d$ take the form of the grade raising action of $\grad$ on multivector equivalents
+\begin{equation}
+d \alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger,
+\end{equation}
+and the codifferential  codifferential $\delta$ by the grade lowering
+\begin{equation}
+\delta \alpha_r = (\grad \cdot A_r)\cdot dX_{r-1}^\dagger.
+\end{equation} 
+Hence, the Hodge-Dirac operator $d+\delta$ on forms coincides with $\grad$ on multivectors. Likewise, we retain $\Delta = \grad^2$ is the Laplace-Beltrami operator on multivectors and as such, the Clifford analysis of $\grad$ refines the $\Delta$ of harmonic analysis.
 
-If you wish, you may write in the first person singular or plural and use the active voice (``I observed that\ldots'' or ``We observed that\ldots'' instead of ``It was observed that\ldots''). Remember to check spelling. If your native language is not English, please ask a native English-speaking colleague to proofread your paper.
+\subsubsection{de Rham Cohomology}
 
-Be aware of the different meanings of the homophones ``affect'' (usually a verb) and ``effect'' (usually a noun), ``complement'' and ``compliment,'' ``discreet'' and ``discrete,'' ``principal'' (e.g., ``principal investigator'') and ``principle'' (e.g., ``principle of measurement''). Do not confuse ``imply'' and ``infer.''
+Clifford analysis on manifolds can be used to extract the $k$th de Rham cohomology ring
+\begin{equation}
+H^*_{dR}(M) = \bigwedge_{k \in \mathbb{N}} \ker \grad \wedge_k ~/~ \im \grad \wedge_{k-1}
+\end{equation}
+where $\grad \wedge_k$ denotes that we are only acting on $k$-vectors and we have identified the wedge product as the cup product $\wedge \colon H^k_{dR}(M) \times H^\ell_{dR}(M) \to H^{k+\ell}_{dR}(M)$. 
 
-The word ``data'' is plural, not singular (i.e., ``data are,'' not ``data is''). The subscript for the permeability of vacuum $\mu_0$ is zero, not a lowercase letter ``o.'' The term for residual magnetization is ``remanence''; the adjective is ``remanent''; do not write ``remnance'' or ``remnant.'' The word ``micrometer'' is preferred over ``micron'' when spelling out this unit of measure. A graph within a graph is an ``inset,'' not an ``insert.'' The word ``alternatively'' is preferred to the word ``alternately'' (unless you really mean something that alternates). Use the word ``whereas'' instead of ``while'' (unless you are referring to simultaneous events). Do not use the word ``essentially'' to mean ``approximately'' or ``effectively.'' Do not use the word ``issue'' as a euphemism for ``problem.'' When compositions are not specified, separate chemical symbols by en-dashes; for example, ``NiMn'' indicates the intermetallic compound \ce{Ni_{0.5}Mn_{0.5}} whereas ``Ni--Mn'' indicates an alloy of some composition \ce{Ni_{x}Mn_{1-x}}.
+\subsection{Electromagnetism}
 
-Be aware of the different meanings of the homophones ``affect'' (usually a verb) and ``effect'' (usually a noun), ``complement'' and ``compliment,'' ``discreet'' and ``discrete,'' ``principal'' (e.g., ``principal investigator'') and ``principle'' (e.g., ``principle of measurement''). Do not confuse ``imply'' and ``infer.''
+\subsection{Boltzmann Equation}
 
-Prefixes such as ``non,'' ``sub,'' ``micro,'' ``multi,'' and ``"ultra'' are not independent words; they should be joined to the words they modify, usually without a hyphen. There is no period after the ``et'' in the abbreviation ``et al.'' The abbreviation ``i.e.,'' means ``that is,'' and the abbreviation ``e.g.,'' means ``for example'' (these abbreviations are not italicized).
+\subsection{Vlasov Equation}
 
+\section{Spinor Equations of Fluid Plasmas}
+
+In order to develop a deeper understanding of the motion of a fluid plasma, it will be worthwhile to dive into the motion of a single particle immersed in a field in spacetime. In some ways, the motion of a particle in spacetime can be thought of as an analog of the motion of a rigid body in Euclidean space. Specifically, whereas a the configuration space of a non-relativistic rigid body corresponds to the semi-product Lie group $\mathrm{A}(3)=\R^3 \rtimes \sping(3)$ called the \emph{Euclidean group} (really, this is the universal cover of that group), we can show that configuration of a massive relativistic particle lies on the cover of the \emph{Poincar\'e group} $\mathrm{A}(1,3) = \R^{1,3} \rtimes \sping^+(1,3)$ which we refer to as the \emph{Fermi transport group}.
+
+\subsection{The group $\A(V)$}
+
+The groups mentioned before can be discussed in broad generality.  If $R\in \sping(V)$ and $RR^\dagger = 1$, then we say that $R\in \sping^+(V)$ and refer to such $R$ is an \emph{rotor}. which leads us to realize the set $V\rtimes \sping^+(V) \subset C\ell(V,Q)$ as well. Moreover, this group inherits its structure from the Clifford algebra and we find the Lie algebra does as well. 
+
+\begin{definition}
+Fix a quadratic space $(V,Q)$ where $Q$ is a non-degenerate quadratic form, then we define the \emph{transport group} as the set
+\begin{equation}
+\A(V)\coloneqq V\rtimes \sping^+(V).
+\end{equation}
+To realize this as a group, we note that $\sping^+(V)$ acts on $V$ via conjugation which yields the multiplication in the semi-direct product
+\begin{equation}
+\label{eq:product_in_A}
+(v,R)(v',R')\coloneqq(v+Rv'R^\dagger, RR')
+\end{equation}
+with inverse
+\begin{equation}
+(v,R)^{-1} = (R^\dagger v R, R^\dagger).
+\end{equation}
+\end{definition}
+
+Next, let us visit the classical example in 3-dimensional space where we can realize that the group $\A(3)$ serves as the configuration space of a rigid body.
+
+\begin{example}
+Take for example the motion of a rigid body in 3-dimensional space. There are two components of this motion each which three degrees of freedom. First, is the 3-dimensional position of the center of mass of the body (i.e., the linear momentum) and the second is rotation about the center of mass (i.e., the angular momentum) which also has three degrees of freedom corresponding to the three planes in $\R^3$. We claim that the configuration of a rigid body must lie in the group $\A(3)=\R^3 \rtimes \sping^+(3)$. 
+
+First, let $\blade{v}(0)$ be the initial position of the center of mass of the body which makes up the first component of the semi-direct product. By \cref{eq:product_in_A}, we see that this initial center of mass vector $\blade{v}(0)$ can be translated to some new position at a short time later, $\epsilon$, by 
+\begin{equation}
+\blade{v}(\epsilon) = \blade{v}(0)+R\blade{u} R^\dagger,
+\end{equation}
+where $\blade{u}\in \R^3$ and $R\in \sping(3)$. One should note that there is not necessarily one single choice of $\blade{u}$ and $R$.
+
+To see the interpretation of the second component of the semi-direct product, fix an initial orthonormal frame that describes the rotational state of the body, $\mathscr{F}=(\blade{e}_1,\blade{e}_2,\blade{e}_3)$ and let $R(0)$ be such that $\mathscr{F}(0)=R(0)\mathscr{F}R^\dagger(0)$ corresponds to the initial rotational orientation of the body. At a time $\epsilon$ later, we have a new orientation
+\begin{equation}
+\mathscr{F}(\epsilon) = R(\epsilon) \mathscr{F} R^\dagger(\epsilon),
+\end{equation}
+which is a new orthonormal frame by \cref{prop:orthogonal_transformation}. This shows that the rotors $R(\epsilon)$ themselves encapsulate the rotation of the principal axes of inertia of the rigid body. Hence, it suffices to just consider the value of $R(\epsilon)$ as opposed to the frame itself.
+\end{example}
+We keep the notions of this example moving forward and posit that the group $\A(V)$ represents the configuration of a generalized notion of a rigid body.
+
+This all begs the question as to what the infinitesimal motions on $\A(V)$ correspond to, i.e., what is the Lie algebra to $\A(V)$? Note that the Lie algebra to $V$ is itself a trivial Lie algebra since $V$ is a commutative group. The Lie algebra of $\sping^+(V)$ is the algebra of bivectors $\spina(V)=C\ell^2(V,Q)$ along with the commutator $[-,-]$ which we inherit from $C\ell(V,Q)$ as well. We denote the Lie algebra of $\A(V)$ by $\liealg(V)$ and note that we have the orthogonal decomposition
+\begin{equation}
+\liealg(V)=V\oplus \spina(V),
+\end{equation}
+which allows us to write any element in $\liealg(V)$ as a sum of a vector $\blade{v}$ and bivector $b$. 
+
+\begin{proposition}
+The commutator bracket of $\liealg(V)$, $[-,-]_{\liealg(V)}$ can be written in terms of the commutator for the Clifford algebra $[-,-]$.
+\end{proposition}
+\begin{proof}
+Let $\blade{v}_1,\blade{v}_2\in V$ and $b_1,b_2 \in \spina(V)$, we have that 
+\begin{equation}
+[\blade{v}_1+b_1,\blade{v}_2+b_2]_{\liealg(V)} = [\blade{v}_1,\blade{v}_2]_{V}+\mathrm{ad}_{b_1}\blade{v}_2 - \mathrm{ad}_{b_2}\blade{v}_1 + [b_1,b_2]_{\spina(V)}.
+\end{equation}
+Then, by \cite[Lemma 5.7]{gracia-bondia_elements_2001}, 
+\begin{equation}
+\mathrm{ad}_{b_i}\blade{v_j}=[b_i,\blade{v}_j].
+\end{equation}
+Likewise, the commutator $[-,-]_{\spina(V)}=[-,-]$ and $[\blade{v}_1,\blade{v}_2]_V=0$ hence
+\begin{align}
+[\blade{v}_1 + b_1,\blade{v}_2+b_2]_{\liealg(V)} &= [b_1,\blade{v}_2] + [\blade{v}_1,b_2] + [b_1,b_2]\\
+&= [\blade{v}_1+b_1,\blade{v}_2+b_2]-[\blade{v}_1,\blade{v}_2].
+\end{align}
+\end{proof}
+
+\subsection{Relativistic motion of a massive charged particle}
+
+To set the stage, let $M^4$ be global spacetime and let $N^4\subset M^4$ be a (small) local region of spacetime. Since $M^4$ is foliated, there exists a function $\tau \colon N^4 \to \R$ such that $d\tau \neq 0$ anywhere on $N^4$. Let $\blade{e}_\tau$ be the corresponding vector field corresponding to $d\tau$, i.e., $\blade{e}_\tau \cdot dX_1 = d\tau$ (or, in other words, $\blade{e}_\tau = d\tau^\flat$).  In particular, choose this $\tau$ so that $\blade{e}_\tau\cdot \blade{e}_\tau = -1$ everywhere in $N^4$. Let $T \subset \R$ be an open set and refer to some $t\in T$ as the \emph{time}. Next, define \emph{space at time $t$} by $N^3(t)=\tau^{-1}(t)$ and we can see space forms the $3$-dimensional leaves of the $3+1$-foliation of spacetime. Let $\iota\colon N^3(t)\hookrightarrow N^4$ be inclusion then define the coordinates $x_{i}$ be local coordinates on $N^3(t)$ with corresponding $1$-forms, $dx_i = \blade{e}_i \cdot dX_1$, where $\blade{e}_1,\blade{e}_2,\blade{e}_3\in \G_{3}^1(N^3(t))$ and $\blade{e}_i\cdot \blade{e}_j = \delta_{ij}$. Let $\blade{I}_4$ be the unit pseudoscalar field on $N^4$, then at the point $x \in N^3(t)$, the tangent unit pseudoscalar is defined by $\blade{I}_3(x) = \blade{e_\tau}(x,t)\rfloor \blade{I}_4(x,t)$ is the pseudoscalar for $N^3(t)$.
+
+\subsubsection{The 4-Momentum, 4-Current, and 4-Velocity Field Decomposition}
+
+Consider $\gamma \colon T \to N^4$ be the time parameterization of the worldline of a massive particle and let $\blade{p} = \dot{\gamma} \coloneqq \in \G_{1,3}^1(N^4)$ be the \emph{4-momentum field} of the particle. Since $\gamma$ is massive, it must be that $\blade{p}^2<0$. Hence, we assume that this can be decomposed as
+\begin{equation}
+    \blade{p} = m \blade{v},
+\end{equation}
+where $m\in \G_{1,3}^0(N^4)$ and $\blade{v} \in \G_{1,3}^1(N^4)$ with $\blade{v}^2=-1$ everywhere in $N^4$. We refer to $m$ as the \emph{mass energy field} and $\blade{v}$ as the \emph{massive 4-velocity field}. From $\blade{p}$ we can always deduce $m$ via the expression $\blade{p}^2 = -m^2$. Finally, if the particle were charged, we let $q\colon N^4 \to \R$ be the \emph{charge field}, then 
+\begin{equation}
+\blade{j}=q\blade{v}
+\end{equation}
+defines the \emph{4-current field}. If we assume the mass of the particle is unchanging, $\blade{p}^2=-m^2$ for some $m>0$. Likewise, if the particle is statically charged, then $\blade{j}=q\blade{v}$ would be the 4-current associated to this particle. 
+
+%the \emph{4-current vector field of this particle} if $\grad \cdot \blade{j} = 0$. Note that
+%\begin{equation}
+%    \grad \cdot \blade{j} = \grad \cdot (q\blade{v}) = (\grad q) \cdot \blade{v} + q\grad \cdot \blade{v} = 0
+%\end{equation}
+Since $\blade{v}^2=-1$, we realize a differential constraint on ${\blade{v}}$ by
+\begin{equation}
+    \grad ({\blade{v}} \cdot {\blade{v}}) = 0 
+\end{equation}
+which implies that
+\begin{equation}
+    \label{eq:velocity_covariant_derivative}
+    \nabla_{\blade{v}} {\blade{v}} - {\blade{v}}\cdot (\grad \wedge {\blade{v}}) = 0.
+\end{equation}
+One interpretation of this could be that the advection of the velocity field depends solely on ${\blade{v}} \cdot (\grad \wedge {\blade{v}})$. Or, said another way, optimal transport of ${\blade{v}}$ (when $\nabla_{\blade{v}} {\blade{v}} = 0$) occurs when ${\blade{v}}$ lies solely outside of the plane defined by the 2-blade (the \emph{relativistic vorticity}) $\grad \wedge {\blade{v}}$ or if the vorticity itself equals zero, $\grad \wedge {\blade{v}} = 0$. 
+
+Let $F\in G_{1,3}^2(N^4)$ be the \emph{electromagnetic bivector field}. Since this is done locally in $M^4$, $F=\grad A$ where $A\in \G_{1,3}^1(N^4)$ and this implies that $F=\blade{F}$ is a $2$-blade. We say that this particle $\gamma$ obeys the Lorentz force law if 
+\begin{equation}
+    \label{eq:lorentz_force_geometric_algebra}
+    \nabla_{\blade{v}} \blade{p} = \blade{j}\rfloor \blade{F}.
+\end{equation}
+ On the other hand, when $m$ is constant
+\begin{equation}
+    \label{eq:lorentz_force_static_mass}
+    \nabla_{\blade{v}} \blade{v} = \frac{q}{m} \blade{v} \rfloor \blade{F}.
+\end{equation}
+Given that $\blade{v}$ is a vector, then we also note that for a 2-blade $\blade{B}$ that
+\begin{equation}
+    \blade{v} \rfloor \blade{B} = \frac{1}{2}[\blade{B},\blade{v}] = \frac{1}{2}(\blade{B}\blade{v} - \blade{v}\blade{B}),
+\end{equation}
+which means that we use \cref{eq:lorentz_force_static_mass} in order to get
+\begin{equation}
+    \label{eq:static_charge_mass_faraday_transport}
+    \boxed{\nabla_{\blade{v}} \blade{v} = \frac{q}{2m} [\blade{F},\blade{v}].}
+\end{equation}
+This \cref{eq:static_charge_mass_faraday_transport} is the \emph{static mass and charge Faraday transport equation}.
+
+\subsubsection{Configuration space of a massive charged particle}
+
+For the moment, let us identify our flat spacetime $N^4$ with Minkowski space $\R^{1,3}$ with the coordinates $(t,x_1,x_2,x_3)$. As seen in \cref{eq:lorentz_force_static_mass}, motion of a massive charged particle depends on the (now vector) 4-position $\blade{\gamma}$ and the 4-velocity $\blade{v}$ as well as the charge to mass ratio $\frac{q}{m}$. Without loss of generality, let us assume that $\frac{q}{m}=1$. Let $\tau$ be the proper time parameter of the particle, then note that $\nabla_{\blade{v}}\blade{v}=\frac{d}{d\tau} \blade{v}(\tau)$ and hence
+\begin{equation}
+    \label{eq:faraday_transport}
+    \frac{d\blade{v}}{d\tau} (\tau) = \frac{1}{2} [\blade{F},\blade{v}].
+\end{equation}
+Suppose that the initial position is $\blade{\gamma}(0)=\blade{\gamma}_0$ and the initial velocity is $\blade{v}(0)=\blade{v}_0$ and note that the 4-position $\blade{\gamma}$ and 4-velocity  $\blade{v}$ along with the electromagnetic field $\blade{F}$ completely determines the trajectory of the particle. At an infinitesimal increment of proper time $\epsilon$ later,
+\begin{align}
+\label{eq:linearization_position}
+\blade{\gamma}(\epsilon) &\approx \blade{\gamma}(0)+\epsilon\blade{v}(0)\\
+\blade{v}(\epsilon) &=  R(\epsilon)\blade{v}_0 R^\dagger(\epsilon),
+\end{align}
+where the latter equation is required since it must be that $\blade{v}(\tau)^2=-1$ which means that $R\in \sping^+(1,3)$ and we refer to such an $R$ as a \emph{spacetime rotor}. Note that these equations hold true for any time $\tau$, not just $\tau = 0$. By choosing some fixed $\blade{v}_0$, we can note that the configuration of the particle lies in the group $\A(1,3)$. Then, 
+\begin{equation}
+\label{eq:linearization_rotor}
+R(\epsilon) \approx R(0)+\epsilon\frac{d}{d\tau}R(0).
+\end{equation}
+It will be worth investigating the equations of motion for the rotor $R$ later on.
+
+
+%Finally, using \cref{eq:lorentz_force_geometric_algebra,eq:velocity_covariant_derivative}, we could also write
+%\begin{equation}
+%    {\blade{v}}\cdot (\grad \wedge {\blade{v}}) = \frac{q}{m} {\blade{v}} \rfloor \blade{F} = \frac{q}{m} \blade{v} \rfloor (\grad \wedge \blade{A}).
+%\end{equation}
+
+\subsubsection{Lie Algebras of Bivectors and Spacetime Rotors}
+
+Since $\blade{F}$ is a bivector, it is a section of the $\spina(1,3)$ bundle. To this end, let us investigate this Lie algebra with the commutator bracket $[-,-]$. Using our basis, we realize there is an orthogonal decomposition 
+\begin{equation}
+    \label{eq:spin_algebra_split}
+    \spina(1,3) = \mathcal{T} \oplus \mathcal{S},
+\end{equation}
+where 
+\begin{align}
+    \mathcal{T} &\coloneqq \mathrm{span}(\{\blade{e}_0 \blade{e}_i ~\vert~ i = 1,2,3\})\\
+    \mathcal{S} &\coloneqq \mathrm{span}(\{\blade{e}_i \blade{e}_j ~\vert~ i,j = 1,2,3, ~ i\neq j\}).
+\end{align}
+Each space $\mathcal{T}$ and $\mathcal{S}$ are 3-dimensional and the space $\mathcal{S}\cong \mathfrak{spin}(3)$. Orthogonality is realized by the fact
+\begin{align}
+    (\blade{e}_0 \blade{e}_i, \blade{e}_j \blade{e}_k) &= \proj{}{(\blade{e}_0 \blade{e}_i)^\dagger \blade{e}_j \blade{e}_k} = 0.
+\end{align}
+The space $\mathcal{T}$ does not form a Lie subalgebra since it is not closed under the bracket
+\begin{equation}
+    [\blade{e}_0\blade{e}_i,\blade{e}_0 \blade{e}_j] = \frac{1}{2} (\blade{e}_0 \blade{e}_i \blade{e}_0 \blade{e}_j - \blade{e}_0 \blade{e}_j \blade{e}_0 \blade{e}_i) = \frac{1}{2}(\blade{e}_j \blade{e}_i-\blade{e}_i \blade{e}_j).
+\end{equation}
+However, we can note that elements in $\mathcal{T}$ and $\mathcal{S}$ commute since
+\begin{equation}
+[\blade{e}_0 \blade{e}_i,\blade{e}_j \blade{e}_k] = 0.
+\end{equation}
+
+It follows from the splitting in \cref{eq:spin_algebra_split} that a spacetime rotor $R$ can be decomposed further into the decomposition $R=LU$. Physically, we care about the vector ${\blade{v}}$ and its evolution in space which is governed by ${\blade{v}}=R\blade{v}_0 R^\dagger$. Relative to $\blade{v}_0$ we build an orthonormal frame $\mathscr{F}_0=(\blade{v}_0,\blade{y}_1(0),\blade{y}_2(0),\blade{y}_3(0))$ and, as before, we can note that this whole frame is is transformed over time by $R\mathscr{F}_0 R^\dagger$. The transformation of the frame vectors $\blade{y}_i$ is not physical which represents a freedom in choice of the spatial reference frame for an observer. We note that,
+\begin{equation}
+    R(\tau) = \exp(B) = \exp(B_\mathcal{T}+B_\mathcal{S})=\exp(B_\mathcal{T})\exp(B_\mathcal{S})=L(\tau)U(\tau),
+\end{equation}
+which follows from the fact $[\mathcal{T},\mathcal{S}]=0$. 
+
+\subsubsection{Rotor equations and trajectory for a single particle in a constant field}
+
+For a single particle, assumption of static mass and charge is reasonable to make. Letting $\epsilon$ be an infinitesimal increase in proper time, we have the linearizations given by \cref{eq:linearization_position,eq:linearization_rotor} and in particular we want that
+\begin{equation}
+    L(\tau+\epsilon) = 1+ \frac{1}{2}\epsilon \frac{d \blade{v}}{d\tau}(\tau) {\blade{v}}(\tau),
+\end{equation}
+which can be seen in \cite{doran_geometric_2003}. Finally, equating $R(\tau+\epsilon)=L(\tau+\epsilon)$ yields 
+\begin{equation}
+    \label{eq:fermi_transport}
+    \frac{dR}{d\tau} R^\dagger = \frac{1}{2}\frac{d{\blade{v}}}{d\tau}{\blade{v}}.
+\end{equation}
+and we refer to \cref{eq:fermi_transport} as the \emph{Fermi transport equation}. These, in particular, are special since they reflect the transport equations given by pure boosts. Noting that $\frac{d\blade{v}}{d\tau}\cdot \blade{v}=0$ since $\tau$ is the arclength parameter we have that Fermi transport due to Faraday transport gives us
+\begin{equation}
+\frac{d\blade{v}}{d\tau} = -2 \frac{dR}{d \tau} R^\dagger \blade{v}=\blade{F}\lfloor \blade{v}
+\end{equation}
+which yields an equation purely for the rotor in terms of the electromagnetic field (while reintroducing the charge-to-mass ratio)
+\begin{equation}
+     \label{eq:fermi_transport_rotor}   
+    \boxed{\frac{dR}{d\tau} = \frac{q}{2m} \blade{F}R.}
+\end{equation}
+
+Let $\blade{F}$ be constant and non-null (i.e., that $\blade{F}^2\neq 0$), then we can put
+\begin{equation}
+\blade{F}^2 = \proj{0}{\blade{F}^2}+\proj{4}{\blade{F}^2}=\rho \exp(\blade{I}\theta)
+\end{equation}
+which allows us to write 
+\begin{equation}
+\blade{F}=\rho^{1/2}\exp(\blade{I}\theta/2)\hat{\blade{F}}=\alpha \hat{\blade{F}}+\beta\blade{I} \hat{\blade{F}}.
+\end{equation}
+Given an initial rotor $R(0)=R_0$, we then have
+\begin{equation}
+R(\tau)=\exp\left(\frac{q}{2m}\alpha \hat{\blade{F}}\tau\right)\exp\left(\frac{q}{2m}\beta\blade{I}\hat{\blade{F}}\tau\right)R_0.
+\end{equation}
+Likewise, the position of the particle can be recovered as well by noting $\blade{v}_0=R_0\blade{e}_0 R_0^\dagger$ and using the Faraday transport equation \cref{eq:faraday_transport} to get
+\begin{equation}
+\blade{\gamma}(\tau) = \blade{\gamma}(0)+\frac{\exp\left(\frac{q}{m}\alpha \hat{\blade{F}}\right)-1}{q\alpha/m} \hat{\blade{F}}\cdot \blade{v}_0 - \frac{\exp\left(\frac{q}{m}\beta \blade{I}\hat{\blade{F}}\right)-1}{q\beta/m}(\blade{I}\hat{\blade{F}})\cdot \blade{v}_0.
+\end{equation}
+
+
+\subsection{Collection of particles}
+
+Let us begin with a collection of particles at $t=0$ to define our spatial manifold $N^3(0)$. As the collection of particles evolves in time, we will produce a new manifold $N^3(t)$. This is a Lagrangian description of the particles and, as such, we specify $X(\blade{x}_0,t)$ to be the location of the particle we refer to as $\blade{x}_0$ such that $X(0,\blade{x}_0)=(0,\blade{x}_0)\in N^4$. For example, if $N^3(0)$ represents a single point particle, then $N^3(0)=\blade{x}_0$ and given $\blade{v}_0=\frac{\partial X}{\partial t}(0,\blade{x}_0)$ we have a constant electromagnetic field, then
+\begin{equation}
+X(t,\blade{x}_0)=(0,\blade{x}_0)+\frac{\exp\left(\frac{q}{m}\alpha \hat{\blade{F}}\right)-1}{q\alpha/m} \hat{\blade{F}}\cdot \blade{v}_0 - \frac{\exp\left(\frac{q}{m}\beta \blade{I}\hat{\blade{F}}\right)-1}{q\beta/m}(\blade{I}\hat{\blade{F}})\cdot \blade{v}_0,
+\end{equation}
+as before.
+
+We could also imagine ${\blade{v}}$ as a velocity field on $N^4$ that describes a fluid of charged particles. In that case, we would not be able to impose that $m$ is static and instead
+\begin{equation}
+    m \nabla_{\blade{v}} \blade{v} + (\nabla_{\blade{v}} m)\blade{v} = q\blade{v} \rfloor \blade{F}
+\end{equation}
+where we use linearity on the right hand side.
+By smoothness, if $R\in \sping^+(1,3)$ at some point, then $R$ will be a section of the $\sping^+(1,3)$ bundle, i.e., a spacetime rotor field. We can deduce differential constraints for the spacetime rotor field $R$ via transport. Let us assume that we have some fixed tangent vector $\blade{u}$ at a point in $N^4$ with $\blade{u}^2 = -1$, then the tangent vector at another point is $\blade{v}=R\blade{u}R^\dagger$ where $R$ is allowed to vary in space and we assume we parallel translate $\blade{u}$ from point to point. Thus,
+\begin{align}
+    \nabla_{\blade{v}} {\blade{v}} &= \nabla_{\blade{v}} R {\blade{u}} R^\dagger + R{\blade{u}} \nabla_{\blade{v}} R^\dagger \\
+    &= \nabla_{\blade{v}} R(R^\dagger {\blade{v}} R)R^\dagger + R(R^\dagger {\blade{v}}R)\nabla_{\blade{v}} R^\dagger\\
+    &= (\nabla_{\blade{v}} R) R^\dagger {\blade{v}} + {\blade{v}} R \nabla_{\blade{v}} R^\dagger
+\end{align}
+Then, since $R$ is a spacetime rotor field, $RR^\dagger = 1$ everywhere and it must be that
+\begin{align}
+    0 = \nabla_{\blade{v}} (RR^\dagger) = \nabla_{\blade{v}} R R^\dagger + R\nabla_{\blade{v}}R^\dagger
+\end{align}
+and by the previous work 
+\begin{equation}
+    \nabla_{\blade{v}} {\blade{v}} = [(\nabla_{\blade{v}} R) R^\dagger,{\blade{v}}]
+\end{equation}
+In the same vein, ${\blade{v}}^2={\blade{v}}\cdot {\blade{v}}=-1$ so
+\begin{align}
+    0=\nabla_{\blade{v}} ({\blade{v}}^2)=2(\nabla_{\blade{v}} {\blade{v}})\cdot {\blade{v}},
+\end{align}
+which is a requirement for the transport along a geodesic, hence
+\begin{align}
+    (\nabla_{\blade{v}} {\blade{v}}) {\blade{v}} = [(\nabla_{\blade{v}} R)R^\dagger,{\blade{v}}] {\blade{v}}.
+\end{align}
+
+Letting $\delta r = (\delta t,\delta x_1,\delta x_2, \delta x_3)$ be an infinitesimal displacement in Minkowski space, then we have to first order
+\begin{align}
+    {\blade{v}}(r + \delta r) &= {\blade{v}}(r)+\delta r \nabla_{\blade{v}} {\blade{v}}\\
+    R(r+\delta r) &= (1+\delta r (\nabla_{\blade{v}} R) R^\dagger)R.
+\end{align}
+Hence, we want that
+\begin{equation}
+    L(r + \delta r) = 1+ \frac{1}{2}\delta r (\nabla_{\blade{v}} {\blade{v}}){\blade{v}}.
+\end{equation}
+(see \cite{doran_geometric_2003}) and equating $R=L$ yields
+\begin{equation}
+    (\nabla_{\blade{v}} R)R^\dagger = \frac{1}{2}(\nabla_{\blade{v}} {\blade{v}}){\blade{v}}
+\end{equation}
+and using the bracket
+\begin{equation}
+    \label{eq:fermi_transport}
+    \boxed{[\nabla_{\blade{v}} R, R^\dagger] = \frac{1}{2} [\nabla_{\blade{v}} {\blade{v}},{\blade{v}}].}
+\end{equation}
+We refer to the above \cref{eq:fermi_transport} as the \emph{Fermi transport equation}. A charged particle's 4-velocity undergoes Faraday transport and we can combine this with the equations of Fermi transport to get
+\begin{equation}
+    \boxed{[\nabla_{\blade{v}} R,R^\dagger]= \frac{q}{4m} \left[ [\blade{F},{\blade{v}}],{\blade{v}}\right].}
+\end{equation}
 
 \section{Conclusion}
-A conclusion section is not required, though it is preferred. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. \textit{Note that the conclusion section is the last section of the paper that should be numbered. The appendix (if present), acknowledgment, and references should be listed without numbers.}
+
 
 
 \section*{Appendix}
 
-An Appendix, if needed, should appear before the acknowledgments.
+
 
 \section*{Acknowledgments}
 An Acknowledgments section, if used, \textbf{immediately precedes} the References. Sponsorship information and funding data are included here. The preferred spelling of the word ``acknowledgment'' in American English is without the ``e'' after the ``g.'' Avoid expressions such as ``One of us (S.B.A.) would like to thank\ldots'' Instead, write ``F.~A.~Author thanks\ldots'' Sponsor and financial support acknowledgments are also to be listed in the ``acknowledgments'' section.
 
-%\bibliography{final_report_bib}
+\bibliography{final_report_bib}
 
 \end{document}

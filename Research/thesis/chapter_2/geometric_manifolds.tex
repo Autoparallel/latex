@@ -119,7 +119,7 @@ These allow us to build measures for higher dimensional geometries such as surfa
 \begin{definition}
 The \emph{$r$-dimensional directed measure} is the measure given locally by 
 \begin{equation}
-    dX_r \coloneqq d\blade{x}^{i_1}\wedge \cdots \wedge d\blade{x}^{i_r}.
+    dX_r \coloneqq \frac{1}{r!} d\blade{x}^{i_1}\wedge \cdots \wedge d\blade{x}^{i_r}.
 \end{equation}
 \end{definition}
 For example, along a 2-dimensional submanifold we have the 2-dimensional directed measure 
@@ -143,7 +143,7 @@ We can now write a $r$-form $\alpha_r = \alpha_{i_1 \cdots i_r} dx^{i_1}\wedge \
 \end{equation}
 where
 \begin{equation}
-A_r = \frac{1}{r!} \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}.
+A_r =  \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}.
 \end{equation}
 We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and note that by \cref{eq:volume_form} that the multivector equivalent to $\mu$ is $\pseudoscalar^{-1 \dagger}$. This provides an isomorphism between $r$-forms and $r$-vectors via a contraction with the $r$-dimensional volume directed measure. In this sense, a differential form is made up of two essential components namely the multivector field and the $r$-dimensional directed measure. Hence, we can see now how a differential form simply appends the measure attached to the underlying space. We can also see how this generalizes the musical isomorphism $\flat$ by taking a vector field $\blade{v} \mapsto \blade{v}^\flat = \cdot dX_1$. In coordinates,
 \begin{equation}

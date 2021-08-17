@@ -3,50 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: new-aiaa.bst
-Reallocating 'name_of_file' (item size: 1) to 7 items.
-Database file #1: sample.bib
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+Database file #1: final_report_bib.bib
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
-Warning--empty pages in peyret2012computational
-Warning--empty chapter and pages in oates1997aerothermodynamics
-You've used 9 entries,
+You've used 10 entries,
             3319 wiz_defined-function locations,
-            743 strings with 6703 characters,
-and the built_in function-call counts, 5121 in all, are:
-= -- 382
-> -- 106
-< -- 22
-+ -- 48
-- -- 31
-* -- 384
-:= -- 683
-add.period$ -- 17
-call.type$ -- 9
-change.case$ -- 38
-chr.to.int$ -- 13
-cite$ -- 11
-duplicate$ -- 463
-empty$ -- 476
-format.name$ -- 48
-if$ -- 1077
-int.to.chr$ -- 1
-int.to.str$ -- 10
-missing$ -- 77
-newline$ -- 39
+            759 strings with 7585 characters,
+and the built_in function-call counts, 5474 in all, are:
+= -- 441
+> -- 121
+< -- 21
++ -- 57
+- -- 35
+* -- 444
+:= -- 741
+add.period$ -- 27
+call.type$ -- 10
+change.case$ -- 48
+chr.to.int$ -- 14
+cite$ -- 10
+duplicate$ -- 478
+empty$ -- 463
+format.name$ -- 66
+if$ -- 1128
+int.to.chr$ -- 2
+int.to.str$ -- 11
+missing$ -- 83
+newline$ -- 50
 num.names$ -- 30
-pop$ -- 173
+pop$ -- 148
 preamble$ -- 1
-purify$ -- 36
+purify$ -- 40
 quote$ -- 0
-skip$ -- 180
+skip$ -- 190
 stack$ -- 0
-substring$ -- 287
-swap$ -- 265
-text.length$ -- 14
+substring$ -- 291
+swap$ -- 279
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 50
-warning$ -- 2
-while$ -- 37
+type$ -- 54
+warning$ -- 0
+while$ -- 35
 width$ -- 0
-write$ -- 111
-(There were 2 warnings)
+write$ -- 145

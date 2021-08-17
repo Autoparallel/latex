@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -7,45 +7,71 @@
   \providecommand{\doi}[1]{\discretionary{}{}{}https://doi.org/#1}\else
   \providecommand{\doi}[1]{\discretionary{}{}{}\urlstyle{rm}\url{https://doi.org/#1}}\fi
 
-\bibitem[{Vatistas et~al.(1986)Vatistas, Lin, and Kwok}]{vatistas1986reverse}
-Vatistas, G.~H., Lin, S., and Kwok, C.~K., \enquote{Reverse Flow Radius in
-  Vortex Chambers,} \emph{AIAA Journal}, Vol.~24, No.~11, 1986, pp. 1872, 1873.
-\newblock \doi{10.2514/3.13046}.
+\bibitem[{Delphenich(2005)}]{delphenich_axioms_2005}
+Delphenich, D.~H., \enquote{On the {Axioms} of {Topological}
+  {Electromagnetism},} \emph{Annalen der Physik}, Vol.~14, No.~6, 2005, pp.
+  347--377.
+\newblock \doi{10.1002/andp.200510141},
+  \urlprefix\url{http://arxiv.org/abs/hep-th/0311256}, arXiv: hep-th/0311256.
 
-\bibitem[{Dornheim(1996)}]{dornheim1996planetary}
-Dornheim, M.~A., \enquote{Planetary Flight Surge Faces Budget Realities,}
-  \emph{Aviation Week \& Space Technology}, Vol. 145, No.~24, 1996, pp. 44--46.
+\bibitem[{Hehl and Obukhov(2003)}]{hehl_foundations_2003}
+Hehl, F.~W., and Obukhov, Y.~N., \emph{Foundations of {Classical}
+  {Electrodynamics}: {Charge}, {Flux}, and {Metric}}, Birkhäuser Boston,
+  Boston, MA, 2003.
+\newblock \doi{10.1007/978-1-4612-0051-2},
+  \urlprefix\url{http://link.springer.com/10.1007/978-1-4612-0051-2}.
 
-\bibitem[{Terster(1997)}]{terster1997nasa}
-Terster, W., \enquote{NASA Considers Switch to Delta 2,} \emph{Space News},
-  Vol.~8, No.~2, 1997, pp. 13--19.
+\bibitem[{Sarbach and Zannias(2013)}]{sarbach_relativistic_2013}
+Sarbach, O., and Zannias, T., \enquote{Relativistic {Kinetic} {Theory}: {An}
+  {Introduction},} \emph{arXiv:1303.2899 [cond-mat, physics:gr-qc,
+  physics:hep-th]}, 2013, pp. 134--155.
+\newblock \doi{10.1063/1.4817035},
+  \urlprefix\url{http://arxiv.org/abs/1303.2899}, arXiv: 1303.2899.
 
-\bibitem[{Peyret and Taylor(1983)}]{peyret2012computational}
-Peyret, R., and Taylor, T.~D., \emph{Computational Methods for Fluid Flow},
-  2\textsuperscript{nd} ed., Springer-Verlag, New York, 1983, Chaps. 7, 14.
+\bibitem[{Sarbach and Zannias(2014{\natexlab{a}})}]{sarbach_tangent_2014}
+Sarbach, O., and Zannias, T., \enquote{Tangent bundle formulation of a charged
+  gas,} \emph{arXiv:1311.3532 [cond-mat, physics:gr-qc, physics:hep-th]},
+  2014{\natexlab{a}}, pp. 192--207.
+\newblock \doi{10.1063/1.4861955},
+  \urlprefix\url{http://arxiv.org/abs/1311.3532}, arXiv: 1311.3532.
 
-\bibitem[{Oates(1984)}]{oates1997aerothermodynamics}
-Oates, G.~C. (ed.), \emph{Aerothermodynamics of Gas Turbine and Rocket
-  Propulsion}, AIAA Education Series, AIAA, New York, 1984, pp. 19, 136.
+\bibitem[{Sarbach and Zannias(2014{\natexlab{b}})}]{sarbach_geometry_2014}
+Sarbach, O., and Zannias, T., \enquote{The geometry of the tangent bundle and
+  the relativistic kinetic theory of gases,} \emph{Classical and Quantum
+  Gravity}, Vol.~31, No.~8, 2014{\natexlab{b}}, p. 085013.
+\newblock \doi{10.1088/0264-9381/31/8/085013},
+  \urlprefix\url{http://arxiv.org/abs/1309.2036}, arXiv: 1309.2036.
 
-\bibitem[{Volpe(1994)}]{volpe1994techniques}
-Volpe, R., \enquote{Techniques for Collision Prevention, Impact Stability, and
-  Force Control by Space Manipulators,} \emph{Teleoperation and Robotics in
-  Space}, edited by S.~B. Skaar and C.~F. Ruoff, Progress in Astronautics and
-  Aeronautics, AIAA, Washington, DC, 1994, pp. 175--212.
+\bibitem[{Bichteler(1967)}]{bichteler_cauchy_1967}
+Bichteler, K., \enquote{On the {Cauchy} problem of the relativistic {Boltzmann}
+  equation,} \emph{Communications in Mathematical Physics}, Vol.~4, No.~5,
+  1967, pp. 352--364.
+\newblock \doi{10.1007/BF01653649},
+  \urlprefix\url{https://doi.org/10.1007/BF01653649}.
 
-\bibitem[{Thompson(1989)}]{thompsonspacecraft}
-Thompson, C.~M., \enquote{Spacecraft Thermal Control, Design, and Operation,}
-  \emph{AIAA Guidance, Navigation, and Control Conference}, CP849, Vol.~1,
-  AIAA, Washington, DC, 1989, pp. 103--115.
+\bibitem[{Doran and Lasenby(2003)}]{doran_geometric_2003}
+Doran, C., and Lasenby, A., \emph{Geometric {Algebra} for {Physicists}},
+  1\textsuperscript{st} ed., Cambridge University Press, 2003.
+\newblock \doi{10.1017/CBO9780511807497},
+  \urlprefix\url{https://www.cambridge.org/core/product/identifier/9780511807497/type/book}.
 
-\bibitem[{Chi(1993)}]{chi1993fluid}
-Chi, Y. (ed.), \emph{Fluid Mechanics Proceedings}, NASA SP-255, 1993.
+\bibitem[{Chisolm(2012)}]{chisolm_geometric_2012}
+Chisolm, E., \enquote{Geometric {Algebra},} \emph{arXiv:1205.5935 [math-ph]},
+  2012.
+\newblock \urlprefix\url{http://arxiv.org/abs/1205.5935}, arXiv: 1205.5935.
 
-\bibitem[{Brandis et~al.(June 2016)Brandis, Johnston, and
-  Cruden}]{brandis2016nonequi}
-Brandis, A.~M., Johnston, C.~O., and Cruden, B.~A., \enquote{Nonequilibrium
-  Radiation for Earth Entry,} \emph{AIAA Paper 2016--3690}, June 2016.
-\newblock \doi{10.2514/6.2016-3690}.
+\bibitem[{Schindler(2020)}]{schindler_geometric_2020}
+Schindler, J.~C., \enquote{Geometric {Manifolds} {Part} {I}: {The}
+  {Directional} {Derivative} of {Scalar}, {Vector}, {Multivector}, and {Tensor}
+  {Fields},} \emph{arXiv:1911.07145 [math]}, 2020.
+\newblock \urlprefix\url{http://arxiv.org/abs/1911.07145}, arXiv: 1911.07145.
+
+\bibitem[{Gracia-Bondía et~al.(2001)Gracia-Bondía, Varilly, and
+  Figueroa}]{gracia-bondia_elements_2001}
+Gracia-Bondía, J.~M., Varilly, J.~C., and Figueroa, H., \emph{Elements of
+  {Noncommutative} {Geometry}}, Birkhäuser {Advanced} {Texts} {Basler}
+  {Lehrbücher}, Birkhäuser Basel, 2001.
+\newblock \doi{10.1007/978-1-4612-0005-5},
+  \urlprefix\url{https://www.springer.com/gp/book/9780817641245}.
 
 \end{thebibliography}

@@ -1,19 +1,15 @@
-\BOOKMARK [1][-]{section.1}{Nomenclature}{}% 1
-\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.3}{Procedure for Paper Submission}{}% 3
-\BOOKMARK [1][-]{section.4}{General Guidelines}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Publication by AIAA}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{Paper Review and Visa Considerations}{section.4}% 6
-\BOOKMARK [2][-]{subsection.4.3}{Control ID Number vs Paper Number}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.4}{Copyright}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.5}{Submission Deadlines}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Detailed Formatting Instructions}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{Document Text}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.2}{Headings}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.3}{Abstract}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.4}{Nomenclature}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.5}{Footnotes and References}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.6}{Images, Figures and Tables}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.7}{Equations, Numbers, Symbols, and Abbreviations}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.8}{General Grammar and Preferred Usage}{section.5}% 18
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 19
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Clifford Algebras and Analysis}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Clifford Algebras, Multivectors, and Rotors}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Clifford Analysis}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{de Rham Cohomology}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Spinor Equations of Fluid Plasmas}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{The group A\(V\)}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Relativistic motion of a massive charged particle}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.1}{The 4-Momentum, 4-Current, and 4-Velocity Field Decomposition}{subsection.3.2}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Configuration space of a massive charged particle}{subsection.3.2}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Lie Algebras of Bivectors and Spacetime Rotors}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Rotor equations and trajectory for a single particle in a constant field}{subsection.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Collection of particles}{section.3}% 14
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 15
