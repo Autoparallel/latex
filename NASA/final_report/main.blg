@@ -6,44 +6,46 @@ The style file: new-aiaa.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: final_report_bib.bib
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
-You've used 10 entries,
+Warning--empty journal in iversen_cauchy_1989
+You've used 11 entries,
             3319 wiz_defined-function locations,
-            759 strings with 7585 characters,
-and the built_in function-call counts, 5474 in all, are:
-= -- 441
-> -- 121
-< -- 21
-+ -- 57
-- -- 35
-* -- 444
-:= -- 741
-add.period$ -- 27
-call.type$ -- 10
-change.case$ -- 48
-chr.to.int$ -- 14
-cite$ -- 10
-duplicate$ -- 478
-empty$ -- 463
-format.name$ -- 66
-if$ -- 1128
+            766 strings with 7834 characters,
+and the built_in function-call counts, 5870 in all, are:
+= -- 472
+> -- 128
+< -- 22
++ -- 61
+- -- 37
+* -- 473
+:= -- 802
+add.period$ -- 30
+call.type$ -- 11
+change.case$ -- 53
+chr.to.int$ -- 15
+cite$ -- 12
+duplicate$ -- 516
+empty$ -- 498
+format.name$ -- 69
+if$ -- 1205
 int.to.chr$ -- 2
-int.to.str$ -- 11
-missing$ -- 83
-newline$ -- 50
-num.names$ -- 30
-pop$ -- 148
+int.to.str$ -- 12
+missing$ -- 90
+newline$ -- 54
+num.names$ -- 33
+pop$ -- 164
 preamble$ -- 1
-purify$ -- 40
+purify$ -- 44
 quote$ -- 0
-skip$ -- 190
+skip$ -- 202
 stack$ -- 0
-substring$ -- 291
-swap$ -- 279
+substring$ -- 305
+swap$ -- 292
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
-warning$ -- 0
-while$ -- 35
+type$ -- 60
+warning$ -- 1
+while$ -- 37
 width$ -- 0
-write$ -- 145
+write$ -- 158
+(There was 1 warning)

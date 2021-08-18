@@ -146,17 +146,19 @@ The algebraic operations of addition $+$, exterior multiplication $\wedge$, and 
 \begin{equation}
 d \alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger,
 \end{equation}
-and the codifferential  codifferential $\delta$ by the grade lowering
+and the codifferential $\delta$ (which is adjoint to $d$) by the grade lowering
 \begin{equation}
-\delta \alpha_r = (\grad \cdot A_r)\cdot dX_{r-1}^\dagger.
+\delta \alpha_r = (\grad \cdot A_r)\cdot dX_{r-1}^\dagger,
 \end{equation} 
-Hence, the Hodge-Dirac operator $d+\delta$ on forms coincides with $\grad$ on multivectors. Since $d^2=\delta^2=0$ we have $\grad \wedge^2 = \grad \cdot^2=0$ so we get the Laplace-Beltrami operator $\Delta = \grad^2$ on multivectors and as such, the Clifford analysis of $\grad$ refines the $\Delta$ of harmonic analysis. Finally, there is a mapping $\star \colon \G^k(M)\to \G^{n-k}(M)$ defined by
+which gives us that $\grad \cdot$ is adjoint to $\grad \wedge$. Thus, the Hodge-Dirac operator $d+\delta$ on forms coincides with $\grad$ on multivectors and since $d^2=\delta^2=0$ we have $\grad \wedge^2 = \grad \cdot^2=0$ so we can build chain and cochain complexes as well as the Laplace-Beltrami operator $\Delta = \grad^2$. This final remark points to the Clifford analysis of $\grad$ as a refinement of the $\Delta$ of harmonic analysis. Finally, there is a mapping $\star \colon \G^k(M)\to \G^{n-k}(M)$ defined by
 \begin{equation}
 \alpha_k \wedge \star \beta_k = (A_k \wedge B_k^{\star})\cdot dX_n^\dagger = (A_k,B_k) \mu.
 \end{equation}
 so that it captures the action of Hodge star of forms on their multivector equivalents. 
 
 \subsubsection{de Rham (Co)homology}
+
+\label{subsubsec:derham}
 
 Clifford analysis on manifolds can be used to extract the \emph{$k$th de Rham cohomology ring}
 \begin{equation}
@@ -166,9 +168,9 @@ where $\im \grad \wedge_k$ are the \emph{exact} and $\ker \grad \wedge_k$ are th
 \begin{align}
 \grad \wedge (A_k \wedge B_\ell) = (\grad \wedge A_k) \wedge B_\ell + (-1)^k A_k \wedge (\grad \wedge B_\ell) = 0,
 \end{align}
-since both $A_k$ and $B_\ell$ are closed. 
+since both $A_k$ and $B_\ell$ are closed. For the sake of this work moving forward, let us assume that we are speaking solely about forms with compact support when we mention homology or cohomology.
 
-Dual to the de Rham cohomology is the homology of de Rham currents. A current is an element $T\in \Omega^*(M)$ where $\Omega^*(M)$ is the space of linear functionals on smooth forms $\Omega(M)$, so that $T\colon \Omega(M)\to \R$. Examples of currents include chains on $M$ for which we can take the $k$-chain $C^k$ and note
+Dual to the de Rham cohomology is the homology of de Rham currents. A (compact) current is an element $T\in \Omega^*(M)$ where $\Omega^*(M)$ is the space of linear functionals on smooth (compact) forms $\Omega(M)$, so that $T\colon \Omega(M)\to \R$ has compact support. Examples of currents include chains on $M$ for which we can take the $k$-chain $C^k$ and note
 \begin{equation}
     C^k[\alpha_k] = \int_{C^k} \alpha_k
 \end{equation}
@@ -178,7 +180,7 @@ defines a current and take an $k$-vector $B_{k}$ on $M$ and note
 \end{equation}
 is also a current. In fact, if the $k$-chain $C^k$ is a smooth submanifold $C^k=K\subset M$, then we can define the distributional $k$-vector $\delta_K$ so that
 \begin{equation}
-\delta_K[\alpha_k] = \int_{C^k} \alpha_k = \int_{M} (A_k, \pseudoscalar_K)\mu,
+\delta_K[\alpha_k] = \int_{K} \alpha_k = \int_{M} (A_k, \pseudoscalar_K)\mu,
 \end{equation}
 where $\pseudoscalar_K$ is the unit pseudoscalar representing the tangent space at points of $K$. Likewise, if we took a point (a $0$-chain) $x\in M$ then for a $0$-form $\alpha_0$,
 \begin{equation}
@@ -195,29 +197,51 @@ H_\bullet^{dR} = \bigoplus_{n\in \mathbb{N}} H_k^{dR} \coloneqq \bigoplus_{n\in 
 \end{equation}
 Given Stokes' theorem, we realize for $k$-chains $C^k$ that
 \begin{equation}
+\label{eq:stokes}
 \partial C^k[\alpha_{k-1}] = C^k[d\alpha_{k-1}] = \int_{C^k} d\alpha_{k-1} = \int_{\partial C^k} \alpha_{k-1},
 \end{equation}
-which gives us back the usual notion of a boundary. This in fact leads us to the following theorem.
-
+which gives us back the usual notion of a boundary which necessitated our choice of compact support. This in fact leads us to the following theorem.
 \begin{theorem}[de Rham Theorem for Homology and Cohomology]
     Let $H_\bullet(M)$ and $H^\bullet(M)$ be the singular homology and cohomology on $M$ repsectively. Then,
 \begin{equation}
-    H_\bullet(M)\cong H_\bullet^{dR} \qquad \textrm{and} \qquad H^\bullet(M) \cong H_\bullet^{dR}.
+    H_\bullet(M)\cong H_\bullet^{dR}(M) \cong H_\bullet^\infty(M) \qquad \textrm{and} \qquad H^\bullet(M) \cong H_\bullet^{dR}(M) \cong H^\bullet_\infty(M),
 \end{equation}
+where $\infty$ denotes that we are taking smooth simplexes (submanifolds) and forms.
 \end{theorem}
-Given de Rham's theorem, we only put $H_\bullet(M)$ and $H^\bullet(M)$. Another important 
-We have a cap product $\frown \colon H_k(M)\times H^\ell(M) \mapsto H_{k-\ell}(M)$, which can be realized as an integral when we take a $k$-chain $C^k$ and a $\ell$-form $\alpha_\ell$ to get $C^k \frown  \alpha_\ell = \phi_{k-\ell}$ defined by
+Given de Rham's theorem, we only put $H_\bullet(M)$ and $H^\bullet(M)$. In fact, we have another related complex on $k$-vectors induced built from $\grad \cdot$ acting on multivectors. 
+\begin{proposition}
+\label{prop:grad_dot}
+    Let $K$ be a smooth submanifold with corresponding $k$-current $\delta_K$ and corresponding pseudoscalar $\blade{I}_K$. Then $\partial K$ corresponds to $\grad \cdot \blade{I}_K$.
+\end{proposition}
+\begin{proof}
+Fix a $k-1$-form $\alpha_{k-1}$ and note that
+\begin{align}
+    \partial \delta_K [\alpha_{k-1}] = \int_K d\alpha_{k-1}= \int_M(\grad \wedge A_{k-1},\blade{I}_K)\mu = \int_M(A_{k-1},\grad \cdot \blade{I}_K) \mu.
+\end{align}
+\end{proof}
+\begin{corollary}
+    The chain complex induced by $\grad \cdot$ on multivectors is isomorphic to the singular homology. 
+\end{corollary}
+The proof for the corollary is immediate given each line of the proof of \cref{prop:grad_dot} runs through the equivalences of smooth, de Rham, and $\grad \cdot$ homologies and we find the equivalence of singular homology comes via Stokes' theorem in \cref{eq:stokes}.
+
+We have a cap product $\frown \colon H_k(M)\times H^\ell(M) \to H_{k-\ell}(M)$, which can be realized as an integral when we take a $k$-chain $\delta_K$ and a $\ell$-form $\alpha_\ell$ to get $T^{k-\ell} = \delta_K \frown  \alpha_\ell$ defined by
 \begin{equation}
-\phi_{k-\ell}[\beta_{\ell - k}] = \int_{C^k} \alpha_\ell \wedge \beta_{k-\ell}.
+T^{k-\ell}[\beta_{\ell - k}] = \int_{K} \alpha_\ell \wedge \beta_{k-\ell}.
 \end{equation}
-Thus, if $\ell = k$ we see $\phi_0 = C^k \frown \alpha_k = \delta_{X} \in H_0(M)$ so that $X$ is a $0$-cycle (i.e., a collection of points $\partial X = 0$ so that each $x\in X$ is from one connected component of $C^k$). Then
+Another way to realize the cap product is by noting that we can instead take a smooth $k$-dimensional submanifold $K$
 \begin{equation}
-\phi_0[\beta_0] = \delta_{X}[\beta_0] = \int_{C^k} (B_0 , \delta_X ) \mu_{C^k} = \sum_{x\in X} B_0(x).
+(\delta_K \frown \alpha_\ell)[-] = \int_K \alpha_\ell \wedge - = \int_M (-,A_\ell \rfloor \blade{I}_K) \mu,
 \end{equation}
-Since $B_0$ is closed, it is constant on each connected component.
+is an element of $\Omega^{k-\ell*}(M)$ and, therefore, a map $H^{k-\ell}(M)\to \R$. Then, For posterity, let $\ell = k$ we see $T^0 = \delta_K \frown \alpha_k = \delta_{X} \in H_0(M)$ so that $X$ is a $0$-cycle (i.e., a collection of points $\partial X = 0$ so that each $x\in X$ is from one connected component of $K$). Then
+\begin{equation}
+T^0[\beta_0] = \delta_{X}[\beta_0] = \int_{K} (B_0 , \delta_X ) \mu_{K} = \sum_{x\in X} B_0(x).
+\end{equation}
+Since $B_0$ is closed, it is constant on each connected component. 
 
 
 \subsection{Electromagnetism}
+
+The work done in \cref{subsubsec:derham} can be compared with the preliminaries of \cite{delphenich_axioms_2005}. We will use this source as motivation for the topological theory of electromagnetism. 
 
 \subsection{Boltzmann Equation}
 
