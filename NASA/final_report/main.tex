@@ -202,7 +202,7 @@ Given Stokes' theorem, we realize for $k$-chains $C^k$ that
 \end{equation}
 which gives us back the usual notion of a boundary which necessitated our choice of compact support. This in fact leads us to the following theorem.
 \begin{theorem}[de Rham Theorem for Homology and Cohomology]
-    Let $H_\bullet(M)$ and $H^\bullet(M)$ be the singular homology and cohomology on $M$ repsectively. Then,
+    Let $H_\bullet(M)$ and $H^\bullet(M)$ be the singular homology and cohomology on $M$ over the ring $\R$, repsectively. Then,
 \begin{equation}
     H_\bullet(M)\cong H_\bullet^{dR}(M) \cong H_\bullet^\infty(M) \qquad \textrm{and} \qquad H^\bullet(M) \cong H_\bullet^{dR}(M) \cong H^\bullet_\infty(M),
 \end{equation}
@@ -219,10 +219,11 @@ Fix a $k-1$-form $\alpha_{k-1}$ and note that
     \partial \delta_K [\alpha_{k-1}] = \int_K d\alpha_{k-1}= \int_M(\grad \wedge A_{k-1},\blade{I}_K)\mu = \int_M(A_{k-1},\grad \cdot \blade{I}_K) \mu.
 \end{align}
 \end{proof}
+Henceforth, we can refer to $k$-currents in the kernel of $\partial$ as co-closed since their corresponding $k$-vector field must be co-closed. A corollary follows.
 \begin{corollary}
     The chain complex induced by $\grad \cdot$ on multivectors is isomorphic to the singular homology. 
 \end{corollary}
-The proof for the corollary is immediate given each line of the proof of \cref{prop:grad_dot} runs through the equivalences of smooth, de Rham, and $\grad \cdot$ homologies and we find the equivalence of singular homology comes via Stokes' theorem in \cref{eq:stokes}.
+The proof for the corollary is immediate given that each equality of the proof of \cref{prop:grad_dot} shows the equivalences of smooth, de Rham, and $\grad \cdot$ homologies and we find the equivalence of singular homology comes via Stokes' theorem in \cref{eq:stokes}.
 
 We have a cap product $\frown \colon H_k(M)\times H^\ell(M) \to H_{k-\ell}(M)$, which can be realized as an integral when we take a $k$-chain $\delta_K$ and a $\ell$-form $\alpha_\ell$ to get $T^{k-\ell} = \delta_K \frown  \alpha_\ell$ defined by
 \begin{equation}
@@ -230,18 +231,115 @@ T^{k-\ell}[\beta_{\ell - k}] = \int_{K} \alpha_\ell \wedge \beta_{k-\ell}.
 \end{equation}
 Another way to realize the cap product is by noting that we can instead take a smooth $k$-dimensional submanifold $K$
 \begin{equation}
-(\delta_K \frown \alpha_\ell)[-] = \int_K \alpha_\ell \wedge - = \int_M (-,A_\ell \rfloor \blade{I}_K) \mu,
+T^{k-\ell}[-] = \int_K \alpha_\ell \wedge - = \int_M (-,A_\ell \rfloor \blade{I}_K) \mu,
 \end{equation}
 is an element of $\Omega^{k-\ell*}(M)$ and, therefore, a map $H^{k-\ell}(M)\to \R$. Then, For posterity, let $\ell = k$ we see $T^0 = \delta_K \frown \alpha_k = \delta_{X} \in H_0(M)$ so that $X$ is a $0$-cycle (i.e., a collection of points $\partial X = 0$ so that each $x\in X$ is from one connected component of $K$). Then
 \begin{equation}
 T^0[\beta_0] = \delta_{X}[\beta_0] = \int_{K} (B_0 , \delta_X ) \mu_{K} = \sum_{x\in X} B_0(x).
 \end{equation}
-Since $B_0$ is closed, it is constant on each connected component. 
+Since $B_0$ is closed, it is constant on each connected component. The cap product above leads us to an important duality theorem of the $\R$ homology and cohomology of smooth manifolds.
+\begin{theorem}[Poincar\'e Duality]
+    The $k$th homology is isomorphic to the $n-k$th cohomology, that is 
+\begin{equation}
+H_k(M) \cong H^{n-k}(M).
+\end{equation}
+\end{theorem}
+In fact, for closed manifolds, it is even true that $H_k(M)\cong H_{n-k}(M)$ and $H^k(M)\cong H^{n-k}(M)$ since the Hodge star maps harmonic $k$-forms (not defined here) to harmonic $n-k$-forms (see \cite{cappell_cohomology_2006} for more). At any rate, Poincar\'e duality yields the isomorphism through the cap product by taking the fundamental class $\delta_M$ and a $k$-form $\alpha_k \in H^k(M)$ to get the Poincar\'e dual $\overline{\alpha_k} \in H_{n-k}(M)$
+\begin{equation}
+\overline{\alpha_k} = (\delta_M \frown \alpha_k)[-] = \int_M (-,A_k \rfloor \blade{I})\mu
+\end{equation}
+which we see is well defined since
+\begin{align}
+\partial \overline{\alpha_k}[\beta_{k-1}] = \int_M (B_{k-1}, \grad \cdot (A_k \rfloor \blade{I}))\mu = \int_M (B_{k-1},(\grad \wedge A_k)\blade{I}) \mu =0,
+\end{align}
+since $A_k$ is a closed $k$-vector field. It is a worthy remark to mention that the $n-k$-vector associated to $\overline{\alpha_k}$ is given by $A_k \rfloor \blade{I}$ which is often referred to as the dual and we can put $A_k^\perp = A_k \rfloor \blade{I}$.
 
+The pairing between co-closed currents and closed forms captured through integration is a (co)homological invariant that has ramifications in analysis.
+\begin{proposition}
+\label{def:period}
+For any closed $k$-form $\alpha_k$ and each co-closed $k$-current $K$, a the \emph{period of the form $\alpha_k$} is the real number
+\begin{equation}
+\delta_K(\alpha_k)=\int_K \alpha_k.
+\end{equation}
+The period is invariant over both the homology class of $K$ and cohomology class of $\alpha_k$.
+\end{proposition}
+\begin{proof}
+Let $K \in H_k(M)$ with current $\delta_K$ and $\alpha_k \in H^k(M)$. Then
+\begin{align}
+(\delta_K+\partial \delta_L)[\alpha_k + d \beta_{k-1}] &= \int_{K+\partial L} \alpha_k + d\beta_{k-1}\\
+&= \int_K \alpha_k + \int_{\partial K} \beta_{k-1} + \int_L d \alpha_k + \int_L d(d\beta_{k-1})\\
+&= \int_K \alpha_k.
+\end{align}
+\end{proof}
+As it turns out, we have the following analytical statement.
+\begin{proposition}
+\label{prop:periods}
+    If all periods of a form $\alpha_k$ vanish, then $\alpha_k$ has a potential $\beta_{k-1}$ such that $d\beta_{k-1}=\alpha_k$.
+\end{proposition}
+Thus, the topology of the domain is intimately connected with partial differential equations. We will use this in the subsequent section.
 
 \subsection{Electromagnetism}
 
-The work done in \cref{subsubsec:derham} can be compared with the preliminaries of \cite{delphenich_axioms_2005}. We will use this source as motivation for the topological theory of electromagnetism. 
+The work done in \cref{subsubsec:derham} can be compared with the preliminaries of \cite{delphenich_axioms_2005}. We will use this source as well as \cite{hehl_introduction_2003} as motivation for the topological theory of electromagnetism and the source \cite{gross_electromagnetic_2004} is also wonderful. Classically, electromagnetism is taught through the guise of analysis yet this is quite superfluous as the theory requires far less rigidity. There are three important axioms for electromagnetism:
+\begin{enumerate}
+    \item Conservation of charge;
+    \item Conservation of magnetic flux;
+    \item Lorentz force.
+\end{enumerate}
+We take $M^4$ to be the foliated manifold of global spacetime with the Lorentz metric $g$ of signature $(-1, ~+1,~+1,~+1)$ so that we ignore any curvature or gravitation. When necessary, we take the local coordinates $x^\mu$ with $\mu=0,1,2,3$ and the induced orthonormal tangent vector fields satisfy $\blade{e}_0^2 = -1$ and $\blade{e}_i^2=+1$ for $i=1,2,3$. We will typically use Greek indices when running over the full spacetime and Latin when running over only the spatial indices.
+
+\subsubsection{Conservation of Charge}
+First, let $j_3$ be a 3-form field on spacetime $M^4$. In order for charge to be conserved, we require that any charge entering or exiting a region $N^4 \subset M^4$ must happen due to the charge passing through the boudary $\partial N^4$. Hence, we can state the \emph{axiom of charge conservation} by
+\begin{equation}
+    \label{eq:topological_charge_conservation}
+    \int_{\partial N^4} j_3 = \int_{N^4} dj_3= \int_{N^4} (\grad \wedge J_3) \cdot dX_4 = \int_{N^4} \grad \cdot (J_3 \rfloor \blade{I}) \mu = 0    ~~\iff~~ \grad \wedge J_3=\grad \cdot (J_3 \rfloor \blade{I}) = 0.
+\end{equation}
+The $4$-vector current is then the dual $J_1 = J_3^\perp$ and we remark that $J_3 \in H^3(M^4)$ gives us $J_1 \in H_1(M^4)$ via Poincar\'e duality. Then, since we have determined that $j$ is closed, we can note that for any co-closed $3$-current $\delta_{N^3}$
+\begin{equation}
+    \delta_{N^3}[j_3] = 0
+\end{equation}
+and by \cref{prop:periods} we realize that $j_3$ has a potential $h_2$ which we refer to as the \emph{electromagnetic excitation 2-form}. That is, 
+\begin{equation}
+    j_3=dh_2 \qquad \textrm{or} \qquad J_3 = \grad \wedge H_2.
+\end{equation}
+A more in depth physical derivation of this axiom can be found in \cite[B.1.1-B.1.15]{hehl_foundations_2003}.
+
+\subsubsection{Magnetic flux conservation}
+Finally, the \emph{magnetic flux conservation} is given by
+\begin{equation}
+    \label{eq:magnetic_flux_conservation}
+    \oint_{Z_2} F = 0  ~~\iff~~ dF=0.
+\end{equation}
+
+Depending on the homology, we may be able to say something about $Z_3$ and $Z_2$ (in that they may actually be boundaries of the form $Z_3 = \partial C_4$ and $Z_2 = \partial C_3$ where $C_4$ and $C_3$ are 4- and 3-chains respectively. If every 3-chain is a 3-boundary, then $H_3(M)$ is trivial and the statement turns to potentials; that is
+\begin{equation}
+\label{eq:charge_potential}
+\oint_{Z_3=\partial C_4} J = 0  ~~\iff~~ dJ=0 ~~ \iff ~~ J=dH,
+\end{equation}
+for some $H$. \cameron{I need to review this---is this saying that the continuity equation only holds if $H_3(M)=0$?}
+
+\begin{remark}
+This can be restated in terms of periods (see A.3.5 ``A closed form is exact if and only if all of its periods vanish"). 
+\end{remark}
+
+Now, one should convince themselves as well that if $H_2(M)$ vanishes, then
+\begin{equation}
+\label{eq:electromagnetic_potential}
+\oint_{Z_2}F=0 ~~\iff~~ dF=0 ~~\iff~~ F=dA.
+\end{equation}
+This is the electromagnetic vector potential. locally this is always true since $H_3(U)$ vanishes.
+
+\subsubsection{Lorentz force}
+For a particle with charge $q$, mass $m$, and velocity 1-form $v$, we know that this particle undergoes acceleration due to the Lorentz force. The \emph{Lorentz force} is
+\begin{equation}
+    \label{eq:lorentz_force}
+    f_\alpha = (e_\alpha \rfloor F)\wedge J
+\end{equation}\
+where, I believe, $e_\alpha$ is the 4-velocity of a charged particle (the symbol $\rfloor$ is a contraction).
+
+\subsubsection{Constitutive Law and Maxwell's Equations}
+
+$H=\star F$.
 
 \subsection{Boltzmann Equation}
 

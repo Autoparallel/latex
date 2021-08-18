@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{14}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -14,10 +14,10 @@ Delphenich, D.~H., \enquote{On the {Axioms} of {Topological}
 \newblock \doi{10.1002/andp.200510141},
   \urlprefix\url{http://arxiv.org/abs/hep-th/0311256}, arXiv: hep-th/0311256.
 
-\bibitem[{Hehl and Obukhov(2003)}]{hehl_foundations_2003}
+\bibitem[{Hehl and Obukhov(2003{\natexlab{a}})}]{hehl_foundations_2003}
 Hehl, F.~W., and Obukhov, Y.~N., \emph{Foundations of {Classical}
   {Electrodynamics}: {Charge}, {Flux}, and {Metric}}, Birkhäuser Boston,
-  Boston, MA, 2003.
+  Boston, MA, 2003{\natexlab{a}}.
 \newblock \doi{10.1007/978-1-4612-0051-2},
   \urlprefix\url{http://link.springer.com/10.1007/978-1-4612-0051-2}.
 
@@ -72,6 +72,29 @@ Iversen, B., \enquote{{CAUCHY} {RESIDUES} {AND} {DE} {RHAM} {HOMOLOGY},} 1989.
   \urlprefix\url{https://www.e-periodica.ch/digbib/view?pid=ens-001:1989:35::9},
   medium: text/html,application/pdf Publisher: Fondation L'Enseignement
   Mathématique.
+
+\bibitem[{Cappell et~al.(2006)Cappell, DeTurck, Gluck, and
+  Miller}]{cappell_cohomology_2006}
+Cappell, S., DeTurck, D., Gluck, H., and Miller, E.~Y., \enquote{Cohomology of
+  harmonic forms on {Riemannian} manifolds with boundary,} \emph{Forum
+  Mathematicum}, Vol.~18, No.~6, 2006.
+\newblock \doi{10.1515/FORUM.2006.046},
+  \urlprefix\url{https://www.degruyter.com/document/doi/10.1515/FORUM.2006.046/html}.
+
+\bibitem[{Hehl and Obukhov(2003{\natexlab{b}})}]{hehl_introduction_2003}
+Hehl, F.~W., and Obukhov, Y.~N., \enquote{Introduction,} \emph{Foundations of
+  {Classical} {Electrodynamics}: {Charge}, {Flux}, and {Metric}}, edited by
+  F.~W. Hehl and Y.~N. Obukhov, Progress in {Mathematical} {Physics},
+  Birkhäuser, Boston, MA, 2003{\natexlab{b}}, pp. 1--15.
+\newblock \doi{10.1007/978-1-4612-0051-2_1},
+  \urlprefix\url{https://doi.org/10.1007/978-1-4612-0051-2_1}.
+
+\bibitem[{Gross et~al.(2004)Gross, Gross, Kotiuga, and
+  Kotiuga}]{gross_electromagnetic_2004}
+Gross, P.~W., Gross, P.~W., Kotiuga, P.~R., and Kotiuga, R.~P.,
+  \emph{Electromagnetic {Theory} and {Computation}: {A} {Topological}
+  {Approach}}, Cambridge University Press, 2004.
+\newblock Google-Books-ID: UTjwZdtkECIC.
 
 \bibitem[{Gracia-Bondía et~al.(2001)Gracia-Bondía, Varilly, and
   Figueroa}]{gracia-bondia_elements_2001}

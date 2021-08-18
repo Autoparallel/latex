@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: final_report_bib.bib
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Warning--empty journal in iversen_cauchy_1989
-You've used 11 entries,
+You've used 14 entries,
             3319 wiz_defined-function locations,
-            766 strings with 7834 characters,
-and the built_in function-call counts, 5870 in all, are:
-= -- 472
-> -- 128
-< -- 22
-+ -- 61
-- -- 37
-* -- 473
-:= -- 802
-add.period$ -- 30
-call.type$ -- 11
-change.case$ -- 53
-chr.to.int$ -- 15
-cite$ -- 12
-duplicate$ -- 516
-empty$ -- 498
-format.name$ -- 69
-if$ -- 1205
-int.to.chr$ -- 2
-int.to.str$ -- 12
-missing$ -- 90
-newline$ -- 54
-num.names$ -- 33
-pop$ -- 164
+            786 strings with 8484 characters,
+and the built_in function-call counts, 7618 in all, are:
+= -- 586
+> -- 203
+< -- 26
++ -- 90
+- -- 59
+* -- 637
+:= -- 1049
+add.period$ -- 38
+call.type$ -- 14
+change.case$ -- 66
+chr.to.int$ -- 18
+cite$ -- 15
+duplicate$ -- 670
+empty$ -- 643
+format.name$ -- 103
+if$ -- 1550
+int.to.chr$ -- 3
+int.to.str$ -- 15
+missing$ -- 121
+newline$ -- 66
+num.names$ -- 43
+pop$ -- 222
 preamble$ -- 1
-purify$ -- 44
+purify$ -- 56
 quote$ -- 0
-skip$ -- 202
+skip$ -- 243
 stack$ -- 0
-substring$ -- 305
-swap$ -- 292
-text.length$ -- 11
+substring$ -- 361
+swap$ -- 384
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 76
 warning$ -- 1
-while$ -- 37
+while$ -- 47
 width$ -- 0
-write$ -- 158
+write$ -- 198
 (There was 1 warning)
