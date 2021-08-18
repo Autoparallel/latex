@@ -105,6 +105,12 @@ The proof is immediate. By definition we have that $R$ satisfies $RR^\dagger = \
 \end{equation}
 \end{proof}
 
+Finally, we mention that the top grade elements are scaled copies of the unit pseudoscalar $\blade{I}$. In particular, the volume element in some basis $\blade{e}_i$ is given by
+\begin{equation}
+    \blade{e}_1 \wedge \cdots \blade{e}_1 = \mu \blade{I} = \sqrt{\pm \det g} \blade{I}.
+\end{equation}
+
+
 \subsubsection{Clifford Analysis}
 
 Semi-Riemannian manifolds $M$ can be given a Clifford algebra structure since each tangent space is equipped with an inner product $g$. This is done in an analogous way to the exterior algebra of smooth differential $k$-forms. We put $\G(M)$ to represent this algebra bundle and the sections use the previous terminology with addition of the word ``field". For another reference, see \cite{schindler_geometric_2020}. 
@@ -131,7 +137,7 @@ where
 \begin{equation}
 A_r = \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade{v}^{i_r}.
 \end{equation}
-We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and, for example, the multivector equivalent of the Riemannian volume form $\mu$ is $\pseudoscalar^{-1 \dagger}$. This provides an isomorphism between $k$-forms and $k$-vectors via a contraction with the $k$-dimensional volume directed measure. For example, there is the Riesz (or musical) isomorphism $\flat \mathfrak{X}(M)\to \Omega(M)$ by taking a vector field $\blade{v} \mapsto \blade{v}^\flat = \blade{v} \cdot dX_1$. In coordinates,
+We refer to $A_r$ as the \emph{multivector equivalent} of $\alpha_r$ and, for example, the multivector equivalent of the Riemannian volume form $\mu$ is $\pseudoscalar^{-1 \dagger}$ which one can think of as defining the tangent space at some point. This provides an isomorphism between $k$-forms and $k$-vectors via a contraction with the $k$-dimensional volume directed measure. For example, there is the Riesz (or musical) isomorphism $\flat \mathfrak{X}(M)\to \Omega(M)$ by taking a vector field $\blade{v} \mapsto \blade{v}^\flat = \blade{v} \cdot dX_1$. In coordinates,
 \begin{equation}
 \label{eq:line_element}
  \blade{v} \cdot dX_1 = v_i  \blade{v}_i \cdot d\blade{x}^j = v_i dx^i.
@@ -144,15 +150,72 @@ and the codifferential  codifferential $\delta$ by the grade lowering
 \begin{equation}
 \delta \alpha_r = (\grad \cdot A_r)\cdot dX_{r-1}^\dagger.
 \end{equation} 
-Hence, the Hodge-Dirac operator $d+\delta$ on forms coincides with $\grad$ on multivectors. Likewise, we retain $\Delta = \grad^2$ is the Laplace-Beltrami operator on multivectors and as such, the Clifford analysis of $\grad$ refines the $\Delta$ of harmonic analysis.
-
-\subsubsection{de Rham Cohomology}
-
-Clifford analysis on manifolds can be used to extract the $k$th de Rham cohomology ring
+Hence, the Hodge-Dirac operator $d+\delta$ on forms coincides with $\grad$ on multivectors. Since $d^2=\delta^2=0$ we have $\grad \wedge^2 = \grad \cdot^2=0$ so we get the Laplace-Beltrami operator $\Delta = \grad^2$ on multivectors and as such, the Clifford analysis of $\grad$ refines the $\Delta$ of harmonic analysis. Finally, there is a mapping $\star \colon \G^k(M)\to \G^{n-k}(M)$ defined by
 \begin{equation}
-H^*_{dR}(M) = \bigwedge_{k \in \mathbb{N}} \ker \grad \wedge_k ~/~ \im \grad \wedge_{k-1}
+\alpha_k \wedge \star \beta_k = (A_k \wedge B_k^{\star})\cdot dX_n^\dagger = (A_k,B_k) \mu.
 \end{equation}
-where $\grad \wedge_k$ denotes that we are only acting on $k$-vectors and we have identified the wedge product as the cup product $\wedge \colon H^k_{dR}(M) \times H^\ell_{dR}(M) \to H^{k+\ell}_{dR}(M)$. 
+so that it captures the action of Hodge star of forms on their multivector equivalents. 
+
+\subsubsection{de Rham (Co)homology}
+
+Clifford analysis on manifolds can be used to extract the \emph{$k$th de Rham cohomology ring}
+\begin{equation}
+H^\bullet_{dR}(M) = \bigwedge_{k \in \mathbb{N}} H^k_{dR} = \bigwedge_{k \in \mathbb{N}} \ker \grad \wedge_k ~/~ \im \grad \wedge_{k-1}
+\end{equation}
+where $\im \grad \wedge_k$ are the \emph{exact} and $\ker \grad \wedge_k$ are the \emph{closed} $k$-vectors and we have identified the wedge product as the cup product $\wedge \colon H^k_{dR}(M) \times H^\ell_{dR}(M) \to H^{k+\ell}_{dR}(M)$. To see this is a cup product, let $A_k \in H^k_{dR}(M)$ and $B_\ell \in H^k_{dR}(M)$ and note $A_k \wedge B_\ell$ is a closed $k+\ell$-form
+\begin{align}
+\grad \wedge (A_k \wedge B_\ell) = (\grad \wedge A_k) \wedge B_\ell + (-1)^k A_k \wedge (\grad \wedge B_\ell) = 0,
+\end{align}
+since both $A_k$ and $B_\ell$ are closed. 
+
+Dual to the de Rham cohomology is the homology of de Rham currents. A current is an element $T\in \Omega^*(M)$ where $\Omega^*(M)$ is the space of linear functionals on smooth forms $\Omega(M)$, so that $T\colon \Omega(M)\to \R$. Examples of currents include chains on $M$ for which we can take the $k$-chain $C^k$ and note
+\begin{equation}
+    C^k[\alpha_k] = \int_{C^k} \alpha_k
+\end{equation}
+defines a current and take an $k$-vector $B_{k}$ on $M$ and note
+\begin{equation}
+    B^{k}[\alpha_k] = \int_M (A_k,B_k) \mu,
+\end{equation}
+is also a current. In fact, if the $k$-chain $C^k$ is a smooth submanifold $C^k=K\subset M$, then we can define the distributional $k$-vector $\delta_K$ so that
+\begin{equation}
+\delta_K[\alpha_k] = \int_{C^k} \alpha_k = \int_{M} (A_k, \pseudoscalar_K)\mu,
+\end{equation}
+where $\pseudoscalar_K$ is the unit pseudoscalar representing the tangent space at points of $K$. Likewise, if we took a point (a $0$-chain) $x\in M$ then for a $0$-form $\alpha_0$,
+\begin{equation}
+\delta_x[\alpha_0] = \int_M (A_0,\delta_x) \mu = A_0(x).
+\end{equation}
+
+With currents, we can build a homology theory. For more details, see \cite{iversen_cauchy_1989}. We define the boundary operator $\partial$ on $k+1$ currents $T^{k+1}$ by
+\begin{equation}
+\partial T^{k+1}[\alpha_k] \coloneqq T^{k+1}[d\alpha_k],
+\end{equation}
+defines a boundary map and we have the de Rham homology
+\begin{equation}
+H_\bullet^{dR} = \bigoplus_{n\in \mathbb{N}} H_k^{dR} \coloneqq \bigoplus_{n\in \mathbb{N}} \ker \partial_k ~/~ \im \partial_{k+1}. 
+\end{equation}
+Given Stokes' theorem, we realize for $k$-chains $C^k$ that
+\begin{equation}
+\partial C^k[\alpha_{k-1}] = C^k[d\alpha_{k-1}] = \int_{C^k} d\alpha_{k-1} = \int_{\partial C^k} \alpha_{k-1},
+\end{equation}
+which gives us back the usual notion of a boundary. This in fact leads us to the following theorem.
+
+\begin{theorem}[de Rham Theorem for Homology and Cohomology]
+    Let $H_\bullet(M)$ and $H^\bullet(M)$ be the singular homology and cohomology on $M$ repsectively. Then,
+\begin{equation}
+    H_\bullet(M)\cong H_\bullet^{dR} \qquad \textrm{and} \qquad H^\bullet(M) \cong H_\bullet^{dR}.
+\end{equation}
+\end{theorem}
+Given de Rham's theorem, we only put $H_\bullet(M)$ and $H^\bullet(M)$. Another important 
+We have a cap product $\frown \colon H_k(M)\times H^\ell(M) \mapsto H_{k-\ell}(M)$, which can be realized as an integral when we take a $k$-chain $C^k$ and a $\ell$-form $\alpha_\ell$ to get $C^k \frown  \alpha_\ell = \phi_{k-\ell}$ defined by
+\begin{equation}
+\phi_{k-\ell}[\beta_{\ell - k}] = \int_{C^k} \alpha_\ell \wedge \beta_{k-\ell}.
+\end{equation}
+Thus, if $\ell = k$ we see $\phi_0 = C^k \frown \alpha_k = \delta_{X} \in H_0(M)$ so that $X$ is a $0$-cycle (i.e., a collection of points $\partial X = 0$ so that each $x\in X$ is from one connected component of $C^k$). Then
+\begin{equation}
+\phi_0[\beta_0] = \delta_{X}[\beta_0] = \int_{C^k} (B_0 , \delta_X ) \mu_{C^k} = \sum_{x\in X} B_0(x).
+\end{equation}
+Since $B_0$ is closed, it is constant on each connected component.
+
 
 \subsection{Electromagnetism}
 

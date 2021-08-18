@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  17 AUG 2021 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  17 AUG 2021 18:54
 entering extended mode
 **./main.tex
 (main.tex
@@ -1939,16 +1939,25 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 5.5pt on input line 81.
 
-[2]
+[2] [3]
+
+Package natbib Warning: Citation `iversen_cauchy_1989' on page 4 undefined on i
+nput line 188.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 7.3pt on input line 205.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 5.5pt on input line 205.
+[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 161.
+(hyperref)                removing `math shift' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 161.
+(hyperref)                removing `math shift' on input line 230.
 
-[3] [4] [5] [6] [7] (main.bbl
+[5] [6] [7] [8] [9] (main.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.0pt on input line 1.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
@@ -1959,9 +1968,13 @@ LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 14.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 9.0pt on input line 14.
- [8]) [9] (main.aux)
+)
+
+Package natbib Warning: There were undefined citations.
+
+[10] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 48FABBDADCBD2D8A5B3E5146F0C15062;1237.
+(rerunfilecheck)             Checksum: EB59404AE341CE5738E3528EDA8C56B6;1450.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1972,11 +1985,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34424 strings out of 479799
- 694391 string characters out of 2867787
- 987114 words of memory out of 3000000
- 50368 multiletter control sequences out of 15000+200000
- 661579 words of font info for 313 fonts, out of 3000000 for 9000
+ 34452 strings out of 479799
+ 694820 string characters out of 2867787
+ 987119 words of memory out of 3000000
+ 50376 multiletter control sequences out of 15000+200000
+ 667243 words of font info for 316 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,128p,1329b,979s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-
@@ -2005,9 +2018,9 @@ ys.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/new
 tx/ztmb.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/newtx/ztmr.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/newtx/ztmri.pfb>
-Output written on main.pdf (9 pages, 345928 bytes).
+Output written on main.pdf (10 pages, 360875 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 42213 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 415 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 43261 words of extra memory for PDF output out of 51595 (max. 10000000)
 
