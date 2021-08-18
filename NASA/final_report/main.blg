@@ -1,51 +1,51 @@
-This is BibTeX, Version 0.99d
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
-Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: new-aiaa.bst
-Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: final_report_bib.bib
-Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in iversen_cauchy_1989
-You've used 14 entries,
+Warning--empty journal in westenholz_topological_nodate
+Warning--empty year in westenholz_topological_nodate; set to ????
+You've used 15 entries,
             3319 wiz_defined-function locations,
-            786 strings with 8484 characters,
-and the built_in function-call counts, 7618 in all, are:
-= -- 586
-> -- 203
-< -- 26
-+ -- 90
-- -- 59
-* -- 637
-:= -- 1049
-add.period$ -- 38
-call.type$ -- 14
-change.case$ -- 66
-chr.to.int$ -- 18
-cite$ -- 15
-duplicate$ -- 670
-empty$ -- 643
-format.name$ -- 103
-if$ -- 1550
+            790 strings with 8575 characters,
+and the built_in function-call counts, 8071 in all, are:
+= -- 619
+> -- 210
+< -- 28
++ -- 94
+- -- 61
+* -- 667
+:= -- 1113
+add.period$ -- 40
+call.type$ -- 15
+change.case$ -- 70
+chr.to.int$ -- 19
+cite$ -- 18
+duplicate$ -- 712
+empty$ -- 684
+format.name$ -- 106
+if$ -- 1643
 int.to.chr$ -- 3
-int.to.str$ -- 15
-missing$ -- 121
-newline$ -- 66
-num.names$ -- 43
-pop$ -- 222
+int.to.str$ -- 16
+missing$ -- 128
+newline$ -- 69
+num.names$ -- 46
+pop$ -- 246
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 60
 quote$ -- 0
-skip$ -- 243
+skip$ -- 259
 stack$ -- 0
-substring$ -- 361
-swap$ -- 384
-text.length$ -- 14
+substring$ -- 383
+swap$ -- 403
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
-warning$ -- 1
-while$ -- 47
+type$ -- 82
+warning$ -- 3
+while$ -- 51
 width$ -- 0
-write$ -- 198
-(There was 1 warning)
+write$ -- 207
+(There were 3 warnings)

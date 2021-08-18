@@ -280,72 +280,105 @@ Thus, the topology of the domain is intimately connected with partial differenti
 
 \subsection{Electromagnetism}
 
-The work done in \cref{subsubsec:derham} can be compared with the preliminaries of \cite{delphenich_axioms_2005}. We will use this source as well as \cite{hehl_introduction_2003} as motivation for the topological theory of electromagnetism and the source \cite{gross_electromagnetic_2004} is also wonderful. Classically, electromagnetism is taught through the guise of analysis yet this is quite superfluous as the theory requires far less rigidity. There are three important axioms for electromagnetism:
+The work done in \cref{subsubsec:derham} can be compared with the preliminaries of \cite{delphenich_axioms_2005}. We will use this source as well as \cite{hehl_introduction_2003} as motivation for the topological theory of electromagnetism and the source \cite{gross_electromagnetic_2004} is also wonderful. Classically, electromagnetism is taught through the guise of analysis yet this is quite superfluous as the theory requires far less rigidity. There are four important physical postulates (each backed by experimentation) for electromagnetism:
 \begin{enumerate}
     \item Conservation of charge;
     \item Conservation of magnetic flux;
+    \item Constitutive law;
     \item Lorentz force.
 \end{enumerate}
 We take $M^4$ to be the foliated manifold of global spacetime with the Lorentz metric $g$ of signature $(-1, ~+1,~+1,~+1)$ so that we ignore any curvature or gravitation. When necessary, we take the local coordinates $x^\mu$ with $\mu=0,1,2,3$ and the induced orthonormal tangent vector fields satisfy $\blade{e}_0^2 = -1$ and $\blade{e}_i^2=+1$ for $i=1,2,3$. We will typically use Greek indices when running over the full spacetime and Latin when running over only the spatial indices.
 
 \subsubsection{Conservation of Charge}
-First, let $j_3$ be a 3-form field on spacetime $M^4$. In order for charge to be conserved, we require that any charge entering or exiting a region $N^4 \subset M^4$ must happen due to the charge passing through the boudary $\partial N^4$. Hence, we can state the \emph{axiom of charge conservation} by
+First, let $j_3$ be a 3-form field on spacetime $M^4$. In order for charge to be conserved, we require that any charge entering or exiting a region $N^4 \subset M^4$ must happen due to the charge passing through the boundary $\partial N^4$. Hence, we can state the physical postulate \emph{charge conservation} by
 \begin{equation}
     \label{eq:topological_charge_conservation}
     \int_{\partial N^4} j_3 = \int_{N^4} dj_3= \int_{N^4} (\grad \wedge J_3) \cdot dX_4 = \int_{N^4} \grad \cdot (J_3 \rfloor \blade{I}) \mu = 0    ~~\iff~~ \grad \wedge J_3=\grad \cdot (J_3 \rfloor \blade{I}) = 0.
 \end{equation}
-The $4$-vector current is then the dual $J_1 = J_3^\perp$ and we remark that $J_3 \in H^3(M^4)$ gives us $J_1 \in H_1(M^4)$ via Poincar\'e duality. Then, since we have determined that $j$ is closed, we can note that for any co-closed $3$-current $\delta_{N^3}$
+The \emph{$4$-vector current} is then the dual $J_1 = J_3^\perp=J_3 \rfloor \blade{I}$ and we remark that $J_3 \in H^3(M^4)$ gives us $J_1 \in H_1(M^4)$ via Poincar\'e duality. Then, since we have determined that $j$ is closed, we can note that for any co-closed $3$-current $\delta_{N^3}$
 \begin{equation}
     \delta_{N^3}[j_3] = 0
 \end{equation}
 and by \cref{prop:periods} we realize that $j_3$ has a potential $h_2$ which we refer to as the \emph{electromagnetic excitation 2-form}. That is, 
 \begin{equation}
-    j_3=dh_2 \qquad \textrm{or} \qquad J_3 = \grad \wedge H_2.
+    j_3=dh_2 \qquad \textrm{or} \qquad J_3 = \grad \wedge H_2
 \end{equation}
-A more in depth physical derivation of this axiom can be found in \cite[B.1.1-B.1.15]{hehl_foundations_2003}.
+and dually
+\begin{equation}
+\label{eq:current_from_excitation}
+J_1 = \grad \cdot H_2^\perp.
+\end{equation}
+This axiom can be understood in two ways and it owes to the belief of John Wheeler that ``charge is topology". First, we have seen the physical/analytical requirement of a conservation law of the field(s) $J$ correspond to a (co)homological statement on the field(s) as well.  Second, we realize this is a statement about the topological nature of spacetime itself in that $H_1(M)\cong H^3(M)$ must vanish. It turns out that conservation laws and topology are deeply related \cite{westenholz_topological_nodate}.
 
 \subsubsection{Magnetic flux conservation}
-Finally, the \emph{magnetic flux conservation} is given by
+
+For a co-closed $N^2$, we have another conservation law assuming a similar form. Namely, the the constraint on the electromagnetic bivector field $F_2$
 \begin{equation}
     \label{eq:magnetic_flux_conservation}
-    \oint_{Z_2} F = 0  ~~\iff~~ dF=0.
+    \oint_{N^2} f_2 = 0  ~~\iff~~ \grad \wedge F_2=0.
 \end{equation}
+is a physical postulate which we regard as \emph{magnetic flux conservation}. However, our starting point differs slightly from that of charge conservation. We do note require $N^2$ to be co-exact. 
 
-Depending on the homology, we may be able to say something about $Z_3$ and $Z_2$ (in that they may actually be boundaries of the form $Z_3 = \partial C_4$ and $Z_2 = \partial C_3$ where $C_4$ and $C_3$ are 4- and 3-chains respectively. If every 3-chain is a 3-boundary, then $H_3(M)$ is trivial and the statement turns to potentials; that is
+Thus, depending on the (co)homology of $M^4$, we may be able to say something about $N^2$. In particular, if $H^2(M^4)=H_2(M^4)$ is trivial (i.e., all periods of 2-forms vanish), then $N^2=\partial N^3$ shows a potential for $f_2$ exists. Specifically, we can put
 \begin{equation}
-\label{eq:charge_potential}
-\oint_{Z_3=\partial C_4} J = 0  ~~\iff~~ dJ=0 ~~ \iff ~~ J=dH,
+da_1 = f_2 \qquad \textrm{or} \qquad \grad \wedge \blade{A}_1 = F_2,
 \end{equation}
-for some $H$. \cameron{I need to review this---is this saying that the continuity equation only holds if $H_3(M)=0$?}
-
-\begin{remark}
-This can be restated in terms of periods (see A.3.5 ``A closed form is exact if and only if all of its periods vanish"). 
-\end{remark}
-
-Now, one should convince themselves as well that if $H_2(M)$ vanishes, then
-\begin{equation}
-\label{eq:electromagnetic_potential}
-\oint_{Z_2}F=0 ~~\iff~~ dF=0 ~~\iff~~ F=dA.
-\end{equation}
-This is the electromagnetic vector potential. locally this is always true since $H_3(U)$ vanishes.
-
-\subsubsection{Lorentz force}
-For a particle with charge $q$, mass $m$, and velocity 1-form $v$, we know that this particle undergoes acceleration due to the Lorentz force. The \emph{Lorentz force} is
-\begin{equation}
-    \label{eq:lorentz_force}
-    f_\alpha = (e_\alpha \rfloor F)\wedge J
-\end{equation}\
-where, I believe, $e_\alpha$ is the 4-velocity of a charged particle (the symbol $\rfloor$ is a contraction).
+and we refer to $\blade{A}_1$ as the \emph{$4$-vector potential}. We do not postulate the existence of a global potential $\blade{A}_1$, but if we work locally, this is always true since small enough local patches have trivial second (co)homology. In the case $F_2$ does have a potential we realize that $F_2=\blade{F}_2$ is a 2-blade (i.e., it represents a 2-dimensional subspace at each point).
 
 \subsubsection{Constitutive Law and Maxwell's Equations}
 
-$H=\star F$.
+At this point, we nearly have a set of equations that can be worked with. However, we need to determine a relationship between the electromagnetic field $F_2$ and the electromagnetic excitation $H_2$. This relationship is referred to as the \emph{constitutive law} and the simplest possible choice is linear so that $F_2 = H_2^\perp$. Thus, we note \cref{eq:current_from_excitation,magnetic_flux_conservation} yield the relativistic Maxwell equations
+\begin{align}
+	\grad \wedge F_2 &= 0  &&\textrm{(homogeneous)}\\
+	\grad \cdot F_2 &= J_1 && \textrm{(inhomogeneous)}.
+\end{align}
+In fact, we can put this most succinctly as a multivector statement
+\begin{align}
+	\grad F_2 = J_1.
+\end{align}
+Supposing as well that $F_2$ has a potential $\blade{A}_1$, we can choose the Lorenz gauge so that $\grad \cdot \blade{A}_1 = 0$ and note that 
+\begin{equation}
+\Delta \blade{A}_1 = J_1
+\end{equation}
+since we have
+\begin{align}
+\Delta \blade{A}_1 = \grad \wedge \grad \cdot \blade{A}_1 + \grad \cdot \grad \wedge {A}_1= \grad \cdot F_2 = J_1.
+\end{align}
 
-\subsection{Boltzmann Equation}
+Working locally, $F_2$ can be split into constituents, $E_2$ and $B_2$ since
+\begin{align}
+	F_2 = \underbrace{E_2^1 \blade{e}_0 \blade{e}_1 + E_2^2 \blade{e}_0 \blade{e}_2 + E_2^3 \blade{e}_0 \blade{e}_3}_{\textrm{electric field } E_2} + \underbrace{B_2^{3} \blade{e}_1 \blade{e}_2 + B_2^{2} \blade{e}_3 \blade{e}_1 + B_2^{1} \blade{e}_2 \blade{e}_3}_{\textrm{magnetic field } B_2}
+\end{align}
+Using this decomposition and noting that $\blade{e}^0 \nabla_{\blade{e}_0}$ is the time derivative and letting $\vec{\grad} = \blade{e}^i \nabla_{\blade{e}_i}$ be the spatial gradient,  we find the Heaviside version of Maxwell's equations splits into components containing $\blade{e}_0$ (i.e., have time derivatives) and those that do not by
+\begin{align}
+\label{eq:gauss_faraday}
+	\grad \wedge F_2=0 ~\implies~ \underbrace{\vec{\grad} \wedge B_2 = 0}_{\textrm{spatial}} ~~~\textrm{and}~~~ \underbrace{\vec{\grad} \wedge E_2 + \blade{e}^0 \nabla_{\blade{e}_0} \wedge B_2 = 0}_{\textrm{spatio-temporal}}
+\end{align}
+are Gauss's law for magnetism and Faraday's law, respectively, and
+\begin{align}
+\label{eq:spacetime_split}
+	\grad \cdot F_2=J_1 ~\implies~ \underbrace{\blade{e}^0 \cdot \vec{\grad} \cdot E_2 = \blade{e}^0 \cdot J_1}_{\textrm{spatial}}~~~\textrm{and}~~~ \underbrace{\blade{e}^0 \wedge (\blade{e}^0 \nabla_{\blade{e}_0} \cdot E_2 + \vec{\grad} \cdot E_2) = \blade{e}^0 \wedge J_1}_{\textrm{spatio-temporal}}
+\end{align}
+are Gauss's law for electricity and Ampere's law respectively. Multiplication by $\blade{e}^0$ seen in \cref{eq:spacetime_split} is often called the spacetime split and since \cref{eq:gauss_faraday} is homogeneous, we do not see this as a necessary step. The equations for the electric and magnetic potential can be found this way as well.
+
+\subsubsection{Lorentz force}
+
+Recall that a major motivator of this project is the plasma dynamics and, as such, we must also posulate the coupling between charges and fields. For a particle with charge $q$, mass $m$, and velocity $4-vector$ $V_1$, we know via experimentation that this particle undergoes acceleration due to the \emph{Lorentz force} 
+\begin{equation}
+    \label{eq:lorentz_force}
+    \nabla_{\blade{V}_1}\blade{V}_1 = \frac{q}{m} \blade{V}_1 \rfloor F_2.
+\end{equation}
+This equation, by virtue of $\nabla$, is coordinate independent as well as Lorentz invariant. This equation will be revisited later in \cref{sec:spinor_equations}.
+
+
+\section{Relativistic Kinematics}
+
+\subsection{Boltzmann's Equation}
 
 \subsection{Vlasov Equation}
 
 \section{Spinor Equations of Fluid Plasmas}
+\label{sec:spinor_equations}
 
 In order to develop a deeper understanding of the motion of a fluid plasma, it will be worthwhile to dive into the motion of a single particle immersed in a field in spacetime. In some ways, the motion of a particle in spacetime can be thought of as an analog of the motion of a rigid body in Euclidean space. Specifically, whereas a the configuration space of a non-relativistic rigid body corresponds to the semi-product Lie group $\mathrm{A}(3)=\R^3 \rtimes \sping(3)$ called the \emph{Euclidean group} (really, this is the universal cover of that group), we can show that configuration of a massive relativistic particle lies on the cover of the \emph{Poincar\'e group} $\mathrm{A}(1,3) = \R^{1,3} \rtimes \sping^+(1,3)$ which we refer to as the \emph{Fermi transport group}.
 
