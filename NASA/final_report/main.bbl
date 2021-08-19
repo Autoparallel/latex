@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -107,5 +107,22 @@ Gracia-Bondía, J.~M., Varilly, J.~C., and Figueroa, H., \emph{Elements of
   {Lehrbücher}, Birkhäuser Basel, 2001.
 \newblock \doi{10.1007/978-1-4612-0005-5},
   \urlprefix\url{https://www.springer.com/gp/book/9780817641245}.
+
+\bibitem[{Brizard(2000)}]{brizard_new_2000}
+Brizard, A.~J., \enquote{New {Variational} {Principle} for the
+  {Vlasov}-{Maxwell} {Equations},} \emph{Physical Review Letters}, Vol.~84,
+  No.~25, 2000, pp. 5768--5771.
+\newblock \doi{10.1103/PhysRevLett.84.5768},
+  \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevLett.84.5768}.
+
+\bibitem[{Marsden and Weinstein(1982)}]{marsden_hamiltonian_1982}
+Marsden, J.~E., and Weinstein, A., \enquote{The {Hamiltonian} structure of the
+  {Maxwell}-{Vlasov} equations,} \emph{Physica D: Nonlinear Phenomena}, Vol.~4,
+  No.~3, 1982, pp. 394--406.
+\newblock \doi{10.1016/0167-2789(82)90043-4},
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/0167278982900434}.
+
+\bibitem[{Pausader()}]{pausader_relativistic_nodate}
+Pausader, B., \enquote{{RELATIVISTIC} {FLUID} {EQUATIONS},} ????, p.~16.
 
 \end{thebibliography}
