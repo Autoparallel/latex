@@ -20,20 +20,19 @@
 \newcommandx{\cameron}[2][1=]{\todo[linecolor=cyan,backgroundcolor=cyan!25,bordercolor=cyan,#1]{\tiny Cameron: #2}}
 \newcommandx{\colin}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{\tiny Colin: #2}}
 
-\title{Spinor Equations of Fluid Plasmas and the Coordinate Free Vlasov Equation}
+\title{Topological Electromagnetism, Relativistic Kinematics, and Fluid Plasmas}
 
 \author{Colin P. Roberts\footnote{Ph.D. Candidate, Colorado State University, 1874 Campus Delivery Fort Collins, CO 80523-1874}}
 \affil{Colorado State University, Fort Collins, Colorado, 80523}
 \author{Alan G. Hylton\footnote{Engineer, LCN}}
-\affil{NASA Glenn Research Center, Cleveland, Ohio, 44133, USA}
+\affil{NASA Glenn Research Center, Cleveland, Ohio, 44135, USA}
 
 \begin{document}
 
 \maketitle
 
-\colin{I need to fix some of the citations and add in the tangent bundle stuff. Drop superfluous subscripts when we start working with EM stuff as it would look way better. Probably change title}
 \begin{abstract}
-The kinematics and self interaction of charges and neutral particles is described by combining Maxwell's equations of electromagnetism with the Boltzmann equation of gas/fluid kinematics. In tandem, we refer to the set of these equations as the Vlasov equations. The theory of electromagnetism given to us by Maxwell's equations is purely topological and this initially leads us to examine the de Rham (co)homology of manifolds. However, there is not an obvious ascension to a topological version of Vlasov's equation due to the additional constraints from Boltzmann's equation, yet there at least coordinate free versions of Vlasov's equation. Our goals are to understand them and seek to extract topology from it, if possible. So far, our investigation led us to consider both relativistic phase space and its geometrical structure as well as writing a spinor description of the relativistic motion of charged particles. We conclude noting that motion of a relativistic particle in its configuration space of a relativistic particle points towards the idea of capturing rigid body motion as geodesics in the special Euclidean group described by Vladimir Arnol'd, who also showed a similar result for ideal fluids.
+The kinematics and self interaction of charges and neutral particles is described by combining Maxwell's equations of electromagnetism with the Boltzmann equation of gas/fluid kinematics. In tandem, we refer to the set of these equations as the Vlasov equations. The theory of electromagnetism given to us by Maxwell's equations is purely topological and this initially leads us to examine the de Rham (co)homology of manifolds. However, there is not an obvious ascension to a topological version of Vlasov's equation due to the additional constraints from Boltzmann's equation, yet there are at least coordinate free versions of Vlasov's equation. Our goals are to understand them and seek to extract topology from it, if possible. So far, our investigation led us to consider both relativistic phase space and its geometrical structure as well as writing a spinor description of the relativistic motion of charged particles. We conclude by noting that motion in the configuration space of a relativistic particle points towards the idea of capturing rigid body motion as geodesics in the special Euclidean group described by Vladimir Arnol'd, who also showed a similar result for ideal fluids.
 \end{abstract}
 
 %\section{Nomenclature}
@@ -57,11 +56,11 @@ The kinematics and self interaction of charges and neutral particles is describe
 %\end{longtab*}}
 
 \section{Introduction}
-Plasma dynamics is a complicated problem with many facets of interest in many communities. Since plasmas consist of freely moving charged particles, the evolution of a plasma is tightly coupled to its self generated electromagnetic (EM) field. A consistent theory should provide a coupling of kinemetic (or fluid) equations for the plasma to the self induced field via the Lorentz force under the constraints of Maxwell's equations. Examples of these equations are given by, but not limited to, magnetohydrodynamics and the Vlasov equation. In essence, the Vlasov equation combines the Maxwell's equations describing the field produced by charges along with the Boltzmann equation which describes the kinematics of these charges. Fundamentally, Maxwell's equations are topological \cite{delphenich_axioms_2005, hehl_foundations_2003} whereas the Boltzmann equations are not and it is a worthy question to if there is topology to extract from the Vlasov equations. Hence, we really seek to find a topological version of the collisionless Boltzmann equation.
+Plasma dynamics is a complicated problem with many facets of interest in many communities. Since plasmas consist of freely moving charged particles, the evolution of a plasma is tightly coupled to its self generated electromagnetic (EM) field. A consistent theory should provide a coupling of kinemetic (or fluid) equations for the plasma to the self induced field via the Lorentz force under the constraints of Maxwell's equations. Examples of these equations are given by, but not limited to, magnetohydrodynamics and the Vlasov equation. In essence, the Vlasov equation combines the Maxwell's equations describing the field produced by charges along with the Boltzmann equation which describes the kinematics of these charges. Fundamentally, Maxwell's equations are topological \cite{delphenich_axioms_2005, hehl_foundations_2003} whereas the Boltzmann equations are not and it is a worthy question to see if there is topology to extract from the Vlasov equations. Hence, we really seek to find a topological version of the collisionless Boltzmann equation.
 
-Working with relativistic particles for access to the topological Maxwell's equations lends to difficulty in describing the kinematics of moving particles on spacetime. In Maxwell's theory, a current is usually a fixed entity that does not interact with itself whereas in a plasma we must not make this constraint since we expect our currents to interact strongly. Sadly, there is an inability to describe the worldlines of more than one particle due to the need for a proper time parameterization. However, the papers \cite{sarbach_relativistic_2013, sarbach_tangent_2014, sarbach_geometry_2014} do provide a relativistic version of a collisionless Einstein-Maxwell-Boltzmann equation for a single particle which they claim is useful for describing the average properties of a gravitating charged gas. Prior to these, the paper \cite{bichteler_cauchy_1967} outlines a similar approach in the first few sections and gives a description of relativistic collisions.
+Working with relativistic particles for access to the topological Maxwell's equations leads to difficulty in describing the kinematics of moving particles on spacetime. In Maxwell's theory, a current is usually a fixed entity that does not interact with itself whereas in a plasma we must not make this constraint since we expect our currents to interact strongly. Sadly, there is an inability to describe the worldlines of more than one particle due to the need for a proper time parameterization. However, the papers \cite{sarbach_relativistic_2013, sarbach_tangent_2014, sarbach_geometry_2014} do provide a relativistic version of a collisionless Einstein-Maxwell-Boltzmann equation for a single particle which they claim is useful for describing the average properties of a gravitating charged gas. Prior to these, the paper \cite{bichteler_cauchy_1967} outlines a similar approach in the first few sections and gives a description of relativistic collisions.
 
-Like the Maxwell equations, the equations of ideal fluid dynamics are also topological in their descriptions of invariants. One such description of fluids comes from Vladimir Arnol'd who found incompressible flow corresponds to geodesics on the space of voluming preserving diffeomorphisms which forms an analogy to rigid body motion on the special Euclidean group via a description of dynamics in their corresponding Lie algebras. However, these equations are not those that describe relativistic fluids and we need a new description in order to couple a charged relativistic fluid with the Maxwell equations.
+Like the Maxwell equations, the equations of ideal fluid dynamics are also topological in their descriptions of invariants. One such description of fluids comes from Vladimir Arnol'd, who found incompressible flow corresponds to geodesics on the space of voluming preserving diffeomorphisms which forms an analogy to rigid body motion on the special Euclidean group via a description of dynamics in their corresponding Lie algebras. However, these equations are not those that describe relativistic fluids and we need a new description in order to couple a charged relativistic fluid with the Maxwell equations.
 
 To begin, I will introduce the concepts of Clifford algebras and analysis and use this formalism to build up a version of the de Rham homology and cohomology theory in terms of the components of the gradient operator of Clifford analysis. Using the (co)homology, I will briefly cover the physical postulates of electromagnetism in their most topological form. To investigate a relativistic Boltzmann equation, I will touch on relativistic phase space. Finally, I describe the transport group and its relativistic version in order to deduce the equations of motion of a particle with this group as its configuration space and provide a perspective for motion of a collection of particles as a fluid with advecting mass and charge.  
 
@@ -71,11 +70,11 @@ To begin, I will introduce the concepts of Clifford algebras and analysis and us
 
 \subsubsection{Clifford Algebras, Multivectors, and Rotors}
 
-Clifford (or geometric) algebras are $\Z$- and $\Z/2\Z$- graded algebras with elements we refer to as multivectors. Formally, To see this, let us take the quadratic space $(V,q)$ and construct the Clifford algebra $C\ell(V,Q)$ by
+Clifford (or geometric) algebras are $\Z$- and $\Z/2\Z$- graded algebras with elements we refer to as multivectors. Let us take the quadratic space $(V,q)$ and build the tensor algebra $\sum_{n \in \mathbb{N}} V^{\otimes^n}$ to construct the Clifford algebra $C\ell(V,Q)$ via the quotient
 \begin{equation}
-C\ell(V,Q) \coloneqq \mathcal{T}(V) ~ / ~ \langle \blade{v} \otimes \blade{v} - Q(\blade{v}) \rangle
+C\ell(V,Q) \coloneqq \sum_{n \in \mathbb{N}} V^{\otimes^n} ~ / ~ \langle \blade{v} \otimes \blade{v} - Q(\blade{v}) \rangle
 \end{equation}
-with the induced addition and multiplication from this quotient. There are many wonderful sources on Clifford algebras but I will primarily use \cite{doran_geometric_2003} as a source for geometric and physical insight and the source \cite{chisolm_geometric_2012} for the vast amount of identities and clear notation. 
+with the induced addition and multiplication from the tensor algebra. There are many wonderful sources on Clifford algebras but I will primarily use \cite{doran_geometric_2003} as a source for geometric and physical insight and the source \cite{chisolm_geometric_2012} for the vast amount of identities and clear notation. 
 
 These algebras extend the exterior algebra $\bigwedge(V)$ by including the quadratic form $Q$ in the quotient which implies that $\bigwedge(V)\subset C\ell(V,Q)$ and, moreover, the product of vectors splits into a grade lowering term and grade raising term
 \begin{equation}
@@ -90,11 +89,11 @@ If $\blade{v}_1,\dots,\blade{v}_k$ are linearly independent, we refer to $\blade
     \blade{A_k}^\dagger = \blade{v}_k\wedge \cdots \wedge \blade{v}_1 = (-1)^{k(k-1)/2} \blade{A_k}
 \end{equation}
 
-The Clifford algebras become geometric algebras when the quadratic form is inherited from an inner product $Q(-)=g(-,-)$ and we note that since $g$ will be clear from context, we just put $\G\coloneqq C\ell(V,g)$. When $V$ has pseudo-euclidean inner product with $p$ vectors that square to $-1$ (temporal) and $q$ that square to $+1$ (spatial), we will put $\G_{p,q}$. In the case we are given $\G$, there is the abelian subgroup $V$ itself as well as $\sping(V)$ whose elements $R\in \sping(V)$ are called spinors and they are of even grade and have unit (semi)norm
+The Clifford algebras become geometric algebras when the quadratic form is inherited from an inner product $Q(-)=g(-,-)$ and we note that since $g$ will be clear from context, we just put $\G\coloneqq C\ell(V,g)$. When $V$ has pseudo-euclidean inner product with $p$ vectors that square to $-1$ (temporal) and $q$ that square to $+1$ (spatial), we will put $\G_{p,q}$. In the case we are given $\G$, there is the abelian subgroup $V$ and the non-abelian $\sping(V)$ whose elements $R\in \sping(V)$ are called spinors. Spinors are even grade and have unit (semi)norm
 \begin{equation}
 |R|^2 \coloneqq (R,R) \coloneqq \proj{0}{R^\dagger R}= R^\dagger R\pm 1.
 \end{equation}
-Here the notation $\proj{k}{A}$ tells us to select only the grade $k$-components of a multivector $A$ and it is important to note that $\dagger$ acts as the adjoint in the inner product $(-,-)$ of $\G$. When $R^\dagger R = +1$, we refer to this element as an \emph{rotor}. $\sping(V)$ acts on $V$ with automorphisms of the form $R \blade{v} R^\dagger$ which are isometries of $(-,-)$ since
+Here the notation $\proj{k}{A}$ tells us to select only the grade $k$-components of a multivector $A$ and it is important to note that $\dagger$ acts as the adjoint in the inner product $(-,-)$ of $\G$. When $R^\dagger R = +1$, we refer to this element as an \emph{rotor}. $\sping(V)$ acts on $V$ with automorphisms of the form $R \blade{v} R^\dagger$ and we realize $\sping(V)$ covers $\mathrm{O}(V)$ since this action generates isometries of $(-,-)$ 
 \begin{equation}
     (R\blade{v}R^\dagger,R\blade{v}R^\dagger) = (\blade{v},R^\dagger R \blade{v} RR^\dagger) = (\blade{v},\blade{v}).
 \end{equation}
@@ -127,7 +126,7 @@ where Einstein summation is implied. This derivative acts algebraically as a vec
 \end{equation}
 on any multivector field. Likewise, we have the measures $dx^i$ which we combine with a reciprocal vector to get \emph{basic directed measures} $d\blade{x}^i = \blade{e}^i dx^i$ and the \emph{$k$-dimensional directed measure}
 \begin{equation}
-    dX_k \coloneqq \frac{1}{r!} d\blade{x}^{i_1}\wedge \cdots \wedge d\blade{x}^{i_r}.
+    dX_k \coloneqq \frac{1}{k!} d\blade{x}^{i_1}\wedge \cdots \wedge d\blade{x}^{i_k}.
 \end{equation}
 This lets us recover a $k$-form $\alpha_k$ from a $k$-vector $A_k$ by taking
 \begin{equation}
@@ -137,11 +136,11 @@ where $A_r = \alpha_{i_1 \cdots i_r} \blade{v}^{i_1} \wedge \cdots \wedge \blade
 
 The algebraic operations of addition $+$, exterior multiplication $\wedge$, and contractions $\rfloor$ carry over to the familiar products on $\Omega(M)$ to $\G(M)$. Likewise, the differential operations of the exterior derivative $d$ take the form of the grade raising action of $\grad$ on multivector equivalents
 \begin{equation}
-d \alpha_r = (\grad \wedge A_r) \cdot dX_{r+1}^\dagger,
+d \alpha_k = (\grad \wedge A_k) \cdot dX_{k+1}^\dagger,
 \end{equation}
 and the codifferential $\delta$ (which is adjoint to $d$) by the grade lowering
 \begin{equation}
-\delta \alpha_r = (\grad \cdot A_r)\cdot dX_{r-1}^\dagger,
+\delta \alpha_k = (\grad \cdot A_k)\cdot dX_{k-1}^\dagger,
 \end{equation} 
 which gives us that $\grad \cdot$ is adjoint to $\grad \wedge$. Thus, the Hodge-Dirac operator $d+\delta$ on forms coincides with $\grad$ on multivectors and moreover $\grad \wedge^2 = \grad \cdot^2=0$ allows us to build (co)chain complexes. The Laplace-Beltrami operator is given by $\Delta = \grad^2$ and points to the Clifford analysis of $\grad$ as a refinement of the harmonic analysis of $\Delta$. Lastly, there is a mapping $\star \colon \G^k(M)\to \G^{n-k}(M)$ defined by
 \begin{equation}
@@ -155,7 +154,7 @@ so that it captures the action of Hodge star of forms on their multivector equiv
 
 Clifford analysis on manifolds can be used to extract the \emph{$k$th de Rham cohomology ring}
 \begin{equation}
-H^\bullet_{dR}(M) = \bigwedge_{k \in \mathbb{N}} H^k_{dR} = \bigwedge_{k \in \mathbb{N}} \ker \grad \wedge_k ~/~ \im \grad \wedge_{k-1}
+H^\bullet_{dR}(M) \coloneqq \bigwedge_{k \in \mathbb{N}} H^k_{dR} \coloneqq \bigwedge_{k \in \mathbb{N}} \ker \grad \wedge_k ~/~ \im \grad \wedge_{k-1}
 \end{equation}
 where $\im \grad \wedge_k$ are the \emph{exact} and $\ker \grad \wedge_k$ are the \emph{closed} $k$-vectors and we have identified the wedge product as the cup product $\wedge \colon H^k_{dR}(M) \times H^\ell_{dR}(M) \to H^{k+\ell}_{dR}(M)$. To see this is a cup product, let $A_k \in H^k_{dR}(M)$ and $B_\ell \in H^k_{dR}(M)$ and note $A_k \wedge B_\ell$ is a closed $k+\ell$-form
 \begin{align}
@@ -163,19 +162,19 @@ where $\im \grad \wedge_k$ are the \emph{exact} and $\ker \grad \wedge_k$ are th
 \end{align}
 since both $A_k$ and $B_\ell$ are closed. For the sake of this work moving forward, let us assume that we are speaking solely about forms with compact support when we mention homology or cohomology.
 
-Dual to the de Rham cohomology is the homology of de Rham currents. A (compact) current is an element $T\in \Omega^*(M)$ where $\Omega^*(M)$ is the space of linear functionals on smooth (compact) forms $\Omega(M)$, so that $T\colon \Omega(M)\to \R$ has compact support. Examples of currents include chains on $M$ for which we can take the $k$-chain $C^k$ and note
+Dual to the de Rham cohomology is the homology of de Rham currents. A (compact) current is an element $T\in \Omega^*(M)$ where $\Omega^*(M)$ is the space of linear functionals on smooth (compact) forms $\Omega(M)$, so that $T\colon \Omega(M)\to \R$ has compact support. Examples of currents include multivectors since we can take a $k$-vector $B_{k}$ on $M$ and note with $A_k$ as the multivector equivalent to $\alpha_k$
+\begin{equation}
+    B_k[\alpha_k] = \int_M (B_k,A_k) \mu.
+\end{equation}
+This allows for a weaker notion of a $k$-vector since this current $B^k$ is defined as an integrable distribution $(B_k,-)$. Also, we can take the $k$-chain $C^k$ and note
 \begin{equation}
     C^k[\alpha_k] = \int_{C^k} \alpha_k
 \end{equation}
-defines a current and take an $k$-vector $B_{k}$ on $M$ and note
+is also a current and if the $k$-chain $C^k$ is a smooth submanifold $C^k=K\subset M$, then we can define the $k$-vector $\delta_K$ so that it coincides with the tangent pseudoscalar $\blade{I}_K$ by
 \begin{equation}
-    B_k[\alpha_k] = \int_M (A_k,B_k) \mu,
+\delta_K[\alpha_k] = \int_{K} \alpha_k = \int_{M} (\pseudoscalar_K, A_k)\mu
 \end{equation}
-is also a current. In fact, if the $k$-chain $C^k$ is a smooth submanifold $C^k=K\subset M$, then we can define the distributional $k$-vector $\delta_K$ so that it coincides with the tangent pseudoscalar $\blade{I}_K$ by
-\begin{equation}
-\delta_K[\alpha_k] = \int_{K} \alpha_k = \int_{M} (A_k, \pseudoscalar_K)\mu.
-\end{equation}
-This has the interpretation of extracting only the components of $A_k$ tangent to $K$ and in the case we let $K=x\in M$ be a point (a $0$-chain) then for a $0$-form $\alpha_0$ we realize these forms as Dirac masses
+which has the interpretation of extracting only the components of $A_k$ tangent to $K$. In the case we let $K=x\in M$ be a point (a $0$-chain) then for a $0$-form $\alpha_0$ we realize these forms as Dirac masses
 \begin{equation}
 \delta_x[\alpha_0] = \int_M (A_0,\delta_x) \mu = A_0(x).
 \end{equation}
@@ -192,18 +191,18 @@ When the currents are currents given by $k$-chains $C^k$ (or manifolds $K$) we u
 which is the usual notion of a boundary and necessitated our choice of compact support from earlier. If, instead, we take a current given by a $k$-vector $B^k$, we realize the following.
 \begin{proposition}
 \label{prop:grad_dot}
-    Let $B_k$ be a $k$-vector, then, as a current, $\partial B_k$ corresponds to the grade lowering part of the gradient on the multivector $\grad \cdot B_k$.
+    Let $B_k$ be a $k$-current. Then $\partial B_k$ corresponds to the grade lowering part of the gradient on the distributional multivector $(\grad \cdot B_k,-)$. Hence, we are able to represent a weak form of the interior derivative $(\nabla \cdot B_k,-)$ by passing to the exterior derivative on smooth multivectors $\grad \wedge A_{k-1}$.
 \end{proposition}
 \begin{proof}
-Fix a $k-1$-form $\alpha_{k-1}$ and note that
+Fix a $k-1$-form $\alpha_{k-1}$ and note that $\grad \wedge$ is adjoint to $\grad \cdot$ hence
 \begin{align}
-    \partial \delta_K [\alpha_{k-1}] = \int_K d\alpha_{k-1}= \int_M(\grad \wedge A_{k-1},\blade{I}_K)\mu = \int_M(A_{k-1},\grad \cdot \blade{I}_K) \mu.
-\end{align}
+    \partial B_k[\alpha_{k-1}]=  \int_M(B_k,\grad \wedge A_{k-1})\mu = \int_M(\grad \cdot B_k, A_{k-1}) \mu.
+\end{align}\
 \end{proof}
 
 The above statements motivate studying the boundary map further. We realize that $\partial^2=0$ and so we have the de Rham homology
 \begin{equation}
-H_\bullet^{dR} = \bigoplus_{n\in \mathbb{N}} H_k^{dR} \coloneqq \bigoplus_{n\in \mathbb{N}} \ker \partial_k ~/~ \im \partial_{k+1}. 
+H_\bullet^{dR} = \bigoplus_{k\in \mathbb{N}} H_k^{dR} \coloneqq \bigoplus_{k\in \mathbb{N}} \ker \partial_k ~/~ \im \partial_{k+1}\cong \bigoplus_{k\in \mathbb{N}} \ker \grad \cdot_k ~/~ \im \grad \cdot_{k+1}. 
 \end{equation}
 But, what is most important, is that the homologies generated by this boundary operator are not so different. Taking the specific form of the boundary operator in \cref{eq:stokes}, we get the singular homology $H_\bullet(M)$ over $\R$ and in \cref{prop:grad_dot} we get the smooth homology $H^\infty_\bullet(M)$ where the boundary operator is $\grad \cdot$. Each of these coincide.
 \begin{theorem}[de Rham Theorem for Homology and Cohomology]
@@ -223,7 +222,7 @@ Another way to realize the cap product is by noting that we can instead take a s
 \begin{equation}
 T^{k-\ell}[-] = \int_K \alpha_\ell \wedge - = \int_M (-,A_\ell \rfloor \blade{I}_K) \mu,
 \end{equation}
-is an element of $\Omega^{k-\ell*}(M)$ and, therefore, a map $H^{k-\ell}(M)\to \R$. Then, For posterity, let $\ell = k$ we see $T^0 = \delta_K \frown \alpha_k = \delta_{X} \in H_0(M)$ so that $X$ is a $0$-current (i.e., a collection of points $\partial X = 0$ so that each $x\in X$ is from one connected component of $K$). Then
+as an element of $\Omega^{k-\ell*}(M)$ and, therefore, a map $H^{k-\ell}(M)\to \R$. Then, for posterity, let $\ell = k$ we see $T^0 = \delta_K \frown \alpha_k = \delta_{X} \in H_0(M)$ so that $X$ is a $0$-current, i.e., a collection of points $\partial X = 0$ so that each $x\in X$ is from one connected component of $K$. Then
 \begin{equation}
 T^0[\beta_0] = \delta_{X}[\beta_0] = \int_{K} (B_0 , \delta_X ) \mu_{K} = \sum_{x\in X} B_0(x).
 \end{equation}
@@ -242,7 +241,7 @@ which we see is well defined since
 \begin{align}
 \partial \overline{\alpha_k}[\beta_{k-1}] = \int_M (B_{k-1}, \grad \cdot (A_k \rfloor \blade{I}))\mu = \int_M (B_{k-1},(\grad \wedge A_k)\blade{I}) \mu =0,
 \end{align}
-since $A_k$ is a closed $k$-vector field. It is a worthy remark to mention that the $n-k$-vector associated to $\overline{\alpha_k}$ is given by $A_k \rfloor \blade{I}$ which is often referred to as the dual and we can put $A_k^\perp = A_k \rfloor \blade{I}$. 
+since $A_k$ is a closed $k$-vector field. It is a worthy remark to mention that the $n-k$-vector associated to $\overline{\alpha_k}$ is given by $A_k \rfloor \blade{I}$ which is often referred to as the dual and we can put $A_k^\perp = A_k \rfloor \blade{I}$. If we allow ourselves to work with distributional multivectors, then we can realize the cap product and Poincar\'e duality via typical multivector operations.
 \begin{proposition}
 On multivectors, we can realize the following.
 \begin{enumerate}
@@ -264,7 +263,7 @@ For the second, if $A_{\ell}\in H^\ell(M)$ then
 \end{align}
 \end{proof}
 
-The pairing between co-closed currents and closed forms captured through integration is a (co)homological invariant that has ramifications in analysis.
+The pairing between co-closed currents and closed forms captured through integration is a (co)homological invariant that has ramifications in analysis that follows.
 \begin{proposition}
 \label{def:period}
 For any closed $k$-form $\alpha_k$ and each co-closed $k$-current $K$, a the \emph{period of the form $\alpha_k$} is the real number
@@ -281,12 +280,11 @@ Let $K \in H_k(M)$ with current $\delta_K$ and $\alpha_k \in H^k(M)$. Then we sh
 &= \int_K \alpha_k.
 \end{align}
 \end{proof}
-As it turns out, we have the following analytical statement.
 \begin{proposition}
 \label{prop:periods}
     If all periods of a form $\alpha_k$ vanish, then $\alpha_k$ has a potential $\beta_{k-1}$ such that $d\beta_{k-1}=\alpha_k$.
 \end{proposition}
-Thus, the topology of the domain is intimately connected with partial differential equations. We will use this in the subsequent section.
+Thus, the topology of the domain is intimately connected with solutions to certain partial differential equations. We will use this in the subsequent section. If we worked with non-compactly supported multivectors we would have to take into account boundary conditions which adds many more complications \cite{schwarz_hodge_1995}.
 
 \subsection{Electromagnetism}
 
@@ -300,62 +298,62 @@ The work done in \cref{subsubsec:derham} can be compared with the preliminaries 
 We take $M^4$ to be the foliated manifold of global spacetime with the Lorentz metric $g$ of signature $(-1, ~+1,~+1,~+1)$ so that we ignore any curvature or gravitation. When necessary, we take the local coordinates $x^\mu$ with $\mu=0,1,2,3$ and the induced orthonormal tangent vector fields satisfy $\blade{e}_0^2 = -1$ and $\blade{e}_i^2=+1$ for $i=1,2,3$. We will typically use Greek indices when running over the full spacetime and Latin when running over only the spatial indices.
 
 \subsubsection{Charge Conservation}
-First, let $j_3$ be a 3-form field on spacetime $M^4$ with multivector equivalent $J_3$. In order for charge to be conserved, we require that any charge entering or exiting a region $N^4 \subset M^4$ must happen due to the charge passing through the boundary $\partial N^4$. Hence, we can state the physical postulate \emph{charge conservation} by
+First, let $j_3$ be a 3-form field on spacetime $M^4$ with multivector equivalent $\blade{J}_3$. In order for charge to be conserved, we require that any charge entering or exiting a region $N^4 \subset M^4$ must happen due to the charge passing through the boundary $\partial N^4$. Hence, we can state the physical postulate \emph{charge conservation} by
 \begin{equation}
     \label{eq:topological_charge_conservation}
-    \int_{\partial N^4} j_3 = \int_{N^4} dj_3= \int_{N^4} (\grad \wedge J_3) \cdot dX_4 = \int_{N^4} \grad \cdot (J_3 \rfloor \blade{I}) \mu = 0    ~~\iff~~ \grad \wedge J_3=\grad \cdot (J_3 \rfloor \blade{I}) = 0.
+    \int_{\partial N^4} j_3 = \int_{N^4} dj_3= \int_{N^4} (\grad \wedge \blade{J}_3) \cdot dX_4 = \int_{N^4} \grad \cdot \blade{J}_3^\perp \mu = 0    ~~\iff~~ \grad \wedge \blade{J}_3=\grad \cdot \blade{J}_3^\perp = 0.
 \end{equation}
-The \emph{$4$-vector current} is then the dual $J_1 = J_3^\perp=J_3 \rfloor \blade{I}$ and we remark that $J_3 \in H^3(M^4)$ gives us $J_1 \in H_1(M^4)$ via Poincar\'e duality. Then, since we have determined that $j$ is closed, we can note that for any co-closed $3$-current $\delta_{N^3}$
+The \emph{$4$-vector current} is then the dual $\blade{J} = J_3^\perp=J_3 \rfloor \blade{I}$ and we remark that $J_3 \in H^3(M^4)$ gives us $\blade{J} \in H_1(M^4)$ via Poincar\'e duality. Then, since we have determined that $j_3$ is closed, we can note that for any co-closed $3$-current $\delta_{N^3}$
 \begin{equation}
     \delta_{N^3}[j_3] = 0
 \end{equation}
-and by \cref{prop:periods} we realize that $j_3$ has a potential $h_2$ which we refer to as the \emph{electromagnetic excitation}. That is, 
+and by \cref{prop:periods} we realize that $j_3$ has a potential 2-form $h$ which we refer to as the \emph{electromagnetic excitation}. That is, 
 \begin{equation}
 \label{eq:current_from_excitation}
-    j_3=dh_2 \qquad \textrm{or} \qquad J_3 = \grad \wedge H_2 \qquad \textrm{or} \qquad J_1 = \grad \cdot H_2^\perp.
+    j_3=dh \qquad \textrm{or} \qquad \blade{J}_3 = \grad \wedge H \qquad \textrm{or} \qquad \blade{J} = \grad \cdot H^\perp.
 \end{equation}
-This axiom can be understood in two ways and it owes to the belief of John Wheeler that ``charge is topology". First, we have seen the physical/analytical requirement of a conservation law of the field(s) $J$ correspond to a (co)homological statement on the field(s) as well.  Second, we realize this is a statement about the topological nature of spacetime itself in that $H_1(M)\cong H^3(M)$ must vanish. It turns out that conservation laws and topology are deeply related \cite{westenholz_topological_nodate}.
+This axiom can be understood in two ways and it owes to the belief of John Wheeler that ``charge is topology". First, we have seen the physical/analytical requirement of a conservation law of the field(s) $J$ correspond to a (co)homological statement on the field(s) as well.  Second, we realize this is a statement about the topological nature of spacetime itself in that $H_1(M)\cong H^3(M)$ must vanish. It turns out that conservation laws and topology are deeply related \cite{westenholz_topological_1979}.
 
 \subsubsection{Flux conservation}
 
-For a co-closed $N^2$, we have another conservation law assuming a similar for as aconstraint on the electromagnetic field $F_2$
+For a co-closed $N^2$, we have another conservation law assuming as a constraint on the electromagnetic field $F$
 \begin{equation}
     \label{eq:magnetic_flux_conservation}
-    \oint_{N^2} f_2 = 0  ~~\iff~~ \grad \wedge F_2=0.
+    \int_{N^2} f = 0  ~~\iff~~ \grad \wedge F=0.
 \end{equation}
-is a physical postulate which we regard as \emph{flux conservation}. However, our starting point differs slightly from that of charge conservation. We do note require $N^2$ to be co-exact. 
+is a physical postulate which we regard as \emph{flux conservation}. However, our starting point differs slightly from that of charge conservation. We do not require $N^2$ to be co-exact. 
 
-Thus, depending on the (co)homology of $M^4$, we may be able to say something about $N^2$. In particular, if $H^2(M^4)=H_2(M^4)$ is trivial (i.e., all periods of 2-forms vanish), then $N^2=\partial N^3$ shows a potential for $f_2$ exists. Specifically, we can put
+Thus, depending on the (co)homology of $M^4$, we may be able to say something about $N^2$. In particular, if $H^2(M^4)=H_2(M^4)$ is trivial (i.e., all periods of 2-forms vanish), then $N^2=\partial N^3$ shows a potential for $f$ exists. Specifically, we can put
 \begin{equation}
-da_1 = f_2 \qquad \textrm{or} \qquad \grad \wedge \blade{A}_1 = F_2,
+da = f \qquad \textrm{or} \qquad \grad \wedge \blade{A} = F,
 \end{equation}
-and we refer to $\blade{A}_1$ as the \emph{electromagnetic potential}. We do not postulate the existence of a global potential $\blade{A}_1$, but if we work locally, this is always true since small enough local patches have trivial second (co)homology. In the case $F_2$ does have a potential we realize that $F_2=\blade{F}_2$ is a 2-blade.
+and we refer to $\blade{A}$ as the \emph{electromagnetic potential}. We do not postulate the existence of a global potential $\blade{A}$, but if we work locally, this is always true since small enough local patches have trivial second (co)homology. In the case $F$ does have a potential we realize that $F=\blade{F}$ is a 2-blade.
 
 \subsubsection{Constitutive Law and Maxwell's Equations}
 
-At this point, we nearly have a set of equations that can be worked with. However, we need to determine a relationship between the electromagnetic field $F_2$ and the electromagnetic excitation $H_2$. This relationship is referred to as the \emph{constitutive law} and the simplest possible choice is linear so that $F_2 = H_2^\perp$. Thus, we note \cref{eq:current_from_excitation,eq:magnetic_flux_conservation} yield the relativistic Maxwell equations as $\grad F_2 = J_1$ or, as is typical
+At this point, we nearly have a set of equations that can be worked with. However, we need to determine a relationship between the electromagnetic field $F$ and the electromagnetic excitation $H$. This relationship is referred to as the \emph{constitutive law} and the simplest possible choice is linear so that $F = H^\perp$. Thus, we note \cref{eq:current_from_excitation,eq:magnetic_flux_conservation} yield the relativistic Maxwell equations as $\grad F = \blade{J}$ or, as is typical
 \begin{align}
-	\grad \wedge F_2 &= 0  &&\textrm{(homogeneous)}\\
-	\grad \cdot F_2 &= J_1 && \textrm{(inhomogeneous)}.
+	\grad \wedge F &= 0  &&\textrm{(homogeneous)}\\
+	\grad \cdot F &= \blade{J} && \textrm{(inhomogeneous)}.
 \end{align}
-Supposing as well that $F_2$ has a potential $\blade{A}_1$, we can choose the Lorenz gauge so that $\grad \cdot \blade{A}_1 = 0$ to force
+Supposing as well that $F$ has a potential $\blade{A}$, we can choose the Lorenz gauge so that $\grad \cdot \blade{A} = 0$ to get
 \begin{equation}
-\Delta \blade{A}_1 = J_1.
+\Delta \blade{A} = \blade{J}.
 \end{equation}
 
-Working locally, $F_2$ can be split into constituents, $E_2$ and $B_2$ since
+Working locally, $F$ can be split into constituents $E$ and $B$ using superscripts to denote components
 \begin{align}
-	F_2 = \underbrace{E_2^1 \blade{e}_0 \blade{e}_1 + E_2^2 \blade{e}_0 \blade{e}_2 + E_2^3 \blade{e}_0 \blade{e}_3}_{\textrm{electric field } E_2} + \underbrace{B_2^{3} \blade{e}_1 \blade{e}_2 + B_2^{2} \blade{e}_3 \blade{e}_1 + B_2^{1} \blade{e}_2 \blade{e}_3}_{\textrm{magnetic field } B_2}
+	F = \underbrace{E^1 \blade{e}_0 \blade{e}_1 + E^2 \blade{e}_0 \blade{e}_2 + E^3 \blade{e}_0 \blade{e}_3}_{\textrm{electric field } E} + \underbrace{B^{3} \blade{e}_1 \blade{e}_2 + B^{2} \blade{e}_3 \blade{e}_1 + B^{1} \blade{e}_2 \blade{e}_3}_{\textrm{magnetic field } B}
 \end{align}
-Using this decomposition and noting that $\vec{\boldsymbol{\partial_t}}=\blade{e}^0 \nabla_{\blade{e}_0}$ is the time derivative and  $\vec{\grad} = \blade{e}^i \nabla_{\blade{e}_i}$ is the spatial gradient, we write the Heaviside's version of Maxwell's equations
+Using this decomposition and noting that $\vec{\boldsymbol{\partial_t}}=\blade{e}^0 \nabla_{\blade{e}_0}$ is the (vector) time derivative and  $\vec{\grad} = \blade{e}^i \nabla_{\blade{e}_i}$ is the spatial gradient, we write the Heaviside's version of Maxwell's equations
 \begin{align}
 \label{eq:gauss_faraday}
-	\grad \wedge F_2=0 ~\implies~ \underbrace{\vec{\grad} \wedge B_2 = 0}_{\textrm{spatial}} ~~~\textrm{and}~~~ \underbrace{\vec{\grad} \wedge E_2 + \vec{\boldsymbol{\partial_t}} \wedge B_2 = 0}_{\textrm{spatio-temporal}}
+	\grad \wedge F=0 ~\implies~ \underbrace{\vec{\grad} \wedge B = 0}_{\textrm{spatial}} ~~~\textrm{and}~~~ \underbrace{\vec{\grad} \wedge E + \vec{\boldsymbol{\partial_t}} \wedge B = 0}_{\textrm{spatio-temporal}}
 \end{align}
 are Gauss's law for magnetism and Faraday's law from the homogeneous Maxwell equations and
 \begin{align}
 \label{eq:spacetime_split}
-	\grad \cdot F_2=J_1 ~\implies~ \underbrace{\blade{e}^0 \cdot \vec{\grad} \cdot E_2 = \blade{e}^0 \cdot J_1}_{\textrm{spatial}}~~~\textrm{and}~~~ \underbrace{\blade{e}^0 \wedge (\vec{\boldsymbol{\partial_t}} \cdot E_2 + \vec{\grad} \cdot E_2) = \blade{e}^0 \wedge J_1}_{\textrm{spatio-temporal}}
+	\grad \cdot F_2=J_1 ~\implies~ \underbrace{\blade{e}^0 \cdot \vec{\grad} \cdot E = \blade{e}^0 \cdot \blade{J}}_{\textrm{spatial}}~~~\textrm{and}~~~ \underbrace{\blade{e}^0 \wedge (\vec{\boldsymbol{\partial_t}} \cdot E + \vec{\grad} \cdot E) = \blade{e}^0 \wedge \blade{J}}_{\textrm{spatio-temporal}}
 \end{align}
 are Gauss's law for electricity and Ampere's law respectively. Multiplication by $\blade{e}^0$ seen in \cref{eq:spacetime_split} is often called the spacetime split and since \cref{eq:gauss_faraday} is homogeneous, we do not see this as a necessary step. The equations for the electric and magnetic potential can be found this way as well.
 
@@ -364,21 +362,76 @@ are Gauss's law for electricity and Ampere's law respectively. Multiplication by
 Recall that a major motivator of this project is the plasma dynamics and, as such, we must also posulate the coupling between charges and fields. For a particle with charge $q$, mass $m$, and velocity $4$-vector $\blade{v}$, we know via experimentation that this particle undergoes acceleration due to the \emph{Lorentz force} 
 \begin{equation}
     \label{eq:lorentz_force}
-    \nabla_{\blade{v}}\blade{v} = \frac{q}{m} \blade{v} \cdot F_2.
+    \nabla_{\blade{v}}\blade{v} = \frac{q}{m} \blade{v} \cdot F.
 \end{equation}
 This equation, by virtue of $\nabla$, is coordinate independent and Lorentz invariant, but it is inherently geometrical but not immediately topological since it does not obviously factor into components of $\grad$. This equation will be revisited later in \cref{sec:spinor_equations}.
 
 
 \section{Kinematics}
 
-\subsection{Boltzmann's Equation}
+The kinematic description of physics is useful for modeling disparate gases and fluids. Fundamentally, the equations of kinematics take the sum of all forces and move the particles based on these forces taking into account collisions as well. In classical non-relativistic physics, this is done by defining a distribution function $f\colon TM^3 \times \R \to \R$ that takes in the position, momentum, and time and whose fiberwise moments yield physical observables. The evolution of $f$ over time allows us to reconstruct the dynamics of the particles.
 
-\subsection{Vlasov Equation}
+\subsection{Vlasov's Equations}
+For example, the evolution of $f$ is given by Boltzmann's equation in general. This can then be specialized to Vlasov's equations which handle the case where the particles are charged. Given the charge of the particle family is $e$, the static charge $q$ and the current $\blade{J}$ are observables given by
+\begin{equation}
+    q(x,t) = \int_{T_xM} e f(x,\blade{p},t)d\blade{p} \qquad \textrm{and} \qquad  \blade{J}(x,t) =  \int_{T_xM} ef(x,\blade{p},t)\blade{p}d\blade{p},
+\end{equation}
+where $x$ and $\blade{p}$ are coordinates of phase space. Boltzmann's equation can then be written as
+\begin{equation}
+\frac{\partial f}{\partial t} + \frac{\blade{p}}{m} \cdot \grad f + \blade{F} \cdot \frac{\partial f}{\partial \blade{p}} = \left( \frac{\partial f}{\partial t}\right)_{\textrm{collisions}},
+\end{equation}
+where $\blade{F}$ is the external force and the right hand side represents the collision term. Then the Vlasov equations are given by taking the Lorentz force in the standard Heaviside form 
+\begin{equation}
+\blade{F} = \frac{e}{m}(\blade{E}+\blade{v}\times \blade{B})
+\end{equation}
+along with Maxwell's equations themselves \cite{manning_analysis_2009}. In order to combine the kinematical equations with the relativistic Maxwell equations, we must adjust our perspective.
+
+\subsection{Relativistic Kinematics}
+
+For this section, the papers \cite{sarbach_geometry_2014,sarbach_relativistic_2013,sarbach_tangent_2014} are instrumental and provide a derivation of the following. Take spacetime $M^4$ with relativistic phase space $TM^4$ with local basis vectors $\frac{\partial}{\partial x^\mu}$ and $\frac{\partial}{\partial p^\mu}$. Working in these coordinates, a tangent vector to a massive charged particle's path is
+\begin{equation}
+    X_{(x,p)} = p^\mu \frac{\partial}{\partial x^\mu} + (q F^\mu_\nu(x) p^\nu - \Gamma^\mu_{\nu\alpha} p^\nu p^\alpha) \frac{\partial}{\partial p^\mu} \in T_{(x,p)} (TM)
+\end{equation}
+where $F^\mu_\nu$ is the Faraday tensor (i.e., the electromagnetic field components). The volume measures of the tangent bundle are given by
+\begin{equation}
+    \mu_{TM^4} \coloneqq \mu_{M^4}\wedge \mu_{T_xM^4}
+\end{equation}
+where $\mu_{M^4} \coloneqq \sqrt{-\det(g)} dx^0\wedge \dots \wedge dx^3$ and along the fibers we have $\mu_{T_xM^4} \coloneqq \sqrt{-\det(g(x))} dp^0\wedge\dots\wedge dp^3$. 
+
+A Hamiltonian is given on $TM^4$ by $H(x,\blade{p}) = \frac{1}{2}g_x(\blade{p},\blade{p})$ which, for a particle of fixed mass $m$ it must be that its momentum $\blade{p}$ satisfies $H(x,\blade{p})=\frac{-m^2}{2}$. Hence, in the tangent spaces we realize the \emph{mass shell} 
+\begin{equation}
+(\Gamma_{m})_x \coloneqq \{p\in T_xM ~\vert~ g_x(p,p) = -m^2\}
+\end{equation}
+and dragging this shell through the whole tangent bundle yields the \emph{mass hyperboloid}
+\begin{equation}
+    \Gamma_m \coloneqq \{ (x,p) \in TM ~\vert~ 2H(x,p) = g_x(p,p)=-m^2 \}.
+\end{equation}
+It is also proven that $\Gamma_m$ contains a future oriented hyperboloid $\Gamma_m^+$ constructed by taking $(\Gamma^+_m)_x$ to be the future directed mass shell.
+
+The Hamiltonian allows us to define the associated Liouville 1-form $\theta_{(x,\blade{p})}(X)=g_x(\blade{p}, d\pi_{(x,\blade{p}(X)}$ for some vector field $X$ and where $\pi$ is the canonical fiberwise projection. The exterior derivative $d\theta$ is a symplectic form on $TM^4$ and the we put $X_H$ to denote the Hamiltonian vector field. The mass hyperboloid is a level set of the Hamiltonian and, moreover, it is akin to the unit tangent bundle and we find that the pullback of $\theta$ onto $\Gamma_m$ yields a contact form. Likewise, pulling the volume form $\mu_{TM^4}$ back onto $\Gamma_m$ yields $\mu_{\Gamma_m}$. As with the classical phase space, observables can be found from fiberwise integrals of the distribution function $f\colon TM^4\to \R$ by taking note of \cite[Lemma 4, Lemma 5]{sarbach_relativistic_2013}.
+\begin{theorem}
+Let $\mathcal{L}$ be the Lie derivative, then the Liouville equation 
+\begin{equation}
+    \mathcal{L}_{X_H} f = 0
+\end{equation}
+is satisfied.
+\end{theorem}
+From this, the authors deduce the Einstein-Maxwell-Vlasov system of a gravitating charged gas
+\begin{align}
+    G_{\mu \nu} &= 8\pi G_N \left(T_{\mu \nu}^{\textrm{em}} + T_{\mu_\nu}^{\textrm{gas}}\right) && \textrm{(Einstein equation)}\\
+    \nabla_\nu F^{\mu \nu} &= q J^\mu,\qquad ~~~ \nabla_{[\mu F_{\alpha \beta}]}=0 && \textrm{(Maxwell's equations)}\\
+    \mathcal{L}_{X_H}f &=0 &&\textrm{(Liouville/collisionless Boltzmann equation)}.
+\end{align}
+These kinematical equations certainly warrant further work and they can likely be related to some relativistic fluid equations if proper limits are taken.
+
+
+
+
 
 \section{Fluid Plasmas}
 \label{sec:spinor_equations}
 
-To develop a deeper understanding of the motion of a fluid plasma, let us explore the motion of a single relativistic particle immersed. o make an analogy, motion of a particle in spacetime can be thought of as an analog of the motion of a rigid body in Euclidean space. The configuration of rigid body lies on the the semi-product Lie group $\mathrm{A}(3)=\R^3 \rtimes \sping(3)$ called the \emph{Euclidean group} (actually, this is the universal cover of that group) and we can show that configuration of a massive relativistic particle lies on the cover of the \emph{Poincar\'e group} $\mathrm{A}(1,3) = \R^{1,3} \rtimes \sping^+(1,3)$ which we refer to as the \emph{Fermi transport group}.
+To develop a deeper understanding of the motion of a fluid plasma, let us explore the motion of a single relativistic particle immersed. To make an analogy, motion of a particle in spacetime can be thought of as an analog of the motion of a rigid body in Euclidean space. The configuration of rigid body lies on the the semi-product Lie group $\mathrm{A}(3)=\R^3 \rtimes \sping(3)$ called the \emph{Euclidean group} (actually, this is the universal cover of that group) and we can show that configuration of a massive relativistic particle lies on the cover of the \emph{Poincar\'e group} $\mathrm{A}(1,3) = \R^{1,3} \rtimes \sping^+(1,3)$ which we refer to as the \emph{Fermi transport group}.
 
 \subsection{The Transport Group $\A(V)$}
 
@@ -401,7 +454,7 @@ defines multiplication in $\A(V)$ with inverse
 \end{definition}
 
 \begin{example}
-Take for example the motion of a rigid body in 3-dimensional space which consists of translations of the center of mass captured by the factor $\R^3$ and rotation about the center of mass captured by $\sping^+(\R^3)$. Hence, the configuration of a rigid body lies in the group $\A(3)=\R^3 \rtimes \sping^+(3)$. More explicitly, let $\blade{v}(t) \in V$ be the position of the center of mass of the body at time $t$, let $\mathscr{F}(t)=(\blade{e}_1(t),\blade{e}_2(t),\blade{e}_3(t))$ be the body frame at time $t$ define $R \in \sping^+(V)$ be such that $\mathscr{F}(t)=R(t)\mathscr{F}(0)R^\dagger(t)$. Hence, motion of a rigid body is a curve on the group $\A(3)$.
+Take for example the motion of a rigid body in 3-dimensional space which consists of translations of the center of mass captured by the factor $\R^3$ and rotation about the center of mass captured by $\sping^+(\R^3)$. More explicitly, let $\blade{v}(t) \in V$ be the position of the center of mass of the body at time $t$, let $\mathscr{F}(t)=(\blade{e}_1(t),\blade{e}_2(t),\blade{e}_3(t))$ be the body frame at time $t$ define $R \in \sping^+(V)$ be such that $\mathscr{F}(t)=R(t)\mathscr{F}(0)R^\dagger(t)$. Hence, the configuration of a rigid body lies in the group $\A(3)=\R^3 \rtimes \sping^+(3)$ and motion of a rigid body is a curve on the group $\A(3)$.
 \end{example}
 
 We keep the notions of this example moving forward and posit that the group $\A(V)$ represents the configuration of a generalized notion of a rigid body. Given we wish to study curves on $\A(V)$, we must ask what the infinitesimal motions on $\A(V)$ correspond to, or, in other words, what is the Lie algebra to $\A(V)$. Note that the Lie algebra to $V$ is itself a trivial Lie algebra since $V$ is a commutative group. The Lie algebra of $\sping^+(V)$ is the algebra of bivectors $\spina(V)=C\ell^2(V,Q)$ along with the commutator $[-,-]$ which we inherit from $C\ell(V,Q)$ as well. We denote the Lie algebra of $\A(V)$ by $\liealg(V)$ and note that we have the Lie algebra extension
@@ -447,11 +500,13 @@ where $m\colon \gamma \to \R$ and $\blade{v}^2=-1$ everywhere along the worldlin
 \end{equation}
 In this sense, transport of the velocity field through depends solely on the projection of the velocity ${\blade{v}}$ onto the \emph{relativistic vorticity}) $\grad \wedge {\blade{v}}$.
 
-A charged particle must obey the lorentz force law \cref{eq:lorentz_force} and so we see that the relativistic vorticity aligns with the electromagnetic field $\grad \wedge \blade{v} = \blade{F}$ by \cref{eq:velocity_covariant_derivative}.
+A charged particle must obey the Lorentz force law \cref{eq:lorentz_force} and so we see that the relativistic vorticity aligns with the electromagnetic field $\grad \wedge \blade{v} = \blade{F}$ by \cref{eq:velocity_covariant_derivative}.
 
 \begin{remark}
-Given that $\grad \wedge \blade{v} = \blade{F}$, there is likely some relationship of the potential $\blade{A}$ to $\blade{v}$.
+Given that $\grad \wedge \blade{v} = \blade{F}$, there is likely some relationship of the potential $\blade{A}$ to $\blade{v}$. In analogy with non-relativistic fluids, the \emph{relativistic helicity} could be defined as the 3-vector $\blade{v}\wedge (\grad \wedge \blade{v})$ which could be some invariant of the relativistic fluid.
 \end{remark}
+
+
 
 \subsubsection{Configuration space of a massive charged particle}
 
@@ -560,7 +615,7 @@ From these equations, we should be able to investigate the infinitesimal diffeom
 
 To summarize, the work here puts together introduced the Clifford algebra and analysis structures on manifolds to provide a nice perspective on the (co)homological theory of manifolds from which an axiomatic theory of electromagnetism followed. We investigate the structure of relativistic phase space as well as a relativistic configuration space for particles. When these particles couple to the electromagnetic field, their evolution is governed by Fermi-Faraday transport and, if we take into account a fluid of a single family of charged particles, we arrive at some continuity equations for relativistic charged fluids.
 
-There is plenty remaining to do. The exposition of the (co)homology only included compact support and it would be great to extend this. There are other sources on the the relativistic Vlasov equation \cite{brizard_new_2000,marsden_hamiltonian_1982} that should be united with our knowledge on the relativistic phase space. Fundamentally, neither of these include collisions of particles which would be necessary in dense plasmas (especially those dense with heavy neutral particles). Finally, the relativistic charged fluid equations in \cref{subsec:charged_fluid} should be corroborated with \cite{pausader_relativistic_nodate} and further investigated.
+There is plenty remaining to do. The exposition of the (co)homology only included compact support and it would be great to extend this. There are other sources on the the relativistic Vlasov equation \cite{brizard_new_2000,marsden_hamiltonian_1982} that should be united with our knowledge on the relativistic phase space. Fundamentally, neither of these include collisions of particles which would be necessary in dense plasmas (especially those dense with heavy neutral particles). Finally, the relativistic charged fluid equations in \cref{subsec:charged_fluid} should be corroborated with \cite{pausader_relativistic_2013} and further investigated.
 
 
 \section*{Acknowledgments}

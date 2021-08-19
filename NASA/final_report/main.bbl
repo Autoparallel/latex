@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{20}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -67,7 +67,8 @@ Schindler, J.~C., \enquote{Geometric {Manifolds} {Part} {I}: {The}
 \newblock \urlprefix\url{http://arxiv.org/abs/1911.07145}, arXiv: 1911.07145.
 
 \bibitem[{Iversen(1989)}]{iversen_cauchy_1989}
-Iversen, B., \enquote{{CAUCHY} {RESIDUES} {AND} {DE} {RHAM} {HOMOLOGY},} 1989.
+Iversen, B., \enquote{Cauchy {Residues} and de {Rham} {Homology},}
+  \emph{L'Enseignement Mathematique}, Vol.~35, 1989, pp. 1--17.
 \newblock \doi{10.5169/SEALS-57358},
   \urlprefix\url{https://www.e-periodica.ch/digbib/view?pid=ens-001:1989:35::9},
   medium: text/html,application/pdf Publisher: Fondation L'Enseignement
@@ -80,6 +81,11 @@ Cappell, S., DeTurck, D., Gluck, H., and Miller, E.~Y., \enquote{Cohomology of
   Mathematicum}, Vol.~18, No.~6, 2006.
 \newblock \doi{10.1515/FORUM.2006.046},
   \urlprefix\url{https://www.degruyter.com/document/doi/10.1515/FORUM.2006.046/html}.
+
+\bibitem[{Schwarz(1995)}]{schwarz_hodge_1995}
+Schwarz, G., \enquote{Hodge {Decomposition} - {A} {Method} for {Solving}
+  {Boundary} {Value} {Problems},} 1995.
+\newblock \doi{10.1007/bfb0095978}.
 
 \bibitem[{Hehl and Obukhov(2003{\natexlab{b}})}]{hehl_introduction_2003}
 Hehl, F.~W., and Obukhov, Y.~N., \enquote{Introduction,} \emph{Foundations of
@@ -96,9 +102,15 @@ Gross, P.~W., Gross, P.~W., Kotiuga, P.~R., and Kotiuga, R.~P.,
   {Approach}}, Cambridge University Press, 2004.
 \newblock Google-Books-ID: UTjwZdtkECIC.
 
-\bibitem[{Westenholz()}]{westenholz_topological_nodate}
-Westenholz, C.~V., \enquote{Topological and {Noether}-conservation laws,} ????,
-  p.~16.
+\bibitem[{Westenholz(1979)}]{westenholz_topological_1979}
+Westenholz, C.~V., \enquote{Topological and {Noether}-conservation laws,}
+  \emph{Annales de L' I.H.P., Section A}, Vol.~30, 1979, pp. 353--367.
+
+\bibitem[{Manning(2009)}]{manning_analysis_2009}
+Manning, R.~M., \enquote{Analysis of {Electromagnetic} {Wave} {Propagation} in
+  a {Magnetized} {Re}-{Entry} {Plasma} {Sheath} {Via} the {Kinetic}
+  {Equation},} \emph{NASA Technical Manual}, , No. 2009-216096, 2009, pp.
+  1--40.
 
 \bibitem[{Gracia-Bondía et~al.(2001)Gracia-Bondía, Varilly, and
   Figueroa}]{gracia-bondia_elements_2001}
@@ -122,7 +134,9 @@ Marsden, J.~E., and Weinstein, A., \enquote{The {Hamiltonian} structure of the
 \newblock \doi{10.1016/0167-2789(82)90043-4},
   \urlprefix\url{https://www.sciencedirect.com/science/article/pii/0167278982900434}.
 
-\bibitem[{Pausader()}]{pausader_relativistic_nodate}
-Pausader, B., \enquote{{RELATIVISTIC} {FLUID} {EQUATIONS},} ????, p.~16.
+\bibitem[{Pausader(2013)}]{pausader_relativistic_2013}
+Pausader, B., \enquote{{RELATIVISTIC} {FLUID} {EQUATIONS},} , 2013.
+\newblock
+  \urlprefix\url{https://www.semanticscholar.org/paper/RELATIVISTIC-FLUID-EQUATIONS-Pausader/4e9e2b6d1dac0834d58ed0ff909cbc1a11da3196}.
 
 \end{thebibliography}

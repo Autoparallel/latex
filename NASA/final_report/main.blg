@@ -6,50 +6,47 @@ The style file: new-aiaa.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: final_report_bib.bib
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
-Warning--empty journal in iversen_cauchy_1989
-Warning--empty journal in westenholz_topological_nodate
-Warning--empty year in westenholz_topological_nodate; set to ????
-Warning--empty journal in pausader_relativistic_nodate
-Warning--empty year in pausader_relativistic_nodate; set to ????
-You've used 18 entries,
+Warning--empty journal in schwarz_hodge_1995
+Warning--there's a number but no volume in manning_analysis_2009
+You've used 20 entries,
             3319 wiz_defined-function locations,
-            811 strings with 9136 characters,
-and the built_in function-call counts, 9847 in all, are:
-= -- 768
-> -- 238
-< -- 38
-+ -- 110
-- -- 69
-* -- 802
-:= -- 1340
-add.period$ -- 48
-call.type$ -- 18
-change.case$ -- 82
-chr.to.int$ -- 22
-cite$ -- 23
-duplicate$ -- 868
-empty$ -- 835
-format.name$ -- 121
-if$ -- 2018
+            830 strings with 9655 characters,
+and the built_in function-call counts, 10879 in all, are:
+= -- 863
+> -- 252
+< -- 44
++ -- 118
+- -- 73
+* -- 873
+:= -- 1484
+add.period$ -- 54
+call.type$ -- 20
+change.case$ -- 90
+chr.to.int$ -- 24
+cite$ -- 22
+duplicate$ -- 959
+empty$ -- 925
+format.name$ -- 127
+if$ -- 2234
 int.to.chr$ -- 3
-int.to.str$ -- 19
-missing$ -- 152
-newline$ -- 80
-num.names$ -- 55
-pop$ -- 297
+int.to.str$ -- 21
+missing$ -- 166
+newline$ -- 88
+num.names$ -- 61
+pop$ -- 306
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 80
 quote$ -- 0
-skip$ -- 328
+skip$ -- 370
 stack$ -- 0
-substring$ -- 503
-swap$ -- 501
-text.length$ -- 22
+substring$ -- 577
+swap$ -- 558
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
-warning$ -- 5
-while$ -- 65
+type$ -- 112
+warning$ -- 2
+while$ -- 74
 width$ -- 0
-write$ -- 244
-(There were 5 warnings)
+write$ -- 272
+(There were 2 warnings)

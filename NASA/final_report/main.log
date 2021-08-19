@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  18 AUG 2021 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  19 AUG 2021 12:44
 entering extended mode
 **./main.tex
 (main.tex
@@ -1908,45 +1908,39 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.2pt on input line 33.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 33.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 34.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 34.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 34.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 35.
+(Font)              scaled to size 10.0pt on input line 34.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 59.
+(Font)              scaled to size 12.0pt on input line 58.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 59.
+(Font)              scaled to size 12.0pt on input line 58.
  [1
 
 {C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 76.
+(Font)              scaled to size 10.0pt on input line 75.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 7.3pt on input line 76.
+(Font)              scaled to size 7.3pt on input line 75.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 5.5pt on input line 76.
+(Font)              scaled to size 5.5pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 82.
+(Font)              scaled to size 5.5pt on input line 81.
 
 [2] [3]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 7.3pt on input line 212.
+(Font)              scaled to size 7.3pt on input line 211.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 5.5pt on input line 212.
- [4] [5] [6] [7]
+(Font)              scaled to size 5.5pt on input line 211.
+ [4] [5] [6] [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 383.
+(hyperref)                removing `math shift' on input line 436.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 383.
+(hyperref)                removing `math shift' on input line 436.
 
-[8] [9] [10] (main.bbl
+[9] [10] [11] [12] (main.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.0pt on input line 1.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
@@ -1957,9 +1951,9 @@ LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 14.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 9.0pt on input line 14.
- [11]) [12] (main.aux)
+ [13]) [14] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1B46D0B06640651A0A244BE35F0A846E;1828.
+(rerunfilecheck)             Checksum: 6C18857C7825AF2CDAFFB50E61FDDDEE;1834.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1967,13 +1961,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 34555 strings out of 479799
- 696984 string characters out of 2867787
- 987243 words of memory out of 3000000
- 50428 multiletter control sequences out of 15000+200000
- 668225 words of font info for 322 fonts, out of 3000000 for 9000
+ 34481 strings out of 479799
+ 695112 string characters out of 2867787
+ 988742 words of memory out of 3000000
+ 50329 multiletter control sequences out of 15000+200000
+ 663175 words of font info for 326 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,128p,1229b,973s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 99i,20n,128p,1209b,933s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/newtx/ntx-o
 t1-tlf.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/ne
 wtx/ntx-ec-tlf.enc}{C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/
@@ -1998,9 +1992,9 @@ rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/newtx/ztmb.pfb><C
 :/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/newtx/ztmr.p
 fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/newtx/z
 tmri.pfb>
-Output written on main.pdf (12 pages, 376404 bytes).
+Output written on main.pdf (14 pages, 393692 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 157 named destinations out of 1000 (max. 500000)
- 43301 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 530 PDF objects out of 1000 (max. 8388607)
+ 172 named destinations out of 1000 (max. 500000)
+ 42277 words of extra memory for PDF output out of 42996 (max. 10000000)
 
