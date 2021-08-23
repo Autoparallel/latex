@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  19 AUG 2021 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  19 AUG 2021 20:47
 entering extended mode
 **./main.tex
 (main.tex
@@ -1963,7 +1963,7 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  34481 strings out of 479799
  695112 string characters out of 2867787
- 988742 words of memory out of 3000000
+ 989741 words of memory out of 3000000
  50329 multiletter control sequences out of 15000+200000
  663175 words of font info for 326 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1992,7 +1992,7 @@ rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/newtx/ztmb.pfb><C
 :/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/newtx/ztmr.p
 fb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/newtx/z
 tmri.pfb>
-Output written on main.pdf (14 pages, 393692 bytes).
+Output written on main.pdf (14 pages, 393709 bytes).
 PDF statistics:
  530 PDF objects out of 1000 (max. 8388607)
  172 named destinations out of 1000 (max. 500000)
