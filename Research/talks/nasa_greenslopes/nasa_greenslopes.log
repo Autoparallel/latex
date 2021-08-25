@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.22)  25 AUG 2021 05:38
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.22)  23 AUG 2021 16:35
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 entering extended mode
 **./nasa_greenslopes.tex
 (nasa_greenslopes.tex
@@ -780,11 +784,19 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
+<<<<<<< HEAD
 )
 \c@svg@param@lastpage=\count326
 \svg@box=\box75
 \c@svg@param@currpage=\count327
 )
+=======
+)
+\c@svg@param@lastpage=\count326
+\svg@box=\box75
+\c@svg@param@currpage=\count327
+)
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/transparent\transpa
 rent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
@@ -1386,11 +1398,19 @@ Library (tcolorbox): 'tcbmagazine.code.tex' version '4.51'
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbvignet
 te.code.tex
 Library (tcolorbox): 'tcbvignette.code.tex' version '4.51'
+<<<<<<< HEAD
 
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer
 /tikz/libraries\tikzlibraryfadings.code.tex
 File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
+=======
+
+(C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer
+/tikz/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pgf
 libraryfadings.code.tex
 File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -2512,6 +2532,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 20.
 
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty
 Package: babel 2021/07/22 3.63 The Babel package
+<<<<<<< HEAD
 
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def
 File: babel.def 2021/07/22 3.63 Babel common definitions
@@ -2533,6 +2554,29 @@ LaTeX Info: Redefining \textlatin on input line 730.
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
+=======
+
+(C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def
+File: babel.def 2021/07/22 3.63 Babel common definitions
+\babel@savecnt=\count437
+\U@D=\dimen382
+\l@unhyphenated=\language79
+
+(C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.de
+f)
+\bbl@readstream=\read7
+)
+LaTeX Info: Redefining \textlatin on input line 730.
+\bbl@dirlevel=\count438
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\UKeng
 lish.ldf
 Language: UKenglish 2017/06/06 v3.3r English support from the babel system
@@ -2659,11 +2703,19 @@ Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\refcount.s
 ty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+<<<<<<< HEAD
 )
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitlestring\ge
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
+=======
+)
+(C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitlestring\ge
+ttitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 \c@section@level=\count445
 )
 LaTeX Info: Redefining \ref on input line 21.
@@ -2777,14 +2829,21 @@ Package pdftex.def Info: UiB-images/colorado-state-university-logo.png  used on
 
 {C:/Users/Colin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./UiB-image
 s/colorado-state-university-logo.png>] (nasa_greenslopes.nav)
+<<<<<<< HEAD
 <figures/NASA_logo.png, id=75, 2458.18375pt x 2055.68pt>
 File: figures/NASA_logo.png Graphic file (type png)
 <use figures/NASA_logo.png>
 Package pdftex.def Info: figures/NASA_logo.png  used on input line 32.
+=======
+<figures/NASA_logo.svg.png, id=75, 2458.18375pt x 2055.68pt>
+File: figures/NASA_logo.svg.png Graphic file (type png)
+<use figures/NASA_logo.svg.png>
+Package pdftex.def Info: figures/NASA_logo.svg.png  used on input line 32.
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 (pdftex.def)             Requested size: 122.91638pt x 102.79001pt.
  [2
 
- <./figures/NASA_logo.png>] [3
+ <./figures/NASA_logo.svg.png>] [3
 
 ]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
@@ -2826,8 +2885,13 @@ Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/8'
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/6'
 (microtype)             (new value: 6.0pt) on input line 50.
 LaTeX Font Info:    Trying to load font information for U+euf on input line 50.
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 (C:\Users\Colin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -2838,6 +2902,7 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 ) [4
 
 ] [5
+<<<<<<< HEAD
 
 ]
 <figures/gauss_i.png, id=108, 216.81pt x 166.82326pt>
@@ -2872,12 +2937,14 @@ Package pdftex.def Info: figures/faraday.png  used on input line 109.
 ures/faraday.png>] [7
 
 ] [8
+=======
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 
-] [9
+] [6
 
-] [10
+] [7
 
-] [11
+] [8
 
 ]
 \tf@nav=\write7
@@ -2891,6 +2958,7 @@ ures/faraday.png>] [7
 
  (nasa_greenslopes.aux)
 Package rerunfilecheck Info: File `nasa_greenslopes.out' has not changed.
+<<<<<<< HEAD
 (rerunfilecheck)             Checksum: 34092D614508F8190396CF5F2EE55A49;518.
  ) 
 Here is how much of TeX's memory you used:
@@ -2899,12 +2967,23 @@ Here is how much of TeX's memory you used:
  1743194 words of memory out of 3000000
  69480 multiletter control sequences out of 15000+600000
  488602 words of font info for 140 fonts, out of 8000000 for 9000
+=======
+(rerunfilecheck)             Checksum: 16C8991DB5CD79745384F28FFCEDA516;518.
+ ) 
+Here is how much of TeX's memory you used:
+ 52631 strings out of 478868
+ 1208005 string characters out of 2846879
+ 1739195 words of memory out of 3000000
+ 69378 multiletter control sequences out of 15000+600000
+ 457765 words of font info for 99 fonts, out of 8000000 for 9000
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
  1141 hyphenation exceptions out of 8191
  128i,11n,124p,752b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
 c}<C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmmi10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr10.pfb><C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fo
+<<<<<<< HEAD
 nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Colin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Colin/App
@@ -2918,4 +2997,16 @@ PDF statistics:
  210 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)
  44281 words of extra memory for PDF output out of 51595 (max. 10000000)
+=======
+nts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Colin/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Colin/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Colin/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Colin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb>
+Output written on nasa_greenslopes.pdf (8 pages, 348911 bytes).
+PDF statistics:
+ 168 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 28389 words of extra memory for PDF output out of 29859 (max. 10000000)
+>>>>>>> parent of 0b16825 (saving laptop 8/24/21 11:09am)
 
