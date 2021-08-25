@@ -1,6 +1,7 @@
-\babel@toc {UKenglish}{}
+\babel@toc {english}{}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{Lorentzian Geometry}{7}{0}{2}
-\beamer@sectionintoc {3}{Poincar\'e Group}{16}{0}{3}
-\beamer@sectionintoc {4}{de Rham (Co)homology}{26}{0}{4}
-\beamer@sectionintoc {5}{Topological Electromagnetism}{31}{0}{5}
+\beamer@sectionintoc {2}{Lorentzian Geometry}{8}{0}{2}
+\beamer@sectionintoc {3}{Poincar\'e Group}{17}{0}{3}
+\beamer@sectionintoc {4}{de Rham (Co)homology}{29}{0}{4}
+\beamer@sectionintoc {5}{Topological Electromagnetism}{33}{0}{5}
+\beamer@sectionintoc {6}{Conclusions and questions}{41}{0}{6}
