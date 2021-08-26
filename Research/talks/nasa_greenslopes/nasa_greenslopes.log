@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  25 AUG 2021 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  26 AUG 2021 09:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,16 +1032,12 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \colbreak@box=\box86
 \mc@col@check@num=\count188
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
-Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
-)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/marvosym/marvosym.sty
 Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
-\symwasy=\mathgroup7
+\symwasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
 )
@@ -1519,10 +1515,10 @@ File: tikzlibrarypositioning.code.tex 2019/05/09 v3.1.3 (3.1.3)
 s/tikzlibraryscopes.code.tex
 File: tikzlibraryscopes.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )
-\symMnLargeSymbols=\mathgroup8
+\symMnLargeSymbols=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `MnLargeSymbols' in version `bold'
 (Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
-47.
+46.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
@@ -1922,9 +1918,7 @@ Grid set 16 x 16 = 28.45274pt x 16.00467pt
 TextBlockOrigin set to 0pt x 0pt
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/aobs-tikz/tikzlibraryoverlay-beam
-er-styles.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty))
-(./beamerthemeUiB.sty
+er-styles.code.tex)) (./beamerthemeUiB.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/silence/silence.sty
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
 sages
@@ -2501,10 +2495,14 @@ LaTeX Info: Redefining \nameref on input line 21.
 \@outlinefile=\write8
 \openout8 = `nasa_greenslopes.out'.
 
-\symnumbers=\mathgroup9
-\sympureletters=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 21.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 21.
+\symnumbers=\mathgroup8
+\sympureletters=\mathgroup9
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 21.
+(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 21.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> T1/lmr/bx/n on input line 21.
@@ -2530,7 +2528,7 @@ LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  T1/lmr/m/it --> T1/lmr/bx/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/bx/n on input line 21.
+(Font)                  OT1/cmss/bx/n --> T1/lmr/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  T1/lmr/bx/n --> T1/lmr/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
@@ -2611,6 +2609,10 @@ Package pdftex.def Info: figures/NASA_logo.png  used on input line 38.
  <./figures/NASA_logo.png>] [3
 
 ]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Try loading font information for U+msa on input line 57.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -2625,11 +2627,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 57.
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for U+wasy on input line 57.
 
@@ -2737,7 +2734,7 @@ Package pdftex.def Info: figures/foliations2.png  used on input line 215.
 <figures/euclidean.png, id=242, 599.99156pt x 275.52937pt>
 File: figures/euclidean.png Graphic file (type png)
 <use figures/euclidean.png>
-Package pdftex.def Info: figures/euclidean.png  used on input line 293.
+Package pdftex.def Info: figures/euclidean.png  used on input line 295.
 (pdftex.def)             Requested size: 346.69246pt x 159.21434pt.
 
 [22
@@ -2746,7 +2743,7 @@ Package pdftex.def Info: figures/euclidean.png  used on input line 293.
 <figures/rigid_body.png, id=250, 247.52475pt x 222.8325pt>
 File: figures/rigid_body.png Graphic file (type png)
 <use figures/rigid_body.png>
-Package pdftex.def Info: figures/rigid_body.png  used on input line 303.
+Package pdftex.def Info: figures/rigid_body.png  used on input line 305.
 (pdftex.def)             Requested size: 216.68196pt x 195.07315pt.
  [23
 
@@ -2754,17 +2751,17 @@ Package pdftex.def Info: figures/rigid_body.png  used on input line 303.
 <figures/lorentzian.png, id=258, 599.99156pt x 275.52937pt>
 File: figures/lorentzian.png Graphic file (type png)
 <use figures/lorentzian.png>
-Package pdftex.def Info: figures/lorentzian.png  used on input line 312.
+Package pdftex.def Info: figures/lorentzian.png  used on input line 314.
 (pdftex.def)             Requested size: 346.69246pt x 159.21434pt.
  [24
 
  <./figures/lorentzian.png>]
 File: figures/lorentzian.png Graphic file (type png)
 <use figures/lorentzian.png>
-Package pdftex.def Info: figures/lorentzian.png  used on input line 328.
+Package pdftex.def Info: figures/lorentzian.png  used on input line 330.
 (pdftex.def)             Requested size: 346.69246pt x 159.21434pt.
 
-Overfull \vbox (47.45293pt too high) detected at line 328
+Overfull \vbox (48.06128pt too high) detected at line 330
  []
 
 [25
@@ -2775,7 +2772,7 @@ Overfull \vbox (47.45293pt too high) detected at line 328
 <figures/parallel_transport.png, id=280, 220.825pt x 220.825pt>
 File: figures/parallel_transport.png Graphic file (type png)
 <use figures/parallel_transport.png>
-Package pdftex.def Info: figures/parallel_transport.png  used on input line 363
+Package pdftex.def Info: figures/parallel_transport.png  used on input line 365
 .
 (pdftex.def)             Requested size: 86.67145pt x 86.67062pt.
  [27
@@ -2797,7 +2794,7 @@ Package pdftex.def Info: figures/parallel_transport.png  used on input line 363
 <figures/top_em.png, id=329, 642.4pt x 429.605pt>
 File: figures/top_em.png Graphic file (type png)
 <use figures/top_em.png>
-Package pdftex.def Info: figures/top_em.png  used on input line 453.
+Package pdftex.def Info: figures/top_em.png  used on input line 456.
 (pdftex.def)             Requested size: 216.68196pt x 144.90349pt.
  [34
 
@@ -2813,7 +2810,7 @@ Package pdftex.def Info: figures/top_em.png  used on input line 453.
 <figures/helical_path.png, id=363, 1667.22874pt x 903.375pt>
 File: figures/helical_path.png Graphic file (type png)
 <use figures/helical_path.png>
-Package pdftex.def Info: figures/helical_path.png  used on input line 521.
+Package pdftex.def Info: figures/helical_path.png  used on input line 524.
 (pdftex.def)             Requested size: 281.6839pt x 152.62059pt.
  [39
 
@@ -2824,10 +2821,10 @@ Package pdftex.def Info: figures/helical_path.png  used on input line 521.
 ] [42
 
 ]
-<figures/gauss_linking.png, id=390, 220.825pt x 220.825pt>
+<figures/gauss_linking.png, id=392, 220.825pt x 220.825pt>
 File: figures/gauss_linking.png Graphic file (type png)
 <use figures/gauss_linking.png>
-Package pdftex.def Info: figures/gauss_linking.png  used on input line 576.
+Package pdftex.def Info: figures/gauss_linking.png  used on input line 580.
 (pdftex.def)             Requested size: 86.67145pt x 86.67062pt.
  [43
 
@@ -2843,31 +2840,33 @@ Package pdftex.def Info: figures/gauss_linking.png  used on input line 576.
 \tf@snm=\write11
 \openout11 = `nasa_greenslopes.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 588.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 588.
 
 (./nasa_greenslopes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 588.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 588.
 Package rerunfilecheck Info: File `nasa_greenslopes.out' has not changed.
 (rerunfilecheck)             Checksum: A369622ECABED85D14DBBBF4244A872D;333.
  ) 
 Here is how much of TeX's memory you used:
- 57733 strings out of 492609
- 1300027 string characters out of 6129048
- 1617028 words of memory out of 5000000
- 60429 multiletter control sequences out of 15000+600000
- 683416 words of font info for 175 fonts, out of 8000000 for 9000
+ 57686 strings out of 492609
+ 1298774 string characters out of 6129048
+ 1616946 words of memory out of 5000000
+ 60405 multiletter control sequences out of 15000+600000
+ 699906 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,123p,809b,692s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/20
@@ -2879,13 +2878,14 @@ lic/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr1
 /local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fon
-ts/type1/public/lm/lmri7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/lm/lmri8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb>
-Output written on nasa_greenslopes.pdf (44 pages, 1404197 bytes).
+ts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/p
+ublic/lm/lmri7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lm
+ri8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
+Output written on nasa_greenslopes.pdf (44 pages, 1432523 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 369 compressed objects within 4 object streams
+ 513 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
  95 named destinations out of 1000 (max. 500000)
- 34614 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 37174 words of extra memory for PDF output out of 42996 (max. 10000000)
 

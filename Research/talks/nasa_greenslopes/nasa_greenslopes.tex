@@ -66,7 +66,7 @@
 \vfill
 \end{frame}
 
-\begin{frame}{Maxwell's homogeneous equations}
+\begin{frame}{Maxwell's inhomogeneous equations}
     \begin{columns}[c] 
 
     \column{.45\textwidth}
@@ -103,7 +103,7 @@
     
 \end{frame}
 
-\begin{frame}{Maxwell's inhomogeneous equations}
+\begin{frame}{Maxwell's homogeneous equations}
     \begin{columns}[c] 
 
     \column{.45\textwidth}
@@ -184,8 +184,8 @@ Instead, take $\R^4$ with basis $\blade{e}_0,\cdots,\blade{e}_3$ so that
 \begin{itemize}
 	\item $\blade{e}_0^2 = -1$ (temporal)
 	\item $\blade{e}_i^2 = +1$ for $i=1,2,3$ (spatial)
-	\item $\blade{e}_\mu \cdot \blade{e}_\nu = 0$ if $\mu \neq \nu$ (orthogonal)
-	\item Build $\G_{1,3}$ from these definitions.
+	\item $\blade{e}_\mu \cdot \blade{e}_\nu = 0$ if $\mu \neq \nu$, $\mu,\nu = 0,1,2,3$  (orthogonal)
+	\item Build $\G_{1,3}$ from this basis
 \end{itemize}
 \vfill
 \end{frame}
@@ -203,10 +203,10 @@ There exist \boldgreen{null vectors} $\blade{c}$ so that $\blade{c}\cdot \blade{
 \vspace*{.5cm}
 \begin{columns}[c]
 \column{.45\textwidth}
-~~~~~~~~~~~~~~~~~~~ Euclidean 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Euclidean 
 
 \column{.45 \textwidth}
-~~~~~~~Lorentzian
+~~~~~~Lorentzian
 \end{columns}
 \begin{center}
     \includegraphics[scale=.5]{figures/foliations2.png}
@@ -217,14 +217,14 @@ There exist \boldgreen{null vectors} $\blade{c}$ so that $\blade{c}\cdot \blade{
 \begin{frame}{Question}
     \vfill
     \center
-    What are the symmetries of Euclidean space?
+    \Large What are the symmetries of Euclidean space?
     \vfill
 \end{frame}
 
 \begin{frame}{Question}
     \vfill
     \center
-    What are the symmetries of \boldgreen{Lorentzian} space?
+    \Large What are the symmetries of \boldgreen{Lorentzian} space?
     \vfill
 \end{frame}
 
@@ -235,22 +235,23 @@ There exist \boldgreen{null vectors} $\blade{c}$ so that $\blade{c}\cdot \blade{
 
 \begin{frame}{}
 \vfill
-\huge \centering We can study geometry and topology through symmetry.
+\Large \centering We can study geometry and topology through symmetry.
 \vfill
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Symmetries of $\G_n$}
 \vfill
-Want to see what deformations preserve the algebraic structure $\G_n$
 \begin{itemize}
 	\item Rotations and reflections via the orthogonal group $\mathrm{O}(n)$ and special orthogonal group $\mathrm{SO}(n)$.
-	\item Translations (if we keep track of base points) via the group $\R^n$.
-	\item These symmetries combine to form \boldgreen{Euclidean group} $\mathrm{E}(n) = \R^n \rtimes \mathrm{O}(n)$ and \boldgreen{special Euclidean group} $\mathrm{SE}(n)=\R^n \rtimes \mathrm{SO}(n)$
+	\item Translations via the group $\R^n$.
+	\item Combining yields the \boldgreen{Euclidean group} $\mathrm{E}(n) = \R^n \rtimes \mathrm{O}(n)$
+	\item Removing reflections yields the \boldgreen{special Euclidean group} $\mathrm{SE}(n)=\R^n \rtimes \mathrm{SO}(n)$
+	\item One could replace $\mathrm{O}(n)$ with the conformal group $\mathrm{CO}(n)$ and preserve $\G_n$
 \end{itemize}
 \vfill
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Rotations and reflections in $\G_n$}
 \vfill
 \begin{itemize}
 	\item Given a unit vector $\blade{n}$ and multivector $A$, we have 
@@ -270,22 +271,23 @@ Want to see what deformations preserve the algebraic structure $\G_n$
 \begin{frame}{Pin and Spin}
 \vfill
 \begin{itemize}
-	\item Unit vectors generate the group $\blade{n}\in \mathrm{Pin}(n)$ and define a an element $\mathsf{T}\in \mathrm{O}(n)$ by
+	\item Unit vectors generate the group $\blade{n}\in \mathrm{Pin}(n)$ and define a an element $\underline{T}\in \mathrm{O}(n)$ by
 	\[
-	\mathsf{T}(\blade{v}) = \blade{n} \blade{v} \blade{n}^\dagger
+	\underline{T}(\blade{v}) = \blade{n} \blade{v} \blade{n}^\dagger
 	\]
-	so the mapping $\blade{n}\mapsto \mathsf{T}$ is 2-to-1.
-	\item Likewise, $\blade{nm} \in \mathrm{Spin}(n)$ defines $\mathsf{R} \in \mathrm{SO}(n)$ by
+	so the mapping $\blade{n}\mapsto \underline{T}$ is 2-to-1.
+	\item Likewise, $R=\blade{nm} \in \mathrm{Spin}(n)$ defines $\underline{R} \in \mathrm{SO}(n)$ by
 	\[
-	\mathsf{R}(\blade{v}) = \blade{nm}\blade{v}(\blade{nm})^\dagger.
+	\underline{R}(\blade{v}) = R\blade{v}R^\dagger.
 	\]
+	\item We refer to the $R\in \sping(n)$ as \boldgreen{unit spinors}
 \end{itemize}
 \vfill
 \end{frame}
 
 \begin{frame}{}
 \vfill
-\centering Both $\sping(n)$ and $\mathrm{Pin}(n)$ lead to motion on the level sets
+\centering Orbits of vectors under action of $\sping(n)$ and $\mathrm{Pin}(n)$ yield the level sets
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\textwidth]{figures/euclidean.png}
@@ -294,7 +296,7 @@ Want to see what deformations preserve the algebraic structure $\G_n$
 
 \begin{frame}{}
 \vfill
-Hence, we can take $\R^n \rtimes \sping(n)$ to be the rigid symmetries of Euclidean space.
+\centering Hence, we can take $\R^n \rtimes \sping(n)$ to be the rigid symmetries of Euclidean space.
 \begin{figure}[H]
 \centering
 \includegraphics[width=.5\textwidth]{figures/rigid_body.png}
@@ -304,7 +306,7 @@ Hence, we can take $\R^n \rtimes \sping(n)$ to be the rigid symmetries of Euclid
 
 \begin{frame}{}
 \vfill
-\centering Define $\sping(1,3)$ and $\mathrm{Pin}(1,3)$ analogously to see motion on the Lorentzian level sets
+\centering Defining $\sping(1,3)$ and $\mathrm{Pin}(1,3)$ analogously lead to level sets via orbits
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\textwidth]{figures/lorentzian.png}
@@ -317,8 +319,8 @@ Hence, we can take $\R^n \rtimes \sping(n)$ to be the rigid symmetries of Euclid
 	\item One sheeted hyperboloids are inaccessible regions of space (often called \boldgreen{spacelike})
 	\item Two sheeted hyperboloids represent past and future directions (often called \boldgreen{timelike})
 	\item Cone consists of all null vectors $\blade{c}\cdot \blade{c} = 0$ which represents \boldgreen{light}.
-	\item A particle with rest mass $m$ has 4-momentum $m\blade{v}$ and $\blade{v}\cdot \blade{v}=-1$
-	\item The future hyperboloids are foliated by mass.
+	\item A particle with rest mass $m$ has 4-momentum $\blade{p}=m\blade{v}$ and $\blade{p}\cdot \blade{p}=-m^2$
+	\item $\implies$ future/past hyperboloids are foliated by mass.
 \end{itemize}
 \begin{figure}[H]
 \centering
@@ -336,7 +338,7 @@ Hence, we can take $\R^n \rtimes \sping(n)$ to be the rigid symmetries of Euclid
 	\[
 	\grad A = \underbrace{\grad \cdot A}_{\textrm{grade lowering}} + \underbrace{\grad \wedge A}_{\textrm{grade raising}}
 	\]
-	\item Directional (or covariant derivative)
+	\item Directional (or covariant) derivative
 	\[
 	\nabla_{\blade{v}} A \coloneqq (\blade{v}\cdot \grad)A.
 	\]
@@ -347,24 +349,24 @@ Hence, we can take $\R^n \rtimes \sping(n)$ to be the rigid symmetries of Euclid
 \begin{frame}{}
 \vfill
 \begin{itemize}
-	\item Motion of a relativistic particle is a curve $\gamma$ in the \boldgreen{Poincar\'e group}
+	\item Dynamics of a relativistic particle is a curve $\gamma$ in the \boldgreen{Poincar\'e group}
 \[
 \A(1,3) \coloneqq \R^{1,3}\rtimes \sping^+(1,3)
 \]
 
         \item Since mass is preserved $\grad ({\blade{v}} \cdot {\blade{v}}) = 0 ~\implies~ \nabla_{\blade{v}} {\blade{v}} =  {\blade{v}}\cdot \underbrace{(\grad \wedge {\blade{v}})}_{\textrm{vorticity }\omega}$
         \item Optimal transport of 4-velocity is given by projection onto the vorticity plane
-        \begin{figure}
-            \centering
-            \includegraphics[width=.2\textwidth]{figures/parallel_transport.png}
-        \end{figure}
         \end{itemize}
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=.2\textwidth]{figures/parallel_transport.png}
+                \end{figure}
 \vfill
 \end{frame}
 
-\begin{frame}{Infinitesimal motions}
+\begin{frame}{Infinitesimal dynamics}
 \vfill
-Motions on a Lie group are given by infinitesimals which are elements of the Lie algebra.
+Dynamics on a Lie group come from infinitesimals which are elements of the Lie algebra.
 \begin{itemize}
 	\item Lie algebra of $\A(1,3)$ is the extension $\mathfrak{a}(1,3)=\R^{1,3} \rtimes \spina^+(1,3)$
 	\item $\spina(1,3) = \mathcal{T} \oplus \mathcal{S}$ where
@@ -413,11 +415,12 @@ Motions on a Lie group are given by infinitesimals which are elements of the Lie
     \[
     T[-] = \int_M (T_k,-)\mu.
     \]
-    \item The boundary operator acts accordingly (on compactly supported fields)
+    \item The boundary operator acts (on compactly supported fields)
     \[
     \partial T[A] = T[\grad \wedge A] = \int_M(T_k,\grad \wedge A_{k-1})\mu = \int_M (\grad \cdot T_k,A_{k-1})\mu
     \]
-\end{itemize}
+    \item So $H_k^{dR} = \ker \grad \cdot_k / \im \grad \cdot_{k+1}$
+    \end{itemize}
 \vfill
 \end{frame}
 
@@ -431,7 +434,7 @@ Motions on a Lie group are given by infinitesimals which are elements of the Lie
         We have $H_k\cong H^{n-k}$ by the dual $\perp$. %this is true for forms with compact support
     \end{theorem}
     
-    \begin{theorem}[Periods]
+    \begin{theorem}[Potentials]
     Let $A$ be a $k$-vector, then if $T[A]=0$ for all $T \in H_k(M)$ we have $A$ is potential,  $A=\grad \wedge H$.
     \end{theorem}
 
@@ -455,13 +458,13 @@ There are four physical postulates for electromagnetism that we write as topolog
 \begin{frame}{Axiom 1: Conservation of charge}
 \vfill   
     \begin{itemize}
-    \item Current density $\blade{J}_3$ must flow through boundaries 4-currents $N^4$ so
+    \item Current density $\blade{J}_3$ must flow through boundaries of regions $N^4$ so
     \[
     0=\int_{\partial N^4} \blade{J}_3 \cdot dX_3 \underbrace{=}_{\textrm{de Rham}} {\partial N^4}[ \blade{J}_3]={N^4}[\grad \wedge \blade{J}_3]
     \]
     so $\blade{J}_3$ is closed since $N^4$ is arbitrary
     \item Hence, for co-closed 3-current $N^3$ we have ${N^3}[\blade{J}_3]=0$
-    \item Thus magnetic excitation $H$ is the potential $\grad \wedge H=\blade{J}_3$ by periods theorem
+    \item Thus magnetic excitation $H$ is the potential $\grad \wedge H=\blade{J}_3$ by potentials theorem
     \item By Poincar\'e, $\blade{J}=\blade{J}_3^\perp = (\grad \wedge H)^\perp = \grad \cdot H^\perp$ defines a homology class in $H_1(M)$
 \end{itemize}
 \vfill
@@ -472,7 +475,7 @@ There are four physical postulates for electromagnetism that we write as topolog
 \begin{itemize}
 	\item The electromagnetic field $F$ defines a cohomology class in $H^2(M)$ by taking a co-closed 2-current $N^2$ and noting
 	    \[
-	    \int_{N^2} F \cdot dX_2 = 0 
+	    0=\int_{N^2} F \cdot dX_2 = N^2[F] 
 	    \]
 	    implies $\grad \wedge F=0$.
 	    \item Note $F$ is not necessarily potential!
@@ -498,11 +501,11 @@ There are four physical postulates for electromagnetism that we write as topolog
 \begin{frame}{Axiom 4: Lorentz force}
 \vfill
 \begin{itemize}
-	\item The motion of a particle with 4-velocity $\blade{v}$ in a field $F$ is
+	\item Transport of charged particle with charge $q$ and 4-velocity $\blade{v}$ in a field $F$ is
 	    \[
 	    \underbrace{\nabla_{\blade{v}}\blade{v} = \frac{q}{m} \blade{v} \cdot F}_{\textrm{Faraday transport}}
 	    \]
-	\item $F$ plays the role of vorticity in the the Faraday transport equation.
+	\item $F$ plays the role of vorticity $\omega$ in Fermi transport equation
 \end{itemize}
 \vfill
 \end{frame}
@@ -526,9 +529,10 @@ There are four physical postulates for electromagnetism that we write as topolog
     \begin{itemize}
         \item Since $\blade{v}\cdot\blade{v}$ is constant, velocity at any $\tau$ is given by time varying isometries
     \[
-    \blade{v}(\tau)=\mathsf{R}_\tau(\blade{v}_0)
+    \blade{v}(\tau)=\underline{R}_\tau(\blade{v}_0)
     \]
-    \item Since $R \in \sping(1,3)$ induces $\mathsf{R}(\blade{v}_0)=R\blade{v}_0 R^\dagger$, particle configuration is a curve in the Poincar\'e group 
+    \item $R \in \sping(1,3)$ induces $\underline{R}_\tau(\blade{v}_0)=R(\tau)\blade{v}_0 R(\tau)^\dagger$
+    \item Hence particle motion tracked as curve in the Poincar\'e group 
     \item Fermi-Faraday transport of a spinor is given by $\frac{dR}{d\tau} = FR$
     \end{itemize}
     \vfill
@@ -537,17 +541,16 @@ There are four physical postulates for electromagnetism that we write as topolog
 \section{Conclusions and questions}
 
 \begin{frame}{}
-Things are wrapped up neatly in terms of Poincar\'e group and this can likely be generalized to fluids (plasmas)
+\large This can likely be generalized to charged fluids (plasmas)
 \vfill
     
     \begin{itemize}
-        \item Let $m,q$ be the mass and charge field and $\blade{v}$ the 4-velocity
-        \item Then the current $\blade{J}=q\blade{v}$
+        \item Take $m,q,\blade{v}$ in $\G(M)$ so $\blade{p}=m\blade{v}$ and $\blade{J}=q\blade{v}$
         \item If we allow mass to flow separately from the velocity 
         \[
         \boxed{m\nabla_{\blade{v}}\blade{v} + (\nabla_{\blade{v}}m)\blade{v} = q\blade{v} \cdot \blade{F}}
         \]
-        \item Given EM axioms and the constraint that charge to mass is constant yields
+        \item Given EM axioms and the constraint that \emph{charge to mass is constant} yields
         \[
         \boxed{\grad \cdot \blade{v} = 0}
         \]
@@ -571,6 +574,7 @@ Things are wrapped up neatly in terms of Poincar\'e group and this can likely be
 		\centering
 		\includegraphics[width=.2\textwidth]{figures/gauss_linking.png}
 	\end{figure}
+	\item Can we make any predictions with this formulation?
 \end{itemize}
 \vfill
 \end{frame}
