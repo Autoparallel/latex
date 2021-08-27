@@ -198,7 +198,7 @@ Yes, $\tan(x)$ is periodic.  It has period $\pi$.
     \item Find all solutions to $z^2=1$.
     \item Find all solutions to $z^3=1$.
     \item Find all solutions to $z^4=1$.
-    \item *Find all solutions to $z^n=1$.
+    \item (Challenge) Find all solutions to $z^n=1$.
 \end{enumerate}
 \emph{Hint: each of the above has $n$ solutions for $z^n$.}
 \end{problem}
@@ -283,6 +283,26 @@ This is just asking for the quadratic formula which states
 \lambda = \frac{-b\pm \sqrt{b^2-4ac}}{2a}.
 \]
 This will be important for us in the future. This is why we need complex numbers!
+\end{solution}
+
+\newpage
+
+\begin{problem} 
+(Challenge) In fact, show that you get the above polynomial by taking the guess $f(t)=Ae^{\lambda t}$ where $A,\lambda \in \R$ are real constants.
+\end{problem}
+\begin{solution}
+Take $f(t)=Ae^{\lambda t}$ and let us plug it into the expression 
+\[
+ax''(t)+bx'(t)+cx(t)=0
+\]
+in place of $x(t)$. Doing this, we get
+\begin{align*}
+af''+bf'+cf&=0\\
+\implies a(\lambda^2 Ae^{\lambda t})+b(\lambda Ae^{\lambda t}) + c Ae^{\lambda t} &=0\\
+\implies Ae^{\lambda t} ( a\lambda^2 + b\lambda + c)&=0\\
+\implies f(t)( a\lambda^2 + b\lambda + c)&=0.
+\end{align*}
+Hence, we can actually see that our guess for a function yields a polynomial expression for $\lambda$. Moreover, we will find that $f$ is a solution so long as $\lambda$ actually solves the quadratic equation.
 \end{solution}
 
 \newpage
