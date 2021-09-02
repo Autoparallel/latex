@@ -1,5 +1,5 @@
 
-The complex algebra $\C$ can be generalized in a handful of ways.  Some of which can be found through the use of Clifford algebras and, more specifically, in geometric algebras.  We define the more general Clifford algebras first and realize geometric algebras as particularly nice Clifford algebras with a quadratic form arising from an inner product. Elements of a geometric algebra are known as multivectors and these multivectors carry a wealth of geometric information in their algebraic structure. $\C$ itself can be realized as a special subalgebra of parabivectors in the geometric algebra on $\R^2$ with the Euclidean inner product and the quaternions $\quat$ are realized as an analogous algebra on $\R^3$. In particular, both $\C$ and $\quat$ arise as the 2- and 3-dimensional even Clifford groups $\Gamma^+$ respectively. \todo{reword this paragraph}
+The complex algebra $\C$ can be generalized in a handful of ways.  Some of which can be found through the use of Clifford algebras and, more specifically, in geometric algebras.  We define the more general Clifford algebras first and realize geometric algebras as particularly nice Clifford algebras with a quadratic form arising from a (pseudo) inner product. Elements of a Clifford algebra are known as multivectors and these multivectors carry a wealth of geometric information in their algebraic structure. $\C$ itself can be realized as a subalgebra of spinors in the geometric algebra on $\R^2$ with the Euclidean inner product and the quaternions $\quat$ are realized as an analogous algebra on $\R^3$. Lying inside any $\R^n$ with $n\geq 2$ are copies of $\C$ as (sub)surface spinors.
 
 First, we present a review of Clifford algebras and the relevant notions needed for this work. Those who feel they are familiar with both Clifford and geometric algebras may wish to skim through this subsection and visit \cref{subsec:motivating_example} to review the notation used throughout this manuscript. 
 
@@ -14,61 +14,55 @@ The \emph{Clifford algebra} $C\ell(V,Q)$ is the quotient algebra
 C\ell(V,Q) = \mathcal{T}(V) ~ / ~ \langle \blade{v} \otimes \blade{v} - Q(\blade{v}) \rangle.
 \end{equation}
 \end{definition}
-To see how the tensor product descends to the quotient, we let $\blade{v}_1, \dots, \blade{v}_n$ be an arbitrary basis for $V$, then we can consider the tensor product of basis elements $\blade{v}_i \otimes \blade{v}_j$ which induces a product in the quotient $C\ell(V,Q)$ which we refer to as the \emph{Clifford multiplication}. In this basis, we write this product as concatenation $\blade{v_i}\blade{v_j}$ and define the multiplication by
+To see how the tensor product descends to the quotient, we let $\blade{v}_1, \dots, \blade{v}_n$ be an arbitrary basis for $V$, then we can consider the tensor product of basis elements $\blade{v}_i \otimes \blade{v}_j$ which induces a product in the quotient $C\ell(V,Q)$ which we is commonly called Clifford multiplication but we will simply call this multiplication. In this basis, we write multiplication as concatenation $\blade{v_i}\blade{v_j}$ and we realize the multiplication table
 \begin{equation}
 \label{eq:clifford_multiplication}
 \blade{v}_i \blade{v}_j = \begin{cases} Q(\blade{v}_i) & \textrm{if $i=j$}, \\ \blade{v}_i \wedge \blade{v}_j & \textrm{if $i\neq j$},\end{cases}
 \end{equation}
-where $\wedge$ is the typical exterior product satisfying $\blade{v}\wedge \blade{w} = - \blade{w}\wedge \blade{v}$ for all $\blade{v},\blade{w}\in V$.  As a consequence, the exterior algebra $\bigwedge(V)$ can be realized as a subalgebra of any Clifford algebra over $V$ or as a Clifford algebra with a trivial quadratic form $Q=0$.  
+where $\wedge$ is the exterior product satisfying the antisymmetry condition $\blade{v}\wedge \blade{w} = - \blade{w}\wedge \blade{v}$ for all $\blade{v},\blade{w}\in V$.  As a consequence, the exterior algebra $\bigwedge(V)$ is realized as a subalgebra of any Clifford algebra over $V$ since it is the Clifford algebra with a trivial quadratic form $Q=0$.  
 
-In the case where $V$ has a (pseudo) inner product $g$, we can induce a quadratic form $Q$ by $Q(\blade{v})=g(\blade{v},\blade{v})$. One can recover $g$ from $Q$ by polarization
+In the case where $V$ has a (pseudo) inner product $g$, we can introduce a quadratic form $Q$ by $Q(\blade{v})=g(\blade{v},\blade{v})$. One could also recover a copy of $g$ up to conformal scaling from $Q$ by polarization
 \begin{equation}
 g(\blade{v},\blade{w})=\frac{1}{2} \left(Q(\blade{v})+Q(\blade{w})-Q(\blade{v}-\blade{w})\right).
 \end{equation}
 Clifford algebras constructed this way are special and it motivates their own definition.
 \begin{definition}
-Let $V$ be a vector space with an (pseudo) inner product $g(\cdot,\cdot)$. Then taking $Q(\cdot) = g(\cdot,\cdot)$, the Clifford algebra $C \ell(V,Q)$ is called a \emph{geometric algebra}.
+Let $V$ be a vector space with an (pseudo) inner product $g(-,-)$. Then taking $Q(-) = g(-,-)$, the Clifford algebra $C \ell(V,Q)$ is called a \emph{geometric algebra}.
 \end{definition}
-In general, we put $\G$ and assume the inner product and vector space will be arbitrary, given alongside, or will be clear from context.  For example, when $V=\R^n$ we have the standard orthonormal basis $\blade{e}_1,\dots,\blade{e}_n$ which allows us to neatly define the quadratic form $Q$ from the Euclidean inner product which has coefficients $\delta_{ij}$ with respect to this basis. Since we frequently utilize this geometric algebra, we put $\mathcal{G}_n \coloneqq C\ell(\R^n, |\cdot|)$ to simplify notation.  In broader generality, we do not need to have a definite inner product. For example, we can take an inner product where $p$ vectors square to negative values and $q$ vectors square to positive values which is of interest for those studying curved spacetime. Vectors whose square is negative are \emph{temporal} and those whose square is positive are \emph{spatial}. We put $\G_{p,q}$ for a geometric algebra with $p$ temporal vectors and $q$ spatial vectors where, in particular, $p$ vectors square to $-1$ and $q$ vectors square to 1.. The factor $p$ will return in various different calculations.
+In general, we put $\G$ and assume the inner product and vector space will be arbitrary, given alongside, or will be clear from context. Spaces with positive definite inner products and their associated geometric algebras will be referred to as Euclidean. For example, when $V=\R^n$ we have the standard orthonormal basis $\blade{e}_1,\dots,\blade{e}_n$ which allows us to neatly define the quadratic form $Q$ from the Euclidean inner product which has coefficients $\delta_{ij}$ with respect to this basis. Since we frequently utilize this geometric algebra, we put $\mathcal{G}_n \coloneqq C\ell(\R^n, |\cdot|)$ to simplify notation. 
+
+We also omit the modifier pseudo for inner products as we are completely allowing for nontrivial signature as we do not need to have a definite inner product for this space to be geometric. For example, we can take an inner product where $p$ vectors square to negative values and $q$ vectors square to positive values which is of interest for those studying curved spacetime. Vectors whose square is negative are \emph{temporal} and those whose square is positive are \emph{spatial}. We put $\G_{p,q}$ for a geometric algebra with $p$ temporal vectors and $q$ spatial vectors where, in particular, $p$ vectors square to $-1$ and $q$ vectors square to 1. The factor $p$ will return in various different calculations. For example, the space $\G_{1,3}$ is often referred to as Lorentzian due to its single temporal and three spatial vectors.
 
 Geometric algebras are an old and widely studied topic. For more information, see the classical text \cite{hestenes_clifford_1986} or the more modern text \cite{doran_geometric_2003} which also provides a wide range of applications to physics problems. Both these sources include much of the other necessary preliminaries I cover in the remainder of this section. Finally, the paper \cite{chisolm_geometric_2012} proves many of the useful identities and notation used throughout this paper.
 
 \subsection{Multivectors and grading}
 \todo{fix all vector indices to be not bold}
-Note that $C\ell(V,Q)$ is a $\mathbb{Z}$-graded algebra with elements of grade-0 up to elements of grade-$n$. We refer to grade-0 elements as scalars, grade-1 elements as vectors, grade-2 elements as \emph{bivectors}, grade-$r$ elements as \emph{$r$-vectors}, and grade-$n$ elements as \emph{pseudoscalars}. For example, the pseudoscalar $\blade{\mu} = \blade{v}_1 \wedge \blade{v}_2 \wedge \cdots \wedge \blade{v}_n$ is an $n$-vector we will frequently return to. We denote the space of $r$-vectors by $C\ell(V,Q)^r$. For each grade there is a basis of ${n\choose r}$ \emph{$r$-blades} which are $r$-vectors of the form
+Any Clifford algebra $C\ell(V,Q)$ is a $\mathbb{Z}$-graded algebra with elements of grade-0 up to elements of grade-$n$. We refer to grade-0 elements as scalars, grade-1 elements as vectors, grade-2 elements as \emph{bivectors}, grade-$r$ elements as \emph{$r$-vectors}, and grade-$n$ elements as \emph{pseudoscalars}. In our basis from before, the pseudoscalar $\blade{\mu} = \blade{v}_1 \wedge \blade{v}_2 \wedge \cdots \wedge \blade{v}_n$ is an $n$-vector representing the volume element of this basis. We denote the subspace of $r$-vectors by $C\ell(V,Q)^r$. For each grade there is a basis of ${n\choose r}$ \emph{$r$-blades} induced from our vector basis. These $r$-blades are $r$-vectors of the form
 \begin{equation}
 \label{eq:blade}
 \blade{A_r} = \bigwedge_{j=1}^r \blade{v}_j, ~\textrm{for linearly independent}~ \blade{v}_j \in V,
 \end{equation}
-and we use a boldface of both the character and its subscript to specify that a $r$-vector is a $r$-blade and we note that vectors (since they are $1$-blades) will not use this subscript. Instead, a vector $\blade{v}$ may use a non-boldfaced subscript to reference an index. Briefly, take for example the case where $\dim(V)=3$, then there are ${3\choose 2}=3$ 2-blades that form a basis for the bivectors and one particular choice of a bivector basis would be the following list of 2-blades
+and we use a boldface of both the character and its subscript to specify that a $r$-vector is a $r$-blade and we note that vectors (since they are $1$-blades) will not use this subscript. Instead, a vector $\blade{v}$ may use a non-boldfaced subscript to reference an index and will otherwise be clear from context. For a brief example, let $\dim(V)=3$ then there are ${3\choose 2}=3$ canonical 2-blades that form a basis for the bivectors
 \begin{equation}
 \label{eq:3_dim_basis}
 \blade{B}_{12} = \blade{v}_1 \wedge \blade{v}_2, \quad \blade{B}_{13} = \blade{v}_1 \wedge \blade{v}_3, \quad \blade{B}_{23} = \blade{v}_2 \wedge \blade{v}_3.
 \end{equation}
-We will repeatedly use the notation $\blade{B}_{ij} \coloneqq \blade{v}_i\wedge \blade{v}_j$ and the underlying basis will be clear from context. We refer to an $n-1$-vector as a \emph{pseudovector} and it should be noted that every $n-1$-vector is a blade (see \cref{subsubsec:duality_and_pseudoscalars}). In other literature, some will refer to a $r$-blade as a \emph{simple} or a \emph{decomposable} $r$-vector\todo{citations}. 
+We will repeatedly use the notation $\blade{B}_{ij} \coloneqq \blade{v}_i\wedge \blade{v}_j$ when the basis is known and in this case $\blade{B}_{ij}=-\blade{B}_{ji}$. We refer to an $n-1$-vector as a \emph{pseudovector} and it should be noted that every $n-1$-vector is a blade (see \cref{subsubsec:duality_and_pseudoscalars}). In other literature, some will refer to a $r$-blade as a \emph{simple} or a \emph{decomposable} $r$-vector\todo{citations}. 
 
-In general, an element $A \in C\ell(V,Q)$ is written as a linear combination of basis elements of all possible grades and we refer to $A$ as a \emph{multivector}.  To extract the grade-$r$ components of $A$, we use the \emph{grade projection} for which we have the notation
+In general, an element $A \in C\ell(V,Q)$ is written as a $K$-linear combination of basis elements of all possible grades and we refer to $A$ as a \emph{multivector}.  To extract the grade-$r$ components of $A$, we use the \emph{grade projection} for which we have the notation
 \begin{equation}
 \proj{r}{A} \in C\ell(V,Q)^r
 \end{equation}
-to denote the grade-$r$ components of the multivector $A$ (i.e., $\proj{r}{A} \in C\ell(V,Q)^r$). For the scalar component we put $\proj{}{A}$ and we can note we have the cyclic property
+to denote the grade-$r$ components of the multivector. For the scalar component we put $\proj{}{A}$ and we can note we have the trace-like cyclic property
 \begin{equation}
 \label{eq:cyclic_property}
 \proj{}{AB\cdots CD} = \proj{}{DAB\cdots C}
 \end{equation} 
-Any multivector $A$ can then be given by
-\begin{equation}
-A = \sum_{r=0}^n \proj{r}{A}
-\end{equation}
-which shows the decomposition via the $\mathbb{Z}$-grading
+Since any multivector $A$ can then be given by $A = \sum_{r=0}^n \proj{r}{A}$ we see that we have a decomposition via the $\mathbb{Z}$-grading
 \begin{equation}
 C\ell(V,Q) = \bigoplus_{j=0}^n C\ell(V,Q)^j.
 \end{equation}
-If $A$ contains only components of a single grade, then we say that $A$ is \emph{homogeneous} and if the components are grade-$r$ we put $A_r$ and refer to $A_r$ as a \emph{homogeneous $r$-vector} or simply an \emph{$r$-vector}.  For example, when we refer to vectors we realize them as 1-vectors and likewise we realize bivectors as 2-vectors. Also of interest will be the elements in
-\begin{equation}
- C\ell(V,Q)^{0+2} = C\ell(V,Q)\oplus C\ell(V,Q)^2
-\end{equation}
-which we refer to as \emph{surface spinors}. \todo{Maybe just define these later with the spinors and call these surface spinors}
+If $A$ contains only components of a single grade, then we say that $A$ is \emph{homogeneous} and if the components are grade-$r$ we put $A_r$ to signify this property. 
 
 The Clifford multiplication of vectors defined in \ref{eq:clifford_multiplication} can be extended to multiplication of vectors with homogeneous $r$-vectors.  In particular, given a vector $\blade{v} \in C\ell(V,Q)$ and a homogeneous $r$-vector $A_r \in C\ell(V,Q)$, we have
 \begin{equation}
@@ -107,7 +101,6 @@ This descends to a grade preserving product for bivectors called the \emph{bivec
     A_2 \times B_2 \coloneqq [A_2,B_2] = \proj{2}{A_2 \times B_2}.
 \end{equation}
 
-
 These products are particularly emphasized as many helpful identities used in this paper are phrased using these notions. For example,
 \begin{equation}
 \label{eq:contraction_swap}
@@ -131,7 +124,7 @@ A\cdot B C \equiv (A \cdot B)C,
 \end{equation}
 and extend this to the other products defined in \cref{eq:wedge,eq:left_contraction,eq:right_contraction,eq:commutator_product} as well.
 
-We can also define an inner product on multivector fields that captures that mimics Euclidean inner product on structure of $\R^{2^n}$, i.e., treating each of the basis blades as independent vectors in $\R^{2^n}$. This motivates construction of an involution on $\G$ called the \emph{reverse} $\dagger$. We define $\dagger$ so that for \emph{versor} $A=\blade{v}_1 \cdots \blade{r}_r$, we have $A^\dagger = \blade{v}_r  \cdots \blade{v}_1$. For a $r$-blade $\blade{A_r}$, the reverse also satisfies the relationship
+We can also define an inner product on multivector fields that captures that mimics Euclidean inner product on structure of $\R^{2^n}$, i.e., treating each of the basis blades as independent vectors in $\R^{2^n}$. This motivates construction of an involution on $\G$ called the \emph{reverse} $\dagger$. We define $\dagger$ so that for \emph{versor}\todo{probably good to define this explicitly} $A=\blade{v}_1 \cdots \blade{r}_r$, we have $A^\dagger = \blade{v}_r  \cdots \blade{v}_1$. For a $r$-blade $\blade{A_r}$, the reverse also satisfies the relationship
 \begin{equation}
 \label{eq:reverse_sign}
 \blade{A_r}^\dagger = (-1)^{r(r-1)/2} \blade{A_r}
@@ -196,10 +189,19 @@ The split between even and odd subspaces of $C\ell(V,Q)$ makes the space $C\ell(
 \begin{equation}
 A = \proj{+}{A} + \proj{-}{A}.
 \end{equation}
-In the same vein, we will denote an even multivector by $A_+$ and an odd multivector by $A_-$. The even subalgebra is an extremely important entity that arises throughout physics due to its encapsulation of spinors which we touch on next. 
+In the same vein, we will denote an even multivector by $A_+$ and an odd multivector by $A_-$. The even subalgebra is an extremely important entity that arises throughout physics due to its encapsulation of spinors which we touch on in \cref{subsec:clifford_spin_groups}. 
+
+Part of the desire to utilize this framework of Clifford algebras is to create multivectors consisting of various grades as we did with the spinors. The exterior algebra can be used this way, but in general most authors work with elements of a single grade at any one time. Allowing for multiple grades, say even grading, allows for one to generalize notions from complex analysis (see \cref{subsec:ftgc}). Another such example of a multiply graded element follows.
+\begin{definition}
+The space of \emph{surface spinors} are the elements
+\begin{equation}
+ C\ell(V,Q)^{0\oplus 2} = C\ell(V,Q)\oplus C\ell(V,Q)^2
+\end{equation}
+\end{definition}
+In the right context, the surface spinors act like copies of $\C$ hiding within geometric algebras. \todo{add more here.}
 
 \subsection{Multivector operations and the Clifford and spin groups}
-\label{subsubsec:reverse_inverse_clifford_spin_groups}
+\label{subsec:clifford_spin_groups}
 For the remainder of this paper, let us focus solely on geometric algebras $\G$. Given access to an (pseudo) inner product we have a natural isomorphism between $V$ and $V^*$ by the Riesz representation.  Namely, given an arbitrary basis $\blade{v}_i$ for $V$ there exists the corresponding dual basis $f_i$ for $V^*$ such that $f_i(\blade{v}_j)=\delta_{ij}$. In geometric algebra, this notion is somewhat superfluous as we can realize the dual basis inside $V$ itself in the following manner. Note that there is a unique map $\sharp \colon V^* \to V$ for which $f\mapsto \blade{f^\sharp}$ such that
 \begin{equation}
 \blade{f_i^\sharp} \cdot \blade{v}_j = \delta_{ij}.
