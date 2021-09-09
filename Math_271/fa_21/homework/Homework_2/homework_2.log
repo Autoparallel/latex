@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.22)  5 SEP 2021 14:46
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  1 SEP 2021 07:22
+>>>>>>> Stashed changes
 entering extended mode
 **./homework_2.tex
 (homework_2.tex
@@ -1219,11 +1223,19 @@ Package rerunfilecheck Info: File `homework_2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< Updated upstream
  35292 strings out of 478868
  840794 string characters out of 2846879
  1241458 words of memory out of 3000000
  52556 multiletter control sequences out of 15000+600000
  411566 words of font info for 59 fonts, out of 8000000 for 9000
+=======
+ 31725 strings out of 492609
+ 774738 string characters out of 6129048
+ 969298 words of memory out of 5000000
+ 35051 multiletter control sequences out of 15000+600000
+ 11760 words of font info for 46 fonts, out of 8000000 for 9000
+>>>>>>> Stashed changes
  1141 hyphenation exceptions out of 8191
  131i,5n,136p,734b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
