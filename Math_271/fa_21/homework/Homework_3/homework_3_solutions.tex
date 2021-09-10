@@ -317,12 +317,14 @@ x(t)=e^{-\frac{1}{2}t}\left(C_1 \sin\left(\frac{\sqrt{3}}{2}\right) + \cos\left(
 \begin{problem}
 Consider the following differential equation:
 \[
-x''+2x'+x=3e^{-t}+2t.
+x''+2x'+x=\sin(t)
 \]
 \begin{enumerate}[(a)]
     \item Find the homogeneous solution $x_H(t)$.
     \item Find the particular integral $x_P(t)$.
     \item Find the specific solution corresponding to the initial data $x(0)=0$, $x'(0)=0$.
+    \item Plot the curve $(x(t),x'(t))$ in the plane (we often call this \emph{phase space}). Use this link here: \url{https://www.desmos.com/calculator/ouqwcxj2xz}. Use the time range $t\in [0,10\pi]$.
+    \item Describe what happens with this system over time. Does it seem to approach some kind of stable solution? Note that this stable solution could be periodic.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
@@ -337,38 +339,62 @@ x''+2x'+x=3e^{-t}+2t.
     \]
     which gives us that $\lambda=-1$ is the only root.  Thus, this is the special case where our general solution looks slightly different.  We'll have
     \[
-    x_h(t)=C_1e^{-t}+C_2te^{-t}.
+    \boxed{x_H(t)=C_1e^{-t}+C_2te^{-t}.}
     \]
-    \item The right hand side has a $e^{-t}$ term which is already present in our $x_h$. In fact, this means we have to take $kt^2e^{-t}$ as a guess for this part of $x_p$. Then, we also have a $2t$ term, so our $x_p$ should be
+    \item The right hand side is $\sin(t)$ which means we have our $x_p$ in the form 
     \[
-    x_p =kt^2e^{-t}+ a_0 + a_1 t.
+    x_P = A\cos(t)+B\sin(t)
     \]
     Now we have to find the undetermined coefficients by plugging in and solving
     \begin{align*}
-        x_p''+2x_p'+x_p&=3e^{-t}+2t\\
-    2ke^{-t}-4kte^{-t}+kt^2e^{-t}+2(2kte^{-t}-kt^2e^{-t}+a_1)+kt^2e^{-t}a_1t+a_0&=3e^{-t}+2t
+        x_p''+2x_p'+x_p&=\sin(t)\\
+    	-(A\cos(t)+B\sin(t))+2(-A\sin(t)+B\cos(t))+A\cos(t)+B\sin(t) &= \sin(t).
     \end{align*}
-    which gives us that $k=\frac{3}{2}$, $a_1=2$, and $a_0=-4$. So 
+    which gives us the linear system of equations for $A$ and $B$
+    \begin{align*}
+    	-2A&=1\\
+    	2B&=0,
+    \end{align*}
+    and we find $A=\frac{-1}{2}$ and $B=0$. Thus
     \[
-    x_p(t)=\frac{3}{2}t^2e^{-t}+2t-4.
+    \boxed{x_P=-\frac{1}{2}\cos(t).}
     \]
-    \item Now, we take it that our solution is of the form
+    \item Now our general solution is given by 
     \[
-    x(t)=x_h+x_p= C_1e^{-t}+C_2te^{-t}+\frac{3}{2}t^2e^{-t}+2t-4.
+    x=x_H+x_P=C_1 e^{-t}+C_2 te^{-t}-\frac{1}{2}\cos(t)
     \]
-    If we take
+    and we need only use the initial conditions to find the particular solution (i.e., to determine both $C_1$ and $C_2$). First note that $x(0)=0$ so
+	\begin{align*}
+		0&=x(0)=C_1-\frac{1}{2},
+	\end{align*}
+	and thus $C_1=\frac{1}{2}$. Next, we have $x'(0)=0$ so
+    \begin{align*}
+    	0&=x'(0)=-C_1+C_2,
+    \end{align*}
+    and since we know $C_1$, we find that $C_2=\frac{1}{2}$. This leads us to our particular solution
     \[
-    0=x(0)=C_1-4
+    \boxed{x=\frac{1}{2}e^{-t}+\frac{1}{2}te^{-t}-\frac{1}{2}\cos(t).}
     \]
-    then $C_1=4$, and
+    \item Let us first take the derivative of our solution
     \[
-    0=x'(0)=-4+C_2+2
+    x'= -\frac{1}{2}te^{-t}+\frac{1}{2}\sin(t).
     \]
-    so $C_2=2$. Thus, our specific solution is
-    \[
-    x(t)=(4+2t)e^{-t}+\frac{3}{2}t^2e^{-t}+2t-4.
-    \]
+    Now we can plot a curve $(x,x')$ using the Desmos link:
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=.4\textwidth]{stable_periodic.png}
+    	\caption{The trajectory of our system in phase space.}
+    \end{figure}
     
+    \item We should really analyze this system by thinking physically to get a feeling for what's going on. Recall that
+    \[
+    \underbrace{mx'}_{\textrm{Newton's}} + \underbrace{\mu x'}_{\textrm{damping}} + \underbrace{kx}_{\textrm{Hooke's}} = \underbrace{F(t)}_{\textrm{external force}}.
+    \]
+    What we find in this case is that $x_H$ represents what happens with our physical system if we do not provide any external force (we often call this \emph{free}). The external force for these types of problems comes from the inhomogeneity (or the nonzero right hand side). The response to this external force is $x_P$. The true system dynamics $x$ are a combination of the free system dynamics plus its response to the force so that $x=x_H+x_P$. 
+    
+    In this case, we can picture that we start off with a particle with position at the origin $x(0)=0$ and no initial velocity $x'(0)=0$. In absence of external forces, we would find that no motion would occur due to Newton's laws. To see this, solve the homogeneous problem with these initial conditions. However, in this inhomogeneous case, we add in a periodic forcing term $\sin(t)$ which changes our dynamics noticeably. 
+    
+    Taking a look at our plot from before, we can note that the system responds to this forcing term by increasing in velocity $x'$ and position $x$. But, since there is damping in our system (the $x'$ term in the ODE is nonzero), the particle will lose energy due to some kind of friction. Likewise, there is a restoring force via Hooke's law that brings the particle back to its initial starting point $x=0$. Ultimately, the phase space trajectory for the particle seems to approach a circle showing us that this system appears to be periodic over time. This is definitely sensible since our forcing term itself is periodic!
 \end{enumerate}
 \end{solution}
 

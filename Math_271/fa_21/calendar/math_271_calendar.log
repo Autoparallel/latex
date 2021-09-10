@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  7 SEP 2021 08:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  10 SEP 2021 07:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -266,17 +266,17 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
-LaTeX Font Info:    Try loading font information for U+msa on input line 448.
+LaTeX Font Info:    Try loading font information for U+msa on input line 449.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 448.
+LaTeX Font Info:    Try loading font information for U+msb on input line 449.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \vbox (badness 10000) detected at line 448
+Underfull \vbox (badness 10000) detected at line 449
  []
 
 [1
@@ -284,10 +284,10 @@ Underfull \vbox (badness 10000) detected at line 448
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] [4] [5] (./math_271_calendar.aux) ) 
 Here is how much of TeX's memory you used:
- 3205 strings out of 492609
- 39725 string characters out of 6129048
- 195781 words of memory out of 5000000
- 7116 multiletter control sequences out of 15000+600000
+ 3204 strings out of 492609
+ 39712 string characters out of 6129048
+ 195953 words of memory out of 5000000
+ 7115 multiletter control sequences out of 15000+600000
  6557 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  27i,14n,35p,244b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -298,7 +298,7 @@ ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2019/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on math_271_calendar.pdf (5 pages, 78575 bytes).
+Output written on math_271_calendar.pdf (5 pages, 78637 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
