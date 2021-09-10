@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.22)  5 SEP 2021 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.22)  9 SEP 2021 12:17
 entering extended mode
 **./homework_1_solutions.tex
 (homework_1_solutions.tex
@@ -1227,17 +1227,17 @@ Missing character: There is no ; in font nullfont!
 <projectile.png, id=103, 1204.5pt x 803.0pt>
 File: projectile.png Graphic file (type png)
 <use projectile.png>
-Package pdftex.def Info: projectile.png  used on input line 281.
+Package pdftex.def Info: projectile.png  used on input line 284.
 (pdftex.def)             Requested size: 469.75502pt x 313.16875pt.
  [9 <./projectile.png>] (homework_1_solutions.aux)
 Package rerunfilecheck Info: File `homework_1_solutions.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35477 strings out of 478868
- 845105 string characters out of 2846879
+ 35475 strings out of 478868
+ 845073 string characters out of 2846879
  1241981 words of memory out of 3000000
- 52724 multiletter control sequences out of 15000+600000
+ 52722 multiletter control sequences out of 15000+600000
  411763 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,9n,136p,744b,805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1257,7 +1257,7 @@ ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Colin/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
 rs/Colin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on homework_1_solutions.pdf (9 pages, 205880 bytes).
+Output written on homework_1_solutions.pdf (9 pages, 205971 bytes).
 PDF statistics:
  177 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)

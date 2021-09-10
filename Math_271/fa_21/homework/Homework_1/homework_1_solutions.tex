@@ -144,15 +144,14 @@ Here's a picture to illustrate this.
 \newpage
 
 \begin{problem}
-Draw the unit circle in the complex plane. Plot the complex numbers $z_1$, $z_2$, and $z_3$ given above and find their inverses. Explain what taking the inverse does geometrically.
+Draw the unit circle in the complex plane. Plot the complex numbers $z_1$ and $z_2$ given above and find their inverses and conjugates. Explain what taking the inverse and conjugate does geometrically.
 \end{problem}
 
 \begin{solution}
 From the previous problem we had
 \begin{align*}
 z_1 &= \frac{1}{2}-\frac{1}{2}i = \frac{1}{\sqrt{2}}e^{-i\frac{\pi}{4}}\\
-z_2 &= -1 + 3i \approx \sqrt{10}e^{-1.893i}\\
-z_3 &= -2 - 3i \approx \sqrt{13}{e^{4.4124i}}.
+z_2 &= -1 + 3i \approx \sqrt{10}e^{-1.893i}.
 \end{align*}
 Recall that the inverse for a complex number $z=a+bi=re^{i\theta}$ is given by
 \[
@@ -162,17 +161,21 @@ or in polar coordinates by
 \[
 z^{-1}=\frac{1}{r}e^{-i\theta}.
 \]
-So we have
+So we have the inverses
 \begin{align*}
     z_1^{-1} &= 1+i = \sqrt{2}e^{i\frac{\pi}{4}}\\
-    z_2^{-1} &= \frac{-1}{10}-\frac{3i}{10} \approx \frac{1}{\sqrt{10}} e^{1.893i}\\
-    z_3^{-1} &= \frac{-2}{13}+\frac{3i}{13} \approx \frac{1}{\sqrt{13}} e^{-4.4124i}.
+    z_2^{-1} &= \frac{-1}{10}-\frac{3i}{10} \approx \frac{1}{\sqrt{10}} e^{1.893i}
+\end{align*}
+and the conjugates
+\begin{align*}
+    z_1^* &= \frac{1}{2}+\frac{1}{2}i = \frac{1}{\sqrt{2}}e^{i\frac{\pi}{4}}\\
+    z_2^* &= \frac{-1}{10}+\frac{3i}{10} \approx \frac{1}{\sqrt{10}} e^{-1.893i}
 \end{align*}
     \begin{center}
             \begin{tikzpicture}[scale=.75]
             \draw[<->] (-10,0)--(10,0) node[right]{$\RE$};
             \draw[<->] (0,-10)--(0,10) node[above]{$\IM$};
-            \foreach \Point/\PointLabel in {(1.5,-1.5)/{z_1}, (-3,9)/{z_2}, (-6,-9)/{z_3}, (3,3)/{{z_1}^{-1}}, (-.3,-.9)/{z_2^{-1}}, (-.46,.69)/{z_3^{-1}}}
+            \foreach \Point/\PointLabel in {(1.5,-1.5)/{z_1}, (-3,9)/{z_2}, (3,3)/{{z_1}^{-1}}, (-.3,-.9)/{z_2^{-1}},(1.5,1.5)/{z_1^*}, (-3,-9)/{z_2^*} }
             \draw[fill=black] \Point circle (0.05) node[anchor=east] {$\PointLabel$};
             \draw (0,0) circle (3);
             \end{tikzpicture}
