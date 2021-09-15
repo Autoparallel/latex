@@ -12,6 +12,70 @@
 \end{center}
 \vspace{.5cm}
 
+\begin{problem}
+Consider the autonomous (Hamilton) equation
+\[
+	x'=ix
+\]
+with initial condition $x(0)=1$. \emph{Hint: Think about what this is saying -- the velocity of the particle $x'$ is a rotation by $\pi/2$ of the position $x$.}
+\begin{enumerate}[(a)]
+	\item Find the particular solution to this equation.
+	\item Plot the function $x(t)$ in the complex plane.
+	\item Show that your solution $x(t)$ solves the ODE
+	\[
+		x'' = - x
+	\]
+	which is essentially Worksheet 1 Problem 11. \emph{It is worth thinking about this too -- the acceleration of a particle $x''$ is in the opposite direction of the position $x$, i.e., centripetal motion.}
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item This equation is separable so we can do the following.
+    \begin{align*}
+        x' = \frac{dx}{dt}&= ix\\
+        \implies~ \frac{1}{x}dx &= idt.
+    \end{align*}
+Here we integrate both sides to get
+\[
+\ln(x) = it+C
+\]
+which gives our general solution
+\[
+\boxed{x}=Ae^{it}.
+\]
+One could also just recognize this as a familiar equation $x'=k$ where we choose our parameter $k=i$.
+\item We have that
+\[
+e^{it} = \cos(t)+i\sin(t)
+\]
+and so we plot the real part of our solution $x$ as $\cos(t)$ and the imaginary part as $\sin(t)$ using Desmos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{circular_curve.png}
+\end{figure}
+The colors in the plot indicate at what time we are at along the curve and I used the interval $t\in [0,2\pi]$. At $t=0$ the curve starts bright green and as $t$ changes to $2\pi$ the color shifts to red.
+\item Since we have $x=Ae^{it}$ we can see that 
+\[
+x'=iAe^{it}=ix,
+\]
+which is what we expect since $x$ was a solution to that ODE in the first place. To check $x''=-x$ we just take the second derivative of our $x$ to get
+\begin{align*}
+x''&=(ix)'\\
+&=i(x)'\\
+&=i(ix)\\
+=-x.
+\end{align*}
+So, what we can think of what we have done here just a bit. We could start with a second order problem $x''=-x$ and convert it into a first order problem just by using taking some kind of square root of the second order equation to get the first order equation $x'=ix$. This is why I'd refer to this as the Hamilton equation since this is something that can be done with many second order autonomous problems, even those that are higher dimensional systems.
+
+Essentially it is a shift from describing the acceleration of a particle at some position $x$ to describing the velocity at that same position $x$. In the following picture I draw the velocity as an arrow that I call \emph{tangent} and the acceleration is the \emph{normal}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{acceleration.png}
+\end{figure}
+The velocity at $t=0$ is $x'(0)=i$ which tells us the velocity points directly upward and $x''(0)=-1$ which tells us the velocity points towards the origin, for example. Given $x(0)=1=e^{i\cdot 0}$, you can see that $i=e^{i\frac{\pi}{2}}$ rotates the position by $\pi/2$ radians since $-1=e^{i\pi}$ rotates the position by $\pi$. All of this must also repeat every $t=2\pi$, so the solution is periodic with period $2\pi$.
+\end{enumerate}
+\end{solution}
+
 \begin{problem} 
 Consider the following autonomous equation.
     \[
@@ -46,7 +110,7 @@ Consider the following autonomous equation.
 
         \item We have seen this equation arise from studying chemical reactions.  Specifically, this equation could model
 \[
-2x \xrightarrow{k=1} \to \textrm{Products}.
+2x \xrightarrow{k=1} \textrm{Products}.
 \]
 This equation is also separable.  Which means we can solve by
 \begin{align*}
