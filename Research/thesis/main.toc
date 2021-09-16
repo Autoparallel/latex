@@ -1,46 +1,48 @@
 \contentsline {section}{\hspace {-\cftsecindent }{\uppercase {Abstract}}}{ii}{section*.3}%
 \contentsline {section}{\hspace {-\cftsecindent }{\uppercase {Acknowledgements}}}{iii}{section*.4}%
 \contentsline {section}{\hspace {-\cftsecindent }{\uppercase {Dedication}}}{iv}{section*.5}%
-\contentsline {section}{\hspace {-\cftsecindent }{\uppercase {List of Tables}}}{vi}{section*.6}%
-\contentsline {section}{\hspace {-\cftsecindent }{\uppercase {List of Figures}}}{vii}{section*.7}%
+\contentsline {section}{\hspace {-\cftsecindent }{\uppercase {List of Tables}}}{vii}{section*.6}%
+\contentsline {section}{\hspace {-\cftsecindent }{\uppercase {List of Figures}}}{viii}{section*.7}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Preliminaries}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Clifford and geometric algebras}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Multivectors and grading}{7}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Multivector operations and the Clifford and spin groups}{13}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Pseudoscalars and duality}{16}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Blades and subspaces}{20}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Motivating example}{24}{subsection.2.1.5}%
-\contentsline {section}{\numberline {2.2}Geometric manifolds}{28}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Multivector fields}{29}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Geometric calculus}{31}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Differential forms}{33}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Integration}{36}{subsection.2.2.4}%
-\contentsline {subsubsection}{Scalar valued integrals}{36}{section*.25}%
-\contentsline {subsubsection}{Multivector valued integrals}{41}{section*.26}%
-\contentsline {subsection}{\numberline {2.2.5}Stokes' and Green's formula}{42}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Fundamental theorem of geometric calculus}{45}{subsection.2.2.6}%
-\contentsline {chapter}{\numberline {3}Analysis of multivector fields}{47}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Spaces of fields}{47}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Monogenic fields}{47}{subsection.3.1.1}%
-\contentsline {subsubsection}{Cauchy integral}{48}{section*.30}%
-\contentsline {subsection}{\numberline {3.1.2}Hodge-type decompositions}{50}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Algebras of fields}{56}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Subsurface fields}{56}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Gelfand theory}{59}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}$\mathcal {G}_n$-spectrum}{59}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Topology from monogenics}{60}{subsection.3.3.2}%
-\contentsline {subsubsection}{Taylor series}{61}{section*.37}%
-\contentsline {subsubsection}{Correspondence}{63}{section*.38}%
-\contentsline {chapter}{\numberline {4}Inverse problems}{66}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Tomography}{66}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Forward problems}{67}{subsection.4.1.1}%
-\contentsline {subsubsection}{Electrostatics}{67}{section*.44}%
-\contentsline {subsubsection}{Magnetostatics}{69}{section*.45}%
-\contentsline {subsubsection}{Electromagnetostatics}{71}{section*.47}%
-\contentsline {subsubsection}{Generalization to forms}{71}{section*.49}%
-\contentsline {subsection}{\numberline {4.1.2}Multivector tomography}{72}{subsection.4.1.2}%
-\contentsline {subsubsection}{Electrical impedance tomography}{72}{section*.52}%
-\contentsline {subsubsection}{Generalizations}{73}{section*.53}%
-\contentsline {chapter}{Bibliography}{74}{section*.56}%
+\contentsline {section}{\numberline {2.1}Geometric Spaces}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Clifford algebras}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Multivectors and grading}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Multivector operations and the Clifford and spin groups}{16}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Pseudoscalars and duality}{19}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Blades and subspaces}{23}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Motivating example}{27}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Geometric algebras}{31}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Geometric manifolds}{31}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Multivector fields}{32}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Geometric calculus}{34}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Differential forms}{36}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Integration}{39}{subsection.2.4.4}%
+\contentsline {subsubsection}{Scalar valued integrals}{39}{section*.27}%
+\contentsline {subsubsection}{Multivector valued integrals}{44}{section*.28}%
+\contentsline {subsection}{\numberline {2.4.5}Stokes' and Green's formula}{45}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Fundamental theorem of geometric calculus}{48}{subsection.2.4.6}%
+\contentsline {chapter}{\numberline {3}Analysis of multivector fields}{50}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Spaces of fields}{50}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Monogenic fields}{50}{subsection.3.1.1}%
+\contentsline {subsubsection}{Cauchy integral}{51}{section*.32}%
+\contentsline {subsection}{\numberline {3.1.2}Hodge-type decompositions}{53}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Algebras of fields}{59}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Subsurface fields}{59}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Gelfand theory}{63}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}$\mathcal {G}_n$-spectrum}{63}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Topology from monogenics}{64}{subsection.3.3.2}%
+\contentsline {subsubsection}{Taylor series}{65}{section*.40}%
+\contentsline {subsubsection}{Correspondence}{67}{section*.41}%
+\contentsline {chapter}{\numberline {4}Inverse problems}{70}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Tomography}{70}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Forward problems}{71}{subsection.4.1.1}%
+\contentsline {subsubsection}{Electrostatics}{71}{section*.47}%
+\contentsline {subsubsection}{Magnetostatics}{73}{section*.48}%
+\contentsline {subsubsection}{Electromagnetostatics}{75}{section*.50}%
+\contentsline {subsubsection}{Generalization to forms}{75}{section*.52}%
+\contentsline {subsection}{\numberline {4.1.2}Multivector tomography}{76}{subsection.4.1.2}%
+\contentsline {subsubsection}{Electrical impedance tomography}{76}{section*.55}%
+\contentsline {subsubsection}{Generalizations}{77}{section*.56}%
+\contentsline {chapter}{Bibliography}{78}{section*.59}%

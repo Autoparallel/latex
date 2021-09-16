@@ -308,17 +308,17 @@ This allows us to define can now define an $L^2$ inner product on multivector fi
 \label{def:multivector_field_inner_product}
 Let $A$ and $B$ be multivector fields. Then the \emph{multivector field inner product} is defined by
 \begin{equation}
-\multivecinnerproduct{A}{B} \coloneqq \frac{1}{\operatorname{vol}(M)} \int_M (A,B) \mu.
+\multivecinnerproduct{A}{B} \coloneqq \int_M (A,B) \mu.
 \end{equation}
 \end{definition}
 If $\multivecinnerproduct{A}{B} = 0$, then we say $A$ and $B$ are orthogonal. Once again, this is only a true inner product when $g$ is positive definite.  We put $\multivecinnerproduct{\cdot}{\cdot}_\partial$ to represent the inner product on the boundary manifold. Note that if we take a homogeneous $r$-vector field $A_r$ and $s$-vector field $B_s$ that if $s\neq r$, the multivector field inner product is zero. Hence, the orthogonal direct sum with respect to the $L^2$ multivector inner product agrees with the grade based direct sum. It will suffice to use the symbol $\oplus$ for both. One should view this as a slight extension to the $r$-form inner product that garners the ability to consider the inner product of elements that are not necessarily homogeneous in grade. The following proposition confirms this.
 \begin{proposition}
-Given two $r$-forms, the $r$-form inner product is equal to the multivector inner product on their corresponding multivector equivalents up to the constant $\operatorname{vol}(M)$.
+Given two $r$-forms, the $r$-form inner product is equal to the multivector inner product on their corresponding multivector equivalents.
 \end{proposition}
 \begin{proof}
 Let $\alpha_r$ and $\beta_r$ be $r$-forms with multivector equivalents $A_r$ and $B_r$ respectively. Then
 \begin{align*}
-    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \mu = \int_M \proj{}{A_r^\dagger B_r} \mu =\operatorname{vol}(M) \multivecinnerproduct{A_r}{B_r},
+    \int_M \alpha_r \wedge \star \beta = \int_M A_r \cdot B_r^\dagger \mu = \int_M (A_r,B_r) \mu =\multivecinnerproduct{A_r}{B_r},
 \end{align*}
 by the definition of the Hodge star.
 \end{proof}

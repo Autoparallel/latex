@@ -1,0 +1,59 @@
+Given a vector space $V$ (possibly of infinite dimension) over a field $K$ with characteristic not equal to two, we can attach extra structures to induce geometry on this space. For example, take a quadratic form $Q \colon V \to K$ which satisfies for all $a\in K$ and $\blade{v}\in V$,
+\begin{equation}
+Q(a\blade{v})=a^2Q(\blade{v})
+\end{equation}
+and note that this induces a symmetric bilinear form $\langle -,-\rangle \colon V\times V \to V$
+\begin{equation}
+\label{eq:polarization}
+\langle \blade{u},\blade{v}\rangle_Q = Q(\blade{u}+\blade{v})-Q(\blade{u})-Q(\blade{v}).
+\end{equation}
+The above \cref{eq:polarization} is the polarization identity relating inner products and norms which shows us that quadratic forms and symmetric bilinear forms are equivalent. For example, the Euclidean inner product induces the Euclidean norm and we recover the inner product from the norm by polarization. A pair $(V,Q)$ is often called a \emph{quadratic space} or \emph{orthogonal geometry}. More generally, one could consider a vector space along with a symmetric or alternating bilininear form $(V,\langle -,- \rangle)$ called a \emph{metric vector space} since we need not restrict the bilinear form to be symmetric. For example, if we took the form so that for $\blade{u},\blade{v}\in V$ we have $\langle \blade{u},\blade{v}\rangle = -\langle \blade{v}, \blade{u}\rangle$ then we can call this \emph{symplectic geometry}. 
+
+In a metric vector space we can determine complements of subsets and subspaces. First, we say that vectors $\blade{u}$ and $\blade{w}$ are orthogonal $\blade{u}\perp \blade{w}$ if $\langle \blade{u},\blade{w}\rangle=0$. If $U$ and $V$ are subsets, then we say that the sets are orthogonal $U \perp W$ if $\blade{u}\perp \blade{v}$ for all  $\blade{u} \in U$ and $\blade{v} \in V$ may have \emph{isotropic} (or \emph{null}) vectors $\langle \blade{v},\blade{v} \rangle = 0$. These vectors form cones in $V$ since all scalar copies of such $\blade{v}$ are null as well. If there are no such vectors then $V$ is called \emph{anisotropic}. On the other end of the spectrum, if all vectors are isotropic, then the space is \emph{symplectic}. I will not put any focus on symplectic spaces, but they are truly prolific and useful \todo{add citations}.
+
+A vector $\blade{v}\in V$ is \emph{degenerate} if it is orthogonal to the whole space $\blade{v}\perp V$. Let $U\subset V$ be a subspace, then the \emph{orthogonal complement to $U$} is the set 
+\begin{equation}
+U^\perp \coloneqq \{\blade{v} \in V ~\vert~ \blade{v}\perp U\}.
+\end{equation}
+It is worth noting that $U^\perp$ may not be a subspace but could be a cone. The metric vector space $V$ is \emph{nonsingular} if $V^\perp=\{0\}$, \emph{singular} if $V^\perp \neq \{0\}$, and \emph{totally singular} if $V^\perp = V$. Given a subspace $U$, we can define the \emph{radical} $\Rad(S)=S\cap S^\perp$ \todo{This actually seems like what you're computing with intersection in homology} It is important to make a distinction between isotropic vectors and degenerate ones. 
+
+\begin{example}
+For this example, we will consider the metric vector spaces $\R^{2,0,0}$, $\R^{1,1,0}$ and $\R^{1,0,1}$. The first will be the prototypical Euclidean space, the second is a Lorentzian space, and the last is a degenerate space.
+\begin{itemize}
+    \item We define the metric vector space $\R^{2,0,0}$ by fixing a basis $\blade{e}_1$ and $\blade{e}_2$ where
+    \begin{equation}
+        \langle \blade{e}_i, \blade{e}_j \rangle = \delta_{ij},
+    \end{equation}
+    where $\delta_{ij}$ is the Kronecker delta that equals one when $i=j$ and is otherwise zero. This is orthogonal geometry since our bilinear form is symmetric so we see it is equivalent to a quadratic space via polarization. If I take a subspace $U=\Span (\blade{e}_1)$ then $U^\perp = \Span(\blade{e}_2)$. We see that the orthogonal complement behaves as we expect. The radical $\Rad(U)=\{0\}$ is trivial and the same is true for the span of $\blade{e}_2$. This helps us see that our space has no isotropic or degenerate vectors. By \todo{cite Theorem 11.7 here} , we can note that $\perp$ is involutive since for any subspace $W$, $W^{\perp \perp}$.
+
+    \item Next, metric vector space $\R^{1,1,0}$ by fixing a basis $\blade{e}_1$ and $\blade{e}_2$ where we take the symmetric form
+    \begin{equation}
+        \langle \blade{e}_1, \blade{e}_1 \rangle = +1, \qquad \langle \blade{e}_2, \blade{e}_2 \rangle = -1, \quad \langle \blade{e}_1,\blade{e}_2 \rangle = 0,
+    \end{equation}
+    and we see that this is also orthogonal geometry. If I take a subspace $U=\Span (\blade{e}_1)$ then $U^\perp = \Span(\blade{e}_2)$ as before, but I could take another subspace $W=\Span(\blade{e}_1+\blade{e}_2)$. Then, 
+\begin{equation}
+    \langle \blade{e}_1 + \blade{e}_2 , \blade{e}_1 + \blade{e}_2 \rangle = 0,
+\end{equation}
+    so $W$ is an isotropic subspace. Then we can see that $W^\perp = W$ so the radical $\operatorname{rad}(W)=W$ is an identity operation. Isotropic subspaces must behave this way. In fact, there will be cones and not subspaces of isotropic vectors in general (with the caveat that a 1-dimensional cone is a subspace). For any given subspace $W$ of $\R^{1,1,0}$, it must be that $W=W^{\perp \perp}$. This is a key distinction that we keep in mind for the next example.
+
+    \item We define the metric vector space $\R^{1,0,1}$ by fixing a basis $\blade{e}_1$ and $\blade{e}_2$ where we take the symmetric form
+    \begin{equation}
+        \langle \blade{e}_1, \blade{e}_1 \rangle = +1, \qquad \langle \blade{e}_2, \blade{e}_2 \rangle = 0, \quad \langle \blade{e}_1,\blade{e}_2 \rangle = 0,
+    \end{equation}
+    and note again this is orthogonal geometry. However, If I take a subspace $U=\Span (\blade{e}_2)$ then $U^\perp = \R^{1,0,1}$. This is not seen as a difference in the radical since $\Rad(U)=U$ as with the previous example. Degenerate spaces can be a bit tricky to distinguish from the spaces with isotropic vectors, but the key insight lies in the action of $\perp$. In this space, $\perp$ is not always an involution on each subspace. For example, take $W=\Span(\blade{e}_1)$ then $W^\perp =  U$ but $W^{\perp \perp}= U^\perp = \R^{1,0,1}$. 
+\end{itemize}
+\end{example}
+
+\begin{definition}
+A \emph{geometric vector space} is a nonsingular metric vector space $V$ with quadratic form $Q$ equivalent to the symmetric bilinear form $\langle -,-\rangle$.
+\end{definition}
+
+By Witt's classification of orthogonal geometries, all finite dimensional geometric vector spaces over $\R$ of dimension $n$ admit a basis so that $p$ vectors satisfy $Q(\blade{u})=+1$ and $q$ vectors satisfy $Q(\blade{v})=-1$ where $p+q=n$. 
+
+\begin{definition}
+Let $V$ and $W$ be a geometric vector spaces, then an \emph{isometry} is a map $\lin{R} \colon V \to W$ such that
+\begin{equation}
+\langle \blade{u},\blade{v}\rangle_W = \langle \blade{u},\blade{v}\rangle_V,
+\end{equation}
+where the subscripts denote the bilinear form in that space. If there exists such an $\lin{R}$, we say that $V$ and $W$ are \emph{isometric}. Moreover, if $\lin{R}$ is an isomorphism, then we say $V$ and $W$ are \emph{isometrically isomorphic}.
+\end{definition}

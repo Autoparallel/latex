@@ -2,7 +2,7 @@
 
 The space $\monogenicfields{}$ is a vector space due but it is not, in general, an algebra. For instance, if $M$ is dimension $n=2$, then $\monogenicfields{+}$ is an algebra due to the commutivity of $\monogenicfields{+}$. Yet, the $\monogenicfields{}$ does contain algebras that are commutative Banach algebras given essentially by \cref{eq:c_isomorphisms}. For this section, take $M$ imbedded in $\R^n$ with the Euclidean metric.
 
-But, there are certain types of monogenic fields in which this property is true. We describe a set of parabivectors that operate entirely on a 2-dimensional submanifolds defined by an unit bivector field $\bivector$. These specific fields will be of great utility for the remainder of this paper.
+But, there are certain types of monogenic fields in which this property is true. We describe a set of surface spinors that operate entirely on a 2-dimensional submanifolds defined by an unit bivector field $\bivector$. These specific fields will be of great utility for the remainder of this paper.
 \begin{definition}
     Let $\bivector \in \G(M)$ be a constant unit bivector field. Then an even multivector field $f_+$ satisfying
     \begin{equation}
@@ -24,7 +24,7 @@ By definition, we have made $f_+$ constant on translations of $R$ by the precomp
 In $\R^3$, for example, this amounts to fields constant along an axis $\omega$ such that $\omega^\perp = \bivector$ then
 \begin{equation}
 \label{eq:omega_axial_equivalence}
-(\dot{\grad} \wedge \bivector)f = (\dot{\grad} \wedge \omega^\perp)f  =(\dot{\grad} \cdot \omega)f = \nabla_\omega f.
+(\dot{\grad} \wedge \bivector)\dot{f} = (\dot{\grad} \wedge \omega^\perp)\dot{f}  =(\dot{\grad} \cdot \omega)\dot{f} = \nabla_\omega \dot{f}.
 \end{equation} 
 Hence, the intrinsic gradient on any plane $R$ defined by choosing a point in $\R^n \times \Grassmannian{2}{n}$ can be found via projection of $\grad$ onto $R$ by 
 \begin{equation}
@@ -47,7 +47,11 @@ Note that multiplication of two fields $f=u_f+\beta_f B$ and $g=u_g+\beta_g B$ i
 \label{eq:axial_multiplication}
 fg = u_f u_g - \beta_f \beta_g + \bivector (u_f \beta_g + u_g \beta_f) = gf.
 \end{equation}
-In fact, products of monogenic subsurface spinors $\algebra{\bivector}(M)$ forms a commutative Banach algebra.
+In fact, products of monogenic subsurface spinors $\algebra{\bivector}(M)$ forms a commutative Banach algebra. Briefly, consider the space of continuous $\G$-valued sections of $M$, $C^{\G}(M)$ along with the norm 
+\begin{equation}
+\|f\|_\infty \coloneqq \sup_{x\in M} |f(x)|,
+\end{equation}
+which we refer to as the \emph{$C^{\G}$-norm} (or uniform norm). Recall that at some point $x\in M$ that $|f(x)|^2=(f(x),f(x))$ and is nothing but the Euclidean vector norm on $\R^{2n}$ and it follows that $\|f\|_\infty$ is a norm on $C^{\G}(M)$. Likewise, since $\G\cong \R^{2n}$ is a Banach space and $M$ is a compact Hausdorff space the space $C^{\G}(M)$ is a Banach space (see \todo{cite Saab \emph{Integral Operators on Spaces...}}).
 % Namely, scaling a holomorphic function by constant complex numbers remains holomorphic. We realize this for $B$-planar fields as $R^+\times \operatorname{Spin}(2)$ invariance.  The following corollary follows from Lemma \ref{lem:clifford_invariant}.
 %\begin{corollary}
 %    \label{cor:mult_by_i_monogenic}
@@ -58,10 +62,10 @@ In fact, products of monogenic subsurface spinors $\algebra{\bivector}(M)$ forms
 %\end{proof}
 %The point here is that we have now effectively found functions that can be scaled by $B$-planar constants $\zeta$ and remain monogenic. 
 \begin{proposition}
-The space $\algebra{\bivector}(\Omega)$ is a commutative unital Banach algebra.
+The space $C^{\G}(M)$ is a Banach algebra. 
 \end{proposition}
 \begin{proof}
-Note that the space $\algebra{\bivector}(M)$ inherits the norm $\|\cdot \|$ and the associative algebra structure from the space $\G(M)$ since $\algebra{\bivector}(M)\subset \G(M)$. Taking $f,g \in \algebra{\bivector}(M)$ we can note that at each point
+It has already been argued that $C^{\G}(M)$ is a Banach space so it suffices to show boundedness of the product, i.e., by taking $f,g \in \algebra{\bivector}(M)$ and showing $\|fg\|_\infty\leq \|f\|_\infty\|g\|_\infty$. Note that at each point
 \begin{align}
 (fg,fg) = \proj{}{(fg)^\dagger fg}=\proj{}{g^\dagger f^\dagger f g} = \proj{}{gg^\dagger f^\dagger f} = (gg^\dagger, f^\dagger f),
 \end{align}
@@ -69,11 +73,20 @@ and by the Cauchy-Schwarz inequality
 \begin{align}
 |fg|^2 = (fg,fg) \leq (f^\dagger f, f^\dagger f) (gg^\dagger,gg^\dagger) = |f|^2 |g|^2.
 \end{align}
-Therefore, it follows that $\|fg\|\leq \|f\|\|g\|$. Clearly, $\|1\|=1$. We can then note that we have shown that for any $f,g \in \algebra{\bivector}(M)$ that $fg \in \G_{\bivector}^+(M)$ and moreover that $fg=gf$ by \cref{eq:axial_multiplication}. Given commutivity, we realize that the product $fg$ is monogenic by
-\begin{equation}
-\grad(fg) = \grad fg+\dot{\grad}f \dot{g} = \grad g f = 0.
-\end{equation}
+Therefore, by taking supremums, it follows that $\|fg\|_\infty\leq \|f\|_\infty\|g\|_\infty$. 
 \end{proof}
+The algebra $C^{\G}(M)$ is not commutative in general, but we can rescue a commutative subalgebra algebra via the following corollary.
+\begin{corollary}
+The space $\algebra{\bivector}(M)$ is a commutative unital Banach algebra as a subalgebra of $C^{\G}(M)$. 
+\end{corollary}
+\begin{proof}
+It is clear that for any $f,g \in \algebra{\bivector}(M)$ that $fg \in \G_{\bivector}^+(M)$ and this product is commutative by \cref{eq:axial_multiplication}. Given this, we realize that the product $fg$ is monogenic by
+\begin{equation}
+\grad(fg) = \grad fg+\dot{\grad}f \dot{g} = \grad g f = 0
+\end{equation}
+which shows closure. At this point, we have $\algebra{\bivector}(M)$ is a commutative Banach algebra and since it is clear that $\|1\|_\infty=1$, it is also unital. 
+\end{proof}
+
 The set of algebras $\algebra{\bivector}(M)$ parameterized by $\Grassmannian{2}{n}$ are sufficiently intriguing. For a brief moment, if $M$ is a region of $\R^n$ with a Euclidean metric, we have a natural choice for an element in $\algebra{\bivector}(M)$. Specifically, take two orthogonal unit vectors $\blade{v}$ and $\blade{w}$, then define $\bivector = \blade{v}\blade{w}$. Then, note that the field
 \begin{equation}
 \label{eq:z}
