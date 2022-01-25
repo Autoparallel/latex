@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  9 DEC 2021 11:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  7 JAN 2022 10:33
 entering extended mode
-**./main.tex
-(main.tex
+**./cv.tex
+(cv.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-08-27>
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -387,8 +387,8 @@ tex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count286
 \l__pdf_internal_box=\box54
-) (main.aux)
-\openout1 = `main.aux'.
+) (cv.aux)
+\openout1 = `cv.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
@@ -462,9 +462,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
- (main.out) (main.out)
+ (cv.out) (cv.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `cv.out'.
 
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
@@ -537,18 +537,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 [2] [3] [4] 
 AED: lastpage setting LastPage
-[5] (main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
+[5] (cv.aux)
+Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: 9B4047E6CBBB89B309961F3E23934904;1459.
  ) 
 Here is how much of TeX's memory you used:
  10150 strings out of 478927
- 152854 string characters out of 2852535
- 469045 words of memory out of 3000000
+ 152818 string characters out of 2852535
+ 469035 words of memory out of 3000000
  27824 multiletter control sequences out of 15000+600000
  445392 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,69p,300b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,69p,297b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 :/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Us
 ers/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Us
@@ -557,7 +557,7 @@ rs/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users
 /colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users
 /colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on main.pdf (5 pages, 135736 bytes).
+Output written on cv.pdf (5 pages, 135733 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  17 named destinations out of 1000 (max. 500000)
