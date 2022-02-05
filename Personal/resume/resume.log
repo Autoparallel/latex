@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  5 JAN 2022 09:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  2 FEB 2022 23:36
 entering extended mode
 **./resume.tex
 (resume.tex
@@ -897,69 +897,69 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 (Font)              using `OT1/cmr/bx/n' instead on input line 173.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 180.
+(Font)              <10.95> on input line 181.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 180.
+(Font)              <8> on input line 181.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 180.
+(Font)              <6> on input line 181.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 18
-0.
+1.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 180--184
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
 
  []
 
 
 LaTeX Font Warning: Font shape `U/fontawesometwo/bx/n' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 192.
+(Font)              using `U/fontawesometwo/m/n' instead on input line 193.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 192.
+(Font)              <7> on input line 193.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 192.
+(Font)              <5> on input line 193.
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 192--194
+Overfull \hbox (0.547pt too wide) in paragraph at lines 193--195
 [][] 
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 194--196
+Overfull \hbox (0.547pt too wide) in paragraph at lines 195--197
 [][] 
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 201--203
+Overfull \hbox (0.547pt too wide) in paragraph at lines 202--204
 [][] 
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 203--205
+Overfull \hbox (0.547pt too wide) in paragraph at lines 204--206
 [][] 
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 211--213
+Overfull \hbox (0.547pt too wide) in paragraph at lines 212--214
 [][] 
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 213--215
+Overfull \hbox (0.547pt too wide) in paragraph at lines 214--216
 [][] 
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 220.
+Package hyperref Warning: Suppressing link with empty target on input line 221.
 
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 220--222
+Overfull \hbox (0.547pt too wide) in paragraph at lines 221--223
 [][] 
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 222--224
+Overfull \hbox (0.547pt too wide) in paragraph at lines 223--225
 [][] 
  []
 
@@ -975,7 +975,7 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 Here is how much of TeX's memory you used:
  25533 strings out of 478927
  482210 string characters out of 2852535
- 775181 words of memory out of 3000000
+ 776181 words of memory out of 3000000
  42966 multiletter control sequences out of 15000+600000
  411517 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -996,7 +996,7 @@ TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/colin/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/colin/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on resume.pdf (1 page, 169244 bytes).
+Output written on resume.pdf (1 page, 169243 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  6 named destinations out of 1000 (max. 500000)
