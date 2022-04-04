@@ -1,22 +1,24 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  7 JAN 2022 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  3 MAR 2022 16:17
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **./cv.tex
 (cv.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-08-27>
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-05>
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count182
-\c@section=\count183
-\c@subsection=\count184
-\c@subsubsection=\count185
-\c@paragraph=\count186
-\c@subparagraph=\count187
-\c@figure=\count188
-\c@table=\count189
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -33,11 +35,11 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count190
-\Gm@cntv=\count191
-\c@Gm@tempcnt=\count192
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
 \Gm@bindingoffset=\dimen139
 \Gm@wd@mp=\dimen140
 \Gm@odd@mp=\dimen141
@@ -109,8 +111,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen147
-\Hy@linkcounter=\count193
-\Hy@pagecounter=\count194
+\Hy@linkcounter=\count196
+\Hy@pagecounter=\count197
  (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -127,7 +129,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count195
+\Hy@SavedSpaceFactor=\count198
  (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -140,7 +142,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count196
+\c@Hy@tempcnt=\count199
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
@@ -157,7 +159,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count197
+\Fld@menulength=\count266
 \Field@Width=\dimen149
 \Fld@charsize=\dimen150
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -174,21 +176,21 @@ LaTeX Info: Redefining \pageref on input line 6150.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count198
-\c@Item=\count199
-\c@Hfootnote=\count266
+\Hy@abspage=\count267
+\c@Item=\count268
+\c@Hfootnote=\count269
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
 )
-\Fld@listcount=\count267
-\c@bookmark@seq@number=\count268
+\Fld@listcount=\count270
+\c@bookmark@seq@number=\count271
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -212,7 +214,7 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -259,11 +261,11 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks21
 \XKV@tempa@toks=\toks22
 )
-\XKV@depth=\count269
+\XKV@depth=\count272
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\c@EM@itemctr=\count270
-\c@EM@etaremunectr=\count271
+\c@EM@itemctr=\count273
+\c@EM@etaremunectr=\count274
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
@@ -271,8 +273,8 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen156
 \enit@toks=\toks23
 \enit@inbox=\box51
-\enit@count@id=\count272
-\enitdp@description=\count273
+\enit@count@id=\count275
+\enitdp@description=\count276
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -284,12 +286,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
+Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip61
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2021/08/26 v2.01 AMS text
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
@@ -301,15 +303,15 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen158
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count274
+\inf@bad=\count277
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count275
-\leftroot@=\count276
+\uproot@=\count278
+\leftroot@=\count279
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count277
-\DOTSCASE@=\count278
+\classnum@=\count280
+\DOTSCASE@=\count281
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -318,15 +320,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen159
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count279
-\c@MaxMatrixCols=\count280
+\macc@depth=\count282
+\c@MaxMatrixCols=\count283
 \dotsspace@=\muskip17
-\c@parentequation=\count281
-\dspbrk@lvl=\count282
+\c@parentequation=\count284
+\dspbrk@lvl=\count285
 \tag@help=\toks26
-\row@=\count283
-\column@=\count284
-\maxfields@=\count285
+\row@=\count286
+\column@=\count287
+\maxfields@=\count288
 \andhelp@=\toks27
 \eqnshift@=\dimen160
 \alignsep@=\dimen161
@@ -338,8 +340,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \multlinegap=\skip62
 \multlinetaggap=\skip63
 \mathdisplay@stack=\toks29
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -384,8 +386,8 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
-File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count286
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box54
 ) (cv.aux)
 \openout1 = `cv.aux'.
@@ -457,7 +459,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count287
+\c@section@level=\count290
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
@@ -470,16 +472,16 @@ LaTeX Info: Redefining \nameref on input line 33.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count288
+\scratchcounter=\count291
 \scratchdimen=\dimen166
 \scratchbox=\box55
-\nofMPsegments=\count289
-\nofMParguments=\count290
+\nofMPsegments=\count292
+\nofMParguments=\count293
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count291
+\MPscratchCnt=\count294
 \MPscratchDim=\dimen167
-\MPnumerator=\count292
-\makeMPintoPDFobject=\count293
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
 \everyMPtoPDFconversion=\toks31
 )
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
@@ -487,49 +489,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-4.
+7.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [1
 
-{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/colin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-51.
+23.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-51.
+23.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-151.
+123.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-151.
+123.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 151.
+(Font)              <12> on input line 123.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 151.
+(Font)              <8> on input line 123.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 151.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 151
+(Font)              <6> on input line 123.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 123
 .
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 151
+LaTeX Font Info:    Trying to load font information for U+msb on input line 123
 .
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -539,27 +541,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 AED: lastpage setting LastPage
 [5] (cv.aux)
 Package rerunfilecheck Info: File `cv.out' has not changed.
-(rerunfilecheck)             Checksum: 9B4047E6CBBB89B309961F3E23934904;1459.
+(rerunfilecheck)             Checksum: 291F9C8910C78EC857562DC17818AFC5;1810.
  ) 
 Here is how much of TeX's memory you used:
- 10150 strings out of 478927
- 152818 string characters out of 2852535
- 469035 words of memory out of 3000000
- 27824 multiletter control sequences out of 15000+600000
- 445392 words of font info for 55 fonts, out of 8000000 for 9000
+ 10616 strings out of 478584
+ 169801 string characters out of 2844401
+ 468314 words of memory out of 3000000
+ 28613 multiletter control sequences out of 15000+600000
+ 517218 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,69p,297b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,66p,307b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
-:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Us
-ers/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Us
-ers/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Use
-rs/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users
-/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users
-/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb>
-Output written on cv.pdf (5 pages, 135733 bytes).
+:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Us
+ers/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users
+/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users
+/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/
+colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/co
+lin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/co
+lin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b>
+Output written on cv.pdf (5 pages, 140738 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
