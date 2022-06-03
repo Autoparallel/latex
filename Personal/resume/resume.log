@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  4 APR 2022 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  2 JUN 2022 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -932,7 +932,7 @@ Overfull \hbox (0.547pt too wide) in paragraph at lines 203--205
  []
 
 
-Overfull \hbox (0.547pt too wide) in paragraph at lines 210--212
+Overfull \hbox (0.547pt too wide) in paragraph at lines 209--211
 [][] 
  []
 
@@ -983,7 +983,7 @@ Overfull \hbox (0.547pt too wide) in paragraph at lines 241--243
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `resume.out' has not changed.
-(rerunfilecheck)             Checksum: 24E49FD96506BCC6F0270504E13021AD;574.
+(rerunfilecheck)             Checksum: 89BFBCD2F84D55035B34D4A088BB507A;574.
  ) 
 Here is how much of TeX's memory you used:
  26176 strings out of 478584
@@ -992,7 +992,7 @@ Here is how much of TeX's memory you used:
  43937 multiletter control sequences out of 15000+600000
  477346 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,7n,89p,412b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,7n,89p,412b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5/fa
 5free1.enc}{C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontaw
 esome/fontawesometwo.enc}<C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/ty
@@ -1009,7 +1009,7 @@ TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/colin/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/colin/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on resume.pdf (1 page, 176221 bytes).
+Output written on resume.pdf (1 page, 177901 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)

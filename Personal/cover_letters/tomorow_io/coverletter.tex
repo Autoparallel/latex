@@ -1,0 +1,117 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:aa
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[12pt, letter]{awesome-cv}
+\usepackage{hyperref}
+\setlength\footskip{-10pt}
+
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{cv/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete,
+% awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-red}
+
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Essentials
+\name{}{Colin Roberts}
+\address{Colorado State University, Fort Collins, CO, 80521}
+%\mobile{(+1) 626-589-4001}
+%%% Social
+%\email{robertsp@rams.colostate.edu}
+%\homepage{https://www.colinroberts.net}
+%\github{ColinPRoberts}
+%\linkedin{ColinPR}
+%%% Optionals
+\position{PhD Candidate{\enskip\cdotp\enskip}Mathematics}
+%\quote{``Make the change that you want to see in the world."}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Letter Data (Cover Letter)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\recipient
+  {Tomorrow.io}
+  {Boulder, Colorado
+}
+\letterdate{\today}
+\lettertitle{Data Assimilation / Machine Learning Scientist \vspace*{.5cm}}
+\letteropening{To whom it may concern,}
+\letterclosing{\vspace*{-.25cm}Sincerely,}
+%\letterenclosure[Attached]{Curriculum Vitae}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
+%\makecvfooter
+%  {\today }
+%  {Colin Roberts~~~·~~~Cover Letter}
+%  {}
+
+\begin{document}
+%%% Make a header for CV using personal data
+\makecvheader
+%%% Make a title for Cover Letter using letter data
+\makelettertitle
+%%% Write content for your cover letter
+\begin{cvletter}
+
+
+I come to with a strong background in mathematical modeling, data assimilation, and mathematical physics. I have been part of a long-term collaborative project with a group that develops new Data Assimilation (DA) techniques. Our group uses model and data dimension reduction methods to promote the effectiveness of particle filters in high dimensional nonlinear systems. Our projects have used Proper Orthogonal Decomposition to reduce dimension which just applies Principal Component Analysis to time series data. We have also used Dynamic Mode Decomposition which is a newer novel technique meant to extract more meaningful modes of a physical system. The combination of DA with DMD is wonderful and underutilized.
+
+The software we have built is model agnostic, but at the moment we are using it to explore the information exchanged between components of a coupled ocean-atmosphere model. We hope to understand the coupling mechanism between a multi-component model and its role in DA. We also discover the degree to which the posterior distribution is non-Gaussian. The means for which we do this is by applying the Expectation Maximization algorithm for our time-series data to determine an ideal Gaussian Mixture Model for the posterior at each time step. Ideally, this lets us see where the model experiences non-Gaussian behavior and proves the point for using the particle filter technique all together.
+
+This has given me the ability to write thousands of lines of MATLAB code. Over this time I have worked with a handful of numerical solvers and schemes. Fortunately, this has helped me develop strong programming abilities and an learn how to write useful, readable, and modular software. Other projects such as modeling COVID dynamics and building equity trading algorithms has had me using Python as well. I am excited to learn more about other Machine Learning (ML) techniques than the ones I listed here. Most of my work comes with an underlying model so doing model-free ML has not been as necessary for me. I should also mention that I have an interest in learning to develop software through formal methods. 
+
+The projects listed above are not core to my PhD thesis. Instead, my thesis takes Clifford analysis (which is a higher dimensional analog of complex analysis) and applies it to electromagnetic problems. New physics topics come quickly to me since I am usually able to translate them to geometry. I love to view physically motivated problems using in a few ways. First, extract coarse qualitative features using topology and make these more fine grained and quantitative by invoking geometry. Then, when you actually need to compute, you move to the realm of algebra. This way of thinking was quite useful to me at NASA where we explored a geometric version of the Maxwell--Vlasov equation. I am not sure if your Operation Tomorrow Space initiative will involve space weather, but I know a handful of people in this field and would love to continue collaboration. 
+
+
+This position grants me the ability to use research and apply them to the real world. I come bearing a wealth of mathematics insight and I would be ecstatic to teach these to others and provide my intuition. I know this background will is highly useful in the field of DA/ML from my previous experience. I have also taught and developed many courses as a graduate student; that includes an open source textbook for the course I am currently teaching. Alongside my colleagues I have given many research presentations and feel very comfortable being put on the spot. On the flip side, I may be less of an expert on ML, but I am eager to learn and use my skills to help the team achieve their goals. Please just tell me what I need to learn and I would be happy to do so!
+
+This position pairs me with an organization located in a beautiful part of the world. It also seems like Tomorrow.io values a healthy work life balance which is very important to me. The community I work with contributes to my mood and happiness in a huge way. I would enjoy getting to explore all the areas surrounding Boulder over the coming years. I am excited to hear back from you and see your company grow! 
+
+\end{cvletter}
+
+%%% Make a closing for Cover Letter using letter data
+\makeletterclosing
+
+\end{document}

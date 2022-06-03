@@ -1,0 +1,85 @@
+Name: Colin Roberts
+
+Address: 
+3521 Stanford Rd., APT 108
+Fort Collins, CO 80525
+United States of America
+
+Email: robertsp@rams.colostate.edu
+
+Phone: +1 (626) 5894001 (Mobile)
+
+
+Work Experience 1:
+Job Title: Graduate Teaching Assistant
+Company: Colorado State University
+Location: Fort Collins CO
+Aug 2017 - Jun 2022
+Role Description: Researcher in differential geometry and partial differential equations used towards mathematical physics. Undergraduate instructor for various different courses. 
+
+
+Work Experience 2:
+Job Title: Intern
+Company: NASA
+Location: Cleveland OH
+Jun 2021 - Aug 2021
+Role Description: Worked with collaborators to develop a geometric framework for the Maxwell-Vlasov equation for plasmas.
+Continuing to collaborate with others on various different plasma related problems.
+
+
+Work Experience 3:
+Job Title: Student
+Company: American Institute of Mathematics
+Location: San Jose CA
+Jul 2020 - Aug 2020
+Role Description: Developed a multiscale epidemic model to predict the spread of COVID-19 in communities with schools. Presented our group’s work and interviewed with American Institute of Mathematics.  Provided our codebase and insight to JBS Foods in Greeley, CO. 
+
+
+Education 1:
+Colorado State University
+Degree: PhD, Doctorate Degree or Equivalent
+Field of Study: Mathematics
+Overall Result (GPA): 3.94
+From Aug 2017 - June 2022
+
+
+Education 2:
+Colorado State University
+Degree: BS, Bachelor's Degree or Equivalent
+Field of Study: Physics
+Overall Result (GPA): 3.37
+From: Aug 2012 - May 2017
+
+
+Education 3
+School or University: Colorado State University
+Degree: BS, Bachelor's Degree or Equivalent
+Field of Study: Mathematics
+Overall Result (GPA): 3.37
+From: Aug 2012 - May 2017
+
+
+Languages
+Language: English
+This is my native language: Yes
+Comprehension: Fluent
+Overall: Fluent
+Reading: Fluent
+Speaking: Fluent
+Writing: Fluent
+
+Skills:
+git
+Matlab
+Python
+differential equations
+data assimilation
+Teaching
+mathematical physics
+differential geometry
+Programming
+Physics
+Mathematics
+mathematical modeling
+public speaking
+teamwork

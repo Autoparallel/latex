@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  1 APR 2022 12:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.16)  14 APR 2022 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,12 +369,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) (wedge_product.pdf_tex
-<wedge_product.pdf, id=4, page=1, 657.24428pt x 190.49767pt>
-File: wedge_product.pdf Graphic file (type pdf)
-<use wedge_product.pdf, page 1>
-Package pdftex.def Info: wedge_product.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 657.24428pt x 190.51172pt.
+)) (folation.pdf_tex
+<folation.pdf, id=4, page=1, 284.71252pt x 285.28038pt>
+File: folation.pdf Graphic file (type pdf)
+<use folation.pdf, page 1>
+Package pdftex.def Info: folation.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 284.7125pt x 285.30144pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
@@ -386,26 +386,37 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+<folation.pdf, id=5, page=2, 284.71252pt x 285.28038pt>
+File: folation.pdf Graphic file (type pdf)
+<use folation.pdf, page 2>
+Package pdftex.def Info: folation.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 284.7125pt x 285.30144pt.
+)
 [1
 
-{C:/Users/colin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./wedge_prod
-uct.pdf>] (inkscape_test.aux) ) 
+{C:/Users/colin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./folation.p
+df> <./folation.pdf
+
+pdfTeX warning: pdflatex.exe (file ./folation.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+>] (inkscape_test.aux) ) 
 Here is how much of TeX's memory you used:
- 6129 strings out of 478584
- 111315 string characters out of 2844401
- 418167 words of memory out of 3000000
- 24170 multiletter control sequences out of 15000+600000
+ 6133 strings out of 478584
+ 111352 string characters out of 2844401
+ 416173 words of memory out of 3000000
+ 24174 multiletter control sequences out of 15000+600000
  476986 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,21n,92p,337b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/colin/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/colin/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on inkscape_test.pdf (1 page, 29396 bytes).
+<C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/colin/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on inkscape_test.pdf (1 page, 34476 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
+ 41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

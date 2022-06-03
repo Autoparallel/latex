@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{doran_geometric_2003}
+Chris Doran and Anthony Lasenby.
+\newblock {\em Geometric {Algebra} for {Physicists}}.
+\newblock Cambridge University Press, 1 edition, May 2003.
+
+\bibitem{chisolm_geometric_2012}
+Eric Chisolm.
+\newblock Geometric {Algebra}.
+\newblock {\em arXiv:1205.5935 [math-ph]}, May 2012.
+\newblock arXiv: 1205.5935.
+
+\bibitem{schindler_geometric_2020}
+J.~C. Schindler.
+\newblock Geometric {Manifolds} {Part} {I}: {The} {Directional} {Derivative} of
+  {Scalar}, {Vector}, {Multivector}, and {Tensor} {Fields}.
+\newblock {\em arXiv:1911.07145 [math]}, January 2020.
+\newblock arXiv: 1911.07145.
+
+\bibitem{hehl_introduction_2003}
+Friedrich~W. Hehl and Yuri~N. Obukhov.
+\newblock Introduction.
+\newblock In Friedrich~W. Hehl and Yuri~N. Obukhov, editors, {\em Foundations
+  of {Classical} {Electrodynamics}: {Charge}, {Flux}, and {Metric}}, Progress
+  in {Mathematical} {Physics}, pages 1--15. Birkhäuser, Boston, MA, 2003.
+
+\bibitem{gross_electromagnetic_2004}
+Paul~W. Gross, Paul~Wolfgang Gross, P.~Robert Kotiuga, and Robert~P. Kotiuga.
+\newblock {\em Electromagnetic {Theory} and {Computation}: {A} {Topological}
+  {Approach}}.
+\newblock Cambridge University Press, June 2004.
+\newblock Google-Books-ID: UTjwZdtkECIC.
+
+\bibitem{westenholz_topological_1979}
+C~Von Westenholz.
+\newblock Topological and {Noether}-conservation laws.
+\newblock {\em Annales de L' I.H.P., Section A}, 30:353--367, 1979.
+
+\bibitem{manning_analysis_2009}
+Robert~M Manning.
+\newblock Analysis of {Electromagnetic} {Wave} {Propagation} in a {Magnetized}
+  {Re}-{Entry} {Plasma} {Sheath} {Via} the {Kinetic} {Equation}.
+\newblock {\em NASA Technical Manual}, (2009-216096):1--40, 2009.
+
+\bibitem{sarbach_geometry_2014}
+Olivier Sarbach and Thomas Zannias.
+\newblock The geometry of the tangent bundle and the relativistic kinetic
+  theory of gases.
+\newblock {\em Classical and Quantum Gravity}, 31(8):085013, April 2014.
+\newblock arXiv: 1309.2036.
+
+\bibitem{sarbach_relativistic_2013}
+Olivier Sarbach and Thomas Zannias.
+\newblock Relativistic {Kinetic} {Theory}: {An} {Introduction}.
+\newblock {\em arXiv:1303.2899 [cond-mat, physics:gr-qc, physics:hep-th]},
+  pages 134--155, 2013.
+\newblock arXiv: 1303.2899.
+
+\bibitem{sarbach_tangent_2014}
+Olivier Sarbach and Thomas Zannias.
+\newblock Tangent bundle formulation of a charged gas.
+\newblock {\em arXiv:1311.3532 [cond-mat, physics:gr-qc, physics:hep-th]},
+  pages 192--207, 2014.
+\newblock arXiv: 1311.3532.
+
+\bibitem{gracia-bondia_elements_2001}
+José~M. Gracia-Bondía, Joseph~C. Varilly, and Hector Figueroa.
+\newblock {\em Elements of {Noncommutative} {Geometry}}.
+\newblock Birkhäuser {Advanced} {Texts} {Basler} {Lehrbücher}. Birkhäuser
+  Basel, 2001.
+
+\end{thebibliography}

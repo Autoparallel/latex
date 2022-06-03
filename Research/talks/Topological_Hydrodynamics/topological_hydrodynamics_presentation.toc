@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Smooth Manifolds}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Defining a Smooth Structure}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Lie Groups}{13}{0}{1}
+\beamer@sectionintoc {2}{Geodesics}{23}{0}{2}
+\beamer@subsectionintoc {2}{1}{Variational Principle}{24}{0}{2}
+\beamer@subsectionintoc {2}{2}{Intuitive Understanding}{26}{0}{2}
+\beamer@subsectionintoc {2}{3}{Examples}{27}{0}{2}
+\beamer@sectionintoc {3}{Applications to Fluid Flow}{30}{0}{3}
+\beamer@subsectionintoc {3}{1}{Diffeomorphism Groups}{31}{0}{3}
+\beamer@subsectionintoc {3}{2}{Euler-Arnold Equations}{34}{0}{3}
+\beamer@subsectionintoc {3}{3}{Other Applications}{39}{0}{3}
