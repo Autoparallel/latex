@@ -1,0 +1,7 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Preliminaries}{11}{0}{1}
+\beamer@sectionintoc {2}{Clifford analysis}{62}{0}{2}
+\beamer@subsectionintoc {2}{1}{Monogenic fields}{93}{0}{2}
+\beamer@sectionintoc {3}{Hodge theory}{111}{0}{3}
+\beamer@sectionintoc {4}{Tomography}{127}{0}{4}
