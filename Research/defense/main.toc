@@ -1,7 +1,10 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Preliminaries}{11}{0}{1}
-\beamer@sectionintoc {2}{Clifford analysis}{62}{0}{2}
-\beamer@subsectionintoc {2}{1}{Monogenic fields}{93}{0}{2}
-\beamer@sectionintoc {3}{Hodge theory}{111}{0}{3}
-\beamer@sectionintoc {4}{Tomography}{127}{0}{4}
+\beamer@subsectionintoc {1}{1}{Preliminaries}{6}{0}{1}
+\beamer@sectionintoc {2}{Clifford analysis}{18}{0}{2}
+\beamer@subsectionintoc {2}{1}{Monogenic fields}{30}{0}{2}
+\beamer@sectionintoc {3}{Hodge theory}{36}{0}{3}
+\beamer@sectionintoc {4}{Tomography}{43}{0}{4}
+\beamer@sectionintoc {5}{Gelfand theory}{51}{0}{5}
+\beamer@sectionintoc {6}{Further results, open questions, conclusion}{61}{0}{6}
+\beamer@sectionintoc {7}{Conclusions}{66}{0}{7}
