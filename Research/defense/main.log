@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.6.4)  25 JUN 2022 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.6.4)  26 JUN 2022 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2408,7 +2408,7 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 422.
+(amsmath)                 on input line 420.
 
 (./figures/wedge_product.pdf_tex
 <figures/wedge_product.pdf, id=141, page=1, 657.24428pt x 190.49767pt>
@@ -2418,7 +2418,7 @@ Package pdftex.def Info: figures/wedge_product.pdf , page1 used on input line 5
 6.
 (pdftex.def)             Requested size: 375.24408pt x 108.765pt.
 )
-Overfull \vbox (50.05547pt too high) detected at line 422
+Overfull \vbox (12.05547pt too high) detected at line 420
  []
 
 [10
@@ -2429,7 +2429,7 @@ Overfull \vbox (50.05547pt too high) detected at line 422
 
 ]
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/12'
-(microtype)             (new value: 12.0pt) on input line 477.
+(microtype)             (new value: 12.0pt) on input line 475.
  [13
 
 ] [14
@@ -2439,7 +2439,7 @@ Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/12'
 ] [16
 
 ]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 554
+LaTeX Font Info:    Trying to load font information for U+euf on input line 552
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -2458,7 +2458,7 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 ]
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/17.2
 8'
-(microtype)             (new value: 17.28pt) on input line 582.
+(microtype)             (new value: 17.28pt) on input line 580.
  [20
 
 ]
@@ -2471,16 +2471,16 @@ Package epstopdf Info: Source file: <figures/scalar_field.eps>
 (epstopdf)                    size: 198482 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/scalar_field-eps-c
 onverted-to.pdf figures/scalar_field.eps>
-(epstopdf)             \includegraphics on input line 592.
+(epstopdf)             \includegraphics on input line 590.
 Package epstopdf Info: Output file is already uptodate.
-<figures/scalar_field-eps-converted-to.pdf, id=224, 2890.8pt x 1534.73375pt>
+<figures/scalar_field-eps-converted-to.pdf, id=223, 2890.8pt x 1534.73375pt>
 File: figures/scalar_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/scalar_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/scalar_field-eps-converted-to.pdf  used on inp
-ut line 592.
+ut line 590.
 (pdftex.def)             Requested size: 375.24408pt x 199.21796pt.
 
-Overfull \vbox (5.57164pt too high) detected at line 592
+Overfull \vbox (5.57164pt too high) detected at line 590
  []
 
 [21
@@ -2494,16 +2494,16 @@ Package epstopdf Info: Source file: <figures/plane_field.eps>
 (epstopdf)                    size: 275536 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/plane_field-eps-co
 nverted-to.pdf figures/plane_field.eps>
-(epstopdf)             \includegraphics on input line 603.
+(epstopdf)             \includegraphics on input line 601.
 Package epstopdf Info: Output file is already uptodate.
-<figures/plane_field-eps-converted-to.pdf, id=236, 1445.4pt x 733.74126pt>
+<figures/plane_field-eps-converted-to.pdf, id=235, 1445.4pt x 733.74126pt>
 File: figures/plane_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/plane_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/plane_field-eps-converted-to.pdf  used on inpu
-t line 603.
+t line 601.
 (pdftex.def)             Requested size: 375.24408pt x 190.48833pt.
 
-Overfull \vbox (14.52205pt too high) detected at line 603
+Overfull \vbox (14.52205pt too high) detected at line 601
  []
 
 [22
@@ -2514,24 +2514,20 @@ Package epstopdf Info: Source file: <figures/vector_field.eps>
 (epstopdf)                    size: 193156 bytes
 (epstopdf)             Output file: <figures/vector_field-eps-converted-to.pdf>
 
+(epstopdf)                    date: 2022-06-25 14:20:35
+(epstopdf)                    size: 189806 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vector_field-eps-c
 onverted-to.pdf figures/vector_field.eps>
-(epstopdf)             \includegraphics on input line 614.
-runsystem(repstopdf --outfile=figures/vector_field-eps-converted-to.pdf figures
-/vector_field.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figures/vector_field-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2022-06-25 14:20:35
-(epstopdf)                    size: 189806 bytes.
-<figures/vector_field-eps-converted-to.pdf, id=248, 2890.8pt x 1534.73375pt>
+(epstopdf)             \includegraphics on input line 612.
+Package epstopdf Info: Output file is already uptodate.
+<figures/vector_field-eps-converted-to.pdf, id=247, 2890.8pt x 1534.73375pt>
 File: figures/vector_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/vector_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vector_field-eps-converted-to.pdf  used on inp
-ut line 614.
+ut line 612.
 (pdftex.def)             Requested size: 375.24408pt x 199.21796pt.
 
-Overfull \vbox (22.94797pt too high) detected at line 614
+Overfull \vbox (22.94797pt too high) detected at line 612
  []
 
 [23
@@ -2553,11 +2549,31 @@ Overfull \vbox (22.94797pt too high) detected at line 614
 
 ] [31
 
-] [32
+]
+Package epstopdf Info: Source file: <figures/monogenic_field.eps>
+(epstopdf)                    date: 2022-06-26 15:59:58
+(epstopdf)                    size: 421820 bytes
+(epstopdf)             Output file: <figures/monogenic_field-eps-converted-to.p
+df>
+(epstopdf)                    date: 2022-06-26 16:05:21
+(epstopdf)                    size: 357959 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/monogenic_field-ep
+s-converted-to.pdf figures/monogenic_field.eps>
+(epstopdf)             \includegraphics on input line 749.
+Package epstopdf Info: Output file is already uptodate.
+<figures/monogenic_field-eps-converted-to.pdf, id=316, 2890.8pt x 1534.73375pt>
 
-] [33
+File: figures/monogenic_field-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/monogenic_field-eps-converted-to.pdf>
+Package pdftex.def Info: figures/monogenic_field-eps-converted-to.pdf  used on 
+input line 749.
+(pdftex.def)             Requested size: 455.24408pt x 241.675pt.
+ [32
 
-] [34
+ <./figures/monogenic_field-eps-converted-to.pdf>] [33
+
+]
+[34
 
 ] [35
 
@@ -2565,9 +2581,40 @@ Overfull \vbox (22.94797pt too high) detected at line 614
 
 ] [37
 
-] [38
+] (./figures/torus_homology.pdf_tex
+<figures/torus_homology.pdf, id=361, page=1, 413.26895pt x 260.32805pt>
+File: figures/torus_homology.pdf Graphic file (type pdf)
+<use figures/torus_homology.pdf, page 1>
+Package pdftex.def Info: figures/torus_homology.pdf , page1 used on input line 
+57.
+(pdftex.def)             Requested size: 375.24408pt x 236.38249pt.
+<figures/torus_homology.pdf, id=362, page=2, 413.26895pt x 260.32805pt>
+File: figures/torus_homology.pdf Graphic file (type pdf)
+<use figures/torus_homology.pdf, page 2>
+Package pdftex.def Info: figures/torus_homology.pdf , page2 used on input line 
+59.
+(pdftex.def)             Requested size: 375.24408pt x 236.38249pt.
+<figures/torus_homology.pdf, id=363, page=3, 413.26895pt x 260.32805pt>
+File: figures/torus_homology.pdf Graphic file (type pdf)
+<use figures/torus_homology.pdf, page 3>
+Package pdftex.def Info: figures/torus_homology.pdf , page3 used on input line 
+61.
+(pdftex.def)             Requested size: 375.24408pt x 236.38249pt.
+)
+Overfull \vbox (3.94484pt too high) detected at line 852
+ []
 
-] [39
+[38
+
+ <./figures/torus_homology.pdf> <./figures/torus_homology.pdf
+
+pdfTeX warning: pdflatex (file ./figures/torus_homology.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+> <./figures/torus_homology.pdf
+
+pdfTeX warning: pdflatex (file ./figures/torus_homology.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>] [39
 
 ] [40
 
@@ -2577,8 +2624,7 @@ Overfull \vbox (22.94797pt too high) detected at line 614
 
 ] [43
 
-]
-[44
+] [44
 
 ] [45
 
@@ -2596,20 +2642,39 @@ Overfull \vbox (22.94797pt too high) detected at line 614
 
 ] [52
 
-] [53
+]
+[53
 
 ] [54
 
-] [55
+] (./figures/foliation.pdf_tex
+<figures/foliation.pdf, id=474, page=1, 284.71252pt x 285.28038pt>
+File: figures/foliation.pdf Graphic file (type pdf)
+<use figures/foliation.pdf, page 1>
+Package pdftex.def Info: figures/foliation.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 375.24408pt x 376.02278pt.
+<figures/foliation.pdf, id=475, page=2, 284.71252pt x 285.28038pt>
+File: figures/foliation.pdf Graphic file (type pdf)
+<use figures/foliation.pdf, page 2>
+Package pdftex.def Info: figures/foliation.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 375.24408pt x 376.02278pt.
+)
+Overfull \vbox (27.96918pt too high) detected at line 1123
+ []
 
-] [56
+[55
+
+ <./figures/foliation.pdf> <./figures/foliation.pdf
+
+pdfTeX warning: pdflatex (file ./figures/foliation.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] [56
 
 ] [57
 
 ] [58
 
-]
-[59
+] [59
 
 ] [60
 
@@ -2629,6 +2694,8 @@ Overfull \vbox (22.94797pt too high) detected at line 614
 
 ] [68
 
+] [69
+
 ]
 \tf@nav=\write9
 \openout9 = `main.nav'.
@@ -2639,7 +2706,8 @@ Overfull \vbox (22.94797pt too high) detected at line 614
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
- (./main.aux)
+
+(./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2647,10 +2715,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53345 strings out of 480806
- 1204625 string characters out of 5905152
- 1713589 words of memory out of 6000000
- 69260 multiletter control sequences out of 15000+600000
+ 53391 strings out of 480806
+ 1206407 string characters out of 5905152
+ 1712456 words of memory out of 6000000
+ 69298 multiletter control sequences out of 15000+600000
  575683 words of font info for 255 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,20n,126p,722b,679s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2683,10 +2751,10 @@ public/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri7
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on main.pdf (68 pages, 1184783 bytes).
+Output written on main.pdf (69 pages, 1547024 bytes).
 PDF statistics:
- 687 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 147 named destinations out of 1000 (max. 500000)
- 91348 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 715 PDF objects out of 1000 (max. 8388607)
+ 548 compressed objects within 6 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 91378 words of extra memory for PDF output out of 106986 (max. 10000000)
 

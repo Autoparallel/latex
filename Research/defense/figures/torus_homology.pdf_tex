@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.2 (dc2aedaf03, 2022-05-15), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'foliation.pdf' (pdf, eps, ps)
+%% Accompanies image file 'torus_homology.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{283.64882582bp}%
+    \setlength{\unitlength}{411.72497366bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,12 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.00199448)%
+  \begin{picture}(1,0.62992409)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/foliation.pdf}}%
-    \put(0.02628982,0.8288757){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ball$\end{tabular}}}}%
-    \put(0.44052693,0.48517486){\color[rgb]{0.78431373,0.18431373,0.18431373}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{B}_{12}+x^3$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/foliation.pdf}}%
+    \put(0.25605301,0.26190947){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/torus_homology.pdf}}%
+    \put(0.1859943,0.48930455){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/torus_homology.pdf}}%
+    \put(0.83539782,0.56268051){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/torus_homology.pdf}}%
   \end{picture}%
 \endgroup%

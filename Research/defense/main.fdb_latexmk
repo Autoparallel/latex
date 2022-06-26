@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1656188432 "main.tex" "main.pdf" "main" 1656188436
+["pdflatex"] 1656283156 "main.tex" "main.pdf" "main" 1656283159
   "/home/colin/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1654350883 1345261 ba50c1d4e3bc3a09e7d631c9269d6ec1 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc" 1177804218 3433 7734f79d46d219d7347f02050533a56b ""
@@ -463,16 +463,21 @@
   "/usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1655225371 5024348 b3718a2bca2588045272ff8037602424 ""
   "UiB-images/colorado-state-university-logo.png" 1654350332 36149 a4bc539e46ce6c00617a4599e90d77e6 ""
   "beamerthemeUiB.sty" 1655738899 19958 329c3d2be55d9f4cd8e6d980b9ac094e ""
+  "figures/foliation.pdf" 1656283126 4482 f63d64038151d3a677ee337bebe1b31d ""
+  "figures/foliation.pdf_tex" 1656283148 2476 7a19dc17a7b2c683b4a5fa8397e778f5 ""
+  "figures/monogenic_field.eps" 1656280798 421820 bbb49199d9bcd30ba91766898ce27475 ""
   "figures/plane_field.eps" 1656186831 284342 af8b6ab7c6862c8c20f0a4e79e0827a3 ""
   "figures/scalar_field.eps" 1656187544 257328 86272ca09bd7c3ad5f9918b9d581e86f ""
+  "figures/torus_homology.pdf" 1656282353 3996 cc3f8c638953b626faf8ff5afef82232 ""
+  "figures/torus_homology.pdf_tex" 1656282368 2664 0dcea95ba446e947d9895241de712599 ""
   "figures/vector_field.eps" 1656188391 193156 c2a73694523fd4b140468a7d7e01aa28 ""
   "figures/wedge_product.pdf" 1656185064 2657 d58d82df3b06da56b3e6a25e92e9dbf4 ""
   "figures/wedge_product.pdf_tex" 1656185102 3003 1909ce9dfd71ef5e1385a4117af65ed4 ""
-  "main.aux" 1656188436 13055 223e8f2f9300cd2ac0ea4e07cd439e4a "pdflatex"
-  "main.nav" 1656188436 8127 b54e806b0749770ff1e4a2a9acd56199 "pdflatex"
+  "main.aux" 1656283159 12911 f39646f254c822b90630902df31de55c "pdflatex"
+  "main.nav" 1656283159 8235 5231efce18c9876d38de9b1dd6d0549e "pdflatex"
   "main.out" 0 -1 0 "pdflatex"
-  "main.tex" 1656188260 39846 00a083c299cf1d5705dc4fb46fd0131b ""
-  "main.toc" 1656188436 514 07b5caac3f47d1bd84a521f3c1842490 "pdflatex"
+  "main.tex" 1656283138 40050 94e6e5df0a575f661bf9aefa7fabcba0 ""
+  "main.toc" 1656283159 514 bc396dcf22e39617cab3a55e6fd89068 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
