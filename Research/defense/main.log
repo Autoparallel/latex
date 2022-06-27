@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.6.4)  26 JUN 2022 16:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.6.4)  26 JUN 2022 18:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2070,7 +2070,7 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@english
 \symMnLargeSymbols=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `MnLargeSymbols' in version `bold'
 (Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
-39.
+40.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -2291,7 +2291,7 @@ Package pdftex.def Info: UiB-images/colorado-state-university-logo.png  used on
 ] [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 320
+LaTeX Font Info:    Trying to load font information for U+msa on input line 321
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -2300,7 +2300,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 320
+LaTeX Font Info:    Trying to load font information for U+msb on input line 321
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -2310,22 +2310,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 32
-0.
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 3
-20.
+21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/10.9
 5'
-(microtype)             (new value: 10.95pt) on input line 320.
+(microtype)             (new value: 10.95pt) on input line 321.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/8'
-(microtype)             (new value: 8.0pt) on input line 320.
+(microtype)             (new value: 8.0pt) on input line 321.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/6'
-(microtype)             (new value: 6.0pt) on input line 320.
+(microtype)             (new value: 6.0pt) on input line 321.
  [4
 
 ] [5
@@ -2335,34 +2335,34 @@ Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/6'
 ]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 356.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 357.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 356.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 357.
 
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 356.
+(Font)              using `U/stmry/m/n' instead on input line 357.
 
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/b/n/10.9
 5'
-(microtype)             (new value: 10.95pt) on input line 356.
+(microtype)             (new value: 10.95pt) on input line 357.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/b/n/8'
-(microtype)             (new value: 8.0pt) on input line 356.
+(microtype)             (new value: 8.0pt) on input line 357.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/b/n/6'
-(microtype)             (new value: 6.0pt) on input line 356.
+(microtype)             (new value: 6.0pt) on input line 357.
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 356.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 357.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <8> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 356.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 357.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 356.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 357.
 
 [7
 
@@ -2370,37 +2370,37 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <6> not available
 
 ]
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 393.
+(microtype)             (new value: 10.0pt) on input line 394.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 393.
+(microtype)             (new value: 7.0pt) on input line 394.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/5'
-(microtype)             (new value: 5.0pt) on input line 393.
+(microtype)             (new value: 5.0pt) on input line 394.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 393.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 394.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 393.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 394.
 
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/b/n/10'
-(microtype)             (new value: 10.0pt) on input line 393.
+(microtype)             (new value: 10.0pt) on input line 394.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/b/n/7'
-(microtype)             (new value: 7.0pt) on input line 393.
+(microtype)             (new value: 7.0pt) on input line 394.
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/b/n/5'
-(microtype)             (new value: 5.0pt) on input line 393.
+(microtype)             (new value: 5.0pt) on input line 394.
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <10> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 393.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 394.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <7> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 393.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 394.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 393.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 394.
 
 [9
 
@@ -2408,7 +2408,7 @@ LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <5> not available
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 420.
+(amsmath)                 on input line 421.
 
 (./figures/wedge_product.pdf_tex
 <figures/wedge_product.pdf, id=141, page=1, 657.24428pt x 190.49767pt>
@@ -2417,19 +2417,16 @@ File: figures/wedge_product.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/wedge_product.pdf , page1 used on input line 5
 6.
 (pdftex.def)             Requested size: 375.24408pt x 108.765pt.
-)
-Overfull \vbox (12.05547pt too high) detected at line 420
- []
-
-[10
+) [10
 
  <./figures/wedge_product.pdf>] [11
 
-] [12
+]
+[12
 
 ]
 Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/12'
-(microtype)             (new value: 12.0pt) on input line 475.
+(microtype)             (new value: 12.0pt) on input line 476.
  [13
 
 ] [14
@@ -2439,7 +2436,7 @@ Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/12'
 ] [16
 
 ]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 552
+LaTeX Font Info:    Trying to load font information for U+euf on input line 553
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -2456,12 +2453,10 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 [19
 
 ]
-Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/17.2
-8'
-(microtype)             (new value: 17.28pt) on input line 580.
- [20
+Overfull \hbox (24.4969pt too wide) in paragraph at lines 587--587
+[]| $[][][]$  
+ []
 
-]
 Package epstopdf Info: Source file: <figures/scalar_field.eps>
 (epstopdf)                    date: 2022-06-25 14:05:44
 (epstopdf)                    size: 257328 bytes
@@ -2471,21 +2466,25 @@ Package epstopdf Info: Source file: <figures/scalar_field.eps>
 (epstopdf)                    size: 198482 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/scalar_field-eps-c
 onverted-to.pdf figures/scalar_field.eps>
-(epstopdf)             \includegraphics on input line 590.
+(epstopdf)             \includegraphics on input line 587.
 Package epstopdf Info: Output file is already uptodate.
-<figures/scalar_field-eps-converted-to.pdf, id=223, 2890.8pt x 1534.73375pt>
+<figures/scalar_field-eps-converted-to.pdf, id=216, 2890.8pt x 1534.73375pt>
 File: figures/scalar_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/scalar_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/scalar_field-eps-converted-to.pdf  used on inp
-ut line 590.
+ut line 587.
 (pdftex.def)             Requested size: 375.24408pt x 199.21796pt.
 
-Overfull \vbox (5.57164pt too high) detected at line 590
+Overfull \vbox (7.06248pt too high) detected at line 587
  []
 
-[21
+[20
 
  <./figures/scalar_field-eps-converted-to.pdf>]
+Overfull \hbox (28.53441pt too wide) in paragraph at lines 598--598
+[]| $[][][]$  
+ []
+
 Package epstopdf Info: Source file: <figures/plane_field.eps>
 (epstopdf)                    date: 2022-06-25 13:53:51
 (epstopdf)                    size: 284342 bytes
@@ -2494,21 +2493,25 @@ Package epstopdf Info: Source file: <figures/plane_field.eps>
 (epstopdf)                    size: 275536 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/plane_field-eps-co
 nverted-to.pdf figures/plane_field.eps>
-(epstopdf)             \includegraphics on input line 601.
+(epstopdf)             \includegraphics on input line 598.
 Package epstopdf Info: Output file is already uptodate.
-<figures/plane_field-eps-converted-to.pdf, id=235, 1445.4pt x 733.74126pt>
+<figures/plane_field-eps-converted-to.pdf, id=228, 1445.4pt x 733.74126pt>
 File: figures/plane_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/plane_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/plane_field-eps-converted-to.pdf  used on inpu
-t line 601.
+t line 598.
 (pdftex.def)             Requested size: 375.24408pt x 190.48833pt.
 
-Overfull \vbox (14.52205pt too high) detected at line 601
+Overfull \vbox (16.0129pt too high) detected at line 598
  []
 
-[22
+[21
 
  <./figures/plane_field-eps-converted-to.pdf>]
+Overfull \hbox (31.10811pt too wide) in paragraph at lines 609--609
+[]| $[][][]$  
+ []
+
 Package epstopdf Info: Source file: <figures/vector_field.eps>
 (epstopdf)                    date: 2022-06-25 14:19:51
 (epstopdf)                    size: 193156 bytes
@@ -2518,21 +2521,23 @@ Package epstopdf Info: Source file: <figures/vector_field.eps>
 (epstopdf)                    size: 189806 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vector_field-eps-c
 onverted-to.pdf figures/vector_field.eps>
-(epstopdf)             \includegraphics on input line 612.
+(epstopdf)             \includegraphics on input line 609.
 Package epstopdf Info: Output file is already uptodate.
-<figures/vector_field-eps-converted-to.pdf, id=247, 2890.8pt x 1534.73375pt>
+<figures/vector_field-eps-converted-to.pdf, id=240, 2890.8pt x 1534.73375pt>
 File: figures/vector_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/vector_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vector_field-eps-converted-to.pdf  used on inp
-ut line 612.
+ut line 609.
 (pdftex.def)             Requested size: 375.24408pt x 199.21796pt.
 
-Overfull \vbox (22.94797pt too high) detected at line 612
+Overfull \vbox (24.74252pt too high) detected at line 609
  []
 
-[23
+[22
 
- <./figures/vector_field-eps-converted-to.pdf>] [24
+ <./figures/vector_field-eps-converted-to.pdf>] [23
+
+] [24
 
 ] [25
 
@@ -2540,14 +2545,10 @@ Overfull \vbox (22.94797pt too high) detected at line 612
 
 ] [27
 
-] [28
-
 ]
-[29
+[28
 
-] [30
-
-] [31
+] [29
 
 ]
 Package epstopdf Info: Source file: <figures/monogenic_field.eps>
@@ -2559,52 +2560,54 @@ df>
 (epstopdf)                    size: 357959 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/monogenic_field-ep
 s-converted-to.pdf figures/monogenic_field.eps>
-(epstopdf)             \includegraphics on input line 749.
+(epstopdf)             \includegraphics on input line 745.
 Package epstopdf Info: Output file is already uptodate.
-<figures/monogenic_field-eps-converted-to.pdf, id=316, 2890.8pt x 1534.73375pt>
+<figures/monogenic_field-eps-converted-to.pdf, id=300, 2890.8pt x 1534.73375pt>
 
 File: figures/monogenic_field-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/monogenic_field-eps-converted-to.pdf>
 Package pdftex.def Info: figures/monogenic_field-eps-converted-to.pdf  used on 
-input line 749.
+input line 745.
 (pdftex.def)             Requested size: 455.24408pt x 241.675pt.
- [32
+ [30
 
- <./figures/monogenic_field-eps-converted-to.pdf>] [33
+ <./figures/monogenic_field-eps-converted-to.pdf>] [31
+
+] [32
 
 ]
-[34
+[33
 
-] [35
+] [34
+
+]
+Package microtype Info: Fixing zero fontdimen6 for font `OMX/MnSymbolE/m/n/17.2
+8'
+(microtype)             (new value: 17.28pt) on input line 829.
+ [35
 
 ] [36
 
-] [37
-
 ] (./figures/torus_homology.pdf_tex
-<figures/torus_homology.pdf, id=361, page=1, 413.26895pt x 260.32805pt>
+<figures/torus_homology.pdf, id=352, page=1, 413.26895pt x 260.32805pt>
 File: figures/torus_homology.pdf Graphic file (type pdf)
 <use figures/torus_homology.pdf, page 1>
 Package pdftex.def Info: figures/torus_homology.pdf , page1 used on input line 
 57.
 (pdftex.def)             Requested size: 375.24408pt x 236.38249pt.
-<figures/torus_homology.pdf, id=362, page=2, 413.26895pt x 260.32805pt>
+<figures/torus_homology.pdf, id=353, page=2, 413.26895pt x 260.32805pt>
 File: figures/torus_homology.pdf Graphic file (type pdf)
 <use figures/torus_homology.pdf, page 2>
 Package pdftex.def Info: figures/torus_homology.pdf , page2 used on input line 
 59.
 (pdftex.def)             Requested size: 375.24408pt x 236.38249pt.
-<figures/torus_homology.pdf, id=363, page=3, 413.26895pt x 260.32805pt>
+<figures/torus_homology.pdf, id=354, page=3, 413.26895pt x 260.32805pt>
 File: figures/torus_homology.pdf Graphic file (type pdf)
 <use figures/torus_homology.pdf, page 3>
 Package pdftex.def Info: figures/torus_homology.pdf , page3 used on input line 
 61.
 (pdftex.def)             Requested size: 375.24408pt x 236.38249pt.
-)
-Overfull \vbox (3.94484pt too high) detected at line 852
- []
-
-[38
+) [37
 
  <./figures/torus_homology.pdf> <./figures/torus_homology.pdf
 
@@ -2614,7 +2617,9 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/torus_homology.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] [39
+>] [38
+
+] [39
 
 ] [40
 
@@ -2640,35 +2645,31 @@ ltiple pdfs with page group included in a single page
 
 ] [51
 
-] [52
-
 ]
-[53
+[52
 
-] [54
+] [53
 
 ] (./figures/foliation.pdf_tex
-<figures/foliation.pdf, id=474, page=1, 284.71252pt x 285.28038pt>
+<figures/foliation.pdf, id=466, page=1, 284.71252pt x 285.28038pt>
 File: figures/foliation.pdf Graphic file (type pdf)
 <use figures/foliation.pdf, page 1>
 Package pdftex.def Info: figures/foliation.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 375.24408pt x 376.02278pt.
-<figures/foliation.pdf, id=475, page=2, 284.71252pt x 285.28038pt>
+(pdftex.def)             Requested size: 112.57436pt x 112.79552pt.
+<figures/foliation.pdf, id=467, page=2, 284.71252pt x 285.28038pt>
 File: figures/foliation.pdf Graphic file (type pdf)
 <use figures/foliation.pdf, page 2>
 Package pdftex.def Info: figures/foliation.pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 375.24408pt x 376.02278pt.
-)
-Overfull \vbox (27.96918pt too high) detected at line 1123
- []
-
-[55
+(pdftex.def)             Requested size: 112.57436pt x 112.79552pt.
+) [54
 
  <./figures/foliation.pdf> <./figures/foliation.pdf
 
 pdfTeX warning: pdflatex (file ./figures/foliation.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->] [56
+>] [55
+
+] [56
 
 ] [57
 
@@ -2690,12 +2691,6 @@ e pdfs with page group included in a single page
 
 ] [66
 
-] [67
-
-] [68
-
-] [69
-
 ]
 \tf@nav=\write9
 \openout9 = `main.nav'.
@@ -2706,8 +2701,7 @@ e pdfs with page group included in a single page
 \tf@snm=\write11
 \openout11 = `main.snm'.
 
-
-(./main.aux)
+ (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2715,15 +2709,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53391 strings out of 480806
- 1206407 string characters out of 5905152
- 1712456 words of memory out of 6000000
- 69298 multiletter control sequences out of 15000+600000
- 575683 words of font info for 255 fonts, out of 8000000 for 9000
+ 53375 strings out of 480806
+ 1206250 string characters out of 5905152
+ 1712495 words of memory out of 6000000
+ 69293 multiletter control sequences out of 15000+600000
+ 575470 words of font info for 253 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,20n,126p,722b,679s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/s
-hare/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}</usr/share/texlive/texmf-
 dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/
@@ -2751,10 +2745,10 @@ public/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri7
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on main.pdf (69 pages, 1547024 bytes).
+Output written on main.pdf (66 pages, 1546290 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 548 compressed objects within 6 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 692 PDF objects out of 1000 (max. 8388607)
+ 528 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
  91378 words of extra memory for PDF output out of 106986 (max. 10000000)
 

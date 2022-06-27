@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1656283156 "main.tex" "main.pdf" "main" 1656283159
+["pdflatex"] 1656291219 "main.tex" "main.pdf" "main" 1656291222
   "/home/colin/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1654350883 1345261 ba50c1d4e3bc3a09e7d631c9269d6ec1 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc" 1177804218 3433 7734f79d46d219d7347f02050533a56b ""
@@ -473,11 +473,11 @@
   "figures/vector_field.eps" 1656188391 193156 c2a73694523fd4b140468a7d7e01aa28 ""
   "figures/wedge_product.pdf" 1656185064 2657 d58d82df3b06da56b3e6a25e92e9dbf4 ""
   "figures/wedge_product.pdf_tex" 1656185102 3003 1909ce9dfd71ef5e1385a4117af65ed4 ""
-  "main.aux" 1656283159 12911 f39646f254c822b90630902df31de55c "pdflatex"
-  "main.nav" 1656283159 8235 5231efce18c9876d38de9b1dd6d0549e "pdflatex"
+  "main.aux" 1656291221 12188 ebb05423385e02a1fd1850a2bc560bbf "pdflatex"
+  "main.nav" 1656291221 7733 4aeacd5d117c19a92259440378e5a907 "pdflatex"
   "main.out" 0 -1 0 "pdflatex"
-  "main.tex" 1656283138 40050 94e6e5df0a575f661bf9aefa7fabcba0 ""
-  "main.toc" 1656283159 514 bc396dcf22e39617cab3a55e6fd89068 "pdflatex"
+  "main.tex" 1656291218 39129 e35ee1ec2a83fe3e9d2034c99f65d60f ""
+  "main.toc" 1656291221 455 5be2c21dd97ab56831c66fb47175ae4d "pdflatex"
   (generated)
   "main.aux"
   "main.log"
