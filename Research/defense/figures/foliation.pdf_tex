@@ -55,7 +55,7 @@
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/foliation.pdf}}%
     \put(0.02628982,0.8288757){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ball$\end{tabular}}}}%
-    \put(0.44052693,0.48517486){\color[rgb]{0.78431373,0.18431373,0.18431373}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{B}_{12}+x^3$\end{tabular}}}}%
+    \put(0.44052693,0.48517486){\color[rgb]{0.78431373,0.18431373,0.18431373}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\blade{e}_{12}+x^3$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/foliation.pdf}}%
   \end{picture}%
 \endgroup%

@@ -1,8 +1,8 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Preliminaries}{6}{0}{1}
-\beamer@sectionintoc {2}{Clifford analysis}{18}{0}{2}
-\beamer@sectionintoc {3}{Hodge theory}{36}{0}{3}
-\beamer@sectionintoc {4}{Tomography}{42}{0}{4}
-\beamer@sectionintoc {5}{Gelfand theory}{51}{0}{5}
-\beamer@sectionintoc {6}{Further results, open questions, conclusion}{59}{0}{6}
+\beamer@subsectionintoc {1}{1}{Preliminaries}{11}{0}{1}
+\beamer@sectionintoc {2}{Clifford analysis}{62}{0}{2}
+\beamer@sectionintoc {3}{Hodge theory}{121}{0}{3}
+\beamer@sectionintoc {4}{Tomography}{138}{0}{4}
+\beamer@sectionintoc {5}{Gelfand theory}{174}{0}{5}
+\beamer@sectionintoc {6}{Further results, open questions, conclusion}{206}{0}{6}
