@@ -461,7 +461,7 @@ A_r \wedge B_s &\coloneqq \proj{r+s}{A_r B_s}\\
 \pause
 \item Define the \boldgreen{multivector inner product} and \boldgreen{multivector norm} by
 \[
-A \ast B \coloneqq \proj{}{A^\dagger B} \eqqcolon |A|^2
+A \ast B \coloneqq \proj{}{A^\dagger B} \quad \textrm{and} \quad |A|^2 \coloneqq \proj{}{A^\dagger A}.
 \]
 \pause
 \item Reverse $\dagger$ is the adjoint operator
@@ -516,7 +516,7 @@ A \ast B \coloneqq \proj{}{A^\dagger B} \eqqcolon |A|^2
 \pause
 \item The \boldgreen{dual} \boldgold{$\perp$} of a multivector $A$ is
 \[
-A^\perp \coloneqq A \pseudoscalar^{-1} \in \G^{n-r}.
+A_r^\perp \coloneqq A_r \pseudoscalar^{-1} \in \G^{n-r}.
 \]
 \pause
 \item The \boldgreen{Hodge star} \boldgold{$\star_g$} of a multivector $A$ is
@@ -919,7 +919,7 @@ The space of multivector fields $\smoothfields(M)$ has the orthogonal decomposit
 \pause
 \item From Hodge--Morrey
 \[
-\smoothfields(M) = \sum_{r=0}^n \underbrace{\mathcal{E}_D^r(M)}_{\operatorname{im}(\grad \wedge)} \oplus \underbrace{\mathcal{C}_N^r(M)}_{\operatorname{im}(\grad \contract)} \oplus \underbrace{\mathcal{M}^r(M)}_{\operatorname{ker}(\grad)}.
+\smoothfields(M) = \bigoplus_{r=0}^n \underbrace{\mathcal{E}_D^r(M)}_{\operatorname{im}(\grad \wedge)} \oplus \underbrace{\mathcal{C}_N^r(M)}_{\operatorname{im}(\grad \contract)} \oplus \underbrace{\mathcal{M}^r(M)}_{\operatorname{ker}(\grad)}.
 \]
 \pause
 \item But the Clifford--Hodge is not filtered by grades
@@ -1161,7 +1161,7 @@ The \boldgreen{boundary control (BC) method} in \grey{[Belishev: 2003]} is as fo
 \]
 \pause On each monogenic polynomial
 \[
-\delta[p_{j_2 \dots j_n}] = \frac{1}{j!} \sum_{\textrm{permutations}}\delta\left[](z_{1\sigma(1)}\right] \cdots \delta\left[z_{1\sigma(j)}\right]
+\delta[p_{j_2 \dots j_n}] = \frac{1}{j!} \sum_{\textrm{permutations}}\delta\left[z_{1\sigma(1)}\right] \cdots \delta\left[z_{1\sigma(j)}\right]
 \]
 by the multiplicativity of $\delta$. \pause Then $z_{ij} \in \algebra_{\blade{e}_{ij}}(O)$.
 \vfill
@@ -1182,7 +1182,7 @@ For $\delta \in \characters(M)$ we have $\delta(z_{ij})=z_{ij}(x_\delta)$ for so
 \end{lemm*}
 \pause
 \begin{lemm*}{Identification}{}
-Let $A_+\in \mathcal{M}^+(M)$, then $\delta (A_+)=A_+(x_\delta)$ for some $x_\delta \in M$.
+Let $A_+\in \mathcal{M}^+(M)$, then $\delta [A_+]=A_+(x_\delta)$ for some $x_\delta \in M$.
 \end{lemm*}
 \vfill
 \end{frame}
