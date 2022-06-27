@@ -6,4 +6,3 @@
 \beamer@sectionintoc {4}{Tomography}{42}{0}{4}
 \beamer@sectionintoc {5}{Gelfand theory}{51}{0}{5}
 \beamer@sectionintoc {6}{Further results, open questions, conclusion}{59}{0}{6}
-\beamer@sectionintoc {7}{Conclusions}{64}{0}{7}

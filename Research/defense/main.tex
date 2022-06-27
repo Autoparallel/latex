@@ -689,7 +689,7 @@ Fix an $r$-dimensional submanifold $R$.
     \pause
     \item Define the \boldgreen{directed integral product on $R$}
     \[
-      \directedintproduct{A}{B}_R \coloneqq A^\dagger \pseudoscalar_R B d\mu_R.
+      \directedintproduct{A}{B}_R \coloneqq \int_R A^\dagger \pseudoscalar_R B d\mu_R.
     \]
     \pause
     \item Define the \boldgreen{multivector field inner product on $R$} by
@@ -722,7 +722,7 @@ Fix an $r$-dimensional submanifold $R$.
 \vfill
 \begin{itemize}
 \pause
-\item The space of \boldgreen{monogenic fields}  \boldgold{$\monogenics(M)$} is the kernel of $\grad$.
+\item The space of \boldgreen{monogenic fields}  \boldgold{$\monogenics(M)$}$= \ker \grad$.
 \pause
 \item Ex. $f=u+v\blade{e}_{12} \in \smoothfields^+(\R^2)$ then $\grad f = 0$ is holomorphic
 \begin{align*}
@@ -846,7 +846,7 @@ Hodge theory relates analysis to topology.
 \vspace*{-0.5cm}
 \begin{figure}[H]
     \centering
-    \def\svgwidth{\columnwidth}
+    \def\svgwidth{.5\columnwidth}
 \resizebox{.50\textwidth}{!}{\input{figures/torus_homology.pdf_tex}}
 \end{figure}
 \vfill
@@ -1267,17 +1267,18 @@ To get a higher dimensional BC method we need:
 \vfill
 \end{frame}
 
-\section{Conclusions}
 
 \begin{frame}{Conclusion}
 \vfill
 \begin{itemize}
 \pause
-    \item Clifford analysis is a natural setting for studying PDEs and Hodge theory on manifolds.
+    \item Clifford analysis is a natural way to combine Hodge theory and complex analysis.
 \pause
-    \item Able to describe DN operators and extract homological information and boundary values of special functions.
+    \item Able to describe DN operators and extract homological information and boundary values of monogenic fields.
 \pause
-    \item Special functions are able to tell us the topology of the manifold they are defined on.
+  \item Monogenic fields are uniquely determined by boundary traces via Cauchy integral.
+\pause
+    \item Monogenic fields are able to tell us the topology of the manifold they are defined on.
 \end{itemize}
 \vfill
 \end{frame}
